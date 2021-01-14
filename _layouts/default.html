@@ -7,10 +7,10 @@
 
     {% include header.html %}
 <script src="js/saveTextAsFile.js"></script>
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <div class="page-content">
       <div class="wrapper">
-<select id="images"></select>
+<select id="images" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <script>
   var options=""
@@ -31,6 +31,34 @@
     });
 
     // Initialize the Annotorious plugin
+    var anno = OpenSeadragon.Annotorious(viewer);
+
+    // Load annotations in W3C WebAnnotation format
+    //anno.loadAnnotations('annotations.w3c.json');
+
+    // Attach handlers to listen to events
+    anno.on('createAnnotation', function(a) {
+      console.log(a)
+      curanno[a["id"]]=a
+    });
+    anno.on('deleteAnnotation', function(a) {
+      delete curanno[a["id"]]
+    });
+    anno.on('updateAnnotation', function(a) {
+      curanno[a["id"]]=a
+    });
+  }
+  function reinit(){
+    var viewer = OpenSeadragon({
+      id: "openseadragon",
+      prefixUrl: "openseadragon/images/",
+      tileSources: {
+        type: "image",
+        url: $('#images').val()
+      }
+    });
+    anno.destroy()
+        // Initialize the Annotorious plugin
     var anno = OpenSeadragon.Annotorious(viewer);
 
     // Load annotations in W3C WebAnnotation format
