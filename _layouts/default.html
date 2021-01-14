@@ -10,7 +10,7 @@
 <script>
   window.onload = function() {
     var viewer = OpenSeadragon({
-      id: "openseadragon1",
+      id: "openseadragon",
       prefixUrl: "openseadragon/images/",
       tileSources: {
         type: "image",
@@ -30,7 +30,7 @@
     });
   }
 </script>
-
+<div id="openseadragon" style="width: 640px; height: 480px;"></div>
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
