@@ -20,8 +20,9 @@
   document.getElementById("images").innerHTML=options
   var index=0;
   var curanno={}
+  var viewer;
   window.onload = function() {
-    var viewer = OpenSeadragon({
+    viewer = OpenSeadragon({
       id: "openseadragon",
       prefixUrl: "openseadragon/images/",
       tileSources: {
