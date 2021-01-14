@@ -29,11 +29,11 @@
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
-      anno.push(a)
+      curanno.push(a)
     });
   }
 </script>
-<button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(anno),'json','anno')">Save Annotations</button>
+<button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
     <div class="page-content">
       <div class="wrapper">
