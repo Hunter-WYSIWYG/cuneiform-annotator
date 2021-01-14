@@ -7,6 +7,9 @@
 
     {% include header.html %}
 <script src="js/saveTextAsFile.js"></script>
+
+    <div class="page-content">
+      <div class="wrapper">
 <select id="images"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <script>
@@ -16,7 +19,7 @@
   }
   document.getElementById("images").innerHTML=options
   var index=0;
-  var curanno=[]
+  var curanno={}
   window.onload = function() {
     var viewer = OpenSeadragon({
       id: "openseadragon",
@@ -36,21 +39,18 @@
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
-      curanno.push(a)
+      curanno[a["id"]]=a
     });
     anno.on('deleteAnnotation', function(a) {
-      console.log(a)
+      delete curanno[a["id"]]
     });
     anno.on('updateAnnotation', function(a) {
-      console.log(a)
+      curanno[a["id"]]=a
     });
   }
 </script>
 
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
       </div>
     </div>
 
