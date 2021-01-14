@@ -7,7 +7,14 @@
 
     {% include header.html %}
 <script src="js/saveTextAsFile.js"></script>
+<select id="images"></select>
+<button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <script>
+  var options=""
+  for(url in urls){
+    options+="<option value=\""+url+"\">"+url+"</option>"
+  }
+  document.getElementById("images").html(options)
   var index=0;
   var curanno=[]
   window.onload = function() {
@@ -33,7 +40,7 @@
     });
   }
 </script>
-<button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
+
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
     <div class="page-content">
       <div class="wrapper">
