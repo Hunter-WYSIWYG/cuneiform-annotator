@@ -21,6 +21,7 @@
   var index=0;
   var curanno={}
   var viewer;
+  var anno;
   window.onload = function() {
     viewer = OpenSeadragon({
       id: "openseadragon",
@@ -32,7 +33,7 @@
     });
 
     // Initialize the Annotorious plugin
-    var anno = OpenSeadragon.Annotorious(viewer);
+    anno = OpenSeadragon.Annotorious(viewer);
 
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
@@ -60,7 +61,7 @@
 
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
-
+    curanno={}
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
