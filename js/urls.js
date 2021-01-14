@@ -1,4 +1,4 @@
-var urls="https://heidicon.ub.uni-heidelberg.de/iiif/2/1107976:570673",
+var urls=["https://heidicon.ub.uni-heidelberg.de/iiif/2/1107976:570673",
 "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107977:570674",
 "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107978:570675",
 "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107979:570676",
