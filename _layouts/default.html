@@ -49,14 +49,10 @@
     });
   }
   function reinit(){
-    var viewer = OpenSeadragon({
-      id: "openseadragon",
-      prefixUrl: "openseadragon/images/",
-      tileSources: {
+    viewer.open({
         type: "image",
         url: $('#images').val()
-      }
-    });
+      });
     anno.destroy()
         // Initialize the Annotorious plugin
     var anno = OpenSeadragon.Annotorious(viewer);
