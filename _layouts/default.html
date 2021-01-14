@@ -9,6 +9,7 @@
 
 <script>
   var index=0;
+  var curanno=[]
   window.onload = function() {
     var viewer = OpenSeadragon({
       id: "openseadragon",
@@ -28,9 +29,11 @@
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
+      anno.append(a)
     });
   }
 </script>
+<button id="saveAnnotations">Save Annotations</button>
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
     <div class="page-content">
       <div class="wrapper">
