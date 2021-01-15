@@ -95,6 +95,7 @@ function success(){
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
+      console.log(JSON.stringify(a))
       curanno[a["id"]]=a
     });
     anno.on('deleteAnnotation', function(a) {
