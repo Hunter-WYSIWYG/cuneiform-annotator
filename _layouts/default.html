@@ -27,7 +27,7 @@ function commitData(){
 
 $.ajax({
   type: "POST",
-  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/commits",
+  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/commits?action=create",
   data: data,
   success: success,
   dataType:"text/json",
