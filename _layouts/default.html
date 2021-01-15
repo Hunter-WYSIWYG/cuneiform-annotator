@@ -30,6 +30,7 @@ $.ajax({
   method: "POST",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/commits",
   data: data,
+  dataType: 'application/json',
   success: success,
   headers:{
     "PRIVATE-TOKEN": "bPaesdD1s-gcJ5qzaaDv"
