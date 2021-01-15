@@ -17,12 +17,12 @@
 function commitData(){
 
   data = {
-        'branch': 'master',
-        'commit_message': 'Committed '+$('#images  option:selected').text(),
-        'actions': [{
-            'action': 'create',
-            'file_path': $('#images option:selected').text()+'.json',
-            'content': curanno
+        "branch": "master",
+        "commit_message": "Committed "+$('#images option:selected').text(),
+        "actions": [{
+            "action": "create",
+            "file_path": $('#images option:selected').text()+".json",
+            "content": curanno
         }]
     }
 
