@@ -17,16 +17,16 @@
 function commitData(){
   data = {
         'branch': 'master',
-        'commit_message': 'Committed '+$('#images').text(),
+        'commit_message': 'Committed '+$('#images  option:selected').text(),
         'actions': [{
             'action': 'create',
-            'file_path': 'result/'+$('#images').text()+".json",
+            'file_path': 'result/'+$('#images  option:selected').text()+".json",
             'content': curanno
         }]
     }
 
 $.ajax({
-  type: "POST",
+"method": "GET",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/commits?action=create",
   data: data,
   success: success,
