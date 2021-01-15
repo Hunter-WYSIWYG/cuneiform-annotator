@@ -15,6 +15,7 @@
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
 function commitData(){
+  
   data = {
         'branch': 'master',
         'commit_message': 'Committed '+$('#images  option:selected').text(),
@@ -25,6 +26,22 @@ function commitData(){
         }]
     }
 
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://gitlab.example.de/api/v4/projects/16599/repository/commits",
+  "method": "POST",
+  "data": data,
+  "headers": {
+    "PRIVATE-TOKEN": "bPaesdD1s-gcJ5qzaaDv"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+/*
 $.ajax({
   method: "POST",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/commits",
@@ -34,7 +51,7 @@ $.ajax({
     "PRIVATE-TOKEN": "bPaesdD1s-gcJ5qzaaDv"
   }
 });
-
+*/
 }
 
 function success(){
