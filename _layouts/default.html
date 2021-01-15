@@ -26,7 +26,7 @@ function commitData(){
         }]
     }
 
-resp = requests.post(
+resp = request.post(
         url='http://gitlab.rlp.net/api/v4/projects/16599/repository/commits',
         data=data,
         headers={
