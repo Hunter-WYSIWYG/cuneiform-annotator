@@ -14,7 +14,7 @@
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <script>
   var options=""
-  for(url in urls){
+  for(url of urls){
     options+="<option value=\""+url["value"]+"\">"+url["label"]+"</option>"
   }
   document.getElementById("images").innerHTML=options
