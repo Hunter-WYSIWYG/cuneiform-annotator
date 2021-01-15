@@ -21,7 +21,7 @@ function commitData(){
         "commit_message": "Committed "+$('#images option:selected').text(),
         "actions": [{
             "action": "create",
-            "file_path": $('#images option:selected').text()+".json",
+            "file_path": "result/"+$('#images option:selected').text()+".json",
             "content": JSON.stringify(curanno)
         }]
     }
