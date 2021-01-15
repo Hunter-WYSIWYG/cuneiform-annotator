@@ -22,7 +22,7 @@ function commitData(){
         "actions": [{
             "action": "create",
             "file_path": $('#images option:selected').text()+".json",
-            "content": curanno
+            "content": JSON.stringify(curanno)
         }]
     }
 
