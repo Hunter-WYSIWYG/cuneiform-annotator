@@ -12,7 +12,28 @@
       <div class="wrapper">
 <select id="images" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
+function commitData(){
+  data = {
+        'branch': 'master',
+        'commit_message': 'Committed '+$('#images').text(),
+        'actions': [{
+            'action': 'update',
+            'file_path': 'result/'+$('#images').text()+".json",
+            'content': curanno
+        }]
+    }
+
+resp = requests.post(
+        url='http://gitlab.rlp.net/api/v4/projects/16599/repository/commits',
+        data=data,
+        headers={
+            "PRIVATE-TOKEN": "12345"
+        }
+    )
+}
+
   var options=""
   for(url of urls){
     options+="<option value=\""+url["value"]+"\">"+url["label"]+"</option>"
