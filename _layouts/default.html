@@ -20,7 +20,7 @@ function commitData(){
         'commit_message': 'Committed '+$('#images  option:selected').text(),
         'actions': [{
             'action': 'create',
-            'file_path': $('#images  option:selected').text()+".json",
+            'file_path': $('#images option:selected').text()+".json",
             'content': curanno
         }]
     }
@@ -30,7 +30,6 @@ $.ajax({
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/commits",
   data: data,
   success: success,
-  dataType:"text/json",
   headers:{
     "PRIVATE-TOKEN": "bPaesdD1s-gcJ5qzaaDv"
   }
