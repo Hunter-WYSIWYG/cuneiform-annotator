@@ -7,7 +7,6 @@
 
     {% include header.html %}
 <script src="js/saveTextAsFile.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/request/2.88.2/request.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <div class="page-content">
       <div class="wrapper">
@@ -26,13 +25,16 @@ function commitData(){
         }]
     }
 
-resp = request.post(
-        url='http://gitlab.rlp.net/api/v4/projects/16599/repository/commits',
-        data=data,
-        headers={
-            "PRIVATE-TOKEN": "12345"
-        }
-    )
+$.ajax({
+  type: "POST",
+  url: "http://gitlab.rlp.net/api/v4/projects/16599/repository/commits",
+  data: data,
+  success: success,
+  dataType:"text/json",
+  headers={
+    "PRIVATE-TOKEN": "12345"
+  }
+});
 }
 
   var options=""
