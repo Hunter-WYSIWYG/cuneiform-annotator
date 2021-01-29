@@ -29,7 +29,7 @@ function commitData(){
 
 
 $.ajax({
-  method: "POST",
+  method: "PUT",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$('#images option:selected').text()+".json",
   //data: data,
   crossDomain: true,
