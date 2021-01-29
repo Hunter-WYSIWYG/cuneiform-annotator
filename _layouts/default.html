@@ -38,6 +38,24 @@ $.ajax({
   dataType: 'json',
   data: data,//JSON.stringify(curanno),
   success: success,
+  error: function(xhr, status, error){
+         var errorMessage = xhr.status + ': ' + xhr.statusText
+         alert('Error - ' + errorMessage);
+         $.ajax({
+  method: "POST",
+  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$('#images option:selected').text()+".json?ref=master",
+  //data: data,
+  crossDomain: true,
+  contentType: 'application/json',
+  dataType: 'json',
+  data: data,//JSON.stringify(curanno),
+  success: success,
+  headers:{
+    "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
+    "Content-Type": "application/json"
+  }
+});
+  },
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "Content-Type": "application/json"
