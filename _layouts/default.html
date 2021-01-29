@@ -19,11 +19,12 @@ function commitData(){
   data = {
         "branch": "master",
         "commit_message": "Committed "+$('#images option:selected').text(),
-        "actions": [{
+        "content": JSON.stringify(curanno)
+        /*"actions": [{
             "action": "create",
             "file_path": "result/"+$('#images option:selected').text()+".json",
-            "content": JSON.stringify(curanno).replace(/\\"/g, '\\"')
-        }]
+            "content": JSON.stringify(curanno)
+        }]*/
     }
 
 
@@ -34,7 +35,7 @@ $.ajax({
   crossDomain: true,
   contentType: 'application/json',
   dataType: 'json',
-  data: JSON.stringify(curanno),
+  data: data,//JSON.stringify(curanno),
   success: success,
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
