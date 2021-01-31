@@ -43,7 +43,7 @@ $.ajax({
          console.log('Error - ' + errorMessage);
          $.ajax({
   method: "POST",
-  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master&access-token=bPaesdD1s-gcJ5qzaaDv",
+  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
   crossDomain: true,
   contentType: 'application/json',
@@ -53,6 +53,8 @@ $.ajax({
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
+    "sec-fetch-mode":"cors",
+    "sec-fetch-site":"same-site",
     "Content-Type": "application/json"
   }
 });
@@ -60,6 +62,8 @@ $.ajax({
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
+    "sec-fetch-mode":"cors",
+    "sec-fetch-site":"same-site",
     "Content-Type": "application/json"
   }
 });
