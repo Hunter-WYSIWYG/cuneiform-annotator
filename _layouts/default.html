@@ -36,7 +36,7 @@ $.ajax({
   crossDomain: true,
   contentType: 'application/json',
   dataType: 'json',
-  data: data,//JSON.stringify(curanno),
+  data: JSON.stringify(curanno),
   success: success,
   error: function(xhr, status, error){
          var errorMessage = xhr.status + ': ' + xhr.statusText
