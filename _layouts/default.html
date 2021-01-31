@@ -31,7 +31,7 @@ function commitData(){
 
 $.ajax({
   method: "PUT",
-  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+".json?ref=master&access-token=bPaesdD1s-gcJ5qzaaDv",
+  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master&access-token=bPaesdD1s-gcJ5qzaaDv",
   //data: data,
   crossDomain: true,
   contentType: 'application/json',
@@ -43,7 +43,7 @@ $.ajax({
          console.log('Error - ' + errorMessage);
          $.ajax({
   method: "POST",
-  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+".json?ref=master&access-token=bPaesdD1s-gcJ5qzaaDv",
+  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master&access-token=bPaesdD1s-gcJ5qzaaDv",
   //data: data,
   crossDomain: true,
   contentType: 'application/json',
