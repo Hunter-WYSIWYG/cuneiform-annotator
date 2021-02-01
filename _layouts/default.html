@@ -34,7 +34,7 @@ $.ajax({
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
   crossDomain: true,
-  contentType: 'application/json; charset=utf-8,
+  contentType: 'application/json; charset=utf-8',
   dataType: 'json',
   data: data,//JSON.stringify(curanno),
   error: function(xhr, status, error){
