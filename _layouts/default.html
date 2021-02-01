@@ -34,10 +34,9 @@ $.ajax({
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
   crossDomain: true,
-  contentType: 'application/json',
+  contentType: 'application/json; charset=utf-8,
   dataType: 'json',
   data: data,//JSON.stringify(curanno),
-  success: success,
   error: function(xhr, status, error){
          var errorMessage = xhr.status + ': ' + xhr.statusText
          console.log('Error - ' + errorMessage);
@@ -46,16 +45,15 @@ $.ajax({
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
   crossDomain: true,
-  contentType: 'application/json',
+  contentType: 'application/json; charset=utf-8',
   dataType: 'json',
   data: data,//JSON.stringify(curanno),
-  success: success,
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
     "sec-fetch-mode":"cors",
     "sec-fetch-site":"same-site",
-    "Content-Type": "application/json"
+    "content-type": "application/json; charset=utf-8"
   }
 });
   },
@@ -64,7 +62,7 @@ $.ajax({
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
     "sec-fetch-mode":"cors",
     "sec-fetch-site":"same-site",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json; charset=utf-8"
   }
 });
 
