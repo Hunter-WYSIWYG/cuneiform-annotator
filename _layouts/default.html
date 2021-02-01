@@ -35,7 +35,7 @@ $.ajax({
   //data: data,
   //crossDomain: true,
   contentType: 'application/json; charset=utf-8',
-  dataType: 'json',
+  dataType: 'jsonp',
   data: data,//JSON.stringify(curanno),
   error: function(xhr, status, error){
          var errorMessage = xhr.status + ': ' + xhr.statusText
@@ -46,7 +46,7 @@ $.ajax({
   //data: data,
   //crossDomain: true,
   contentType: 'application/json; charset=utf-8',
-  dataType: 'json',
+  dataType: 'jsonp',
   data: data,//JSON.stringify(curanno),
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
