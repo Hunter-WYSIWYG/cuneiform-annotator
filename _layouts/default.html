@@ -7,6 +7,7 @@
 
     {% include header.html %}
 	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
 <!--JQUERY-->
@@ -22,11 +23,13 @@
 <script type="text/javascript" src="js/trackball_pantilt.js"></script>
 <script type="text/javascript" src="js/trackball_sphere.js"></script>
 <!--UTILITY-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/init.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <div class="page-content">
-      <div class="wrapper">
+<div class="container">
+    <div class="row">
+      <main class="col-md-6" role="main">
 <select id="images" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
@@ -162,6 +165,9 @@ function success(){
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
       </div>
     </div>
+	
+</div>
+<aside class="col-md-6" role="complementary">
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
@@ -344,7 +350,9 @@ $(document).ready(function(){
 });
 </script>
     {% include footer.html %}
-
+</aside>
+</div>
+</div>
   </body>
 
 </html>
