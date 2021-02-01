@@ -35,7 +35,10 @@ $.ajax({
   //data: data,
   //crossDomain: true,
   contentType: 'application/json; charset=utf-8',
-  dataType: 'jsonp',
+  dataType: 'json',
+  xhrFields: {
+         withCredentials: true
+  },
   data: data,//JSON.stringify(curanno),
   error: function(xhr, status, error){
          var errorMessage = xhr.status + ': ' + xhr.statusText
@@ -43,6 +46,9 @@ $.ajax({
          $.ajax({
   method: "POST",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
+  xhrFields: {
+         withCredentials: true
+  },
   //data: data,
   //crossDomain: true,
   contentType: 'application/json; charset=utf-8',
