@@ -33,7 +33,7 @@ $.ajax({
   method: "PUT",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
-  crossDomain: true,
+  //crossDomain: true,
   contentType: 'application/json; charset=utf-8',
   dataType: 'json',
   data: data,//JSON.stringify(curanno),
@@ -44,13 +44,14 @@ $.ajax({
   method: "POST",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
-  crossDomain: true,
+  //crossDomain: true,
   contentType: 'application/json; charset=utf-8',
   dataType: 'json',
   data: data,//JSON.stringify(curanno),
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
+    "accept":"*/*",
     "sec-fetch-mode":"cors",
     "sec-fetch-site":"same-site",
     "content-type": "application/json; charset=utf-8"
@@ -58,6 +59,7 @@ $.ajax({
 });
   },
   headers:{
+    "accept":"*/*",
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
     "sec-fetch-mode":"cors",
