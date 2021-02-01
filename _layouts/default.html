@@ -31,13 +31,13 @@ function commitData(){
 
 $.ajax({
   method: "PUT",
-  url: "https://cors-anywhere.herokuapp.com/https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
+  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
-  //crossDomain: true,
+  crossDomain: true,
   contentType: 'application/json; charset=utf-8',
   //dataType: 'json',
   xhrFields: {
-         //withCredentials: true
+         withCredentials: true
   },
   data: data,//JSON.stringify(curanno),
   error: function(xhr, status, error){
@@ -47,10 +47,10 @@ $.ajax({
   method: "POST",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   xhrFields: {
-         //withCredentials: true
+         withCredentials: true
   },
   //data: data,
-  //crossDomain: true,
+  crossDomain: true,
   contentType: 'application/json; charset=utf-8',
   //dataType: 'json',
   data: data,//JSON.stringify(curanno),
