@@ -100,7 +100,8 @@ function success(){
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
     try{
-      anno.loadAnnotations("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"?ref=master&access_token="+gitlabtoken)
+      var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
+      anno.addAnnotation(JSON.parse(btoa(users["content"])))
     }catch(e){
       console.log(e)
     }
