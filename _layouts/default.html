@@ -359,6 +359,46 @@ function onEndPick(point) {
 
 $(document).ready(function(){
 	init3dhop();
+$('#toolbar2 img')
+        .mouseenter(function(e) {
+            id = $(this).attr('id');
+            if (!ismousedown) $(this).css("opacity", "0.8");
+            else $(this).css("opacity", "1.0");
+        })
+        .mouseout(function(e) {
+            clearInterval(interval);
+            $(this).css("opacity", "0.5");
+        })
+        .mousedown(function(e) {
+            id = $(this).attr('id');
+            ismousedown = true;
+            if (e.button == button) {
+                actionsToolbar(id);
+                if (id == "zoomin" || id == "zoomout") {
+                    interval = setInterval(function() {
+                        actionsToolbar(id);
+                    }, 100);
+                } else {
+                    clearInterval(interval);
+                }
+                $(this).css("opacity", "1.0");
+                button = 0;
+            }
+        })
+        .mouseup(function(e) {
+            ismousedown = false;
+            if (e.button == button) {
+                clearInterval(interval);
+                $(this).css("opacity", "0.8");
+                button = 0;
+            }
+        })
+        .on('touchstart', function(e) {
+            button = 2;
+        })
+        .on('touchend', function(e) {
+            button = 0;
+        });
 
 	setup3dhop();
 });
