@@ -26,10 +26,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/init.js"></script>
 <script src="js/saveTextAsFile.js"></script>
+<script src="js/gitbeaker.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <div class="container">
     <div class="row">
-      <main class="col-md-6" role="main">
+      <div class="col-md-6" role="main">
 <select id="images" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
@@ -167,7 +168,7 @@ function success(){
     </div>
 	
 </div>
-<aside class="col-md-6" role="complementary">
+<div class="col-md-6">
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
