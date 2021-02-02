@@ -75,6 +75,12 @@ function success(){
   console.log("succeeded!!!!!")
 }
 
+async function getAnnotation(path){
+  var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno)
+,"Committed "+$('#images option:selected').text()+".json");
+  return JSON.parse(btoa(users["content"]))
+}
+
   var options=""
   for(url of urls){
     options+="<option value=\""+url["value"]+"\">"+url["label"]+"</option>"
@@ -100,8 +106,7 @@ function success(){
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
     try{
-      var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
-      anno.addAnnotation(JSON.parse(btoa(users["content"])))
+      anno.addAnnotation(getAnnotation("result/"+$('#images option:selected').text()+".json"))
     }catch(e){
       console.log(e)
     }
