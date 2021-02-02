@@ -57,7 +57,7 @@ async function commitData(){
 
   data = {
         "branch": "master", 
-        "commit_message": "Committed "+$('#images option:selected').text(),
+        "commit_message": "Committed "+$('#images option:selected').text()+".json",
         "content": JSON.stringify(curanno),
         "ref":"master"
         /*"actions": [{
@@ -67,7 +67,7 @@ async function commitData(){
         }]*/
     }
 
-var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text(),"master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text());
+var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
 console.log(users)
 /*$.ajax({
   method: "PUT",
