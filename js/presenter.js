@@ -1144,6 +1144,11 @@ _stopMeasurement  : function () {
 	this.measurement = 0.0;
 	this.repaint();
 },
+_selectionRefresh: function (button, x, y, e) {
+		var ppoint = this._drawScenePickingXYZ();
+		pointPicking(ppoint);
+
+	},
 
 	_startSelection: function () {
 		console.log('statSelection_alt');
