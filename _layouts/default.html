@@ -66,8 +66,11 @@ async function commitData(){
             "content": JSON.stringify(curanno)
         }]*/
     }
-
-var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
+try
+  var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
+catch (e) {
+  var users= await api.RepositoryFiles.edit(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
+}
 console.log(users)
 /*$.ajax({
   method: "PUT",
