@@ -79,8 +79,8 @@ async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno)
 ,"Committed "+$('#images option:selected').text()+".json");
   console.log(users)
-  console.log(btoa(users["content"]))
-  return JSON.parse(btoa(users["content"]))
+  console.log(atob(users["content"]))
+  return JSON.parse(atob(users["content"]))
 }
 
   var options=""
