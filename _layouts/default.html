@@ -38,9 +38,10 @@
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
+  const gitlabtoken="bPaesdD1s-gcJ5qzaaDv"
   const { Gitlab } = gitbeaker;
   const api = new Gitlab({
-  token: '9zyFECzKmuhkMo81HKPw',
+  token: gitlabtoken //'9zyFECzKmuhkMo81HKPw',
   host: 'https://gitlab.rlp.net',
   version: 4
 });
@@ -55,64 +56,19 @@ startit();
 <script>
 async function commitData(){
 
-  data = {
-        "branch": "master", 
-        "commit_message": "Committed "+$('#images option:selected').text()+".json",
-        "content": JSON.stringify(curanno),
-        "ref":"master"
-        /*"actions": [{
-            "action": "create",
-            "file_path": "result/"+$('#images option:selected').text()+".json",
-            "content": JSON.stringify(curanno)
-        }]*/
-    }
 try{
   var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
 }catch (e) {
   var users= await api.RepositoryFiles.edit(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
 }
 console.log(users)
-/*$.ajax({
-  method: "PUT",
-  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
-  //data: data,
-  crossDomain: true,
-  contentType: 'application/json; charset=utf-8',
-  //dataType: 'json',
-  xhrFields: {
-         withCredentials: false
-  },
-  data: data,//JSON.stringify(curanno),
-  error: function(xhr, status, error){
-         var errorMessage = xhr.status + ': ' + xhr.statusText
-         console.log('Error - ' + errorMessage);
-         $.ajax({
-  method: "POST",
-  url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
-  xhrFields: {
-         withCredentials: false
-  },
-  //data: data,
-  crossDomain: true,
-  contentType: 'application/json; charset=utf-8',
-  //dataType: 'json',
-  data: data,//JSON.stringify(curanno),
+/*
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
     "accept":"",
     "content-type": "application/json; charset=utf-8"
-  }
-});
-  },
-  headers:{
-    "accept":"*",
-    "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
-    "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
-    "Content-Type": "application/json; charset=utf-8"
-  }
-});*/
-
+  }*/
 }
 
 function success(){
@@ -143,7 +99,11 @@ function success(){
 
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
-
+    try{
+      anno.loadAnnotations("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"?ref=master&access_token="+gitlabtoken)
+    }catch(e){
+      console.log(e)
+    }
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
@@ -169,6 +129,11 @@ function success(){
 
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
+        try{
+      anno.loadAnnotations("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"?ref=master&access_token="+gitlabtoken)
+    }catch(e){
+      console.log(e)
+    }
     curanno={}
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
