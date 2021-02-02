@@ -44,7 +44,7 @@
   host: 'gitlab.rlp.net',
   version: 4
 });
-async startit function() { 
+async function startit() { 
   // Your async task will execute with await
   var users= await api.Users.all();
   console.log(users)
