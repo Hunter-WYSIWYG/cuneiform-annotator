@@ -1145,6 +1145,64 @@ _stopMeasurement  : function () {
 	this.repaint();
 },
 
+	_startSelection: function () {
+		console.log('statSelection_alt');
+		if (this._isSeletionPolygon) return;
+		this._stopMeasurement()
+		this._isMeasuring = this._isSeletionPolygon = true;
+		this._selectenStage = 1 // 0=inactive 1 pickingsPoints 3= selection ready
+		this._selectionPoints = [];
+
+		this.repaint();
+	},
+
+	_stopSelection: function () {
+		console.log('stopSelection');
+
+		this._isSeletionPolygon = false;
+		this._selectenStage = 0;
+		this._selectionPoints = [];
+		if (!this._isMeasuringPickpoint || !this._isMeasuringDistance) {
+			this._isMeasuring = true
+		} else {
+			this._isMeasuring = this._isSeletionPolygon
+		}
+		this.repaint();
+
+	},
+
+	_resetSelectionPoints: function () {
+		this._selectionPoints = [];
+		this.repaint();
+	},
+
+	_undoSelection: function () {
+		if (selectionmodus == 1) {
+
+			this._selectionPoints.splice(-1, 1);
+
+		} else {
+			tmp = [];
+			console.log("this._selectionPoints A", this._selectionPoints);
+			for (k in this._selectionPoints) {
+				if (k < (this._selectionPoints.length / 2) - 1) {
+					tmp.push(this._selectionPoints[k]);
+				}
+
+				if (k > ((this._selectionPoints.length / 2) + 1)) {
+					tmp.push(this._selectionPoints[k]);
+				}
+
+
+			}
+			this._selectionPoints = [];
+			this._selectionPoints = tmp;
+			console.log("this._selectionPoints B", this._selectionPoints);
+		}
+		this.repaint();
+	},
+
+
 _pickpointRefresh : function (button, x, y, e) {
 //	if(e.target.id!=this.ui.gl.canvas.id) return;
 	if(this._isMeasuringPickpoint){
