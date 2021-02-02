@@ -113,14 +113,10 @@ async function getAnnotation(path){
     for(ann in result){
       annotations.push(result[ann])
     }
+    curanno=result
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
   });
-    /*try{
-      anno.loadAnnotations("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken)
-    }catch(e){
-      console.log(e)
-    }*/
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
@@ -146,6 +142,7 @@ async function getAnnotation(path){
 
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
+    curanno={}
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
     console.log(result)
     annotations=[]
@@ -153,9 +150,10 @@ async function getAnnotation(path){
       annotations.push(result[ann])
     }
     //const annotations = result.map(a => new WebAnnotation(a));
+    curanno=result
     anno.setAnnotations(annotations);
   });
-    curanno={}
+
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
