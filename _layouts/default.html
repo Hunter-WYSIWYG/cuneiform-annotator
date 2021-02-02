@@ -108,7 +108,7 @@ async function getAnnotation(path){
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
     try{
-      anno.loadAnnotations("https://gitlab.rlp.net/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken)
+      anno.loadAnnotations("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken)
     }catch(e){
       console.log(e)
     }
@@ -138,7 +138,7 @@ async function getAnnotation(path){
     // Load annotations in W3C WebAnnotation format
     //anno.loadAnnotations('annotations.w3c.json');
         try{
-      anno.loadAnnotations("https://gitlab.rlp.net/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken)
+      anno.loadAnnotations("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken)
     }catch(e){
       console.log(e)
     }
