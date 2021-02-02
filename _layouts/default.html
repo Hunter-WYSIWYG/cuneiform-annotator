@@ -38,6 +38,15 @@
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
+  const { Gitlab } = gitbeaker;
+  const api = new Gitlab({
+  token: 'bPaesdD1s-gcJ5qzaaDv',
+  host: 'gitlab.rlp.net',
+  version: 4
+});
+let users = await api.Users.all();
+</script>
+<script>
 function commitData(){
 
   data = {
