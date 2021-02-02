@@ -47,7 +47,7 @@
 async function startit() { 
   // Your async task will execute with await
   //var users= await api.Projects.show("16599");
-  var users= await api.Files.show(".gitlab-ci.yml");
+  var users= await api.RepositoryFiles.show(".gitlab-ci.yml");
   console.log(users)
 }
 startit();
