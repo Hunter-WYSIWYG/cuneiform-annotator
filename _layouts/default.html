@@ -68,7 +68,8 @@ async function commitData(){
     }
 
 var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text(),"master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text());
-$.ajax({
+console.log(users)
+/*$.ajax({
   method: "PUT",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
   //data: data,
@@ -96,18 +97,18 @@ $.ajax({
   headers:{
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
-    "accept":"*/*",
+    "accept":"",
     "content-type": "application/json; charset=utf-8"
   }
 });
   },
   headers:{
-    "accept":"*/*",
+    "accept":"*",
     "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
     "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
     "Content-Type": "application/json; charset=utf-8"
   }
-});
+});*/
 
 }
 
