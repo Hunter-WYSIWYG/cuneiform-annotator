@@ -111,7 +111,7 @@ async function getAnnotation(path){
       console.log(result)
     annotations=[]
     for(ann in result){
-      annotations.push(new WebAnnotation(result[ann]))
+      annotations.push(result[ann])
     }
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
@@ -150,7 +150,7 @@ async function getAnnotation(path){
     console.log(result)
     annotations=[]
     for(ann in result){
-      annotations.push(new WebAnnotation(result[ann]))
+      annotations.push(result[ann])
     }
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
