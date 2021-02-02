@@ -109,7 +109,11 @@ async function getAnnotation(path){
     //anno.loadAnnotations('annotations.w3c.json');
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
-    const annotations = result.map(a => new WebAnnotation(a));
+    annotations=[]
+    for(anno of result){
+      annotations.push(new WebAnnotation(anno))
+    }
+    //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
   });
     /*try{
@@ -144,7 +148,11 @@ async function getAnnotation(path){
     //anno.loadAnnotations('annotations.w3c.json');
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
     console.log(result)
-    const annotations = result.map(a => new WebAnnotation(a));
+    annotations=[]
+    for(anno of result){
+      annotations.push(new WebAnnotation(anno))
+    }
+    //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
   });
     curanno={}
