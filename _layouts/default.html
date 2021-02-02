@@ -67,7 +67,7 @@ async function commitData(){
         }]*/
     }
 
-
+var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text(),"master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text());
 $.ajax({
   method: "PUT",
   url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text())+"%2Ejson?ref=master",
