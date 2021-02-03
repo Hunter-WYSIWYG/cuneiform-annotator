@@ -37,7 +37,7 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-6" role="main">
-<select id="images" onchange="reinit()"></select>
+Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
@@ -48,6 +48,12 @@
   host: 'https://gitlab.rlp.net',
   version: 4
 });
+function loadVariants(){
+  imgside=""
+  for obj of urls[$('#images option:selected').text()]["variants"]:
+    imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
+  $('#imageside').html(imgside)
+}
 $(document).ready(function () {
       $('#images').selectize({
           sortField: 'text'
@@ -62,24 +68,23 @@ $(document).ready(function () {
 async function commitData(){
 
 try{
-  var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#images option:selected').text()+".json");
+  var users= await api.RepositoryFiles.create(16599, "result/"+$('#imageside option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json");
 }catch (e) {
-  var users= await api.RepositoryFiles.edit(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#images option:selected').text()+".json");
+  var users= await api.RepositoryFiles.edit(16599, "result/"+$('#imageside option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json");
 }
 console.log(users)
 }
 
 
 async function getAnnotation(path){
-  var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master");
+  var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
   console.log(users)
   console.log(atob(users["content"]))
   return JSON.parse(atob(users["content"]))
 }
-
   var options=""
-  for(url of urls){
-    options+="<option value=\""+url["value"]+"\">"+url["label"]+"</option>"
+  for(url in urls){
+    options+="<option value=\""+url+"\">"+url+"</option>"
   }
   document.getElementById("images").innerHTML=options
   var index=0;
