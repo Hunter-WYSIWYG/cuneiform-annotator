@@ -62,18 +62,8 @@ try{
   var users= await api.RepositoryFiles.edit(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
 }
 console.log(users)
-/*
-  headers:{
-    "Authorization": "Bearer bPaesdD1s-gcJ5qzaaDv",
-    "PRIVATE-TOKEN":"bPaesdD1s-gcJ5qzaaDv",
-    "accept":"",
-    "content-type": "application/json; charset=utf-8"
-  }*/
 }
 
-function success(){
-  console.log("succeeded!!!!!")
-}
 
 async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno)
@@ -135,8 +125,11 @@ async function getAnnotation(path){
         type: "image",
         url: $('#images').val()
       });
-
+    try{
     anno.destroy()
+    }catch(e){
+      console.log(e)
+    }
         // Initialize the Annotorious plugin
     var anno = OpenSeadragon.Annotorious(viewer);
 
