@@ -37,7 +37,7 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-6" role="main">
-Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit()"></select>
+Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
@@ -131,13 +131,20 @@ async function getAnnotation(path){
       curanno[a["id"]]=a
     });
   }
-  function reinit(){
+  function reinit(param){
+    if(param!=null){
+        param=$('#imageside')[0].val()
+        param2=$('#imageside')[0].text()
+    }else{
+        param=$('#imageside option:selected').val()
+        param2=$('#imageside option:selected').text()
+    }
     viewer.open({
         type: "image",
-        url: $('#imageside').val()
+        url: param
       });
     curanno={}
-    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
     for(ann in result){
