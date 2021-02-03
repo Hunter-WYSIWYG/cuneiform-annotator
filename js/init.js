@@ -246,6 +246,30 @@ function measureSwitch(on) {
   }
 }
 
+function selectionSwitch(on) {
+    if (on === undefined) on = presenter.isSelectionToolEnabel();
+
+    if (on) {
+        measureSwitch(false)
+        //TODO: Deselect all other Tools
+
+        $('#select').css("visibility", "hidden");
+        $('#select_on').css("visibility", "visible");
+        $('#draw-canvas').css("cursor", "copy");
+
+
+    } else {
+        $('#select').css("visibility", "visible");
+        $('#select_on').css("visibility", "hidden");
+        $('#draw-canvas').css("cursor", "default");
+        test = presenter.isAnyMeasurementEnabled()
+        if (!presenter.isAnyMeasurementEnabled()) $('#draw-canvas').css("cursor", "default");
+
+    }
+
+}
+
+
 function colorSwitch(on) {
   if(on === undefined) on = jQuery('#color').css("visibility")=="visible";
 
