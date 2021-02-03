@@ -106,7 +106,7 @@ async function getAnnotation(path){
     curanno=result
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
-  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations({}); })
+  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations(null); })
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
@@ -145,7 +145,7 @@ async function getAnnotation(path){
     curanno=result
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
-  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations({});})
+  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations(null);})
 
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
