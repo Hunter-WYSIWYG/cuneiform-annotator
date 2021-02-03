@@ -39,7 +39,7 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="rectorpolygon" onclick="toggleSelectionMode()">Switch Selection Mode</button>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button> <button id="rectorpolygon" onclick="toggleSelectionMode()">Switch Selection Mode</button>
 <script>
   var curmode="rect"
   function toggleSelectionMode(){
