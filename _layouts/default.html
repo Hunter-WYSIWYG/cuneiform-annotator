@@ -106,7 +106,7 @@ async function getAnnotation(path){
     curanno=result
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
-  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations(null); })
+  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations([]); })
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
       console.log(a)
@@ -125,11 +125,11 @@ async function getAnnotation(path){
         type: "image",
         url: $('#images').val()
       });
-    try{
+    /*try{
     anno.destroy()
     }catch(e){
       console.log(e)
-    }
+    }*/
         // Initialize the Annotorious plugin
     var anno = OpenSeadragon.Annotorious(viewer);
 
@@ -145,7 +145,7 @@ async function getAnnotation(path){
     curanno=result
     //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
-  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations(null);})
+  }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations([]);})
 
     // Attach handlers to listen to events
     anno.on('createAnnotation', function(a) {
