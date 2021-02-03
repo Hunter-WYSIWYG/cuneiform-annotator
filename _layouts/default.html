@@ -157,6 +157,9 @@ async function getAnnotation(path){
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
       </div>
 <div class="col-md-6">
+<select id="3dimages" onchange="reinit()"></select>
+<button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
+<button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
