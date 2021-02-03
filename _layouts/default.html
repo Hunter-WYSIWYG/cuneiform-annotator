@@ -47,6 +47,8 @@ Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id
        imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
     }
     $('#imageside').html(imgside)
+    $("#imageside")[0].selectedIndex = 0
+    //reinit($("#imageside")[0].text());
   }
   const gitlabtoken="bPaesdD1s-gcJ5qzaaDv"
   const { Gitlab } = gitbeaker;
@@ -64,8 +66,6 @@ $(document).ready(function () {
           sortField: 'text'
       });
       loadVariants();
-      $("#imageside")[0].selectedIndex = 0
-      //reinit();
   });
 
 </script>
