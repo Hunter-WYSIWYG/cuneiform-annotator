@@ -133,8 +133,8 @@ async function getAnnotation(path){
   }
   function reinit(param){
     if(param!=null){
-        param=$('#imageside')[0].val()
-        param2=$('#imageside')[0].text()
+        param=$('#imageside option:first').val()
+        param2=$('#imageside option:first').text()
     }else{
         param=$('#imageside option:selected').val()
         param2=$('#imageside option:selected').text()
