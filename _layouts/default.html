@@ -26,16 +26,17 @@
 <script type="text/javascript" src="js/trackball_sphere.js"></script>
 <!--UTILITY-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/init_added.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="js/gitbeaker.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12" role="main">
+      <div class="col-md-6" role="main">
 <select id="images" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
@@ -48,17 +49,11 @@
   version: 4
 });
 $(document).ready(function () {
-      $('select').selectize({
+      $('#images').selectize({
           sortField: 'text'
       });
   });
-async function startit() { 
-  // Your async task will execute with await
-  //var users= await api.Projects.show("16599");
-  var users= await api.RepositoryFiles.show(16599, ".gitlab-ci.yml","master");
-  console.log(users)
-}
-startit();
+
 </script>
 <script>
 async function commitData(){
@@ -132,15 +127,6 @@ async function getAnnotation(path){
         type: "image",
         url: $('#images').val()
       });
-    /*try{
-    anno.destroy()
-    }catch(e){
-      console.log(e)
-    }*/
-        // Initialize the Annotorious plugin
-
-    // Load annotations in W3C WebAnnotation format
-    //anno.loadAnnotations('annotations.w3c.json');
     curanno={}
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
@@ -171,9 +157,7 @@ async function getAnnotation(path){
 <div id="openseadragon" style="width: 640px; height: 480px;"></div>
       </div>
     </div>
-	</div>    <div class="row">
-</div>
-<div class="col-md-12">
+<div class="col-md-6">
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
