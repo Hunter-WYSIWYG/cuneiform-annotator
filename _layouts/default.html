@@ -41,6 +41,13 @@ Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
+  function loadVariants(){
+     imgside=""
+    for(obj of urls[$('#images option:selected').text()]["variants"]){
+       imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
+    }
+    $('#imageside').html(imgside)
+  }
   const gitlabtoken="bPaesdD1s-gcJ5qzaaDv"
   const { Gitlab } = gitbeaker;
   const api = new Gitlab({
@@ -48,12 +55,7 @@ Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id
   host: 'https://gitlab.rlp.net',
   version: 4
 });
-function loadVariants(){
-  imgside=""
-  for obj of urls[$('#images option:selected').text()]["variants"]:
-    imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
-  $('#imageside').html(imgside)
-}
+
 $(document).ready(function () {
       $('#images').selectize({
           sortField: 'text'
