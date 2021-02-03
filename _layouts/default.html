@@ -4,8 +4,8 @@
   {% include head.html %}
 
   <body>
-
-    {% include header.html %}
+<h1 align="center">Annotation Test for 2D and 3D objects</h1>
+ 
 	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 <!--SPIDERGL-->
@@ -26,18 +26,28 @@
 <script type="text/javascript" src="js/trackball_sphere.js"></script>
 <!--UTILITY-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/init_added.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="js/gitbeaker.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12" role="main">
-<select id="images" onchange="reinit()"></select>
+      <div class="col-md-6" role="main">
+Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit()"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button>
 <script>
+  function loadVariants(){
+     imgside=""
+    for(obj of urls[$('#images option:selected').text()]["variants"]){
+       imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
+    }
+    $('#imageside').html(imgside)
+  }
   const gitlabtoken="bPaesdD1s-gcJ5qzaaDv"
   const { Gitlab } = gitbeaker;
   const api = new Gitlab({
@@ -45,37 +55,40 @@
   host: 'https://gitlab.rlp.net',
   version: 4
 });
-async function startit() { 
-  // Your async task will execute with await
-  //var users= await api.Projects.show("16599");
-  var users= await api.RepositoryFiles.show(16599, ".gitlab-ci.yml","master");
-  console.log(users)
-}
-startit();
+
+$(document).ready(function () {
+      $('#images').selectize({
+          sortField: 'text'
+      });
+      $('#3dimages').selectize({
+          sortField: 'text'
+      });
+      loadVariants();
+      reinit();
+  });
+
 </script>
 <script>
 async function commitData(){
 
 try{
-  var users= await api.RepositoryFiles.create(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
+  var users= await api.RepositoryFiles.create(16599, "result/"+$('#imageside option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json");
 }catch (e) {
-  var users= await api.RepositoryFiles.edit(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno),"Committed "+$('#images option:selected').text()+".json");
+  var users= await api.RepositoryFiles.edit(16599, "result/"+$('#imageside option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json");
 }
 console.log(users)
 }
 
 
 async function getAnnotation(path){
-  var users= await api.RepositoryFiles.show(16599, "result/"+$('#images option:selected').text()+".json","master",JSON.stringify(curanno)
-,"Committed "+$('#images option:selected').text()+".json");
+  var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
   console.log(users)
   console.log(atob(users["content"]))
   return JSON.parse(atob(users["content"]))
 }
-
   var options=""
-  for(url of urls){
-    options+="<option value=\""+url["value"]+"\">"+url["label"]+"</option>"
+  for(url in urls){
+    options+="<option value=\""+url+"\">"+url+"</option>"
   }
   document.getElementById("images").innerHTML=options
   var index=0;
@@ -94,10 +107,7 @@ async function getAnnotation(path){
 
     // Initialize the Annotorious plugin
     anno = OpenSeadragon.Annotorious(viewer);
-
-    // Load annotations in W3C WebAnnotation format
-    //anno.loadAnnotations('annotations.w3c.json');
-    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
     for(ann in result){
@@ -123,26 +133,16 @@ async function getAnnotation(path){
   function reinit(){
     viewer.open({
         type: "image",
-        url: $('#images').val()
+        url: $('#imageside').val()
       });
-    /*try{
-    anno.destroy()
-    }catch(e){
-      console.log(e)
-    }*/
-        // Initialize the Annotorious plugin
-
-    // Load annotations in W3C WebAnnotation format
-    //anno.loadAnnotations('annotations.w3c.json');
     curanno={}
-    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#images option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
     for(ann in result){
       annotations.push(result[ann])
     }
     curanno=result
-    //const annotations = result.map(a => new WebAnnotation(a));
     anno.setAnnotations(annotations);
   }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations([]);})
 
@@ -161,13 +161,14 @@ async function getAnnotation(path){
   }
 </script>
 
-<div id="openseadragon" style="width: 640px; height: 480px;"></div>
+<div id="openseadragon" style="width: 640px; height: 580px;"></div>
       </div>
-    </div>
-	</div>    <div class="row">
-</div>
-<div class="col-md-12">
-<div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
+<div class="col-md-6">
+  3DModel:<br/>
+<select id="3dimages" onchange="reinit()"><option value="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/HS_1032B_1_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
+<button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
+<button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
+<div id="3dhop" class="tdhop" style="height:700px;width:640px;" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
 <!--ZOOM-->
@@ -265,7 +266,7 @@ function setup3dhop() {
 
 	presenter.setScene({
 		meshes: {
-			"mesh_1" : { url: "models/gargo.nxz" }
+			"mesh_1" : { url: "https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/HS_1032B_1_HeiCuBeDa_GigaMesh.ply" }
 		},
 		modelInstances : {
 			"model_1" : { 
@@ -423,7 +424,7 @@ $('#toolbar2 img')
 	setup3dhop();
 });
 </script>
-    {% include footer.html %}
+
 </aside>
 </div>
 </div>
