@@ -16,5 +16,24 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d4549923-44c0-463e-827c-66bb7f17b1a1"
+  },
+  "#0ea63580-6a6c-4215-950d-abc793591afe": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "Ein Rechteck!",
+        "purpose": "commenting"
+      }
+    ],
+    "target": {
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:877.300048828125,1560.5999755859375,1010.50341796875,400.6138916015625"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#0ea63580-6a6c-4215-950d-abc793591afe"
   }
 }
