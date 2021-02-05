@@ -35,5 +35,53 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#0ea63580-6a6c-4215-950d-abc793591afe"
+  },
+  "#89a9b5ca-35fe-4ba3-9197-1d78ce048062": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "Knie",
+        "purpose": "commenting"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Körperteil",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:638.1289672851562,2236.176025390625,334.84002685546875,388.7412109375"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#89a9b5ca-35fe-4ba3-9197-1d78ce048062"
+  },
+  "#349b05df-e438-481e-a521-7d641dc589fe": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "Fuss",
+        "purpose": "commenting"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Körperteil",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:719.5702514648438,3024.203125,540.4057006835938,282.35546875"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#349b05df-e438-481e-a521-7d641dc589fe"
   }
 }
