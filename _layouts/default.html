@@ -453,6 +453,8 @@ $('#toolbar2 img')
 </div>
 <h3 align="center">Grid Annotation test</h3>
 Grid Size: <input id="gridsize" type="number" value="20" onChange="recreateGrid()"/><br/>
+Grid Offset X: <input id="gridoffsetx" type="number" value="0" onChange="recreateGrid()"/><br/>
+Grid Offset Y: <input id="gridoffsety" type="number" value="0" onChange="recreateGrid()"/><br/>
 <div id="grid-source"><img id="gridimage" src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
 <div id="grid-overlay"></div>
 <script>
@@ -461,12 +463,13 @@ var $src = $('#grid-source');
 var $wrap = $('#grid-overlay');
 $wrap.html("")
 var $gsize = $('#gridsize').val();
-
+var xoffset=$('#gridoffsetx').val()
+var yoffset=$('#gridoffsety').val()
 var $cols = Math.ceil($src.find('img').innerWidth() / $gsize);
 var $rows = Math.ceil($src.find('img').innerHeight() / $gsize);
 
 // create overlay
-var $tbl = $('<table></table>');
+var $tbl = $('<table style="position:relative; left:'+xoffset+'px; top:'+yoffset+'px;"></table>');
 for (var y = 1; y <= $rows; y++) {
     var $tr = $('<tr></tr>');
     for (var x = 1; x <= $cols; x++) {
