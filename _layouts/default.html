@@ -33,7 +33,14 @@
 <script type="text/javascript" src="js/init_added.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="js/gitbeaker.js"></script>
+<style>
+#grid-source { position: absolute; }
+#grid-overlay { position: relative; }
 
+.hover { background-color: rgba(0,0,0,0.1) !important; }
+.unselected { background-color: rgba(0,0,0,0.5); }
+.selected { background-color: none; }
+</style>
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-6" role="main">
@@ -441,10 +448,54 @@ $('#toolbar2 img')
 	setup3dhop();
 });
 </script>
+</div>
 
-</aside>
 </div>
-</div>
+<h3 align="center">Grid Annotation test</h3>
+<div id="grid-source"><img src="http://www.google.com/images/logos/ps_logo2.png"></div>
+<script>
+var $src = $('#grid-source');
+var $wrap = $('<div id="grid-overlay"></div>');
+var $gsize = 20;
+
+var $cols = Math.ceil($src.find('img').innerWidth() / $gsize);
+var $rows = Math.ceil($src.find('img').innerHeight() / $gsize);
+
+// create overlay
+var $tbl = $('<table></table>');
+for (var y = 1; y <= $rows; y++) {
+    var $tr = $('<tr></tr>');
+    for (var x = 1; x <= $cols; x++) {
+        var $td = $('<td></td>');
+        $td.css('width', $gsize+'px').css('height', $gsize+'px');
+        $td.attr("lowx",x*$gsize);
+        $td.attr("highx",x*($gsize+1));
+        $td.attr("lowy",y*$gsize);
+        $td.attr("highy",y*($gsize+1));
+        $td.addClass('unselected');
+        $tr.append($td);
+    }
+    $tbl.append($tr);
+}
+$src.css('width', $cols*$gsize+'px').css('height', $rows*$gsize+'px')
+
+// attach overlay
+$wrap.append($tbl);
+$src.after($wrap);
+
+$('#grid-overlay td').hover(function() {
+    $(this).toggleClass('hover');
+});
+
+$('#grid-overlay td').click(function() {
+    $(this).toggleClass('selected').toggleClass('unselected');
+});
+
+$('#grid-overlay td').dblclick(function() {
+    alert("Double click")
+});
+</script>
+
   </body>
 
 </html>
