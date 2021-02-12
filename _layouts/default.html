@@ -453,7 +453,7 @@ $('#toolbar2 img')
 </div>
 <h3 align="center">Grid Annotation test</h3>
 Grid Size: <input id="gridsize" type="number" value="20" onChange="recreateGrid()"/><br/>
-<div id="grid-source"><img src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
+<div id="grid-source"><img id="gridimage" src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
 <script>
 function recreateGrid(){
 var $src = $('#grid-source');
@@ -483,7 +483,7 @@ $src.css('width', $cols*$gsize+'px').css('height', $rows*$gsize+'px')
 lastlowx=-1000
 // attach overlay
 $wrap.append($tbl);
-$src.html($('#grid-source').children('img')[0].html()+$wrap);
+$src.html($('#gridimage').html()+$wrap);
 var mousedown=false
 $('#grid-overlay td').hover(function() {
     $(this).toggleClass('hover');
