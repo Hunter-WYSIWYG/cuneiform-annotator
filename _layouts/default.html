@@ -478,7 +478,7 @@ for (var y = 1; y <= $rows; y++) {
     $tbl.append($tr);
 }
 $src.css('width', $cols*$gsize+'px').css('height', $rows*$gsize+'px')
-
+lastlowx=-1000
 // attach overlay
 $wrap.append($tbl);
 $src.after($wrap);
@@ -506,7 +506,10 @@ $('#grid-overlay td').mouseup(function() {
 $('#grid-overlay td').mousemove(function() {
     if(!mousedown)
       return;
-    $(this).toggleClass('selected').toggleClass('unselected');
+    if(lastlowx!=$(this).attr("lowx")){
+      $(this).toggleClass('selected').toggleClass('unselected');
+      lastlowx=$(this).attr("lowx")
+    }
 });
 
 </script>
