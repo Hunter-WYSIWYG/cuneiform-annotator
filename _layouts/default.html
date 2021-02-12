@@ -494,6 +494,10 @@ $('#grid-overlay td').click(function() {
 $('#grid-overlay td').dblclick(function() {
     alert("Double click")
 });
+
+$('#grid-overlay td').mousedown(function() {
+    $(this).toggleClass('selected').toggleClass('unselected');
+});
 </script>
 
   </body>
