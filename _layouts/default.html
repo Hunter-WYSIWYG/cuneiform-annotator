@@ -482,7 +482,7 @@ $src.css('width', $cols*$gsize+'px').css('height', $rows*$gsize+'px')
 // attach overlay
 $wrap.append($tbl);
 $src.after($wrap);
-
+var mousedown=false
 $('#grid-overlay td').hover(function() {
     $(this).toggleClass('hover');
 });
@@ -496,8 +496,19 @@ $('#grid-overlay td').dblclick(function() {
 });
 
 $('#grid-overlay td').mousedown(function() {
+    mousedown=true
+});
+
+$('#grid-overlay td').mouseup(function() {
+    mousedown=false
+});
+
+$('#grid-overlay td').mousemove(function() {
+    if(!mousedown)
+      return;
     $(this).toggleClass('selected').toggleClass('unselected');
 });
+
 </script>
 
   </body>
