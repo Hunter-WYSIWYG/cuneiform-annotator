@@ -483,7 +483,7 @@ $src.css('width', $cols*$gsize+'px').css('height', $rows*$gsize+'px')
 lastlowx=-1000
 // attach overlay
 $wrap.append($tbl);
-$src.after($wrap);
+$src.html($wrap);
 var mousedown=false
 $('#grid-overlay td').hover(function() {
     $(this).toggleClass('hover');
