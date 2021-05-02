@@ -124,6 +124,8 @@ async function getAnnotation(path){
 
     // Initialize the Annotorious plugin
     anno = OpenSeadragon.Annotorious(viewer);
+    Annotorious.Toolbar(anno, document.getElementById('my-toolbar-container'));
+    Annotorious.TiltedBox(anno);
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
@@ -183,10 +185,30 @@ async function getAnnotation(path){
       curanno[a["id"]]=a
     });
   }
+function getEXIFData(imageid,targetid){
+    var img2 = document.getElementById(imageid);
+    EXIF.getData(img2, function() {
+        var allMetaData = EXIF.getAllTags(this);
+        console.log(allMetaData)
+        var allMetaDataSpan = document.getElementById(targetid);
+        allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+        var htmltip="<ul>"
+        for(tag in allMetaData){
+          htmltip+="<li>"+tag+" - "+allMetaData[tag]+"</li>"
+        }
+        htmltip+="</ul>"
+        $( "#metadata" ).tooltip({ content: htmltip });
+    });
+}
 </script>
-
+<div>
+    <div id="my-toolbar-container"></div>
 <div id="openseadragon" style="width: 640px; height: 580px;"></div>
       </div>
+<a id="metadata" onClick="getEXIFData('showingimage','metadatafield')">
+<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg>
+</a>
+</div>
 <div class="col-md-6">
   3DModel:<br/>
 <select id="3dimages" onchange="reinit()"><option value="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/HS_1032B_1_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
