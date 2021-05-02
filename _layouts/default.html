@@ -187,6 +187,7 @@ async function getAnnotation(path){
   }
 function getEXIFData(imageid,targetid){
     var img2 = document.getElementById(imageid);
+    console.log("EXIF click")
     EXIF.getData(img2, function() {
         var allMetaData = EXIF.getAllTags(this);
         console.log(allMetaData)
