@@ -46,17 +46,9 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button> <button id="rectorpolygon" onclick="toggleSelectionMode()">Switch Selection Mode</button>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><br/>
+Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
-  var curmode="rect"
-  function toggleSelectionMode(){
-    if(curmode=="rect"){
-      curmode="polygon"
-    }else{
-      curmode="rect"
-    }
-    anno.setDrawingTool(curmode);
-  }
   function loadVariants(){
      imgside=""
     for(obj of urls[$('#images option:selected').text()]["variants"]){
