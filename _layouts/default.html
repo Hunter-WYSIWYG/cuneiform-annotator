@@ -88,6 +88,7 @@ try{
 console.log(users)
 }
 
+var mlVocabulary={"Broken":"http://purl.org/olia/olia.owl#Broken","Character":"http://purl.org/olia/olia.owl#Character","Line":"http://purl.org/olia/olia.owl#Line","Word":"http://purl.org/olia/olia.owl#Word","Seal":"http://purl.org/olia/olia.owl#Seal","Phrase":"http://purl.org/olia/olia.owl#Phrase"}
 
 async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
@@ -114,8 +115,13 @@ async function getAnnotation(path){
       }
     });
 
+    var annoconfig={widgets:[
+    'COMMENT',
+    { widget: 'TAG', vocabulary: Object.keys(mlVocabulary) }
+    ]}
+
     // Initialize the Annotorious plugin
-    anno = OpenSeadragon.Annotorious(viewer);
+    anno = OpenSeadragon.Annotorious(viewer,annoconfig);
     Annotorious.Toolbar(anno, document.getElementById('my-toolbar-container'));
     Annotorious.TiltedBox(anno);
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
