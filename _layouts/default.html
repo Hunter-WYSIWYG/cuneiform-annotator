@@ -88,7 +88,9 @@ try{
 console.log(users)
 }
 
-var mlVocabulary={"Broken":"http://purl.org/olia/olia.owl#Broken","Character":"http://purl.org/olia/olia.owl#Character","Line":"http://purl.org/olia/olia.owl#Line","Word":"http://purl.org/olia/olia.owl#Word","Seal":"http://purl.org/olia/olia.owl#Seal","Phrase":"http://purl.org/olia/olia.owl#Phrase"}
+var curnamespace="http://purl.org/olia/olia.owl#"
+
+var mlVocabulary={"Broken":curnamespace+"Broken","Character":curnamespace+"Character","Line":curnamespace+"Line","Image":curnamespace+"Image","Word":curnamespace+"Word","Seal":curnamespace+"Seal","Phrase":curnamespace+"Phrase"}
 
 async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
