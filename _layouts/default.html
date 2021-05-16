@@ -130,6 +130,11 @@ $(document).ready(function () {
 		input.type="text"	
 	}
 	input.id=key
+  for(bod in args.annotation.underlying.body){
+		if(args.annotation.underlying.body[bod].purpose==key){
+			input.value=args.annotation.underlying.body[bod].value
+		}
+	}
 	input.addEventListener('keyup',addTag)
 	label.innerHTML=key+": "
 	td1.appendChild(label)
