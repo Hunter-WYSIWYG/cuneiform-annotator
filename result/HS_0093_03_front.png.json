@@ -5,12 +5,7 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "5"
-      },
-      {
-        "type": "TextualBody",
-        "value": "Line",
-        "purpose": "tagging"
+        "value": "8"
       }
     ],
     "target": {
@@ -30,6 +25,11 @@
         "type": "TextualBody",
         "purpose": "Line",
         "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Line",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -41,5 +41,53 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#52a1e739-6903-4f83-89d1-16d180e5ae3a"
+  },
+  "#e793cd0d-bf4b-4183-a930-5f224f77730f": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Line",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1108009:570710/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1044.2142333984375,181.43751525878906 16.47470474243164,206.6721954345703 25.69369888305664,129.62994384765625 1036.5462646484375,118.54198455810547\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e793cd0d-bf4b-4183-a930-5f224f77730f"
+  },
+  "#fda20948-9693-42c4-9f69-36c8a3362d2b": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Line",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1108009:570710/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"26.735965728759766,433.1095886230469 1031.5347900390625,389.0635986328125 1026.029052734375,471.6498107910156 21.2302188873291,526.707275390625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#fda20948-9693-42c4-9f69-36c8a3362d2b"
   }
 }
