@@ -78,6 +78,82 @@ $(document).ready(function () {
 
 </script>
 <script>
+	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null},
+	"Transliteration":{"inputtype":"text","regex":"","handler":null},
+	"Line":{"inputtype":"number","regex":"","handler":null}
+	}
+	  
+	var TextMapWidget = function(args) {
+
+  var addTag = function(evt) {
+    console.log("onKeyUp")
+	console.log(evt.srcElement.value)
+	console.log(args)
+	var removeindex=0
+	for(bod in args.annotation.underlying.body){
+		if(args.annotation.underlying.body[bod].purpose==evt.target.id){
+			removeindex=bod
+		}
+	}
+	args.annotation.underlying.body.splice(removeindex)
+	args.annotation.underlying.body.push({
+        type: 'TextualBody',
+        purpose: evt.target.id,
+        value: evt.srcElement.value
+    });
+	console.log(args)
+	console.log({
+        type: 'TextualBody',
+        purpose: evt.target.id,
+        value: evt.srcElement.value
+    })
+  }
+
+  // 4. This part renders the UI elements
+  var createTextField = function(key,value) {
+    console.log(key+" - "+value)
+    var div=document.createElement('table')
+	div.width="100%"
+	var tr=document.createElement('tr')
+	var td1=document.createElement('td')
+	var td2=document.createElement('td')
+	div.appendChild(tr)
+	tr.appendChild(td1)
+	tr.appendChild(td2)
+    var label = document.createElement('label');
+	var input = document.createElement('input');
+	console.log(mappings[key])
+	if("inputtype" in mappings[key]){
+		input.type=mappings[key]["inputtype"]
+		input.min=1
+	}else{
+		input.type="text"	
+	}
+	input.id=key
+	input.addEventListener('keyup',addTag)
+	label.innerHTML=key+": "
+	td1.appendChild(label)
+	td2.appendChild(input)
+    return div;
+  }
+
+  var container = document.createElement('div');
+  container.className = 'colorselector-widget';
+  for(map in mappings){
+    var curval="";
+    for(body of args.annotation.bodies){
+		if(body.purpose==map){
+			curval=body.value
+			break;
+		}
+	}
+	var button1 = createTextField(map,curval);	
+	container.appendChild(button1);
+  }
+  return container;
+}
+</script>
+<script>
 async function commitData(){
 
 try{
@@ -118,6 +194,7 @@ async function getAnnotation(path){
     });
 
     var annoconfig={widgets:[
+    TextMapWidget,
     'COMMENT',
     { widget: 'TAG', vocabulary: Object.keys(mlVocabulary) }
     ]}
