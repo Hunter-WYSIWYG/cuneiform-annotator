@@ -52,7 +52,7 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
 <script>
   function loadVariants(){
     if($('#images option:selected').text() in transliterations){
-      $('#transliterationtextarea').text(transliterations[$('#images option:selected').text()])
+      $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()])
     }
     imgside=""
     for(obj of urls[$('#images option:selected').text()]["variants"]){
@@ -305,8 +305,8 @@ function getEXIFData(imageid,targetid){
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <dialog id="transliterationdialog" style="z-index: 1000 !important ;">
     <h3>Transliteration View</h3>
-    <textarea id="transliterationtextarea" col="30" row="30">
-    </textarea>
+    <code id="transliterationtextarea">
+    </code>
     <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
 </dialog>
 <div id="3dhop" class="tdhop" style="height:700px;width:640px;" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
