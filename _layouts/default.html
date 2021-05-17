@@ -51,7 +51,10 @@ Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
   function loadVariants(){
+    console.log($('#images option:selected').text())
+    console.log(transliterations)
     if($('#images option:selected').text() in transliterations){
+          console.log(transliterations[$('#images option:selected').text()])
       $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()])
     }
     imgside=""
