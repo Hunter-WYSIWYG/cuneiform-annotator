@@ -102,7 +102,7 @@ $(document).ready(function () {
 			removeindex=bod
 		}
 	}
-	args.annotation.underlying.body.splice(removeindex,1)
+	args.annotation.underlying.body=args.annotation.underlying.body.splice(removeindex,1)
 	args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
