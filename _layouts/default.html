@@ -303,7 +303,7 @@ function getEXIFData(imageid,targetid){
 <select id="3dimages" onchange="reinit()"><option value="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/HS_1032B_1_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
-<dialog id="transliterationdialog">
+<dialog id="transliterationdialog" style="z-index: 1000 !important ;">
     <h3>Transliteration View</h3>
     <textarea id="transliterationtextarea" col="30" row="30">
     </textarea>
