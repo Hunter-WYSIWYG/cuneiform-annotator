@@ -8,6 +8,7 @@
  
 	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <script type="text/javascript" src="js/transliterations.js"></script>
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
 <!--JQUERY-->
@@ -46,11 +47,14 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><br/>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();''>Show Transliteration</button><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
   function loadVariants(){
-     imgside=""
+    if($('#images option:selected').text() in transliterations){
+      $('#transliterationtextarea').text(transliterations[$('#images option:selected').text()])
+    }
+    imgside=""
     for(obj of urls[$('#images option:selected').text()]["variants"]){
        imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
     }
@@ -299,6 +303,11 @@ function getEXIFData(imageid,targetid){
 <select id="3dimages" onchange="reinit()"><option value="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/HS_1032B_1_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
+<dialog id="transliterationdialog">
+    <h3>Transliteration View</h3>
+    <textarea id="transliterationtextarea" col="30" row="30">
+    </textarea>
+</dialog>
 <div id="3dhop" class="tdhop" style="height:700px;width:640px;" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
