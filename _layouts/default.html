@@ -96,18 +96,21 @@ $(document).ready(function () {
     console.log("onKeyUp")
 	console.log(evt.srcElement.value)
 	console.log(args)
-	var removeindex=0
+	var removeindex=-1
 	for(bod in args.annotation.underlying.body){
 		if(args.annotation.underlying.body[bod].purpose==evt.target.id){
 			removeindex=bod
 		}
 	}
-	args.annotation.underlying.body=args.annotation.underlying.body.splice(removeindex,1)
-	args.annotation.underlying.body.push({
+  if(removeindex==-1){
+	  args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
         value: evt.srcElement.value
     });
+  }else{
+    args.annotation.underlying.body[removeindex].value=evt.srcElement.value
+  }
 	console.log(args)
 	console.log({
         type: 'TextualBody',
