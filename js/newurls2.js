@@ -1,4 +1,4 @@
-var urls={
+{
   "HS_004401_top.json": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107976:570673/full/full/0/default.jpg",
   "HS_004402_left.json": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107977:570674/full/full/0/default.jpg",
   "HS_004403_front.json": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1108249:570905/full/full/0/default.jpg",

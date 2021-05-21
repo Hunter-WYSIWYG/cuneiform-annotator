@@ -27,5 +27,5 @@ f.write("var urls="+json.dumps(result, indent=2, sort_keys=True))
 f.close()
 
 f = open("newurls2.js", "w")
-f.write("var urls="+json.dumps(result2, indent=2, sort_keys=True))
+f.write(json.dumps(result2, indent=2, sort_keys=True))
 f.close()
