@@ -10,10 +10,11 @@ before_script:
   - apt-get install python3 python3-pip imagemagick libmagickwand-dev -y
   - pip3 install wand numpy svgwrite svgpathtools
 
-test:
+imageclassification:
   stage: test
   script:
-  - bundle exec jekyll build -d test
+  - python3 createThumbnails.py classification true
+
   artifacts:
     paths:
     - test
