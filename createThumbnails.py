@@ -87,10 +87,10 @@ if not singlefolder:
     f.write("var thumbnails="+json.dumps(homepagejson))
     f.close()
 
-arffexport="@RELATION\m@ATTRIBUTE filename string\n@ATTRIBUTE class{"
+arffexport="@RELATION\n@ATTRIBUTE filename string\n@ATTRIBUTE class{"
 for trans in translits:
     arffexport+=str(trans)+","
-arffexport=arffexport[-1]+"}\n\n"
+arffexport=arffexport[:-1]+"}\n\n"
 if singlefolder:
     f = open("classification/mlset.arff", 'w')
     f.write(arffexport+arffdata)
