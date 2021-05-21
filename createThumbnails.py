@@ -27,11 +27,11 @@ for filename in os.listdir("result"):
         jsondata=json.load(json_file)
     for annotation in jsondata:
         print(annotation)
+        print(jsondata[annotation]["target"]["selector"]["value"])
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
             f.write(jsondata[annotation]["target"]["selector"]["value"])
             f.close()
-            print(jsondata[annotation]["target"]["selector"]["value"])
             path=svg2paths2("temp.svg")
             bb=path[0][0].bbox()
             coords=[]
