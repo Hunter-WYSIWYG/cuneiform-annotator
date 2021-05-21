@@ -9,6 +9,7 @@ before_script:
   - apt-get update
   - apt-get install python3 python3-pip imagemagick libmagickwand-dev -y
   - pip3 install wand
+   - python -m wand.version
 
 test:
   stage: test
