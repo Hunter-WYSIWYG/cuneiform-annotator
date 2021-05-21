@@ -53,6 +53,7 @@ for filename in os.listdir("result"):
         with Image(file=f) as img:
             width=img.width
             height=img.height
+            print("w"+str(width)+" h"+str(height))
             print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
             with img[int(coords[2]):int(coords[3]),int(coords[0]):int(coords[1])] as cropped:
                 if(not os.path.exists("public/thumbnails/"+translit)):
