@@ -14,6 +14,7 @@ imageclassification:
   stage: build
   script:
   - mkdir classification
+  - mkdir classification/line
   - python3 createThumbnails.py classification/ true
   - python3 createThumbnails.py classification/line/ true Line
   artifacts:
