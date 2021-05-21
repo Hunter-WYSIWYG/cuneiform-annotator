@@ -15,6 +15,7 @@ imageclassification:
   script:
   - mkdir classification
   - python3 createThumbnails.py classification/ true
+  - python3 createThumbnails.py classification/line/ true Line
   artifacts:
     paths:
     - classification
