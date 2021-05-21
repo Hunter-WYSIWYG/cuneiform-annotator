@@ -31,10 +31,10 @@ for filename in os.listdir("result"):
             print(path)
             bb=path[0][0].bbox()
             coords=[]
-            coords.push(bb[0])
-            coords.push(bb[2])
-            coords.push(bb[1])
-            coords.push(bb[3])
+            coords.append(bb[0])
+            coords.append(bb[2])
+            coords.append(bb[1])
+            coords.append(bb[3])
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         translit=""
