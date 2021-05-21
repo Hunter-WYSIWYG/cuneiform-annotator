@@ -24,7 +24,7 @@ pages:
   stage: deploy
   script:
   - bundle exec jekyll build -d public
-  - python3 createThumbnails.py
+  #- python3 createThumbnails.py
   artifacts:
     paths:
     - public
