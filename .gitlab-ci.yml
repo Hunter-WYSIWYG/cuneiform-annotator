@@ -15,7 +15,8 @@ imageclassification:
   script:
   - mkdir classification
   - mkdir classification/line
-  - python3 createThumbnails.py classification/ true
+  - mkdir classification/char
+  - python3 createThumbnails.py classification/char/ true Transliteration
   - python3 createThumbnails.py classification/line/ true Line
   artifacts:
     paths:
@@ -27,7 +28,6 @@ pages:
   stage: deploy
   script:
   - bundle exec jekyll build -d public
-  - python3 createThumbnails.py
   artifacts:
     paths:
     - public
