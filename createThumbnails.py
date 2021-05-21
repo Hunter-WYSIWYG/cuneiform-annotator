@@ -4,6 +4,7 @@ import sys
 import os
 import json
 from svgpathtools import svg2paths, wsvg
+from svgpathtools import svg2paths2
 
 translits={}
 
