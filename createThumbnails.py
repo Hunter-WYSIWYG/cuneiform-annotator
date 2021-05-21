@@ -31,10 +31,10 @@ for filename in os.listdir("result"):
             path=svg2paths2("temp.svg")
             bb=path[0][0].bbox()
             coords=[]
-            coords.append(bb[0])
-            coords.append(bb[2])
-            coords.append(abs(bb[1]-bb[0]))
-            coords.append(abs(bb[3]-bb[2]))
+            coords.append(int(bb[0]))
+            coords.append(int(bb[2]))
+            coords.append(int(abs(bb[1]-bb[0])))
+            coords.append(int(abs(bb[3]-bb[2])))
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         print(coords)
