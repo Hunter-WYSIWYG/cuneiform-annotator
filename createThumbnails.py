@@ -28,7 +28,7 @@ for filename in os.listdir("result"):
             f.write(jsondata[annotation]["target"]["selector"]["value"])
             f.close()
             path=svg2paths2("temp.svg")
-            print path.bbox()
+            print(path.bbox())
             continue
         coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         translit=""
