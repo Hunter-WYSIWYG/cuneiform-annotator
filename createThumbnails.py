@@ -33,9 +33,9 @@ for filename in os.listdir("result"):
             bb=path[0][0].bbox()
             coords=[]
             coords.append(int(bb[0]))
+            coords.append(int(bb[1]))
             coords.append(int(bb[2]))
-            coords.append(int(abs(bb[1]-bb[0])))
-            coords.append(int(abs(bb[3]-bb[2])))
+            coords.append(int(bb[3]))
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         print(coords)
@@ -55,7 +55,7 @@ for filename in os.listdir("result"):
             height=img.height
             print("w"+str(width)+" h"+str(height))
             print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
-            with img[int(coords[2]):int(coords[3]),int(coords[0]):int(coords[1])] as cropped:
+            with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 if(not os.path.exists("public/thumbnails/"+translit)):
                     os.makedirs("public/thumbnails/"+translit)
                 cropped.save(filename="public/thumbnails/"+translit+"/"+str(translit)+"_"+translits[translit]+".png")
