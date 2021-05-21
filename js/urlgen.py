@@ -14,7 +14,7 @@ curlabel=""
 for js in obj:
 	print(js)
 	exportlabel=js["label"]+".json"
-	result2[exportlabel]=js["value"]
+	result2[js["label"][0:js["label"].rfind('_')-2]+"_"+js["label"][js["label"].rfind('_')-2:]+".json"]=js["value"]
 	curlabel=js["label"][0:js["label"].rfind('_')-2]
 	curlabel2=js["label"][0:js["label"].rfind('_')-2]+"_"+js["label"][js["label"].rfind('_')-2:]
 	if not curlabel in result:
