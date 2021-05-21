@@ -16,6 +16,9 @@ homepagejson={}
 
 arffdata="@data\n"
 
+exportdir="public/thumbnails/"
+if len(sysargv)>0
+    exportdir=sys.argv[1]
 for filename in os.listdir("result"):
     #print(sys.argv[1]+"/"+filename)
     if filename==".gitkeep" or filename.startswith("."):
@@ -56,9 +59,9 @@ for filename in os.listdir("result"):
             print("w"+str(width)+" h"+str(height))
             print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
             with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
-                if(not os.path.exists("public/thumbnails/"+str(translit).replace("(","_").replace(")","_"))):
-                    os.makedirs("public/thumbnails/"+str(translit).replace("(","_").replace(")","_"))
-                cropped.save(filename="public/thumbnails/"+str(translit).replace("(","_").replace(")","_")+"/"+str(translit).replace("(","_").replace(")","_")+"_"+str(translits[translit])+".png")
+                if(not os.path.exists(exportdir+str(translit).replace("(","_").replace(")","_"))):
+                    os.makedirs(exportdir+str(translit).replace("(","_").replace(")","_"))
+                cropped.save(filename=exportdir+str(translit).replace("(","_").replace(")","_")+"/"+str(translit).replace("(","_").replace(")","_")+"_"+str(translits[translit])+".png")
                 if not translit in homepagejson:
                     homepagejson[translit]=[]
                 homepagejson[translit].append("thumbnails/"+str(translit).replace("(","_").replace(")","_")+"/"+str(translit).replace("(","_").replace(")","_")+"_"+str(translits[translit])+".png")
