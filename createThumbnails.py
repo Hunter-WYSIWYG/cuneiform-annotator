@@ -79,18 +79,22 @@ for filename in os.listdir("result"):
         except:
             e = sys.exc_info()[0]
             print(e)
-
-f = open("public/js/thumbnails.js", 'w')
-f.write("var thumbnails="+json.dumps(homepagejson))
-f.close()
+if not singlefolder:
+    f = open("public/js/thumbnails.js", 'w')
+    f.write("var thumbnails="+json.dumps(homepagejson))
+    f.close()
 
 arffexport="@RELATION\m@ATTRIBUTE filename string\n@ATTRIBUTE class{"
 for trans in translits:
     arffexport+=str(trans)+","
 arffexport=arffexport[-1]+"}\n\n"
-f = open("public/mlset.arff", 'w')
-f.write(arffexport+arffdata)
-f.close()
-
+if singlefolder:
+    f = open("mlset.arff", 'w')
+    f.write(arffexport+arffdata)
+    f.close()
+else:
+    f = open("public/mlset.arff", 'w')
+    f.write(arffexport+arffdata)
+    f.close()
 
 
