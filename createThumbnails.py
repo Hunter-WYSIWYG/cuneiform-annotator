@@ -30,6 +30,7 @@ for filename in os.listdir("result"):
         else:
             translits[translit]=1      
         f=urlopen(imgurls[filename])
+        print(coords)
         with Image(file=f) as img:
             width=img.width
             height=img.height
