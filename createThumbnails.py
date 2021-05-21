@@ -22,8 +22,8 @@ for filename in os.listdir("result"):
         coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         translit=""
         for annobj in jsondata[annotation]["body"]:
-            if annoobj["purpose"]=="Transliteration":
-                translit=annoobj["value"]
+            if jsondata[annotation]["body"][annoobj]["purpose"]=="Transliteration":
+                translit=jsondata[annotation]["body"][annoobj]["value"]
         if translit in translits:
             translits[translit]=translits[translit]+1
         else:
