@@ -36,7 +36,7 @@ for filename in os.listdir("result"):
         else:
             translits[translit]=1      
         f=urlopen(imgurls[filename])
-        arffdata+="public/thumbnails/"+translit+"/"+translit+"_"+translits[translit]+".png,"+translit+"\n"
+        arffdata+=translit+"_"+translits[translit]+".png,"+translit+"\n"
         print(coords)
         with Image(file=f) as img:
             width=img.width
@@ -53,9 +53,8 @@ f.write("var thumbnails="+json.dumps(homepagejson))
 f.close()
 
 arffexport="@RELATION\m@ATTRIBUTE filename string\n@ATTRIBUTE class{"
-for(trans in translits){
+for(trans in translits):
     arffexport+=trans+","
-}
 arffexport=arffexport[-1]+"}\n\n"
 f = open("public/mlset.arff", 'w')
 f.write(arffexport+arffdata)
