@@ -89,7 +89,7 @@ if not singlefolder:
     f.write("var thumbnails="+json.dumps(homepagejson))
     f.close()
 
-arffexport="@RELATION\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
+arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 for trans in translits:
     arffexport+=str(trans)+","
 arffexport=arffexport[:-1]+"}\n\n"
