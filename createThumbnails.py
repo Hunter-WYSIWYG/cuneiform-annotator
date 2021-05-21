@@ -9,6 +9,8 @@ translits={}
 with open('js/newurls2.js') as f:
   imgurls = json.load(f)
 
+homepagejson={}
+
 for filename in os.listdir("result"):
     #print(sys.argv[1]+"/"+filename)
     if filename==".gitkeep" or filename.startswith("."):
@@ -33,3 +35,9 @@ for filename in os.listdir("result"):
                 if(not os.path.exists("public/thumbnails/"+translit)):
                     os.makedirs("public/thumbnails/"+translit)
                 cropped.save(filename="public/thumbnails/"+translit+"/"+translit+"_"+translits[translit]+".png")
+                if not translit in homepagejson:
+                    homepagejson[translit]={}
+                homepagejson[translit].push("thumbnails/"+translit+"/"+translit+"_"+translits[translit]+".png")
+f = open("public/js/thumbnails.js", 'w')
+f.write("var thumbnails="+json.dumps(homepagejson))
+f.close()
