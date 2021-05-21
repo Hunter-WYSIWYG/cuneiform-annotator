@@ -23,8 +23,8 @@ for filename in os.listdir("result"):
         translit=""
         for annoobj in jsondata[annotation]["body"]:
             print(annoobj)
-            if jsondata[annotation]["body"][annoobj]["purpose"]=="Transliteration":
-                translit=jsondata[annotation]["body"][annoobj]["value"]
+            if annoobj["purpose"]=="Transliteration":
+                translit=annoobj["value"]
         if translit in translits:
             translits[translit]=translits[translit]+1
         else:
