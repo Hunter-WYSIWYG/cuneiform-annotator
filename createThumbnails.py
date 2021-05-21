@@ -60,8 +60,8 @@ for filename in os.listdir("result"):
                     os.makedirs("public/thumbnails/"+translit)
                 cropped.save(filename="public/thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
                 if not translit in homepagejson:
-                    homepagejson[translit]={}
-                homepagejson[translit].push("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
+                    homepagejson[translit]=[]
+                homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
 f = open("public/js/thumbnails.js", 'w')
 f.write("var thumbnails="+json.dumps(homepagejson))
 f.close()
