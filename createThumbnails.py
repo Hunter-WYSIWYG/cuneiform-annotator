@@ -17,7 +17,7 @@ homepagejson={}
 arffdata="@data\n"
 
 exportdir="public/thumbnails/"
-if len(sysargv)>0
+if len(sysargv)>0:
     exportdir=sys.argv[1]
 for filename in os.listdir("result"):
     #print(sys.argv[1]+"/"+filename)
