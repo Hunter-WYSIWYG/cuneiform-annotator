@@ -1,4 +1,4 @@
-image: ruby:2.3
+image: ruby:2.5
 
 variables:
   JEKYLL_ENV: production
@@ -6,6 +6,9 @@ variables:
 
 before_script:
   - bundle install
+  - apt-get update
+  - apt-get install python3
+  - pip3 install rdflib rdflib_hdt uuid odfpy wand
 
 test:
   stage: test
