@@ -18,6 +18,7 @@ for filename in os.listdir("result"):
     with open("result/"+filename) as json_file:
         jsondata=json.load(json_file)
     for annotation in jsondata:
+        print(annotation)
         coords=annotation["target"]["selector"]["value"].replace("xywh","").split(",")
         translit=""
         for annobj in annotation["body"]:
