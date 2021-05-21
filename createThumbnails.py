@@ -58,10 +58,10 @@ for filename in os.listdir("result"):
             with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 if(not os.path.exists("public/thumbnails/"+translit)):
                     os.makedirs("public/thumbnails/"+translit)
-                cropped.save(filename="public/thumbnails/"+translit+"/"+str(translit)+"_"+translits[translit]+".png")
+                cropped.save(filename="public/thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
                 if not translit in homepagejson:
                     homepagejson[translit]={}
-                homepagejson[translit].push("thumbnails/"+translit+"/"+str(translit)+"_"+translits[translit]+".png")
+                homepagejson[translit].push("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
 f = open("public/js/thumbnails.js", 'w')
 f.write("var thumbnails="+json.dumps(homepagejson))
 f.close()
