@@ -13,7 +13,7 @@ curobj={}
 curlabel=""
 for js in obj:
 	print(js)
-	exportlabel=js["label"].replace(".png",".json")
+	exportlabel=js["label"]
 	result2[exportlabel]=js["value"]
 	curlabel=js["label"][0:js["label"].rfind('_')-2]
 	curlabel2=js["label"][0:js["label"].rfind('_')-2]+"_"+js["label"][js["label"].rfind('_')-2:]
