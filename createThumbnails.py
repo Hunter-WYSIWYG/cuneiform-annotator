@@ -18,11 +18,14 @@ arffdata="@data\n"
 
 exportdir="public/thumbnails/"
 singlefolder=False
+purpose="Transliteration"
 if len(sys.argv)>1:
     exportdir=sys.argv[1]
 if len(sys.argv)>2:
     if sys.argv[2]=="true":
         singlefolder=True
+if len(sys.argv)>3:
+    purpose=sys.argv[3]
 for filename in os.listdir("result"):
     #print(sys.argv[1]+"/"+filename)
     if filename==".gitkeep" or filename.startswith("."):
@@ -48,7 +51,7 @@ for filename in os.listdir("result"):
         print(coords)
         translit=""
         for annoobj in jsondata[annotation]["body"]:
-            if annoobj["purpose"]=="Transliteration":
+            if annoobj["purpose"]==purpose:
                 translit=annoobj["value"]
         if translit in translits:
             translits[translit]=translits[translit]+1
@@ -64,11 +67,11 @@ for filename in os.listdir("result"):
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
-                    if(not os.path.exists(exportdir+str(translit))):
-                        os.makedirs(exportdir+str(translit))
                     if singlefolder:
                         cropped.save(filename=exportdir+str(translit)+"_"+str(translits[translit])+".png")
                     else:
+                        if(not os.path.exists(exportdir+str(translit))):
+                            os.makedirs(exportdir+str(translit))
                         cropped.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
