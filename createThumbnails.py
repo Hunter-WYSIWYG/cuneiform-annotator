@@ -6,13 +6,16 @@ import json
 
 translits={}
 
+with open('js/newurls2.js') as f:
+  imgurls = json.load(f)
+
 for filename in os.listdir("result"):
     #print(sys.argv[1]+"/"+filename)
     if filename==".gitkeep" or filename.startswith("."):
         continue
     with open("result/"+filename) as json_file:
         for annotation in json_file:
-            coords=annotation["target"]["selector"]["value"].replace("xywh","")
+            coords=annotation["target"]["selector"]["value"].replace("xywh","").split(",")
             translit=""
             for(annobj in annotation["body"]){
                 if(annoobj["purpose"]=="Transliteration"){
@@ -24,9 +27,9 @@ for filename in os.listdir("result"):
             }else{
                 translits[translit]=1
             }
-            f=urlopen("")
+            f=urlopen(imgurls[filename])
             with Image(file=f) as img:
                 width=img.width
                 height=img.height
-                with img[10:50, 20:100] as cropped:
+                with img[coords[0]:coords[1], coords[2]:coords[3]] as cropped:
                     cropped.save(filename="thumbnails/"+translit+"_"+translits[translit]+".png")
