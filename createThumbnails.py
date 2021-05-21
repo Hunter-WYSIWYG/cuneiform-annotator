@@ -29,4 +29,6 @@ for filename in os.listdir("result"):
                 width=img.width
                 height=img.height
                 with img[coords[0]:coords[1], coords[2]:coords[3]] as cropped:
-                    cropped.save(filename="thumbnails/"+translit+"_"+translits[translit]+".png")
+                    if(not os.path.exists("public/thumbnails/"+translit)):
+                        os.makedirs("public/thumbnails/"+translit)
+                    cropped.save(filename="public/thumbnails/"+translit+"/"+translit+"_"+translits[translit]+".png")
