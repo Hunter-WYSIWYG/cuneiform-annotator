@@ -8,7 +8,7 @@ before_script:
   - bundle install
   - apt-get update
   - apt-get install python3 python3-pip imagemagick libmagickwand-dev -y
-  - pip3 install wand
+  - pip3 install wand numpy svgwrite svgpathtools
 
 test:
   stage: test
@@ -24,7 +24,7 @@ pages:
   stage: deploy
   script:
   - bundle exec jekyll build -d public
-  - python3 createThumbnails.py
+  #- python3 createThumbnails.py
   artifacts:
     paths:
     - public
