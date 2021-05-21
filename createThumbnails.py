@@ -52,7 +52,7 @@ for filename in os.listdir("result"):
         with Image(file=f) as img:
             width=img.width
             height=img.height
-            with img[coords[0]:coords[1], coords[2]:coords[3]] as cropped:
+            with img[int(math.floor(coords[0])):int(math.floor(coords[1])), int(math.floor(coords[2])):int(math.floor(coords[3]))] as cropped:
                 if(not os.path.exists("public/thumbnails/"+translit)):
                     os.makedirs("public/thumbnails/"+translit)
                 cropped.save(filename="public/thumbnails/"+translit+"/"+str(translit)+"_"+translits[translit]+".png")
