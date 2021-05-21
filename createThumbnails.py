@@ -34,8 +34,8 @@ for filename in os.listdir("result"):
             coords=[]
             coords.append(bb[0])
             coords.append(bb[2])
-            coords.append(bb[1])
-            coords.append(bb[3])
+            coords.append(math.abs(bb[1]-bb[0]))
+            coords.append(math.abs(bb[3]-bb[2]))
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         translit=""
