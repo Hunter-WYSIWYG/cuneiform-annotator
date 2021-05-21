@@ -11,13 +11,12 @@ before_script:
   - pip3 install wand numpy svgwrite svgpathtools
 
 imageclassification:
-  stage: test
+  stage: build
   script:
   - python3 createThumbnails.py classification true
-
   artifacts:
     paths:
-    - test
+    - classification
   except:
   - master
 
