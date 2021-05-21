@@ -3,6 +3,7 @@ from wand.image import Image
 import sys
 import os
 import json
+import math
 from svgpathtools import svg2paths, wsvg
 from svgpathtools import svg2paths2
 
