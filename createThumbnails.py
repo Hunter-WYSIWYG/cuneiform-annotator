@@ -40,7 +40,7 @@ for filename in os.listdir("result"):
         else:
             translits[translit]=1      
         f=urlopen(imgurls[filename])
-        arffdata+=translit+"_"+translits[translit]+".png,"+translit+"\n"
+        arffdata+=str(translit)+"_"+str(translits[translit])+".png,"+str(translit)+"\n"
         print(coords)
         with Image(file=f) as img:
             width=img.width
@@ -48,17 +48,17 @@ for filename in os.listdir("result"):
             with img[coords[0]:coords[1], coords[2]:coords[3]] as cropped:
                 if(not os.path.exists("public/thumbnails/"+translit)):
                     os.makedirs("public/thumbnails/"+translit)
-                cropped.save(filename="public/thumbnails/"+translit+"/"+translit+"_"+translits[translit]+".png")
+                cropped.save(filename="public/thumbnails/"+translit+"/"+str(translit)+"_"+translits[translit]+".png")
                 if not translit in homepagejson:
                     homepagejson[translit]={}
-                homepagejson[translit].push("thumbnails/"+translit+"/"+translit+"_"+translits[translit]+".png")
+                homepagejson[translit].push("thumbnails/"+translit+"/"+str(translit)+"_"+translits[translit]+".png")
 f = open("public/js/thumbnails.js", 'w')
 f.write("var thumbnails="+json.dumps(homepagejson))
 f.close()
 
 arffexport="@RELATION\m@ATTRIBUTE filename string\n@ATTRIBUTE class{"
 for trans in translits:
-    arffexport+=trans+","
+    arffexport+=str(trans)+","
 arffexport=arffexport[-1]+"}\n\n"
 f = open("public/mlset.arff", 'w')
 f.write(arffexport+arffdata)
