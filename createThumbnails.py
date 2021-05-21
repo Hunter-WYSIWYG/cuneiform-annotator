@@ -37,7 +37,7 @@ for filename in os.listdir("result"):
             coords.append(int(bb[2]))
             coords.append(int(bb[3]))
         else:
-            coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
+            coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").replace("pixel:","").split(",")
         print(coords)
         translit=""
         for annoobj in jsondata[annotation]["body"]:
