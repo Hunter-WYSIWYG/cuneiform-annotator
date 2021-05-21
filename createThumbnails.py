@@ -1,5 +1,5 @@
 from urllib.request import urlopen
-from wand.image import image
+from wand.image import Image
 import sys
 import os
 import json
@@ -23,8 +23,7 @@ for filename in os.listdir("result"):
             if translit in translits:
                 translits[translit]=translits[translit]+1
             else:
-                translits[translit]=1
-            
+                translits[translit]=1      
             f=urlopen(imgurls[filename])
             with Image(file=f) as img:
                 width=img.width
