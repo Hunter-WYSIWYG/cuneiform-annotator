@@ -13,6 +13,7 @@ before_script:
 imageclassification:
   stage: build
   script:
+  - mkdir classification
   - python3 createThumbnails.py classification true
   artifacts:
     paths:

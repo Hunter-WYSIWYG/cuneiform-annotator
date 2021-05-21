@@ -89,7 +89,7 @@ for trans in translits:
     arffexport+=str(trans)+","
 arffexport=arffexport[-1]+"}\n\n"
 if singlefolder:
-    f = open("mlset.arff", 'w')
+    f = open("classification/mlset.arff", 'w')
     f.write(arffexport+arffdata)
     f.close()
 else:
