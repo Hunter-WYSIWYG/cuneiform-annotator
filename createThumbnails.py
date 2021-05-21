@@ -17,16 +17,14 @@ for filename in os.listdir("result"):
         for annotation in json_file:
             coords=annotation["target"]["selector"]["value"].replace("xywh","").split(",")
             translit=""
-            for(annobj in annotation["body"]){
-                if(annoobj["purpose"]=="Transliteration"){
+            for annobj in annotation["body"]:
+                if annoobj["purpose"]=="Transliteration":
                     translit=annoobj["value"]
-                }
-            }
-            if(translit in translits){
+            if translit in translits:
                 translits[translit]=translits[translit]+1
-            }else{
+            else:
                 translits[translit]=1
-            }
+            
             f=urlopen(imgurls[filename])
             with Image(file=f) as img:
                 width=img.width
