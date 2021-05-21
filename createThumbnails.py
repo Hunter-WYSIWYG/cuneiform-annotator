@@ -24,7 +24,10 @@ for filename in os.listdir("result"):
     for annotation in jsondata:
         print(annotation)
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
-            svg2paths2(jsondata[annotation]["target"]["selector"]["value"])
+            f = open("temp.svg", 'w')
+            f.write(jsondata[annotation]["target"]["selector"]["value"])
+            f.close()
+            svg2paths2(j"temp.svg")
             continue
         coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").split(",")
         translit=""
