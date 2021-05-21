@@ -53,6 +53,8 @@ for filename in os.listdir("result"):
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==purpose:
                 translit=annoobj["value"]
+        if translit=="":
+            continue
         if translit in translits:
             translits[translit]=translits[translit]+1
         else:
