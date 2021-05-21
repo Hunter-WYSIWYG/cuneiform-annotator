@@ -7,7 +7,7 @@ variables:
 before_script:
   - bundle install
   - apt-get update
-  - apt-get install python3
+  - apt-get install python3 python3-pip
   - pip3 install rdflib rdflib_hdt uuid odfpy wand
 
 test:
