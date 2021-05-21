@@ -53,7 +53,7 @@ f.write("var thumbnails="+json.dumps(homepagejson))
 f.close()
 
 arffexport="@RELATION\m@ATTRIBUTE filename string\n@ATTRIBUTE class{"
-for(trans in translits):
+for trans in translits:
     arffexport+=trans+","
 arffexport=arffexport[-1]+"}\n\n"
 f = open("public/mlset.arff", 'w')
