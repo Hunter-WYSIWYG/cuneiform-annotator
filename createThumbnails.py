@@ -60,7 +60,7 @@ for filename in os.listdir("result"):
         else:
             translits[translit]=1      
         f=urlopen(imgurls[filename])
-        arffdata+=str(translit)+"_"+str(translits[translit])+".png,"+str(translit)+"\n"
+        arffdata+=str(translit)+"_"+str(translits[translit])+".jpg,"+str(translit)+"\n"
         print(coords)
         try:
             with Image(file=f) as img:
