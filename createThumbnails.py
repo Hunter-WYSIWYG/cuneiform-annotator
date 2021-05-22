@@ -70,17 +70,19 @@ for filename in os.listdir("result"):
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                     if singlefolder:
-                        cropped.save(filename=exportdir+str(translit)+"_"+str(translits[translit])+".png")
+                        with cropped.convert('jpg') as converted:
+                            converted.save(filename=exportdir+str(translit)+"_"+str(translits[translit])+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
-                        cropped.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
+                        with cropped.convert('jpg') as converted:
+                            converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
-                        homepagejson[translit].append("thumbnails/"+str(translit)+"_"+str(translits[translit])+".png")
+                        homepagejson[translit].append("thumbnails/"+str(translit)+"_"+str(translits[translit])+".jpg")
                     else:
-                        homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".png")
+                        homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".jpg")
         except:
             e = sys.exc_info()[0]
             print(e)
