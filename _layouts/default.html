@@ -60,7 +60,11 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
     }
     imgside=""
     for(obj of urls[$('#images option:selected').text()]["variants"]){
-       imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
+       if(obj["label"].includes("front")){
+        imgside+="<option value=\""+obj["url"]+"\" selected=\"selected\">"+obj["label"]+"</option>"
+       }else{
+        imgside+="<option value=\""+obj["url"]+"\">"+obj["label"]+"</option>"
+       }
     }
     $('#imageside').html(imgside)
     $("#imageside")[0].selectedIndex = 0
