@@ -167,7 +167,6 @@ $(document).ready(function () {
         selectionEnd=$('#PaleoCode').prop('selectionEnd')
         strokeParser(document.getElementById('PaleoCode').value)
     })
-    strokeParser(document.getElementById('PaleoCode').value)
   }
     return div;
   }
@@ -184,6 +183,8 @@ $(document).ready(function () {
 	}
 	var button1 = createTextField(map,curval);	
 	container.appendChild(button1);
+  if("paleocodage" in mappings[map]){
+      strokeParser(document.getElementById('PaleoCode').value)
   }
   return container;
 }
