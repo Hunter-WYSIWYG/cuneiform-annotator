@@ -92,7 +92,7 @@ if not singlefolder:
     f.close()
 
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
-for trans in translits:
+for trans in sorted(translits):
     arffexport+=str(trans)+","
 arffexport=arffexport[:-1]+"}\n\n"
 if singlefolder:
