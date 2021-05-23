@@ -159,14 +159,15 @@ $(document).ready(function () {
     var canvas=document.createElement('canvas')
     td3.appendChild(canvas)
     canvas.id="myCanvas"
-    canvas.width=50
-    canvas.height=50
+    canvas.width=100
+    canvas.height=70
     canvas.style="border:1px solid #d3d3d3;"
     input.addEventListener('keyup',function(){        
         selectionStart=$('#PaleoCode').prop('selectionStart')
         selectionEnd=$('#PaleoCode').prop('selectionEnd')
         strokeParser(document.getElementById('PaleoCode').value)
     })
+    strokeParser(document.getElementById('PaleoCode').value)
   }
     return div;
   }
