@@ -89,7 +89,11 @@ $(document).ready(function () {
 
 </script>
 <script>
-	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null},
+	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":new function(){
+        selectionStart=$('#PaleoCode').prop('selectionStart')
+        selectionEnd=$('#PaleoCode').prop('selectionEnd')
+        strokeParser(document.getElementById('PaleoCode').value)
+  },"paleocodage":true},
 	"Transliteration":{"inputtype":"text","regex":"","handler":null},
 	"Line":{"inputtype":"number","regex":"","handler":null}
 	}
@@ -134,7 +138,7 @@ $(document).ready(function () {
 	div.appendChild(tr)
 	tr.appendChild(td1)
 	tr.appendChild(td2)
-    var label = document.createElement('label');
+  var label = document.createElement('label');
 	var input = document.createElement('input');
 	console.log(mappings[key])
 	if("inputtype" in mappings[key]){
@@ -153,6 +157,16 @@ $(document).ready(function () {
 	label.innerHTML=key+": "
 	td1.appendChild(label)
 	td2.appendChild(input)
+  if("paleocodage" in mappings[key]){
+    var td3=document.createElement('td')
+    tr.appendChild(td3)
+    var canvas=document.createElement('canvas')
+    td3.appendChild(canvas)
+    canvas.id="myCanvas"
+    canvas.width=50
+    canvas.height=50
+    canvas.style="border:1px solid #d3d3d3;"
+  }
     return div;
   }
 
