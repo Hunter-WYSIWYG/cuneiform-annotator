@@ -89,11 +89,7 @@ $(document).ready(function () {
 
 </script>
 <script>
-	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":new function(){
-        selectionStart=$('#PaleoCode').prop('selectionStart')
-        selectionEnd=$('#PaleoCode').prop('selectionEnd')
-        strokeParser(document.getElementById('PaleoCode').value)
-  },"paleocodage":true},
+	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleocodage":true},
 	"Transliteration":{"inputtype":"text","regex":"","handler":null},
 	"Line":{"inputtype":"number","regex":"","handler":null}
 	}
@@ -166,6 +162,11 @@ $(document).ready(function () {
     canvas.width=50
     canvas.height=50
     canvas.style="border:1px solid #d3d3d3;"
+    input.addEventListener('keyup',function(){        
+        selectionStart=$('#PaleoCode').prop('selectionStart')
+        selectionEnd=$('#PaleoCode').prop('selectionEnd')
+        strokeParser(document.getElementById('PaleoCode').value)
+    })
   }
     return div;
   }
