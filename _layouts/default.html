@@ -167,7 +167,7 @@ $(document).ready(function () {
         selectionEnd=$('#PaleoCode').prop('selectionEnd')
         strokeParser(document.getElementById('PaleoCode').value)
     });
-    input.addEventListener("DOMNodeInserted",function(){
+    input.addEventListener("click",function(){
       strokeParser(document.getElementById('PaleoCode').value)
     });
   }
