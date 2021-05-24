@@ -37,7 +37,6 @@ for filename in os.listdir("result"):
     for annotation in jsondata:
         print(annotation)
         print(jsondata[annotation]["target"]["selector"]["value"])
-        outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")].replace(".png.json","")+";"
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
             f.write(jsondata[annotation]["target"]["selector"]["value"])
@@ -52,7 +51,6 @@ for filename in os.listdir("result"):
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").replace("pixel:","").replace("=","").split(",")
         print(coords)
-        outputcsv+=str(coords)+";"+translit+"\n"
         translit=""
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==purpose:
@@ -62,7 +60,9 @@ for filename in os.listdir("result"):
         if translit in translits:
             translits[translit]=translits[translit]+1
         else:
-            translits[translit]=1      
+            translits[translit]=1
+        outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")].replace(".png.json","")+";"
+        outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
         arffdata+=str(translit)+"_"+str(translits[translit])+".jpg,"+str(translit)+"\n"
         print(coords)
