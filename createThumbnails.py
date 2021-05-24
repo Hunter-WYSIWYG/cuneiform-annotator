@@ -14,6 +14,8 @@ with open('js/newurls2.js') as f:
 
 homepagejson={}
 
+outputcsv=""
+
 arffdata="@data\n"
 
 exportdir="public/thumbnails/"
@@ -35,6 +37,7 @@ for filename in os.listdir("result"):
     for annotation in jsondata:
         print(annotation)
         print(jsondata[annotation]["target"]["selector"]["value"])
+        outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")].replace(".png.json","")+";"
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
             f.write(jsondata[annotation]["target"]["selector"]["value"])
@@ -49,6 +52,7 @@ for filename in os.listdir("result"):
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").replace("pixel:","").replace("=","").split(",")
         print(coords)
+        outputcsv+=str(coords)+";"+translit+"\n"
         translit=""
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==purpose:
@@ -99,9 +103,15 @@ if singlefolder:
     f = open(exportdir+"mlset.arff", 'w')
     f.write(arffexport+arffdata)
     f.close()
+    f = open(exportdir+"translitmetadata.csv", 'w')
+    f.write(outputcsv)
+    f.close()
 else:
     f = open("public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
+    f.close()
+    f = open("public/translitmetadata.csv", 'w')
+    f.write(outputcsv)
     f.close()
 
 
