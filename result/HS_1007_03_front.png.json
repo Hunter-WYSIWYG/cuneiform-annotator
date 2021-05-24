@@ -22,5 +22,29 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#a85e57c0-9915-48aa-a133-e7b746af3922"
+  },
+  "#bd548470-c436-4825-99b5-cc01c365e4e3": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ma"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111575:575732/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"215.39999389648438,33.599998474121094 460.20001220703125,36.79999923706055 461.79998779296875,160 212.1999969482422,155.1999969482422\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bd548470-c436-4825-99b5-cc01c365e4e3"
   }
 }
