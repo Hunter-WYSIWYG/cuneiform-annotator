@@ -167,6 +167,9 @@ $(document).ready(function () {
         selectionEnd=$('#PaleoCode').prop('selectionEnd')
         strokeParser(document.getElementById('PaleoCode').value)
     });
+    input.addEventListener('load',function(){
+      strokeParser(document.getElementById('PaleoCode').value)
+    });
   }
     return div;
   }
@@ -183,9 +186,6 @@ $(document).ready(function () {
 	}
 	var button1 = createTextField(map,curval);	
 	container.appendChild(button1);
-  }
-  if("PaleoCode" in mappings){
-      strokeParser(document.getElementById('PaleoCode').value)
   }
   return container;
 }
