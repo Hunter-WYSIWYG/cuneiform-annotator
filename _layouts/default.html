@@ -167,7 +167,7 @@ $(document).ready(function () {
         selectionEnd=$('#PaleoCode').prop('selectionEnd')
         strokeParser(document.getElementById('PaleoCode').value)
     });
-    input.addEventListener('load',function(){
+    input.addEventListener("DOMNodeInserted",function(){
       strokeParser(document.getElementById('PaleoCode').value)
     });
   }
@@ -187,6 +187,7 @@ $(document).ready(function () {
 	var button1 = createTextField(map,curval);	
 	container.appendChild(button1);
   }
+
   return container;
 }
 </script>
