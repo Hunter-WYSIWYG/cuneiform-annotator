@@ -61,7 +61,7 @@ for filename in os.listdir("result"):
             translits[translit]=translits[translit]+1
         else:
             translits[translit]=1
-        outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")].replace(".png.json","")+";"
+        outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_"):].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
         arffdata+=str(translit)+"_"+str(translits[translit])+".jpg,"+str(translit)+"\n"
