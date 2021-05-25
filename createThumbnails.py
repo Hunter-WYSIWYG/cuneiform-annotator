@@ -14377,7 +14377,7 @@ for filename in os.listdir("result"):
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
         if per in periods:
-            outputcsv+=filename[0:filename.rfind("_")]+";"+periods[filename[0:filename.rfind("_")]]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+            outputcsv+=filename[0:filename.rfind("_")]+";"+periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
             outputcsv+=str(coords)+";"+translit+"\n"          
             periodss[periods[per]]=True
             translitperiods[str(translit)+"_"+periods[per]]=True
