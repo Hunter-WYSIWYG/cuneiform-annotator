@@ -11127,7 +11127,7 @@ for filename in os.listdir("result"):
                     charclass+="U+"+str(hex(ord(chara)))+"+"
                 charclass=charclass[:-1]
             else:
-                charclass="U+"+str(ord(cuneifymap[str(translit)]))
+                charclass="U+"+str(hex(ord(cuneifymap[str(translit)])))
         if charclass in translits:
             translits[charclass]=translits[charclass]+1
         else:
