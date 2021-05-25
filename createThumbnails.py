@@ -14381,8 +14381,8 @@ for filename in os.listdir("result"):
             outputcsv+=str(coords)+";"+translit+"\n"          
             periodss[periods[per]]=True
             translitperiods[str(translit)+"_"+periods[per]]=True
-            arffdataperiods+=str(translit)+"_"+str(translits[charclass])+".jpg,"+periods[per]+"\n"
-            arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+".jpg,"+str(translit)+"_"+periods[per]+"\n"
+            arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per]-replace(" ","_")+"\n"
+            arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(translit)+"_"+periods[per].replace(" ","_")+"\n"
         else:
             outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
             outputcsv+=str(coords)+";"+translit+"\n"      
