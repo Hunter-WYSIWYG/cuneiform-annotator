@@ -14380,7 +14380,7 @@ for filename in os.listdir("result"):
             outputcsv+=filename[0:filename.rfind("_")]+";"+periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
             outputcsv+=str(coords)+";"+translit+"\n"          
             periodss[periods[per]]=True
-            translitperiods[str(translit)+"_"+periods[per]]=True
+            translitperiods[str(charclass)+"_"+periods[per]]=True
             arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
             arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
         else:
