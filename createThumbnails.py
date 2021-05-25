@@ -11129,7 +11129,7 @@ for filename in os.listdir("result"):
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
-        arffdata+=str(translit)+"_"+str(translits[translit])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+charclass+"\n"
+        arffdata+=str(translit)+"_"+str(translits[translit])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
         print(coords)
         try:
             with Image(file=f) as img:
