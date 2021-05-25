@@ -123,7 +123,7 @@ charlistmap={
   },
   "U+12098": {
     "meszl": "165",
-    "signName": "BURU14 (EN×KÁREN×GÁN)"
+    "signName": "BURU14 (EN×KÁREN×GAN2)"
   },
   "U+12099": {"signName": "EN×GA?TENÛ"},
   "U+12094": {
@@ -575,7 +575,7 @@ charlistmap={
   },
   "U+1229D": {
     "meszl": "195",
-    "signName": "KÀN (SAG×MI)"
+    "signName": "KAN3 (SAG×MI)"
   },
   "U+1205C": {"signName": "DAGKISIM5×GA+MASZ"},
   "U+1229E": {
@@ -676,12 +676,12 @@ charlistmap={
   },
   "U+122D9": {
     "meszl": "869",
-    "signName": "SZÚ"
+    "signName": "SZU2"
   },
   "U+122D5": {"signName": "SZIR/SZIRBUR/BUR"},
   "U+122D6": {
     "meszl": "388",
-    "signName": "SZITA (GÁ)"
+    "signName": "SZITA (GA2)"
   },
   "U+122D7": {
     "meszl": "567",
@@ -805,7 +805,7 @@ charlistmap={
   },
   "U+122E5": {
     "meszl": "139",
-    "signName": "SZÌTA (RAD)"
+    "signName": "SZITA3 (RAD)"
   },
   "U+122E0": {
     "meszl": "816",
@@ -817,15 +817,15 @@ charlistmap={
   },
   "U+120BE": {
     "meszl": "414",
-    "signName": "GÁ× ÁSZ.GAL"
+    "signName": "GA2× ÁSZ.GAL"
   },
   "U+120BF": {
     "meszl": "395",
-    "signName": "GÁ×BAD"
+    "signName": "GA2×BAD"
   },
   "U+120BA": {
     "meszl": "429",
-    "signName": "GÁ× A.IGI"
+    "signName": "GA2× A.IGI"
   },
   "U+122FC": {
     "meszl": "589",
@@ -838,7 +838,7 @@ charlistmap={
   },
   "U+120BC": {
     "meszl": "392",
-    "signName": "AMA (GÁ×AN)"
+    "signName": "AMA (GA2×AN)"
   },
   "U+122FE": {
     "meszl": "118",
@@ -846,7 +846,7 @@ charlistmap={
   },
   "U+120BD": {
     "meszl": "389",
-    "signName": "GÁ×ASZ"
+    "signName": "GA2×ASZ"
   },
   "U+122FF": {"signName": "TITENÛ"},
   "U+122FA": {
@@ -870,7 +870,7 @@ charlistmap={
   "U+122F8": {"signName": "TAG×TU?"},
   "U+120B7": {
     "meszl": "387",
-    "signName": "GÁ (MAL)"
+    "signName": "GA2 (MAL)"
   },
   "U+122F9": {"signName": "TAG×UD"},
   "U+120B8": {
@@ -3130,18 +3130,18 @@ charlistmap={
     "meszl": "577",
     "signName": "ILIMMU4 (3×GE23)"
   },
-  "U+12207": {"signName": "LÚ×KAD`+ASZ"},
+  "U+12207": {"signName": "LU2×KAD`+ASZ"},
   "U+12449": {
     "meszl": "865",
     "signName": "DISZoverDISZoverDISZ"
   },
   "U+12208": {
     "meszl": "527",
-    "signName": "LÚ×KI"
+    "signName": "LU2×KI"
   },
   "U+12223": {
     "meszl": "201",
-    "signName": "MÁ"
+    "signName": "MA2"
   },
   "U+12224": {
     "meszl": "91",
@@ -3211,7 +3211,7 @@ charlistmap={
   },
   "U+12216": {
     "meszl": "555",
-    "signName": "GÚG (LÙ; SZÈ-gunû)"
+    "signName": "GUG2 (LU2; SZÈ-gunû)"
   },
   "U+12458": {
     "meszl": "114",
