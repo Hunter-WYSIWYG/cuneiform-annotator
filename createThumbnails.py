@@ -14355,7 +14355,7 @@ for filename in os.listdir("result"):
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()]:
-            charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").encode("ascii", "ignore")
+            charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").encode("ascii", "ignore").decode()
         if charclass in translits:
             translits[charclass]=translits[charclass]+1
         else:
