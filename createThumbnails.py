@@ -11068,7 +11068,6 @@ cuneifymap={"...asz" : "𒈏",
 "ṭu₆" : "𒅲",
 "ṭēmu" : "𒅗𒄭"}
 
-
 translits={}
 
 with open('js/newurls2.js') as f:
@@ -11123,12 +11122,14 @@ for filename in os.listdir("result"):
             translits[translit]=translits[translit]+1
         else:
             translits[translit]=1
+        charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
-            print(cuneifymap[str(translit)])
+            print cuneifymap[str(translit)][0].decode("utf-8")
+            charclass=cuneifymap[str(translit)][0].decode("utf-8")
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
-        arffdata+=str(translit)+"_"+str(translits[translit])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(translit)+"\n"
+        arffdata+=str(translit)+"_"+str(translits[translit])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+charclass+"\n"
         print(coords)
         try:
             with Image(file=f) as img:
