@@ -14350,10 +14350,10 @@ for filename in os.listdir("result"):
             charclass=""
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
-                    charclass+="U+"+str(hex(ord(chara)))+"+"
+                    charclass+="U+"+str(hex(ord(chara))).replace("0x","")+"+"
                 charclass=charclass[:-1]
             else:
-                charclass="U+"+str(hex(ord(cuneifymap[str(translit)])))
+                charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
         if charclass.upper() in charlistmap:
             charclass=charlistmap[charclass.upper()]
         if charclass in translits:
