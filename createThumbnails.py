@@ -11127,7 +11127,7 @@ for filename in os.listdir("result"):
             print(cuneifymap[str(translit)])
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
-                    charclass+=ord(cuneifymap[str(translit)])+"+"
+                    charclass+=ord(chara)+"+"
                 charclass=charclass[:-1]
             else:
                 charclass=ord(cuneifymap[str(translit)])
