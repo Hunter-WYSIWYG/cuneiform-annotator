@@ -11124,7 +11124,7 @@ for filename in os.listdir("result"):
             translits[translit]=1
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
-            print cuneifymap[str(translit)][0]
+            print cuneifymap[str(translit)]
             charclass=cuneifymap[str(translit)]
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+translit+"\n"      
