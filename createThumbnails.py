@@ -11123,8 +11123,8 @@ for filename in os.listdir("result"):
             translits[translit]=translits[translit]+1
         else:
             translits[translit]=1
-		if(str(translit) in cuneifymap):
-			print(cuneifymap[str(translit)])
+        if(str(translit) in cuneifymap):
+            print(cuneifymap[str(translit)])
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
