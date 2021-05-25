@@ -11127,10 +11127,10 @@ for filename in os.listdir("result"):
             print(cuneifymap[str(translit)])
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
-                    charclass+=ord(chara)+"+"
+                    charclass+=str(ord(chara))+"+"
                 charclass=charclass[:-1]
             else:
-                charclass=ord(cuneifymap[str(translit)])
+                charclass=str(ord(cuneifymap[str(translit)]))
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
