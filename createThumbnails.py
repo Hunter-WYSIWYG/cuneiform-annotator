@@ -14374,13 +14374,15 @@ for filename in os.listdir("result"):
             translits[charclass]=1
         if charclass=="other":
             print(str(translit))
-        if filename[0:filename.rfind("_")] in periods:
+        per=filename[0:filename.rfind("_")]
+        per=per[0:per.rfind("_")]
+        if per in periods:
             outputcsv+=filename[0:filename.rfind("_")]+";"+periods[filename[0:filename.rfind("_")]]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
             outputcsv+=str(coords)+";"+translit+"\n"          
-            periodss[periods[periods[filename[0:filename.rfind("_")]]]]=True
-            translitperiods[str(translit)+"_"+periods[filename[0:filename.rfind("_")]]]=True
-            arffdataperiods+=str(translit)+"_"+str(translits[translit])+".jpg,"+periods[filename[0:filename.rfind("_")]]+"\n"
-            arffdatasignperiods+=str(translit)+"_"+str(translits[translit])+".jpg,"+str(translit)+"_"+periods[filename[0:filename.rfind("_")]]+"\n"
+            periodss[periods[per]]=True
+            translitperiods[str(translit)+"_"+periods[per]=True
+            arffdataperiods+=str(translit)+"_"+str(translits[translit])+".jpg,"+periods[per]+"\n"
+            arffdatasignperiods+=str(translit)+"_"+str(translits[translit])+".jpg,"+str(translit)+"_"+periods[per]+"\n"
         else:
             outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
             outputcsv+=str(coords)+";"+translit+"\n"      
