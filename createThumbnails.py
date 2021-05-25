@@ -11132,6 +11132,8 @@ for filename in os.listdir("result"):
             translits[charclass]=translits[charclass]+1
         else:
             translits[charclass]=1
+        if charclass=="other":
+            print(str(translit))
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+charclass+"\n"      
         f=urlopen(imgurls[filename])
