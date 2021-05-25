@@ -14382,7 +14382,7 @@ for filename in os.listdir("result"):
             periodss[periods[per]]=True
             translitperiods[str(translit)+"_"+periods[per]]=True
             arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
-            arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(translit)+"_"+periods[per].replace(" ","_")+"\n"
+            arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
         else:
             outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
             outputcsv+=str(coords)+";"+translit+"\n"      
@@ -14424,9 +14424,9 @@ arfftranslitperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n
 for trans in sorted(translits):
     arffexport+=str(trans)+","
 for trans in sorted(periodss):
-    arffperiodsexport+=str(trans)+","
+    arffperiodsexport+=str(trans).replace(" ","_")+","
 for trans in sorted(translitperiods):
-    arfftranslitperiodsexport+=str(trans)+","
+    arfftranslitperiodsexport+=str(trans.replace(" ","_"))+","
 arffexport=arffexport[:-1]+"}\n\n"
 arffperiodsexport=arffperiodsexport[:-1]+"}\n\n"
 arfftranslitperiodsexport=arfftranslitperiodsexport[:-1]+"}\n\n"
