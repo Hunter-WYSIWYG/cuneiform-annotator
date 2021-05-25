@@ -14296,14 +14296,25 @@ cuneifymap={"...asz" : "𒈏",
 
 translits={}
 
+translitperiods={}
+
+periodss={}
+
 with open('js/newurls2.js') as f:
   imgurls = json.load(f)
+  
+with open('js/periods.js') as f:
+  periods = json.load(f)
 
 homepagejson={}
 
 outputcsv=""
 
 arffdata="@data\n"
+
+arffdataperiods="@data\n"
+
+arffdatasignperiods="@data\n"
 
 exportdir="public/thumbnails/"
 singlefolder=False
@@ -14363,8 +14374,16 @@ for filename in os.listdir("result"):
             translits[charclass]=1
         if charclass=="other":
             print(str(translit))
-        outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-        outputcsv+=str(coords)+";"+charclass+"\n"      
+        if filename[0:filename.rfind("_")] in periods:
+            outputcsv+=filename[0:filename.rfind("_")]+";"+periods[filename[0:filename.rfind("_")]]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+            outputcsv+=str(coords)+";"+translit+"\n"          
+            periodss[periods[periods[filename[0:filename.rfind("_")]]]]=True
+            translitperiods[str(translit)+"_"+periods[filename[0:filename.rfind("_")]]]=True
+            arffdataperiods+=str(translit)+"_"+str(translits[translit])+".jpg,"+periods[filename[0:filename.rfind("_")]]+"\n"
+            arffdatasignperiods+=str(translit)+"_"+str(translits[translit])+".jpg,"+str(translit)+"_"+periods[filename[0:filename.rfind("_")]]+"\n"
+        else:
+            outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+            outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
         arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
         print(coords)
@@ -14398,12 +14417,26 @@ if not singlefolder:
     f.close()
 
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
+arffperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
+arfftranslitperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 for trans in sorted(translits):
     arffexport+=str(trans)+","
+for trans in sorted(periodss):
+    arffperiodsexport+=str(trans)+","
+for trans in sorted(translitperiods):
+    arfftranslitperiodsexport+=str(trans)+","
 arffexport=arffexport[:-1]+"}\n\n"
+arffperiodsexport=arffperiodsexport[:-1]+"}\n\n"
+arfftranslitperiodsexport=arfftranslitperiodsexport[:-1]+"}\n\n"
 if singlefolder:
     f = open(exportdir+"mlset.arff", 'w')
     f.write(arffexport+arffdata)
+    f.close()
+    f = open(exportdir+"mlset_periods.arff", 'w')
+    f.write(arffperiodsexport+arffdataperiods)
+    f.close()
+    f = open(exportdir+"mlset_translitperiods.arff", 'w')
+    f.write(arfftranslitperiodsexport+arffdatasignperiods)
     f.close()
     f = open(exportdir+"translitmetadata.csv", 'w')
     f.write(outputcsv)
@@ -14411,6 +14444,12 @@ if singlefolder:
 else:
     f = open("public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
+    f.close()
+    f = open("public/mlset_periods.arff", 'w')
+    f.write(arffperiodsexport+arffdataperiods)
+    f.close()
+    f = open("public/mlset_translitperiods.arff", 'w')
+    f.write(arfftranslitperiodsexport+arffdatasignperiods)
     f.close()
     f = open("public/translitmetadata.csv", 'w')
     f.write(outputcsv)
