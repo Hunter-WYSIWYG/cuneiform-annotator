@@ -14354,7 +14354,7 @@ for filename in os.listdir("result"):
                 charclass=charclass[:-1]
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
-        if charclass.upper() in charlistmap and signName in charlistmap[charclass.upper()]:
+        if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()]:
             charclass=str(charlistmap[charclass.upper()]["signName"]).encode("ascii", "ignore").replace(" ","_")
         if charclass in translits:
             translits[charclass]=translits[charclass]+1
@@ -14365,7 +14365,7 @@ for filename in os.listdir("result"):
         outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
         outputcsv+=str(coords)+";"+charclass+"\n"      
         f=urlopen(imgurls[filename])
-        arffdata+=str(charclass)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+        arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
         print(coords)
         try:
             with Image(file=f) as img:
@@ -14376,18 +14376,18 @@ for filename in os.listdir("result"):
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
-                            converted.save(filename=exportdir+str(charclass)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            converted.save(filename=exportdir+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
-                            converted.save(filename=exportdir+str(charclass)+"/"+str(charclass)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
-                        homepagejson[translit].append("thumbnails/"+str(charclass)+"_"+str(translits[charclass])+".jpg")
+                        homepagejson[translit].append("thumbnails/"+str(translit)+"_"+str(translits[charclass])+".jpg")
                     else:
-                        homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(charclass)+"_"+str(translits[charclass])+".jpg")
+                        homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
         except:
             e = sys.exc_info()[0]
             print(e)
