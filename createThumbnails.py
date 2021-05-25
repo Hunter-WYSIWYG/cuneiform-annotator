@@ -75,12 +75,12 @@ for filename in os.listdir("result"):
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
-                            converted.save(filename=exportdir+str(translit)+"_"+str(translits[translit])+".jpg")
+                            converted.save(filename=exportdir+str(translit)+"_"+str(translits[translit])+"_"+filename.replace(".png","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
-                            converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+".jpg")
+                            converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[translit])+"_"+filename.replace(".png","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
