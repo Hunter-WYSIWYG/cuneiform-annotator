@@ -14450,7 +14450,7 @@ if singlefolder:
     f = open(exportdir+"mlsetthreshold.arff", 'w')
     f.write(arffthresholdexport)
     for line in arffthresholdlines:
-      if trans[line]>mlThreshold:
+      if translits[line]>mlThreshold:
           f.write(arffthresholdlines[line])
     f.close()
     f = open(exportdir+"mlset_periods.arff", 'w')
