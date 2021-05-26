@@ -14399,7 +14399,7 @@ for filename in os.listdir("result"):
         arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
         if not charclass in arffthresholdlines:
             arffthresholdlines[charclass]=""
-        arffthresholdlines[charclass]=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+        arffthresholdlines[charclass]+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
         print(coords)
         try:
             with Image(file=f) as img:
