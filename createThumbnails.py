@@ -14302,7 +14302,7 @@ periodss={}
 
 arffthresholdlines={}
 
-mlThreshold=10
+mlThreshold=9
 
 with open('js/newurls2.js') as f:
   imgurls = json.load(f)
@@ -14433,7 +14433,7 @@ arffperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBU
 arfftranslitperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 for trans in sorted(translits):
     arffexport+=str(trans)+","
-    if trans[translits]>mlThreshold:
+    if translits[trans]>mlThreshold:
         arffthresholdexport+=str(trans)+","
 for trans in sorted(periodss):
     arffperiodsexport+=str(trans).replace(" ","_")+","
