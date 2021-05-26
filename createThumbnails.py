@@ -14370,7 +14370,7 @@ for filename in os.listdir("result"):
                 for chara in cuneifymap[str(translit)]:
                     cc="U+"+str(hex(ord(chara))).replace("0x","")
                     if cc.upper() in charlistmap and "signName" in charlistmap[cc.upper()] and charlistmap[cc.upper()]["signName"]!="":
-                        charclass+=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()+"+"
+                        charclass+=str(charlistmap[cc.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()+"+"
                     else:
                         charclass=cc+"+"
             else:
