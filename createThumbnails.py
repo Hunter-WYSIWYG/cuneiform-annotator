@@ -14451,7 +14451,7 @@ if singlefolder:
     f.write(arffexport+arffdata)
     f.close()
     f = open(exportdir+"mlsetthreshold.arff", 'w')
-    f.write(arffthresholdexport)
+    f.write(arffthresholdexport+arffdatathreshold)
     for line in arffthresholdlines:
       if translits[line]>mlThreshold:
           f.write(arffthresholdlines[line])
