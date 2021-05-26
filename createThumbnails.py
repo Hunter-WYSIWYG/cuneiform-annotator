@@ -14300,6 +14300,10 @@ translitperiods={}
 
 periodss={}
 
+arffthresholdlines={}
+
+mlThreshold=10
+
 with open('js/newurls2.js') as f:
   imgurls = json.load(f)
   
@@ -14315,6 +14319,8 @@ arffdata="@data\n"
 arffdataperiods="@data\n"
 
 arffdatasignperiods="@data\n"
+
+arffdatathreshold="@data\n"
 
 exportdir="public/thumbnails/"
 singlefolder=False
@@ -14388,6 +14394,9 @@ for filename in os.listdir("result"):
             outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
         arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+        if not charclass in arffthresholdlines:
+            arffthresholdlines[charclass]=""
+        arffthresholdlines[charclass]=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
         print(coords)
         try:
             with Image(file=f) as img:
@@ -14419,20 +14428,30 @@ if not singlefolder:
     f.close()
 
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
+arffthresholdexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arfftranslitperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 for trans in sorted(translits):
     arffexport+=str(trans)+","
+    if trans[translits]>mlThreshold:
+        arffthresholdexport+=str(trans)+","
 for trans in sorted(periodss):
     arffperiodsexport+=str(trans).replace(" ","_")+","
 for trans in sorted(translitperiods):
     arfftranslitperiodsexport+=str(trans.replace(" ","_"))+","
 arffexport=arffexport[:-1]+"}\n\n"
+arffthresholdexport=arffexport[:-1]+"}\n\n"
 arffperiodsexport=arffperiodsexport[:-1]+"}\n\n"
 arfftranslitperiodsexport=arfftranslitperiodsexport[:-1]+"}\n\n"
 if singlefolder:
     f = open(exportdir+"mlset.arff", 'w')
     f.write(arffexport+arffdata)
+    f.close()
+    f = open(exportdir+"mlsetthreshold.arff", 'w')
+    f.write(arffthresholdexport)
+    for line in arffthresholdlines:
+      if trans[line]>mlThreshold:
+          f.write(arffthresholdlines[line])
     f.close()
     f = open(exportdir+"mlset_periods.arff", 'w')
     f.write(arffperiodsexport+arffdataperiods)
@@ -14446,6 +14465,12 @@ if singlefolder:
 else:
     f = open("public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
+    f.close()
+    f = open("public/mlsetthreshold.arff", 'w')
+    f.write(arffthresholdexport)
+    for line in arffthresholdlines:
+      if trans[line]>mlThreshold:
+          f.write(arffthresholdlines[line])
     f.close()
     f = open("public/mlset_periods.arff", 'w')
     f.write(arffperiodsexport+arffdataperiods)
