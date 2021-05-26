@@ -14368,8 +14368,11 @@ for filename in os.listdir("result"):
             charclass=""
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
-                    charclass+="U+"+str(hex(ord(chara))).replace("0x","")+"+"
-                charclass=charclass[:-1]
+                    cc="U+"+str(hex(ord(chara))).replace("0x","")
+                    if cc.upper() in charlistmap and "signName" in charlistmap[cc.upper()] and charlistmap[cc.upper()]["signName"]!="":
+                        charclass+=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()+"+"
+                    else:
+                        charclass=cc+"+"
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()] and charlistmap[charclass.upper()]["signName"]!="":
