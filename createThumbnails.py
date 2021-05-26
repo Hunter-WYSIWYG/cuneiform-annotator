@@ -14440,7 +14440,7 @@ for trans in sorted(periodss):
 for trans in sorted(translitperiods):
     arfftranslitperiodsexport+=str(trans.replace(" ","_"))+","
 arffexport=arffexport[:-1]+"}\n\n"
-arffthresholdexport=arffexport[:-1]+"}\n\n"
+arffthresholdexport=arffthresholdexport[:-1]+"}\n\n"
 arffperiodsexport=arffperiodsexport[:-1]+"}\n\n"
 arfftranslitperiodsexport=arfftranslitperiodsexport[:-1]+"}\n\n"
 if singlefolder:
@@ -14469,7 +14469,7 @@ else:
     f = open("public/mlsetthreshold.arff", 'w')
     f.write(arffthresholdexport)
     for line in arffthresholdlines:
-      if trans[line]>mlThreshold:
+      if translits[line]>mlThreshold:
           f.write(arffthresholdlines[line])
     f.close()
     f = open("public/mlset_periods.arff", 'w')
