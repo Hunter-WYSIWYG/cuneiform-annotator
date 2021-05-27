@@ -46,5 +46,29 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#4e3165f5-9f9b-4908-9acf-8230113b0ad4"
+  },
+  "#b8cf8c32-509d-40e0-a238-acc785453150": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lu2"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113096:577250/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"118.9034652709961,581.6431884765625 431.3448791503906,578.853515625 435.5293884277344,707.1776733398438 114.71898651123047,716.9414672851562\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b8cf8c32-509d-40e0-a238-acc785453150"
   }
 }
