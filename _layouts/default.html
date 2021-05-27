@@ -86,16 +86,6 @@ $(document).ready(function () {
           sortField: 'text'
       });
       loadVariants();
-      paleolist=""
-      for(pal in paleocodemap){
-        paleolist+="<li>"+pal+"<ul>"
-        for(pall in paleolist[pal]){
-          paleolist+="<li>"+pall+"("+paleolist[pal][pall]+")</li>"
-        }
-        paleolist+="</ul></li>"
-      }
-      console.log(paleolist)
-      $('#paleocodelist').html(paleolist)
   });
 
 </script>
@@ -680,7 +670,16 @@ $('#grid-overlay td').mousemove(function() {
 });
 }
 recreateGrid();
-
+      paleolist=""
+      for(pal in paleocodemap){
+        paleolist+="<li>"+pal+"<ul>"
+        for(pall in paleolist[pal]){
+          paleolist+="<li>"+pall+"("+paleolist[pal][pall]+")</li>"
+        }
+        paleolist+="</ul></li>"
+      }
+      console.log(paleolist)
+      $('#paleocodelist').html(paleolist)
 </script>
 
   </body>
