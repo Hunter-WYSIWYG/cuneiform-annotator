@@ -17,7 +17,7 @@ for filename in os.listdir("result"):
                 translit=annoobj["value"]
             if annoobj["purpose"]=="PaleoCode":
                 paleocode=annoobj["value"]
-        if paleocode!=None and translit!=None:
+        if paleocode!=None and translit!=None and paleocode!="" and translit!="":
             if not translit in result:
                 result[translit]={}
             if paleocode in result[translit]:
