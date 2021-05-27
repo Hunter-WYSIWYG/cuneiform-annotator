@@ -15,7 +15,7 @@ for filename in os.listdir("result"):
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]=="Transliteration":
                 translit=annoobj["value"]
-            if annoobj["purpose"]=="PaleoCodage":
+            if annoobj["purpose"]=="PaleoCode":
                 paleocode=annoobj["value"]
         if paleocode!=None and translit!=None:
             if not translit in result:
