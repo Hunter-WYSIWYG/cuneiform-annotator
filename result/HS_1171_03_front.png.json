@@ -286,5 +286,29 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#7ee49096-f89e-4d2a-9b6e-19da42191029"
+  },
+  "#1078d0cd-3a16-40f8-9431-207a1de698f1": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "gurusz"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113320:577502/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"61.06611251831055,768.5670776367188 246.35899353027344,757.66748046875 243.2448272705078,900.9191284179688 57.95194625854492,911.8187255859375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#1078d0cd-3a16-40f8-9431-207a1de698f1"
   }
 }
