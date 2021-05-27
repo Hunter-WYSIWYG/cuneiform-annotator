@@ -673,8 +673,8 @@ recreateGrid();
       paleolist=""
       for(pal in paleocodemap){
         paleolist+="<li>"+pal+"<ul>"
-        for(pall in paleolist[pal]){
-          paleolist+="<li>"+pall+"("+paleolist[pal][pall]+")</li>"
+        for(pall in paleocodemap[pal]){
+          paleolist+="<li>"+pall+"("+paleocodemap[pal][pall]+")</li>"
         }
         paleolist+="</ul></li>"
       }
