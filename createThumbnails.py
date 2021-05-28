@@ -14385,22 +14385,7 @@ for filename in os.listdir("result"):
             print(str(translit))
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
-        if per in periods:
-            outputcsv+=filename[0:filename.rfind("_")]+";"+periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-            outputcsv+=str(coords)+";"+translit+"\n"          
-            periodss[periods[per]]=True
-            translitperiods[str(charclass)+"_"+periods[per]]=True
-            arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
-            arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
-        else:
-            outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-            outputcsv+=str(coords)+";"+translit+"\n"      
         f=urlopen(imgurls[filename])
-        arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
-        if not charclass in arffthresholdlines:
-            arffthresholdlines[charclass]=""
-        arffthresholdlines[charclass]+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
-        print(coords)
         try:
             with Image(file=f) as img:
                 width=img.width
@@ -14422,6 +14407,21 @@ for filename in os.listdir("result"):
                         homepagejson[translit].append("thumbnails/"+str(translit)+"_"+str(translits[charclass])+".jpg")
                     else:
                         homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
+            if per in periods:
+                outputcsv+=filename[0:filename.rfind("_")]+";"+periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+                outputcsv+=str(coords)+";"+translit+"\n"          
+                periodss[periods[per]]=True
+                translitperiods[str(charclass)+"_"+periods[per]]=True
+                arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
+                arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
+            else:
+                outputcsv+=filename[0:filename.rfind("_")]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+                outputcsv+=str(coords)+";"+translit+"\n"      
+            arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+            if not charclass in arffthresholdlines:
+                arffthresholdlines[charclass]=""
+            arffthresholdlines[charclass]+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+            print(coords)
         except:
             e = sys.exc_info()[0]
             print(e)
