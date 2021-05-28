@@ -14309,7 +14309,7 @@ with open('js/newurls2.js') as f:
   
 with open('js/periods.js') as f:
   strs=f.read()
-  periods = json.parse(strs.replace("var periods=",""))
+  periods = json.loads(strs.replace("var periods=",""))
 
 homepagejson={}
 
