@@ -2548,7 +2548,7 @@ charlistmap={
   "U+121F1": {"signName": "LA?SZU"},
   "U+121F2": {
     "meszl": "750",
-    "signName": "LAL (LÁ)"
+    "signName": "LAL (LA2)"
   },
   "U+121F3": {
     "meszl": "751",
@@ -2627,7 +2627,7 @@ charlistmap={
   "U+12245": {"signName": "NAMNUTILLU"},
   "U+12004": {
     "meszl": "846",
-    "signName": "ZÀ? (A×?A)"
+    "signName": "ZA3? (A×?A)"
   },
   "U+12246": {
     "meszl": "134",
@@ -2674,7 +2674,7 @@ charlistmap={
   },
   "U+1223D": {
     "meszl": "152",
-    "signName": "MÚSZ (MÙSZ-gunû)"
+    "signName": "MUSZ2 (MÙSZ-gunû)"
   },
   "U+1223E": {
     "meszl": "110",
@@ -2682,7 +2682,7 @@ charlistmap={
   },
   "U+1223F": {
     "meszl": "689",
-    "signName": "NÁ"
+    "signName": "NA2"
   },
   "U+1223A": {
     "meszl": "154",
@@ -2713,11 +2713,11 @@ charlistmap={
   "U+12257": {"signName": "NINDÁ×ME+GANTENÛ´"},
   "U+12016": {
     "meszl": "672",
-    "signName": "ÁB"
+    "signName": "AB2"
   },
   "U+12258": {
     "meszl": "326",
-    "signName": "ÁG (NÍNDA×NE)"
+    "signName": "AG2 (NÍNDA×NE)"
   },
   "U+12017": {
     "meszl": "676",
@@ -2761,7 +2761,7 @@ charlistmap={
   },
   "U+12250": {
     "meszl": "691",
-    "signName": "TÙM (NIM×KÁR)"
+    "signName": "TUM3 (NIM×KÁR)"
   },
   "U+12251": {
     "meszl": "692",
@@ -2806,7 +2806,7 @@ charlistmap={
   },
   "U+1200B": {
     "meszl": "227",
-    "signName": "AB×ÁSZ"
+    "signName": "AB×ASZ2"
   },
   "U+1224D": {"signName": "NI×E"},
   "U+12007": {
@@ -2928,12 +2928,12 @@ charlistmap={
   },
   "U+1225E": {
     "meszl": "330",
-    "signName": "NÍNDA× Ú.ASZ"
+    "signName": "NÍNDA× U2.ASZ"
   },
   "U+1225A": {"signName": "NINDÁ×SZE"},
   "U+12018": {
     "meszl": "674",
-    "signName": "ÁB×KÁR"
+    "signName": "AB2×KAR2"
   },
   "U+12019": {
     "meszl": "679",
@@ -2958,22 +2958,22 @@ charlistmap={
   },
   "U+12431": {
     "meszl": "658",
-    "signName": "SZÁR×NINNU"
+    "signName": "SZAR2×NINNU"
   },
   "U+1242E": {
     "meszl": "656",
-    "signName": "SZÁR×ESZ"
+    "signName": "SZAR2×ESZ"
   },
-  "U+1242F": {"signName": "SZÁR×ESZ"},
+  "U+1242F": {"signName": "SZAR2×ESZ"},
   "U+1242A": {"signName": "eight SZAR2"},
   "U+1242B": {"signName": "nine SZAR2"},
   "U+1242C": {
     "meszl": "653",
-    "signName": "SZÁR×U"
+    "signName": "SZAR2×U"
   },
   "U+1242D": {
     "meszl": "655",
-    "signName": "SZÁR×MAN"
+    "signName": "SZAR2×MAN"
   },
   "U+12429": {"signName": "seven SZAR2"},
   "U+12425": {"signName": "three SZAR2 variant form"},
@@ -2982,12 +2982,12 @@ charlistmap={
   "U+12428": {"signName": "six SZAR2"},
   "U+12201": {
     "meszl": "531",
-    "signName": "LÚ×SZÈ-tenû"
+    "signName": "LU2×SZÈ-tenû"
   },
   "U+12443": {"signName": "IMIN (7) variant form"},
   "U+12202": {
     "meszl": "521",
-    "signName": "LÚ× KÁR(GÁN-tenû)"
+    "signName": "LU2× KÁR(GÁN-tenû)"
   },
   "U+12444": {
     "meszl": "867",
@@ -2995,7 +2995,7 @@ charlistmap={
   },
   "U+12203": {
     "meszl": "525",
-    "signName": "LÚ×KAM*"
+    "signName": "LU2×KAM*"
   },
   "U+12445": {
     "meszl": "538",
@@ -3003,7 +3003,7 @@ charlistmap={
   },
   "U+12204": {
     "meszl": "526",
-    "signName": "LÚ×IM"
+    "signName": "LU2×IM"
   },
   "U+12446": {
     "meszl": "868",
@@ -3017,7 +3017,7 @@ charlistmap={
     "meszl": "537",
     "signName": "ÌMIN (ESZ16.ESZ16.ASZ)"
   },
-  "U+12200": {"signName": "LÚ×ESZ"},
+  "U+12200": {"signName": "LU2×ESZ"},
   "U+12442": {
     "meszl": "863",
     "signName": "IMIN (7)"
@@ -3039,21 +3039,21 @@ charlistmap={
   "U+12437": {"signName": "three buru variant form"},
   "U+12438": {"signName": "four buru"},
   "U+12439": {"signName": "five buru"},
-  "U+12212": {"signName": "LÚKREUZTLU"},
+  "U+12212": {"signName": "LU2KREUZTLU"},
   "U+12454": {
     "meszl": "551",
     "signName": "BANIA (ÁSZ. UoverUGE23overGE23)"
   },
-  "U+12213": {"signName": "LÚGEGENÜBERLU"},
+  "U+12213": {"signName": "LU2GEGENÜBERLU"},
   "U+12455": {"signName": "five BAN2 variant form"},
-  "U+12214": {"signName": "LÚIMQUADRAT"},
+  "U+12214": {"signName": "LU2IMQUADRAT"},
   "U+12456": {
     "meszl": "848",
     "signName": "NIGIDAMIN (DISZoverDISZ)"
   },
   "U+12215": {
     "meszl": "516, 534",
-    "signName": "LÚ-SZeSZSZig (LÚ.GAM)"
+    "signName": "LU2-SZeSZSZig (LU2.GAM)"
   },
   "U+12457": {
     "meszl": "850",
@@ -3065,29 +3065,29 @@ charlistmap={
   },
   "U+12451": {
     "meszl": "549",
-    "signName": "BANESZ (ÁSZ)"
+    "signName": "BANESZ (ASZ2)"
   },
   "U+12210": {
     "meszl": "530",
-    "signName": "LÚ×TÚG"
+    "signName": "LU2×TUG2"
   },
   "U+12452": {
     "meszl": "550",
-    "signName": "BANLIMMU (ÁSZ.UGE23)"
+    "signName": "BANLIMMU (ASZ2.UGE23)"
   },
   "U+12211": {
     "meszl": "515",
-    "signName": "LÚ-tenû"
+    "signName": "LU2-tenû"
   },
   "U+12453": {"signName": "four BAN2 variant form"},
-  "U+1220E": {"signName": "LÚ×SI+ASZ"},
+  "U+1220E": {"signName": "LU2×SI+ASZ"},
   "U+1220F": {
     "meszl": "533",
-    "signName": "LÚ× SÍG.BU"
+    "signName": "LU2× SÍG.BU"
   },
   "U+1220A": {
     "meszl": "528",
-    "signName": "LÚ×LAGAB"
+    "signName": "LU2×LAGAB"
   },
   "U+1244C": {
     "meszl": "854",
@@ -3095,15 +3095,15 @@ charlistmap={
   },
   "U+1220B": {
     "meszl": "527'",
-    "signName": "LÚ× ME.EN"
+    "signName": "LU2× ME.EN"
   },
   "U+1244D": {"signName": "five ASZ"},
   "U+1220C": {
     "meszl": "522",
-    "signName": "LÚ×NE"
+    "signName": "LU2×NE"
   },
   "U+1244E": {"signName": "six ASZ"},
-  "U+1220D": {"signName": "LÚ×NU"},
+  "U+1220D": {"signName": "LU2×NU"},
   "U+1244F": {
     "meszl": "122",
     "signName": "BÁN"
@@ -3116,16 +3116,16 @@ charlistmap={
     "meszl": "629",
     "signName": "ESZ23"
   },
-  "U+12209": {"signName": "LÚ×LA+ASZ"},
+  "U+12209": {"signName": "LU2×LA+ASZ"},
   "U+12205": {
     "meszl": "519",
-    "signName": "LÚ×KÁD"
+    "signName": "LU2×KAD2"
   },
   "U+12447": {
     "meszl": "539",
     "signName": "ÌLIMMU (ESZ16.ESZ16.ESZ16)"
   },
-  "U+12206": {"signName": "LÚ×KAD`"},
+  "U+12206": {"signName": "LU2×KAD`"},
   "U+12448": {
     "meszl": "577",
     "signName": "ILIMMU4 (3×GE23)"
