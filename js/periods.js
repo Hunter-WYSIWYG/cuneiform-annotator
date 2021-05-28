@@ -1,4 +1,4 @@
-{
+var periods={
   "HS_2440": "Ur III (ca. 2100-2000 BC)",
   "HS_230": "Old Babylonian (ca. 1900-1600 BC)",
   "HS_1326": "Old Babylonian (ca. 1900-1600 BC)",

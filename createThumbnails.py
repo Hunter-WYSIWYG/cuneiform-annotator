@@ -14308,7 +14308,8 @@ with open('js/newurls2.js') as f:
   imgurls = json.load(f)
   
 with open('js/periods.js') as f:
-  periods = json.load(f)
+  strs=f.read()
+  periods = json.parse(strs.replace("var periods=",""))
 
 homepagejson={}
 
