@@ -177,7 +177,9 @@ $(document).ready(function () {
     input.addEventListener("click",function(){
       strokeParser(document.getElementById('PaleoCode').value)
       if(input.value=="" && $('#Transliteration').val() in paleocodemap){
-        input.value=paleocodemap[$('#Transliteration').val()]
+        $( "#PaleoCode" ).autocomplete({
+          source: Object.keys(paleocodemap[$('#Transliteration').val()])
+        });
       }
     });
   }
