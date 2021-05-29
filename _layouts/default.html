@@ -177,6 +177,7 @@ $(document).ready(function () {
     input.addEventListener("click",function(){
       strokeParser(document.getElementById('PaleoCode').value)
       if(input.value=="" && $('#Transliteration').val() in paleocodemap){
+        input.value=Object.keys(paleocodemap[$('#Transliteration').val()])[0]
         $( "#PaleoCode" ).autocomplete({
           source: Object.keys(paleocodemap[$('#Transliteration').val()])
         });
