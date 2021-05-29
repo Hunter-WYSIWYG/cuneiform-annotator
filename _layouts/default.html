@@ -176,6 +176,9 @@ $(document).ready(function () {
     });
     input.addEventListener("click",function(){
       strokeParser(document.getElementById('PaleoCode').value)
+      if(input.value=="" && $('#Transliteration').val() in paleocodes){
+        input.value=paleocodes[$('#Transliteration').val()]
+      }
     });
   }
     return div;
