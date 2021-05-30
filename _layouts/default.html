@@ -176,12 +176,6 @@ $(document).ready(function () {
     });
     input.addEventListener("click",function(){
       strokeParser(document.getElementById('PaleoCode').value)
-      if(input.value=="" && $('#Transliteration').val() in paleocodemap){
-        input.value=Object.keys(paleocodemap[$('#Transliteration').val()])[0]
-        $( "#PaleoCode" ).autocomplete({
-          source: Object.keys(paleocodemap[$('#Transliteration').val()])
-        });
-      }
     });
   }
     return div;
@@ -251,6 +245,17 @@ async function getAnnotation(path){
     'COMMENT',
     { widget: 'TAG', vocabulary: Object.keys(mlVocabulary) }
     ]}
+
+  const colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c'];
+  const overlay = new OpenSeadragon.CanvasOverlayHd(viewer, {
+	onRedraw: function (opts) {
+		const context = opts.context;
+		context.fillStyle = colors[opts.index];
+		context.beginPath();
+		context.arc(150, 150, 150, 0, Math.PI * 2, true);
+		context.fill();
+	}
+});
 
     // Initialize the Annotorious plugin
     anno = OpenSeadragon.Annotorious(viewer,annoconfig);
