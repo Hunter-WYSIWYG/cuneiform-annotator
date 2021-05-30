@@ -14386,8 +14386,8 @@ for filename in os.listdir("result"):
             print(str(translit))
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
-        f=urlopen(imgurls[filename])
         try:
+            f=urlopen(imgurls[filename])
             with Image(file=f) as img:
                 width=img.width
                 height=img.height
