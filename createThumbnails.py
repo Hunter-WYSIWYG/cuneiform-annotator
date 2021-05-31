@@ -2233,7 +2233,7 @@ charlistmap={
   },
   "U+121CB": {
     "meszl": "776",
-    "signName": "SZÁRA (LAGAB×SIG7)"
+    "signName": "SZARA2 (LAGAB×SIG7)"
   },
   "U+121CC": {
     "meszl": "785",
@@ -2282,7 +2282,7 @@ charlistmap={
   },
   "U+121DF": {
     "meszl": "802",
-    "signName": "LAGAB×SZÚ"
+    "signName": "LAGAB×SZU2"
   },
   "U+121DB": {
     "meszl": "768",
@@ -2295,7 +2295,7 @@ charlistmap={
   "U+121DD": {"signName": "LAGAB×SZITA+GISZ+ERI?"},
   "U+121DE": {
     "meszl": "771",
-    "signName": "LAGAB×SZÍTA"
+    "signName": "LAGAB×SZITA2"
   },
   "U+121DA": {
     "meszl": "780",
@@ -2388,7 +2388,7 @@ charlistmap={
   },
   "U+1240B": {
     "meszl": "862",
-    "signName": "ÀSZ"
+    "signName": "ASZ3"
   },
   "U+12407": {
     "meszl": "220",
@@ -2468,7 +2468,7 @@ charlistmap={
   },
   "U+121E8": {
     "meszl": "774",
-    "signName": "LAGAB× Ú.ASZ"
+    "signName": "LAGAB× U2.ASZ"
   },
   "U+121E9": {
     "meszl": "783",
@@ -2484,7 +2484,7 @@ charlistmap={
   },
   "U+121E5": {
     "meszl": "786",
-    "signName": "TÚL (LAGAB×U)"
+    "signName": "TUL2 (LAGAB×U)"
   },
   "U+121E6": {
     "meszl": "787",
@@ -2492,7 +2492,7 @@ charlistmap={
   },
   "U+121E0": {
     "meszl": "803",
-    "signName": "LAGAB× SZÚ.SZÚ"
+    "signName": "LAGAB× SZU2.SZU2"
   },
   "U+121E1": {
     "meszl": "767",
@@ -2529,7 +2529,7 @@ charlistmap={
   },
   "U+121F9": {
     "meszl": "215",
-    "signName": "LÍMMU (TAB.TAB)"
+    "signName": "LIMMU2 (TAB.TAB)"
   },
   "U+121F4": {
     "meszl": "693",
@@ -2686,7 +2686,7 @@ charlistmap={
   },
   "U+1223A": {
     "meszl": "154",
-    "signName": "MÙSZxA"
+    "signName": "MUSZ3xA"
   },
   "U+1223B": {
     "meszl": "155",
@@ -2696,7 +2696,7 @@ charlistmap={
   "U+12238": {"signName": "MUSZKREUZTMUSZ"},
   "U+12239": {
     "meszl": "153",
-    "signName": "MÙSZ (INANNA)"
+    "signName": "MUSZ3 (INANNA)"
   },
   "U+12014": {
     "meszl": "232",
@@ -2704,7 +2704,7 @@ charlistmap={
   },
   "U+12256": {
     "meszl": "327",
-    "signName": "NÍNDA×GU4"
+    "signName": "NINDA2×GU4"
   },
   "U+12015": {
     "meszl": "232",
@@ -2741,7 +2741,7 @@ charlistmap={
   },
   "U+12253": {
     "meszl": "320",
-    "signName": "SZÀM (NÍNDA×AN)"
+    "signName": "SZAM3 (NÍNDA×AN)"
   },
   "U+12012": {
     "meszl": "234",
@@ -2794,7 +2794,7 @@ charlistmap={
   },
   "U+1224B": {
     "meszl": "312",
-    "signName": "BÍL (GIBIL; NE×PAB, NE-SZeSZSZig)"
+    "signName": "BIL2 (GIBIL; NE×PAB, NE-SZeSZSZig)"
   },
   "U+1200A": {
     "meszl": "223",
@@ -2861,7 +2861,7 @@ charlistmap={
   },
   "U+12264": {
     "meszl": "146",
-    "signName": "TÙR×NÍG"
+    "signName": "TUR3×NIG2"
   },
   "U+12023": {
     "meszl": "477",
@@ -2941,11 +2941,11 @@ charlistmap={
   },
   "U+12432": {
     "meszl": "651",
-    "signName": "SZÁR× GAL.DISZ"
+    "signName": "SZAR2× GAL.DISZ"
   },
   "U+12433": {
     "meszl": "652",
-    "signName": "SZÁR× GAL.MIN"
+    "signName": "SZAR2× GAL.MIN"
   },
   "U+12434": {
     "meszl": "563",
@@ -2982,7 +2982,7 @@ charlistmap={
   "U+12428": {"signName": "six SZAR2"},
   "U+12201": {
     "meszl": "531",
-    "signName": "LU2×SZÈ-tenû"
+    "signName": "LU2×SZE3-tenû"
   },
   "U+12443": {"signName": "IMIN (7) variant form"},
   "U+12202": {
@@ -3028,7 +3028,7 @@ charlistmap={
   },
   "U+1243C": {
     "meszl": "860",
-    "signName": "LIMMU (NÍG, 4)"
+    "signName": "LIMMU (NIG2, 4)"
   },
   "U+1243D": {
     "meszl": "506",
@@ -3106,7 +3106,7 @@ charlistmap={
   "U+1220D": {"signName": "LU2×NU"},
   "U+1244F": {
     "meszl": "122",
-    "signName": "BÁN"
+    "signName": "BAN2"
   },
   "U+1244A": {
     "meszl": "593",
@@ -3175,7 +3175,7 @@ charlistmap={
   "U+12460": {"signName": "one quarter"},
   "U+1221F": {
     "meszl": "904",
-    "signName": "LÙGUD (LUMoverLUM.NÍGoverNÍG)"
+    "signName": "LU3GUD (LUMoverLUM.NÍGoverNÍG)"
   },
   "U+1221B": {
     "meszl": "494",
@@ -3215,7 +3215,7 @@ charlistmap={
   },
   "U+12458": {
     "meszl": "114",
-    "signName": "ÈSZE (ASZ+U)"
+    "signName": "E3SZE (ASZ+U)"
   },
   "U+12217": {
     "meszl": "266",
