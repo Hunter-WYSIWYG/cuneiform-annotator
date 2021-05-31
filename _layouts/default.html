@@ -211,7 +211,7 @@ console.log(users)
 
 var curnamespace="http://purl.org/olia/olia.owl#"
 
-var mlVocabulary={"Broken":curnamespace+"Broken","Character":curnamespace+"Character","Line":curnamespace+"Line","Image":curnamespace+"Image","Word":curnamespace+"Word","Seal":curnamespace+"Seal","Phrase":curnamespace+"Phrase"}
+var mlVocabulary={"Broken":curnamespace+"Broken","Character":curnamespace+"Character","Line":curnamespace+"Line","Image":curnamespace+"Image","Word":curnamespace+"Word","Seal":curnamespace+"Seal","Phrase":curnamespace+"Phrase","Wordstart":curnamespace+"Wordstart","Wordend":curnamespace+"Wordend","InWord":curnamespace+"InWord","UnknownIfWord":curnamespace+"UnknownIfWord"}
 
 async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
