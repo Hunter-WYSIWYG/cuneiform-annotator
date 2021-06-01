@@ -694,5 +694,29 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#2f080233-caf0-4433-86d7-d5bf2a2eb5b5"
+  },
+  "#5bc50e09-cb44-4efc-8be7-6d478012c9e4": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "dumu"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114184:578364/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"504.4517822265625,17.41782569885254 610.4388427734375,22.163515090942383 607.2750854492188,143.9695587158203 499.7060852050781,145.55145263671875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#5bc50e09-cb44-4efc-8be7-6d478012c9e4"
   }
 }
