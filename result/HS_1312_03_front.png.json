@@ -190,5 +190,29 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#b7332dcc-0ace-4257-8e9f-124ae9d79aa5"
+  },
+  "#15e7cea1-dceb-4bdc-8440-cf2f004de3e0": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ugula"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114472:578688/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"699.2718505859375,625.046875 869.543701171875,615.1281127929688 869.543701171875,780.4406127929688 694.3124389648438,790.3593139648438 694.3124389648438,788.7062377929688\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#15e7cea1-dceb-4bdc-8440-cf2f004de3e0"
   }
 }
