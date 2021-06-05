@@ -14323,6 +14323,9 @@ arffdatasignperiods="@data\n"
 
 arffdatathreshold="@data\n"
 
+imagewidth=250
+imageheigth=250
+
 exportdir="public/thumbnails/"
 singlefolder=False
 purpose="Transliteration"
@@ -14396,13 +14399,13 @@ for filename in os.listdir("result"):
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
-                            converted.resize(100, 100)
+                            converted.resize(imagewidth, imageheight)
                             converted.save(filename=exportdir+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
-                            converted.resize(100, 100)
+                            converted.resize(imagewidth, imageheight)
                             converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
