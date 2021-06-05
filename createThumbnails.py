@@ -14324,7 +14324,7 @@ arffdatasignperiods="@data\n"
 arffdatathreshold="@data\n"
 
 imagewidth=250
-imageheigth=250
+imageheight=250
 
 exportdir="public/thumbnails/"
 singlefolder=False
