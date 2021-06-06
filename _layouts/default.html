@@ -66,8 +66,8 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
       $('#textid').html("["+$('#images option:selected').text()+"]")
       $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>"))
     }else{
-      $('#textid').html("["+$('#images option:selected').text()+"]")
-      $('#transliterationtextarea').html("No transliteration for available for text "+$('#images option:selected').text())
+      $('#textid').html(""+$('#images option:selected').text()+"")
+      $('#transliterationtextarea').html("No transliteration available for text "+$('#images option:selected').text())
     }
     imgside=""
     for(obj of urls[$('#images option:selected').text()]["variants"]){
