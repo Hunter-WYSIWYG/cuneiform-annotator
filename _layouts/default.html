@@ -67,17 +67,28 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
       if(transliterations[$('#images option:selected').text()]=="" ||transliterations[$('#images option:selected').text()]=="@Tablet"){
         if($('#images option:selected').text() in hs2CDLI){
           $('#textid').html(""+$('#images option:selected').text()+" - <a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+          $('#cdlilink').html("<a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
+        $.ajax({ type: "GET",   
+         url: "https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()],   
+         async: false,
+         success : function(text)
+         {
+           $('#transliterationtextarea').html(text.replaceAll("\n","<br>"))
+         }
+        });
       }else{
         if($('#images option:selected').text() in hs2CDLI){
-          $('#textid').html(""+$('#images option:selected').text()+" - <a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+          $('#textid').html(""+$('#images option:selected').text()+" - <a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+          $('#cdlilink').html("<a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
+              $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>"))
       }
-      $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>"))
+
     }else{
       $('#textid').html(""+$('#images option:selected').text()+"")
       $('#transliterationtextarea').html("No transliteration available for text "+$('#images option:selected').text())
@@ -347,7 +358,7 @@ function getEXIFData(imageid,targetid){
 <a id="metadata" onClick="getEXIFData('openseadragon','metadatafield')">
 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg>
 </a>
-<span id="period"></span>
+<span id="period"></span>CDLI:<span id="cdlilink"></span>
 </div>
 <div id="metadatafield">
 </div>
