@@ -66,8 +66,8 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
           console.log(transliterations[$('#images option:selected').text()])
       if(transliterations[$('#images option:selected').text()]=="" ||transliterations[$('#images option:selected').text()]=="@Tablet"){
         if($('#images option:selected').text() in hs2CDLI){
-          $('#textid').html(""+$('#images option:selected').text()+" - <a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
-          $('#cdlilink').html("<a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+          $('#textid').html(""+$('#images option:selected').text()+" - <a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+          $('#cdlilink').html("<a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
@@ -82,7 +82,7 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
       }else{
         if($('#images option:selected').text() in hs2CDLI){
           $('#textid').html(""+$('#images option:selected').text()+" - <a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
-          $('#cdlilink').html("<a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+          $('#cdlilink').html("<a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
