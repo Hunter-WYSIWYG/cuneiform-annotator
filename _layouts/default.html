@@ -114,10 +114,12 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
 
 $(document).ready(function () {
       $('#images').selectize({
-          sortField: 'text'
+          sortField: 'text',
+          maxOptions: 5000
       });
       $('#3dimages').selectize({
-          sortField: 'text'
+          sortField: 'text',
+          maxOptions: 5000
       });
       loadVariants();
   });
