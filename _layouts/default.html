@@ -63,7 +63,11 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
     }
     if($('#images option:selected').text() in transliterations){
           console.log(transliterations[$('#images option:selected').text()])
+      $('#textid').html("["+$('#images option:selected').text()+"]")
       $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>"))
+    }else{
+      $('#textid').html("["+$('#images option:selected').text()+"]")
+      $('#transliterationtextarea').html("No transliteration for available for text "+$('#images option:selected').text())
     }
     imgside=""
     for(obj of urls[$('#images option:selected').text()]["variants"]){
@@ -340,7 +344,7 @@ function getEXIFData(imageid,targetid){
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <dialog id="transliterationdialog" style="z-index: 1000 !important ;">
-    <h3>Transliteration View</h3>
+    <h3>Transliteration View <span id="textid"></span></h3>
     <code id="transliterationtextarea">
     </code><br/>
     <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
