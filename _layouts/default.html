@@ -9,6 +9,7 @@
 	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   <script type="text/javascript" src="js/transliterations.js"></script>
+  <script type="text/javascript" src="js/hs2CDLI.js"></script>
   <script type="text/javascript" src="js/periods.js"></script>
   <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
 <!--SPIDERGL-->
@@ -63,7 +64,19 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
     }
     if($('#images option:selected').text() in transliterations){
           console.log(transliterations[$('#images option:selected').text()])
-      $('#textid').html("["+$('#images option:selected').text()+"]")
+      if(transliterations[$('#images option:selected').text()]=="" ||transliterations[$('#images option:selected').text()]=="@Tablet"){
+        if($('#images option:selected').text() in hs2CDLI){
+          $('#textid').html(""+$('#images option:selected').text()+" - <a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+        }else{
+          $('#textid').html(""+$('#images option:selected').text()+"")
+        }
+      }else{
+        if($('#images option:selected').text() in hs2CDLI){
+          $('#textid').html(""+$('#images option:selected').text()+" - <a href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
+        }else{
+          $('#textid').html(""+$('#images option:selected').text()+"")
+        }
+      }
       $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>"))
     }else{
       $('#textid').html(""+$('#images option:selected').text()+"")
