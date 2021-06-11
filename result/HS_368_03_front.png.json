@@ -64,6 +64,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordend",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -75,5 +80,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#6d3345f0-379c-4c14-9112-05be17c8b22e"
+  },
+  "#bfca09c9-ed9a-47ea-a47c-dfc405fb87d0": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ka3"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordstart",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123576:587908/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"97.95003509521484,38.63789367675781 244.00367736816406,29.509540557861328 254.95770263671875,168.260498046875 92.4730224609375,164.60916137695312\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bfca09c9-ed9a-47ea-a47c-dfc405fb87d0"
+  },
+  "#31dc8c8d-eeab-4919-9e3a-01e58a895471": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ru"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "InWord",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123576:587908/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"244.00367736816406,25.858200073242188 399.1856689453125,16.729846954345703 391.88299560546875,144.5267791748047 253.13201904296875,153.65513610839844\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#31dc8c8d-eeab-4919-9e3a-01e58a895471"
   }
 }
