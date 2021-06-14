@@ -507,7 +507,7 @@ function setup3dhop() {
     spots={}
     spotcounter=1
     for(ann in result){
-      if(!("target" in result[ann])){
+      if(!ann.startsWith("#")){
         continue;
       }
       spots[""+spotcounter+""]={}
