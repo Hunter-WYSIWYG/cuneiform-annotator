@@ -8,6 +8,7 @@
  
 	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/0.0.124/turf.min.js"></script>
   <script type="text/javascript" src="js/transliterations.js"></script>
   <script type="text/javascript" src="js/hs2CDLI.js"></script>
   <script type="text/javascript" src="js/hs23D.js"></script>
@@ -498,6 +499,14 @@ function getEXIFData(imageid,targetid){
 var presenter = null;
 
 function setup3dhop() {
+  $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_front.json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+      console.log(result)
+    annotations=[]
+    for(ann in result){
+      console.log(result[ann])
+      //annotations.push(result[ann])
+    }
+  });
 	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
