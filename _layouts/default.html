@@ -192,18 +192,24 @@ $(document).ready(function () {
       option.text=mappings[key]["data"][keyy]["signName"]
       input.appendChild(option)
     }
+    for(bod in args.annotation.underlying.body){
+		  /*if(args.annotation.underlying.body[bod].purpose==key){
+			  input.value=args.annotation.underlying.body[bod].value
+		  }*/
+	  }
     $('#'+key).selectize({
         sortField: 'text',
         maxOptions: 5000
     }); 
+  }else{
+    for(bod in args.annotation.underlying.body){
+		  if(args.annotation.underlying.body[bod].purpose==key){
+			  input.value=args.annotation.underlying.body[bod].value
+		  }
+	  }
+	  input.addEventListener('keyup',addTag)
   }
 	input.id=key
-  for(bod in args.annotation.underlying.body){
-		if(args.annotation.underlying.body[bod].purpose==key){
-			input.value=args.annotation.underlying.body[bod].value
-		}
-	}
-	input.addEventListener('keyup',addTag)
 	label.innerHTML=key+": "
 	td1.appendChild(label)
 	td2.appendChild(input)
