@@ -507,9 +507,10 @@ function setup3dhop() {
     spots={}
     spotcounter=1
     for(ann in result){
-      if(!ann.startsWith("#")){
+      console.log(ann)
+      /*if(!ann.startsWith("#")){
         continue;
-      }
+      }*/
       spots[""+spotcounter+""]={}
       curspot=spots[""+spotcounter+""]
       curspot["color"]=[0.0, 0.25, 1.0]
