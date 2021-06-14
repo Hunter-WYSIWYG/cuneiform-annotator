@@ -499,7 +499,10 @@ function getEXIFData(imageid,targetid){
 var presenter = null;
 
 function setup3dhop() {
-  $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken, function(result){
+  $.ajax({
+    
+    url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
+    success: function(result){
       console.log(result)
     annotations=[]
     spots={}
@@ -526,7 +529,42 @@ function setup3dhop() {
       //annotations.push(result[ann])
     }
     console.log(spots)
-  });
+    	presenter = new Presenter("draw-canvas");
+  console.log("load 3d model")
+	presenter.setScene({
+		meshes: {
+			"mesh_1" : { url: $("#3dimages").val() }
+		},
+    spots: spots,
+		modelInstances : {
+			"model_1" : { 
+				mesh  : "mesh_1",
+				color : [0.8, 0.7, 0.75]
+			}
+		},
+		trackball: {
+			type : TurntablePanTrackball,
+			trackOptions : {
+				startPhi: 35.0,
+				startTheta: 15.0,
+				startDistance: 2.5,
+				minMaxPhi: [-180, 180],
+				minMaxTheta: [-30.0, 70.0],
+				minMaxDist: [0.5, 3.0]
+			}
+		}
+	});
+console.log("3d model loaded successfully")
+//--MEASURE--
+	//presenter._onEndMeasurement = onEndMeasure;
+//--MEASURE--
+
+//--POINT PICKING--
+	presenter._onEndPickingPoint = onEndPick;
+//--POINT PICKING--
+console.log("init 3dhop")
+  },
+  error: function(data){
 	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
@@ -560,6 +598,8 @@ console.log("3d model loaded successfully")
 	presenter._onEndPickingPoint = onEndPick;
 //--POINT PICKING--
 console.log("init 3dhop")
+  });
+
 //--SECTIONS--
 //	sectiontoolInit();
 //--SECTIONS--
