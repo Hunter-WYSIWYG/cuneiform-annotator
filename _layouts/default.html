@@ -187,6 +187,7 @@ $(document).ready(function () {
 	}
   if("data" in mappings[key] && input.type=="select"){
     for(keyy in mappings[key]["data"]){
+      console.log(keyy)
       option=document.createElement("option")
       option.value=keyy
       option.text=mappings[key]["data"][keyy]["signName"]
