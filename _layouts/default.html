@@ -497,7 +497,7 @@ var presenter = null;
 
 function setup3dhop() {
 	presenter = new Presenter("draw-canvas");
-
+  console.log("load 3d model")
 	presenter.setScene({
 		meshes: {
 			"mesh_1" : { url: "https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/" }
@@ -520,7 +520,7 @@ function setup3dhop() {
 			}
 		}
 	});
-
+console.log("3d model loaded successfully")
 //--MEASURE--
 	presenter._onEndMeasurement = onEndMeasure;
 //--MEASURE--
@@ -528,7 +528,7 @@ function setup3dhop() {
 //--POINT PICKING--
 	presenter._onEndPickingPoint = onEndPick;
 //--POINT PICKING--
-
+console.log("init 3dhop")
 //--SECTIONS--
 	sectiontoolInit();
 //--SECTIONS--
