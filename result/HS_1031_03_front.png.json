@@ -179,6 +179,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "PaleoCode",
+        "value": ""
       }
     ],
     "target": {
@@ -286,5 +291,29 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#89da7bf8-c2d8-44c3-8d2e-5dd1d5aee0dd"
+  },
+  "#9b930eb7-461d-4d37-baca-87c07a8c6079": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "gin2"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111719:575894/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"483.606201171875,54.650840759277344 663.8579711914062,63.53649139404297 660.0498657226562,198.09063720703125 477.25927734375,198.09063720703125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#9b930eb7-461d-4d37-baca-87c07a8c6079"
   }
 }
