@@ -271,10 +271,15 @@ async function getAnnotation(path){
   return JSON.parse(atob(users["content"]))
 }
   var options=""
+  var options2=""
   for(url in urls){
     options+="<option value=\""+url+"\">"+url+"</option>"
   }
   document.getElementById("images").innerHTML=options
+  for(url in hs23D){
+    options2+="<option value=\""+hs23D[url]+"\">"+url+"</option>"
+  }
+  document.getElementById("3dimages").innerHTML=options2
   var index=0;
   var curanno={}
   var viewer;
@@ -387,7 +392,7 @@ function getEXIFData(imageid,targetid){
 </div>
 <div class="col-md-6">
   3DModel:<br/>
-<select id="3dimages" onchange="reinit()"><option value="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/">Cuneiform Tablet HS 1032B_1</option></select>
+<select id="3dimages" onchange="reinit2()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <dialog id="transliterationdialog" style="z-index: 1000 !important ;">
