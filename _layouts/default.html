@@ -512,12 +512,12 @@ function setup3dhop() {
       curspot["transform"]={}
       curspot["transform"]["matrix"]=[]
       spotcounter+=1
-      coords=result[ann]["target"]["selector"]["value"].replace("<svg><polygon points=\\\"","").replace("\"></polygon></svg>","").replaceAll(","," ")
+      coords=result[ann]["target"]["selector"]["value"].replace('<svg><polygon points=\"','').replace("\"></polygon></svg>","").replaceAll(","," ")
       coordarray=coords.split(" ")
       console.log(coordarray)
       res=[]
       for(i=0;i<coordarray.length-1;i+=2){
-        res.push([coordarray[i],coordarray[i+1]])
+        res.push([parseDouble(coordarray[i]),parseDouble(coordarray[i+1])])
       }
       console.log(res)
       bbox=turf.bbox(turf.lineToPolygon(turf.lineString(res)))
