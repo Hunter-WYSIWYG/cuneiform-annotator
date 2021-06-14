@@ -277,10 +277,6 @@ async function getAnnotation(path){
     options+="<option value=\""+url+"\">"+url+"</option>"
   }
   document.getElementById("images").innerHTML=options
-  for(url in hs23D){
-    options2+="<option value=\""+hs23D[url]+"\">"+url+"</option>"
-  }
-  document.getElementById("3dimages").innerHTML=options2
   var index=0;
   var curanno={}
   var viewer;
@@ -674,6 +670,10 @@ Grid Offset Y: <input id="gridoffsety" type="number" value="0" onChange="recreat
 <div id="grid-source"><img id="gridimage" src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
 <div id="grid-overlay"></div>
 <script>
+  for(url in hs23D){
+    options2+="<option value=\""+hs23D[url]+"\">"+url+"</option>"
+  }
+  document.getElementById("3dimages").innerHTML=options2
 function recreateGrid(){
 var $src = $('#grid-source');
 var $wrap = $('#grid-overlay');
