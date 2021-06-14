@@ -502,10 +502,28 @@ function setup3dhop() {
   $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_front.json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
+    spots={}
+    spotcounter=1
     for(ann in result){
-      console.log(result[ann])
+      spots[""+spotcounter+""]={}
+      curspot=spots[""+spotcounter+""]
+      curspot["color"]=[0.0, 0.25, 1.0]
+      curspot["mesh"]="mesh_1"
+      curspot["transform"]={}
+      curspot["transform"]["matrix"]=[]
+      spotcounter+=1
+      coords=result[ann]["target"]["selector"]["value"].replace("<svg polygon=\"").replace("\"></polygon></svg>")
+      console.log(coords)
+      res=[]
+      for(i=0;i<coords.length-1;i+=2){
+        res.push([coords[i],coords[i+1]])
+      }
+      bbox=turf.bbox(turf.lineToPolygon(turf.lineString(res)))
+      curspot["transform"]["matrix"]=bbox
+      console.log(curspot)
       //annotations.push(result[ann])
     }
+    console.log(spots)
   });
 	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
