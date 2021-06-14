@@ -189,7 +189,7 @@ $(document).ready(function () {
     for(keyy in mappings[key]["data"]){
       option=document.createElement("option")
       option.value=keyy
-      option.text=mappings[key]["data"][keyy]
+      option.text=mappings[key]["data"][keyy]["signName"]
       input.appendChild(option)
     }
     $('#'+key).selectize({
