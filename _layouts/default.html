@@ -517,7 +517,7 @@ function setup3dhop() {
       console.log(coordarray)
       res=[]
       for(i=0;i<coordarray.length-1;i+=2){
-        res.push([parseDouble(coordarray[i]),parseDouble(coordarray[i+1])])
+        res.push([parseFloat(coordarray[i]),parseFloat(coordarray[i+1])])
       }
       console.log(res)
       bbox=turf.bbox(turf.lineToPolygon(turf.lineString(res)))
