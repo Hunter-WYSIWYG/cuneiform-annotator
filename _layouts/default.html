@@ -11,6 +11,8 @@
   <script type="text/javascript" src="js/transliterations.js"></script>
   <script type="text/javascript" src="js/hs2CDLI.js"></script>
   <script type="text/javascript" src="js/periods.js"></script>
+  <script type="text/javascript" src="js/cuneifymap.js"></script>
+  <script type="text/javascript" src="js/charlistmap.js"></script>
   <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
@@ -116,7 +118,7 @@ $(document).ready(function () {
       $('#images').selectize({
           sortField: 'text',
           maxOptions: 5000
-      });
+      });    
       $('#3dimages').selectize({
           sortField: 'text',
           maxOptions: 5000
@@ -128,7 +130,7 @@ $(document).ready(function () {
 <script>
 	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleocodage":true},
 	"Transliteration":{"inputtype":"text","regex":"","handler":null},
-  "Unicode Character Name":{"inputtype":"text","regex":"","handler":null},
+  "UnicodeCharName":{"inputtype":"select","regex":"","handler":null,"data":charlistmap},
 	"Line":{"inputtype":"number","regex":"","handler":null}
 	}
 	  
@@ -181,6 +183,18 @@ $(document).ready(function () {
 	}else{
 		input.type="text"	
 	}
+  if("data" in mappings[key] && input.type=="select"){
+    for(keyy in mappings[key]["data"]){
+      option=document.createElement("option")
+      option.value=keyy
+      option.text=mappings[key]["data"][keyy]
+      input.appendChild(option)
+    }
+    $('#'+key).selectize({
+        sortField: 'text',
+        maxOptions: 5000
+    }); 
+  }
 	input.id=key
   for(bod in args.annotation.underlying.body){
 		if(args.annotation.underlying.body[bod].purpose==key){
