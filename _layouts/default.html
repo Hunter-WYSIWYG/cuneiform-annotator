@@ -507,8 +507,8 @@ function setup3dhop() {
     spots={}
     spotcounter=1
     for(ann in result){
-      console.log(ann)
-      if(!("selector" in result[ann]["target"])){
+      console.log(result[ann])
+      if(!("target" in result[ann])){
         continue;
       }
       spots[""+spotcounter+""]={}
