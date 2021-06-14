@@ -512,7 +512,7 @@ function setup3dhop() {
       curspot["transform"]={}
       curspot["transform"]["matrix"]=[]
       spotcounter+=1
-      coords=result[ann]["target"]["selector"]["value"].replace("<svg polygon=\"").replace("\"></polygon></svg>")
+      coords=result[ann]["target"]["selector"]["value"].replace("<svg polygon=\"").replace("\"></polygon></svg>").replaceAll(","," ").split(" ")
       console.log(coords)
       res=[]
       for(i=0;i<coords.length-1;i+=2){
