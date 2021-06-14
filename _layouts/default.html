@@ -499,7 +499,7 @@ function getEXIFData(imageid,targetid){
 var presenter = null;
 
 function setup3dhop() {
-  $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_front.json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+  $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_front.png.json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
     spots={}
