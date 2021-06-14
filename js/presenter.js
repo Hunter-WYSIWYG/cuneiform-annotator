@@ -2544,6 +2544,8 @@ _createMeshModels : function () {
 					mesh.mType = "nexus";
 				else if(ext === "ply")
 					mesh.mType = "ply";
+				else
+					mesh.mType ="ply";
 			}
 
 			if(mesh.mType === "nexus") {
