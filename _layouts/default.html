@@ -499,8 +499,7 @@ function getEXIFData(imageid,targetid){
 var presenter = null;
 
 function setup3dhop() {
-  $.ajax({
-    
+  $.ajax({    
     url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
     success: function(result){
       console.log(result)
@@ -598,11 +597,12 @@ console.log("3d model loaded successfully")
 	presenter._onEndPickingPoint = onEndPick;
 //--POINT PICKING--
 console.log("init 3dhop")
-  });
+  }
 
 //--SECTIONS--
 //	sectiontoolInit();
 //--SECTIONS--
+});
 }
 
 function actionsToolbar(action) {
