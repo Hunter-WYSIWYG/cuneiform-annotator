@@ -177,7 +177,9 @@ $(document).ready(function () {
   var label = document.createElement('label');
 	var input = document.createElement('input');
 	console.log(mappings[key])
-	if("inputtype" in mappings[key]){
+  if("inputtype" in mappings[key] && mappings[key]["inputtype"]=="select"){
+    input = document.createElement('select');
+  }else if("inputtype" in mappings[key]){
 		input.type=mappings[key]["inputtype"]
 		input.min=1
 	}else{
