@@ -185,7 +185,7 @@ $(document).ready(function () {
 	}else{
 		input.type="text"	
 	}
-  if("data" in mappings[key] && input.type=="select"){
+  if("data" in mappings[key] && mappings[key]["inputtype"]=="select"){
     for(keyy in mappings[key]["data"]){
       console.log(keyy)
       option=document.createElement("option")
