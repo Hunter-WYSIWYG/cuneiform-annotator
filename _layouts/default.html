@@ -522,12 +522,12 @@ function getEXIFData(imageid,targetid){
 <script type="text/javascript">
 var presenter = null;
 
-var 3dannos={};
+var annos3d={};
 
 function onPickedSpot(id) {
   console.log(id)
-  if(id in 3dannos){
-    console.log(3dannos[id])
+  if(id in annos3d){
+    console.log(annos3d[id])
   }
 }
 
@@ -538,7 +538,7 @@ function setup3dhop() {
     success: function(res){
     result=JSON.parse(res)
       console.log(result)
-    3dannos=result
+    annos3d=result
     annotations=[]
     spots={}
     spotcounter=1
