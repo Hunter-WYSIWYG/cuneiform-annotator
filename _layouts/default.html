@@ -539,20 +539,16 @@ function setup3dhop() {
   console.log("load 3d model")
 	presenter.setScene({
 		meshes: {
-			"mesh_1" : { url: $("#3dimages").val() }
+			"mesh_1" : { url: $("#3dimages").val() },
+      "Cube": {url: "models/cube.ply"},
+      "Sphere": {url: "models/sphere.ply"}
 		},
     spots: spots,
 		modelInstances : {
 			"model_1" : { 
 				mesh  : "mesh_1",
 				color : [0.8, 0.7, 0.75]
-			},
-      "Cube": {
-        url: "models/cube.ply"
-      },
-      "Sphere": {
-        url: "models/sphere.ply"
-      },
+			}
 		},
 		trackball: {
 			type : TurntablePanTrackball,
