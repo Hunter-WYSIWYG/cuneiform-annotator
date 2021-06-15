@@ -522,12 +522,22 @@ function getEXIFData(imageid,targetid){
 <script type="text/javascript">
 var presenter = null;
 
+function onPickedSpot(id) {
+  console.log(id)
+  if(id in 3dannos){
+    console.log(3dannos[id])
+  }
+}
+
+var 3dannos;
+
 function setup3dhop() {
   $.ajax({    
     url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
     success: function(res){
     result=JSON.parse(res)
       console.log(result)
+    3dannos=result
     annotations=[]
     spots={}
     spotcounter=1
@@ -563,6 +573,7 @@ function setup3dhop() {
     console.log(spots)
     	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
+  presenter._onPickedSpot = onPickedSpot;
 	presenter.setScene({
 		meshes: {
 			"mesh_1" : { url: $("#3dimages").val() },
