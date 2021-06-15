@@ -332,7 +332,7 @@ async function getAnnotation(path){
   function reinit(param){
     param=$('#imageside option:selected').val()
     param2=$('#imageside option:selected').text()
-    if(typeof myVar === 'undefined'){
+    if(typeof viewer === 'undefined'){
           viewer = OpenSeadragon({
       id: "openseadragon",
       prefixUrl: "openseadragon/images/",
