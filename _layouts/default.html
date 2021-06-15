@@ -515,7 +515,7 @@ function setup3dhop() {
       spots[""+spotcounter+""]={}
       curspot=spots[""+spotcounter+""]
       curspot["color"]=[0.0, 0.25, 1.0]
-      curspot["mesh"]="Sphere"
+      curspot["mesh"]="Cube"
       curspot["transform"]={}
       curspot["transform"]["matrix"]=[]
       spotcounter+=1
@@ -528,7 +528,7 @@ function setup3dhop() {
       }
       console.log(res)
       bbox=turf.bbox(turf.lineToPolygon(turf.lineString(res)))
-      curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([5.0, 5.0, 1.0]))
+      curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([1.0, 1.0, 1.0]))
      
       //SglMat4.mul(SglMat4.translation([bbox[0]/10,bbox[1]/10,bbox[2]/10]), SglMat4.scaling([2.0, 2.0, 2.0]))
       console.log(curspot)
