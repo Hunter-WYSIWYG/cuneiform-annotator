@@ -352,6 +352,8 @@ async function getAnnotation(path){
 
     // Initialize the Annotorious plugin
     anno = OpenSeadragon.Annotorious(viewer,annoconfig);
+    Annotorious.Toolbar(anno, document.getElementById('my-toolbar-container'));
+    Annotorious.TiltedBox(anno);
     }else{
     viewer.open({
         type: "image",
