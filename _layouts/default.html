@@ -526,6 +526,7 @@ var annos3d={};
 
 function onPickedSpot(id) {
   console.log(id)
+  console.log(annos3d)
   if(id in annos3d){
     console.log(annos3d[id])
   }
@@ -547,8 +548,9 @@ function setup3dhop() {
       if(!("target" in result[ann])){
         continue;
       }
-      spots[""+spotcounter+""]={}
-      curspot=spots[""+spotcounter+""]
+      console.log(ann)
+      spots[""+ann+""]={}
+      curspot=spots[""+ann+""]
       curspot["color"]=[0.0, 0.25, 1.0]
       curspot["mesh"]="Cube"
       curspot["transform"]={}
