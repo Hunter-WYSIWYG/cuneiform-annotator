@@ -522,6 +522,8 @@ function getEXIFData(imageid,targetid){
 <script type="text/javascript">
 var presenter = null;
 
+var 3dannos={};
+
 function onPickedSpot(id) {
   console.log(id)
   if(id in 3dannos){
@@ -529,7 +531,6 @@ function onPickedSpot(id) {
   }
 }
 
-var 3dannos;
 
 function setup3dhop() {
   $.ajax({    
@@ -573,7 +574,7 @@ function setup3dhop() {
     console.log(spots)
     	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
-  presenter._onPickedSpot = onPickedSpot;
+
 	presenter.setScene({
 		meshes: {
 			"mesh_1" : { url: $("#3dimages").val() },
