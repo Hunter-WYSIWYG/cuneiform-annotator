@@ -515,7 +515,7 @@ function setup3dhop() {
       spots[""+spotcounter+""]={}
       curspot=spots[""+spotcounter+""]
       curspot["color"]=[0.0, 0.25, 1.0]
-      curspot["mesh"]="Sphere"
+      curspot["mesh"]="Cube"
       curspot["transform"]={}
       curspot["transform"]["matrix"]=[]
       spotcounter+=1
@@ -546,7 +546,13 @@ function setup3dhop() {
 			"model_1" : { 
 				mesh  : "mesh_1",
 				color : [0.8, 0.7, 0.75]
-			}
+			},
+      "Cube": {
+        url: "models/cube.ply"
+      },
+      "Sphere": {
+        url: "models/sphere.ply"
+      },
 		},
 		trackball: {
 			type : TurntablePanTrackball,
