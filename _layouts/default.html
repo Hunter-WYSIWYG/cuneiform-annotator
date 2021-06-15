@@ -574,7 +574,7 @@ function setup3dhop() {
     console.log(spots)
     	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
-
+  presenter._onPickedSpot = onPickedSpot;
 	presenter.setScene({
 		meshes: {
 			"mesh_1" : { url: $("#3dimages").val() },
