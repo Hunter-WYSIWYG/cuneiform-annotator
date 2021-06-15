@@ -578,7 +578,7 @@ function setup3dhop() {
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([0.1, 0.1, 0.07]))
       }else if("dimensions" in result[ann]["body"][0]){
         dims=result[ann]["body"][0]["dimensions"]
-        xoord=bbox[0]
+        xcoord=bbox[0]
         if(bbox[0]>(dims["x"]/2)){
           xcoord-=(dims["x"]/2)
         }else{
