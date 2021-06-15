@@ -332,10 +332,21 @@ async function getAnnotation(path){
   function reinit(param){
     param=$('#imageside option:selected').val()
     param2=$('#imageside option:selected').text()
+    if(typeof myVar === 'undefined'){
+          viewer = OpenSeadragon({
+      id: "openseadragon",
+      prefixUrl: "openseadragon/images/",
+      tileSources: {
+        type: "image",
+        url: param
+      }
+    });
+    }else{
     viewer.open({
         type: "image",
         url: param
       });
+    }
     curanno={}
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
