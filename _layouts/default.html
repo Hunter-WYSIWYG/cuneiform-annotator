@@ -529,6 +529,12 @@ function onPickedSpot(id) {
   console.log(annos3d)
   if(id in annos3d){
     console.log(annos3d[id])
+    content=""
+    for(bod in annos3d[id]["body"]){
+      content+=bod["value"]+" "
+    }
+    console.log(content)
+    alert(content)
   }
 }
 
