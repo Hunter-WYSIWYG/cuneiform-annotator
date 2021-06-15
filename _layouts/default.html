@@ -341,6 +341,17 @@ async function getAnnotation(path){
         url: param
       }
     });
+        var annoconfig={
+      formatter: Annotorious.ShapeLabelsFormatter,
+      widgets:[
+    TextMapWidget,
+    'COMMENT',
+    { widget: 'TAG', vocabulary: Object.keys(mlVocabulary) }
+    ]}
+
+
+    // Initialize the Annotorious plugin
+    anno = OpenSeadragon.Annotorious(viewer,annoconfig);
     }else{
     viewer.open({
         type: "image",
