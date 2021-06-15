@@ -153,15 +153,18 @@ $(document).ready(function () {
 	  args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
+        dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
     });
   }else{
     args.annotation.underlying.body[removeindex].value=evt.srcElement.value
+    args.annotation.underlying.body[removeindex].dimensions=viewer.world.getItemAt(0).getContentSize()
   }
 	console.log(args)
 	console.log({
         type: 'TextualBody',
         purpose: evt.target.id,
+        dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
     })
   }
