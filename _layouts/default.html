@@ -528,7 +528,7 @@ function setup3dhop() {
       }
       console.log(res)
       bbox=turf.bbox(turf.lineToPolygon(turf.lineString(res)))
-      curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([0.1, 0.1, 0.1]))
+      curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([0.1, 0.1, 0.01]))
      
       //SglMat4.mul(SglMat4.translation([bbox[0]/10,bbox[1]/10,bbox[2]/10]), SglMat4.scaling([2.0, 2.0, 2.0]))
       console.log(curspot)
