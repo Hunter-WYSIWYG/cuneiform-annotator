@@ -584,7 +584,7 @@ function setup3dhop() {
         }else{
           xcoord*=-1
         }
-        curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoord/25)-10,(bbox[1]/25),4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
+        curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([(xcoord/25),(bbox[1]/25),4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
       }else{
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([(bbox[0]/25)-10,(bbox[1]/25),4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
       }
