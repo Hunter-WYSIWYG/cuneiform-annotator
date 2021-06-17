@@ -890,14 +890,20 @@ $('#grid-overlay td').mousemove(function() {
 }
 recreateGrid();
       paleolist=""
+      svglist=[]
+      svgcounter=1
       for(pal in paleocodemap){
         paleolist+="<li>"+pal+"<ul>"
         for(pall in paleocodemap[pal]){
           paleolist+="<li>"+pall+" "
-          paleolist+=paleoCodageToSVG(paleocodemap[pal][pall],0,"svgcanvas")
+          paleolist+="<div id=\"svg"+svgcounter+"\"></div>")
+          svglist.push(paleoCodageToSVG(paleocodemap[pal][pall],0,"svgcanvas"))
           paleolist+=" ("+paleocodemap[pal][pall]+")</li>"
         }
         paleolist+="</ul></li>"
+      }
+      for(svg in svglist){
+        $('#svg'+svg).html(svglist[svg])
       }
       console.log(paleolist)
       $('#paleocodelist').html(paleolist)
