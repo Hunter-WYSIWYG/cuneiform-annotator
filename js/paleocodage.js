@@ -864,10 +864,11 @@ function paleoCodageToSVG(paleoCode,index,canvasid="myCanvas"){
         //$(dom).appendTo('.svg:nth-child('+index+')')
         //document.getElementById('svg').appendChild(dom.documentElement);
 	}
-	//console.log(svghtml)
+	console.log(svghtml)
 	//console.log(svghtml.indexOf('d="')+" - "+svghtml.indexOf('"',svghtml.indexOf('d="')+3))
 	svghtml=svghtml.substring(svghtml.indexOf('d="')+3,svghtml.indexOf('"',svghtml.indexOf('d="')+3))
 	svghtml=svghtml.replace(/\.5/g,'')
+	console.log(svghtml)
 	return svghtml
 	//console.log(svghtml)
 }
