@@ -589,8 +589,11 @@ function setup3dhop() {
 			}
 		}
 	});
+    console.log(hs23D[$("#3dimages").text()])
+    console.log(presenter.curBBOX)
     hs23D[$("#3dimages").text()]["bbox"]=presenter.curBBOX
-    commit3DBBOX()
+    console.log(hs23D[$("#3dimages").text()])
+    //commit3DBBOX()
   }
   $.ajax({    
     url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
