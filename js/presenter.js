@@ -90,7 +90,6 @@ _parseMesh : function (options) {
 		transform : null
 	}, options);
 	console.log(r)
-	curBBOX=r.renderable.boundingBox
 	r.transform = this._parseTransform(r.transform);
 	if (r.url) { this._objectsToProcess++; this._objectsToLoad++; }
 	return r;
@@ -998,6 +997,7 @@ _objectLoaded : function () {
 _testReady : function () {
 	if (this._objectsToLoad != 0) return;
 	this._sceneReady = this._scenePrepare();
+	curBBOX=presenter._scene.meshes.mesh_1.renderable.boundingBox
 	this.repaint();
 },
 
