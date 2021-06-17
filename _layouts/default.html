@@ -645,6 +645,7 @@ console.log("3d model loaded successfully")
 	presenter._onEndPickingPoint = onEndPick;
 //--POINT PICKING--
 console.log("init 3dhop")
+  console.log(presenter.r.meshes)
   },
   error: function(data){
 	presenter = new Presenter("draw-canvas");
@@ -680,6 +681,7 @@ console.log("3d model loaded successfully")
 	presenter._onEndPickingPoint = onEndPick;
 //--POINT PICKING--
 console.log("init 3dhop")
+  console.log(presenter.r.meshes)
   }
 
 //--SECTIONS--
@@ -810,7 +812,7 @@ $('#toolbar2 img')
         });
 */
 	setup3dhop();
-  console.log(presenter.r.meshes)
+
 });
 </script>
 </div>
