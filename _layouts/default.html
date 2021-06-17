@@ -894,7 +894,7 @@ recreateGrid();
         paleolist+="<li>"+pal+"<ul>"
         for(pall in paleocodemap[pal]){
           paleolist+="<li>"+pall+" "
-          paleolist+=paleoCodageToSVG(paleocodemap[pal][pall])
+          paleolist+=paleoCodageToSVG(paleocodemap[pal][pall],0,"svgcanvas")
           paleolist+=" ("+paleocodemap[pal][pall]+")</li>"
         }
         paleolist+="</ul></li>"

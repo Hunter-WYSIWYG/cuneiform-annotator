@@ -838,9 +838,9 @@ function paleoCodageToOpenTypePath(paleoCode){
         return ctx3;
 }
 
-function paleoCodageToSVG(paleoCode,index){
+function paleoCodageToSVG(paleoCode,index,canvasid="myCanvas"){
 	//console.log(paleoCode)
-	strokeParser(paleoCode,false,false)
+	strokeParser(paleoCode,false,false,false,canvasid)
 	
     //console.log(ctx2.getSerializedSvg())
 	//ctx2.scale(10,10);
