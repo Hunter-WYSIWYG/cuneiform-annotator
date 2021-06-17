@@ -281,7 +281,7 @@ async function commit3DBBOX(){
 try{
   var users= await api.RepositoryFiles.create(16599, "js/hs23D.js","master","var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js");
 }catch (e) {
-  var users= await api.RepositoryFiles.create(16599, "js/hs23D.js","master","var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js");
+  var users= await api.RepositoryFiles.edit(16599, "js/hs23D.js","master","var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js");
 }
 console.log(users)
 }
