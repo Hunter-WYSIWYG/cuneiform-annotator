@@ -81,8 +81,8 @@ var wedgearray=[];
 /**
  * Converts the content of the canvas into an PNG-type image
  */
-function to_image(){
-                var canvas = document.getElementById("myCanvas");
+function to_image(canvasid="myCanvas"){
+                var canvas = document.getElementById(canvasid);
                 document.getElementById("canvasImg").src = canvas.toDataURL();
                 Canvas2Image.saveAsPNG(canvas);
                 document.getElementById("canvasImg").style.visibility = 'hidden';
@@ -874,8 +874,8 @@ function paleoCodageToSVG(paleoCode,index){
 var recursiverotation=false;
 //var canvasSVGContext = new CanvasSVG.Deferred();
 //canvasSVGContext.wrapCanvas(document.getElementById("myCanvas"));
-function strokeParser(input,svgonly,recursive,rotationcheck){
-    var ctx = document.getElementById("myCanvas").getContext("2d");
+function strokeParser(input,svgonly,recursive,rotationcheck,canvasid="myCanvas"){
+    var ctx = document.getElementById(canvasid).getContext("2d");
     console.log("Input: "+input)
 	$('#similar').html("")
 	//console.log(JSON.stringify(currenthead))
@@ -1627,18 +1627,18 @@ function drawSeal(start,starty,canvas,strokeparse,big,keepconfig,half,filled,loc
     canvas.stroke();
 }
 
-function clearCanvas(strokeParser){
-    var c=document.getElementById("myCanvas");
+function clearCanvas(strokeParser,canvasid="myCanvas",inputid="canvasinput"){
+    var c=document.getElementById(canvasid);
     c.width = c.width;
 	ctx2.clearRect(0,0,ctx2width,ctx2height);
 	//document.getElementById("canvas").width=document.getElementById("canvas").width
     if(!strokeParser)
-        document.getElementById('canvasinput').value=""
+        document.getElementById(inputid).value=""
 }
 
 function showCharacter(character){
         strokeParser(character,false,false)
-        document.getElementById('canvasinput').value=character
+        document.getElementById(inputid).value=character
 }
 
 function appendCharacter(character,input){
