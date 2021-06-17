@@ -63,6 +63,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+
   function loadVariants(){
     console.log($('#images option:selected').text())
     console.log(transliterations)
@@ -595,11 +596,13 @@ function setup3dhop() {
 	});
     console.log(hs23D[$("#3dimages").text()])
     console.log(presenter)
-    while(presenter._objectsToLoad != 0){
-      sleep(1000);
-    }
+    setTimeout(
+    function() 
+    {
     hs23D[$("#3dimages").text()]["bbox"]=presenter._scene.meshes.mesh_1.renderable.boundingBox
     console.log(hs23D[$("#3dimages").text()])
+    }, 10000);
+
     //commit3DBBOX()
   }
   $.ajax({    
