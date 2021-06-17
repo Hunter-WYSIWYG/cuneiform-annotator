@@ -59,6 +59,10 @@ Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
   function loadVariants(){
     console.log($('#images option:selected').text())
     console.log(transliterations)
