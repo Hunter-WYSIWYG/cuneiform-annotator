@@ -827,7 +827,7 @@ Grid Offset Y: <input id="gridoffsety" type="number" value="0" onChange="recreat
 <div id="grid-overlay"></div>
 <script>
   for(url in hs23D){
-    options2+="<option value=\""+hs23D[url]+"\">"+url+"</option>"
+    options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
   }
   document.getElementById("3dimages").innerHTML=options2
 function recreateGrid(){
