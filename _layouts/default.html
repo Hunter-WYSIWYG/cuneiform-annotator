@@ -897,7 +897,8 @@ recreateGrid();
         for(pall in paleocodemap[pal]){
           paleolist+="<li>"+pall+" "
           paleolist+="<div id=\"svg"+svgcounter+"\"></div>"
-          svglist.push(paleoCodageToSVG(paleocodemap[pal][pall],0,"svgcanvas"))
+          var svghtml=ctx2.getSerializedSvg(true)
+          svglist.push(paleoCodageToSVG(pall,0,"svgcanvas"))
           paleolist+=" ("+paleocodemap[pal][pall]+")</li>"
         }
         paleolist+="</ul></li>"
