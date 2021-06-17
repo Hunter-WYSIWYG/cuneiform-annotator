@@ -590,8 +590,8 @@ function setup3dhop() {
 		}
 	});
     console.log(hs23D[$("#3dimages").text()])
-    console.log(presenter.curBBOX)
-    hs23D[$("#3dimages").text()]["bbox"]=presenter.curBBOX
+    console.log(presenter)
+    hs23D[$("#3dimages").text()]["bbox"]=presenter._scene.meshes.mesh_1.renderable.boundingBox
     console.log(hs23D[$("#3dimages").text()])
     //commit3DBBOX()
   }
