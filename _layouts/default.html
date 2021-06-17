@@ -277,6 +277,15 @@ try{
 console.log(users)
 }
 
+async function commit3DBBOX(){
+try{
+  var users= await api.RepositoryFiles.create(16599, "js/hs23D.js","master","var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js");
+}catch (e) {
+  var users= await api.RepositoryFiles.create(16599, "js/hs23D.js","master","var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js");
+}
+console.log(users)
+}
+
 var curnamespace="http://purl.org/olia/olia.owl#"
 
 var mlVocabulary={"Broken":curnamespace+"Broken","Character":curnamespace+"Character","Line":curnamespace+"Line","Image":curnamespace+"Image","Word":curnamespace+"Word","Seal":curnamespace+"Seal","Phrase":curnamespace+"Phrase","Erased":curnamespace+"Erased","StrikeOut":curnamespace+"StrikeOut","Wordstart":curnamespace+"Wordstart","Wordend":curnamespace+"Wordend","InWord":curnamespace+"InWord","UnknownIfWord":curnamespace+"UnknownIfWord"}
@@ -555,6 +564,34 @@ function onPickedSpot(id) {
 
 
 function setup3dhop() {
+  if(!("bbox" in hs23D[$("#3dimages").text()])){
+    	presenter = new Presenter("draw-canvas");
+  console.log("load 3d model")
+	presenter.setScene({
+		meshes: {
+			"mesh_1" : { url: $("#3dimages").val() }
+		},
+		modelInstances : {
+			"model_1" : { 
+				mesh  : "mesh_1",
+				color : [0.8, 0.7, 0.75]
+			}
+		},
+		trackball: {
+			type : TurntablePanTrackball,
+			trackOptions : {
+				startPhi: 35.0,
+				startTheta: 15.0,
+				startDistance: 2.5,
+				minMaxPhi: [-180, 180],
+				minMaxTheta: [-30.0, 70.0],
+				minMaxDist: [0.5, 3.0]
+			}
+		}
+	});
+    hs23D[$("#3dimages").text()]["bbox"]=presenter.curBBOX
+    commit3DBBOX()
+  }
   $.ajax({    
     url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
     success: function(res){
@@ -570,6 +607,7 @@ function setup3dhop() {
         continue;
       }
       console.log(ann)
+      console.log(hs23D[$("#3dimages").text()]["bbox"])
       spots[""+ann+""]={}
       curspot=spots[""+ann+""]
       curspot["color"]=[0.0, 0.25, 1.0]
@@ -672,6 +710,7 @@ console.log("init 3dhop")
 			}
 		}
 	});
+
 console.log("3d model loaded successfully")
 //--MEASURE--
 	//presenter._onEndMeasurement = onEndMeasure;

@@ -39,6 +39,8 @@ const SGL_TRACKBALL_PAN       = 2;
 const SGL_TRACKBALL_DOLLY     = 3;
 const SGL_TRACKBALL_SCALE     = 4;
 
+var curBBOX=null
+
 Presenter = function (canvas) {
 	this._supportsWebGL = sglHandleCanvas(canvas, this, { stencil: true });
 	console.log("3DHOP version: " + this.version);
@@ -88,6 +90,7 @@ _parseMesh : function (options) {
 		transform : null
 	}, options);
 	console.log(r)
+	curBBOX=r.renderable.boundingBox
 	r.transform = this._parseTransform(r.transform);
 	if (r.url) { this._objectsToProcess++; this._objectsToLoad++; }
 	return r;
