@@ -1629,11 +1629,14 @@ function drawSeal(start,starty,canvas,strokeparse,big,keepconfig,half,filled,loc
 
 function clearCanvas(strokeParser,canvasid="myCanvas",inputid="canvasinput"){
     var c=document.getElementById(canvasid);
-    c.width = c.width;
-	ctx2.clearRect(0,0,ctx2width,ctx2height);
-	//document.getElementById("canvas").width=document.getElementById("canvas").width
-    if(!strokeParser)
-        document.getElementById(inputid).value=""
+	if(c!=null){
+    	c.width = c.width;
+		ctx2.clearRect(0,0,ctx2width,ctx2height);
+		//document.getElementById("canvas").width=document.getElementById("canvas").width
+    	if(!strokeParser)
+        	document.getElementById(inputid).value=""
+	}
+
 }
 
 function showCharacter(character){
