@@ -87,6 +87,7 @@ _parseMesh : function (options) {
 		mType     : null,
 		transform : null
 	}, options);
+	console.log(r)
 	r.transform = this._parseTransform(r.transform);
 	if (r.url) { this._objectsToProcess++; this._objectsToLoad++; }
 	return r;
