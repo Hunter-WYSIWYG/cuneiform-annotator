@@ -896,7 +896,7 @@ recreateGrid();
         paleolist+="<li>"+pal+"<ul>"
         for(pall in paleocodemap[pal]){
           paleolist+="<li>"+pall+" "
-          paleolist+="<div id=\"svg"+svgcounter+"\"></div>"
+          paleolist+="<div id=\"svg"+svgcounter+"\">"+paleoCodageToSVG(pall,0,"svgcanvas")+"</div>"
           svgcounter+=1
           var svghtml=ctx2.getSerializedSvg(true)
           svglist.push(paleoCodageToSVG(pall,0,"svgcanvas"))
@@ -904,12 +904,12 @@ recreateGrid();
         }
         paleolist+="</ul></li>"
       }
-      svgcounter=1
+      /*svgcounter=1
       for(svg in svglist){
         console.log('#svg'+svgcounter)
         $('#svg'+svgcounter).html(svg)
         svgcounter+=1
-      }
+      }*/
       console.log(paleolist)
       $('#paleocodelist').html(paleolist)
 </script>
