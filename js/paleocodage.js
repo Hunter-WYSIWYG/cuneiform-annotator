@@ -875,7 +875,7 @@ function paleoCodageToSVG(paleoCode,index,canvasid="myCanvas"){
 var recursiverotation=false;
 //var canvasSVGContext = new CanvasSVG.Deferred();
 //canvasSVGContext.wrapCanvas(document.getElementById("myCanvas"));
-function strokeParser(input,svgonly,recursive,rotationcheck,canvasid="myCanvas"){
+function strokeParser(input,svgonly,recursive,rotationcheck,canvasid="myCanvas",colorchooser="strokeColor"){
     var ctx = document.getElementById(canvasid).getContext("2d");
     console.log("Input: "+input)
 	$('#similar').html("")
@@ -917,7 +917,10 @@ function strokeParser(input,svgonly,recursive,rotationcheck,canvasid="myCanvas")
 		var winkelhaken=(input.charAt(i)=="w" || input.charAt(i)=="W")
         console.log(i+" - "+selectionStart+" - "+selectionEnd)
         if(i==selectionStart){
-            previousColor=document.getElementById("strokeColor").value
+			if(document.getElementById(colorchooser)!=null)
+            	previousColor=document.getElementById(colorchooser).value
+			else
+				previousCoulor="black"
         }
         if(i>=selectionStart && i<=selectionEnd && selectionStart!=selectionEnd){
             strokeColor="red"
