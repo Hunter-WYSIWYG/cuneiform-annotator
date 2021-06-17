@@ -997,7 +997,7 @@ _testReady : function () {
 	if (this._objectsToLoad != 0) return;
 	this._sceneReady = this._scenePrepare();
 	console.log(presenter._scene.meshes.mesh_1)
-	curBBOX=presenter._scene.meshes.mesh_1.renderable.boundingBox
+	//curBBOX=presenter._scene.meshes.mesh_1.renderable.boundingBox
 	this.repaint();
 },
 
