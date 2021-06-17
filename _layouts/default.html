@@ -892,10 +892,12 @@ recreateGrid();
       paleolist=""
       for(pal in paleocodemap){
         paleolist+="<li>"+pal+"<ul>"
+        svgcounter=1
         for(pall in paleocodemap[pal]){
           paleolist+="<li>"+pall+" "
           paleolist+="<div id=\"svg"+svgcounter+"\"><svg><path d=\""+paleoCodageToSVG(pall,0,"svgcanvas")+"\"/></svg></div>"
           paleolist+=" ("+paleocodemap[pal][pall]+")</li>"
+          svgcounter+=1
         }
         paleolist+="</ul></li>"
       }
