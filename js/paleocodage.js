@@ -139,6 +139,18 @@ function loadWinkelhakenSVG(svgname){
         });
 }
 
+function paintCharacter(canvasinput){
+        selectionStart=$("#"+canvasinput).prop('selectionStart')
+        selectionEnd=$("#"+canvasinput).prop('selectionEnd')
+        strokeParser(document.getElementById(canvasinput).value)
+	}
+	
+	function paintCharacterBlur(canvasinput){
+        selectionStart=0
+        selectionEnd=0
+        strokeParser(document.getElementById(canvasinput).value)
+	}
+
 /**
  * Loads the SVG path out of a given SVG file and loads the coordinates into the currenthead array.
  * @async

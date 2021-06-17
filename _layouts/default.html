@@ -225,13 +225,23 @@ $(document).ready(function () {
     canvas.width=150
     canvas.height=75
     canvas.style="border:1px solid #d3d3d3;"
-    input.addEventListener('keyup',function(){        
-        selectionStart=$('#PaleoCode').prop('selectionStart')
-        selectionEnd=$('#PaleoCode').prop('selectionEnd')
-        strokeParser(document.getElementById('PaleoCode').value)
+    input.addEventListener('keyup',function(event){
+        paintCharacter(event.target.id)        
+        //selectionStart=$('#PaleoCode').prop('selectionStart')
+        //selectionEnd=$('#PaleoCode').prop('selectionEnd')
+        //strokeParser(document.getElementById('PaleoCode').value)
+    });
+    input.addEventListener('blur',function(event){
+        paintCharacter(event.target.id)        
+        //selectionStart=$('#PaleoCode').prop('selectionStart')
+        //selectionEnd=$('#PaleoCode').prop('selectionEnd')
+        //strokeParser(document.getElementById('PaleoCode').value)
     });
     input.addEventListener("click",function(){
-      strokeParser(document.getElementById('PaleoCode').value)
+        paintCharacter(event.target.id)
+    });
+    input.addEventListener("select",function(){
+        paintCharacter(event.target.id)
     });
   }
     return div;
@@ -253,6 +263,8 @@ $(document).ready(function () {
 
   return container;
 }
+
+
 </script>
 <script>
 async function commitData(){
