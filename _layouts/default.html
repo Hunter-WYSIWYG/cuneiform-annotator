@@ -651,12 +651,13 @@ function setup3dhop() {
         console.log([xlength,ylength,zlength])
         if(xcoord>=(xlength/2)){
           xcoord-=(xlength/2)
+          xcoord+=5
         }else{
           xcoord*=-1
         }
         ydiff=ylength-ycoord
         console.log(ydiff)
-        ycoord=ydiff
+        ycoord=ydiff-2
         console.log([xcoord,ycoord,4.9])
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoord,ycoord,4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
       
