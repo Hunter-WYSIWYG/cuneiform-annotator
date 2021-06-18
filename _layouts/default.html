@@ -644,15 +644,18 @@ function setup3dhop() {
         xcoord=bbox[0]/25
         ycoord=bbox[1]/25
         zcoord=bbox[2]/25
+        console.log([xcoord,ycoord,zcoord])
         xlength=hs23D[$("#3dimages").text()]["bbox"]["max"][0]-hs23D[$("#3dimages").text()]["bbox"]["min"][0]
         ylength=hs23D[$("#3dimages").text()]["bbox"]["max"][1]-hs23D[$("#3dimages").text()]["bbox"]["min"][1]
         zlength=hs23D[$("#3dimages").text()]["bbox"]["max"][2]-hs23D[$("#3dimages").text()]["bbox"]["min"][2]
+        console.log([xlength,ylength,zlength])
         if(xcoord>=(xlength/2)){
           xcoord-=(xlength/2)
         }else{
           xcoord*=-1
         }
         ycoord-=ylength
+        console.log([xcoord,ycoord,4.9])
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoord,ycoord,4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
       
       }/*else if("dimensions" in result[ann]["body"][0]){
