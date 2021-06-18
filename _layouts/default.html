@@ -653,7 +653,7 @@ function setup3dhop() {
           xcoord-=(xlength/2)
           xcoord+=5
         }else{
-          xcoord*=-1
+          xcoord=hs23D[$("#3dimages").text()]["bbox"]["min"][0]+xcoord
         }
         ydiff=ylength-ycoord
         console.log(ydiff)
