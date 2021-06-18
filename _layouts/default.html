@@ -643,7 +643,7 @@ function setup3dhop() {
       }else if("bbox" in hs23D[$("#3dimages").text()]){
         xcoord=bbox[0]/25
         ycoord=bbox[1]/25
-        zcoord=bbox[2]/25
+        xmaxcoord=bbox[2]/25
         console.log([xcoord,ycoord,zcoord])
         xlength=hs23D[$("#3dimages").text()]["bbox"]["max"][0]-hs23D[$("#3dimages").text()]["bbox"]["min"][0]
         ylength=hs23D[$("#3dimages").text()]["bbox"]["max"][1]-hs23D[$("#3dimages").text()]["bbox"]["min"][1]
@@ -651,10 +651,10 @@ function setup3dhop() {
         console.log([xlength,ylength,zlength])
         if(xcoord>=(xlength/2)){
           xcoord-=(xlength/2)
-          xcoord+=5
+          xcoord+=4
         }else{
           xcoord=hs23D[$("#3dimages").text()]["bbox"]["min"][0]+xcoord
-          xcoord+=5
+          xcoord+=4
         }
         ydiff=ylength-ycoord
         console.log(ydiff)
