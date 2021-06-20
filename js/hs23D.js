@@ -1113,7 +1113,19 @@ var hs23D={
     }
   },
   "HS_1060": {
-    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/576000/576377/8c9eb5bdd8c06cdbf50db4c4e12dd0d9b7569c2d/application/x-ply/HS_1060_HeiCuBeDa_GigaMesh.ply"
+    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/576000/576377/8c9eb5bdd8c06cdbf50db4c4e12dd0d9b7569c2d/application/x-ply/HS_1060_HeiCuBeDa_GigaMesh.ply",
+    "bbox": {
+      "min": [
+        -21.36432647705078,
+        0,
+        -7.987830638885498
+      ],
+      "max": [
+        21.36432647705078,
+        46.97217559814453,
+        7.987830638885498
+      ]
+    }
   },
   "HS_1061": {
     "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/576000/576385/c22372099a428a1477ec2de317587eeac42aa1dc/application/x-ply/HS_1061_HeiCuBeDa_GigaMesh.ply"
