@@ -8028,40 +8028,28 @@ var hs23D={
     }
   },
   "HS_2073": {
-    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/583000/583513/ade1e58b980af2442a214b07c2666333c482b814/application/x-ply/HS_2073_HeiCuBeDa_GigaMesh.ply",
-    "bbox": {
-      "min": [
-        -22.938072204589844,
-        0,
-        -12.989825248718262
-      ],
-      "max": [
-        22.938072204589844,
-        75.7419662475586,
-        12.989825248718262
-      ]
-    }
+    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/583000/583513/ade1e58b980af2442a214b07c2666333c482b814/application/x-ply/HS_2073_HeiCuBeDa_GigaMesh.ply"
   },
   "HS_2074": {
-    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/583000/583522/51154049e6472fbbc487b80862cff05be21e0631/application/x-ply/HS_2074_HeiCuBeDa_GigaMesh.ply",
-    "bbox": {
-      "min": [
-        -26.041135787963867,
-        0,
-        -16.08686637878418
-      ],
-      "max": [
-        26.041135787963867,
-        103.42035675048828,
-        16.08686637878418
-      ]
-    }
+    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/583000/583522/51154049e6472fbbc487b80862cff05be21e0631/application/x-ply/HS_2074_HeiCuBeDa_GigaMesh.ply"
   },
   "HS_2076": {
     "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/583000/583540/13b36e988fc82d8c1bdeb8b23f7e86169b61f952/application/x-ply/HS_2076_HeiCuBeDa_GigaMesh.ply"
   },
   "HS_2082": {
-    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/583000/583584/cb7d0706a36637cc45cdf9d6393b2bebcd0ad20e/application/x-ply/HS_2082_HeiCuBeDa_GigaMesh.ply"
+    "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/583000/583584/cb7d0706a36637cc45cdf9d6393b2bebcd0ad20e/application/x-ply/HS_2082_HeiCuBeDa_GigaMesh.ply",
+    "bbox": {
+      "min": [
+        -21.126195907592773,
+        0,
+        -11.191463470458984
+      ],
+      "max": [
+        21.126195907592773,
+        59.22994613647461,
+        11.191463470458984
+      ]
+    }
   },
   "HS_2083": {
     "url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/583000/583593/ba50098ba6a88501f54846eca92b7589935e5a7f/application/x-ply/HS_2083_HeiCuBeDa_GigaMesh.ply"
