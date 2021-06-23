@@ -45,7 +45,6 @@
 <style>
 #grid-source { position: absolute; }
 #grid-overlay { position: relative; }
-
 .r6o-editor { width:550px}
 .hover { background-color: rgba(0,0,0,0.1) !important; }
 .unselected { background-color: rgba(0,0,0,0.5); }
@@ -361,7 +360,7 @@ async function getAnnotation(path){
   function reinit(param){
     param=$('#imageside option:selected').val()
     param2=$('#imageside option:selected').text()
-    if(typeof viewer === 'undefined'){
+    /*if(typeof viewer === 'undefined'){
           viewer = OpenSeadragon({
       id: "openseadragon",
       prefixUrl: "openseadragon/images/",
@@ -383,12 +382,12 @@ async function getAnnotation(path){
     anno = OpenSeadragon.Annotorious(viewer,annoconfig);
     Annotorious.Toolbar(anno, document.getElementById('my-toolbar-container'));
     Annotorious.TiltedBox(anno);
-    }else{
+    }else{*/
     viewer.open({
         type: "image",
         url: param
       });
-    }
+    //}
     curanno={}
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
