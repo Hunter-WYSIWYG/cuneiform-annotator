@@ -14366,6 +14366,7 @@ for filename in os.listdir("result"):
                 translit=annoobj["value"]
         if translit=="":
             continue
+        translit=translit.replace(",","_")
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
             print(cuneifymap[str(translit)])
@@ -14443,11 +14444,11 @@ arfftranslitperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n
 for trans in sorted(translits):
     arffexport+=str(trans)+","
     if translits[trans]>mlThreshold:
-        arffthresholdexport+=str(trans)+","
+        arffthresholdexport+=str(trans).replace(",","_")+","
 for trans in sorted(periodss):
-    arffperiodsexport+=str(trans).replace(" ","_")+","
+    arffperiodsexport+=str(trans).replace(" ","_").replace(",","_")+","
 for trans in sorted(translitperiods):
-    arfftranslitperiodsexport+=str(trans.replace(" ","_"))+","
+    arfftranslitperiodsexport+=str(trans.replace(" ","_").replace(",","_"))+","
 arffexport=arffexport[:-1]+"}\n\n"
 arffthresholdexport=arffthresholdexport[:-1]+"}\n\n"
 arffperiodsexport=arffperiodsexport[:-1]+"}\n\n"
