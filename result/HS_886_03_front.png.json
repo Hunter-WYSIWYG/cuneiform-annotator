@@ -282,5 +282,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#261c7586-f808-46a8-b412-38a9fcb298fb"
+  },
+  "#02077d7a-c4f6-478d-9997-755d18195ebd": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 1422,
+          "y": 1412
+        },
+        "value": "nagar"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126327:590751/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"224.1034698486328,720.60693359375 650.1380004882812,737.6483154296875 650.1380004882812,905.6276245117188 219.2344970703125,883.71728515625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#02077d7a-c4f6-478d-9997-755d18195ebd"
   }
 }
