@@ -1,16 +1,9 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib
-import math
-import datetime
 import numpy as np
-from mpl_toolkits.mplot3d import proj3d
-from mpl_toolkits.mplot3d import Axes3D
 
 from plyfile import PlyData
 
 from sklearn.decomposition import PCA
-from sklearn.datasets import make_classification
 
 meshnames=["test.ply","test2.ply","test3.ply","test4.ply","test5.ply","test6.ply","test7.ply","test8.ply"]
 
