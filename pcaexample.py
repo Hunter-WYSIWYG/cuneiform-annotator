@@ -21,12 +21,8 @@ def do_PCA(mesh):
   pca.fit(mesh)
   PCA(copy=True, n_components=3, whiten=False)
   f.write("Vector "+meshname+"\n")
-  for i in range(len(pca.components_)):
-    PC = list(zip(pca.mean_-2*pca.components_[i],pca.mean_+1*pca.components_[i]))
-    print(PC)
-    #ax.plot(PC[0],PC[1],PC[2],cols[i])
-  for length, vector in zip(pca.explained_variance_, pca.components_):
-    v = vector * 3 * np.sqrt(length)
+  for variance, vector in zip(pca.explained_variance_, pca.components_):
+    v = vector * 3 * np.sqrt(variance)
     f.write("["+str(pca.mean_)+","+str(pca.mean_+v)+"] Length: "+str(np.linalg.norm(pca.mean_-(pca.mean_+v)))+"\n")
   reducedMesh = pca.transform(mesh)
   return [reducedMesh,pca]
