@@ -1,37 +1,38 @@
 import pandas as pd
 import matplotlib
 import numpy as np
+import os
 
 from plyfile import PlyData
 
 from sklearn.decomposition import PCA
 from sklearn.datasets import make_classification
 
-meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
+input_folder = r"F:\i3mainz_Hochschule Mainz\Keilschriften\neue_orientierung\Neuer Ordner"
+# meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
 
 reduce_factors=[1]
 
 reduce_factor = 1
 
-resultfile="result.txt"
+resultfile=input_folder + "/" + "pca_result.txt"
 
 def rigid_transform_3D(A, B, scale):
     assert len(A) == len(B)
-
     N = A.shape[0];  # total points
 
     centroid_A = np.mean(A, axis=0)
     centroid_B = np.mean(B, axis=0)
-    print(centroid_A)
-    print(centroid_B)
+    # print(centroid_A)
+    # print(centroid_B)
 
     # center the points
     AA = A - np.tile(centroid_A, (N, 1))
     BB = B - np.tile(centroid_B, (N, 1))
+    # print(AA)
+    # print(BB)
+    # print(np.transpose(BB))
 
-    print(AA)
-    print(BB)
-    print(np.transpose(BB))
     # dot is matrix multiplication for array
     if scale:
         H = np.dot(np.transpose(BB),AA)/ N
@@ -118,29 +119,31 @@ def do_PCA(mesh):
   return [reducedMesh,pca,resultmatrix]
 
 f = open(resultfile, 'w')  
-for meshname in meshnames:
-    print("Processing "+str(meshname))
-    plyfile = PlyData.read(meshname)
-    mesh = pd.DataFrame({
-    'x':plyfile['vertex']['x'][::reduce_factor],
-    'y':plyfile['vertex']['y'][::reduce_factor],
-    'z':plyfile['vertex']['z'][::reduce_factor]
-    })
-    pca = do_PCA(mesh)
-    testmatrix=np.matrix([[1.0, 1.0, 1.0], [2.0, 2.0, 2.0], [3.0,3.0,3.0]])
-    testmatrix2=np.matrix([[pca[1].mean_[0]+1, pca[1].mean_[1]+1, pca[1].mean_[2]+1],[pca[1].mean_[0]+2, pca[1].mean_[1]+2, pca[1].mean_[2]+2], [pca[1].mean_[0]+3, pca[1].mean_[1]+3, pca[1].mean_[2]+3]])
-    print(testmatrix)
-    print(testmatrix2)
-    s, ret_R, ret_t=rigid_transform_3D(testmatrix, testmatrix2,False)
-    print("Rotation")
-    print(ret_R)
-    print("")
+for root, dirs, files in os.walk (input_folder):
+    for meshname in files:
+        if os.path.splitext(meshname)[-1]==".ply":
+            print("Processing "+str(meshname))
+            plyfile = PlyData.read(root + "/" + meshname)
+            mesh = pd.DataFrame({
+            'x':plyfile['vertex']['x'][::reduce_factor],
+            'y':plyfile['vertex']['y'][::reduce_factor],
+            'z':plyfile['vertex']['z'][::reduce_factor]
+            })
+            pca = do_PCA(mesh)
+            testmatrix=np.matrix([[1.0, 1.0, 1.0], [2.0, 2.0, 2.0], [3.0,3.0,3.0]])
+            testmatrix2=np.matrix([[pca[1].mean_[0]+1, pca[1].mean_[1]+1, pca[1].mean_[2]+1],[pca[1].mean_[0]+2, pca[1].mean_[1]+2, pca[1].mean_[2]+2], [pca[1].mean_[0]+3, pca[1].mean_[1]+3, pca[1].mean_[2]+3]])
+            print(testmatrix)
+            print(testmatrix2)
+            s, ret_R, ret_t=rigid_transform_3D(testmatrix, testmatrix2,False)
+            print("Rotation")
+            print(ret_R)
+            print("")
 
-    print("Translation") 
-    print(ret_t)
-    print("")
+            print("Translation") 
+            print(ret_t)
+            print("")
 
-    print("Scale")
-    print(s)
-    print("")
+            print("Scale")
+            print(s)
+            print("")
 f.close()
