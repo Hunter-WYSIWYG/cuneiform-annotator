@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib
 import numpy as np
 import os
+from math import sqrt
 
 from plyfile import PlyData
 
@@ -14,6 +15,8 @@ input_folder = r"F:\i3mainz_Hochschule Mainz\Keilschriften\neue_orientierung\Neu
 reduce_factors=[1]
 
 reduce_factor = 1
+
+scaling = False
 
 resultfile=input_folder + "/" + "pca_result.txt"
 
@@ -159,12 +162,55 @@ for root, dirs, files in os.walk (input_folder):
 
             s, ret_R, ret_t=rigid_transform_3D(A, B,False)
 
+            
+            n = B.shape[0]  	    
+
+            ## Find the error
+            B2 = (ret_R * B.T) + np.tile(ret_t, (1, n))
+            B2 = B2.T
+            err = A - B2
+            err = np.multiply(err, err)
+            err = np.sum(err)
+            rmse = sqrt(err / n);
+
+            ##convert to 4x4 transform
+            match_target = np.zeros((4,4))
+            match_target[:3,:3] = ret_R
+            match_target[0,3] = ret_t[0]
+            match_target[1,3] = ret_t[1]
+            match_target[2,3] = ret_t[2]
+            match_target[3,3] = 1
+
+            # print "Points A"
+            # print A
+            # print ""
+
+            # print "Points B"
+            # print B
+            # print ""
+
+            # print "Rotation"
+            # print ret_R
+            # print ""
+
+            # print "Translation"
+            # print ret_t
+            # print ""
+
+            # print "Scale"
+            # print s
+            # print ""
+
+
+
             f.write("Rotation" +"\n")
             f.write(str(ret_R)+"\n")
             f.write("Translation" +"\n")
             f.write(str(ret_t)+"\n")
             f.write("Scale" +"\n")
             f.write(str(s)+"\n")
+            f.write("RMSE" +"\n")
+            f.write(str(rmse)+"\n")
 
             print("Rotation")
             print(ret_R)
@@ -177,4 +223,20 @@ for root, dirs, files in os.walk (input_folder):
             print("Scale")
             print(s)
             print("")
+
+            print ("Homogeneous Transform")
+            print (match_target)
+            print ("")
+
+            # if scaling:
+            #     print ("Total Diff to SA matrix")
+            #     print (np.sum(match_target - Tstarg))
+            #     print ("")
+            # else:
+            #     print ("Total Diff to SA matrix")
+            #     print (np.sum(match_target - Ttarg))
+            #     print ("")
+
+            print ("RMSE:" +  str(rmse))
+            print ("If RMSE is near zero, the function is correct!")
 f.close()
