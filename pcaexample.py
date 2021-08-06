@@ -3,6 +3,7 @@ import matplotlib
 import numpy as np
 import os
 from math import sqrt
+from numpy.linalg import inv
 
 from plyfile import PlyData
 
@@ -174,12 +175,14 @@ for root, dirs, files in os.walk (input_folder):
             rmse = sqrt(err / n);
 
             ##convert to 4x4 transform
-            match_target = np.zeros((4,4))
-            match_target[:3,:3] = ret_R
-            match_target[0,3] = ret_t[0]
-            match_target[1,3] = ret_t[1]
-            match_target[2,3] = ret_t[2]
-            match_target[3,3] = 1
+            pca2obj = np.zeros((4,4))
+            pca2obj[:3,:3] = ret_R
+            pca2obj[0,3] = ret_t[0]
+            pca2obj[1,3] = ret_t[1]
+            pca2obj[2,3] = ret_t[2]
+            pca2obj[3,3] = 1
+
+            obj2pca = inv(np.matrix(pca2obj))
 
             # print "Points A"
             # print A
@@ -209,8 +212,10 @@ for root, dirs, files in os.walk (input_folder):
             f.write(str(ret_t)+"\n")
             f.write("Scale" +"\n")
             f.write(str(s)+"\n")
-            f.write("Homogeneous Transform" +"\n")
-            f.write(str(match_target)+"\n")
+            f.write("Homogeneous Transform pca2obj" +"\n")
+            f.write(str(pca2obj)+"\n")
+            f.write("Homogeneous Transform obj2pca" +"\n")
+            f.write(str(obj2pca)+"\n")
             f.write("RMSE" +"\n")
             f.write(str(rmse)+"\n")
 
@@ -226,8 +231,8 @@ for root, dirs, files in os.walk (input_folder):
             print(s)
             print("")
 
-            print ("Homogeneous Transform")
-            print (match_target)
+            print ("Homogeneous Transform pca2obj")
+            print (pca2obj)
             print ("")
 
             # if scaling:
