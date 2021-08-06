@@ -61,8 +61,41 @@ def rigid_transform_3D(A, B, scale):
     return c, R, t
 
 def pcaToWKT(pca):
-    wktString+="CS[\"PCA System\",\"cartesian\"]"
-    
+    wktString+="CS[\"cartesian\",3],"
+    """    
+    COORDINATEOPERATION["Object To PCA",
+  SOURCECRS[CS["cartesian", 3],
+    AXIS["X", "geocentricX", ORDER[1],
+        LENGTHUNIT["millimetre",1],
+        ANGLEUNIT["degree", 0.0174532925199433]
+    ],
+    AXIS["Y", "geocentricY", ORDER[2],
+        LENGTHUNIT["millimetre",1],
+        ANGLEUNIT["degree", 0.0174532925199433]
+    ],
+    AXIS["Z", "geocentricZ", ORDER[3],
+        LENGTHUNIT["millimetre",1]
+    ]],
+  TARGETCRS[CS["cartesian", 3],
+    AXIS["X", "geocentricX", ORDER[1],
+        LENGTHUNIT["millimetre",1],
+        ANGLEUNIT["degree", 0.0174532925199433]
+    ],
+    AXIS["Y", "geocentricY", ORDER[2],
+        LENGTHUNIT["millimetre",1],
+        ANGLEUNIT["degree", 0.0174532925199433]
+    ],
+    AXIS["Z", "geocentricZ", ORDER[3],
+        LENGTHUNIT["millimetre",1]
+    ]],
+  METHOD["Geocentric translations", ID["EPSG", 1031]],
+  PARAMETER["X-axis translation", -128.5, LENGTHUNIT["metre", 1]],
+  PARAMETER["Y-axis translation",  -53.0, LENGTHUNIT["metre", 1]],
+  PARAMETER["Z-axis translation",  153.4, LENGTHUNIT["metre", 1]]
+  OPERATIONACCURACY[5],
+  AREA["Object extent"],
+  BBOX[-43.7, 112.85, -9.87, 153.68]]
+  """    
 
 def do_PCA(mesh): 
   pca = PCA()
@@ -70,13 +103,19 @@ def do_PCA(mesh):
   PCA(copy=True, n_components=3, whiten=False)
   print("Fake Annotation: [ 1 1 1 ]")
   f.write("Vector "+meshname+"\n")
+  counter=1
+  resultmatrix=[0,1,2,3]
   for variance, vector in zip(pca.explained_variance_, pca.components_):
     v = vector * 3 * np.sqrt(variance)
     f.write("["+str(pca.mean_)+","+str(pca.mean_+v)+"] Length: "+str(np.linalg.norm(pca.mean_-(pca.mean_+v)))+"\n")
+    resultmatrix[0]=pca.mean_
+    resultmatrix[counter]=pca.mean_+v
+    counter+=1
+  print(resultmatrix)
   print("Fake Annotation Translated: [ "+str(1+pca.mean_[0])+" "+str(1+pca.mean_[1])+" "+str(1+pca.mean_[2])+" ]")
   print("Fake Annotation Translated: [ "+str(1+pca.mean_[0])+" "+str(1+pca.mean_[1])+" "+str(1+pca.mean_[2])+" ]")
   reducedMesh = pca.transform(mesh)
-  return [reducedMesh,pca]
+  return [reducedMesh,pca,resultmatrix]
 
 f = open(resultfile, 'w')  
 for meshname in meshnames:
@@ -88,8 +127,8 @@ for meshname in meshnames:
     'z':plyfile['vertex']['z'][::reduce_factor]
     })
     pca = do_PCA(mesh)
-    testmatrix=np.array([[1.0, 1.0, 1.0], [2.0, 2.0, 2.0], [3.0,3.0,3.0]])
-    testmatrix2=np.array([[pca[1].mean_[0]+1, pca[1].mean_[1]+1, pca[1].mean_[2]+1],[pca[1].mean_[0]+2, pca[1].mean_[1]+2, pca[1].mean_[2]+2], [pca[1].mean_[0]+3, pca[1].mean_[1]+3, pca[1].mean_[2]+3]])
+    testmatrix=np.matrix([[1.0, 1.0, 1.0], [2.0, 2.0, 2.0], [3.0,3.0,3.0]])
+    testmatrix2=np.matrix([[pca[1].mean_[0]+1, pca[1].mean_[1]+1, pca[1].mean_[2]+1],[pca[1].mean_[0]+2, pca[1].mean_[1]+2, pca[1].mean_[2]+2], [pca[1].mean_[0]+3, pca[1].mean_[1]+3, pca[1].mean_[2]+3]])
     print(testmatrix)
     print(testmatrix2)
     s, ret_R, ret_t=rigid_transform_3D(testmatrix, testmatrix2,False)
