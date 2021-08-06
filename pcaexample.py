@@ -9,7 +9,7 @@ from plyfile import PlyData
 from sklearn.decomposition import PCA
 from sklearn.datasets import make_classification
 
-input_folder = r"F:\i3mainz_Hochschule Mainz\Keilschriften\neue_orientierung\Neuer Ordner"
+input_folder = r"F:\i3mainz_Hochschule Mainz\Keilschriften\neue_orientierung"
 # meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
 
 reduce_factors=[1]
@@ -209,6 +209,8 @@ for root, dirs, files in os.walk (input_folder):
             f.write(str(ret_t)+"\n")
             f.write("Scale" +"\n")
             f.write(str(s)+"\n")
+            f.write("Homogeneous Transform" +"\n")
+            f.write(str(match_target)+"\n")
             f.write("RMSE" +"\n")
             f.write(str(rmse)+"\n")
 
@@ -240,3 +242,5 @@ for root, dirs, files in os.walk (input_folder):
             print ("RMSE:" +  str(rmse))
             print ("If RMSE is near zero, the function is correct!")
 f.close()
+
+print ("fertsch")
