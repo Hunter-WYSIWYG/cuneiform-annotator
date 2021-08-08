@@ -558,5 +558,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#ffd35238-8f17-4f6a-bd57-782d0fd92fdb"
+  },
+  "#79a36e6a-4a4f-4d82-bb5c-8cbcdfcb9ec9": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 696,
+          "y": 781
+        },
+        "value": "muhaldim"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1120324:584703/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"442.2586669921875,300.28106689453125 618.656982421875,297.58795166015625 617.3104248046875,424.163818359375 443.605224609375,433.5896911621094\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#79a36e6a-4a4f-4d82-bb5c-8cbcdfcb9ec9"
   }
 }
