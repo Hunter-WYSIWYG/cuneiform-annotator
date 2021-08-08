@@ -59,6 +59,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordstart",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -131,6 +136,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordstart",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -154,6 +164,11 @@
       {
         "type": "TextualBody",
         "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordend",
         "purpose": "tagging"
       }
     ],
@@ -183,6 +198,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "InWord",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -210,6 +230,11 @@
       {
         "type": "TextualBody",
         "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "InWord",
         "purpose": "tagging"
       }
     ],
@@ -239,6 +264,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordend",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -250,5 +280,38 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#3351b7d2-1afd-4ff5-8c73-26d214ac5868"
+  },
+  "#e2eaee07-0bdc-44be-9ad6-5bfcb5b5c4cb": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 563,
+          "y": 594
+        },
+        "value": "ma2"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "InWord",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113432:577628/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"465.8448486328125,276.5172424316406 559.0413818359375,280.6138000488281 559.0413818359375,405.5586242675781 462.7724304199219,405.5586242675781\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e2eaee07-0bdc-44be-9ad6-5bfcb5b5c4cb"
   }
 }
