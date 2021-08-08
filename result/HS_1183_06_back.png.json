@@ -454,5 +454,89 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#1a56c060-0ce1-4616-ad0f-c54319b6553c"
+  },
+  "#d9aeeaee-c84d-422b-a95d-475b45a3ae75": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 925,
+          "y": 1313
+        },
+        "value": "bala"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113419:577613/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"888.0931396484375,378.053466796875 539.468994140625,400.69140625 539.468994140625,575.0034790039062 890.35693359375,552.3655395507812\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#d9aeeaee-c84d-422b-a95d-475b45a3ae75"
+  },
+  "#e5ff3e50-222f-4925-ae8f-7af253fc244d": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 925,
+          "y": 1313
+        },
+        "value": "kin"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113419:577613/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"152.3603515625,851.1862182617188 399.1138000488281,844.3948974609375 390.05865478515625,962.1121215820312 152.3603515625,968.9035034179688\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e5ff3e50-222f-4925-ae8f-7af253fc244d"
+  },
+  "#b83be77e-c245-46d0-9290-245d94a9a0b9": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 925,
+          "y": 1313
+        },
+        "value": "inanna"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113419:577613/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"582.4810791015625,830.8121337890625 876.774169921875,810.43798828125 883.5655517578125,939.4741821289062 591.5362548828125,980.2224731445312\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b83be77e-c245-46d0-9290-245d94a9a0b9"
   }
 }
