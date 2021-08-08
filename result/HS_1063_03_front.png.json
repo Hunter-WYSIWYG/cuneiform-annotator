@@ -43,6 +43,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordstart",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -474,5 +479,38 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#cf579d7c-c0a5-455a-8d6e-a72d2344d47e"
+  },
+  "#13dd9ea8-d131-45c4-bf54-d574b47ea009": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 938,
+          "y": 1076
+        },
+        "value": "bi"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordend",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112472:576407/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"520.9448852539062,5.565517902374268 660.0828247070312,7.420690059661865 656.3724975585938,152.1241455078125 515.3793334960938,139.137939453125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#13dd9ea8-d131-45c4-bf54-d574b47ea009"
   }
 }
