@@ -290,5 +290,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#02bdd1bf-1afe-429e-af89-83be2d7bab52"
+  },
+  "#a28457c9-0451-43a9-b4a1-9a69d783ddf7": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 732,
+          "y": 818
+        },
+        "value": "isztaran"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111655:575822/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"397.0275573730469,486.5689392089844 698.8413696289062,473.8758544921875 708.7137451171875,610.6792602539062 401.25860595703125,630.4241333007812\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a28457c9-0451-43a9-b4a1-9a69d783ddf7"
   }
 }
