@@ -179,6 +179,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordstart",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -203,6 +208,11 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "InWord",
+        "purpose": "tagging"
       }
     ],
     "target": {
@@ -226,6 +236,11 @@
       {
         "type": "TextualBody",
         "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Wordend",
         "purpose": "tagging"
       }
     ],
@@ -310,5 +325,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#9ed554c2-b7e7-4b71-8449-24e40ba4466b"
+  },
+  "#9b47e470-9c18-4254-a5e8-5774efcaa3a1": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "dimensions": {
+          "x": 866,
+          "y": 990
+        },
+        "value": "nanna"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114120:578292/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"497.86212158203125,326.01727294921875 829.0000610351562,324.3103942871094 844.3621826171875,467.689697265625 497.86212158203125,474.5173034667969\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#9b47e470-9c18-4254-a5e8-5774efcaa3a1"
   }
 }
