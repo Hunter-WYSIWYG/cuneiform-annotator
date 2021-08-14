@@ -27416,16 +27416,16 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:WrittenText .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+translit+"\"@en .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+line+"\"^^xsd:integer .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+curcharindex+"\"^^xsd:integer .\n")  
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  "+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+" .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+str(filename)+"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
@@ -27450,16 +27450,16 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:WrittenText .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+translit+"\"@en .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+line+"\"^^xsd:integer .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+curcharindex+"\"^^xsd:integer .\n")  
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  "+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+" .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+str(filename)+"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
