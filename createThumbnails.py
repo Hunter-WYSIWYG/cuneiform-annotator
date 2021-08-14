@@ -27381,14 +27381,14 @@ for filename in os.listdir("result"):
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
