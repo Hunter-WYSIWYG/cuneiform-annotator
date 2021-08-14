@@ -27433,6 +27433,8 @@ for filename in os.listdir("result"):
         except:
             e = sys.exc_info()[0]
             print(e)
+            print(sys.exc_info()[1])
+            print(sys.exc_info()[2])
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
