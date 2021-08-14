@@ -27369,6 +27369,7 @@ for filename in os.listdir("result"):
             print(str(translit))
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
+        savedfilename=""
         try:
             f=urlopen(imgurls[filename])
             with Image(file=f) as img:
@@ -27380,12 +27381,14 @@ for filename in os.listdir("result"):
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
+                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                             converted.save(filename=exportdir+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
+                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                             converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
@@ -27396,6 +27399,7 @@ for filename in os.listdir("result"):
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
+                outputcsv+=savedfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
                   outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
@@ -27414,6 +27418,7 @@ for filename in os.listdir("result"):
             else:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
+                outputcsv+=savedfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
                   outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
