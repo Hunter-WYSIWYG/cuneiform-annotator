@@ -27398,7 +27398,7 @@ for filename in os.listdir("result"):
                 outputcsv+=shortfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
@@ -27406,7 +27406,7 @@ for filename in os.listdir("result"):
                 else:
                   outputcsv+=";"
                 outputcsv+=periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-                outputcsv+=str(coords)+";"+str(charclass)+";"+str(translit)+"\n"          
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"         
                 periodss[periods[per]]=True
                 translitperiods[str(charclass)+"_"+periods[per]]=True
                 arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
@@ -27416,7 +27416,7 @@ for filename in os.listdir("result"):
                 outputcsv+=shortfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
@@ -27424,7 +27424,7 @@ for filename in os.listdir("result"):
                 else:
                   outputcsv+=";"
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-                outputcsv+=str(coords)+";"+str(line)+";"+str(charindex)+";"+str(charclass)+";"+str(translit)+"\n"      
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
             arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             if not charclass in arffthresholdlines:
                 arffthresholdlines[charclass]=""
