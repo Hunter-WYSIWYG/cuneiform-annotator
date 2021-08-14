@@ -27303,6 +27303,15 @@ curcharindex=-1
 curlineindex=-1
 linepurpose="Line"
 emptycounter=0
+ttlstring=set()
+ttlstring.add("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n")
+ttlstring.add("@prefix owl: <http://www.w3.org/2002/07/owl#> .\n")
+ttlstring.add("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n")
+ttlstring.add("@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n")
+ttlstring.add("@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n")
+ttlstring.add("@prefix my: <http://www.example.com/> .\n")
+ttlstring.add("@prefix lemon: <http://lemon-model.net/lemon#> .\n")
+ttlstring.add("@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .\n")
 if len(sys.argv)>1:
     exportdir=sys.argv[1]
 if len(sys.argv)>2:
@@ -27403,14 +27412,29 @@ for filename in os.listdir("result"):
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
                   outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:WrittenText .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+translit+"\"@en .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+line+"\"^^xsd:integer .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+curcharindex+"\"^^xsd:integer .\n")  
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  "+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+" .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
                   outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
                 outputcsv+=periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"         
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"    
                 periodss[periods[per]]=True
                 translitperiods[str(charclass)+"_"+periods[per]]=True
                 arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
@@ -27422,10 +27446,25 @@ for filename in os.listdir("result"):
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
                   outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:WrittenText .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+translit+"\"@en .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+line+"\"^^xsd:integer .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+curcharindex+"\"^^xsd:integer .\n")  
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  "+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+" .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
                   outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
@@ -27465,6 +27504,10 @@ if singlefolder:
     f = open(exportdir+"mlset.arff", 'w')
     f.write(arffexport+arffdata)
     f.close()
+    f = open(exportdir+"maicubeda.ttl", 'w')
+    for tt in ttlstring:
+        f.write(tt)
+    f.close()
     f = open(exportdir+"mlsetthreshold.arff", 'w')
     f.write(arffthresholdexport+arffdatathreshold)
     for line in arffthresholdlines:
@@ -27483,6 +27526,10 @@ if singlefolder:
 else:
     f = open("public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
+    f.close()
+    f = open("public/maicubeda.ttl", 'w')
+    for tt in ttlstring:
+        f.write(tt)
     f.close()
     f = open("public/mlsetthreshold.arff", 'w')
     f.write(arffthresholdexport)
