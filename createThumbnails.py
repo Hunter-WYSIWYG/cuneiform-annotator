@@ -27396,9 +27396,9 @@ for filename in os.listdir("result"):
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
-                if shortname[0:shortname.rfind("_")] in hs2CDLI:
-                  outputcsv+=hs2CDLI[shortname[0:shortname.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortname[0:shortname.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
+                if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                  outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
@@ -27414,9 +27414,9 @@ for filename in os.listdir("result"):
             else:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
-                if shortname[0:shortname.rfind("_")] in hs2CDLI:
-                  outputcsv+=hs2CDLI[shortname[0:shortname.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortname[0:shortname.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
+                if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                  outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
