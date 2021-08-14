@@ -158,7 +158,7 @@ $(document).ready(function () {
 	  args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
-        dimensions: viewer.world.getItemAt(0).getContentSize(), 
+        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
     });
   }else{
@@ -169,7 +169,7 @@ $(document).ready(function () {
 	console.log({
         type: 'TextualBody',
         purpose: evt.target.id,
-        dimensions: viewer.world.getItemAt(0).getContentSize(), 
+        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
     })
   }
