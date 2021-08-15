@@ -27411,7 +27411,7 @@ for filename in os.listdir("result"):
                 outputcsv+=savedfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
@@ -27430,7 +27430,7 @@ for filename in os.listdir("result"):
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
                   outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
                 outputcsv+=periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
@@ -27445,7 +27445,7 @@ for filename in os.listdir("result"):
                 outputcsv+=savedfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                   outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
@@ -27464,7 +27464,7 @@ for filename in os.listdir("result"):
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
                   outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+filename+"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
