@@ -68,7 +68,7 @@ function formatTransliteration(transliteration){
   linecounter=0
   charcounter=0
   currentside=""
-  for(line of transliteration.split("<br>"){
+  for(line of transliteration.split("<br>")){
     if(line.trim().startsWith("@")){
       currentside=line.trim()
       linecounter=0
