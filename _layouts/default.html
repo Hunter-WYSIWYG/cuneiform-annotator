@@ -86,11 +86,11 @@ function formatTransliteration(transliteration){
       for(word of splitted){
         if(word.includes("-")){
           for(char of word.split("-")){
-            result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\">"+char+"</span>&nbsp;"
+            result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>&nbsp;"
             charcounter+=1
           }
         }else{
-          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\">"+word+"</span>&nbsp;"
+          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
           charcounter+=1
         }
       }
@@ -99,6 +99,15 @@ function formatTransliteration(transliteration){
       result+=line+"<br/>"
     }
   }
+  $('span.imagelink').click(function() {
+      console.log("Selecting annotation")
+      myid=$(this).attr("id")
+      console.log(myid)
+      if(myid in curcharindex){
+        console.log(curcharindex[myid])
+        anno.selectAnnotation(curcharindex[myid])
+      }
+  });
   return result
 }
 
@@ -351,6 +360,7 @@ async function getAnnotation(path){
   document.getElementById("images").innerHTML=options
   var index=0;
   var curanno={}
+  var curcharindex={}
   var viewer;
   var anno;
   window.onload = function() {
