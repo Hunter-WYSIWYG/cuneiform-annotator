@@ -142,11 +142,13 @@ function formatTransliteration(transliteration){
           console.log(myid)
           if(myid in curcharindex){
             console.log(curcharindex[myid])
+            anno.disableEditor = true
             anno.selectAnnotation(curcharindex[myid])
           }
       });
       $('span.imagelink').mouseout(function() {
           anno.cancelSelected();
+          anno.disableEditor = false
       });
       }
     }else{
