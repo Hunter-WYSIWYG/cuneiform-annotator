@@ -155,14 +155,11 @@ function formatTransliteration(transliteration){
           }      
       });
       $('span.imagelink').click(function() {
-          anno.disableEditor = false
-          /*myid=$(this).attr("id")
-          console.log(myid)
-          if(myid in curcharindex){
-            console.log(curcharindex[myid])
-            anno.selectAnnotation(curcharindex[myid])
+          if(anno.disableEditor){
+            anno.disableEditor = false
+          }else{
+            anno.disableEditor = true
           }
-          translitwasclicked=true*/
       });
       }
     }else{
