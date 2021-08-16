@@ -397,7 +397,7 @@ async function getAnnotation(path){
     for(ann in result){
       line=-1
       charindex=-1
-      for(bod in result[ann]["body"]){
+      for(bod of result[ann]["body"]){
         if("purpose" in bod && bod["purpose"]=="Line"){
           line=bod["value"]
         }else if("purpose" in bod && bod["purpose"]=="Charindex"){
