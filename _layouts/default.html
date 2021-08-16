@@ -88,7 +88,10 @@ function formatTransliteration(transliteration){
         if(word.includes("-")){
           for(char of word.split("-")){
             if(char!=""){
-              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>&nbsp;"
+              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
+              if(!char.endsWith("}")){
+                result+="&nbsp;"
+              }
               charcounter+=1
             }
           }
