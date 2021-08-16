@@ -11,6 +11,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1"
       }
     ],
     "target": {
@@ -35,6 +45,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1"
       }
     ],
     "target": {
@@ -131,6 +151,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2"
       }
     ],
     "target": {
@@ -155,6 +185,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2"
       }
     ],
     "target": {
@@ -491,6 +531,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3"
       }
     ],
     "target": {
@@ -515,6 +565,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4"
       }
     ],
     "target": {
@@ -554,5 +614,81 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#ffe74134-d299-4684-a2f8-9f4d5b4bbcfc"
+  },
+  "#d54ee8ac-9b99-4092-90ae-943367c78a18": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "kasz",
+        "dimensions": {
+          "x": 685,
+          "y": 1105
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113200:577367/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"481.2275390625,21.933231353759766 335.69354248046875,27.22537612915039 333.0474548339844,102.6384506225586 481.2275390625,101.31541442871094\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#d54ee8ac-9b99-4092-90ae-943367c78a18"
+  },
+  "#665876f1-599d-41f7-adea-0a4fb931b835": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "du",
+        "dimensions": {
+          "x": 685,
+          "y": 1105
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113200:577367/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"645.2840576171875,16.641084671020508 481.2275390625,16.641084671020508 483.8736267089844,80.14683532714844 650.5762329101562,78.82379913330078\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#665876f1-599d-41f7-adea-0a4fb931b835"
   }
 }
