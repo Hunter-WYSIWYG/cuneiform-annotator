@@ -84,7 +84,7 @@ function formatTransliteration(transliteration){
       newline=line.trim()
       splitted=line.trim().split(" ")
       for(word of splitted){
-        word=word.replace("{","-").replace("}","-")
+        word=word.replace("{","-{").replace("}","}-")
         if(word.includes("-")){
           for(char of word.split("-")){
             if(char!=""){
