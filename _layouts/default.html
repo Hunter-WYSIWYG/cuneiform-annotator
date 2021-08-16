@@ -422,6 +422,7 @@ async function getAnnotation(path){
       curanno[a["id"]]=a
     });
     anno.on('mouseEnterAnnotation', function(annotation, event) {
+        console.log(annotation)
         if(annotation in curimgindex){
           $('#'+curimgindex[annotation]).css({"backgroundColor": "yellow", "color": "red"})
         }
