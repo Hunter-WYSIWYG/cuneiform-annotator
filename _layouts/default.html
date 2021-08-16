@@ -70,7 +70,11 @@ function formatTransliteration(transliteration){
   currentside=""
   for(line of transliteration.split("<br>")){
     if(line.trim().startsWith("@")){
-      currentside=line.trim()
+      if(line.trim() in termmap){
+        currentside=termmap[line.trim()]
+      }else{
+        currentside=line.trim()
+      }
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
