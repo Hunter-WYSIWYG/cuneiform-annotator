@@ -80,14 +80,14 @@ function sleep (time) {
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
-        $.ajax({ type: "GET",   
+        /*$.ajax({ type: "GET",   
          url: "https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()],   
          async: false,
          success : function(text)
          {
            //$('#transliterationtextarea').html(text.replaceAll("\n","<br>"))
          }
-        });
+        });*/
       }else{
         if($('#images option:selected').text() in hs2CDLI){
           $('#textid').html(""+$('#images option:selected').text()+" - <a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
@@ -95,9 +95,8 @@ function sleep (time) {
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
-              $('#transliterationtextarea').html(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>"))
+        $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
       }
-
     }else{
       $('#textid').html(""+$('#images option:selected').text()+"")
       $('#transliterationtextarea').html("No transliteration available for text "+$('#images option:selected').text())
@@ -121,6 +120,7 @@ function sleep (time) {
   version: 4
 });
 
+
 $(document).ready(function () {
       $('#images').selectize({
           sortField: 'text',
@@ -132,6 +132,33 @@ $(document).ready(function () {
       });
       loadVariants();
   });
+
+function formatTransliteration(transliteration){
+  result=""
+  termmap={"@obverse":"front","@reverse":"back","","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
+  linecounter=0
+  charcounter=0
+  currentside=""
+  for(line of transliteration.split("<br>"){
+    if(line.trim().startsWith("@")){
+      currentside=line.trim()
+      linecounter=0
+      charcounter=0
+      result+=line.trim()+"<br/>"
+    }else if(!line.trim().match(/^\d/)){
+      linecounter+=1
+      charcounter=0
+      newline=line.trim()
+      for(word of line.trim().split(" ")){
+        result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\">"+word+"</span>&nbsp;"
+        charcounter+=1
+      }
+    }else{
+      result+=line+"<br/>"
+    }
+  }
+  return result
+}
 
 </script>
 <script>
