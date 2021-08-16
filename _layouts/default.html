@@ -136,7 +136,7 @@ function formatTransliteration(transliteration){
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
         $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
-        $('span.imagelink').click(function() {
+        $('span.imagelink').mouseover(function() {
           console.log("Selecting annotation")
           myid=$(this).attr("id")
           console.log(myid)
@@ -144,6 +144,9 @@ function formatTransliteration(transliteration){
             console.log(curcharindex[myid])
             anno.selectAnnotation(curcharindex[myid])
           }
+      });
+      $('span.imagelink').mouseout(function() {
+          anno.cancelSelected();
       });
       }
     }else{
