@@ -62,6 +62,33 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+function formatTransliteration(transliteration){
+  result=""
+  termmap={"@obverse":"front","@reverse":"back","","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
+  linecounter=0
+  charcounter=0
+  currentside=""
+  for(line of transliteration.split("<br>"){
+    if(line.trim().startsWith("@")){
+      currentside=line.trim()
+      linecounter=0
+      charcounter=0
+      result+=line.trim()+"<br/>"
+    }else if(!line.trim().match(/^\d/)){
+      linecounter+=1
+      charcounter=0
+      newline=line.trim()
+      for(word of line.trim().split(" ")){
+        result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\">"+word+"</span>&nbsp;"
+        charcounter+=1
+      }
+    }else{
+      result+=line+"<br/>"
+    }
+  }
+  return result
+}
+
 
   function loadVariants(){
     console.log($('#images option:selected').text())
@@ -133,32 +160,7 @@ $(document).ready(function () {
       loadVariants();
   });
 
-function formatTransliteration(transliteration){
-  result=""
-  termmap={"@obverse":"front","@reverse":"back","","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
-  linecounter=0
-  charcounter=0
-  currentside=""
-  for(line of transliteration.split("<br>"){
-    if(line.trim().startsWith("@")){
-      currentside=line.trim()
-      linecounter=0
-      charcounter=0
-      result+=line.trim()+"<br/>"
-    }else if(!line.trim().match(/^\d/)){
-      linecounter+=1
-      charcounter=0
-      newline=line.trim()
-      for(word of line.trim().split(" ")){
-        result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\">"+word+"</span>&nbsp;"
-        charcounter+=1
-      }
-    }else{
-      result+=line+"<br/>"
-    }
-  }
-  return result
-}
+
 
 </script>
 <script>
