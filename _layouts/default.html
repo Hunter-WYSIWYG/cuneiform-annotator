@@ -147,8 +147,22 @@ function formatTransliteration(transliteration){
           }
       });
       $('span.imagelink').mouseout(function() {
-          anno.cancelSelected();
+          if(translitwasclicked){
+            translitwasclicked=false
+          }else{
+            anno.cancelSelected();
+            anno.disableEditor = false
+          }      
+      });
+      $('span.imagelink').clicked(function() {
           anno.disableEditor = false
+          /*myid=$(this).attr("id")
+          console.log(myid)
+          if(myid in curcharindex){
+            console.log(curcharindex[myid])
+            anno.selectAnnotation(curcharindex[myid])
+          }
+          translitwasclicked=true*/
       });
       }
     }else{
@@ -364,6 +378,7 @@ async function getAnnotation(path){
   }
   document.getElementById("images").innerHTML=options
   var index=0;
+  var translitwasclicked=false
   var curanno={}
   var curcharindex={}
   var viewer;
