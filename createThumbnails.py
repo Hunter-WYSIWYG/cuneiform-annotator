@@ -4,6 +4,7 @@ import sys
 import os
 import json
 import math
+import urllib.parse
 from svgpathtools import svg2paths, wsvg
 from svgpathtools import svg2paths2
 
@@ -27434,17 +27435,17 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
                   outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
                 outputcsv+=periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
@@ -27468,17 +27469,17 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
                   outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
