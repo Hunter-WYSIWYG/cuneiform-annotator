@@ -82,8 +82,9 @@ function formatTransliteration(transliteration){
       linecounter+=1
       charcounter=0
       newline=line.trim()
-      for(word of line.trim().split(" ")){
-        if("-" in word){
+      splitted=line.trim().split(" ")
+      for(word of splitted){
+        if(word.includes("-")){
           for(char of word.split("-")){
             result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\">"+char+"</span>&nbsp;"
             charcounter+=1
