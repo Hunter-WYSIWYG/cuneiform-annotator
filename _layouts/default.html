@@ -74,7 +74,7 @@ function formatTransliteration(transliteration){
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
-    }else if(!line.trim().match(/^\d/)){
+    }else if(line.trim().match(/^\d/)){
       linecounter+=1
       charcounter=0
       newline=line.trim()
