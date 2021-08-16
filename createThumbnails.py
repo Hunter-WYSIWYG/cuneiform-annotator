@@ -27311,6 +27311,7 @@ ttlheader+="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
 ttlheader+="@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
 ttlheader+="@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n"
 ttlheader+="@prefix my: <http://www.example.com/> .\n"
+ttlheader+="@prefix cunei: <http://www.cuneiform.com/cunei/> .\n"
 ttlheader+="@prefix lemon: <http://lemon-model.net/lemon#> .\n"
 ttlheader+="@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .\n"
 ttlheader+="foaf:depiction rdf:type owl:DatatypeProperty .\n"
@@ -27321,6 +27322,7 @@ ttlheader+="my:unicode rdf:type owl:DatatypeProperty .\n"
 ttlheader+="cidoc:TX1_WrittenText rdf:type owl:Class .\n"
 ttlheader+="lemon:Character rdf:type owl:Class .\n"
 ttlheader+="cidoc:Glyph rdf:type owl:Class .\n"
+ttlheader+="cidoc:Tablet rdf:type owl:Class .\n"
 ttlheader+="cidoc:refersTo rdf:type owl:ObjectProperty .\n"
 ttlheader+="cidoc:isDepictedBy rdf:type owl:ObjectProperty .\n"
 ttlheader+="cidoc:includes rdf:type owl:ObjectProperty .\n"
@@ -27435,7 +27437,7 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
@@ -27469,7 +27471,7 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> rdf:type lemon:Character .\n")      
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n") 
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
