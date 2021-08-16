@@ -27304,14 +27304,15 @@ curlineindex=-1
 linepurpose="Line"
 emptycounter=0
 ttlstring=set()
-ttlstring.add("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n")
-ttlstring.add("@prefix owl: <http://www.w3.org/2002/07/owl#> .\n")
-ttlstring.add("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n")
-ttlstring.add("@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n")
-ttlstring.add("@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n")
-ttlstring.add("@prefix my: <http://www.example.com/> .\n")
-ttlstring.add("@prefix lemon: <http://lemon-model.net/lemon#> .\n")
-ttlstring.add("@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .\n")
+ttlheader=""
+ttlheader+="@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
+ttlheader+="@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
+ttlheader+="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
+ttlheader+="@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
+ttlheader+="@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n"
+ttlheader+="@prefix my: <http://www.example.com/> .\n"
+ttlheader+="@prefix lemon: <http://lemon-model.net/lemon#> .\n"
+ttlheader+="@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .\n"
 if len(sys.argv)>1:
     exportdir=sys.argv[1]
 if len(sys.argv)>2:
@@ -27505,6 +27506,7 @@ if singlefolder:
     f.write(arffexport+arffdata)
     f.close()
     f = open(exportdir+"maicubeda.ttl", 'w')
+    f.write(ttlheader)
     for tt in ttlstring:
         f.write(tt)
     f.close()
@@ -27528,6 +27530,7 @@ else:
     f.write(arffexport+arffdata)
     f.close()
     f = open("public/maicubeda.ttl", 'w')
+    f.write(ttlheader)
     for tt in ttlstring:
         f.write(tt)
     f.close()
