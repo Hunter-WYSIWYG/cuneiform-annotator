@@ -84,10 +84,13 @@ function formatTransliteration(transliteration){
       newline=line.trim()
       splitted=line.trim().split(" ")
       for(word of splitted){
+        word=word.replace("{","-").replace("}","-")
         if(word.includes("-")){
           for(char of word.split("-")){
-            result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>&nbsp;"
-            charcounter+=1
+            if(char!=""){
+              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>&nbsp;"
+              charcounter+=1
+            }
           }
         }else{
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
