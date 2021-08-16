@@ -1,0 +1,135 @@
+---
+layout: default_nonfluid
+---
+<link rel="stylesheet" href="{{ "/css/yasqe.css" | prepend: site.baseurl_root }}">
+<script src="{{"/js/yasqe.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{"/js/rdfstore_min.js" | prepend: site.baseurl_root }}"></script>
+<script>
+var currdfstore;
+rdfstore.create(function(err, store) {
+		if(currdfstore==null){
+				currdfstore=store;			
+		}
+			//console.log("SupportingOntology: "+$('#queryimportformat').val()+" - "+supportingOntologies[$('#queryimportformat').val()])
+			console.log("Loading ontology data")
+			ress=""
+			$.ajax({url: "{{ "/maicubeda.ttl" | prepend: site.baseurl_root }}",async: true, success: function(result){
+				console.log(result)
+				ress=result;
+				currdfstore.load('text/turtle', ress, function(s,d){
+                $('#loadSupp').disabled=false;
+				});
+			}});
+		});
+
+function exploreQuery(uri){
+	//yasqe.setValue("SELECT ?a ?b ?c WHERE {\n BIND (<"+uri+"> AS ?a)\n ?a ?b ?c .\n }\n LIMIT 100")
+	try{
+		$('#queryres').DataTable().destroy();
+	}catch(e){
+
+	}
+	sendQuery("SELECT ?a ?b ?c WHERE {\n BIND (<"+uri+"> AS ?a)\n ?a ?b ?c .\n }\n LIMIT 100")
+}
+
+function sendQuery(val){
+if (typeof val === 'undefined' || !val){
+	val=yasqe.getValue()
+}
+console.log(val)
+currdfstore.execute(val, function(success,results){
+	console.log(results)
+	i=1;
+	//$('#queryres').html(results)
+	var table="<thead><tr><th style=\"color:white\">Counter</th>"
+    for(variable in results[0]){
+       	table+="<th style=\"color:white\">"+variable+"</th>"
+    }
+    table+="</tr></thead><tbody>"
+    for(obj in results){
+        table+="<tr><td>"+i+++"</td>"
+        for(variable in results[obj]){
+        	if(results[obj][variable]["token"]=="uri"){
+           		table+="<td><a style=\"color:blue\" onClick=\"exploreQuery('"+results[obj][variable]["value"].replace(" ","")+"')\" target=\"_blank\">"+results[obj][variable]["value"]+"</a></td>"      	
+			}else{
+           		table+="<td style=\"color:black\">"+results[obj][variable]["value"]+"</td>"        			
+        	}
+        }
+        table+="</tr>"
+    }
+    $('#queryres').html(table+"</tbody>")
+	$('#queryres').DataTable();
+});	  
+}
+</script>
+
+<h1 align="center">{{page.title}}</h1>
+</div>
+</header>
+<div class="container" role="main">
+  <div class="row">
+  <div class="col-sm-5">
+Query Input:<br/>
+<span id="numberexamples"></span> Example Queries:
+<script>
+$( document ).ready(function() {
+	$('#numberexamples').html($('#samplequeries option').length);
+	chooseSampleQuery();
+});
+</script>
+<br/>
+<select id="samplequeries" onChange="chooseSampleQuery()">
+<option value='SELECT ?loc ?wkt_geom WHERE { ?a rdf:type pleiades:Place . ?a pleiades:hasLocation ?loc . ?loc geosparql:asWKT ?wkt_geom . }LIMIT 100'>100 Random Places with locations</option>
+</select>
+<br/>
+<textarea id="queryinput" rows=16 cols=45>
+SELECT ?a ?b ?c WHERE {
+	?a ?b ?c .
+}
+LIMIT 100
+</textarea><br/>
+<select id="dataset">
+<!--<option value="sparql" selected="selected">Pleiades</option>-->
+</select>
+<a href="{{site.baseurl}}/ldBrowser/" target="_blank" style="color:blue">Explore Triple Store</a>
+<br/>
+<button id="sendQueryButton" onClick="sendQuery(false)">Query</button>
+<button id="sendQueryGeoJSONButton" onClick="sendQuery(true)">Query with GeoJSON result</button>
+</div>
+
+    <div class="col-sm-7" id="mapid">
+
+
+<script>
+var mymap = L.map('mapid',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
+	//var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	});
+	var yasqe = YASQE.fromTextArea(document.getElementById("queryinput"));
+	var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
+layers: 'web',
+format: 'image/png',
+ transparent: true,
+attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
+});
+	var baseMaps = {
+    "BKG": wmsLayer,
+        "OSM": layer
+	};
+	baseMaps["OSM"].addTo(mymap);
+	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+}).addTo(mymap);
+var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
+</script>
+    </div>
+  </div>
+QueryResult:
+<span id="number"></span>
+ <div class="row">
+  <div class="col-sm-12" id="queryresult" class="table-wrapper-scroll-y">
+<table align="center" id="queryres" class="tablesorter" border="1">
+</table>
+</div></div></div>
