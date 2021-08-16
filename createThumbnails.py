@@ -27313,6 +27313,17 @@ ttlheader+="@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n"
 ttlheader+="@prefix my: <http://www.example.com/> .\n"
 ttlheader+="@prefix lemon: <http://lemon-model.net/lemon#> .\n"
 ttlheader+="@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .\n"
+ttlheader+="foaf:depiction rdf:type owl:DatatypeProperty .\n"
+ttlheader+="my:line rdf:type owl:DatatypeProperty .\n"
+ttlheader+="my:charindex rdf:type owl:DatatypeProperty .\n"
+ttlheader+="my:text rdf:type owl:DatatypeProperty .\n"
+ttlheader+="my:unicode rdf:type owl:DatatypeProperty .\n"
+ttlheader+="cidoc:TX1_WrittenText rdf:type owl:Class .\n"
+ttlheader+="lemon:Character rdf:type owl:Class .\n"
+ttlheader+="cidoc:Glyph rdf:type owl:Class .\n"
+ttlheader+="cidoc:refersTo rdf:type owl:ObjectProperty .\n"
+ttlheader+="cidoc:isDepictedBy rdf:type owl:ObjectProperty .\n"
+ttlheader+="cidoc:includes rdf:type owl:ObjectProperty .\n"
 if len(sys.argv)>1:
     exportdir=sys.argv[1]
 if len(sys.argv)>2:
@@ -27426,7 +27437,7 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  "+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+" .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+str(filename)+"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
@@ -27450,7 +27461,7 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:WrittenText .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
@@ -27460,7 +27471,7 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"> cidoc:isDepictedBy <"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> .\n")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> rdf:type cidoc:Glyph \n.")
                   ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> cidoc:refersTo  "+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+" .\n")
-                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  "+str(filename)+"^^xsd:string .\n")
+                  ttlstring.add("<"+cdlinamespace+str(charclass).replace("(","_").replace(")","_")+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
