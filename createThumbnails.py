@@ -27303,6 +27303,8 @@ charindexpurpose="Charindex"
 curcharindex=-1
 curlineindex=-1
 linepurpose="Line"
+taggingpurpose="tagging"
+tagging=""
 emptycounter=0
 ttlstring=set()
 ttlheader=""
@@ -27360,13 +27362,20 @@ for filename in os.listdir("result"):
         translit=""
         curcharindex=-1
         line=-1
+        tagging=""
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==purpose:
                 translit=annoobj["value"]
             elif annoobj["purpose"]==charindexpurpose:
                 curcharindex=annoobj["value"]
             elif annoobj["purpose"]==linepurpose:
-                line=annoobj["value"]                
+                line=annoobj["value"]   
+            elif annoobj["purpose"]==taggingpurpose:
+                tagging=annoobj["value"]
+        if tagging!="" and "Character" in str(tagging):
+            translit="Character"
+        elif tagging!="" and "Line" in str(tagging):
+            translit="Line"
         if translit=="":
             continue
         translit=translit.replace(",","_")
