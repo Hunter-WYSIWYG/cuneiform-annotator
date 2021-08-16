@@ -423,18 +423,18 @@ async function getAnnotation(path){
     });
     anno.on('mouseEnterAnnotation', function(annotation, event) {
         console.log(annotation)
-        if(annotation in curimgindex){
-          $('#'+curimgindex[annotation]).css({"backgroundColor": "yellow", "color": "red"})
+        if(annotation["id"] in curimgindex){
+          $('#'+curimgindex[annotation["id"]]).css({"backgroundColor": "yellow", "color": "red"})
         }
     });
     anno.on('mouseLeaveAnnotation', function(annotation, event) {
-        if(annotation in curimgindex){
-          $('#'+curimgindex[annotation]).css({"backgroundColor": "white", "color": "red"})
+        if(annotation["id"] in curimgindex){
+          $('#'+curimgindex[annotation["id"]]).css({"backgroundColor": "white", "color": "red"})
         }
     });
     anno.on('selectAnnotation', function(annotation) {
-        if(annotation in curimgindex){
-          $('#'+curimgindex[annotation]).css({"backgroundColor": "white", "color": "red"})
+        if(annotation["id"] in curimgindex){
+          $('#'+curimgindex[annotation["id"]]).css({"backgroundColor": "white", "color": "red"})
         }
     });
     anno.on('deleteAnnotation', function(a) {
