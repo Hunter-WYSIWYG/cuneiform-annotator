@@ -378,6 +378,7 @@ async function getAnnotation(path){
   var translitwasclicked=false
   var curanno={}
   var curcharindex={}
+  var curimgindex={}
   var viewer;
   var anno;
   window.onload = function() {
@@ -419,6 +420,21 @@ async function getAnnotation(path){
       console.log(a)
       console.log(JSON.stringify(a))
       curanno[a["id"]]=a
+    });
+    anno.on('mouseEnterAnnotation', function(annotation, event) {
+        if(annotation in curimgindex){
+          $('#'+curimgindex[annotation]).css({"backgroundColor": "yellow", "color": "red"})
+        }
+    });
+    anno.on('mouseLeaveAnnotation', function(annotation, event) {
+        if(annotation in curimgindex){
+          $('#'+curimgindex[annotation]).css({"backgroundColor": "white", "color": "red"})
+        }
+    });
+    anno.on('selectAnnotation', function(annotation) {
+        if(annotation in curimgindex){
+          $('#'+curimgindex[annotation]).css({"backgroundColor": "white", "color": "red"})
+        }
     });
     anno.on('deleteAnnotation', function(a) {
       delete curanno[a["id"]]
@@ -475,6 +491,7 @@ async function getAnnotation(path){
       }
       if(charindex!=-1 && line!=-1){
         side=param2.replace(".png","")
+        curimgindex[ann]=side.substring(side.lastIndexOf('_')+1)+"_"+line+"_"+charindex
         curcharindex[side.substring(side.lastIndexOf('_')+1)+"_"+line+"_"+charindex]=ann
       }
       annotations.push(result[ann])
