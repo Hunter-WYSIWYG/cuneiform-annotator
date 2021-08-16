@@ -27396,13 +27396,13 @@ for filename in os.listdir("result"):
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
-                if shortname[0:shortname.rfind("_")] in hs2CDLI:
-                  outputcsv+=hs2CDLI[shortname[0:shortname.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortname[0:shortname.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
+                if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                  outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
-                  outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
+                  outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[2])+","+str(coords[3])+","+str(coords[0])+","+str(coords[1])+"/full")+";"
                 else:
                   outputcsv+=";"
                 outputcsv+=periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
@@ -27414,17 +27414,17 @@ for filename in os.listdir("result"):
             else:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
-                if shortname[0:shortname.rfind("_")] in hs2CDLI:
-                  outputcsv+=hs2CDLI[shortname[0:shortname.rfind("_")]]+";"
-                  outputcsv+=cdlinamespace+hs2CDLI[shortname[0:shortname.rfind("_")]]+"_char_"+str(line)+"_"+str(charindex)+";"
+                if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                  outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
+                  outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+";"
                 else:
                   outputcsv+=";;"
                 if shortfilename in hs2IIIF:
-                  outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[1])+","+str(coords[2])+","+str(coords[3])+"/full")+";"
+                  outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[2])+","+str(coords[3])+","+str(coords[0])+","+str(coords[1])+"/full")+";"
                 else:
                   outputcsv+=";"
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-                outputcsv+=str(coords)+";"+str(line)+";"+str(charindex)+";"+str(charclass)+";"+str(translit)+"\n"      
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
             arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             if not charclass in arffthresholdlines:
                 arffthresholdlines[charclass]=""
