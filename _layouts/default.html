@@ -99,15 +99,6 @@ function formatTransliteration(transliteration){
       result+=line+"<br/>"
     }
   }
-  $('span.imagelink').click(function() {
-      console.log("Selecting annotation")
-      myid=$(this).attr("id")
-      console.log(myid)
-      if(myid in curcharindex){
-        console.log(curcharindex[myid])
-        anno.selectAnnotation(curcharindex[myid])
-      }
-  });
   return result
 }
 
@@ -145,6 +136,15 @@ function formatTransliteration(transliteration){
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
         $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
+        $('span.imagelink').click(function() {
+          console.log("Selecting annotation")
+          myid=$(this).attr("id")
+          console.log(myid)
+          if(myid in curcharindex){
+            console.log(curcharindex[myid])
+            anno.selectAnnotation(curcharindex[myid])
+          }
+      });
       }
     }else{
       $('#textid').html(""+$('#images option:selected').text()+"")
