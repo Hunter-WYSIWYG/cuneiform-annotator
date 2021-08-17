@@ -31846,7 +31846,12 @@ for filename in os.listdir("result"):
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";"
-                outputcsv+=periods[per]+";"+filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+                outputcsv+=periods[per]+";"
+                if per in languages:
+                  outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
+                else:
+                  outputcsv+=";;" 
+                outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
                 outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"    
                 periodss[periods[per]]=True
                 languagess[periods[per]]=True
@@ -31854,8 +31859,8 @@ for filename in os.listdir("result"):
                 translitperiods[str(charclass)+"_"+periods[per]]=True
                 arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
                 if per in languages:
-                  arffdatalanguages+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per]["language"].replace(" ","_")+"\n"
-                  arffdatagenres+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per]["genre"].replace(" ","_")+"\n"
+                  arffdatalanguages+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+languages[per]["language"].replace(" ","_")+"\n"
+                  arffdatagenres+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+languages[per]["genre"].replace(" ","_")+"\n"
                 arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
             else:
                 shortfilename=filename[0:filename.rfind("_")]
@@ -31886,6 +31891,10 @@ for filename in os.listdir("result"):
                 else:
                   outputcsv+=";"
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+                if per in languages:
+                  outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
+                else:
+                  outputcsv+=";;" 
                 outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
             arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             if not charclass in arffthresholdlines:
