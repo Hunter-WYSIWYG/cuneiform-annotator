@@ -13,6 +13,7 @@
   <script type="text/javascript" src="js/hs2CDLI.js"></script>
   <script type="text/javascript" src="js/hs23D.js"></script>
   <script type="text/javascript" src="js/periods.js"></script>
+  <script type="text/javascript" src="js/languages.js"></script>
   <script type="text/javascript" src="js/cuneifymap.js"></script>
   <script type="text/javascript" src="js/charlistmap.js"></script>
   <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
@@ -112,11 +113,14 @@ function formatTransliteration(transliteration){
   function loadVariants(){
     console.log($('#images option:selected').text())
     console.log(transliterations)
+    toappend=""
     if($('#images option:selected').text() in periods){
-      $('#period').html(periods[$('#images option:selected').text()])
-    }else{
-      $('#period').html("")
+      toappend+=periods[$('#images option:selected').text()]//$('#period').html(periods[$('#images option:selected').text()])
     }
+    if($('#images option:selected').text() in languages){
+      toappend+=languages[$('#images option:selected').text()]["language"]+" "+languages[$('#images option:selected').text()]["genre"])
+    }
+    $('#period').html(toappend)
     if($('#images option:selected').text() in transliterations){
           console.log(transliterations[$('#images option:selected').text()])
       if(transliterations[$('#images option:selected').text()]=="" ||transliterations[$('#images option:selected').text()]=="@Tablet"){
