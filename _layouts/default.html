@@ -115,7 +115,7 @@ function formatTransliteration(transliteration){
     console.log(transliterations)
     toappend=""
     if($('#images option:selected').text() in periods){
-      toappend+=periods[$('#images option:selected').text()]//$('#period').html(periods[$('#images option:selected').text()])
+      toappend+=periods[$('#images option:selected').text()]+" "//$('#period').html(periods[$('#images option:selected').text()])
     }
     if($('#images option:selected').text() in languages){
       toappend+=languages[$('#images option:selected').text()]["language"]+" "+languages[$('#images option:selected').text()]["genre"]
