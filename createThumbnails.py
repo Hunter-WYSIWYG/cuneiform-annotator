@@ -31803,15 +31803,15 @@ for filename in os.listdir("result"):
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                            savedfilename=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+str(translit)+"/"+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            savedfilename=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                            converted.save(filename=exportdir+str(translit).replace("/","_")+"/"+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
@@ -31857,19 +31857,19 @@ for filename in os.listdir("result"):
                 languagess[languages[per]["language"]]=True
                 genress[languages[per]["genre"]]=True
                 translitperiods[str(charclass)+"_"+periods[per]]=True
-                arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
+                arffdataperiods+=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
                 if per in languages:
-                  arffdatalanguages+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                  arffdatalanguages+=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                   if languages[per]["language"].replace(" ","_")=="":
                     arffdatalanguages+="Unknown\n"
                   else:
                     arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
-                  arffdatagenres+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                  arffdatagenres+=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                   if languages[per]["genre"].replace(" ","_")=="":
                     arffdatagenres+="Unknown\n"
                   else:
                     arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
-                arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
+                arffdatasignperiods+=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
             else:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
@@ -31904,10 +31904,10 @@ for filename in os.listdir("result"):
                 else:
                   outputcsv+=";;" 
                 outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
-            arffdata+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+            arffdata+=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             if not charclass in arffthresholdlines:
                 arffthresholdlines[charclass]=""
-            arffthresholdlines[charclass]+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+            arffthresholdlines[charclass]+=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             print(coords)
         except:
             e = sys.exc_info()[0]
