@@ -31854,13 +31854,21 @@ for filename in os.listdir("result"):
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
                 outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"    
                 periodss[periods[per]]=True
-                languagess[periods[per]]=True
-                genress[periods[per]]=True
+                languagess[languages[per]["language"]]=True
+                genress[languages[per]["genre"]]=True
                 translitperiods[str(charclass)+"_"+periods[per]]=True
                 arffdataperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
                 if per in languages:
-                  arffdatalanguages+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+languages[per]["language"].replace(" ","_")+"\n"
-                  arffdatagenres+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+languages[per]["genre"].replace(" ","_")+"\n"
+                  arffdatalanguages+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                  if languages[per]["language"].replace(" ","_")=="":
+                    arffdatalanguages+="Unknown\n"
+                  else:
+                    arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
+                  arffdatagenres+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                  if languages[per]["genre"].replace(" ","_")=="":
+                    arffdatagenres+="Unknown\n"
+                  else:
+                    arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
                 arffdatasignperiods+=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
             else:
                 shortfilename=filename[0:filename.rfind("_")]
