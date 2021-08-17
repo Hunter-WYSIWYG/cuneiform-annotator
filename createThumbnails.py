@@ -31804,20 +31804,20 @@ for filename in os.listdir("result"):
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            converted.save(filename=exportdir+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            converted.save(filename=exportdir+str(translit)+"/"+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
-                        homepagejson[translit].append("thumbnails/"+str(translit)+"_"+str(translits[charclass])+".jpg")
+                        homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_")+"_"+str(translits[charclass])+".jpg")
                     else:
-                        homepagejson[translit].append("thumbnails/"+str(translit)+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
+                        homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
