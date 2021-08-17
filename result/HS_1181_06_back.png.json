@@ -397,6 +397,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3"
       }
     ],
     "target": {
@@ -421,6 +431,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1"
       }
     ],
     "target": {
@@ -445,6 +465,16 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2"
       }
     ],
     "target": {
@@ -600,5 +630,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#c9384e9b-b2c6-48ee-9511-c68d58baef41"
+  },
+  "#c3f617b3-0747-4935-9f72-6b4cdb0a511e": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ku3",
+        "dimensions": {
+          "x": 927,
+          "y": 1251
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113403:577595/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"350.9819030761719,1065.5069580078125 199.9991455078125,1049.3302001953125 196.40431213378906,1167.9595947265625 354.5767517089844,1173.351806640625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c3f617b3-0747-4935-9f72-6b4cdb0a511e"
   }
 }
