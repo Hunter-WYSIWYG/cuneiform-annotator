@@ -31938,8 +31938,8 @@ for filename in os.listdir("result"):
             width=img.width
             height=img.height
             print("w"+str(width)+" h"+str(height))
-            print(str(maxcoords[2])+"x"+str(maxcoords[3])+"+"+str(maxcoords[0])+"+"+str(maxcoords[1]))
             for linee in maxcoords:
+                print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                 with img[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+line+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     converted.save(filename=savedlinename)
