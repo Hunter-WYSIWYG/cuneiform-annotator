@@ -31645,6 +31645,8 @@ cuneifymap={"...asz" : "𒈏",
 "t,ēmu" : "𒅗𒄭"}
 
 def defineBBOX(coordarray,maxcoordarray):
+    print(coordarray)
+    print(maxcoordarray)
     if coordarray[0]>maxcoordarray[0]:
         maxcoordarray[0]=coordarray[0]
     if coordarray[1]>maxcoordarray[1]:
@@ -31739,8 +31741,11 @@ if len(sys.argv)>2:
         singlefolder=True
 if len(sys.argv)>3:
     purpose=sys.argv[3]
-for filename in os.listdir("result"):
-    print(sys.argv[1]+"/"+filename)
+dircontent=os.listdir("result")
+filecounter=0
+for filename in dircontent:
+    filecounter+=1
+    print("Processing file "+str(filecounter)+"/"+len(dircontent)+": "+str(filename))
     if filename==".gitkeep" or filename.startswith("."):
         continue
     with open("result/"+filename) as json_file:
@@ -31751,8 +31756,8 @@ for filename in os.listdir("result"):
     with open('temp.jpg', 'wb') as f:
         f.write(r.content)
     for annotation in jsondata:
-        print(annotation)
-        print(jsondata[annotation]["target"]["selector"]["value"])
+        #print(annotation)
+        #print(jsondata[annotation]["target"]["selector"]["value"])
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
             f.write(jsondata[annotation]["target"]["selector"]["value"])
@@ -31791,7 +31796,7 @@ for filename in os.listdir("result"):
         translit=translit.replace(",","_")
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
-            print(cuneifymap[str(translit)])
+            #print(cuneifymap[str(translit)])
             charclass=""
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
