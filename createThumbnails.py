@@ -31746,6 +31746,7 @@ for filename in os.listdir("result"):
         jsondata=json.load(json_file)
     maxcoords={}
     maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
+    urllib.request.urlretrieve(imgurls[filename], "temp.jpg")
     for annotation in jsondata:
         print(annotation)
         print(jsondata[annotation]["target"]["selector"]["value"])
@@ -31810,7 +31811,7 @@ for filename in os.listdir("result"):
         per=per[0:per.rfind("_")]
         savedfilename=""
         try:
-            f=urlopen(imgurls[filename])
+            f=open("temp.jpg", "r")
             with Image(file=f) as img:
                 width=img.width
                 height=img.height
@@ -31937,18 +31938,18 @@ for filename in os.listdir("result"):
         linecsv=""
         linecsvhead=filename+";"
         shortfilename=filename[0:filename.rfind("_")]
-        fi=urlopen(imgurls[filename])
+        fi=open("temp.jpg", "r")
         with Image(file=fi) as img:
             width=img.width
             height=img.height
             print("w"+str(width)+" h"+str(height))
             for linee in maxcoords:
                 print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
-                linecsv+=linecsvhead+linee.replace("line","")+";"+str(maxcoords[linee])+";"
+                linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                 if shortfilename in hs2IIIF:
                   linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
                 with img[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
-                    savedlinename=exportdir+"/line/"+"line_"+line+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                    savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     converted.save(filename=savedlinename)
                 linecsv+="\n"
     except:
