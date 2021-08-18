@@ -31752,9 +31752,16 @@ for filename in dircontent:
         jsondata=json.load(json_file)
     maxcoords={}
     maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
-    r = requests.get(imgurls[filename])
-    with open('temp.jpg', 'wb') as f:
-        f.write(r.content)
+    try:
+        r = requests.get(imgurls[filename])
+        with open('temp.jpg', 'wb') as f:
+            f.write(r.content)
+    except:
+        e = sys.exc_info()[0]
+        print(e)
+        print(sys.exc_info()[1])
+        print(sys.exc_info()[2])
+        continue
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
