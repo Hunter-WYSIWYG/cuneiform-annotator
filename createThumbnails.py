@@ -31746,7 +31746,9 @@ for filename in os.listdir("result"):
         jsondata=json.load(json_file)
     maxcoords={}
     maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
-    urllib.request.urlretrieve(imgurls[filename], "temp.jpg")
+    fl = open('temp.jpg','wb')
+    fl.write(urllib.urlopen(imgurls[filename]).read())
+    fl.close()
     for annotation in jsondata:
         print(annotation)
         print(jsondata[annotation]["target"]["selector"]["value"])
