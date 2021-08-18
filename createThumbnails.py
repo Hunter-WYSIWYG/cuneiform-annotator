@@ -4,6 +4,7 @@ import sys
 import os
 import json
 import math
+import requests
 import urllib.parse
 from svgpathtools import svg2paths, wsvg
 from svgpathtools import svg2paths2
@@ -31746,9 +31747,9 @@ for filename in os.listdir("result"):
         jsondata=json.load(json_file)
     maxcoords={}
     maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
-    fl = open('temp.jpg','wb')
-    fl.write(urllib.urlopen(imgurls[filename]).read())
-    fl.close()
+    r = requests.get(imgurls[filename])
+    with open('temp.jpg', 'wb') as f:
+        f.write(r.content)
     for annotation in jsondata:
         print(annotation)
         print(jsondata[annotation]["target"]["selector"]["value"])
