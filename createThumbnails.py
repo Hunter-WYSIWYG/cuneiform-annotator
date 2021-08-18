@@ -31814,7 +31814,7 @@ for filename in os.listdir("result"):
         per=per[0:per.rfind("_")]
         savedfilename=""
         try:
-            f=open("temp.jpg", "r")
+            f=open("temp.jpg", "rb")
             with Image(file=f) as img:
                 width=img.width
                 height=img.height
@@ -31941,7 +31941,7 @@ for filename in os.listdir("result"):
         linecsv=""
         linecsvhead=filename+";"
         shortfilename=filename[0:filename.rfind("_")]
-        fi=open("temp.jpg", "r")
+        fi=open("temp.jpg", "rb")
         with Image(file=fi) as img:
             width=img.width
             height=img.height
