@@ -31941,9 +31941,6 @@ for filename in os.listdir("result"):
     linecsv=""
     linecsvhead=filename+";"
     shortfilename=filename[0:filename.rfind("_")]
-    r = requests.get(imgurls[filename])
-    with open('temp.jpg', 'wb') as f:
-        f.write(r.content)
     fi=open("temp.jpg", "rb")
     with Image(file=fi) as img2:
         width=img2.width
@@ -31956,7 +31953,8 @@ for filename in os.listdir("result"):
               linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
             with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                 savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                converted.save(filename=savedlinename)
+                with cropped.convert('jpg') as converted:
+                    converted.save(filename=savedlinename)
             linecsv+="\n"
     #except:
     #    e = sys.exc_info()[0]
