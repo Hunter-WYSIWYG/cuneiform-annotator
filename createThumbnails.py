@@ -31647,14 +31647,20 @@ cuneifymap={"...asz" : "𒈏",
 def defineBBOX(coordarray,maxcoordarray):
     print(coordarray)
     print(maxcoordarray)
-    if coordarray[0]>maxcoordarray[0]:
-        maxcoordarray[0]=coordarray[0]
-    if coordarray[1]>maxcoordarray[1]:
-        maxcoordarray[1]=coordarray[1]
-    if coordarray[2]<maxcoordarray[2]:
-        maxcoordarray[2]=coordarray[2]
-    if coordarray[3]<maxcoordarray[3]:
-        maxcoordarray[3]=coordarray[3]
+    try:
+      if coordarray[0]>maxcoordarray[0]:
+          maxcoordarray[0]=coordarray[0]
+      if coordarray[1]>maxcoordarray[1]:
+          maxcoordarray[1]=coordarray[1]
+      if coordarray[2]<maxcoordarray[2]:
+          maxcoordarray[2]=coordarray[2]
+      if coordarray[3]<maxcoordarray[3]:
+          maxcoordarray[3]=coordarray[3]
+    except:
+        e = sys.exc_info()[0]
+        print(e)
+        print(sys.exc_info()[1])
+        print(sys.exc_info()[2])
     return maxcoordarray
 
 translits={}
