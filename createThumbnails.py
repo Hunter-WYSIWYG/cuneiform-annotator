@@ -31931,13 +31931,14 @@ for filename in os.listdir("result"):
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
+        f.close()
     try:
         print(maxcoords)
         linecsv=""
         linecsvhead=filename+";"
         shortfilename=filename[0:filename.rfind("_")]
-        f=urlopen(imgurls[filename])
-        with Image(file=f) as img:
+        fi=urlopen(imgurls[filename])
+        with Image(file=fi) as img:
             width=img.width
             height=img.height
             print("w"+str(width)+" h"+str(height))
@@ -31950,12 +31951,12 @@ for filename in os.listdir("result"):
                     savedlinename=exportdir+"/line/"+"line_"+line+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     converted.save(filename=savedlinename)
                 linecsv+="\n"
-        f.close()
     except:
         e = sys.exc_info()[0]
         print(e)
         print(sys.exc_info()[1])
-        print(sys.exc_info()[2])     
+        print(sys.exc_info()[2])
+    fi.close()        
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
