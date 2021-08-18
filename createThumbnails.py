@@ -31739,7 +31739,7 @@ if len(sys.argv)>2:
 if len(sys.argv)>3:
     purpose=sys.argv[3]
 for filename in os.listdir("result"):
-    #print(sys.argv[1]+"/"+filename)
+    print(sys.argv[1]+"/"+filename)
     if filename==".gitkeep" or filename.startswith("."):
         continue
     with open("result/"+filename) as json_file:
