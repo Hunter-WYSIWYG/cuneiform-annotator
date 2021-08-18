@@ -16,12 +16,12 @@ imageclassification:
   - mkdir classification
   - mkdir classification/line
   - mkdir classification/char
-  - python3 createThumbnails.py classification/char/ true Transliteration
-  - python3 createThumbnails.py classification/line/ true Line
+  - python3 createThumbnails.py classification true Transliteration
+  #- python3 createThumbnails.py classification/line/ true Line
   artifacts:
     paths:
     - classification
-  except:
+  only:
   - master
 
 pages:

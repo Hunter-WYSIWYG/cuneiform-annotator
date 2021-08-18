@@ -31643,6 +31643,17 @@ cuneifymap={"...asz" : "𒈏",
 "t,u6" : "𒅲",
 "t,ēmu" : "𒅗𒄭"}
 
+def defineBBOX(coordarray,maxcoordarray):
+    if coordarray[0]<maxcoordarray[0]:
+        maxcoordarray[0]=coordarray[0]
+    if coordarray[1]<maxcoordarray[1]:
+        maxcoordarray[1]=coordarray[1]
+    if coordarray[2]>maxcoordarray[2]:
+        maxcoordarray[2]=coordarray[2]
+    if coordarray[3]>maxcoordarray[3]:
+        maxcoordarray[3]=coordarray[3]
+    return maxcoordarray
+
 translits={}
 
 translitperiods={}
@@ -31733,6 +31744,8 @@ for filename in os.listdir("result"):
         continue
     with open("result/"+filename) as json_file:
         jsondata=json.load(json_file)
+    maxcoords={}
+    maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
     for annotation in jsondata:
         print(annotation)
         print(jsondata[annotation]["target"]["selector"]["value"])
@@ -31767,6 +31780,8 @@ for filename in os.listdir("result"):
             translit="Line"+line
         if purpose=="Line" and translit=="":
             continue
+        if line!=-1:
+            maxcoords[line]=defineBBOX(coords,maxcoords[line])
         translit=translit.replace(",","_")
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
@@ -31804,14 +31819,14 @@ for filename in os.listdir("result"):
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit).replace("/","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+str(translit).replace("/","_")+"/"+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                            converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_")+"/"+str(translit).replace("/","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
@@ -31914,6 +31929,23 @@ for filename in os.listdir("result"):
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
+    try:
+        f=urlopen(imgurls[filename])
+        with Image(file=f) as img:
+            width=img.width
+            height=img.height
+            print("w"+str(width)+" h"+str(height))
+            print(str(maxcoords[2])+"x"+str(maxcoords[3])+"+"+str(maxcoords[0])+"+"+str(maxcoords[1]))
+            for line in maxcoords:
+                with img[int(maxcoords[line][0]):int(maxcoords[line][1]),int(maxcoords[line][2]):int(maxcoords[line][3])] as cropped:
+                    savedlinename=exportdir+"/line/"+"line_"+line+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                    converted.save(filename=savedlinename)
+        f.close()
+    except:
+        e = sys.exc_info()[0]
+        print(e)
+        print(sys.exc_info()[1])
+        print(sys.exc_info()[2])     
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
