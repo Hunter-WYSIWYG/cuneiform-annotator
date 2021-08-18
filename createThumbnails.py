@@ -31782,7 +31782,7 @@ for filename in os.listdir("result"):
             continue
         if line!=-1:
             if not "line"+str(line) in maxcoords:
-                maxcoords["line"+str(line)]=maxcoordtemplate
+                maxcoords["line"+str(line)]=[-99999.0,-99999.0,99999.0,99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
         translit=translit.replace(",","_")
         charclass="other" #str(translit)
