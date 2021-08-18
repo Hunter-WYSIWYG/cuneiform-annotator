@@ -31745,7 +31745,7 @@ dircontent=os.listdir("result")
 filecounter=0
 for filename in dircontent:
     filecounter+=1
-    print("Processing file "+str(filecounter)+"/"+len(dircontent)+": "+str(filename))
+    print("Processing file "+str(filecounter)+"/"+str(len(dircontent))+": "+str(filename))
     if filename==".gitkeep" or filename.startswith("."):
         continue
     with open("result/"+filename) as json_file:
