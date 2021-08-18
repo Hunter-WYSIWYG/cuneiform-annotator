@@ -31933,6 +31933,9 @@ for filename in os.listdir("result"):
             print(sys.exc_info()[2])
     try:
         print(maxcoords)
+        linecsv=""
+        linecsvhead=filename+";"
+        shortfilename=filename[0:filename.rfind("_")]
         f=urlopen(imgurls[filename])
         with Image(file=f) as img:
             width=img.width
@@ -31940,9 +31943,13 @@ for filename in os.listdir("result"):
             print("w"+str(width)+" h"+str(height))
             for linee in maxcoords:
                 print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                linecsv+=linecsvhead+linee.replace("line","")+";"+maxcoords[linee]+";"
+                if shortfilename in hs2IIIF:
+                  linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
                 with img[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+line+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     converted.save(filename=savedlinename)
+                linecsv+="\n"
         f.close()
     except:
         e = sys.exc_info()[0]
@@ -32008,35 +32015,41 @@ if singlefolder:
     f = open(exportdir+"translitmetadata.csv", 'w')
     f.write(outputcsv)
     f.close()
+    f = open(exportdir+"linemetadata.csv", 'w')
+    f.write(linecsv)
+    f.close()
 else:
-    f = open("public/mlset.arff", 'w')
+    f = open("/public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
     f.close()
-    f = open("public/maicubeda.ttl", 'w')
+    f = open("/public/maicubeda.ttl", 'w')
     f.write(ttlheader)
     for tt in ttlstring:
         f.write(tt)
     f.close()
-    f = open("public/mlsetthreshold.arff", 'w')
+    f = open("/public/mlsetthreshold.arff", 'w')
     f.write(arffthresholdexport)
     for line in arffthresholdlines:
       if translits[line]>mlThreshold:
           f.write(arffthresholdlines[line])
     f.close()
-    f = open("public/mlset_periods.arff", 'w')
+    f = open("/public/mlset_periods.arff", 'w')
     f.write(arffperiodsexport+arffdataperiods)
     f.close()
-    f = open(exportdir+"mlset_languages.arff", 'w')
+    f = open(exportdir+"/public/mlset_languages.arff", 'w')
     f.write(arfflanguagesexport+arffdatalanguages)
     f.close()
-    f = open(exportdir+"mlset_genres.arff", 'w')
+    f = open(exportdir+"/public/mlset_genres.arff", 'w')
     f.write(arffgenresexport+arffdatagenres)
     f.close()
-    f = open("public/mlset_translitperiods.arff", 'w')
+    f = open("/public/mlset_translitperiods.arff", 'w')
     f.write(arfftranslitperiodsexport+arffdatasignperiods)
     f.close()
-    f = open("public/translitmetadata.csv", 'w')
+    f = open("/public/translitmetadata.csv", 'w')
     f.write(outputcsv)
+    f.close()
+    f = open(exportdir+"/public/linemetadata.csv", 'w')
+    f.write(linecsv)
     f.close()
 
 
