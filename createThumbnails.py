@@ -31941,6 +31941,9 @@ for filename in os.listdir("result"):
     linecsv=""
     linecsvhead=filename+";"
     shortfilename=filename[0:filename.rfind("_")]
+    r = requests.get(imgurls[filename])
+    with open('temp.jpg', 'wb') as f:
+        f.write(r.content)
     fi=open("temp.jpg", "rb")
     with Image(file=fi) as img2:
         width=img2.width
