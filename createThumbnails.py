@@ -31781,7 +31781,7 @@ for filename in os.listdir("result"):
         if purpose=="Line" and translit=="":
             continue
         if line!=-1:
-            maxcoords[line]=defineBBOX(coords,maxcoords[line])
+            maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
         translit=translit.replace(",","_")
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
@@ -31930,6 +31930,7 @@ for filename in os.listdir("result"):
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
     try:
+        print(maxcoords)
         f=urlopen(imgurls[filename])
         with Image(file=f) as img:
             width=img.width
@@ -31937,7 +31938,7 @@ for filename in os.listdir("result"):
             print("w"+str(width)+" h"+str(height))
             print(str(maxcoords[2])+"x"+str(maxcoords[3])+"+"+str(maxcoords[0])+"+"+str(maxcoords[1]))
             for line in maxcoords:
-                with img[int(maxcoords[line][0]):int(maxcoords[line][1]),int(maxcoords[line][2]):int(maxcoords[line][3])] as cropped:
+                with img[int(maxcoords["line"+str(line)][0]):int(maxcoords["line"+str(line)][1]),int(maxcoords["line"+str(line)][2]):int(maxcoords["line"+str(line)][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+line+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     converted.save(filename=savedlinename)
         f.close()
