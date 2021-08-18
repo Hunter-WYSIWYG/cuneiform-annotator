@@ -31644,13 +31644,13 @@ cuneifymap={"...asz" : "𒈏",
 "t,ēmu" : "𒅗𒄭"}
 
 def defineBBOX(coordarray,maxcoordarray):
-    if coordarray[0]<maxcoordarray[0]:
+    if coordarray[0]>maxcoordarray[0]:
         maxcoordarray[0]=coordarray[0]
-    if coordarray[1]<maxcoordarray[1]:
+    if coordarray[1]>maxcoordarray[1]:
         maxcoordarray[1]=coordarray[1]
-    if coordarray[2]>maxcoordarray[2]:
+    if coordarray[2]<maxcoordarray[2]:
         maxcoordarray[2]=coordarray[2]
-    if coordarray[3]>maxcoordarray[3]:
+    if coordarray[3]<maxcoordarray[3]:
         maxcoordarray[3]=coordarray[3]
     return maxcoordarray
 
@@ -31943,7 +31943,7 @@ for filename in os.listdir("result"):
             print("w"+str(width)+" h"+str(height))
             for linee in maxcoords:
                 print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
-                linecsv+=linecsvhead+linee.replace("line","")+";"+maxcoords[linee]+";"
+                linecsv+=linecsvhead+linee.replace("line","")+";"+str(maxcoords[linee])+";"
                 if shortfilename in hs2IIIF:
                   linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
                 with img[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
