@@ -31682,6 +31682,8 @@ homepagejson={}
 
 outputcsv=""
 
+linecsv=""
+
 arffdata="@data\n"
 
 arffdataperiods="@data\n"
@@ -31950,7 +31952,6 @@ for filename in dircontent:
         #f.close()
     try:
         print(maxcoords)
-        linecsv=""
         linecsvhead=filename+";"
         shortfilename=filename[0:filename.rfind("_")]
         fi=open("temp.jpg", "rb")
