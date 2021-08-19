@@ -31741,6 +31741,8 @@ ttlheader+="cidoc:Glyph rdf:type owl:Class .\n"
 ttlheader+="cidoc:Tablet rdf:type owl:Class .\n"
 ttlheader+="cidoc:refersTo rdf:type owl:ObjectProperty .\n"
 ttlheader+="cidoc:isDepictedBy rdf:type owl:ObjectProperty .\n"
+ttlheader+="cidoc:P56_isFoundOn rdf:type owl:ObjectProperty .\n"
+ttlheader+="cidoc:P138_represents rdf:type owl:ObjectProperty .\n"
 ttlheader+="cidoc:includes rdf:type owl:ObjectProperty .\n"
 if len(sys.argv)>1:
     exportdir=sys.argv[1]
@@ -31868,7 +31870,7 @@ for filename in dircontent:
                   outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> cidoc:P56_isFoundOn <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
@@ -31878,7 +31880,8 @@ for filename in dircontent:
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
-                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P138_represents  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P56_isFoundOn  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
