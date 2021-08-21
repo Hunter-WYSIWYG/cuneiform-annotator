@@ -31702,6 +31702,8 @@ arffdatagenres="@data\n"
 
 arffdatathreshold="@data\n"
 
+unknownchars=""
+
 datanamespace="http://www.mainzed.org/maicubeda/"
 
 cdlinamespace="http://cdli.ucla.edu/"
@@ -31831,6 +31833,7 @@ for filename in dircontent:
         else:
             translits[charclass]=1
         if charclass=="other":
+            unknownchars+=str(translit)+"\n"
             print(str(translit))
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
@@ -32045,6 +32048,9 @@ if singlefolder:
     f = open(exportdir+"/linemetadata.csv", 'w')
     f.write(linecsv)
     f.close()
+    f = open(exportdir+"/unknownchars.txt", 'w')
+    f.write(unknownchars)
+    f.close()
 else:
     f = open("/public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
@@ -32077,6 +32083,9 @@ else:
     f.close()
     f = open(exportdir+"/public/linemetadata.csv", 'w')
     f.write(linecsv)
+    f.close()
+    f = open(exportdir+"/public/unknownchars.txt", 'w')
+    f.write(unknownchars)
     f.close()
 
 
