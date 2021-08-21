@@ -20579,7 +20579,12 @@ charlistmap={
   "U+12219": {
     "meszl": "268",
     "signName": "LUGAL.LUGALinversum"
-  }
+  },
+  "U+1241E": {"signName": "One gesz'u"},
+  "U+1241F": {"signName": "Two gesz'u"},
+  "U+12420": {"signName": "Three gesz'u"},
+  "U+12421": {"signName": "Four gesz'u"},
+  "U+12422": {"signName": "Five gesz'u"}
 }
 
 
@@ -31812,7 +31817,6 @@ for filename in dircontent:
             if not "line"+str(line) in maxcoords:
                 maxcoords["line"+str(line)]=[-99999.0,-99999.0,99999.0,99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
-        translit=translit.replace(",","_")
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
             #print(cuneifymap[str(translit)])
@@ -31835,6 +31839,7 @@ for filename in dircontent:
         if charclass=="other":
             unknownchars+=str(translit)+"\n"
             print(str(translit))
+        translit=translit.replace(",","_")
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
         savedfilename=""
