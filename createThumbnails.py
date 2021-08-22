@@ -19263,11 +19263,11 @@ charlistmap={
   },
   "U+1214C": {
     "meszl": "349",
-    "signName": "IL×KÁR"
+    "signName": "IL×KAR2"
   },
   "U+1214D": {
     "meszl": "493",
-    "signName": "IL2 (GA.GÍN)"
+    "signName": "IL2 (GA.GIN2)"
   },
   "U+1214E": {
     "meszl": "641",
@@ -19279,20 +19279,20 @@ charlistmap={
   },
   "U+12168": {
     "meszl": "25",
-    "signName": "KA×GÍR"
+    "signName": "KA×GIR2"
   },
   "U+12169": {"signName": "KA×GISZ+SAR"},
   "U+12164": {
     "meszl": "33",
-    "signName": "PU3 (KA×KÁR)"
+    "signName": "PU3 (KA×KAR2)"
   },
   "U+12165": {
     "meszl": "65",
-    "signName": "GU7 (KA×NÍG)"
+    "signName": "GU7 (KA×NIG2)"
   },
   "U+12166": {
     "meszl": "66",
-    "signName": "KA× KADRA(NÍG.SZÀ.A)"
+    "signName": "KA× KADRA(NIG2.SZA3.A)"
   },
   "U+12167": {"signName": "KA×GI"},
   "U+12160": {
