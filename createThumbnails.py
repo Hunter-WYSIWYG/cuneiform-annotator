@@ -31645,8 +31645,6 @@ cuneifymap={"...asz" : "𒈏",
 "t,ēmu" : "𒅗𒄭"}
 
 def defineBBOX(coordarray,maxcoordarray):
-    print(coordarray)
-    print(maxcoordarray)
     try:
       if coordarray[0]>maxcoordarray[0]:
           maxcoordarray[0]=coordarray[0]
