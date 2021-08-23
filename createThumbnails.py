@@ -32058,6 +32058,7 @@ if singlefolder:
     f = open(exportdir+"/unknownchars.txt", 'w')
     f.write(unknownchars)
     f.close()
+    graph.parse((ttlheader+ttlstring))
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
     f = open("/public/mlset.arff", 'w')
@@ -32095,6 +32096,7 @@ else:
     f = open(exportdir+"/public/unknownchars.txt", 'w')
     f.write(unknownchars)
     f.close()
+    graph.parse((ttlheader+ttlstring))
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
 
