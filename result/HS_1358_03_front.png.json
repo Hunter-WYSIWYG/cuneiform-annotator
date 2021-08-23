@@ -11,6 +11,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1548,
+          "y": 2572
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -35,6 +49,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1548,
+          "y": 2572
+        }
       }
     ],
     "target": {
@@ -1099,6 +1127,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 1548,
+          "y": 2572
+        }
       }
     ],
     "target": {
@@ -1194,5 +1236,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#ff94b336-f450-43dc-b59c-7f8a3b4a060c"
+  },
+  "#e0a3f57c-e357-41e5-babb-84f8d8af4521": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sar",
+        "dimensions": {
+          "x": 1548,
+          "y": 2572
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114776:579030/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"819.2515869140625,666.6676635742188 650.306640625,658.1134643554688 648.1680908203125,794.980224609375 810.6973876953125,794.980224609375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e0a3f57c-e357-41e5-babb-84f8d8af4521"
   }
 }

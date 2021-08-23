@@ -19263,11 +19263,11 @@ charlistmap={
   },
   "U+1214C": {
     "meszl": "349",
-    "signName": "IL×KÁR"
+    "signName": "IL×KAR2"
   },
   "U+1214D": {
     "meszl": "493",
-    "signName": "IL2 (GA.GÍN)"
+    "signName": "IL2 (GA.GIN2)"
   },
   "U+1214E": {
     "meszl": "641",
@@ -19279,20 +19279,20 @@ charlistmap={
   },
   "U+12168": {
     "meszl": "25",
-    "signName": "KA×GÍR"
+    "signName": "KA×GIR2"
   },
   "U+12169": {"signName": "KA×GISZ+SAR"},
   "U+12164": {
     "meszl": "33",
-    "signName": "PU3 (KA×KÁR)"
+    "signName": "PU3 (KA×KAR2)"
   },
   "U+12165": {
     "meszl": "65",
-    "signName": "GU7 (KA×NÍG)"
+    "signName": "GU7 (KA×NIG2)"
   },
   "U+12166": {
     "meszl": "66",
-    "signName": "KA× KADRA(NÍG.SZÀ.A)"
+    "signName": "KA× KADRA(NIG2.SZA3.A)"
   },
   "U+12167": {"signName": "KA×GI"},
   "U+12160": {
@@ -20579,7 +20579,12 @@ charlistmap={
   "U+12219": {
     "meszl": "268",
     "signName": "LUGAL.LUGALinversum"
-  }
+  },
+  "U+1241E": {"signName": "One gesz'u"},
+  "U+1241F": {"signName": "Two gesz'u"},
+  "U+12420": {"signName": "Three gesz'u"},
+  "U+12421": {"signName": "Four gesz'u"},
+  "U+12422": {"signName": "Five gesz'u"}
 }
 
 
@@ -31700,6 +31705,8 @@ arffdatagenres="@data\n"
 
 arffdatathreshold="@data\n"
 
+unknownchars=""
+
 datanamespace="http://www.mainzed.org/maicubeda/"
 
 cdlinamespace="http://cdli.ucla.edu/"
@@ -31739,6 +31746,8 @@ ttlheader+="cidoc:Glyph rdf:type owl:Class .\n"
 ttlheader+="cidoc:Tablet rdf:type owl:Class .\n"
 ttlheader+="cidoc:refersTo rdf:type owl:ObjectProperty .\n"
 ttlheader+="cidoc:isDepictedBy rdf:type owl:ObjectProperty .\n"
+ttlheader+="cidoc:P56_isFoundOn rdf:type owl:ObjectProperty .\n"
+ttlheader+="cidoc:P138_represents rdf:type owl:ObjectProperty .\n"
 ttlheader+="cidoc:includes rdf:type owl:ObjectProperty .\n"
 if len(sys.argv)>1:
     exportdir=sys.argv[1]
@@ -31806,7 +31815,6 @@ for filename in dircontent:
             if not "line"+str(line) in maxcoords:
                 maxcoords["line"+str(line)]=[-99999.0,-99999.0,99999.0,99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
-        translit=translit.replace(",","_")
         charclass="other" #str(translit)
         if(str(translit) in cuneifymap):
             #print(cuneifymap[str(translit)])
@@ -31827,7 +31835,9 @@ for filename in dircontent:
         else:
             translits[charclass]=1
         if charclass=="other":
+            unknownchars+=str(translit)+"\n"
             print(str(translit))
+        translit=translit.replace(",","_")
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
         savedfilename=""
@@ -31866,7 +31876,7 @@ for filename in dircontent:
                   outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
-                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                  ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> cidoc:P56_isFoundOn <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
@@ -31876,7 +31886,8 @@ for filename in dircontent:
                   ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
-                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P138_represents  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                  ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P56_isFoundOn  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
                   ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                   outputcsv+=";;"
@@ -32040,6 +32051,9 @@ if singlefolder:
     f = open(exportdir+"/linemetadata.csv", 'w')
     f.write(linecsv)
     f.close()
+    f = open(exportdir+"/unknownchars.txt", 'w')
+    f.write(unknownchars)
+    f.close()
 else:
     f = open("/public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
@@ -32072,6 +32086,9 @@ else:
     f.close()
     f = open(exportdir+"/public/linemetadata.csv", 'w')
     f.write(linecsv)
+    f.close()
+    f = open(exportdir+"/public/unknownchars.txt", 'w')
+    f.write(unknownchars)
     f.close()
 
 

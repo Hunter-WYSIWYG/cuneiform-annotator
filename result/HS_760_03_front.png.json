@@ -82,5 +82,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d4e1c07f-434e-4326-a259-2176ab000ceb"
+  },
+  "#89862553-7136-458f-ab05-17e2b072a9c8": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lugal",
+        "dimensions": {
+          "x": 833,
+          "y": 1027
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1125535:589858/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"106.62930297851562,517.0413208007812 494.4103088378906,501.1051330566406 499.7223815917969,635.6775512695312 113.7120590209961,637.4482421875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#89862553-7136-458f-ab05-17e2b072a9c8"
+  },
+  "#64d5da69-92ba-4c31-9745-9caf5bacfb78": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "nagar",
+        "dimensions": {
+          "x": 833,
+          "y": 1027
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1125535:589858/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"434.2068786621094,674.6326904296875 71.21551513671875,667.5499267578125 72.9862060546875,775.56201171875 423.5827331542969,810.975830078125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#64d5da69-92ba-4c31-9745-9caf5bacfb78"
   }
 }
