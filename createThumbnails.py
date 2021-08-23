@@ -5,9 +5,12 @@ import os
 import json
 import math
 import requests
+from rdflib import Graph
 import urllib.parse
 from svgpathtools import svg2paths, wsvg
 from svgpathtools import svg2paths2
+
+graph = Graph()
 
 languages={
   "HS_2440": {
@@ -31650,8 +31653,6 @@ cuneifymap={"...asz" : "𒈏",
 "t,ēmu" : "𒅗𒄭"}
 
 def defineBBOX(coordarray,maxcoordarray):
-    print(coordarray)
-    print(maxcoordarray)
     try:
       if coordarray[0]>maxcoordarray[0]:
           maxcoordarray[0]=coordarray[0]
@@ -31767,6 +31768,7 @@ for filename in dircontent:
         continue
     with open("result/"+filename) as json_file:
         jsondata=json.load(json_file)
+        graph.parse(data=json.dumps(jsondata),format='json-ld')
     maxcoords={}
     maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
     try:
@@ -32056,6 +32058,9 @@ if singlefolder:
     f = open(exportdir+"/unknownchars.txt", 'w')
     f.write(unknownchars)
     f.close()
+    #ttllist=[str(s) for s in ttlstring]
+    #graph.parse((ttlheader+("\n".join(ttllist))))
+    graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
     f = open("/public/mlset.arff", 'w')
     f.write(arffexport+arffdata)
@@ -32092,5 +32097,8 @@ else:
     f = open(exportdir+"/public/unknownchars.txt", 'w')
     f.write(unknownchars)
     f.close()
+    #ttllist=[str(s) for s in ttlstring]
+    #graph.parse((ttlheader+("\n".join(ttllist))))
+    graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
 
