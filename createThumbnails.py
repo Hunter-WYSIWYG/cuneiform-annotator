@@ -31767,7 +31767,7 @@ for filename in dircontent:
     if filename==".gitkeep" or filename.startswith("."):
         continue
     with open("result/"+filename) as json_file:
-        graph.parse(json_file)
+        graph.parse(data=json_file,format='json-ld')
         jsondata=json.load(json_file)
     maxcoords={}
     maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
