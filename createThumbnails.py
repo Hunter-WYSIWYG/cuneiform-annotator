@@ -31857,9 +31857,13 @@ for filename in dircontent:
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            with Drawing() as draw:
-                              draw.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              draw(img)
+                            with Drawing() as context:
+                              context.fill_color = Color('black')
+                              context.stroke_color = Color('black')
+                              context.font_style = 'italic'
+                              context.font_size = 16
+                              context.text(int(imagewidth / 2), int(imageheight / 2), translit)
+                              context(img)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
@@ -31868,8 +31872,12 @@ for filename in dircontent:
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
                             with Drawing() as draw:
-                              draw.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              draw(img)
+                              context.fill_color = Color('black')
+                              context.stroke_color = Color('black')
+                              context.font_style = 'italic'
+                              context.font_size = 16
+                              context.text(int(imagewidth / 2), int(imageheight / 2), translit)
+                              context(img)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
