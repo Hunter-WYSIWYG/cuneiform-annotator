@@ -31859,7 +31859,7 @@ for filename in dircontent:
                             converted.resize(imagewidth, imageheight)
                             with Drawing() as draw:
                               draw.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              draw(image)
+                              draw(img)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
@@ -31869,7 +31869,7 @@ for filename in dircontent:
                             converted.resize(imagewidth, imageheight)
                             with Drawing() as draw:
                               draw.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              draw(image)
+                              draw(img)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
