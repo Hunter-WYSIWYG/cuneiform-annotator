@@ -1,5 +1,6 @@
 from urllib.request import urlopen
 from wand.image import Image
+from wand.color import Color
 from wand.drawing import Drawing
 import sys
 import os
