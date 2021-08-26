@@ -31856,6 +31856,9 @@ for filename in dircontent:
                     if singlefolder:
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
+                            with Drawing() as draw:
+                              draw.text(imagewidth / 2, imageheight / 2, translit)
+                              draw(image)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
@@ -31863,6 +31866,9 @@ for filename in dircontent:
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
+                            with Drawing() as draw:
+                              draw.text(imagewidth / 2, imageheight / 2, translit)
+                              draw(image)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
