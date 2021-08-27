@@ -1,7 +1,9 @@
 from urllib.request import urlopen
 from wand.image import Image
 from wand.color import Color
-import PIL
+from PIL import Image as PILImage
+from PIL import ImageDraw as PILImageDraw
+from PIL import ImageFont as PILImageFont
 import sys
 import os
 import json
@@ -31867,9 +31869,9 @@ for filename in dircontent:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                    imaag = PIL.Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                    I1 = PIL.ImageDraw.Draw(imaag)
-                    myFont = PIL.ImageFont.truetype('FreeMono.ttf', 65)
+                    imaag = PILImage.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                    I1 = PILImageDraw.Draw(imaag)
+                    myFont = PILImageFont.truetype('FreeMono.ttf', 65)
                     I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
                     imaag.save(savedfilename.replace(".jpg","")+"_annotated.jpg")
                     if not translit in homepagejson:
