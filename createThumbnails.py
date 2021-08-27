@@ -31848,7 +31848,7 @@ for filename in dircontent:
         per=per[0:per.rfind("_")]
         savedfilename=""
         try:
-          f=open("temp.jpg", "rb")
+            f=open("temp.jpg", "rb")
             with Image(file=f) as img:
                 width=img.width
                 height=img.height
