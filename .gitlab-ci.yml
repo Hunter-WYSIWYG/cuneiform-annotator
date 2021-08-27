@@ -16,6 +16,7 @@ imageclassification:
   - mkdir classification
   - mkdir classification/line
   - mkdir classification/char
+  - mkdir classification/char_annoated
   - python3 createThumbnails.py classification true Transliteration
   #- python3 createThumbnails.py classification/line/ true Line
   artifacts:
