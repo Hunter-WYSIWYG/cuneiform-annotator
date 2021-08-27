@@ -31857,11 +31857,14 @@ for filename in dircontent:
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
                 cropped = im.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
+                print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 if singlefolder:  
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                        print("RESIZED!")
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","jpg")
+                        print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
                           os.makedirs(exportdir+str(translit))
@@ -31874,7 +31877,9 @@ for filename in dircontent:
                 I1 = PILImageDraw.Draw(resized)
                 myFont = PILImageFont.truetype('FreeMono.ttf', 65)
                 I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
+                print("ANNOTATED!")
                 resized.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
+                print("SAVED ANNOTATION")
                 if not translit in homepagejson:
                     homepagejson[translit]=[]
                 if singlefolder:
