@@ -31849,7 +31849,7 @@ for filename in dircontent:
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
         savedfilename=""
-        try:
+        #try:
             #f=open("temp.jpg", "rb")
             with Image.open("temp.jpg") as img:
                 width=img.width
@@ -31978,11 +31978,11 @@ for filename in dircontent:
                 arffthresholdlines[charclass]=""
             arffthresholdlines[charclass]+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             print(coords)
-        except:
-            e = sys.exc_info()[0]
-            print(e)
-            print(sys.exc_info()[1])
-            print(sys.exc_info()[2])
+        #except:
+        #    e = sys.exc_info()[0]
+        #    print(e)
+        #    print(sys.exc_info()[1])
+        #    print(sys.exc_info()[2])
         #f.close()
     try:
         print(maxcoords)
