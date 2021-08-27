@@ -31863,14 +31863,14 @@ for filename in dircontent:
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         print("RESIZED!")
-                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","jpg")
+                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                         print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
                           os.makedirs(exportdir+str(translit))
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","jpg")
+                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                 if not os.path.exists(exportdir+"/char_annotated/"):
                   os.makedirs(exportdir+"/char_annotated/")
                 #imaag = PILImage.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
