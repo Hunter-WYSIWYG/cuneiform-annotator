@@ -31917,7 +31917,7 @@ for filename in dircontent:
                 else:
                     outputcsv+=";;"
                 if shortfilename in hs2IIIF:
-                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(abs(coords[1]-coords[0]))+","+str(abs(coords[3]-coords[1]))+"/full")+";"
+                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(abs(coords[1]-coords[0]))+","+str(abs(coords[3]-coords[2]))+"/full")+";"
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                     outputcsv+=";"
@@ -32005,7 +32005,7 @@ for filename in dircontent:
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
                         linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
-                    cropped = img2.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
+                    cropped = img2.crop((int(coords[0]),int(coords[2]),int(coords[1]-coords[0]),int(coords[3]-coords[2])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
