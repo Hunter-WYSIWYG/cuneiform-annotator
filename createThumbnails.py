@@ -31930,14 +31930,14 @@ for filename in dircontent:
             if per in languages:
                 arffdatalanguages+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                 if languages[per]["language"].replace(" ","_")=="":
-                arffdatalanguages+="Unknown\n"
+                    arffdatalanguages+="Unknown\n"
                 else:
-                arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
-                arffdatagenres+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                    arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
+                    arffdatagenres+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                 if languages[per]["genre"].replace(" ","_")=="":
-                arffdatagenres+="Unknown\n"
+                    arffdatagenres+="Unknown\n"
                 else:
-                arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
+                    arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
             arffdatasignperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
         else:
             shortfilename=filename[0:filename.rfind("_")]
