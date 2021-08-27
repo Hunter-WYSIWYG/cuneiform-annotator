@@ -31985,7 +31985,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
-            errorlog+="char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"str(sys.exc_info()[2])+"\n"
+            errorlog+="char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
         #f.close()
         try:
             print(maxcoords)
@@ -32011,7 +32011,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
-            errorlog+="line;line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"str(sys.exc_info()[2])+"\n"
+            errorlog+="line;line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
