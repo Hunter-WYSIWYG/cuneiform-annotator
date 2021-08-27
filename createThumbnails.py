@@ -31768,6 +31768,7 @@ if len(sys.argv)>2:
 if len(sys.argv)>3:
     purpose=sys.argv[3]
 dircontent=os.listdir("result")
+sorted(dircontent)
 filecounter=0
 for filename in dircontent:
     filecounter+=1
