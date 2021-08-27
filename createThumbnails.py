@@ -32001,7 +32001,7 @@ for filename in dircontent:
                 cropped = img2.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
                 #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                 savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                converted.save(filename=savedlinename)
+                cropped.save(filename=savedlinename)
                 linecsv+="\n"
     except:
         e = sys.exc_info()[0]
