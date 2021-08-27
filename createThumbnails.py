@@ -1,9 +1,9 @@
 from urllib.request import urlopen
-from wand.image import Image
-from wand.color import Color
-from PIL import Image as PILImage
-from PIL import ImageDraw as PILImageDraw
-from PIL import ImageFont as PILImageFont
+#from wand.image import Image
+#from wand.color import Color
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 import sys
 import os
 import json
@@ -31850,8 +31850,8 @@ for filename in dircontent:
         per=per[0:per.rfind("_")]
         savedfilename=""
         try:
-            f=open("temp.jpg", "rb")
-            with PILImage(file=f) as img:
+            #f=open("temp.jpg", "rb")
+            with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
                 print("w"+str(width)+" h"+str(height))
@@ -31874,8 +31874,8 @@ for filename in dircontent:
                 if not os.path.exists(exportdir+"/char_annotated/"):
                   os.makedirs(exportdir+"/char_annotated/")
                 #imaag = PILImage.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                I1 = PILImageDraw.Draw(resized)
-                myFont = PILImageFont.truetype('FreeMono.ttf', 65)
+                I1 = ImageDraw.Draw(resized)
+                myFont = ImageFont.truetype('FreeMono.ttf', 65)
                 I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
                 print("ANNOTATED!")
                 resized.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
@@ -31988,8 +31988,8 @@ for filename in dircontent:
         print(maxcoords)
         linecsvhead=filename+";"
         shortfilename=filename[0:filename.rfind("_")]
-        fi=open("temp.jpg", "rb")
-        with Image(file=fi) as img2:
+        #fi=open("temp.jpg", "rb")
+        with Image.open("temp.jpg") as img2:
             width=img2.width
             height=img2.height
             print("w"+str(width)+" h"+str(height))
