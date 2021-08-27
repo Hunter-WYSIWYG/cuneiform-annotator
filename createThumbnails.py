@@ -31869,11 +31869,13 @@ for filename in dircontent:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                    if not os.path.exists(exportdir+"/char_annotated/"):
+                      os.makedirs(exportdir+"/char_annotated/")
                     imaag = PILImage.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     I1 = PILImageDraw.Draw(imaag)
                     myFont = PILImageFont.truetype('FreeMono.ttf', 65)
                     I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
-                    imaag.save(savedfilename.replace(".jpg","")+"_annotated.jpg")
+                    imaag.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
