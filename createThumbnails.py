@@ -31875,7 +31875,7 @@ for filename in dircontent:
                 #  os.makedirs(exportdir+"/char_annotated/")
                 #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                 I1 = ImageDraw.Draw(resized)
-                myFont = ImageFont.truetype('FreeMono.ttf', 65)
+                myFont = ImageFont.truetype('FreeMono.ttf', 25)
                 I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
                 print("ANNOTATED!")
                 resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
