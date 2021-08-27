@@ -31871,14 +31871,14 @@ for filename in dircontent:
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                if not os.path.exists(exportdir+"/char_annotated/"):
-                  os.makedirs(exportdir+"/char_annotated/")
-                imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                I1 = ImageDraw.Draw(imaag)
+                #if not os.path.exists(exportdir+"/char_annotated/"):
+                #  os.makedirs(exportdir+"/char_annotated/")
+                #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                I1 = ImageDraw.Draw(resized)
                 myFont = ImageFont.truetype('FreeMono.ttf', 65)
                 I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
                 print("ANNOTATED!")
-                imaag.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
+                resized.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
                 print("SAVED ANNOTATION")
                 if not translit in homepagejson:
                     homepagejson[translit]=[]
