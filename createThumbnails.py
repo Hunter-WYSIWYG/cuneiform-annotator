@@ -31851,163 +31851,163 @@ for filename in dircontent:
         savedfilename=""
         try:
             #f=open("temp.jpg", "rb")
-          with Image.open("temp.jpg") as img:
-            width=img.width
-            height=img.height
-            print("w"+str(width)+" h"+str(height))
-            print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
-            cropped = img.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
-            print("CROPPED!")
-            #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
-            if singlefolder:  
-                    resized = cropped.resize((imagewidth, imageheight))
-                    savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                    print("RESIZED!")
-                    resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                    print("SAVED!")
-            else:
-                    if(not os.path.exists(exportdir+str(translit))):
-                        os.makedirs(exportdir+str(translit))
-                    resized = cropped.resize((imagewidth, imageheight))
-                    savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                    resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-            #if not os.path.exists(exportdir+"/char_annotated/"):
-            #  os.makedirs(exportdir+"/char_annotated/")
-            #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-            I1 = ImageDraw.Draw(resized)
-            myFont = ImageFont.truetype('FreeMono.ttf', 65)
-            I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
-            print("ANNOTATED!")
-            resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
-            print("SAVED ANNOTATION")
-            if not translit in homepagejson:
-                homepagejson[translit]=[]
-            if singlefolder:
-                homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
-            else:
-                homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
-        if per in periods:
-            shortfilename=filename[0:filename.rfind("_")]
-            outputcsv+=shortfilename+";"
-            outputcsv+=savedfilename+";"
-            if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
-                outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> cidoc:P56_isFoundOn <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P138_represents  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P56_isFoundOn  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
-            else:
-                outputcsv+=";;"
-            if shortfilename in hs2IIIF:
-                outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(abs(coords[1]-coords[0]))+","+str(abs(coords[3]-coords[1]))+"/full")+";"
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
-            else:
-                outputcsv+=";"
-            outputcsv+=periods[per]+";"
-            if per in languages:
-                outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
-            else:
-                outputcsv+=";;" 
-            outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-            outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"    
-            periodss[periods[per]]=True
-            languagess[languages[per]["language"]]=True
-            genress[languages[per]["genre"]]=True
-            translitperiods[str(charclass)+"_"+periods[per]]=True
-            arffdataperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
-            if per in languages:
-                arffdatalanguages+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
-                if languages[per]["language"].replace(" ","_")=="":
-                    arffdatalanguages+="Unknown\n"
+            with Image.open("temp.jpg") as img:
+                width=img.width
+                height=img.height
+                print("w"+str(width)+" h"+str(height))
+                print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
+                cropped = img.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
+                print("CROPPED!")
+                #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
+                if singlefolder:  
+                        resized = cropped.resize((imagewidth, imageheight))
+                        savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                        print("RESIZED!")
+                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                        print("SAVED!")
                 else:
-                    arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
-                    arffdatagenres+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
-                if languages[per]["genre"].replace(" ","_")=="":
-                    arffdatagenres+="Unknown\n"
+                        if(not os.path.exists(exportdir+str(translit))):
+                            os.makedirs(exportdir+str(translit))
+                        resized = cropped.resize((imagewidth, imageheight))
+                        savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                #if not os.path.exists(exportdir+"/char_annotated/"):
+                #  os.makedirs(exportdir+"/char_annotated/")
+                #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                I1 = ImageDraw.Draw(resized)
+                myFont = ImageFont.truetype('FreeMono.ttf', 65)
+                I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
+                print("ANNOTATED!")
+                resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
+                print("SAVED ANNOTATION")
+                if not translit in homepagejson:
+                    homepagejson[translit]=[]
+                if singlefolder:
+                    homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
-                    arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
-            arffdatasignperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
-        else:
-            shortfilename=filename[0:filename.rfind("_")]
-            outputcsv+=shortfilename+";"
-            outputcsv+=savedfilename+";"
-            if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
-                outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
-                ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
-            else:
-                outputcsv+=";;"
-            if shortfilename in hs2IIIF:
-                outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(coords[1]-coords[0])+","+str(coords[3]-coords[1])+"/full")+";"
-                ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
-            else:
-                outputcsv+=";"
-            outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-            if per in languages:
-                outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
-            else:
-                outputcsv+=";;" 
-            outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
-        arffdata+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
-        if not charclass in arffthresholdlines:
-            arffthresholdlines[charclass]=""
-        arffthresholdlines[charclass]+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
-        print(coords)
-    except:
-        e = sys.exc_info()[0]
-        print(e)
-        print(sys.exc_info()[1])
-        print(sys.exc_info()[2])
-    #f.close()
-    try:
-        print(maxcoords)
-        linecsvhead=filename+";"
-        shortfilename=filename[0:filename.rfind("_")]
-        #fi=open("temp.jpg", "rb")
-        with Image.open("temp.jpg") as img2:
-            width=img2.width
-            height=img2.height
-            print("w"+str(width)+" h"+str(height))
-            for linee in maxcoords:
-                print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
-                linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
+                    homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
+            if per in periods:
+                shortfilename=filename[0:filename.rfind("_")]
+                outputcsv+=shortfilename+";"
+                outputcsv+=savedfilename+";"
+                if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                    outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
+                    outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> cidoc:P56_isFoundOn <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P138_represents  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:P56_isFoundOn  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
+                else:
+                    outputcsv+=";;"
                 if shortfilename in hs2IIIF:
-                  linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
-                cropped = img2.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
-                #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
-                savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                cropped.save(savedlinename)
-                linecsv+="\n"
-    except:
-        e = sys.exc_info()[0]
-        print(e)
-        print(sys.exc_info()[1])
-        print(sys.exc_info()[2])       
+                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(abs(coords[1]-coords[0]))+","+str(abs(coords[3]-coords[1]))+"/full")+";"
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
+                else:
+                    outputcsv+=";"
+                outputcsv+=periods[per]+";"
+                if per in languages:
+                    outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
+                else:
+                    outputcsv+=";;" 
+                outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"    
+                periodss[periods[per]]=True
+                languagess[languages[per]["language"]]=True
+                genress[languages[per]["genre"]]=True
+                translitperiods[str(charclass)+"_"+periods[per]]=True
+                arffdataperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
+                if per in languages:
+                    arffdatalanguages+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                    if languages[per]["language"].replace(" ","_")=="":
+                        arffdatalanguages+="Unknown\n"
+                    else:
+                        arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
+                        arffdatagenres+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                    if languages[per]["genre"].replace(" ","_")=="":
+                        arffdatagenres+="Unknown\n"
+                    else:
+                        arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
+                arffdatasignperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
+            else:
+                shortfilename=filename[0:filename.rfind("_")]
+                outputcsv+=shortfilename+";"
+                outputcsv+=savedfilename+";"
+                if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                    outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
+                    outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
+                else:
+                    outputcsv+=";;"
+                if shortfilename in hs2IIIF:
+                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(coords[1]-coords[0])+","+str(coords[3]-coords[1])+"/full")+";"
+                    ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
+                else:
+                    outputcsv+=";"
+                outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
+                if per in languages:
+                    outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
+                else:
+                    outputcsv+=";;" 
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
+            arffdata+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+            if not charclass in arffthresholdlines:
+                arffthresholdlines[charclass]=""
+            arffthresholdlines[charclass]+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
+            print(coords)
+        except:
+            e = sys.exc_info()[0]
+            print(e)
+            print(sys.exc_info()[1])
+            print(sys.exc_info()[2])
+        #f.close()
+        try:
+            print(maxcoords)
+            linecsvhead=filename+";"
+            shortfilename=filename[0:filename.rfind("_")]
+            #fi=open("temp.jpg", "rb")
+            with Image.open("temp.jpg") as img2:
+                width=img2.width
+                height=img2.height
+                print("w"+str(width)+" h"+str(height))
+                for linee in maxcoords:
+                    print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                    linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
+                    if shortfilename in hs2IIIF:
+                    linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
+                    cropped = img2.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
+                    #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
+                    savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                    cropped.save(savedlinename)
+                    linecsv+="\n"
+        except:
+            e = sys.exc_info()[0]
+            print(e)
+            print(sys.exc_info()[1])
+            print(sys.exc_info()[2])       
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
