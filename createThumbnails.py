@@ -31854,17 +31854,17 @@ for filename in dircontent:
                 height=img.height
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
-                with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
-                    if singlefolder:
+                with Drawing() as context:
+                  context.fill_color = Color('black')
+                  context.stroke_color = Color('black')
+                  context.font_style = 'italic'
+                  context.font_size = 16
+                  context.text(int(imagewidth / 2), int(imageheight / 2), translit)
+                  context(img)
+                  with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
+                    if singlefolder:  
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            with Drawing() as context:
-                              context.fill_color = Color('black')
-                              context.stroke_color = Color('black')
-                              context.font_style = 'italic'
-                              context.font_size = 16
-                              context.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              context(converted)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
@@ -31872,13 +31872,6 @@ for filename in dircontent:
                             os.makedirs(exportdir+str(translit))
                         with cropped.convert('jpg') as converted:
                             converted.resize(imagewidth, imageheight)
-                            with Drawing() as draw:
-                              context.fill_color = Color('black')
-                              context.stroke_color = Color('black')
-                              context.font_style = 'italic'
-                              context.font_size = 16
-                              context.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              context(converted)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
