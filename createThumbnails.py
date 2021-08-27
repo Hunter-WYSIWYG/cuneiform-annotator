@@ -31851,7 +31851,7 @@ for filename in dircontent:
         savedfilename=""
         #try:
             #f=open("temp.jpg", "rb")
-            with Image.open("temp.jpg") as img:
+        with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
                 print("w"+str(width)+" h"+str(height))
