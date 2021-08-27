@@ -31859,7 +31859,7 @@ for filename in dircontent:
                 context.stroke_color = Color('black')
                 context.font_style = 'italic'
                 context.font_size = 16
-                context.text(int(imagewidth / 2), int(imageheight / 2), translit)
+                context.text(int(img.width / 2), int(img.height / 2), translit)
                 context(img)
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                     if singlefolder:  
