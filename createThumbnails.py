@@ -1,7 +1,7 @@
 from urllib.request import urlopen
 from wand.image import Image
 from wand.color import Color
-from wand.drawing import Drawing
+import PIL
 import sys
 import os
 import json
@@ -31848,19 +31848,12 @@ for filename in dircontent:
         per=per[0:per.rfind("_")]
         savedfilename=""
         try:
-            f=open("temp.jpg", "rb")
-            with Drawing() as context:
-              with Image(file=f) as img:
+          f=open("temp.jpg", "rb")
+            with Image(file=f) as img:
                 width=img.width
                 height=img.height
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
-                context.fill_color = Color('black')
-                context.stroke_color = Color('black')
-                context.font_style = 'italic'
-                context.font_size = 16
-                context.text(x=int(img.width / 2), y=int(img.height / 2), body=translit)
-                context(img)
                 with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                     if singlefolder:  
                         with cropped.convert('jpg') as converted:
@@ -31874,6 +31867,11 @@ for filename in dircontent:
                             converted.resize(imagewidth, imageheight)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                    imaag = PIL.Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                    I1 = PIL.ImageDraw.Draw(imaag)
+                    myFont = PIL.ImageFont.truetype('FreeMono.ttf', 65)
+                    I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
+                    imaag.save(savedfilename.replace(".jpg","")+"_annotated.jpg")
                     if not translit in homepagejson:
                         homepagejson[translit]=[]
                     if singlefolder:
