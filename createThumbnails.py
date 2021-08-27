@@ -31702,6 +31702,8 @@ linecsv=""
 
 errorlog=""
 
+zooniverse_char_verify="image,charclass,transliteration\n"
+
 arffdata="@data\n"
 
 arffdataperiods="@data\n"
@@ -31878,7 +31880,7 @@ for filename in dircontent:
                 #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                 I1 = ImageDraw.Draw(resized)
                 myFont = ImageFont.truetype('FreeMono.ttf', 25)
-                I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
+                I1.text((10, 10), str(translit)+"/"+str(charclass), font=myFont, fill =(255, 0, 0))
                 print("ANNOTATED!")
                 resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
                 print("SAVED ANNOTATION")
@@ -31888,6 +31890,7 @@ for filename in dircontent:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
+                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
@@ -32000,7 +32003,7 @@ for filename in dircontent:
                     print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
-                        linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][1]))+"/full")+";"
+                        linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
                     cropped = img2.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
@@ -32080,6 +32083,9 @@ if singlefolder:
     f = open(exportdir+"/errorlog.csv", 'w')
     f.write(errorlog)
     f.close()
+    f = open(exportdir+"/zooniverse_char_verify_manifest.csv", 'w')
+    f.write(zooniverse_char_verify)
+    f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
@@ -32121,6 +32127,9 @@ else:
     f.close()
     f = open(exportdir+"/public/errorlog.csv", 'w')
     f.write(errorlog)
+    f.close()
+    f = open(exportdir+"/public/zooniverse_char_verify_manifest.csv", 'w')
+    f.write(zooniverse_char_verify)
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
