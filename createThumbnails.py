@@ -31856,7 +31856,7 @@ for filename in dircontent:
                 height=img.height
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
-                cropped = img.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
+                cropped = img.crop((int(coords[0]),int(coords[1]),int(coords[1]-coords[0]),int(coords[3]-coords[2])))
                 print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 if singlefolder:  
