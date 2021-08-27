@@ -31878,7 +31878,7 @@ for filename in dircontent:
             myFont = ImageFont.truetype('FreeMono.ttf', 65)
             I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
             print("ANNOTATED!")
-            resized.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
+            resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
             print("SAVED ANNOTATION")
             if not translit in homepagejson:
                 homepagejson[translit]=[]
@@ -32001,7 +32001,7 @@ for filename in dircontent:
                 cropped = img2.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
                 #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                 savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                cropped.save(filename=savedlinename)
+                cropped.save(savedlinename)
                 linecsv+="\n"
     except:
         e = sys.exc_info()[0]
