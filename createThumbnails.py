@@ -31864,7 +31864,7 @@ for filename in dircontent:
                               context.font_style = 'italic'
                               context.font_size = 16
                               context.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              context(img)
+                              context(converted)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     else:
@@ -31878,7 +31878,7 @@ for filename in dircontent:
                               context.font_style = 'italic'
                               context.font_size = 16
                               context.text(int(imagewidth / 2), int(imageheight / 2), translit)
-                              context(img)
+                              context(converted)
                             savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                     if not translit in homepagejson:
