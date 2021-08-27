@@ -31851,35 +31851,34 @@ for filename in dircontent:
         savedfilename=""
         try:
             f=open("temp.jpg", "rb")
-            with Image(file=f) as img:
+            with PILImage(file=f) as img:
                 width=img.width
                 height=img.height
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[0])+"+"+str(coords[1]))
-                with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
-                    if singlefolder:  
-                        with cropped.convert('jpg') as converted:
-                            converted.resize(imagewidth, imageheight)
-                            savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                    else:
+                cropped = im.crop((int(coords[0]),int(coords[1]),int(coords[2]),int(coords[3])))
+                #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
+                if singlefolder:  
+                        resized = cropped.resize((imagewidth, imageheight))
+                        savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","jpg")
+                else:
                         if(not os.path.exists(exportdir+str(translit))):
-                            os.makedirs(exportdir+str(translit))
-                        with cropped.convert('jpg') as converted:
-                            converted.resize(imagewidth, imageheight)
-                            savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                            converted.save(filename=exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                    if not os.path.exists(exportdir+"/char_annotated/"):
-                      os.makedirs(exportdir+"/char_annotated/")
-                    imaag = PILImage.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                    I1 = PILImageDraw.Draw(imaag)
-                    myFont = PILImageFont.truetype('FreeMono.ttf', 65)
-                    I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
-                    imaag.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
-                    if not translit in homepagejson:
-                        homepagejson[translit]=[]
-                    if singlefolder:
-                        homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
+                          os.makedirs(exportdir+str(translit))
+                        resized = cropped.resize((imagewidth, imageheight))
+                        savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","jpg")
+                if not os.path.exists(exportdir+"/char_annotated/"):
+                  os.makedirs(exportdir+"/char_annotated/")
+                #imaag = PILImage.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                I1 = PILImageDraw.Draw(resized)
+                myFont = PILImageFont.truetype('FreeMono.ttf', 65)
+                I1.text((10, 10), translit, font=myFont, fill =(255, 0, 0))
+                resized.save(filename=exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
+                if not translit in homepagejson:
+                    homepagejson[translit]=[]
+                if singlefolder:
+                    homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                     else:
                         homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
             if per in periods:
