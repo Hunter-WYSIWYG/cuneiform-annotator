@@ -22,7 +22,7 @@ imageclassification:
   artifacts:
     paths:
     - classification
-  only:
+  except:
   - master
 
 pages:
