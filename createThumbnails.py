@@ -31679,6 +31679,8 @@ translitperiods={}
 
 periodss={}
 
+charperperiod={}
+
 languagess={"Unknown":True}
 
 genress={"Unknown":True}
@@ -31703,6 +31705,10 @@ linecsv=""
 errorlog=""
 
 zooniverse_char_verify="image,charclass,transliteration\n"
+
+zooniverse_char_verify_ref="image,ref,charclass,transliteration\n"
+
+zooniverse_char_verify_line="image,line,charclass,transliteration\n"
 
 arffdata="@data\n"
 
@@ -31829,18 +31835,21 @@ for filename in dircontent:
                 maxcoords["line"+str(line)]=[-99999.0,-99999.0,99999.0,99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
         charclass="other" #str(translit)
+        charunicode=""
         if(str(translit) in cuneifymap):
             #print(cuneifymap[str(translit)])
             charclass=""
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
                     cc="U+"+str(hex(ord(chara))).replace("0x","")
+                    charunicode=cc
                     if cc.upper() in charlistmap and "signName" in charlistmap[cc.upper()] and charlistmap[cc.upper()]["signName"]!="":
                         charclass+=str(charlistmap[cc.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()+"+"
                     else:
                         charclass=cc+"+"
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
+                charunicode="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()] and charlistmap[charclass.upper()]["signName"]!="":
             charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()
         if charclass in translits:
@@ -31892,6 +31901,8 @@ for filename in dircontent:
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
                 zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
+                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode)+".jpg;"+str(charclass)+","+str(translit)+"\n"
+                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
@@ -31931,7 +31942,12 @@ for filename in dircontent:
                 periodss[periods[per]]=True
                 languagess[languages[per]["language"]]=True
                 genress[languages[per]["genre"]]=True
-                translitperiods[str(charclass)+"_"+periods[per]]=True
+                if not str(charclass)+"_"+periods[per] in translitperiods:
+                    translitperiods[str(charclass)+"_"+periods[per]]=0
+                    if not str(charclass) in charperperiod:
+                        charperperiod[str(charclass)]=0
+                    charperperiod[str(charclass)]+=1
+                translitperiods[str(charclass)+"_"+periods[per]]+=1
                 arffdataperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
                 if per in languages:
                     arffdatalanguages+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
@@ -31969,7 +31985,7 @@ for filename in dircontent:
                 else:
                     outputcsv+=";;"
                 if shortfilename in hs2IIIF:
-                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(coords[1]-coords[0])+","+str(coords[3]-coords[1])+"/full")+";"
+                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(coords[1]-coords[0])+","+str(coords[3]-coords[2])+"/full")+";"
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                     outputcsv+=";"
@@ -32087,6 +32103,16 @@ if singlefolder:
     f = open(exportdir+"/zooniverse_char_verify_manifest.csv", 'w')
     f.write(zooniverse_char_verify)
     f.close()
+    f = open(exportdir+"/zooniverse_char_verify_ref_manifest.csv", 'w')
+    f.write(zooniverse_char_verify_ref)
+    f.close()
+    f = open(exportdir+"/zooniverse_char_verify_line_manifest.csv", 'w')
+    f.write(zooniverse_char_verify_line)
+    f.close()
+    f = open(exportdir+"/charperperiod.csv", 'w')
+    for charr in charperperiod:
+        f.write(str(charr)+";"+charperperiod[charr]+"\n")
+    f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
@@ -32131,6 +32157,16 @@ else:
     f.close()
     f = open(exportdir+"/public/zooniverse_char_verify_manifest.csv", 'w')
     f.write(zooniverse_char_verify)
+    f.close()
+    f = open(exportdir+"/public/zooniverse_char_verify_ref_manifest.csv", 'w')
+    f.write(zooniverse_char_verify_ref)
+    f.close()
+    f = open(exportdir+"/public/zooniverse_char_verify_line_manifest.csv", 'w')
+    f.write(zooniverse_char_verify_line)
+    f.close()
+    f = open(exportdir+"/public/charperperiod.csv", 'w')
+    for charr in charperperiod:
+        f.write(str(charr)+";"+charperperiod[charr]+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
