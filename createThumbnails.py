@@ -32111,7 +32111,7 @@ if singlefolder:
     f.close()
     f = open(exportdir+"/charperperiod.csv", 'w')
     for charr in charperperiod:
-        f.write(str(charr)+";"+charperperiod[charr]+"\n")
+        f.write(str(charr)+";"+str(charperperiod[charr])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
@@ -32166,7 +32166,7 @@ else:
     f.close()
     f = open(exportdir+"/public/charperperiod.csv", 'w')
     for charr in charperperiod:
-        f.write(str(charr)+";"+charperperiod[charr]+"\n")
+        f.write(str(charr)+";"+str(charperperiod[charr])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
