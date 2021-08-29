@@ -31704,11 +31704,11 @@ linecsv=""
 
 errorlog=""
 
-zooniverse_char_verify="image,charclass,transliteration\n"
+zooniverse_char_verify="image;charclass;transliteration\n"
 
-zooniverse_char_verify_ref="image,ref,charclass,transliteration\n"
+zooniverse_char_verify_ref="image;ref;charclass;transliteration\n"
 
-zooniverse_char_verify_line="image,line,charclass,transliteration\n"
+zooniverse_char_verify_line="image;line;charclass;transliteration\n"
 
 arffdata="@data\n"
 
@@ -31900,9 +31900,9 @@ for filename in dircontent:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
-                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
-                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode)+".jpg;"+str(charclass)+","+str(translit)+"\n"
-                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
+                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode)+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
@@ -32007,6 +32007,8 @@ for filename in dircontent:
             print(sys.exc_info()[2])
             errorlog+="char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
         #f.close()
+        width=0
+        height=0
         try:
             print(maxcoords)
             linecsvhead=filename+";"
@@ -32031,7 +32033,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
-            errorlog+="line;line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
+            errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
