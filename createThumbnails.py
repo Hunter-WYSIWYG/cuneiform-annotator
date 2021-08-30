@@ -31917,9 +31917,9 @@ for filename in dircontent:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
-                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
