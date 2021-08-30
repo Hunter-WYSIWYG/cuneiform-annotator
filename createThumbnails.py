@@ -32141,7 +32141,7 @@ if singlefolder:
     f = open(exportdir+"/charperperiod.csv", 'w')
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
     for charr in sort_charperiods:
-        f.write(str(charr)+","+str(sort_charperiods[charr])+"\n")
+        f.write(str(charr[0])+","+str(charr[1])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
@@ -32206,7 +32206,7 @@ else:
     f = open(exportdir+"/public/charperperiod.csv", 'w')
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
     for charr in sort_charperiods:
-        f.write(str(charr)+","+str(sort_charperiods[charr])+"\n")
+        f.write(str(charr[0])+","+str(charr[1])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
