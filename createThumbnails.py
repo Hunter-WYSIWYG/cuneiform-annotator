@@ -31864,7 +31864,7 @@ for filename in dircontent:
                     I1 = ImageDraw.Draw(image)
                     myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 25)
                     I1.text((110, 125), cuneifymap[str(translit)], font=myCuneiFont, fill =(255, 0, 0))
-                    image.save(exportdir+"/normalized_signs/"+str(cc)+".jpg")
+                    image.save(exportdir+"/normalized_signs/"+str(charunicode)+".jpg")
                     seenchars[charunicode]=True
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()] and charlistmap[charclass.upper()]["signName"]!="":
             charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()
