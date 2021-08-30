@@ -4,7 +4,6 @@ from urllib.request import urlopen
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-import pandas as pd
 import plotly.express as px
 import sys
 import os
@@ -32047,7 +32046,6 @@ for filename in dircontent:
                         cropwidth=image.width
                     if cropheight>image.height:
                         cropheight=image.height
-                    print("Linecrop: "+str(maxcoords[linee][0])+"x"+str(maxcoords[linee][2])+"+"+str(cropwidth)+"+"+str(cropheight))
                     cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),cropwidth,cropheight))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
@@ -32055,6 +32053,8 @@ for filename in dircontent:
                     linecsv+="\n"
         except:
             e = sys.exc_info()[0]
+            print("Linecrop: "+str(maxcoords[linee][0])+"x"+str(maxcoords[linee][2])+"+"+str(cropwidth)+"+"+str(cropheight))
+            print("Linecrop: w"+str(imagewidth)+"h"+str(imageheight))
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
@@ -32142,8 +32142,12 @@ if singlefolder:
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
-    df = pd.read_csv(exportdir+"/charperperiod.csv")
-    fig = px.line(df, x = 'Character', y = 'Occurance', title='Character Occurances in time periods')
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    plotdict={}
+    plotdict["chars"]=sort_charperiods.keys()
+    plotdict["occ"]=sort_charperiods.values()
+    df = pd.read_csv(exportdir+"/public/charperperiod.csv")
+    fig = px.line(plotdict, x = 'chars', y = 'occ', title='Character Occurances in time periods')
     fig.write_image("distributionplot.png")
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -32201,7 +32205,11 @@ else:
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    plotdict={}
+    plotdict["chars"]=sort_charperiods.keys()
+    plotdict["occ"]=sort_charperiods.values()
     df = pd.read_csv(exportdir+"/public/charperperiod.csv")
-    fig = px.line(df, x = 'Character', y = 'Occurance', title='Character Occurances in time periods')
+    fig = px.line(plotdict, x = 'chars', y = 'occ', title='Character Occurances in time periods')
     fig.write_image("distributionplot.png")
 
