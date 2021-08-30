@@ -31814,7 +31814,7 @@ for filename in dircontent:
             coords.append(int(bb[3]))
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").replace("pixel:","").replace("=","").split(",")
-        print(coords)
+        #print(coords)
         translit=""
         curcharindex=-1
         line=-1
@@ -31874,7 +31874,7 @@ for filename in dircontent:
             translits[charclass]=1
         if charclass=="other":
             unknownchars+=str(translit)+"\n"
-            print(str(translit))
+            #print(str(translit))
         translit=translit.replace(",","_")
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
@@ -31884,8 +31884,8 @@ for filename in dircontent:
             with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
-                print("w"+str(width)+" h"+str(height))
-                print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[1]-coords[0])+"+"+str(coords[3]-coords[2]))
+                #print("w"+str(width)+" h"+str(height))
+                #print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[1]-coords[0])+"+"+str(coords[3]-coords[2]))
                 cropped = img.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
                 #print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
@@ -32026,17 +32026,17 @@ for filename in dircontent:
         width=0
         height=0
         try:
-            print(maxcoords)
+            #print(maxcoords)
             linecsvhead=filename+";"
             shortfilename=filename[0:filename.rfind("_")]
             #fi=open("temp.jpg", "rb")
             with Image.open("temp.jpg") as img2:
                 width=img2.width
                 height=img2.height
-                print("w"+str(width)+" h"+str(height))
+                #print("w"+str(width)+" h"+str(height))
                 for linee in maxcoords:
-                    print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
-                    print("Linecrop: "+str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                    #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                    #print("Linecrop: "+str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
                         linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
