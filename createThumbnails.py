@@ -31658,13 +31658,13 @@ cuneifymap={"...asz" : "𒈏",
 
 def defineBBOX(coordarray,maxcoordarray):
     try:
-      if coordarray[0]>maxcoordarray[0]:
+      if coordarray[0]<maxcoordarray[0]:
           maxcoordarray[0]=coordarray[0]
       if coordarray[1]>maxcoordarray[1]:
           maxcoordarray[1]=coordarray[1]
       if coordarray[2]<maxcoordarray[2]:
           maxcoordarray[2]=coordarray[2]
-      if coordarray[3]<maxcoordarray[3]:
+      if coordarray[3]>maxcoordarray[3]:
           maxcoordarray[3]=coordarray[3]
     except:
         e = sys.exc_info()[0]
@@ -31785,7 +31785,7 @@ for filename in dircontent:
         jsondata=json.load(json_file)
         graph.parse(data=json.dumps(jsondata),format='json-ld')
     maxcoords={}
-    maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
+    maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
         r = requests.get(imgurls[filename])
         with open('temp.jpg', 'wb') as f:
@@ -31832,7 +31832,7 @@ for filename in dircontent:
             continue
         if line!=-1:
             if not "line"+str(line) in maxcoords:
-                maxcoords["line"+str(line)]=[-99999.0,-99999.0,99999.0,99999.0]
+                maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
         charclass="other" #str(translit)
         charunicode=""
@@ -31901,7 +31901,7 @@ for filename in dircontent:
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
                 zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode)+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
                 zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
