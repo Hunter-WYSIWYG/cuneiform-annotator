@@ -4,7 +4,7 @@ from urllib.request import urlopen
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-import plotly.express as px
+#import plotly.express as px
 import sys
 import os
 import json
@@ -32142,6 +32142,7 @@ if singlefolder:
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
+    """
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
     plotdict={}
     plotdict["chars"]=sort_charperiods.keys()
@@ -32149,6 +32150,7 @@ if singlefolder:
     df = pd.read_csv(exportdir+"/public/charperperiod.csv")
     fig = px.line(plotdict, x = 'chars', y = 'occ', title='Character Occurances in time periods')
     fig.write_image("distributionplot.png")
+    """
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
     f = open("/public/mlset.arff", 'w')
@@ -32205,6 +32207,7 @@ else:
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
+    """
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
     plotdict={}
     plotdict["chars"]=sort_charperiods.keys()
@@ -32212,4 +32215,5 @@ else:
     df = pd.read_csv(exportdir+"/public/charperperiod.csv")
     fig = px.line(plotdict, x = 'chars', y = 'occ', title='Character Occurances in time periods')
     fig.write_image("distributionplot.png")
+    """
 
