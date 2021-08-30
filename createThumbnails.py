@@ -4,6 +4,8 @@ from urllib.request import urlopen
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
+import pandas as pd
+import plotly.express as px
 import sys
 import os
 import json
@@ -31845,9 +31847,9 @@ for filename in dircontent:
                 for chara in cuneifymap[str(translit)]:
                     cc="U+"+str(hex(ord(chara))).replace("0x","")
                     if not cc in seenchars:
-                        image = Image.new('RGB', (250, 250))
+                        image = Image.new('RGB', (250, 250), (255, 255, 255))
                         I1 = ImageDraw.Draw(image)
-                        myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 25)
+                        myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 75)
                         I1.text((110, 125), chara, font=myCuneiFont, fill =(255, 0, 0))
                         image.save(exportdir+"/normalized_signs/"+str(cc)+".jpg")
                         seenchars[cc]=True 
@@ -31860,9 +31862,9 @@ for filename in dircontent:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
                 charunicode="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
                 if not charunicode in seenchars:
-                    image = Image.new('RGB', (250, 250))
+                    image = Image.new('RGB', (250, 250), (255, 255, 255))
                     I1 = ImageDraw.Draw(image)
-                    myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 25)
+                    myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 75)
                     I1.text((110, 125), cuneifymap[str(translit)], font=myCuneiFont, fill =(255, 0, 0))
                     image.save(exportdir+"/normalized_signs/"+str(charunicode)+".jpg")
                     seenchars[charunicode]=True
@@ -32036,11 +32038,17 @@ for filename in dircontent:
                 #print("w"+str(width)+" h"+str(height))
                 for linee in maxcoords:
                     #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
-                    #print("Linecrop: "+str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
                         linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
-                    cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]-maxcoords[linee][0]),int(maxcoords[linee][3]-maxcoords[linee][2])))
+                    cropwidth=int(maxcoords[linee][1]-maxcoords[linee][0])
+                    cropheight=int(maxcoords[linee][3]-maxcoords[linee][2])
+                    if cropwidth>image.width:
+                        cropwidth=image.width
+                    if cropheight>image.height:
+                        cropheight=image.height
+                    print("Linecrop: "+str(maxcoords[linee][0])+"x"+str(maxcoords[linee][2])+"+"+str(cropwidth)+"+"+str(cropheight))
+                    cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),cropwidth,cropheight))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
@@ -32134,6 +32142,9 @@ if singlefolder:
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
+    df = pd.read_csv(exportdir+"/charperperiod.csv")
+    fig = px.line(df, x = 'Character', y = 'Occurance', title='Character Occurances in time periods')
+    fig.write_image("distributionplot.png")
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
     f = open("/public/mlset.arff", 'w')
@@ -32190,5 +32201,7 @@ else:
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
-
+    df = pd.read_csv(exportdir+"/public/charperperiod.csv")
+    fig = px.line(df, x = 'Character', y = 'Occurance', title='Character Occurances in time periods')
+    fig.write_image("distributionplot.png")
 
