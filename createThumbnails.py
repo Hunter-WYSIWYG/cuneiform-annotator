@@ -31724,6 +31724,8 @@ arffdatathreshold="@data\n"
 
 unknownchars=""
 
+seenchars={}
+
 datanamespace="http://www.mainzed.org/maicubeda/"
 
 cdlinamespace="http://cdli.ucla.edu/"
@@ -31842,6 +31844,13 @@ for filename in dircontent:
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
                     cc="U+"+str(hex(ord(chara))).replace("0x","")
+                    if not cc in seenchars:
+                        image = Image.new('RGB', (250, 250))
+                        I1 = ImageDraw.Draw(image)
+                        myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 25)
+                        I1.text((110, 125), chara, font=myCuneiFont, fill =(255, 0, 0))
+                        resized.save(exportdir+"/normalized_signs/"+str(cc)+".jpg")
+                        seenchars[cc]=True 
                     charunicode=cc
                     if cc.upper() in charlistmap and "signName" in charlistmap[cc.upper()] and charlistmap[cc.upper()]["signName"]!="":
                         charclass+=str(charlistmap[cc.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()+"+"
@@ -31850,6 +31859,14 @@ for filename in dircontent:
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
                 charunicode="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
+                if not cc in seenchars:
+                    image = Image.new('RGB', (250, 250))
+                    I1 = ImageDraw.Draw(image)
+                    myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 25)
+                    I1.text((110, 125), cuneifymap[str(translit)], font=myCuneiFont, fill =(255, 0, 0))
+                    resized.save(exportdir+"/normalized_signs/"+str(cc)+".jpg")
+                    seenchars[cc]=True 
+                seenchars["U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")]=True 
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()] and charlistmap[charclass.upper()]["signName"]!="":
             charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()
         if charclass in translits:
@@ -31871,14 +31888,14 @@ for filename in dircontent:
                 print("w"+str(width)+" h"+str(height))
                 print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[1]-coords[0])+"+"+str(coords[3]-coords[2]))
                 cropped = img.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
-                print("CROPPED!")
+                #print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 if singlefolder:  
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                        print("RESIZED!")
+                        #print("RESIZED!")
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                        print("SAVED!")
+                        #print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
@@ -31891,9 +31908,9 @@ for filename in dircontent:
                 I1 = ImageDraw.Draw(resized)
                 myFont = ImageFont.truetype('FreeMono.ttf', 25)
                 I1.text((10, 10), str(translit)+"/"+str(charclass), font=myFont, fill =(255, 0, 0))
-                print("ANNOTATED!")
+                #print("ANNOTATED!")
                 resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
-                print("SAVED ANNOTATION")
+                #print("SAVED ANNOTATION")
                 if not translit in homepagejson:
                     homepagejson[translit]=[]
                 if singlefolder:
@@ -31999,7 +32016,7 @@ for filename in dircontent:
             if not charclass in arffthresholdlines:
                 arffthresholdlines[charclass]=""
             arffthresholdlines[charclass]+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
-            print(coords)
+            #print(coords)
         except:
             e = sys.exc_info()[0]
             print(e)
@@ -32020,10 +32037,11 @@ for filename in dircontent:
                 print("w"+str(width)+" h"+str(height))
                 for linee in maxcoords:
                     print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                    print("Linecrop: "+str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
                         linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
-                    cropped = img2.crop((int(coords[0]),int(coords[2]),int(coords[1]-coords[0]),int(coords[3]-coords[2])))
+                    cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]-maxcoords[linee][0]),int(maxcoords[linee][3]-maxcoords[linee][2])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
