@@ -32040,13 +32040,15 @@ for filename in dircontent:
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
                         linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
+                    """
                     cropwidth=int(maxcoords[linee][1]-maxcoords[linee][0])
                     cropheight=int(maxcoords[linee][3]-maxcoords[linee][2])
                     if cropwidth>img2.width:
                         cropwidth=img2.width
                     if cropheight>img2.height:
                         cropheight=img2.height
-                    cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),cropwidth,cropheight))
+                    """
+                    cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
