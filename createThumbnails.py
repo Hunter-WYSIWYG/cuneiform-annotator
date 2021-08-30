@@ -32137,8 +32137,9 @@ if singlefolder:
     f.write(zooniverse_char_verify_line)
     f.close()
     f = open(exportdir+"/charperperiod.csv", 'w')
-    for charr in charperperiod:
-        f.write(str(charr)+";"+str(charperperiod[charr])+"\n")
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    for charr in sort_charperiods:
+        f.write(str(charr)+","+str(sort_charperiods[charr])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
@@ -32201,14 +32202,15 @@ else:
     f.write(zooniverse_char_verify_line)
     f.close()
     f = open(exportdir+"/public/charperperiod.csv", 'w')
-    for charr in charperperiod:
-        f.write(str(charr)+";"+str(charperperiod[charr])+"\n")
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    for charr in sort_charperiods:
+        f.write(str(charr)+","+str(sort_charperiods[charr])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
     """
-    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+
     plotdict={}
     plotdict["chars"]=sort_charperiods.keys()
     plotdict["occ"]=sort_charperiods.values()
