@@ -31859,14 +31859,13 @@ for filename in dircontent:
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
                 charunicode="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
-                if not cc in seenchars:
+                if not charunicode in seenchars:
                     image = Image.new('RGB', (250, 250))
                     I1 = ImageDraw.Draw(image)
                     myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 25)
                     I1.text((110, 125), cuneifymap[str(translit)], font=myCuneiFont, fill =(255, 0, 0))
                     resized.save(exportdir+"/normalized_signs/"+str(cc)+".jpg")
-                    seenchars[cc]=True 
-                seenchars["U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")]=True 
+                    seenchars[charunicode]=True
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()] and charlistmap[charclass.upper()]["signName"]!="":
             charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()
         if charclass in translits:

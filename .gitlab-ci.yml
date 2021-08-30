@@ -16,6 +16,7 @@ imageclassification:
   - mkdir classification
   - mkdir classification/line
   - mkdir classification/char
+  - mkdir classification/word
   - mkdir classification/char_annotated
   - mkdir classification/normalized_signs
   - cp normalized_signs/* classification/normalized_signs/
