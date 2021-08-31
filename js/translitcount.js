@@ -1,4 +1,4 @@
-{
+var translitcount={
   "HS_2440_03_front.json": 202,
   "HS_2440_06_back.json": 165,
   "HS_1326_03_front.json": 10,
