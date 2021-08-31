@@ -4,6 +4,7 @@ from urllib.request import urlopen
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
+#import plotly.express as px
 import sys
 import os
 import json
@@ -31658,13 +31659,13 @@ cuneifymap={"...asz" : "𒈏",
 
 def defineBBOX(coordarray,maxcoordarray):
     try:
-      if coordarray[0]>maxcoordarray[0]:
+      if coordarray[0]<maxcoordarray[0]:
           maxcoordarray[0]=coordarray[0]
       if coordarray[1]>maxcoordarray[1]:
           maxcoordarray[1]=coordarray[1]
       if coordarray[2]<maxcoordarray[2]:
           maxcoordarray[2]=coordarray[2]
-      if coordarray[3]<maxcoordarray[3]:
+      if coordarray[3]>maxcoordarray[3]:
           maxcoordarray[3]=coordarray[3]
     except:
         e = sys.exc_info()[0]
@@ -31704,11 +31705,11 @@ linecsv=""
 
 errorlog=""
 
-zooniverse_char_verify="image,charclass,transliteration\n"
+zooniverse_char_verify="image;charclass;transliteration\n"
 
-zooniverse_char_verify_ref="image,ref,charclass,transliteration\n"
+zooniverse_char_verify_ref="image;ref;charclass;transliteration\n"
 
-zooniverse_char_verify_line="image,line,charclass,transliteration\n"
+zooniverse_char_verify_line="image;line;charclass;transliteration\n"
 
 translitstats="annotations,expected\n"
 
@@ -31728,6 +31729,7 @@ unknownchars=""
 
 totalexpectedchars=0
 totalcounterchars=0
+seenchars={}
 
 datanamespace="http://www.mainzed.org/maicubeda/"
 
@@ -31793,7 +31795,7 @@ for filename in dircontent:
         jsondata=json.load(json_file)
         graph.parse(data=json.dumps(jsondata),format='json-ld')
     maxcoords={}
-    maxcoordtemplate=[-99999.0,-99999.0,99999.0,99999.0]
+    maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
         r = requests.get(imgurls[filename])
         with open('temp.jpg', 'wb') as f:
@@ -31824,7 +31826,7 @@ for filename in dircontent:
             coords.append(int(bb[3]))
         else:
             coords=jsondata[annotation]["target"]["selector"]["value"].replace("xywh","").replace("pixel:","").replace("=","").split(",")
-        print(coords)
+        #print(coords)
         translit=""
         curcharindex=-1
         line=-1
@@ -31844,7 +31846,7 @@ for filename in dircontent:
             continue
         if line!=-1:
             if not "line"+str(line) in maxcoords:
-                maxcoords["line"+str(line)]=[-99999.0,-99999.0,99999.0,99999.0]
+                maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
         charclass="other" #str(translit)
         charunicode=""
@@ -31854,6 +31856,13 @@ for filename in dircontent:
             if len(cuneifymap[str(translit)])>1:
                 for chara in cuneifymap[str(translit)]:
                     cc="U+"+str(hex(ord(chara))).replace("0x","")
+                    if not cc in seenchars:
+                        image = Image.new('RGB', (250, 250), (255, 255, 255))
+                        I1 = ImageDraw.Draw(image)
+                        myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 100)
+                        I1.text((50, 50), chara, font=myCuneiFont, fill =(0, 0, 0))
+                        image.save(exportdir+"/normalized_signs/"+str(cc)+".jpg")
+                        seenchars[cc]=True 
                     charunicode=cc
                     if cc.upper() in charlistmap and "signName" in charlistmap[cc.upper()] and charlistmap[cc.upper()]["signName"]!="":
                         charclass+=str(charlistmap[cc.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()+"+"
@@ -31862,6 +31871,13 @@ for filename in dircontent:
             else:
                 charclass="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
                 charunicode="U+"+str(hex(ord(cuneifymap[str(translit)]))).replace("0x","")
+                if not charunicode in seenchars:
+                    image = Image.new('RGB', (250, 250), (255, 255, 255))
+                    I1 = ImageDraw.Draw(image)
+                    myCuneiFont = ImageFont.truetype('CuneiformComposite.ttf', 100)
+                    I1.text((50, 50), cuneifymap[str(translit)], font=myCuneiFont, fill =(0, 0, 0))
+                    image.save(exportdir+"/normalized_signs/"+str(charunicode)+".jpg")
+                    seenchars[charunicode]=True
         if charclass.upper() in charlistmap and "signName" in charlistmap[charclass.upper()] and charlistmap[charclass.upper()]["signName"]!="":
             charclass=str(charlistmap[charclass.upper()]["signName"]).replace(" ","_").replace(",","_").encode("ascii", "ignore").decode()
         if charclass in translits:
@@ -31870,7 +31886,7 @@ for filename in dircontent:
             translits[charclass]=1
         if charclass=="other":
             unknownchars+=str(translit)+"\n"
-            print(str(translit))
+            #print(str(translit))
         translit=translit.replace(",","_")
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
@@ -31880,17 +31896,17 @@ for filename in dircontent:
             with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
-                print("w"+str(width)+" h"+str(height))
-                print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[1]-coords[0])+"+"+str(coords[3]-coords[2]))
+                #print("w"+str(width)+" h"+str(height))
+                #print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[1]-coords[0])+"+"+str(coords[3]-coords[2]))
                 cropped = img.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
-                print("CROPPED!")
+                #print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 if singlefolder:  
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                        print("RESIZED!")
+                        #print("RESIZED!")
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                        print("SAVED!")
+                        #print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
@@ -31902,19 +31918,20 @@ for filename in dircontent:
                 #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
                 I1 = ImageDraw.Draw(resized)
                 myFont = ImageFont.truetype('FreeMono.ttf', 25)
-                I1.text((10, 10), str(translit)+"/"+str(charclass), font=myFont, fill =(255, 0, 0))
-                print("ANNOTATED!")
+                I1.text((10, 10), str(translit), font=myFont, fill =(255, 0, 0))
+                I1.text((10, 230), str(charclass), font=myFont, fill =(255, 0, 0))
+                #print("ANNOTATED!")
                 resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
-                print("SAVED ANNOTATION")
+                #print("SAVED ANNOTATION")
                 if not translit in homepagejson:
                     homepagejson[translit]=[]
                 if singlefolder:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
-                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
-                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charunicode)+".jpg;"+str(charclass)+","+str(translit)+"\n"
-                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+","+str(translit)+"\n"
+                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
@@ -32011,7 +32028,7 @@ for filename in dircontent:
             if not charclass in arffthresholdlines:
                 arffthresholdlines[charclass]=""
             arffthresholdlines[charclass]+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
-            print(coords)
+            #print(coords)
         except:
             e = sys.exc_info()[0]
             print(e)
@@ -32019,31 +32036,43 @@ for filename in dircontent:
             print(sys.exc_info()[2])
             errorlog+="char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
         #f.close()
+        width=0
+        height=0
         try:
-            print(maxcoords)
+            #print(maxcoords)
             linecsvhead=filename+";"
             shortfilename=filename[0:filename.rfind("_")]
             #fi=open("temp.jpg", "rb")
             with Image.open("temp.jpg") as img2:
                 width=img2.width
                 height=img2.height
-                print("w"+str(width)+" h"+str(height))
+                #print("w"+str(width)+" h"+str(height))
                 for linee in maxcoords:
-                    print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                    #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     if shortfilename in hs2IIIF:
                         linecsv+=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")+";"
-                    cropped = img2.crop((int(coords[0]),int(coords[2]),int(coords[1]-coords[0]),int(coords[3]-coords[2])))
+                    """
+                    cropwidth=int(maxcoords[linee][1]-maxcoords[linee][0])
+                    cropheight=int(maxcoords[linee][3]-maxcoords[linee][2])
+                    if cropwidth>img2.width:
+                        cropwidth=img2.width
+                    if cropheight>img2.height:
+                        cropheight=img2.height
+                    """
+                    cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
                     linecsv+="\n"
         except:
             e = sys.exc_info()[0]
+            print("Linecrop: "+str(maxcoords[linee][0])+"x"+str(maxcoords[linee][2])+"+"+str(cropwidth)+"+"+str(cropheight))
+            print("Linecrop: w"+str(img2.width)+"h"+str(img2.height))
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
-            errorlog+="line;line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
+            errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
@@ -32126,11 +32155,21 @@ if singlefolder:
     f.write(translitstats)
     f.close()
     f = open(exportdir+"/charperperiod.csv", 'w')
-    for charr in charperperiod:
-        f.write(str(charr)+";"+charperperiod[charr]+"\n")
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    for charr in sort_charperiods:
+        f.write(str(charr[0])+","+str(charr[1])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
+    """
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    plotdict={}
+    plotdict["chars"]=sort_charperiods.keys()
+    plotdict["occ"]=sort_charperiods.values()
+    df = pd.read_csv(exportdir+"/public/charperperiod.csv")
+    fig = px.line(plotdict, x = 'chars', y = 'occ', title='Character Occurances in time periods')
+    fig.write_image("distributionplot.png")
+    """
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
     f = open("/public/mlset.arff", 'w')
@@ -32184,11 +32223,20 @@ else:
     f.write(translitstats)
     f.close()
     f = open(exportdir+"/public/charperperiod.csv", 'w')
-    for charr in charperperiod:
-        f.write(str(charr)+";"+charperperiod[charr]+"\n")
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    for charr in sort_charperiods:
+        f.write(str(charr[0])+","+str(charr[1])+"\n")
     f.close()
     #ttllist=[str(s) for s in ttlstring]
     #graph.parse((ttlheader+("\n".join(ttllist))))
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
+    """
 
+    plotdict={}
+    plotdict["chars"]=sort_charperiods.keys()
+    plotdict["occ"]=sort_charperiods.values()
+    df = pd.read_csv(exportdir+"/public/charperperiod.csv")
+    fig = px.line(plotdict, x = 'chars', y = 'occ', title='Character Occurances in time periods')
+    fig.write_image("distributionplot.png")
+    """
 
