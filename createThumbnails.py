@@ -68,7 +68,7 @@ zooniverse_char_verify_ref="image;ref;charclass;transliteration\n"
 
 zooniverse_char_verify_line="image;line;charclass;transliteration\n"
 
-translitstats="annotations,expected\n"
+translitstats="filename,annotations,expected,percentage\n"
 
 arffdata="@data\n"
 
@@ -190,7 +190,7 @@ for filename in dircontent:
         continue
     for annotation in jsondata:
         if filename in translitcount:
-            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+"\n"
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
             totalexpectedchars+=translitcount[filename]
             totalcountedchars+=len(jsondata)
         #print(annotation)
