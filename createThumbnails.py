@@ -154,7 +154,7 @@ with open('js/charlistmap.js', 'r') as myfile:
 
 # parse file
 charlistmap = json.loads(data.replace("var charlistmap=",""))
-with open('js/hs2CDLI.js', 'r') as myfile:
+with open('js/newurls2.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
