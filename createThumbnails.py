@@ -144,11 +144,12 @@ with open('js/hs2IIIF.js', 'r') as myfile:
 
 # parse file
 hs2IIIF = json.loads(data.replace("var hs2IIIF=",""))
+with open('js/languages.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
 languages = json.loads(data.replace("var languages=",""))
-with open('js/languages.js', 'r') as myfile:
+with open('js/charlistmap.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
