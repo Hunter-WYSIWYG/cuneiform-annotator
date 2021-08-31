@@ -31710,6 +31710,8 @@ zooniverse_char_verify_ref="image,ref,charclass,transliteration\n"
 
 zooniverse_char_verify_line="image,line,charclass,transliteration\n"
 
+translitstats="annotations,expected\n"
+
 arffdata="@data\n"
 
 arffdataperiods="@data\n"
@@ -31723,6 +31725,9 @@ arffdatagenres="@data\n"
 arffdatathreshold="@data\n"
 
 unknownchars=""
+
+totalexpectedchars=0
+totalcounterchars=0
 
 datanamespace="http://www.mainzed.org/maicubeda/"
 
@@ -31775,6 +31780,9 @@ if len(sys.argv)>3:
     purpose=sys.argv[3]
 dircontent=os.listdir("result")
 sorted(dircontent)
+with open('translitcount.json', 'r') as myfile:
+    data=myfile.read()
+translitcount = json.loads(data)
 filecounter=0
 for filename in dircontent:
     filecounter+=1
@@ -31797,6 +31805,10 @@ for filename in dircontent:
         print(sys.exc_info()[2])
         continue
     for annotation in jsondata:
+        if filename in translitcount:
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+"\n"
+            totalexpectedchars+=translitcount[filename]
+            totalcountedchars+=len(jsondata)
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
@@ -32037,6 +32049,7 @@ if not singlefolder:
     f.write("var thumbnails="+json.dumps(homepagejson))
     f.close()
 print("FINAL EXPORTS")
+translitstats+="Total,"+str(totalcountedchars)+","+str(totalexpectedchars)+"\n"
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffthresholdexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
@@ -32109,6 +32122,9 @@ if singlefolder:
     f = open(exportdir+"/zooniverse_char_verify_line_manifest.csv", 'w')
     f.write(zooniverse_char_verify_line)
     f.close()
+    f = open(exportdir+"/translitstats.csv", 'w')
+    f.write(translitstats)
+    f.close()
     f = open(exportdir+"/charperperiod.csv", 'w')
     for charr in charperperiod:
         f.write(str(charr)+";"+charperperiod[charr]+"\n")
@@ -32163,6 +32179,9 @@ else:
     f.close()
     f = open(exportdir+"/public/zooniverse_char_verify_line_manifest.csv", 'w')
     f.write(zooniverse_char_verify_line)
+    f.close()
+    f = open(exportdir+"/public/translitstats.csv", 'w')
+    f.write(translitstats)
     f.close()
     f = open(exportdir+"/public/charperperiod.csv", 'w')
     for charr in charperperiod:
