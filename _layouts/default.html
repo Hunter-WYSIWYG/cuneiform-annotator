@@ -121,6 +121,9 @@ function formatTransliteration(transliteration){
     if($('#images option:selected').text() in languages){
       toappend+=languages[$('#images option:selected').text()]["language"]+" "+languages[$('#images option:selected').text()]["genre"]
     }
+    if($('#imageside').text() in translitcount){
+        toappend+=" "+translitcount[$('#imageside').text()]
+    }
     $('#period').html(toappend)
     if($('#images option:selected').text() in transliterations){
           console.log(transliterations[$('#images option:selected').text()])
