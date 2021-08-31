@@ -85,7 +85,7 @@ arffdatathreshold="@data\n"
 unknownchars=""
 
 totalexpectedchars=0
-totalcounterchars=0
+totalcountedchars=0
 seenchars={}
 
 datanamespace="http://www.mainzed.org/maicubeda/"
