@@ -39,6 +39,7 @@ def processCONLL():
             data_file = list(csv.reader(open("conll/"+filename,"r",encoding="utf-8"), delimiter='\t'))
             #linecounter=1
             skipfirst2=0
+            lastline=""
             for line in data_file:
                 skipfirst2+=1
                 if skipfirst2>2:
@@ -49,8 +50,10 @@ def processCONLL():
                     position=line[0]
                     posprefix=position[0:2]
                     linecounter=position.split(".")[1]
+                    if linecounter!=lastline:
+                        charcounter=1
+                        lastline=linecounter
                     print(position+" "+word+" "+translation)
-                    charcounter=0
                     if not positionmap[posprefix] in posresult[posid]:
                         posresult[posid][positionmap[posprefix]]={}
                         posresultchars[posid][positionmap[posprefix]]={}
@@ -66,6 +69,7 @@ def processCONLL():
                     else:
                         posresult[posid][positionmap[posprefix]][position]["charlist"][str(linecounter)+"_"+str(charcounter)]=word
                         posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]={"word":word,"pos":postag,"translation":translation.replace(word,"").replace("[","").replace("]",""),"char":word}
+                        charcounter+=1
             print(data_file)     
         except:
             print("Error: "+str(posid))
