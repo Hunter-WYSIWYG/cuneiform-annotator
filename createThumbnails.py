@@ -472,6 +472,8 @@ if not singlefolder:
     f.write("var thumbnails="+json.dumps(homepagejson))
     f.close()
 print("FINAL EXPORTS")
+if totalexpectedchars==0:
+    totalexpectedchars=1
 translitstats+="Total,"+str(totalcountedchars)+","+str(totalexpectedchars)+","+str((totalcountedchars/totalexpectedchars)*100)+"\n"
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffthresholdexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
