@@ -490,6 +490,7 @@ async function getAnnotation(path){
     //}
     curanno={}
     curcharindex={}
+    $('#annocomplete').html("Unknown")
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
