@@ -63,12 +63,16 @@ def processCONLL():
                     if "-" in word:
                         for char in word.split("-"):
                             posresult[posid][positionmap[posprefix]][position]["charlist"][str(linecounter)+"_"+str(charcounter)]=char
-                            posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]={"word":word,"pos":postag,"translation":translation.replace(word,"").replace("[","").replace("]",""),"char":char}
+                            posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]={"word":word,"pos":postag,"translation":translation,"char":char}
+                            if word in translation:
+                                posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]["translation"]=translation.replace(word,"").replace("[","").replace("]","")
                             charcounter+=1
                             print("Char: "+str(char)+" "+str(linecounter)+"_"+str(charcounter)) 
                     else:
                         posresult[posid][positionmap[posprefix]][position]["charlist"][str(linecounter)+"_"+str(charcounter)]=word
-                        posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]={"word":word,"pos":postag,"translation":translation.replace(word,"").replace("[","").replace("]",""),"char":word}
+                        posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]={"word":word,"pos":postag,"translation":translation,"char":word}
+                        if word in translation:
+                            posresultchars[posid][positionmap[posprefix]][positionmappings[positionmap[posprefix]]+str(linecounter)+"_"+str(charcounter)]["translation"]=translation.replace(word,"").replace("[","").replace("]","")
                         charcounter+=1
             print(data_file)     
         except:
