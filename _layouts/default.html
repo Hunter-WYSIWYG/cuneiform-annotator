@@ -124,7 +124,8 @@ function formatTransliteration(transliteration){
     }
     if($('#images option:selected').text() in transliterations){
           console.log(transliterations[$('#images option:selected').text()])
-      if(transliterations[$('#images option:selected').text()]=="" ||transliterations[$('#images option:selected').text()]=="@Tablet"){
+      if(transliterations[$('#images option:selected').text()]=="" || transliterations[$('#images option:selected').text()]=="@Tablet"){
+		$('#transliterationtextarea').html("No transliteration available for text "+$('#images option:selected').text())
         if($('#images option:selected').text() in hs2CDLI){
           $('#textid').html(""+$('#images option:selected').text()+" - <a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
           $('#cdlilink').html("<a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
