@@ -18,21 +18,21 @@ for tabletid in obj:
         if line.startswith("@"):
             curside=line[0:line.find(" ")]
             if curside in mappings: 
-                curid=str(tabletid)+"_"+str(mappings[curside]+".json")
+                curid=str(tabletid)+"_"+str(mappings[curside]+".png.json")
                 print("Curside: "+str(curside))
                 result[curid]=0
             continue
         for word in line.split(" "):
             word=word.replace("{","-").replace("}","-")
-            if word=="" or re.search('^\s*[0-9]+\.',word):
+            if word=="" or re.search('^\s*[0-9]+\'\.',word) or re.search('^\s*[0-9]+\.',word) or word=="[x]" or word=="x" or word=="[...]":
                 continue
             #print("Word: "+str(word))
             for char in word.split("-"):
-                print("Char: "+str(char))
-                if curid in result and char!="" and char!="column":
+                if curid in result and char!="" and char!="column" and char!="..." and char!="?" and char!="...]" and char!="[..." and char!="[...]" and char!="x":
+                    print("Char: "+str(char))
                     result[curid]+=1
 jsonString = json.dumps(result, indent=2)
-jsonFile = open("translitcount.json", "w")
-jsonFile.write(jsonString)
+jsonFile = open("js/translitcount.js", "w")
+jsonFile.write("var translitcount="+jsonString)
 jsonFile.close()
 
