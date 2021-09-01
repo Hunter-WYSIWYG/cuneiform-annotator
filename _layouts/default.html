@@ -5,7 +5,7 @@
 
   <body>
 <h1 align="center">Annotation Test for 2D and 3D objects</h1>
- 
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
@@ -39,6 +39,7 @@
 <!--UTILITY-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <script type="text/javascript" src="js/init.js"></script>
@@ -71,12 +72,15 @@ function formatTransliteration(transliteration){
   linecounter=0
   charcounter=0
   currentside=""
+  curterm=""
   for(line of transliteration.split("<br>")){
     if(line.trim().startsWith("@")){
       if(line.trim() in termmap){
         currentside=termmap[line.trim()]
+		curterm=line.trim()
       }else{
         currentside=line.trim()
+		cuterm=currentside
       }
       linecounter=0
       charcounter=0
@@ -91,7 +95,8 @@ function formatTransliteration(transliteration){
         if(word.includes("-")){
           for(char of word.split("-")){
             if(char!=""){
-              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
+			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+char+"</span>"
               if(!char.endsWith("}")){
                 result+="&nbsp;"
               }
@@ -99,7 +104,8 @@ function formatTransliteration(transliteration){
             }
           }
         }else{
-          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
+		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+word+"</span>&nbsp;"
           charcounter+=1
         }
       }
@@ -132,14 +138,6 @@ function formatTransliteration(transliteration){
         }else{
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
-        /*$.ajax({ type: "GET",   
-         url: "https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()],   
-         async: false,
-         success : function(text)
-         {
-           //$('#transliterationtextarea').html(text.replaceAll("\n","<br>"))
-         }
-        });*/
       }else{
         if($('#images option:selected').text() in hs2CDLI){
           $('#textid').html(""+$('#images option:selected').text()+" - <a target=\"_blank\" href=\"https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&ObjectID="+hs2CDLI[$('#images option:selected').text()]+"\">"+hs2CDLI[$('#images option:selected').text()]+"</a>")
@@ -148,6 +146,13 @@ function formatTransliteration(transliteration){
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
         $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
+		var tooltips = $( "[title]" ).tooltip({
+			position: {
+			my: "left top",
+			at: "right+5 top-5",
+			collision: "none"
+		}
+		});
         $('span.imagelink').mouseover(function() {
           console.log("Selecting annotation")
           myid=$(this).attr("id")
