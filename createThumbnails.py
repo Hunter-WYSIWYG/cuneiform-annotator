@@ -189,9 +189,9 @@ for filename in dircontent:
         print(sys.exc_info()[2])
         continue
     if filename in translitcount:
-        translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
         totalexpectedchars+=translitcount[filename]
         totalcountedchars+=len(jsondata)
+        translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
