@@ -39,6 +39,8 @@ periodss={}
 
 charperperiod={}
 
+linepadding=0.5
+
 languagess={"Unknown":True}
 
 genress={"Unknown":True}
@@ -191,7 +193,10 @@ for filename in dircontent:
     if filename in translitcount:
         totalexpectedchars+=translitcount[filename]
         totalcountedchars+=len(jsondata)
-        translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
+        if int(translitcount[filename])!=0:
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
+        else:
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+",100\n"
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
