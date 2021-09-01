@@ -99,7 +99,9 @@ function formatTransliteration(transliteration){
       console.log(currentside+"_"+linecounter+"_"+charcounter)
       console.log(titleobj)
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+              if (typeof titleobj !== 'undefined'){
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+char+"</span>"
+              }
               if(!char.endsWith("}")){
                 result+="&nbsp;"
               }
@@ -113,7 +115,9 @@ function formatTransliteration(transliteration){
       console.log(curterm)
       console.log(currentside+"_"+linecounter+"_"+charcounter)
       console.log(titleobj)
+      if (typeof titleobj !== 'undefined'){
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+word+"</span>&nbsp;"
+      }
           charcounter+=1
         }
       }
