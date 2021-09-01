@@ -13,7 +13,7 @@ result={}
 for tabletid in obj:
     for line in obj[tabletid].split("\n"):
         #print(line)
-        if line.startswith("@Tablet"):
+        if line.startswith("@Tablet") or line.startswith("$") or line.startswith("#"):
             continue
         if line.startswith("@"):
             curside=line[0:line.find(" ")]
@@ -21,12 +21,15 @@ for tabletid in obj:
                 curid=str(tabletid)+"_"+str(mappings[curside]+".json")
                 print("Curside: "+str(curside))
                 result[curid]=0
+            continue
         for word in line.split(" "):
-            if re.search('^\s*[0-9]\.',word):
+            word=word.replace("{","-").replace("}","-")
+            if word=="" or re.search('^\s*[0-9]+\.',word):
                 continue
             #print("Word: "+str(word))
             for char in word.split("-"):
-                if curid in result:
+                print("Char: "+str(char))
+                if curid in result and char!="" and char!="column":
                     result[curid]+=1
 jsonString = json.dumps(result, indent=2)
 jsonFile = open("translitcount.json", "w")
