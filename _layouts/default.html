@@ -125,7 +125,7 @@ function formatTransliteration(transliteration){
       if (typeof titleobj !== 'undefined'){
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
           if(titleobj["translation"]!="_"){
-              result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+word+"</span>&nsbp;"
+              result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+word+"</span>&nbsp;"
           }else{
               result+="("+titleobj["pos"]+")\">"+word+"</span>&nbsp;"
           }
