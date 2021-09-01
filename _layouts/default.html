@@ -95,6 +95,9 @@ function formatTransliteration(transliteration){
         if(word.includes("-")){
           for(char of word.split("-")){
             if(char!=""){
+                    console.log(curterm)
+      console.log(currentside+"_"+linecounter+"_"+charcounter)
+      console.log(titleobj)
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+char+"</span>"
               if(!char.endsWith("}")){
@@ -105,6 +108,9 @@ function formatTransliteration(transliteration){
           }
         }else{
 		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+      console.log(curterm)
+      console.log(currentside+"_"+linecounter+"_"+charcounter)
+      console.log(titleobj)
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+word+"</span>&nbsp;"
           charcounter+=1
         }
