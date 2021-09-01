@@ -10,7 +10,7 @@ from plyfile import PlyData
 from sklearn.decomposition import PCA
 from sklearn.datasets import make_classification
 
-input_folder = r"F:\i3mainz_Hochschule Mainz\Keilschriften\neue_orientierung"
+input_folder = r"H:\Abschlussarbeiten\2021-02_BA_Darius_Minor_Schleuderbleie\Daten\Vergleiche\Vergleich_Atos_Agisoft"
 # meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
 
 reduce_factors=[1]
@@ -148,6 +148,37 @@ for root, dirs, files in os.walk (input_folder):
             # Matrizen
             A = np.matrix([p0_pca_A , p1_pca_A, p2_pca_A, p3_pca_A])
             B = np.matrix([p0_pca_B , p1_pca_B, p2_pca_B, p3_pca_B])
+
+            # 10% der Länge
+            dist_v1 = np.linalg.norm(p0_pca_A - p1_pca_A)
+            dist_v2 = np.linalg.norm(p0_pca_A - p2_pca_A)
+            dist_v3 = np.linalg.norm(p0_pca_A - p3_pca_A)
+            print (dist_v1)
+            print (dist_v2)
+            print (dist_v3)
+
+            # differenzen
+            diff_v1_v2 = dist_v1 - dist_v2
+            diff_v2_v3 = dist_v2 - dist_v3
+
+            # stabil ???
+            if diff_v1_v2 > dist_v1/10 and diff_v2_v3 > dist_v2/10:
+                stabil = True
+            else:
+                stabil = False
+
+            f.write(" 10 %" +"\n")
+            f.write(" vector 1: " + str(dist_v1) + " 10% " + str(dist_v1/10) +"\n")
+            f.write(" vector 2: " + str(dist_v2) + " 10% " + str(dist_v2/10) +"\n")
+            f.write(" vector 3: " + str(dist_v3) + " 10% " + str(dist_v3/10) +"\n")
+
+            f.write(" differenzen" +"\n")
+            f.write(" diff v1 - v2: " + str(diff_v1_v2) +"\n")
+            f.write(" diff v2 - v3: " + str(diff_v2_v3) +"\n")
+
+            f.write("\n" + "pca stabil: " + str(stabil) + "\n" + "\n")
+
+
 
             f.write("Matrix A" +"\n")
             f.write(str(A)+"\n")
