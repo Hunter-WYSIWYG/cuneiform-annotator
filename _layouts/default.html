@@ -100,7 +100,12 @@ function formatTransliteration(transliteration){
       console.log(titleobj)
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               if (typeof titleobj !== 'undefined'){
-              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+char+"</span>"
+              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
+              if(titleobj["translation"]!="_"){
+                result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+char+"</span>"
+              }else{
+                result+="("+titleobj["pos"]+")\">"+char+"</span>"
+              }
               }else{
                 result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
               }
@@ -118,7 +123,12 @@ function formatTransliteration(transliteration){
       console.log(currentside+"_"+linecounter+"_"+charcounter)
       console.log(titleobj)
       if (typeof titleobj !== 'undefined'){
-          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+word+"</span>&nbsp;"
+          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
+          if(titleobj["translation"]!="_"){
+              result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+char+"</span>&nsbp;"
+          }else{
+              result+="("+titleobj["pos"]+")\">"+char+"</span>&nbsp;"
+          }
       }else{
         result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
       }
