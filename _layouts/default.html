@@ -125,9 +125,9 @@ function formatTransliteration(transliteration){
       if (typeof titleobj !== 'undefined'){
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
           if(titleobj["translation"]!="_"){
-              result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+char+"</span>&nsbp;"
+              result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+word+"</span>&nsbp;"
           }else{
-              result+="("+titleobj["pos"]+")\">"+char+"</span>&nbsp;"
+              result+="("+titleobj["pos"]+")\">"+word+"</span>&nbsp;"
           }
       }else{
         result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
