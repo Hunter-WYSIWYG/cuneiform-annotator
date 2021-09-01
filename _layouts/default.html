@@ -100,7 +100,9 @@ function formatTransliteration(transliteration){
       console.log(titleobj)
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               if (typeof titleobj !== 'undefined'){
-              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+char+"</span>"
+              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+char+"</span>"
+              }else{
+                result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
               }
               if(!char.endsWith("}")){
                 result+="&nbsp;"
@@ -116,7 +118,9 @@ function formatTransliteration(transliteration){
       console.log(currentside+"_"+linecounter+"_"+charcounter)
       console.log(titleobj)
       if (typeof titleobj !== 'undefined'){
-          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+"\">"+word+"</span>&nbsp;"
+          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" ["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+word+"</span>&nbsp;"
+      }else{
+        result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
       }
           charcounter+=1
         }
@@ -158,13 +162,11 @@ function formatTransliteration(transliteration){
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
         $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
-		var tooltips = $( "[title]" ).tooltip({
-			position: {
-			my: "left top",
-			at: "right+5 top-5",
-			collision: "none"
-		}
-		});
+  $( function() {
+    $( document ).tooltip({
+      track: true
+    });
+  } );
         $('span.imagelink').mouseover(function() {
           console.log("Selecting annotation")
           myid=$(this).attr("id")
