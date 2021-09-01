@@ -515,7 +515,7 @@ async function getAnnotation(path){
     anno.setAnnotations(annotations);
     if($('#imageside option:selected').text()+".json" in translitcount){
       if(annotations.length>0 && translitcount[$('#imageside option:selected').text()+".json"]>0){
-        $('#annocomplete').html((annotations.length/translitcount[$('#imageside option:selected').text()+".json"]*100)+"% ("+annotations.length+"/"+translitcount[$('#imageside option:selected').text()+".json"]+")") 
+        $('#annocomplete').html((annotations.length/translitcount[$('#imageside option:selected').text()+".json"]*100).toFixed(2)+"% ("+annotations.length+"/"+translitcount[$('#imageside option:selected').text()+".json"]+")") 
       }else{
         $('#annocomplete').html("0% (0/"+translitcount[$('#imageside option:selected').text()+".json"]+")")
       }
