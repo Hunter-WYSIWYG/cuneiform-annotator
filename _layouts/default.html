@@ -185,8 +185,8 @@ function formatTransliteration(transliteration){
        }
     }
     $('#imageside').html(imgside)
-    if($('#imageside').text()+".json" in translitcount){
-      toappend+=" "+translitcount[$('#imageside').text()+".json"]
+    if($('#imageside option:selected').text()+".json" in translitcount){
+      toappend+=" "+translitcount[$('#imageside option:selected').text()+".json"]
     }
     $('#period').html(toappend)
     reinit("abc");
