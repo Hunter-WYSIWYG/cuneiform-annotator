@@ -24,7 +24,7 @@ for tabletid in obj:
             continue
         for word in line.split(" "):
             word=word.replace("{","-").replace("}","-")
-            if word=="" or re.search('^\s*[0-9]+\'\.',word) or re.search('^\s*[0-9]+\.',word) or word=="[x]" or word=="x" or word=="[...]":
+            if word=="" or re.search('^\s*[0-9]+\'\.',word) or re.search('^\s*[0-9]+\.',word) or word=="[x]" or word=="x" or word=="[...]" or "[" in word or "]" in word or "<" in word or ">" in word:
                 continue
             #print("Word: "+str(word))
             for char in word.split("-"):
