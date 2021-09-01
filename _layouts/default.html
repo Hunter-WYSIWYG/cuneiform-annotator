@@ -185,6 +185,8 @@ function formatTransliteration(transliteration){
        }
     }
     $('#imageside').html(imgside)
+    console.log("IMAGESIDE: "+$('#imageside option:selected').text()+".json")
+    console.log($('#imageside option:selected').text()+".json" in translitcount)
     if($('#imageside option:selected').text()+".json" in translitcount){
       toappend+=" "+translitcount[$('#imageside option:selected').text()+".json"]
     }
