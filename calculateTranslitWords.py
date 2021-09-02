@@ -10,10 +10,11 @@ with open('hs_transliterations.json', 'r') as myfile:
 # parse file
 obj = json.loads(data.replace("var transliterations=",""))
 result={}
+totalchars=0
 for tabletid in obj:
     for line in obj[tabletid].split("\n"):
         #print(line)
-        if line.startswith("@Tablet") or line.startswith("$") or line.startswith("#"):
+        if line.startswith("@Tablet") or line.strip().startswith("$") or line.strip().startswith("#") or line.strip().startswith("&"):
             continue
         if line.startswith("@"):
             curside=line[0:line.find(" ")]
@@ -22,15 +23,19 @@ for tabletid in obj:
                 print("Curside: "+str(curside))
                 result[curid]=0
             continue
+        if not re.search('^\s*[0-9]+\'\.',line) and not re.search('^\s*[0-9]+\.',line):
+            continue
         for word in line.split(" "):
             word=word.replace("{","-").replace("}","-")
             if word=="" or re.search('^\s*[0-9]+\'\.',word) or re.search('^\s*[0-9]+\.',word) or word=="[x]" or word=="x" or word=="[...]" or "[" in word or "]" in word or "<" in word or ">" in word:
                 continue
             #print("Word: "+str(word))
             for char in word.split("-"):
-                if curid in result and char!="" and char!="column" and char!="..." and char!="?" and char!="...]" and char!="[..." and char!="[...]" and char!="x":
+                if curid in result and char!="" and char!="column" and char!="..." and char!="!" and char!="?" and char!="...]" and char!="/" and char!="=" and char!="[..." and char!="[...]" and char!="x":
                     print("Char: "+str(char))
                     result[curid]+=1
+                    totalchars+=1
+print(totalchars)
 jsonString = json.dumps(result, indent=2)
 jsonFile = open("js/translitcount.js", "w")
 jsonFile.write("var translitcount="+jsonString)
