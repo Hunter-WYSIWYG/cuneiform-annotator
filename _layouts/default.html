@@ -107,7 +107,7 @@ function formatTranslation(transliteration){
 				if(titleobj["translation"].includes("[") && !titleobj["translation"].includes("[1]")){
 					result+=titleobj["translation"].substring(titleobj["translation"].indexOf("[")+1,titleobj["translation"].indexOf("]"))+"</span>"
 				}else{
-					result+=titleobj["translation"]+"</span>"
+					result+=titleobj["translation"].replace("[1]","")+"</span>"
 				}
 				lasttranslation=titleobj["translation"]
               }else{
@@ -115,7 +115,7 @@ function formatTranslation(transliteration){
 				if(titleobj["translation"].includes("[") && !titleobj["translation"].includes("[1]")){
 					result+=titleobj["translation"].substring(titleobj["translation"].indexOf("[")+1,titleobj["translation"].indexOf("]"))+"</span>"
 				}else{
-					result+=titleobj["translation"]+"</span>"
+					result+=titleobj["translation"].replace("[1]","")+"</span>"
 				}
 				lasttranslation=titleobj["translation"]
               }
