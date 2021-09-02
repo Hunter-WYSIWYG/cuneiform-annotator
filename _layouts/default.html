@@ -101,12 +101,12 @@ function formatTranslation(transliteration){
 			  console.log(currentside+"_"+linecounter+"_"+charcounter)
 			  console.log(titleobj)
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
-              if (typeof titleobj !== 'undefined'){
+              if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
-              if(titleobj["translation"]!=lasttranslation && titleobj["translation"]!="_"){
+              if(titleobj["translation"]!="_"){
                 result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>"
 				lasttranslation=titleobj["translation"]
-              }else if(titleobj["translation"]!=lasttranslation){
+              }else{
                 result+="("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>"
 				lasttranslation=titleobj["translation"]
               }
@@ -121,17 +121,17 @@ function formatTranslation(transliteration){
           }
         }else{
 		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
-      console.log(character_postags)
-      console.log($("#images option:selected").text())
-      console.log(curterm)
-      console.log(currentside+"_"+linecounter+"_"+charcounter)
-      console.log(titleobj)
-      if (typeof titleobj !== 'undefined'){
+		  console.log(character_postags)
+		  console.log($("#images option:selected").text())
+		  console.log(curterm)
+		  console.log(currentside+"_"+linecounter+"_"+charcounter)
+		  console.log(titleobj)
+      if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
-          if(titleobj["translation"]!=lasttranslation && titleobj["translation"]!="_"){
+          if(titleobj["translation"]!="_"){
               result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>&nbsp;"
 			  lasttranslation=titleobj["translation"]
-          }else if(titleobj["translation"]!=lasttranslation){
+          }else {
               result+="("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>&nbsp;"
 			  lasttranslation=titleobj["translation"]
           }
@@ -141,7 +141,7 @@ function formatTranslation(transliteration){
           charcounter+=1
         }
       }
-      //result+="<br/>"
+      result+="<br/>"
     }else{
       result+=line+"<br/>"
     }
