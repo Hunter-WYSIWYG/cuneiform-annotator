@@ -191,8 +191,8 @@ function formatTransliteration(transliteration){
           for(char of word.split("-")){
             if(char!=""){
                     console.log(curterm)
-      console.log(currentside+"_"+linecounter+"_"+charcounter)
-      console.log(titleobj)
+				console.log(currentside+"_"+linecounter+"_"+charcounter)
+				console.log(titleobj)
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               if (typeof titleobj !== 'undefined'){
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
@@ -211,7 +211,7 @@ function formatTransliteration(transliteration){
 				result+="-"
 			  }
               charcounter+=1
-			  wordlencoutner+=1
+			  wordlencounter+=1
             }
           }
         }else{
