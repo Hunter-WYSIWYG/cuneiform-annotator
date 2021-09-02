@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib
 import numpy as np
 import os
+import os.path
 from math import sqrt
 from numpy.linalg import inv
 
@@ -125,19 +126,25 @@ def do_PCA(mesh):
   reducedMesh = pca.transform(mesh)
   return [reducedMesh,pca,resultmatrix]
 
+previousresults=""
+if os.path.isfile(resultfile_csv):
+    print("Found old result file: "+str(resultfile_csv))
+    file = open(resultfile_csv)
+    previousresults=file.read()
+    file.close()
 
-
-f = open(resultfile, 'w')  
-c = open(resultfile_csv, 'w')
+f = open(resultfile, 'a')  
+c = open(resultfile_csv, 'a')
 l = open(logfile, 'w')
 c.write("meshname | vector-1_length | vector-2_length | vector-3_length | diff v1-v2 mm | diff v1-v2 % v1 | diff v2-v3 mm | diff v2-v3 % v2 | stabil" +"\n")
-
-
 
 
 for root, dirs, files in os.walk (input_folder):
     for meshname in files:
         # print (meshname)
+        if meshname in previousresults:
+            print("Skipping "+str(meshname)+" as it was already processed!")
+            continue
         if os.path.splitext(meshname)[-1]==".ply" or os.path.splitext(meshname)[-1]==".PLY":
             try:
                 # files 
