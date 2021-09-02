@@ -125,16 +125,29 @@ def do_PCA(mesh):
   reducedMesh = pca.transform(mesh)
   return [reducedMesh,pca,resultmatrix]
 
+
+
 f = open(resultfile, 'w')  
 c = open(resultfile_csv, 'w')
 l = open(logfile, 'w')
 c.write("meshname | vector-1_length | vector-2_length | vector-3_length | diff v1-v2 mm | diff v1-v2 % v1 | diff v2-v3 mm | diff v2-v3 % v2 | stabil" +"\n")
+
+
+
 
 for root, dirs, files in os.walk (input_folder):
     for meshname in files:
         # print (meshname)
         if os.path.splitext(meshname)[-1]==".ply" or os.path.splitext(meshname)[-1]==".PLY":
             try:
+                # files 
+                f.close()
+                f = open(resultfile, 'a')
+                c.close()
+                c = open(resultfile_csv, 'a')
+                l.close()
+                l = open(logfile, 'a')
+
                 print (meshname)
                 print("Processing "+str(meshname))
                 plyfile = PlyData.read(root + "/" + meshname)
@@ -144,7 +157,7 @@ for root, dirs, files in os.walk (input_folder):
                 'z':plyfile['vertex']['z'][::reduce_factor]
                 })
                 pca = do_PCA(mesh)
-                
+
                 # Objektkoordinaten
                 p0_pca_A = pca[2][0]
                 p1_pca_A = pca[2][1]
@@ -178,6 +191,8 @@ for root, dirs, files in os.walk (input_folder):
                     stabil = True
                 else:
                     stabil = False
+
+                
 
                 f.write(" 10 %" +"\n")
                 f.write(" vector 1: " + str(dist_v1) + " 10% " + str(dist_v1/10) +"\n")
