@@ -325,5 +325,66 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#4047ef86-d8c4-42cd-8db7-a23a7c128089"
+  },
+  "#e5de6495-989e-44de-b7a4-7bbc5118ac4b": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ki",
+        "dimensions": {
+          "x": 909,
+          "y": 929
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111599:575759/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"28.441381454467773,278.6999816894531 177.40171813964844,280.3017272949219 145.36724853515625,466.1017150878906 18.831035614013672,456.4913635253906\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e5de6495-989e-44de-b7a4-7bbc5118ac4b"
+  },
+  "#a61092a4-de07-41b9-81f0-bc85672566e3": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ur",
+        "dimensions": {
+          "x": 909,
+          "y": 929
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111599:575759/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"403.24481201171875,312.3362121582031 174.19827270507812,296.3189697265625 151.77413940429688,469.30517578125 372.81207275390625,482.11895751953125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a61092a4-de07-41b9-81f0-bc85672566e3"
   }
 }
