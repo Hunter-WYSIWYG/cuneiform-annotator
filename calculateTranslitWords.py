@@ -13,7 +13,7 @@ result={}
 for tabletid in obj:
     for line in obj[tabletid].split("\n"):
         #print(line)
-        if line.startswith("@Tablet") or line.startswith("$") or line.startswith("#"):
+        if line.startswith("@Tablet") or line.strip().startswith("$") or line.strip().startswith("#") or line.strip().startswith("&"):
             continue
         if line.startswith("@"):
             curside=line[0:line.find(" ")]
@@ -21,6 +21,8 @@ for tabletid in obj:
                 curid=str(tabletid)+"_"+str(mappings[curside]+".png.json")
                 print("Curside: "+str(curside))
                 result[curid]=0
+            continue
+        if not re.search('^\s*[0-9]+\'\.',line) and not re.search('^\s*[0-9]+\.',line):
             continue
         for word in line.split(" "):
             word=word.replace("{","-").replace("}","-")
