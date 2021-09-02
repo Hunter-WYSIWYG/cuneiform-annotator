@@ -120,7 +120,7 @@ function formatTranslation(transliteration){
 				}
 				lasttranslation=titleobj["translation"]
               }
-              }else{
+              }else if(titleobj["translation"]!=lasttranslation){
                 result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
               }
               if(!char.endsWith("}")){
