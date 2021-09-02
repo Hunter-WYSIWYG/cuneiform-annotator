@@ -870,10 +870,10 @@ function setup3dhop() {
 
     //
   }
-  $.ajax({    
+  $.getJSON({    
     url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
     success: function(res){
-    result=JSON.parse(res)
+    result=res
       console.log(result)
     annos3d=result
     annotations=[]
