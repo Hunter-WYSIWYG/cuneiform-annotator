@@ -204,14 +204,13 @@ function formatTransliteration(transliteration){
               }else{
                 result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
               }
-              if(!char.endsWith("}")){
-                result+="&nbsp;"
-              }
-			  if(wordlencounter<wordlen){
-				result+="-"
-			  }
               charcounter+=1
 			  wordlencounter+=1
+			  if(wordlencounter<wordlen){
+				result+="-"
+			  }else{
+                result+="&nbsp;"
+			  }
             }
           }
         }else{
