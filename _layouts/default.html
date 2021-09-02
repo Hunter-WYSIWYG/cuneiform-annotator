@@ -90,6 +90,7 @@ function formatTranslation(transliteration){
       charcounter=0
       newline=line.trim()
       splitted=line.trim().split(" ")
+	  result+="<br/>"
       for(word of splitted){
         word=word.replace("{","-{").replace("}","}-")
 		lasttranslation=""
@@ -140,7 +141,7 @@ function formatTranslation(transliteration){
           charcounter+=1
         }
       }
-      result+="<br/>"
+      //result+="<br/>"
     }else{
       result+=line+"<br/>"
     }
