@@ -104,7 +104,7 @@ function formatTranslation(transliteration){
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
               if(titleobj["translation"]!="_"){
                 result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"
-				if(titleobj["translation"].includes("[")){
+				if(titleobj["translation"].includes("[") && !titleobj["translation"].includes("[1]")){
 					result+=titleobj["translation"].substring(titleobj["translation"].indexOf("[")+1,titleobj["translation"].indexOf("]"))+"</span>"
 				}else{
 					result+=titleobj["translation"]+"</span>"
@@ -112,7 +112,7 @@ function formatTranslation(transliteration){
 				lasttranslation=titleobj["translation"]
               }else{
                 result+="("+titleobj["pos"]+")\">"
-				if(titleobj["translation"].includes("[")){
+				if(titleobj["translation"].includes("[") && !titleobj["translation"].includes("[1]")){
 					result+=titleobj["translation"].substring(titleobj["translation"].indexOf("[")+1,titleobj["translation"].indexOf("]"))+"</span>"
 				}else{
 					result+=titleobj["translation"]+"</span>"
