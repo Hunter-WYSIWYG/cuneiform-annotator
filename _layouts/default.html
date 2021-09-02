@@ -59,11 +59,94 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><br/>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+function formatTranslation(transliteration){
+  result=""
+  termmap={"@obverse":"front","@reverse":"back","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
+  linecounter=0
+  charcounter=0
+  currentside=""
+  curterm=""
+  for(line of transliteration.split("<br>")){
+    if(line.trim().startsWith("@")){
+      if(line.trim() in termmap){
+        currentside=termmap[line.trim()]
+		curterm=line.trim()
+      }else{
+        currentside=line.trim()
+		cuterm=currentside
+      }
+      linecounter=0
+      charcounter=0
+      result+=line.trim()+"<br/>"
+    }else if(line.trim().match(/^\d/)){
+      linecounter+=1
+      charcounter=0
+      newline=line.trim()
+      splitted=line.trim().split(" ")
+      for(word of splitted){
+        word=word.replace("{","-{").replace("}","}-")
+		lasttranslation=""
+        if(word.includes("-")){
+          for(char of word.split("-")){
+            if(char!=""){
+              console.log(curterm)
+			  console.log(currentside+"_"+linecounter+"_"+charcounter)
+			  console.log(titleobj)
+			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+              if (typeof titleobj !== 'undefined'){
+              result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
+              if(titleobj["translation"]!=lasttranslation && titleobj["translation"]!="_"){
+                result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>"
+				lasttranslation=titleobj["translation"]
+              }else if(titleobj["translation"]!=lasttranslation){
+                result+="("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>"
+				lasttranslation=titleobj["translation"]
+              }
+              }else{
+                result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
+              }
+              if(!char.endsWith("}")){
+                result+="&nbsp;"
+              }
+              charcounter+=1
+            }
+          }
+        }else{
+		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+      console.log(character_postags)
+      console.log($("#images option:selected").text())
+      console.log(curterm)
+      console.log(currentside+"_"+linecounter+"_"+charcounter)
+      console.log(titleobj)
+      if (typeof titleobj !== 'undefined'){
+          result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
+          if(titleobj["translation"]!=lasttranslation && titleobj["translation"]!="_"){
+              result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>&nbsp;"
+			  lasttranslation=titleobj["translation"]
+          }else if(titleobj["translation"]!=lasttranslation){
+              result+="("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>&nbsp;"
+			  lasttranslation=titleobj["translation"]
+          }
+      }else{
+        result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+word+"</span>&nbsp;"
+      }
+          charcounter+=1
+        }
+      }
+      result+="<br/>"
+    }else{
+      result+=line+"<br/>"
+    }
+  }
+  return result
+}
 }
 
 function formatTransliteration(transliteration){
@@ -172,6 +255,10 @@ function formatTransliteration(transliteration){
           $('#textid').html(""+$('#images option:selected').text()+"")
         }
         $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
+		if(!($("#images option:selected").text() in character_postags)){
+			$('#translationtextarea').html("No translation available for text "+$('#images option:selected').text())
+		}
+		$('#translationtextarea').html(formatTranslation(transliterations[$('#images option:selected').text()].replaceAll("\n","<br>")))
   $( function() {
     $( document ).tooltip({
       track: true
@@ -607,6 +694,12 @@ function getEXIFData(imageid,targetid){
     <code id="transliterationtextarea">
     </code><br/>
     <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
+</dialog>
+<dialog id="translationdialog" style="z-index: 1000 !important ;">
+    <h3>Translation View <span id="textid"></span></h3>
+    <code id="translationtextarea">
+    </code><br/>
+    <button id="closedialog3" onClick='document.getElementById("translationdialog").close()'>Close</button>
 </dialog>
 <dialog id="paleocodedialog" style="z-index: 1000 !important ;">
     <h3>PaleoCodeList</h3>
