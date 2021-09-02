@@ -185,6 +185,8 @@ function formatTransliteration(transliteration){
       for(word of splitted){
         word=word.replace("{","-{").replace("}","}-")
         if(word.includes("-")){
+		  wordlen=len(word.split("-"))
+		  wordlencounter=0
           for(char of word.split("-")){
             if(char!=""){
                     console.log(curterm)
@@ -204,7 +206,11 @@ function formatTransliteration(transliteration){
               if(!char.endsWith("}")){
                 result+="&nbsp;"
               }
+			  if(wordlencounter<wordlen){
+				result+="-"
+			  }
               charcounter+=1
+			  wordlencoutner+=1
             }
           }
         }else{
