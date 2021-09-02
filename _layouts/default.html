@@ -104,10 +104,20 @@ function formatTranslation(transliteration){
               if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
               if(titleobj["translation"]!="_"){
-                result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>"
+                result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"
+				if(titleobj["translation"].includes("[")){
+					result+=titleobj["translation"].substring(titleobj["translation"].indexOf("[")+1,titleobj["translation"].indexOf("]"))+"</span>"
+				}else{
+					result+=titleobj["translation"]+"</span>"
+				}
 				lasttranslation=titleobj["translation"]
               }else{
-                result+="("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>"
+                result+="("+titleobj["pos"]+")\">"
+				if(titleobj["translation"].includes("[")){
+					result+=titleobj["translation"].substring(titleobj["translation"].indexOf("[")+1,titleobj["translation"].indexOf("]"))+"</span>"
+				}else{
+					result+=titleobj["translation"]+"</span>"
+				}
 				lasttranslation=titleobj["translation"]
               }
               }else{
