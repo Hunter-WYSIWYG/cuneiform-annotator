@@ -292,5 +292,66 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#274b759f-2fc2-4748-99ed-089e702d6409"
+  },
+  "#3704f1b4-ffe5-4084-ae65-eec640a94f38": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lugal",
+        "dimensions": {
+          "x": 851,
+          "y": 926
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113694:577824/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"671.3690185546875,379.9793395996094 248.28277587890625,379.9793395996094 227.527587890625,581.1448364257812 637.8414306640625,577.9517211914062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#3704f1b4-ffe5-4084-ae65-eec640a94f38"
+  },
+  "#342807df-fdc6-4b9d-a816-6da16fedefc0": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ma2",
+        "dimensions": {
+          "x": 851,
+          "y": 926
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113694:577824/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"816.6552124023438,426.2793273925781 649.0172729492188,421.48968505859375 644.2276000976562,584.3379516601562 816.6552124023438,597.1103515625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#342807df-fdc6-4b9d-a816-6da16fedefc0"
   }
 }
