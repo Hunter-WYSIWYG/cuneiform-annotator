@@ -26,7 +26,7 @@ imageclassification:
   artifacts:
     paths:
     - classification
-  only:
+  except:
   - master
 
 pages:
@@ -37,5 +37,5 @@ pages:
   artifacts:
     paths:
     - public
-  except:
+  only:
   - master
