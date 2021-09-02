@@ -10,6 +10,7 @@ with open('hs_transliterations.json', 'r') as myfile:
 # parse file
 obj = json.loads(data.replace("var transliterations=",""))
 result={}
+totalchars=0
 for tabletid in obj:
     for line in obj[tabletid].split("\n"):
         #print(line)
@@ -30,9 +31,11 @@ for tabletid in obj:
                 continue
             #print("Word: "+str(word))
             for char in word.split("-"):
-                if curid in result and char!="" and char!="column" and char!="..." and char!="?" and char!="...]" and char!="[..." and char!="[...]" and char!="x":
+                if curid in result and char!="" and char!="column" and char!="..." and char!="!" and char!="?" and char!="...]" and char!="/" and char!="=" and char!="[..." and char!="[...]" and char!="x":
                     print("Char: "+str(char))
                     result[curid]+=1
+                    totalchars+=1
+print(totalchars)
 jsonString = json.dumps(result, indent=2)
 jsonFile = open("js/translitcount.js", "w")
 jsonFile.write("var translitcount="+jsonString)
