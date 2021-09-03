@@ -15,6 +15,10 @@ var languages={
     "genre": "Legal",
     "language": "Akkadian"
   },
+  "HS_2398": {
+    "genre": "Legal",
+    "language": "Akkadian"
+  },
   "HS_1006": {
     "genre": "Administrative",
     "language": "Sumerian"
