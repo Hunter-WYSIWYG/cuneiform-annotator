@@ -734,5 +734,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#65fbe5a3-536d-4c91-a95c-2cc71574e2f5"
+  },
+  "#a6578f5f-4f2e-4e7c-aa1c-fea210ac9474": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "suen",
+        "dimensions": {
+          "x": 1006,
+          "y": 1181
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111738:575915/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"435.80517578125,474.43621826171875 429.6965637207031,551.8120727539062 865.44482421875,527.3776245117188 853.2276000976562,399.0965576171875 562.0499877929688,392.9879455566406 555.94140625,490.7258605957031\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a6578f5f-4f2e-4e7c-aa1c-fea210ac9474"
+  },
+  "#fabd77dd-ec83-496f-b853-70082aff5ee8": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "suen",
+        "dimensions": {
+          "x": 1006,
+          "y": 1181
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111738:575915/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"427.66033935546875,612.8983154296875 423.5879211425781,663.803466796875 849.1551513671875,657.69482421875 845.082763671875,527.3776245117188 533.5430908203125,537.5586547851562 525.3982543945312,639.3689575195312\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#fabd77dd-ec83-496f-b853-70082aff5ee8"
   }
 }
