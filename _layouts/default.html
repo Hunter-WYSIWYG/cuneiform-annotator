@@ -98,10 +98,9 @@ function formatTranslation(transliteration){
             if(char!=""){
               console.log(curterm)
 			  console.log(currentside+"_"+linecounter+"_"+charcounter)
-			  if(!($("#images option:selected").text() in character_postags)){
-				continue
+			  if(($("#images option:selected").text() in character_postags)){
+				titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
 			  }
-			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
 			  console.log(titleobj)
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
@@ -198,10 +197,9 @@ function formatTransliteration(transliteration){
             if(char!=""){
                     console.log(curterm)
 				console.log(currentside+"_"+linecounter+"_"+charcounter)
-			  if(!($("#images option:selected").text() in character_postags)){
-				continue
+			  if(($("#images option:selected").text() in character_postags)){
+			    titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
 			  }
-			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               if (typeof titleobj !== 'undefined'){
 			  				console.log(titleobj)
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
