@@ -215,7 +215,7 @@ for filename in dircontent:
         jsondata=json.load(json_file)
         print("Parsing JSON-LD to graph")
         graph.parse(data=json.dumps(jsondata),format='json-ld')
-        print(graph)
+        print("Graph now has "+str(len(graph))+" statements")
     maxcoords={}
     maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
