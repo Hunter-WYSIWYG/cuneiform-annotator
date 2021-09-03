@@ -107,7 +107,7 @@ arffdatathreshold="@data\n"
 
 unknownchars=""
 
-dc = libxmp.consts.XMP_NS_DC
+dc = "http://purl.org/dc/elements/1.1/"
 
 totalexpectedchars=0
 totalcountedchars=0
