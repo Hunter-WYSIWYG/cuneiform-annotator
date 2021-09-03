@@ -53,6 +53,10 @@
 .hover { background-color: rgba(0,0,0,0.1) !important; }
 .unselected { background-color: rgba(0,0,0,0.5); }
 .selected { background-color: none; }
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
 </style>
 <div class="container-fluid">
     <div class="row">
@@ -728,19 +732,19 @@ function getEXIFData(imageid,targetid){
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
-<dialog id="transliterationdialog" style="z-index: 1000 !important ;">
+<dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Transliteration View <span id="textid"></span></h3>
     <code id="transliterationtextarea">
     </code><br/>
     <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
 </dialog>
-<dialog id="translationdialog" style="z-index: 1000 !important ;">
+<dialog id="translationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Translation View <span id="textid"></span></h3>
     <code id="translationtextarea">
     </code><br/>
     <button id="closedialog3" onClick='document.getElementById("translationdialog").close()'>Close</button>
 </dialog>
-<dialog id="paleocodedialog" style="z-index: 1000 !important ;">
+<dialog id="paleocodedialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>PaleoCodeList</h3>
     <ul id="paleocodelist" style="width: 300px; height: 550px; overflow: auto">
     </ul><br/>
