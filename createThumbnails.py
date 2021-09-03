@@ -42,21 +42,21 @@ xmpmetadata_anno={
 }
 
 def writeXMP(filepath, title, identifier):
-    print(filepath)
+    #print(filepath)
     try:
         xmpfile = XMPFiles( file_path=filepath, open_forupdate=True )
-        print(xmpfile)
+        #print(xmpfile)
         xmp=xmpfile.get_xmp()
-        print(xmp)
+        #print(xmp)
         for prop in xmpmetadata_anno["dc"]:
             xmp.set_property(dc,prop,xmpmetadata_anno["dc"][prop])
             print(dc+","+str(prop)+","+str(xmpmetadata_anno["dc"][prop]))
         xmp.set_property(dc,"title",title)
         xmp.set_property(dc,"identifier",identifier)
-        print(xmpfile.can_put_xmp(xmp))
+        #print(xmpfile.can_put_xmp(xmp))
         if xmpfile.can_put_xmp(xmp):
             xmpfile.put_xmp(xmp)
-        print("Write XMP")
+        #print("Write XMP")
         xmpfile.close_file()
     except:
         e = sys.exc_info()[0]
@@ -366,6 +366,8 @@ for filename in dircontent:
                 I1.text((10, 230), str(charclass), font=myFont, fill =(255, 0, 0))
                 #print("ANNOTATED!")
                 resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
+                writeXMP(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg","Annotated Cuneiform Sign "+str(translit)+" in text "+filename+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
+
                 #print("SAVED ANNOTATION")
                 if not translit in homepagejson:
                     homepagejson[translit]=[]
@@ -500,6 +502,7 @@ for filename in dircontent:
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
+                    writeXMP(savedlinename,"Line "+str(linee)+" in text "+shortfilename,hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full"))
                     linecsv+="\n"
         except:
             e = sys.exc_info()[0]
