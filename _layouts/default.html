@@ -685,7 +685,8 @@ async function getAnnotation(path){
 function sync2D3D(){
 	console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text())
 	if($('#images option:selected').text()!=$('#3dimages option:selected').text()){
-		$("#3dimages option[text='"+$('#images option:selected').text()+"'][0]").prop('selected', true);
+		myval=$('#3dimages').find('option[text="'+$('#images option:selected').text()+'"]').val();
+		$("#3dimages option[value='"+myval+"']").prop('selected', true);
 	}
 }
 function getEXIFData(imageid,targetid){
