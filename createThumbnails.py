@@ -15,6 +15,8 @@ from svgpathtools import svg2paths2
 
 graph = Graph()
 
+graph.namespace_manager.bind('prefix', URIRef('https://mainzed.org/maicubeda/'))
+
 def defineBBOX(coordarray,maxcoordarray):
     try:
       if coordarray[0]<maxcoordarray[0]:
