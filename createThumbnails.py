@@ -107,7 +107,7 @@ arffdatathreshold="@data\n"
 
 unknownchars=""
 
-dc = xmp[consts.XMP_NS_DC]
+dc = libxmp.consts.XMP_NS_DC
 
 totalexpectedchars=0
 totalcountedchars=0
