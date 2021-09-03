@@ -99,6 +99,9 @@ function formatTranslation(transliteration){
               console.log(curterm)
 			  console.log(currentside+"_"+linecounter+"_"+charcounter)
 			  console.log(titleobj)
+			  if(!($("#images option:selected").text() in character_postags)){
+				continue
+			  }
 			  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
               if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
@@ -129,6 +132,9 @@ function formatTranslation(transliteration){
             }
           }
         }else{
+		  if(!($("#images option:selected").text() in character_postags)){
+			continue
+		  }
 		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
 		  console.log(character_postags)
 		  console.log($("#images option:selected").text())
