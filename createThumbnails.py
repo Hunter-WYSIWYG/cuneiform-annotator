@@ -2,6 +2,7 @@ from urllib.request import urlopen
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
+from libxmp import *
 import sys
 import os
 import json
@@ -30,6 +31,26 @@ def defineBBOX(coordarray,maxcoordarray):
         print(sys.exc_info()[1])
         print(sys.exc_info()[2])
     return maxcoordarray
+
+xmpmetadata_anno={
+    "dc":{
+        "publisher": "Zenodo",
+        "subject": "Cuneiform, Sign, Image",
+        "format": "image/jpg",
+    }
+
+}
+
+def writeXMP(filepath, title, identifier):
+    xmpfile = XMPFiles( file_path=filepath, open_forupdate=True )
+    xmp=xmpfile.get_xmp()
+    for prop in xmpmetadata_anno:
+        xmp.set_property(dc,prop,xmpmetadata_anno["dc"][prop])
+    xmp.set_property(dc,"title",title)
+    xmp.set_property(dc,"identifier",identifier)
+    if xmpfile.can_put_xmp(xmp):
+        xmpfile.put_xmp(xmp)
+    xmpfile.close_file()
 
 translits={}
 
@@ -85,6 +106,8 @@ arffdatagenres="@data\n"
 arffdatathreshold="@data\n"
 
 unknownchars=""
+
+dc = xmp[consts.XMP_NS_DC]
 
 totalexpectedchars=0
 totalcountedchars=0
@@ -313,6 +336,7 @@ for filename in dircontent:
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         #print("RESIZED!")
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                        writeXMP(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","Cuneiform Sign "+str(translit)+" in text "+filename+" in line "+str(line)+" at character position "+str(charindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
                         #print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
@@ -320,6 +344,7 @@ for filename in dircontent:
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                        writeXMP(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg","Cuneiform Sign "+str(translit)+" in text "+filename+" in line "+str(line)+" at character position "+str(charindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
                 #if not os.path.exists(exportdir+"/char_annotated/"):
                 #  os.makedirs(exportdir+"/char_annotated/")
                 #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
