@@ -69,7 +69,7 @@ translits={}
 
 translitperiods={}
 
-periodss={}
+periodss={"Unknown":True}
 
 charperperiod={}
 
@@ -424,7 +424,11 @@ for filename in dircontent:
                         charperperiod[str(charclass)]=0
                     charperperiod[str(charclass)]+=1
                 translitperiods[str(charclass)+"_"+periods[per]]+=1
-                arffdataperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+periods[per].replace(" ","_")+"\n"
+                arffdataperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                if per in periods and periods[per]!="":
+                    arffdataperiods+=periods[per].replace(" ","_")+"\n"
+                else:
+                    arffdataperiods+="Unknown\n"
                 if per in languages:
                     arffdatalanguages+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                     if languages[per]["language"].replace(" ","_")=="":
@@ -436,7 +440,11 @@ for filename in dircontent:
                         arffdatagenres+="Unknown\n"
                     else:
                         arffdatagenres+=languages[per]["genre"].replace(" ","_")+"\n"
-                arffdatasignperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"+periods[per].replace(" ","_")+"\n"
+                arffdatasignperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"_"
+                if per in periods and periods[per]!="":
+                    arffdatasignperiods+=periods[per].replace(" ","_")+"\n"
+                else:
+                    arffdatasignperiods+="Unknown\n"
             else:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
@@ -505,7 +513,7 @@ for filename in dircontent:
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
-                    writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename,iiifurl)
+                    writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")])+" side",iiifurl)
                     linecsv+="\n"
         except:
             e = sys.exc_info()[0]
