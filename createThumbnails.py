@@ -211,9 +211,8 @@ for filename in dircontent:
     print("Processing file "+str(filecounter)+"/"+str(len(dircontent))+": "+str(filename))
     if filename==".gitkeep" or filename.startswith("."):
         continue
-    #with open("result/"+filename) as json_file:
-    #    jsondata=json.load(json_file)
-    #    print("Parsing JSON-LD to graph")
+    with open("result/"+filename) as json_file:
+        jsondata=json.load(json_file)
     maxcoords={}
     maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
