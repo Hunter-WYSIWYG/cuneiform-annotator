@@ -140,8 +140,8 @@ function formatTranslation(transliteration){
 		  console.log($("#images option:selected").text())
 		  console.log(curterm)
 		  console.log(currentside+"_"+linecounter+"_"+charcounter)
-		  console.log(titleobj)
       if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
+	  	  console.log(titleobj)
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
           if(titleobj["translation"]!="_"){
               result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+titleobj["translation"]+"</span>&nbsp;"
@@ -231,8 +231,8 @@ function formatTransliteration(transliteration){
       console.log($("#images option:selected").text())
       console.log(curterm)
       console.log(currentside+"_"+linecounter+"_"+charcounter)
-      console.log(titleobj)
       if (typeof titleobj !== 'undefined'){
+	      console.log(titleobj)
           result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
           if(titleobj["translation"]!="_"){
               result+="["+titleobj["translation"]+"] ("+titleobj["pos"]+")\">"+word+"</span>&nbsp;"
