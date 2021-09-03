@@ -237,7 +237,7 @@ for filename in dircontent:
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
-        completejsonld.appemd(jsondata[annotation])
+        completejsonld.append(jsondata[annotation])
         #print("Graph now has "+str(len(graph))+" statements")
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
