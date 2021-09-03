@@ -50,7 +50,7 @@ def writeXMP(filepath, title, identifier):
         #print(xmp)
         for prop in xmpmetadata_anno["dc"]:
             xmp.set_property(dc,prop,xmpmetadata_anno["dc"][prop])
-            print(dc+","+str(prop)+","+str(xmpmetadata_anno["dc"][prop]))
+            #print(dc+","+str(prop)+","+str(xmpmetadata_anno["dc"][prop]))
         xmp.set_property(dc,"title",title)
         xmp.set_property(dc,"identifier",identifier)
         #print(xmpfile.can_put_xmp(xmp))
@@ -59,6 +59,7 @@ def writeXMP(filepath, title, identifier):
         #print("Write XMP")
         xmpfile.close_file()
     except:
+        print("XMP error "+str(filepath))
         e = sys.exc_info()[0]
         print(e)
         print(sys.exc_info()[1])
