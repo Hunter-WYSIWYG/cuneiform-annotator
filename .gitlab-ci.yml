@@ -7,7 +7,7 @@ variables:
 before_script:
   - bundle install
   - apt-get update
-  - apt-get install python3 python3-pip imagemagick libmagickwand-dev -y
+  - apt-get install exempi python3 python3-pip imagemagick libmagickwand-dev -y
   - pip3 install python-xmp-toolkit numpy svgwrite svgpathtools requests rdflib rdflib-jsonld pillow
 
 imageclassification:
