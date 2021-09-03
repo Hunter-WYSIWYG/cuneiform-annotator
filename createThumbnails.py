@@ -235,7 +235,7 @@ for filename in dircontent:
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
-        graph.parse(data=json.dumps(annotation),format='json-ld')
+        graph.parse(data=json.dumps(jsondata[annotation]),format='json-ld')
         print("Graph now has "+str(len(graph))+" statements")
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
