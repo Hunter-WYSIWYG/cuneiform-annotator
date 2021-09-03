@@ -683,7 +683,7 @@ async function getAnnotation(path){
   }
   
 function sync2D3D(){
-console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text()))
+	console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text())
 	if($('#images option:selected').text()!=$('#3dimages option:selected').text()){
 		$("#3dimages option[text='"+$('#images option:selected').text()+"'][0]").prop('selected', true);
 	}
