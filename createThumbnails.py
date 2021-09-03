@@ -211,11 +211,9 @@ for filename in dircontent:
     print("Processing file "+str(filecounter)+"/"+str(len(dircontent))+": "+str(filename))
     if filename==".gitkeep" or filename.startswith("."):
         continue
-    with open("result/"+filename) as json_file:
-        jsondata=json.load(json_file)
-        print("Parsing JSON-LD to graph")
-        graph.parse(data=json.dumps(jsondata),format='json-ld')
-        print("Graph now has "+str(len(graph))+" statements")
+    #with open("result/"+filename) as json_file:
+    #    jsondata=json.load(json_file)
+    #    print("Parsing JSON-LD to graph")
     maxcoords={}
     maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
@@ -238,6 +236,8 @@ for filename in dircontent:
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
+        graph.parse(data=json.dumps(annotation),format='json-ld')
+        print("Graph now has "+str(len(graph))+" statements")
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
             f.write(jsondata[annotation]["target"]["selector"]["value"])
