@@ -506,8 +506,6 @@ for filename in dircontent:
                     linecsv+="\n"
         except:
             e = sys.exc_info()[0]
-            print("Linecrop: "+str(maxcoords[linee][0])+"x"+str(maxcoords[linee][2])+"+"+str(cropwidth)+"+"+str(cropheight))
-            print("Linecrop: w"+str(img2.width)+"h"+str(img2.height))
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
