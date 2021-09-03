@@ -11,7 +11,7 @@ var transliterations={
   "HS_1619": "@Tablet&amp;P229749 = HS 1619\n#link: def A = Q000040 = OB Nippur ur5-ra 2",
   "HS_1535": "@Tablet",
   "HS_2205": "@Tablet",
-  "HS_1032": "@Tablet\n@obverse\n1. 1(u) 2(disz) 1/2(disz) gin2 ku3-babbar masz2 nu-tuku\n2. ki lu2-{d}suen-ta\n3. lu2-sa6-ga\n4. szu ba-ti\n5. 1(disz) a2-da-da\n6. 1(disz) masz-gu-la\n@reverse\n1. 1(disz) lugal-engar\n2. lu2-inim-ma-bi-me\n3. iti szu-numun-a u4 1(disz) ba-zal\n4. iti sig4-gi4-gi4-dam\n5. mu lugal-bi i3-pa3\n6. mu {d}i-bi2-{d}suen lugal\n@seal 1\n1. lu2-sa6-ga\n2. dub-sar",
+  "HS_1032": "@Tablet\n@obverse\n1. 7(disz) gin2 ku3-babbar\n2. masz2-bi-sze3\n3. u3-ba-a-a MUNUS-[x]\n4. ab-da-gub\n5. ki szesz-da-da-ta\n6. szu-na szu ba-an-ti\n@reverse\n1. tukum-bi\n2. ga2-la ba-an-dag\n3. a2 u4-da 5(disz) sila3 ag2-e-dam\n4. mu lugal-bi i3-pa3\n5. 1(disz) lu2-sa6-ga\n6. 1(disz) ur-tum-al\n7. 1(disz) lu2-{d}suen\n8. lu2-inim-ma-bi-me\n9. iti kin-{d}inanna\n10. mu {d}i-bi2-{d}suen lugal",
   "HS_2275": "@Tablet\n@obverse  \n1. 4(disz) udu niga \n2. 7(disz) udu \n3. 7(disz) masz2 \n4. 2(disz) sila4 ga \n5. u4 3(u)-kam \n6. ki ab-ba-sa6-ga-ta \n@reverse \n1. {d}szul-gi-a-a-mu i3-dab5 \n$ blank space \n2. iti szu-esz5-sza \n3. mu en {d}inanna ba-hun \n@left \n1. 2(u) \n ",
   "HS_445": "@Tablet",
   "HS_1117": "@Tablet\n@obverse \n1. 1(asz) sze gur lugal \n2. ki lu2-bala-sa6-ga-ta \n3. ur-{d}szul-pa-e3 \n4. dumu lugal-pa-e3 \n@reverse \n1. szu ba-ti \n$ blank space \n2. iti ezem-{d}li9-si4 \n@seal 1 \n1. ur-{d}szul-pa-e3 \n2. dumu lugal-pa-e3 \n3. lu2 lunga lugal#? ",
