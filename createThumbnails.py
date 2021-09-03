@@ -120,6 +120,8 @@ arffdatathreshold="@data\n"
 
 unknownchars=""
 
+completejsonld=[]
+
 dc = "http://purl.org/dc/elements/1.1/"
 
 totalexpectedchars=0
@@ -235,8 +237,8 @@ for filename in dircontent:
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
-        graph.parse(data=json.dumps(jsondata[annotation]),format='json-ld')
-        print("Graph now has "+str(len(graph))+" statements")
+        completejsonld.appemd(jsondata[annotation])
+        #print("Graph now has "+str(len(graph))+" statements")
         if "svg" in jsondata[annotation]["target"]["selector"]["value"]:
             f = open("temp.svg", 'w')
             f.write(jsondata[annotation]["target"]["selector"]["value"])
@@ -526,6 +528,8 @@ if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
     f.close()
+print("JSON-LD TO TTL")
+graph.parse(data=json.dumps(completejsonld),format='json-ld')
 print("FINAL EXPORTS")
 if totalexpectedchars==0:
     totalexpectedchars=1
