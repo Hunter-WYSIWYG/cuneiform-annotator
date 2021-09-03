@@ -373,7 +373,7 @@ for filename in dircontent:
                 I1.text((10, 230), str(charclass), font=myFont, fill =(255, 0, 0))
                 #print("ANNOTATED!")
                 resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
-                writeXMP(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg","Annotated Cuneiform Sign "+str(translit)+" in text "+filename+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
+                writeXMP(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg","Annotated Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
 
                 #print("SAVED ANNOTATION")
                 if not translit in homepagejson:
