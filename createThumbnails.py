@@ -42,14 +42,20 @@ xmpmetadata_anno={
 }
 
 def writeXMP(filepath, title, identifier):
+    print(filepath)
     xmpfile = XMPFiles( file_path=filepath, open_forupdate=True )
+    print(xmpfile)
     xmp=xmpfile.get_xmp()
+    print(xmp)
     for prop in xmpmetadata_anno:
         xmp.set_property(dc,prop,xmpmetadata_anno["dc"][prop])
+        print(dc+","+str(prop)+","+str(xmpmetadata_anno["dc"][prop]))
     xmp.set_property(dc,"title",title)
     xmp.set_property(dc,"identifier",identifier)
+    print(xmpfile.can_put_xmp(xmp))
     if xmpfile.can_put_xmp(xmp):
         xmpfile.put_xmp(xmp)
+    print("Write XMP")
     xmpfile.close_file()
 
 translits={}
