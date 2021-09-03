@@ -48,7 +48,7 @@ def writeXMP(filepath, title, identifier):
         print(xmpfile)
         xmp=xmpfile.get_xmp()
         print(xmp)
-        for prop in xmpmetadata_anno:
+        for prop in xmpmetadata_anno["dc"]:
             xmp.set_property(dc,prop,xmpmetadata_anno["dc"][prop])
             print(dc+","+str(prop)+","+str(xmpmetadata_anno["dc"][prop]))
         xmp.set_property(dc,"title",title)
