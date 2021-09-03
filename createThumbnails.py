@@ -16,7 +16,7 @@ from svgpathtools import svg2paths2
 
 graph = Graph()
 
-graph.namespace_manager.bind('prefix', URIRef('https://mainzed.org/maicubeda/'))
+graph.namespace_manager.bind('prefix', URIRef('https://mainzed.org/maicubeda/cuneiform/annotation/'))
 
 def defineBBOX(coordarray,maxcoordarray):
     try:
@@ -425,11 +425,17 @@ for filename in dircontent:
                 languagess[languages[per]["language"]]=True
                 genress[languages[per]["genre"]]=True
                 if not str(charclass)+"_"+periods[per] in translitperiods:
-                    translitperiods[str(charclass)+"_"+periods[per]]=0
+                    if periods[per]!="":
+                        translitperiods[str(charclass)+"_"+periods[per]]=0
+                    else:
+                        translitperiods[str(charclass)+"_Unknown"]=0
                     if not str(charclass) in charperperiod:
                         charperperiod[str(charclass)]=0
                     charperperiod[str(charclass)]+=1
-                translitperiods[str(charclass)+"_"+periods[per]]+=1
+                if periods[per]!="":
+                    translitperiods[str(charclass)+"_"+periods[per]]+=1
+                else:
+                    translitperiods[str(charclass)+"_Unknown"]+=1
                 arffdataperiods+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                 if per in periods and periods[per]!="":
                     arffdataperiods+=periods[per].replace(" ","_")+"\n"
