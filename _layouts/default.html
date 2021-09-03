@@ -131,10 +131,9 @@ function formatTranslation(transliteration){
             }
           }
         }else{
-		  if(!($("#images option:selected").text() in character_postags)){
-			continue
+		  if(($("#images option:selected").text() in character_postags)){
+			titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
 		  }
-		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
 		  console.log(character_postags)
 		  console.log($("#images option:selected").text())
 		  console.log(curterm)
@@ -221,10 +220,9 @@ function formatTransliteration(transliteration){
             }
           }
         }else{
-		  if(!($("#images option:selected").text() in character_postags)){
-			continue
-		  }
-		  titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+		  if(($("#images option:selected").text() in character_postags)){
+			    titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+		  }	  
       console.log(character_postags)
       console.log($("#images option:selected").text())
       console.log(curterm)
