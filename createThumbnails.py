@@ -437,7 +437,7 @@ for filename in dircontent:
                         arffdatalanguages+="Unknown\n"
                     else:
                         arffdatalanguages+=languages[per]["language"].replace(" ","_")+"\n"
-                        arffdatagenres+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
+                    arffdatagenres+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"
                     if languages[per]["genre"].replace(" ","_")=="":
                         arffdatagenres+="Unknown\n"
                     else:
