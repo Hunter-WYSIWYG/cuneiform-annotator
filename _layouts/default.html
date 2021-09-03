@@ -683,8 +683,9 @@ async function getAnnotation(path){
   }
   
 function sync2D3D(){
-	if($('#images option:selected').text()!=$('#images3D option:selected').text()){
-		$("#images3D option[text='"+$('#images option:selected').text()+"'][0]").prop('selected', true);
+console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text()))
+	if($('#images option:selected').text()!=$('#3dimages option:selected').text()){
+		$("#3dimages option[text='"+$('#images option:selected').text()+"'][0]").prop('selected', true);
 	}
 }
 function getEXIFData(imageid,targetid){
