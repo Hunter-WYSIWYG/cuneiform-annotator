@@ -671,6 +671,12 @@ async function getAnnotation(path){
       curanno[a["id"]]=a
     });
   }
+  
+function sync2D3D(){
+	if($('#images option:selected').text()!=$('#images3D option:selected').text()){
+		$("#images3D option[text='"+$('#images option:selected').text()+"'][0]").prop('selected', true);
+	}
+}
 function getEXIFData(imageid,targetid){
     var img2 = document.getElementById(imageid);
     console.log("EXIF click")
@@ -704,6 +710,7 @@ function getEXIFData(imageid,targetid){
 <select id="3dimages" onchange="setup3dhop()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
+<button id="synch2D3DButton" onClick="synch2D3D()">Synchronize 3D and 2D View</button>
 <dialog id="transliterationdialog" style="z-index: 1000 !important ;">
     <h3>Transliteration View <span id="textid"></span></h3>
     <code id="transliterationtextarea">
