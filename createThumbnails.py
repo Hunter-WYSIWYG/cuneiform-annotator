@@ -8,7 +8,8 @@ import os
 import json
 import math
 import requests
-from rdflib import Graph
+from rdflib import Graph, URIRef, Literal, BNode, Namespace
+from rdflib.namespace import FOAF, NamespaceManager
 import urllib.parse
 from svgpathtools import svg2paths, wsvg
 from svgpathtools import svg2paths2
