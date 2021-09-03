@@ -16,6 +16,15 @@
         "type": "TextualBody",
         "value": "Wordstart",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1075,
+          "y": 2211
+        }
       }
     ],
     "target": {
@@ -45,6 +54,20 @@
         "type": "TextualBody",
         "value": "InWord",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1075,
+          "y": 2211
+        }
       }
     ],
     "target": {
@@ -74,6 +97,20 @@
         "type": "TextualBody",
         "value": "Wordend",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 1075,
+          "y": 2211
+        }
       }
     ],
     "target": {
