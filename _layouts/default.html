@@ -686,6 +686,7 @@ function sync2D3D(){
 	console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text())
 	if($('#images option:selected').text()!=$('#3dimages option:selected').text()){
 		myval=$('#3dimages').find('option[text="'+$('#images option:selected').text()+'"]').val();
+		console.log(myval)
 		$("#3dimages option[value='"+myval+"']").prop('selected', true);
 	}
 }
