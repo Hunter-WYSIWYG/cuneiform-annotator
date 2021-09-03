@@ -349,7 +349,7 @@ for filename in dircontent:
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         #print("RESIZED!")
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                        writeXMP(exportdir+"/char/"+savedfilename,"Cuneiform Sign "+str(translit)+" in text "+filename+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
+                        writeXMP(exportdir+"/char/"+savedfilename,"Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
                         #print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
@@ -357,7 +357,7 @@ for filename in dircontent:
                         resized = cropped.resize((imagewidth, imageheight))
                         savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
-                        writeXMP(exportdir+"/char/"+savedfilename,"Cuneiform Sign "+str(translit)+" in text "+filename+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
+                        writeXMP(exportdir+"/char/"+savedfilename,"Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
                 #if not os.path.exists(exportdir+"/char_annotated/"):
                 #  os.makedirs(exportdir+"/char_annotated/")
                 #imaag = Image.open(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
