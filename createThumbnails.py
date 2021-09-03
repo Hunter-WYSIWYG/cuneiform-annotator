@@ -505,7 +505,7 @@ for filename in dircontent:
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
-                    writeXMP(savedlinename,"Line "+str(linee)+" in text "+shortfilename,iiifurl)
+                    writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename,iiifurl)
                     linecsv+="\n"
         except:
             e = sys.exc_info()[0]
