@@ -99,6 +99,8 @@ outputcsv=""
 
 linecsv=""
 
+wordcsv=""
+
 errorlog=""
 
 zooniverse_char_verify="image;charclass;transliteration\n"
@@ -142,6 +144,7 @@ exportdir="public/thumbnails/"
 singlefolder=False
 purpose="Transliteration"
 charindexpurpose="Charindex"
+wordindexpurpose="Wordindex"
 curcharindex=-1
 curlineindex=-1
 linepurpose="Line"
@@ -219,6 +222,7 @@ for filename in dircontent:
     with open("result/"+filename) as json_file:
         jsondata=json.load(json_file)
     maxcoords={}
+    maxwordcoords={}
     maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
         r = requests.get(imgurls[filename])
@@ -258,6 +262,7 @@ for filename in dircontent:
         #print(coords)
         translit=""
         curcharindex=-1
+        curwordindex=-1
         line=-1
         tagging=""
         for annoobj in jsondata[annotation]["body"]:
@@ -265,6 +270,8 @@ for filename in dircontent:
                 translit=annoobj["value"]
             elif annoobj["purpose"]==charindexpurpose:
                 curcharindex=annoobj["value"]
+            elif annoobj["purpose"]==wordindexpurpose:
+                curwordindex=annoobj["value"]
             elif annoobj["purpose"]==linepurpose:
                 line=annoobj["value"]   
             elif annoobj["purpose"]==taggingpurpose:
@@ -277,6 +284,10 @@ for filename in dircontent:
             if not "line"+str(line) in maxcoords:
                 maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
+        if curwordindex!=-1:
+            if not "word"+str(line)+"_"+str(wordindex) in maxwordcoords:
+                maxwordcoords["word"+str(line)+"_"+str(wordindex)]=[99999.0,-99999.0,99999.0,-99999.0]
+            maxwordcoords["word"+str(line)+"_"+str(wordindex)]=defineBBOX(coords,maxwordcoords["word"+str(line)+"_"+str(wordindex)])
         charclass="other" #str(translit)
         charunicode=""
         if(str(translit) in cuneifymap):
@@ -508,6 +519,7 @@ for filename in dircontent:
         try:
             #print(maxcoords)
             linecsvhead=filename+";"
+            wordcsvhead=filename+";"
             shortfilename=filename[0:filename.rfind("_")]
             #fi=open("temp.jpg", "rb")
             with Image.open("temp.jpg") as img2:
@@ -527,6 +539,19 @@ for filename in dircontent:
                     cropped.save(savedlinename)
                     writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")])+" side",iiifurl)
                     linecsv+="\n"
+                for worde in maxwordcoords:
+                    #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
+                    wordcsv+=wordcsvhead+str(worde.replace("word",""))+";"+str(maxwordcoords[worde])+";"
+                    iiifurl="word_"+str(worde).replace("word","")+"_"+filename.replace(".png","").replace(".json","")
+                    if shortfilename in hs2IIIF:
+                        iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxwordcoords[worde][0])+","+str(maxwordcoords[worde][2])+","+str(abs(maxwordcoords[worde][1]-maxwordcoords[worde][0]))+","+str(abs(maxwordcoords[worde][3]-maxwordcoords[worde][2]))+"/full")
+                        wordcsv+=iiifurl+";"
+                    cropped = img2.crop((int(maxwordcoords[worde][0]),int(maxwordcoords[worde][2]),int(maxwordcoords[worde][1]),int(maxwordcoords[worde][3])))
+                    #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
+                    savedwordname=exportdir+"/word/"+"word_"+str(worde).replace("word","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                    cropped.save(savedwordname)
+                    writeXMP(savedwordname,"Word "+str(worde).replace("word","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")])+" side",iiifurl)
+                    wordcsv+="\n"
         except:
             e = sys.exc_info()[0]
             print(e)
@@ -600,6 +625,9 @@ if singlefolder:
     f = open(exportdir+"/linemetadata.csv", 'w')
     f.write(linecsv)
     f.close()
+    f = open(exportdir+"/wordmetadata.csv", 'w')
+    f.write(wordcsv)
+    f.close()
     f = open(exportdir+"/unknownchars.txt", 'w')
     f.write(unknownchars)
     f.close()
@@ -656,6 +684,9 @@ else:
     f.close()
     f = open(exportdir+"/public/linemetadata.csv", 'w')
     f.write(linecsv)
+    f.close()
+    f = open(exportdir+"/public/wordmetadata.csv", 'w')
+    f.write(wordcsv)
     f.close()
     f = open(exportdir+"/public/unknownchars.txt", 'w')
     f.write(unknownchars)
