@@ -66,23 +66,25 @@ def processWebAnnotation(filepath,charmapping):
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==charindexpurpose:
                 curcharindex=annoobj["value"]
-                print("Curcharindex: "+str(curcharindex)+" "+str("c"+str(curcharindex) in charmapping))
+                #print("Curcharindex: "+str(curcharindex)+" "+str("c"+str(curcharindex) in charmapping))
             if annoobj["purpose"]==wordindexpurpose:
                 curwordindex=annoobj["value"]
-                print("Curwordindex: "+str(curwordindex))
+                #print("Curwordindex: "+str(curwordindex))
                 wordindexobject=annoobj
             if annoobj["purpose"]==relcharindexpurpose:
                 relcharindex=annoobj["value"]
-                print("Relcharindex: "+str(relcharindex))
+                #print("Relcharindex: "+str(relcharindex))
                 relcharindexobject=annoobj
         if curcharindex!=-1 and "c"+str(curcharindex) in charmapping:
-            print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
+            #print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
             if wordindexobject==None:
                 jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"Wordindex","value":charmapping["c"+str(curcharindex)]["wordindex"]})
                 jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"RelCharindex","value":charmapping["c"+str(curcharindex)]["relcharindex"]})
-                print(json.dumps(jsondata[annotation]["body"],indent=2))
+                #print(json.dumps(jsondata[annotation]["body"],indent=2))
             elif wordindexobject!=None:
                 wordindexobject["value"]=charmapping["c"+str(curcharindex)]["wordindex"]
+                if relcharindexobject!=None:
+                    relcharindexobject["value"]=charmapping["c"+str(curcharindex)]["relcharindex"]
             changed=True
     print("Has changed? "+str(changed))
     #print(jsondata[annotation]["body"])
@@ -128,14 +130,19 @@ def enrichWordPositions():
                         continue
                     result[tabletid][curid][lineindex][wordindex]={"word":word,"chars":[]}
                     relcharcounter=0
-                    for char in word.split("-"):
-                        if char!="" and char!="column" and char!="..." and char!="!" and char!="?" and char!="...]" and char!="/" and char!="=" and char!="[..." and char!="[...]" and char!="x":
-                            #print("Char: "+str(char))
-                            charindex+=1
-                            #print(result[tabletid][curid][lineindex])
-                            result[tabletid][curid][lineindex][wordindex]["chars"].append(charindex)
-                            charmapping["c"+str(charindex)]={"wordindex":wordindex, "relcharindex":relcharcounter}
-                            relcharcounter+=1
+                    if "-" in word:
+                        for char in word.split("-"):
+                            if char!="" and char!="column" and char!="..." and char!="!" and char!="?" and char!="...]" and char!="/" and char!="=" and char!="[..." and char!="[...]" and char!="x":
+                                #print("Char: "+str(char))
+                                charindex+=1
+                                #print(result[tabletid][curid][lineindex])
+                                result[tabletid][curid][lineindex][wordindex]["chars"].append(charindex)
+                                charmapping["c"+str(charindex)]={"wordindex":str(wordindex)+"", "relcharindex":str(relcharcounter)+""}
+                                relcharcounter+=1
+                    else:
+                        charindex+=1
+                        result[tabletid][curid][lineindex][wordindex]["chars"].append(charindex)
+                        charmapping["c"+str(charindex)]={"wordindex":str(wordindex)+"", "relcharindex":str(relcharcounter)+""}
                     wordindex+=1
             except:
                 e = sys.exc_info()[0]
