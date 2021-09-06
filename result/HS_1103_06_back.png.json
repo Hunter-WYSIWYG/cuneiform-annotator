@@ -15,6 +15,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
       }
     ],
     "target": {
@@ -39,6 +53,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
       }
     ],
     "target": {
@@ -67,6 +90,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
       }
     ],
     "target": {
@@ -95,6 +127,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
       }
     ],
     "target": {
@@ -123,6 +164,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
       }
     ],
     "target": {
@@ -134,5 +184,47 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#9741e42a-5ccd-4af3-aaf5-d3c8ea17644a"
+  },
+  "#2886e814-9bae-47ec-9801-57d2b8ae2a7e": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "1(disz)",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 981,
+          "y": 1087
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112851:576974/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"45.19032669067383,171.50064086914062 135.59873962402344,164.7537384033203 132.8999786376953,283.4991149902344 42.49156951904297,275.40283203125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#2886e814-9bae-47ec-9801-57d2b8ae2a7e"
   }
 }
