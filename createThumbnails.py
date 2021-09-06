@@ -285,9 +285,9 @@ for filename in dircontent:
                 maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
         if curwordindex!=-1:
-            if not "word"+str(line)+"_"+str(wordindex) in maxwordcoords:
-                maxwordcoords["word"+str(line)+"_"+str(wordindex)]=[99999.0,-99999.0,99999.0,-99999.0]
-            maxwordcoords["word"+str(line)+"_"+str(wordindex)]=defineBBOX(coords,maxwordcoords["word"+str(line)+"_"+str(wordindex)])
+            if not "word"+str(line)+"_"+str(curwordindex) in maxwordcoords:
+                maxwordcoords["word"+str(line)+"_"+str(curwordindex)]=[99999.0,-99999.0,99999.0,-99999.0]
+            maxwordcoords["word"+str(line)+"_"+str(curwordindex)]=defineBBOX(coords,maxwordcoords["word"+str(line)+"_"+str(curwordindex)])
         charclass="other" #str(translit)
         charunicode=""
         if(str(translit) in cuneifymap):
