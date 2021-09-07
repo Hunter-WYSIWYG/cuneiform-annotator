@@ -39,7 +39,14 @@ xmpmetadata_anno={
     "dc":{
         "publisher": "Zenodo",
         "subject": "Cuneiform, Sign, Image",
-        "format": "image/jpg",
+        "format": "image/jpg",        
+        "creator": "Timo Homburg",
+    },
+    "xmp":{
+        "CreatorTool": "MaiCuBeDa Generator Script"       
+    },
+    "xmpRights":{
+        "UsageTerms": "CC BY SA 4.0"       
     }
 
 }
@@ -132,6 +139,7 @@ dc = "http://purl.org/dc/elements/1.1/"
 totalexpectedchars=0
 totalcountedchars=0
 seenchars={}
+chardistributionstats={}
 
 datanamespace="http://www.mainzed.org/maicubeda/"
 
@@ -223,6 +231,7 @@ for filename in dircontent:
         jsondata=json.load(json_file)
     maxcoords={}
     maxwordcoords={}
+    wordindextoword={}
     maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
         r = requests.get(imgurls[filename])
@@ -537,7 +546,7 @@ for filename in dircontent:
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
-                    writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")])+" side",iiifurl)
+                    writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")]).replace(".png","")+" side",iiifurl)
                     linecsv+="\n"
                 for worde in maxwordcoords:
                     #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))

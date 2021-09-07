@@ -44,7 +44,7 @@ def calculateTranslitCount():
     jsonFile.close()
     
     
-def processWebAnnotation(filepath,charmapping):
+def processWebAnnotation(filepath,charmapping,curline):
     if not os.path.exists(filepath) or len(charmapping)==0:
         return
     print(charmapping)
@@ -71,11 +71,13 @@ def processWebAnnotation(filepath,charmapping):
                 curwordindex=annoobj["value"]
                 #print("Curwordindex: "+str(curwordindex))
                 wordindexobject=annoobj
+            if annoobj["purpose"]==linepurpose:
+                line=annoobj["value"]   
             if annoobj["purpose"]==relcharindexpurpose:
                 relcharindex=annoobj["value"]
                 #print("Relcharindex: "+str(relcharindex))
                 relcharindexobject=annoobj
-        if curcharindex!=-1 and "c"+str(curcharindex) in charmapping:
+        if curcharindex!=-1 and line!=-1 and line==curline and "c"+str(curcharindex) in charmapping:
             #print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
             if wordindexobject==None:
                 jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"Wordindex","value":charmapping["c"+str(curcharindex)]["wordindex"]})
@@ -111,7 +113,7 @@ def enrichWordPositions():
                 curside=line[0:line.find(" ")]
                 if curside in mappings: 
                     if curid!=None:
-                        processWebAnnotation("result/"+str(tabletid)+"_"+curid+".png.json",charmapping)
+                        processWebAnnotation("result/"+str(tabletid)+"_"+curid+".png.json",charmapping,line)
                     curid=str(mappings[curside])
                     #print("Curside: "+str(curside))
                     result[tabletid][curid]={}
