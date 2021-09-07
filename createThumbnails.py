@@ -60,7 +60,10 @@ def writeXMP(filepath, title, identifier):
         #print(xmp)
         for prop in xmpmetadata_anno["dc"]:
             xmp.set_property(dc,prop,xmpmetadata_anno["dc"][prop])
-            #print(dc+","+str(prop)+","+str(xmpmetadata_anno["dc"][prop]))
+        for prop in xmpmetadata_anno["xmp"]:
+            xmp.set_property("http://ns.adobe.com/xap/1.0/",prop,xmpmetadata_anno["xmp"][prop])
+        for prop in xmpmetadata_anno["xmpRights"]:
+            xmp.set_property("http://ns.adobe.com/xap/1.0/rights/",prop,xmpmetadata_anno["xmpRights"][prop])
         xmp.set_property(dc,"title",title)
         xmp.set_property(dc,"identifier",identifier)
         #print(xmpfile.can_put_xmp(xmp))
