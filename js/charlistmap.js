@@ -76,7 +76,7 @@ var charlistmap={
   },
   "U+12085": {
     "meszl": "836",
-    "signName": "GÍN (TÙN)"
+    "signName": "GIN2 (TUN3)"
   },
   "U+12086": {
     "meszl": "556",
@@ -133,17 +133,17 @@ var charlistmap={
     "meszl": "164",
     "signName": "EN"
   },
-  "U+12090": {"signName": "É×MI"},
-  "U+12091": {"signName": "É×SAL"},
-  "U+12092": {"signName": "É×SZE"},
-  "U+12093": {"signName": "É×U"},
+  "U+12090": {"signName": "E2×MI"},
+  "U+12091": {"signName": "E2×SAL"},
+  "U+12092": {"signName": "E2×SZE"},
+  "U+12093": {"signName": "E2×U"},
   "U+1208C": {"signName": "E/ENUN/NUN"},
   "U+1208D": {
     "meszl": "495",
     "signName": "E2"
   },
-  "U+1208E": {"signName": "É×A+?A+DA"},
-  "U+1208F": {"signName": "É×GAR"},
+  "U+1208E": {"signName": "E2×A+?A+DA"},
+  "U+1208F": {"signName": "E2×GAR"},
   "U+1208A": {
     "meszl": "498",
     "signName": "E"
@@ -156,7 +156,7 @@ var charlistmap={
   },
   "U+1209F": {
     "meszl": "612",
-    "signName": "ERIM (ZÁLAG)"
+    "signName": "ERIM (ZALAG2)"
   },
   "U+1209A": {"signName": "EN×ME"},
   "U+1209B": {"signName": "ENKREUZTEN"},
@@ -172,7 +172,7 @@ var charlistmap={
   },
   "U+12279": {
     "meszl": "622",
-    "signName": "NUNUZ.ÁBKISIM5×BI .U (MÙD.U)"
+    "signName": "NUNUZ.ÁBKISIM5×BI .U (MUD3.U)"
   },
   "U+12038": {
     "meszl": "1",
@@ -204,11 +204,11 @@ var charlistmap={
   },
   "U+12276": {
     "meszl": "617",
-    "signName": "LÁ?TAN (NUNUZ.ÁBKISIM5×SÌLA)"
+    "signName": "LA2?TAN (NUNUZ.ÁBKISIM5×SÌLA)"
   },
   "U+12035": {
     "meszl": "19",
-    "signName": "ÁRAD (ARAD×KUR)"
+    "signName": "ARAD2 (ARAD×KUR)"
   },
   "U+12277": {"signName": "NUNUZAB´×U"},
   "U+12270": {
@@ -291,7 +291,7 @@ var charlistmap={
   "U+12289": {"signName": "PIKREUZTPI"},
   "U+12048": {
     "meszl": "554",
-    "signName": "BÁRA"
+    "signName": "BARA2"
   },
   "U+12049": {
     "meszl": "358",
@@ -627,11 +627,11 @@ var charlistmap={
   },
   "U+122C0": {
     "meszl": "535",
-    "signName": "SZESZ (ÙRI)"
+    "signName": "SZESZ (URI3)"
   },
   "U+122C1": {
     "meszl": "821",
-    "signName": "SZÉSZ (SÍG.LAM)"
+    "signName": "SZESZ2 (SIG2.LAM)"
   },
   "U+122C2": {
     "meszl": "100",
@@ -771,7 +771,7 @@ var charlistmap={
   },
   "U+120A0": {
     "meszl": "810",
-    "signName": "SZÈ (ÉSZ, GI7, ZÌ)"
+    "signName": "SZE3 (ESZ2, GI7, ZI3)"
   },
   "U+122E2": {
     "meszl": "16",
@@ -1040,41 +1040,41 @@ var charlistmap={
     "meszl": "403",
     "signName": "GA2×DUB"
   },
-  "U+120C7": {"signName": "GÁ×EL"},
+  "U+120C7": {"signName": "GA2×EL"},
   "U+120C8": {
     "meszl": "433",
-    "signName": "GÁ× EL.LA"
+    "signName": "GA2× EL.LA"
   },
   "U+120C9": {
     "meszl": "399",
-    "signName": "GÁ×EN"
+    "signName": "GA2×EN"
   },
   "U+120C2": {
     "meszl": "415",
-    "signName": "GÁ× BUR.RA"
+    "signName": "GA2× BUR.RA"
   },
   "U+120C3": {
     "meszl": "416",
-    "signName": "GÁ×DA"
+    "signName": "GA2×DA"
   },
   "U+120C4": {
     "meszl": "425",
-    "signName": "GÁ×DI"
+    "signName": "GA2×DI"
   },
   "U+120C5": {
     "meszl": "401",
-    "signName": "GÁ× MUN(DIM×SZE, later DIM×KUR)"
+    "signName": "GA2× MUN(DIM×SZE, later DIM×KUR)"
   },
   "U+120C0": {"signName": "GÁ×BAR+RA"},
   "U+120C1": {"signName": "GÁ×BUR"},
   "U+120DC": {
     "meszl": "426",
-    "signName": "GÁ× KUG.AN"
+    "signName": "GA2× KUG.AN"
   },
-  "U+120DD": {"signName": "GÁ×LA"},
+  "U+120DD": {"signName": "GA2×LA"},
   "U+120DE": {
     "meszl": "427",
-    "signName": "MEN (GÁ× ME.EN)"
+    "signName": "MEN (GA2× ME.EN)"
   },
   "U+120DF": {
     "meszl": "424",
@@ -1083,43 +1083,43 @@ var charlistmap={
   "U+120DA": {"signName": "GÁ×KID"},
   "U+120DB": {
     "meszl": "409",
-    "signName": "GÁ× KID.LAL"
+    "signName": "GA2× KID.LAL"
   },
   "U+120D7": {
     "meszl": "406",
-    "signName": "GÁ× ISZ.?U.ASZ"
+    "signName": "GA2× ISZ.?U.ASZ"
   },
   "U+120D8": {
     "meszl": "407",
-    "signName": "GÁ×GAG"
+    "signName": "GA2×GAG"
   },
   "U+120D9": {
     "meszl": "405",
-    "signName": "GÁ×KASKAL"
+    "signName": "GA2×KASKAL"
   },
   "U+120D3": {
     "meszl": "390",
-    "signName": "GÁ× ?AL.LA"
+    "signName": "GA2× ?AL.LA"
   },
   "U+120D4": {
     "meszl": "421",
-    "signName": "GÁx ?I.LI"
+    "signName": "GA2x ?I.LI"
   },
   "U+120D5": {
     "meszl": "398",
-    "signName": "GÁ×KAB"
+    "signName": "GA2×KAB"
   },
   "U+120D6": {
     "meszl": "417",
-    "signName": "GÁ×SIG7"
+    "signName": "GA2×SIG7"
   },
   "U+120D0": {
     "meszl": "391",
-    "signName": "GÁ× GÍR.SU"
+    "signName": "GA2× GÍR.SU"
   },
   "U+120D1": {
     "meszl": "430",
-    "signName": "GÁ× ?A.LU.SZÈ"
+    "signName": "GA2× ?A.LU.SZÈ"
   },
   "U+120D2": {"signName": "GÁ×?AL"},
   "U+120ED": {"signName": "GÁ/GA"},
@@ -1127,48 +1127,48 @@ var charlistmap={
   "U+120EF": {"signName": "GABAKREUZTGABA"},
   "U+120EA": {
     "meszl": "422",
-    "signName": "GÁ×U"
+    "signName": "GA2×U"
   },
   "U+120EB": {
     "meszl": "420",
-    "signName": "GÁ×UD"
+    "signName": "GA2×UD"
   },
   "U+120EC": {"signName": "GÁ×UD+DU"},
   "U+120E8": {
     "meszl": "404",
-    "signName": "GÁ×SUM"
+    "signName": "GA2×SUM"
   },
   "U+120E9": {
     "meszl": "394",
-    "signName": "GÁ×KÍD"
+    "signName": "GA2×KID2"
   },
   "U+120E4": {
     "meszl": "413",
-    "signName": "GÁ×SAR"
+    "signName": "GA2×SAR"
   },
   "U+120E5": {
     "meszl": "418",
-    "signName": "ÉSAG (GÁÉ×SZE)"
+    "signName": "ESAG2 (GÁÉ×SZE)"
   },
   "U+120E6": {
     "meszl": "419",
-    "signName": "GÁ× SZE.TUR"
+    "signName": "GA2× SZE.TUR"
   },
   "U+120E7": {
     "meszl": "410",
-    "signName": "GÁ×SZID"
+    "signName": "GA2×SZID"
   },
   "U+120E0": {
     "meszl": "397",
-    "signName": "GANUN (GÁ×NUN)"
+    "signName": "GANUN (GA2×NUN)"
   },
   "U+120E1": {
     "meszl": "411",
-    "signName": "UR3 (GÁ×NIR)"
+    "signName": "UR3 (GA2×NIR)"
   },
   "U+120E2": {
     "meszl": "408",
-    "signName": "SILA4 (GÁ×PA)"
+    "signName": "SILA4 (GA2×PA)"
   },
   "U+120E3": {
     "meszl": "432",
@@ -1184,11 +1184,11 @@ var charlistmap={
   },
   "U+120FB": {
     "meszl": "859",
-    "signName": "NÍG (GAR, NINDA)"
+    "signName": "NIG2 (GAR, NINDA)"
   },
   "U+120FC": {
     "meszl": "543",
-    "signName": "GÀR (QAR)"
+    "signName": "GAR3 (QAR)"
   },
   "U+120FD": {
     "meszl": "562",
@@ -1258,7 +1258,7 @@ var charlistmap={
   },
   "U+12352": {
     "meszl": "384",
-    "signName": "KÀSZ (USZ×A)"
+    "signName": "KASZ3 (USZ×A)"
   },
   "U+12111": {
     "meszl": "469",
@@ -1274,7 +1274,7 @@ var charlistmap={
   "U+1210F": {"signName": "GIR`×PA"},
   "U+1210B": {
     "meszl": "703",
-    "signName": "ALIM (GÌR× A.IGI)"
+    "signName": "ALIM (GIR3× A.IGI)"
   },
   "U+1234D": {
     "meszl": "77",
