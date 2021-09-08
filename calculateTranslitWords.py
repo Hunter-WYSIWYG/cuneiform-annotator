@@ -19,7 +19,7 @@ def calculateTranslitCount():
             #print(line)
             if line.startswith("@Tablet") or line.strip().startswith("$") or line.strip().startswith("#") or line.strip().startswith("&"):
                 continue
-            if line.startswith("@seal") or line.startswith("seal"):
+            if line.startswith("@seal") or line.startswith("seal") or line.startswith("@envelope"):
                 seal=True
             if line.startswith("@"):
                 seal=False
