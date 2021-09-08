@@ -11,14 +11,12 @@ from plyfile import PlyData
 from sklearn.decomposition import PCA
 from sklearn.datasets import make_classification
 
-input_folder = r"P:\3d-datasets_intern\Keilschrifttafeln"
+input_folder = r"H:\i3mainz_Hochschule Mainz\Keilschriften\pca\Neuer Ordner"
 # input_folder = r"E:\temp\Neuer Ordner (7)"
 # meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
 
 reduce_factors=[1]
-
 reduce_factor = 1
-
 scaling = False
 
 resultfile=input_folder + "/" + "pca_result.txt"
@@ -170,14 +168,24 @@ for root, dirs, files in os.walk (input_folder):
                 p1_pca_A = pca[2][1]
                 p2_pca_A = pca[2][2]
                 p3_pca_A = pca[2][3]
-                # pca-Koordinaten
+
+                # pca-Koordinaten ()
                 p0_pca_B= np.array([0,0,0])
                 p1_pca_B= np.subtract(p1_pca_A, p0_pca_A)
                 p2_pca_B= np.subtract(p2_pca_A, p0_pca_A)
                 p3_pca_B= np.subtract(p3_pca_A, p0_pca_A)
+                # richtiger
+                p0_pca_C= np.array([0,0,0])
+                p1_pca_C= np.array([np.linalg.norm(p0_pca_A - p1_pca_A),0,0])
+                p2_pca_C= np.array([0,np.linalg.norm(p0_pca_A - p2_pca_A),0])
+                p3_pca_C= np.array([0,0,np.linalg.norm(p0_pca_A - p3_pca_A)])
+
+
+
                 # Matrizen
                 A = np.matrix([p0_pca_A , p1_pca_A, p2_pca_A, p3_pca_A])
                 B = np.matrix([p0_pca_B , p1_pca_B, p2_pca_B, p3_pca_B])
+                C = np.matrix([p0_pca_C , p1_pca_C, p2_pca_C, p3_pca_C])
 
                 # 10% der Länge
                 dist_v1 = np.linalg.norm(p0_pca_A - p1_pca_A)
@@ -216,17 +224,22 @@ for root, dirs, files in os.walk (input_folder):
 
 
 
-                # f.write("Matrix A" +"\n")
-                # f.write(str(A)+"\n")
-                # f.write("Matrix B" +"\n")
-                # f.write(str(B)+"\n")
+                f.write("Matrix A" +"\n")
+                f.write(str(A)+"\n")
+                f.write("Matrix B" +"\n")
+                f.write(str(B)+"\n")
+                f.write("Matrix C" +"\n")
+                f.write(str(C)+"\n")
 
-                # print ("Matix A")
-                # print (A)
-                # print("")
-                # print ("Matix B")
-                # print (B)
-                # print("")
+                print ("Matix A")
+                print (A)
+                print("")
+                print ("Matix B")
+                print (B)
+                print("")
+                print ("Matix C")
+                print (C)
+                print("")
 
                 s, ret_R, ret_t=rigid_transform_3D(A, B,False)
 
@@ -273,18 +286,18 @@ for root, dirs, files in os.walk (input_folder):
 
 
 
-                # f.write("Rotation" +"\n")
-                # f.write(str(ret_R)+"\n")
-                # f.write("Translation" +"\n")
-                # f.write(str(ret_t)+"\n")
-                # f.write("Scale" +"\n")
-                # f.write(str(s)+"\n")
-                # f.write("Homogeneous Transform pca2obj" +"\n")
-                # f.write(str(pca2obj)+"\n")
-                # f.write("Homogeneous Transform obj2pca" +"\n")
-                # f.write(str(obj2pca)+"\n")
-                # f.write("RMSE" +"\n")
-                # f.write(str(rmse)+"\n")
+                f.write("Rotation" +"\n")
+                f.write(str(ret_R)+"\n")
+                f.write("Translation" +"\n")
+                f.write(str(ret_t)+"\n")
+                f.write("Scale" +"\n")
+                f.write(str(s)+"\n")
+                f.write("Homogeneous Transform pca2obj" +"\n")
+                f.write(str(pca2obj)+"\n")
+                f.write("Homogeneous Transform obj2pca" +"\n")
+                f.write(str(obj2pca)+"\n")
+                f.write("RMSE" +"\n")
+                f.write(str(rmse)+"\n")
 
                 print("Rotation")
                 print(ret_R)
@@ -313,9 +326,25 @@ for root, dirs, files in os.walk (input_folder):
 
                 print ("RMSE:" +  str(rmse))
                 print ("If RMSE is near zero, the function is correct!")
+                ### save matix mit numpy
+                print ("save as")
+                print (root)
+                print (meshname)
+                print (root + "//" + meshname.replace(".ply",".npy"))
+
+                # f = open(resultfile, 'a') 
+
+                with open ((root + "//" + meshname.replace(".ply","_obj2pca.tfm")), "wb") as file_npy:
+                    np.savetxt(file_npy, obj2pca)
+                
+                trans_import = np.loadtxt(root + "//" + meshname.replace(".ply","_obj2pca.tfm"))
+                print ("------")
+                print (trans_import)
+                
+
+
             except:
                 l.write(meshname + "\n")
-
 f.close()
 c.close()
 l.close()
