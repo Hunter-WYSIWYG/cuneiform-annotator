@@ -13,19 +13,23 @@ def calculateTranslitCount():
     obj = json.loads(data.replace("var transliterations=",""))
     result={}
     totalchars=0
+    seal=False
     for tabletid in obj:
         for line in obj[tabletid].split("\n"):
             #print(line)
             if line.startswith("@Tablet") or line.strip().startswith("$") or line.strip().startswith("#") or line.strip().startswith("&"):
                 continue
+            if line.startswith("@seal") or line.startswith("seal"):
+                seal=True
             if line.startswith("@"):
+                seal=False
                 curside=line[0:line.find(" ")]
                 if curside in mappings: 
                     curid=str(tabletid)+"_"+str(mappings[curside]+".png.json")
                     print("Curside: "+str(curside))
                     result[curid]=0
                 continue
-            if not re.search('^\s*[0-9]+\'\.',line) and not re.search('^\s*[0-9]+\.',line):
+            if seal or not re.search('^\s*[0-9]+\'\.',line) and not re.search('^\s*[0-9]+\.',line):
                 continue
             for word in line.split(" "):
                 word=word.replace("{","-").replace("}","-")
@@ -54,6 +58,7 @@ def processWebAnnotation(filepath,charmapping,curline):
     jsondata=json.loads(data)
     charindexpurpose="Charindex"
     relcharindexpurpose="RelCharindex"
+    linepurpose="Line"
     wordindexpurpose="Wordindex"
     changed=False
     for annotation in jsondata:
@@ -77,8 +82,9 @@ def processWebAnnotation(filepath,charmapping,curline):
                 relcharindex=annoobj["value"]
                 #print("Relcharindex: "+str(relcharindex))
                 relcharindexobject=annoobj
+        print("Line: "+str(line)+" - "+str(curline))
         if curcharindex!=-1 and line!=-1 and line==curline and "c"+str(curcharindex) in charmapping:
-            #print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
+            print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
             if wordindexobject==None:
                 jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"Wordindex","value":charmapping["c"+str(curcharindex)]["wordindex"]})
                 jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"RelCharindex","value":charmapping["c"+str(curcharindex)]["relcharindex"]})
@@ -112,8 +118,6 @@ def enrichWordPositions():
             if line.startswith("@"):
                 curside=line[0:line.find(" ")]
                 if curside in mappings: 
-                    if curid!=None:
-                        processWebAnnotation("result/"+str(tabletid)+"_"+curid+".png.json",charmapping,line)
                     curid=str(mappings[curside])
                     #print("Curside: "+str(curside))
                     result[tabletid][curid]={}
@@ -124,6 +128,8 @@ def enrichWordPositions():
                 continue
             #print(line)
             lineindex+=1
+            if curid!=None:
+                processWebAnnotation("result/"+str(tabletid)+"_"+curid+".png.json",charmapping,lineindex)
             try:
                 result[tabletid][curid][lineindex]={}
                 for word in line.split(" "):
