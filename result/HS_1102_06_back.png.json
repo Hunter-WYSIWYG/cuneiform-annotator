@@ -20,6 +20,11 @@
           "x": 867,
           "y": 977
         }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "3"
       }
     ],
     "target": {
@@ -261,6 +266,11 @@
           "x": 867,
           "y": 977
         }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "3"
       }
     ],
     "target": {
@@ -294,6 +304,11 @@
           "x": 867,
           "y": 977
         }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "4"
       }
     ],
     "target": {
@@ -653,5 +668,57 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#58a8d508-246b-49ad-8f1e-c6e63016e889"
+  },
+  "#097a0b71-7688-48a0-82bd-1e4229194bf0": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "egir",
+        "dimensions": {
+          "x": 867,
+          "y": 977
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112843:576965/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"433.4999694824219,153.2879180908203 76.3896484375,160.02584838867188 61.22930908203125,272.88616943359375 418.3396301269531,266.14825439453125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#097a0b71-7688-48a0-82bd-1e4229194bf0"
+  },
+  "#30ab367b-32fd-4d5a-85d4-bcf744adcaf6": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "i"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112843:576965/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"549.729248046875,808.5516357421875 389.70343017578125,796.76025390625 384.64996337890625,911.3051147460938 556.4672241210938,912.9895629882812\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#30ab367b-32fd-4d5a-85d4-bcf744adcaf6"
   }
 }
