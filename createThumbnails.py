@@ -82,6 +82,8 @@ translits={}
 
 translitperiods={}
 
+charOccurances={}
+
 periodss={"Unknown":True}
 
 charperperiod={}
@@ -360,7 +362,7 @@ for filename in dircontent:
             if str(translit)!="":
                 unknownchars+=str(translit)+"\n"
             #print(str(translit))
-        if str(translit)="":
+        if str(translit)=="":
             continue
         translit=translit.replace(",","_")
         per=filename[0:filename.rfind("_")]
@@ -675,8 +677,8 @@ if singlefolder:
     for charr in acc_charperiods:
         f.write(charr,acc_charperiods[charr])
     f.close()
-    f = open(exportdir+"/charperperiod.js", 'w')
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+"\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
+    f = open(exportdir+"/homepagestats.js", 'w')
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -747,8 +749,8 @@ else:
     for charr in acc_charperiods:
         f.write(charr,acc_charperiods[charr])
     f.close()
-    f = open(exportdir+"/charperperiod.js", 'w')
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+"\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
+    f = open(exportdir+"/homepagestats.js", 'w')
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
