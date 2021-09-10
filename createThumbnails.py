@@ -675,7 +675,7 @@ if singlefolder:
     f = open(exportdir+"/acc_charperperiod.csv", 'w')
     f.write("AmountOfChars,NumberPeriods\n")
     for charr in acc_charperiods:
-        f.write(charr,acc_charperiods[charr])
+        f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
     f = open(exportdir+"/homepagestats.js", 'w')
     f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
@@ -747,7 +747,7 @@ else:
     f = open(exportdir+"/acc_charperperiod.csv", 'w')
     f.write("AmountOfChars,NumberPeriods\n")
     for charr in acc_charperiods:
-        f.write(charr,acc_charperiods[charr])
+        f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
     f = open(exportdir+"/homepagestats.js", 'w')
     f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
