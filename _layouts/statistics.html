@@ -17,16 +17,12 @@
   <canvas id="chart2"></canvas>
 </div>
 <script>
-function makeChart(players) {
+function makeChart(players,target,title) {
   console.log(players)
-  var charLabels = players.map(function(d) {
-    return d.Character;
-  });
-  var periodsData = players.map(function(d) {
-    return +d.Number_Periods;
-  });
+  var charLabels = Object.keys(players)
+  var periodsData = Object.values(players)
 
-  var chart = new Chart('chart', {
+  var chart = new Chart(target, {
     type: "bar",
     options: {
       maintainAspectRatio: false,
@@ -39,7 +35,7 @@ function makeChart(players) {
 	  plugins: {
             title: {
                 display: true,
-                text: 'Amount of time periods per character'
+                text: title
             }
         }
     },
@@ -53,46 +49,7 @@ function makeChart(players) {
     }
   });
 }
-
-d3.csv('data/charperperiod.csv')
-  .then(makeChart);
-</script>
-<script>
-function makeChart2(players) {
-  var charLabels = players.map(function(d) {
-    return d.filename;
-  });
-  var periodsData = players.map(function(d) {
-    return +d.percentage;
-  });
-
-  var chart = new Chart('chart2', {
-    type: "bar",
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      },
-	  plugins: {
-            title: {
-                display: true,
-                text: 'Amount of time periods per character'
-            }
-        }
-    },
-    data: {
-      labels: charLabels,
-      datasets: [
-        {
-          data: periodsData
-        }
-      ]
-    }
-  });
-}
-
-d3.csv('data/translitstats.csv')
-  .then(makeChart2);
+makeChart(acc_charperperiod,"chart","Chars per period")
 </script>
 </body>
 </html>
