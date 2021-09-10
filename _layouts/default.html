@@ -731,13 +731,13 @@ function getEXIFData(imageid,targetid){
 <button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
 <dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Transliteration View <span id="textid"></span></h3>
-    <code id="transliterationtextarea">
+    <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto">
     </code><br/>
     <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
 </dialog>
 <dialog id="translationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Translation View <span id="textid"></span></h3>
-    <code id="translationtextarea">
+    <code id="translationtextarea" style="width: 300px; height: 550px; overflow: auto">
     </code><br/>
     <button id="closedialog3" onClick='document.getElementById("translationdialog").close()'>Close</button>
 </dialog>
