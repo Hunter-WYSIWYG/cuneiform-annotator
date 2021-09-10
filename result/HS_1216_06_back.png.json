@@ -534,5 +534,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#17f7a368-ee81-4d01-9ec3-276f5976450e"
+  },
+  "#f4a95e94-64a9-460f-be40-873ae164df49": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ga",
+        "dimensions": {
+          "x": 935,
+          "y": 1014
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113769:577908/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"874.8482666015625,688.8206787109375 635.33447265625,688.8206787109375 637.082763671875,840.9207153320312 862.6103515625,833.9276123046875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#f4a95e94-64a9-460f-be40-873ae164df49"
   }
 }
