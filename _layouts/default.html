@@ -98,7 +98,7 @@ function formatTranslation(transliteration){
             if(char!=""){
               console.log(curterm)
 			  console.log(currentside+"_"+linecounter+"_"+charcounter)
-			  if(($("#images option:selected").text() in character_postags)){
+			  if(($("#images option:selected").text() in character_postags) && curterm in character_postags[$("#images option:selected").text()] && currentside+"_"+linecounter+"_"+charcounter in character_postags[$("#images option:selected").text()][curterm]){
 				titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
 			  }
               if (typeof titleobj !== 'undefined' && titleobj["translation"]!=lasttranslation){
