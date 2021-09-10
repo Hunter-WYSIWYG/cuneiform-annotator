@@ -13,6 +13,13 @@ var languages={
     "material": "clay",
     "provenience": "Nippur (mod. Nuffar)"
   },
+  "HS_1082": {
+    "genre": "Administrative",
+    "subgenre": "",
+    "language": "Sumerian",
+    "material": "clay",
+    "provenience": "Nippur (mod. Nuffar)"
+  },
   "HS_1326": {
     "genre": "Administrative",
     "subgenre": "",
