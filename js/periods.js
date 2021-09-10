@@ -9,6 +9,7 @@ var periods={
   "HS_2398": "Early Old Babylonian (ca. 2000-1900 BC)",
   "HS_854": "ED IIIb (ca. 2500-2340 BC)",
   "HS_1826": "",
+  "HS_1082": "Ur III (ca. 2100-2000 BC)",
   "HS_2080": "Early Old Babylonian (ca. 2000-1900 BC)",
   "HS_1619": "Old Babylonian (ca. 1900-1600 BC)",
   "HS_1535": "Old Babylonian (ca. 1900-1600 BC)",
