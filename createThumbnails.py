@@ -357,8 +357,11 @@ for filename in dircontent:
         else:
             translits[charclass]=1
         if charclass=="other":
-            unknownchars+=str(translit)+"\n"
+            if str(translit)!="":
+                unknownchars+=str(translit)+"\n"
             #print(str(translit))
+        if str(translit)="":
+            continue
         translit=translit.replace(",","_")
         per=filename[0:filename.rfind("_")]
         per=per[0:per.rfind("_")]
@@ -660,8 +663,20 @@ if singlefolder:
     f.close()
     f = open(exportdir+"/charperperiod.csv", 'w')
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    acc_charperiods={}
     for charr in sort_charperiods:
         f.write(str(charr[0])+","+str(charr[1])+"\n")
+        if not str(charr[1]) acc_charperiods:
+            acc_charperiods[str(charr[1])]=0
+        acc_charperiods[str(charr[1])]+=1
+    f.close()
+    f = open(exportdir+"/acc_charperperiod.csv", 'w')
+    f.write("AmountOfChars,NumberPeriods\n")
+    for charr in acc_charperiods:
+        f.write(charr,acc_charperiods[charr])
+    f.close()
+    f = open(exportdir+"/charperperiod.js", 'w')
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+"\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -718,10 +733,22 @@ else:
     f = open(exportdir+"/public/translitstats.csv", 'w')
     f.write(translitstats)
     f.close()
-    f = open(exportdir+"/public/charperperiod.csv", 'w')
+    f = open(exportdir+"/charperperiod.csv", 'w')
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    acc_charperiods={}
     for charr in sort_charperiods:
         f.write(str(charr[0])+","+str(charr[1])+"\n")
+        if not str(charr[1]) acc_charperiods:
+            acc_charperiods[str(charr[1])]=0
+        acc_charperiods[str(charr[1])]+=1
+    f.close()
+    f = open(exportdir+"/acc_charperperiod.csv", 'w')
+    f.write("AmountOfChars,NumberPeriods\n")
+    for charr in acc_charperiods:
+        f.write(charr,acc_charperiods[charr])
+    f.close()
+    f = open(exportdir+"/charperperiod.js", 'w')
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+"\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
