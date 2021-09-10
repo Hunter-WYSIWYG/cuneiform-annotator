@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 <h1>MaiCuBeDa Statistics</h1>
-<div id="wrapper" style="width:1000px">
+<div id="wrapper" style="width:100%">
   <canvas id="chart"></canvas>
 </div>
 <script>
@@ -25,7 +25,13 @@ function makeChart(players) {
       maintainAspectRatio: false,
       legend: {
         display: false
-      }
+      },
+	  plugins: {
+            title: {
+                display: true,
+                text: 'Amount of time periods per character'
+            }
+        }
     },
     data: {
       labels: charLabels,
