@@ -8,6 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="js/homepagestats.js"></script>
 <h1>MaiCuBeDa Statistics</h1>
 <div id="wrapper" style="width:100%">
   <canvas id="chart"></canvas>
@@ -17,6 +18,7 @@
 </div>
 <script>
 function makeChart(players) {
+  console.log(players)
   var charLabels = players.map(function(d) {
     return d.Character;
   });
