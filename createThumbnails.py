@@ -668,7 +668,7 @@ if singlefolder:
     acc_charperiods={}
     for charr in sort_charperiods:
         f.write(str(charr[0])+","+str(charr[1])+"\n")
-        if not str(charr[1]) acc_charperiods:
+        if not str(charr[1]) in acc_charperiods:
             acc_charperiods[str(charr[1])]=0
         acc_charperiods[str(charr[1])]+=1
     f.close()
@@ -740,7 +740,7 @@ else:
     acc_charperiods={}
     for charr in sort_charperiods:
         f.write(str(charr[0])+","+str(charr[1])+"\n")
-        if not str(charr[1]) acc_charperiods:
+        if not str(charr[1]) in acc_charperiods:
             acc_charperiods[str(charr[1])]=0
         acc_charperiods[str(charr[1])]+=1
     f.close()
