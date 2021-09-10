@@ -26,6 +26,9 @@ function makeChart(players) {
     type: "bar",
     options: {
       maintainAspectRatio: false,
+	  scales: {
+		
+	  },
       legend: {
         display: false
       },
@@ -51,7 +54,7 @@ d3.csv('data/charperperiod.csv')
   .then(makeChart);
 </script>
 <script>
-function makeChart(players) {
+function makeChart2(players) {
   var charLabels = players.map(function(d) {
     return d.filename;
   });
@@ -59,7 +62,7 @@ function makeChart(players) {
     return +d.percentage;
   });
 
-  var chart = new Chart('chart', {
+  var chart = new Chart('chart2', {
     type: "bar",
     options: {
       maintainAspectRatio: false,
@@ -85,7 +88,7 @@ function makeChart(players) {
 }
 
 d3.csv('data/charperperiod.csv')
-  .then(makeChart);
+  .then(makeChart2);
 </script>
 </body>
 </html>
