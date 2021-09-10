@@ -1,6 +1,9 @@
----
-layout: page
----
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 <h1>MaiCuBeDa Statistics</h1>
@@ -25,3 +28,5 @@ d3.csv('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2814973/atp_wta.csv')
   .then(makeChart);
 
 </script>
+</body>
+</html>
