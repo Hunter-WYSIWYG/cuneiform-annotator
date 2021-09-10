@@ -1183,13 +1183,14 @@ $('#toolbar2 img')
 <canvas id="svgcanvas" width="300" height="100" style="visibility:hidden">
 </canvas>
 </div>
+<!--
 <h3 align="center">Grid Annotation test</h3>
 Grid Size: <input id="gridsize" type="number" value="20" onChange="recreateGrid()"/><br/>
 Grid Offset X: <input id="gridoffsetx" type="number" value="0" onChange="recreateGrid()"/><br/>
 Grid Offset Y: <input id="gridoffsety" type="number" value="0" onChange="recreateGrid()"/><br/>
 <div id="grid-source"><img id="gridimage" src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
 <div id="grid-overlay"></div>
-<script>
+
   for(url in hs23D){
     options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
   }
@@ -1256,6 +1257,8 @@ $('#grid-overlay td').mousemove(function() {
 });
 }
 recreateGrid();
+-->
+<script>
       paleolist=""
       for(pal in paleocodemap){
         paleolist+="<li>"+pal+"<ul>"
