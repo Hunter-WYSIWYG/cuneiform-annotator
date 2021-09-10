@@ -17,7 +17,7 @@
   <canvas id="chart2"></canvas>
 </div>
 <script>
-function makeChart(players,target,title) {
+function makeChart(players,target,title,axistitle) {
   console.log(players)
   var charLabels = Object.keys(players)
   var periodsData = Object.values(players)
@@ -27,7 +27,12 @@ function makeChart(players,target,title) {
     options: {
       maintainAspectRatio: false,
 	  scales: {
-		
+		yAxes: [{
+		scaleLabel: {
+        display: true,
+        labelString: axistitle
+		}
+		}]
 	  },
       legend: {
         display: false
@@ -49,7 +54,7 @@ function makeChart(players,target,title) {
     }
   });
 }
-makeChart(acc_charperperiod,"chart","Chars per period")
+makeChart(acc_charperperiod,"chart","Occurance of characters in time periods","Amount of time periods in which characters occur")
 </script>
 </body>
 </html>
