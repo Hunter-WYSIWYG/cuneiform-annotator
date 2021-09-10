@@ -10,6 +10,9 @@
 <div id="wrapper" style="width:100%">
   <canvas id="chart"></canvas>
 </div>
+<div id="wrapper2" style="width:100%">
+  <canvas id="chart2"></canvas>
+</div>
 <script>
 function makeChart(players) {
   var charLabels = players.map(function(d) {
@@ -46,7 +49,43 @@ function makeChart(players) {
 
 d3.csv('data/charperperiod.csv')
   .then(makeChart);
+</script>
+<script>
+function makeChart(players) {
+  var charLabels = players.map(function(d) {
+    return d.filename;
+  });
+  var periodsData = players.map(function(d) {
+    return +d.percentage;
+  });
 
+  var chart = new Chart('chart', {
+    type: "bar",
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+	  plugins: {
+            title: {
+                display: true,
+                text: 'Amount of time periods per character'
+            }
+        }
+    },
+    data: {
+      labels: charLabels,
+      datasets: [
+        {
+          data: periodsData
+        }
+      ]
+    }
+  });
+}
+
+d3.csv('data/charperperiod.csv')
+  .then(makeChart);
 </script>
 </body>
 </html>
