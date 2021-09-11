@@ -683,9 +683,18 @@ if singlefolder:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
-    sort_periodss = sorted(periodss.items(), key=lambda x: x[1])
-    sort_genress = sorted(genress.items(), key=lambda x: x[1])
+    sorte_periodss = sorted(periodss.items(), key=lambda x: x[1])
+    sort_periodss={}
+    for so in sorte_periodss:
+        sort_periodss[so]=sorte_periodss[so]  
+    sorte_genress = sorted(genress.items(), key=lambda x: x[1])
+    sort_genress={}
+    for so in sorte_genress:
+        sort_genress[so]=sorte_genress[so]  
     sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
+    sort_languagess={}
+    for so in sorte_languagess:
+        sort_languagess[so]=sorte_languagess[so]  
     f = open(exportdir+"/homepagestats.js", 'w')   
     f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodss,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
     f.close()
@@ -758,9 +767,18 @@ else:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
-    sort_periodss = sorted(periodss.items(), key=lambda x: x[1])
-    sort_genress = sorted(genress.items(), key=lambda x: x[1])
+    sorte_periodss = sorted(periodss.items(), key=lambda x: x[1])
+    sort_periodss={}
+    for so in sorte_periodss:
+        sort_periodss[so]=sorte_periodss[so]  
+    sorte_genress = sorted(genress.items(), key=lambda x: x[1])
+    sort_genress={}
+    for so in sorte_genress:
+        sort_genress[so]=sorte_genress[so]  
     sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
+    sort_languagess={}
+    for so in sorte_languagess:
+        sort_languagess[so]=sorte_languagess[so]  
     f = open(exportdir+"/homepagestats.js", 'w')   
     f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodss,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
     f.close()
