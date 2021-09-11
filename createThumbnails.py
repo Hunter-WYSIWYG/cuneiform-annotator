@@ -683,6 +683,7 @@ if singlefolder:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
+    """
     sorte_periodss = sorted(periodss.items(), key=lambda x: x[1])
     sort_periodss={}
     for so in sorte_periodss:
@@ -695,8 +696,9 @@ if singlefolder:
     sort_languagess={}
     for so in sorte_languagess:
         sort_languagess[sorte_languagess[so][0]]=sorte_languagess[so][1]  
+    """
     f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodss,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -767,6 +769,7 @@ else:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
+    """
     sorte_periodss = sorted(periodss.items(), key=lambda x: x[1])
     sort_periodss={}
     for so in sorte_periodss:
@@ -779,8 +782,9 @@ else:
     sort_languagess={}
     for so in sorte_languagess:
         sort_languagess[sorte_languagess[so][0]]=sorte_languagess[so][1]  
+    """
     f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodss,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
