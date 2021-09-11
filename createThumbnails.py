@@ -687,7 +687,7 @@ if singlefolder:
     sort_genress = sorted(genress.items(), key=lambda x: x[1])
     sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
     f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodds,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodss,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -762,7 +762,7 @@ else:
     sort_genress = sorted(genress.items(), key=lambda x: x[1])
     sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
     f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodds,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodss,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
