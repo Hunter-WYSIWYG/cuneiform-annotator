@@ -1,18 +1,6 @@
 var charperperiod=[
   [
-    "BA?AR2",
-    1
-  ],
-  [
-    "MUNUS_(SAL)+KU_(DR__TUKUL__TUSZ)+",
-    1
-  ],
-  [
-    "TAB",
-    1
-  ],
-  [
-    "ZUM",
+    "ZI?+A+AN+",
     1
   ],
   [
@@ -20,159 +8,11 @@ var charperperiod=[
     1
   ],
   [
-    "ASZ+ASZ+",
-    1
-  ],
-  [
-    "SZESZ_(URI3)+AB+",
-    1
-  ],
-  [
-    "UD_(BABBAR)+DU+",
-    1
-  ],
-  [
     "SZU+KAR2_(GN-ten_and_SZ-ten)+",
     1
   ],
   [
-    "SZIR",
-    1
-  ],
-  [
-    "EN+ZU+",
-    1
-  ],
-  [
-    "UD-gun",
-    1
-  ],
-  [
-    "ZI?+A+AN+",
-    1
-  ],
-  [
-    "UMUMKASKAL",
-    1
-  ],
-  [
-    "GISZGAL_(URUMIN)",
-    1
-  ],
-  [
-    "?AL",
-    1
-  ],
-  [
-    "SZRA_(LAGABSIG7)",
-    1
-  ],
-  [
-    "TE",
-    1
-  ],
-  [
-    "BANIA_(SZ._UoverUGE23overGE23)",
-    1
-  ],
-  [
-    "SZE3_(ESZ2__GI7__ZI3)+SZE+",
-    1
-  ],
-  [
     "SZANABI_(23)",
-    1
-  ],
-  [
-    "LU2BAD",
-    1
-  ],
-  [
-    "KISAL",
-    1
-  ],
-  [
-    "GA-gun",
-    1
-  ],
-  [
-    "ERIM_(ZALAG2)",
-    1
-  ],
-  [
-    "NE+RU+",
-    1
-  ],
-  [
-    "ALIM_(GIR3_A.IGI)",
-    1
-  ],
-  [
-    "NI+GISZ_(GESZ)+",
-    1
-  ],
-  [
-    "ILIMMU2_(TAB.TAB.TAB.TAB.ASZ)",
-    1
-  ],
-  [
-    "GESZTIN_(GISZ.DIN)",
-    1
-  ],
-  [
-    "GUG2_(LU2;_SZ-gun)",
-    1
-  ],
-  [
-    "AZ_(PIRIGZA)",
-    1
-  ],
-  [
-    "UR3_(GA2NIR)",
-    1
-  ],
-  [
-    "DISZ_(1)+DISZ_(1)+DISZ_(1)+",
-    1
-  ],
-  [
-    "TA?DA?_(MUoverMU)",
-    1
-  ],
-  [
-    "PA+AL+",
-    1
-  ],
-  [
-    "DUR_(GxGAG__G.GAG)",
-    1
-  ],
-  [
-    "NI+UD_(BABBAR)+",
-    1
-  ],
-  [
-    "UG_(PIRIGUD)",
-    1
-  ],
-  [
-    "KI+BI+",
-    1
-  ],
-  [
-    "U+UD_(BABBAR)+KID_(LIL2)+",
-    1
-  ],
-  [
-    "IL_(ALSZE)",
-    1
-  ],
-  [
-    "B+KU_(DR__TUKUL__TUSZ)+",
-    1
-  ],
-  [
-    "BI+U2+SA+",
     1
   ],
   [
@@ -184,23 +24,27 @@ var charperperiod=[
     1
   ],
   [
+    "TE",
+    1
+  ],
+  [
+    "UD_(BABBAR)+DU+",
+    1
+  ],
+  [
     "TE+AB+",
     1
   ],
   [
-    "SZUBUR",
+    "BANIA_(SZ._UoverUGE23overGE23)",
     1
   ],
   [
-    "SUD_(BU-gun)",
+    "SZE3_(ESZ2__GI7__ZI3)+SZE+",
     1
   ],
   [
-    "SZEG9_(SZ.SZE.KU.GAG)",
-    1
-  ],
-  [
-    "SZAR",
+    "GISZ_(GESZ)+KSZU+",
     1
   ],
   [
@@ -208,7 +52,31 @@ var charperperiod=[
     1
   ],
   [
-    "nine_SZAR2",
+    "U+UD_(BABBAR)+KID_(LIL2)+",
+    1
+  ],
+  [
+    "GESZTIN_(GISZ.DIN)",
+    1
+  ],
+  [
+    "GUG2_(LU2;_SZ-gun)",
+    1
+  ],
+  [
+    "ESZEMIN5_(BI)",
+    1
+  ],
+  [
+    "GE23_(DISZ-ten)",
+    1
+  ],
+  [
+    "nine_GESZ2",
+    1
+  ],
+  [
+    "SZAR",
     1
   ],
   [
@@ -216,19 +84,11 @@ var charperperiod=[
     1
   ],
   [
-    "GIR2-gun",
+    "seven_SZAR2",
     1
   ],
   [
-    "DAR3",
-    1
-  ],
-  [
-    "KAR2_(GN-ten_and_SZ-ten)",
-    1
-  ],
-  [
-    "KAD4",
+    "EN+ZU+",
     1
   ],
   [
@@ -240,51 +100,19 @@ var charperperiod=[
     1
   ],
   [
-    "ANSZE_(GRPA_or_GRTAB)+IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
+    "TAB",
     1
   ],
   [
-    "SU+A+",
+    "ASZ+ASZ+",
     1
   ],
   [
-    "URUKAR2",
+    "SZESZ_(URI3)+AB+",
     1
   ],
   [
-    "LU_(UDU)+?L+",
-    1
-  ],
-  [
-    "NAG_(KAA)",
-    1
-  ],
-  [
-    "MUNUS_(SAL)+SILA4_(GA2PA)+",
-    1
-  ],
-  [
-    "GA2GI4",
-    1
-  ],
-  [
-    "GUL_(SN)",
-    1
-  ],
-  [
-    "DARA4_(SIG2+ASZ)",
-    1
-  ],
-  [
-    "IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
-    1
-  ],
-  [
-    "GAD",
-    1
-  ],
-  [
-    "ME+ESZ_(3U)+",
+    "ERIM_(ZALAG2)",
     1
   ],
   [
@@ -292,27 +120,11 @@ var charperperiod=[
     1
   ],
   [
-    "UZU",
+    "SZIMNG_(BAPPIR)",
     1
   ],
   [
-    "BALAG",
-    1
-  ],
-  [
-    "GIGIR_(LAGABBAD)",
-    1
-  ],
-  [
-    "SU?USZ_(DU-gun)",
-    1
-  ],
-  [
-    "PAD_(SZUK)+AN+MSZ_(INANNA)+",
-    1
-  ],
-  [
-    "ZU5",
+    "DISZ_(1)+DISZ_(1)+DISZ_(1)+",
     1
   ],
   [
@@ -328,23 +140,27 @@ var charperperiod=[
     1
   ],
   [
-    "BKR",
-    1
-  ],
-  [
-    "nine_GESZ2",
-    1
-  ],
-  [
-    "?B",
-    1
-  ],
-  [
-    "SAGGAG",
-    1
-  ],
-  [
     "SZINIG_(GAD.NAGA)",
+    1
+  ],
+  [
+    "KISAL",
+    1
+  ],
+  [
+    "SUD_(BU-gun)",
+    1
+  ],
+  [
+    "DUR_(GxGAG__G.GAG)",
+    1
+  ],
+  [
+    "KAD4",
+    1
+  ],
+  [
+    "BN_(KAIM)",
     1
   ],
   [
@@ -352,79 +168,31 @@ var charperperiod=[
     1
   ],
   [
-    "ENGUR_(LAGAB?AL)",
+    "BKR",
     1
   ],
   [
-    "PAN",
+    "NE+RU+",
     1
   ],
   [
-    "AN+GE23_(DISZ-ten)+AN+",
+    "ALIM_(GIR3_A.IGI)",
     1
   ],
   [
-    "DUN4_(UR-gun-SZeSZSZigMIR-SZeSZSZig)",
+    "NI+GISZ_(GESZ)+",
     1
   ],
   [
-    "seven_SZAR2",
+    "GIR2-gun",
     1
   ],
   [
-    "LX_(6U)",
+    "ILIMMU2_(TAB.TAB.TAB.TAB.ASZ)",
     1
   ],
   [
-    "A+SZU+NAGA+",
-    1
-  ],
-  [
-    "MI+NUNUZ+",
-    1
-  ],
-  [
-    "A+SZE+NIR_(NUNoverNUN)+",
-    1
-  ],
-  [
-    "SZE+SZE+NIR_(NUNoverNUN)+",
-    1
-  ],
-  [
-    "SZIMNG_(BAPPIR)",
-    1
-  ],
-  [
-    "KI+UD_(BABBAR)+",
-    1
-  ],
-  [
-    "KISZ",
-    1
-  ],
-  [
-    "PIRIG",
-    1
-  ],
-  [
-    "KUN",
-    1
-  ],
-  [
-    "AN+NAGA+",
-    1
-  ],
-  [
-    "ANSZE_(GRPA_or_GRTAB)+ARAD+",
-    1
-  ],
-  [
-    "DU6_(LAGAR-gun)+DU+",
-    1
-  ],
-  [
-    "two_SZAR2",
+    "SZIR+GI4_(GI-gun)+",
     1
   ],
   [
@@ -436,47 +204,55 @@ var charperperiod=[
     1
   ],
   [
-    "TIR",
+    "AZ_(PIRIGZA)",
     1
   ],
   [
-    "BANSZUR_(URUURUDU)",
+    "SAGGAG",
     1
   ],
   [
-    "MUSZ",
+    "GAD",
     1
   ],
   [
-    "ESZEMIN5_(BI)",
+    "SZIR",
     1
   ],
   [
-    "GE23_(DISZ-ten)",
+    "GA2GI4",
     1
   ],
   [
-    "GISZ_(GESZ)+KSZU+",
+    "B+KU_(DR__TUKUL__TUSZ)+",
     1
   ],
   [
-    "NA?",
+    "KI+UD_(BABBAR)+",
     1
   ],
   [
-    "NUN+LAGAR+",
+    "KAR2_(GN-ten_and_SZ-ten)",
     1
   ],
   [
-    "PA+?B+DU+",
+    "URUKAR2",
     1
   ],
   [
-    "BN_(KAIM)",
+    "UMUMKASKAL",
     1
   ],
   [
-    "NINA_(AB?A)",
+    "PIRIG",
+    1
+  ],
+  [
+    "LU_(UDU)+?L+",
+    1
+  ],
+  [
+    "ZUM",
     1
   ],
   [
@@ -484,7 +260,55 @@ var charperperiod=[
     1
   ],
   [
-    "SZIR+GI4_(GI-gun)+",
+    "SZE+SZE+NIR_(NUNoverNUN)+",
+    1
+  ],
+  [
+    "KUN",
+    1
+  ],
+  [
+    "PAD_(SZUK)+AN+MSZ_(INANNA)+",
+    1
+  ],
+  [
+    "MUNUS_(SAL)+KU_(DR__TUKUL__TUSZ)+",
+    1
+  ],
+  [
+    "DARA4_(SIG2+ASZ)",
+    1
+  ],
+  [
+    "IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
+    1
+  ],
+  [
+    "SZRA_(LAGABSIG7)",
+    1
+  ],
+  [
+    "UZU",
+    1
+  ],
+  [
+    "NI+UD_(BABBAR)+",
+    1
+  ],
+  [
+    "KI+BI+",
+    1
+  ],
+  [
+    "BALAG",
+    1
+  ],
+  [
+    "ME+ESZ_(3U)+",
+    1
+  ],
+  [
+    "SZEG9_(SZ.SZE.KU.GAG)",
     1
   ],
   [
@@ -492,215 +316,191 @@ var charperperiod=[
     1
   ],
   [
-    "SZUL_(DUN)",
-    2
+    "PA+?B+DU+",
+    1
   ],
   [
-    "SAG5",
-    2
+    "TA?DA?_(MUoverMU)",
+    1
   ],
   [
-    "URUDU_(URUDA)",
-    2
+    "PA+AL+",
+    1
   ],
   [
-    "GUR8_(TE-gun)",
-    2
+    "nine_SZAR2",
+    1
   ],
   [
-    "nine_DISZ",
-    2
+    "NAG_(KAA)",
+    1
   ],
   [
-    "SZID_(LAG)",
-    2
+    "two_SZAR2",
+    1
   ],
   [
-    "SILA4_(GA2PA)",
-    2
+    "SZUBUR",
+    1
   ],
   [
-    "US",
-    2
+    "DAR3",
+    1
   ],
   [
-    "GIR3",
-    2
+    "ENGUR_(LAGAB?AL)",
+    1
   ],
   [
-    "LUM",
-    2
+    "TIR",
+    1
   ],
   [
-    "A+AN+",
-    2
+    "SU+A+",
+    1
   ],
   [
-    "GURUSZ",
-    2
+    "PAN",
+    1
   ],
   [
-    "KINGUSILA",
-    2
+    "MUSZ",
+    1
   ],
   [
-    "TIL",
-    2
+    "?B",
+    1
   ],
   [
-    "AR_(IGI.RI)",
-    2
+    "UD-gun",
+    1
   ],
   [
-    "GISZKREUZTGISZ",
-    2
+    "UR3_(GA2NIR)",
+    1
   ],
   [
-    "KUR",
-    2
+    "KISZ",
+    1
   ],
   [
-    "IR_(GAG-gun)",
-    2
+    "LU2BAD",
+    1
   ],
   [
-    "ASZ4_(TAB.TAB.TAB)",
-    2
+    "A+SZU+NAGA+",
+    1
   ],
   [
-    "SIG",
-    2
+    "MI+NUNUZ+",
+    1
   ],
   [
-    "EL",
-    2
+    "SU?USZ_(DU-gun)",
+    1
   ],
   [
-    "GU4",
-    2
+    "UG_(PIRIGUD)",
+    1
   ],
   [
-    "SZESZ_(URI3)+KI+",
-    2
+    "GA-gun",
+    1
   ],
   [
-    "NUN",
-    2
+    "LX_(6U)",
+    1
   ],
   [
-    "one_GESZ2",
-    2
+    "BI+U2+SA+",
+    1
   ],
   [
-    "DUG_(BIA)",
-    2
+    "ANSZE_(GRPA_or_GRTAB)+ARAD+",
+    1
   ],
   [
-    "GIR_(?A-gun)",
-    2
+    "AN+GE23_(DISZ-ten)+AN+",
+    1
   ],
   [
-    "A+ENGUR_(LAGAB?AL)+",
-    2
+    "DUN4_(UR-gun-SZeSZSZigMIR-SZeSZSZig)",
+    1
   ],
   [
-    "NAM",
-    2
+    "ZU5",
+    1
   ],
   [
-    "GU7_(KANG)",
-    2
+    "MUNUS_(SAL)+SILA4_(GA2PA)+",
+    1
   ],
   [
-    "SA",
-    2
+    "NUN+LAGAR+",
+    1
   ],
   [
-    "two_GESZ2",
-    2
+    "AN+NAGA+",
+    1
   ],
   [
-    "TE+A+",
-    2
+    "DU6_(LAGAR-gun)+DU+",
+    1
   ],
   [
-    "UNUG_(AB-gun_andor_ABESZ)",
-    2
+    "BA?AR2",
+    1
+  ],
+  [
+    "ANSZE_(GRPA_or_GRTAB)+IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
+    1
+  ],
+  [
+    "GIGIR_(LAGABBAD)",
+    1
+  ],
+  [
+    "A+SZE+NIR_(NUNoverNUN)+",
+    1
+  ],
+  [
+    "GUL_(SN)",
+    1
+  ],
+  [
+    "NINA_(AB?A)",
+    1
+  ],
+  [
+    "GISZGAL_(URUMIN)",
+    1
+  ],
+  [
+    "?AL",
+    1
+  ],
+  [
+    "NA?",
+    1
+  ],
+  [
+    "BANSZUR_(URUURUDU)",
+    1
+  ],
+  [
+    "IL_(ALSZE)",
+    1
   ],
   [
     "BN",
     2
   ],
   [
-    "UD_(BABBAR)+UD_(BABBAR)+",
+    "SZUL_(DUN)",
     2
   ],
   [
-    "IL2_(GA.GN)",
-    2
-  ],
-  [
-    "EZEN",
-    2
-  ],
-  [
-    "eight_GESZ2",
-    2
-  ],
-  [
-    "UN",
-    2
-  ],
-  [
-    "A?_(?INUN)+ME+",
-    2
-  ],
-  [
-    "LUL_(NAR)",
-    2
-  ],
-  [
-    "SSU_(TAB.TAB.TAB.TAB)",
-    2
-  ],
-  [
-    "PAD_(SZUK)",
-    2
-  ],
-  [
-    "LAGAR",
-    2
-  ],
-  [
-    "UZ3_(M.KASKAL)",
-    2
-  ],
-  [
-    "BARA2",
-    2
-  ],
-  [
-    "A+SU+",
-    2
-  ],
-  [
-    "DUL3_(SAG-gun)",
-    2
-  ],
-  [
-    "MA?",
-    2
-  ],
-  [
-    "A?_(?INUN)",
-    2
-  ],
-  [
-    "NUMUN",
-    2
-  ],
-  [
-    "IGI_(SZI__LIM)+RU+",
+    "SA",
     2
   ],
   [
@@ -712,131 +512,23 @@ var charperperiod=[
     2
   ],
   [
-    "MUG",
+    "GIR_(?A-gun)",
     2
   ],
   [
-    "BUR_(NG-gun)",
+    "GU4",
     2
   ],
   [
-    "ARAD",
+    "TIL",
     2
   ],
   [
-    "LAL3_(TA?I)",
+    "UNUG_(AB-gun_andor_ABESZ)",
     2
   ],
   [
-    "three_GESZ2",
-    2
-  ],
-  [
-    "IMIN2_(TAB.TAB.TAB.ASZ)",
-    2
-  ],
-  [
-    "LAGAB",
-    2
-  ],
-  [
-    "EN+KID_(LIL2)+",
-    2
-  ],
-  [
-    "GANUN_(GA2NUN)",
-    2
-  ],
-  [
-    "Z(_ABPA)",
-    2
-  ],
-  [
-    "LISZ",
-    2
-  ],
-  [
-    "SUG_(LAGABA)",
-    2
-  ],
-  [
-    "four_GESZ2",
-    2
-  ],
-  [
-    "seven_GESZ2",
-    2
-  ],
-  [
-    "PU3_(KAKR)",
-    2
-  ],
-  [
-    "ANSZE_(GRPA_or_GRTAB)",
-    2
-  ],
-  [
-    "SZIM",
-    2
-  ],
-  [
-    "ZI?",
-    2
-  ],
-  [
-    "PU3_(KAKR)+SZA+",
-    2
-  ],
-  [
-    "?U+SI+",
-    2
-  ],
-  [
-    "N",
-    2
-  ],
-  [
-    "LAM",
-    2
-  ],
-  [
-    "TUR_(DUMU)+USZ_(NITA)+",
-    2
-  ],
-  [
-    "KD_(TAG4)",
-    2
-  ],
-  [
-    "ZU+AB+",
-    2
-  ],
-  [
-    "PA+KASZ4_(DU-SZeSZSZig)+",
-    2
-  ],
-  [
-    "SU4_(SI-gun)",
-    2
-  ],
-  [
-    "DIM",
-    2
-  ],
-  [
-    "five_GESZ2",
-    2
-  ],
-  [
-    "GAM",
-    2
-  ],
-  [
-    "MES_(RID)",
-    2
-  ],
-  [
-    "PA+TE+SI+",
+    "EZEN",
     2
   ],
   [
@@ -844,11 +536,11 @@ var charperperiod=[
     2
   ],
   [
-    "PAB_or_PAP+PAB_or_PAP+",
+    "PA+KASZ4_(DU-SZeSZSZig)+",
     2
   ],
   [
-    "GA2GI",
+    "GUR8_(TE-gun)",
     2
   ],
   [
@@ -856,11 +548,27 @@ var charperperiod=[
     2
   ],
   [
-    "G_(NNDANE)",
+    "SZESZ_(URI3)+KI+",
     2
   ],
   [
-    "NAGAR",
+    "GU7_(KANG)",
+    2
+  ],
+  [
+    "NUMUN",
+    2
+  ],
+  [
+    "EN+KID_(LIL2)+",
+    2
+  ],
+  [
+    "SILA4_(GA2PA)",
+    2
+  ],
+  [
+    "ANSZE_(GRPA_or_GRTAB)",
     2
   ],
   [
@@ -868,31 +576,27 @@ var charperperiod=[
     2
   ],
   [
-    "EDIN",
+    "NUN",
     2
   ],
   [
-    "KASZ4_(DU-SZeSZSZig)",
+    "SZIM",
     2
   ],
   [
-    "?L",
+    "A+ENGUR_(LAGAB?AL)+",
     2
   ],
   [
-    "LAGAB+LAGAB+",
+    "ARAD",
     2
   ],
   [
-    "BL_(GIBIL;_NEPAB__NE-SZeSZSZig)",
+    "TE+A+",
     2
   ],
   [
-    "KA+DI+",
-    2
-  ],
-  [
-    "GAZ_(KUMSZE)",
+    "LISZ",
     2
   ],
   [
@@ -900,7 +604,231 @@ var charperperiod=[
     2
   ],
   [
+    "A+AN+",
+    2
+  ],
+  [
+    "UN",
+    2
+  ],
+  [
+    "A+SU+",
+    2
+  ],
+  [
+    "nine_DISZ",
+    2
+  ],
+  [
+    "seven_GESZ2",
+    2
+  ],
+  [
+    "three_GESZ2",
+    2
+  ],
+  [
+    "GURUSZ",
+    2
+  ],
+  [
+    "five_GESZ2",
+    2
+  ],
+  [
+    "MA?",
+    2
+  ],
+  [
+    "two_GESZ2",
+    2
+  ],
+  [
+    "eight_GESZ2",
+    2
+  ],
+  [
+    "BARA2",
+    2
+  ],
+  [
+    "four_GESZ2",
+    2
+  ],
+  [
+    "SSU_(TAB.TAB.TAB.TAB)",
+    2
+  ],
+  [
+    "?U+SI+",
+    2
+  ],
+  [
+    "LUM",
+    2
+  ],
+  [
+    "GAM",
+    2
+  ],
+  [
+    "LAGAB",
+    2
+  ],
+  [
+    "GANUN_(GA2NUN)",
+    2
+  ],
+  [
+    "AR_(IGI.RI)",
+    2
+  ],
+  [
+    "PU3_(KAKR)",
+    2
+  ],
+  [
+    "GIR3",
+    2
+  ],
+  [
+    "one_GESZ2",
+    2
+  ],
+  [
+    "SZID_(LAG)",
+    2
+  ],
+  [
+    "KASZ4_(DU-SZeSZSZig)",
+    2
+  ],
+  [
+    "PAD_(SZUK)",
+    2
+  ],
+  [
+    "ASZ4_(TAB.TAB.TAB)",
+    2
+  ],
+  [
+    "GA2GI",
+    2
+  ],
+  [
     "?ASZ?UR_(MA-gun)",
+    2
+  ],
+  [
+    "PAB_or_PAP+PAB_or_PAP+",
+    2
+  ],
+  [
+    "DUL3_(SAG-gun)",
+    2
+  ],
+  [
+    "LAL3_(TA?I)",
+    2
+  ],
+  [
+    "GISZKREUZTGISZ",
+    2
+  ],
+  [
+    "Z(_ABPA)",
+    2
+  ],
+  [
+    "KINGUSILA",
+    2
+  ],
+  [
+    "MES_(RID)",
+    2
+  ],
+  [
+    "DUG_(BIA)",
+    2
+  ],
+  [
+    "LUL_(NAR)",
+    2
+  ],
+  [
+    "IMIN2_(TAB.TAB.TAB.ASZ)",
+    2
+  ],
+  [
+    "NAM",
+    2
+  ],
+  [
+    "EL",
+    2
+  ],
+  [
+    "SIG",
+    2
+  ],
+  [
+    "ZU+AB+",
+    2
+  ],
+  [
+    "LAGAB+LAGAB+",
+    2
+  ],
+  [
+    "?L",
+    2
+  ],
+  [
+    "IL2_(GA.GN)",
+    2
+  ],
+  [
+    "UD_(BABBAR)+UD_(BABBAR)+",
+    2
+  ],
+  [
+    "A?_(?INUN)",
+    2
+  ],
+  [
+    "A?_(?INUN)+ME+",
+    2
+  ],
+  [
+    "PA+TE+SI+",
+    2
+  ],
+  [
+    "G_(NNDANE)",
+    2
+  ],
+  [
+    "MUG",
+    2
+  ],
+  [
+    "DIM",
+    2
+  ],
+  [
+    "IGI_(SZI__LIM)+RU+",
+    2
+  ],
+  [
+    "URUDU_(URUDA)",
+    2
+  ],
+  [
+    "IR_(GAG-gun)",
+    2
+  ],
+  [
+    "UZ3_(M.KASKAL)",
     2
   ],
   [
@@ -908,43 +836,91 @@ var charperperiod=[
     2
   ],
   [
+    "LAM",
+    2
+  ],
+  [
+    "SAG5",
+    2
+  ],
+  [
+    "LAGAR",
+    2
+  ],
+  [
+    "BUR_(NG-gun)",
+    2
+  ],
+  [
+    "ZI?",
+    2
+  ],
+  [
+    "SUG_(LAGABA)",
+    2
+  ],
+  [
+    "KD_(TAG4)",
+    2
+  ],
+  [
+    "BL_(GIBIL;_NEPAB__NE-SZeSZSZig)",
+    2
+  ],
+  [
+    "US",
+    2
+  ],
+  [
+    "GAZ_(KUMSZE)",
+    2
+  ],
+  [
+    "SU4_(SI-gun)",
+    2
+  ],
+  [
+    "PU3_(KAKR)+SZA+",
+    2
+  ],
+  [
+    "EDIN",
+    2
+  ],
+  [
+    "N",
+    2
+  ],
+  [
+    "KA+DI+",
+    2
+  ],
+  [
+    "NAGAR",
+    2
+  ],
+  [
+    "KUR",
+    2
+  ],
+  [
+    "TUR_(DUMU)+USZ_(NITA)+",
+    2
+  ],
+  [
+    "USSU_(8)",
+    3
+  ],
+  [
+    "GU2_(TIK)",
+    3
+  ],
+  [
+    "GI4_(GI-gun)",
+    3
+  ],
+  [
     "IA2_(5)",
-    3
-  ],
-  [
-    "GAN",
-    3
-  ],
-  [
-    "NINNU_(5U)",
-    3
-  ],
-  [
-    "AMAR_(ZUR)",
-    3
-  ],
-  [
-    "GABA",
-    3
-  ],
-  [
-    "APIN_(ENGAR)",
-    3
-  ],
-  [
-    "IA7_(TAB.TAB.ASZ)",
-    3
-  ],
-  [
-    "DAR_(GN;_?U-gun__SI-gun)",
-    3
-  ],
-  [
-    "ASZ2_(ZIZ2)",
-    3
-  ],
-  [
-    "BANMIN_(PA)",
     3
   ],
   [
@@ -952,43 +928,15 @@ var charperperiod=[
     3
   ],
   [
+    "MSZ_(INANNA)",
+    3
+  ],
+  [
     "MASZ2",
     3
   ],
   [
-    "KIN",
-    3
-  ],
-  [
-    "TAR",
-    3
-  ],
-  [
-    "SIG2__SK",
-    3
-  ],
-  [
-    "MA2",
-    3
-  ],
-  [
-    "MI",
-    3
-  ],
-  [
-    "ESZ5(3)",
-    3
-  ],
-  [
-    "SZ",
-    3
-  ],
-  [
-    "DU6_(LAGAR-gun)",
-    3
-  ],
-  [
-    "USSU_(8)",
+    "KASKAL",
     3
   ],
   [
@@ -996,7 +944,139 @@ var charperperiod=[
     3
   ],
   [
+    "GABA",
+    3
+  ],
+  [
+    "NIGIDAMIN_(DISZoverDISZ)",
+    3
+  ],
+  [
+    "MA2",
+    3
+  ],
+  [
+    "KIN",
+    3
+  ],
+  [
+    "?U",
+    3
+  ],
+  [
+    "BAR",
+    3
+  ],
+  [
+    "ESZ5(3)",
+    3
+  ],
+  [
+    "TAR",
+    3
+  ],
+  [
+    "DU6_(LAGAR-gun)",
+    3
+  ],
+  [
+    "LU?",
+    3
+  ],
+  [
+    "SIG2__SK",
+    3
+  ],
+  [
+    "NINDSZE",
+    3
+  ],
+  [
+    "TL_(LAGABU)",
+    3
+  ],
+  [
+    "BANMIN_(PA)",
+    3
+  ],
+  [
+    "four_ASZ",
+    3
+  ],
+  [
+    "GAN",
+    3
+  ],
+  [
+    "GIN2_(TUN3)",
+    3
+  ],
+  [
+    "BAD",
+    3
+  ],
+  [
+    "EME_(KAME)",
+    3
+  ],
+  [
+    "IA7_(TAB.TAB.ASZ)",
+    3
+  ],
+  [
+    "SZ",
+    3
+  ],
+  [
+    "SZA",
+    3
+  ],
+  [
+    "PAB_or_PAP",
+    3
+  ],
+  [
+    "SI+A+",
+    3
+  ],
+  [
+    "SUR_(SZUR)",
+    3
+  ],
+  [
+    "PA+LU_(UDU)+",
+    3
+  ],
+  [
+    "APIN_(ENGAR)",
+    3
+  ],
+  [
+    "AMAR_(ZUR)",
+    3
+  ],
+  [
+    "other",
+    3
+  ],
+  [
+    "MI",
+    3
+  ],
+  [
+    "NINNU_(5U)",
+    3
+  ],
+  [
     "SI",
+    3
+  ],
+  [
+    "B",
+    3
+  ],
+  [
+    "AM_(GU4KUR)",
     3
   ],
   [
@@ -1012,31 +1092,7 @@ var charperperiod=[
     3
   ],
   [
-    "other",
-    3
-  ],
-  [
-    "GIM_(DIM2)",
-    3
-  ],
-  [
-    "GU2_(TIK)",
-    3
-  ],
-  [
-    "BAD",
-    3
-  ],
-  [
-    "SZA",
-    3
-  ],
-  [
-    "ISZ",
-    3
-  ],
-  [
-    "four_ASZ",
+    "Z",
     3
   ],
   [
@@ -1044,55 +1100,15 @@ var charperperiod=[
     3
   ],
   [
-    "GI4_(GI-gun)",
-    3
-  ],
-  [
-    "NIM",
-    3
-  ],
-  [
-    "NIGIDAMIN_(DISZoverDISZ)",
-    3
-  ],
-  [
-    "BAR",
-    3
-  ],
-  [
     "SZUSZANA_(13)",
     3
   ],
   [
-    "PA+LU_(UDU)+",
+    "ISZ",
     3
   ],
   [
-    "?U",
-    3
-  ],
-  [
-    "LU?",
-    3
-  ],
-  [
-    "TAG_(SZUM)",
-    3
-  ],
-  [
-    "MSZ_(INANNA)",
-    3
-  ],
-  [
-    "PAB_or_PAP",
-    3
-  ],
-  [
-    "NINDSZE",
-    3
-  ],
-  [
-    "SI+A+",
+    "GIM_(DIM2)",
     3
   ],
   [
@@ -1100,39 +1116,19 @@ var charperperiod=[
     3
   ],
   [
-    "SUR_(SZUR)",
+    "ASZ2_(ZIZ2)",
     3
   ],
   [
-    "KUM_(GUM)",
+    "DAR_(GN;_?U-gun__SI-gun)",
     3
   ],
   [
-    "TL_(LAGABU)",
+    "NIM",
     3
   ],
   [
-    "Z",
-    3
-  ],
-  [
-    "B",
-    3
-  ],
-  [
-    "GIN2_(TUN3)",
-    3
-  ],
-  [
-    "AM_(GU4KUR)",
-    3
-  ],
-  [
-    "KASKAL",
-    3
-  ],
-  [
-    "EME_(KAME)",
+    "TAG_(SZUM)",
     3
   ],
   [
@@ -1140,23 +1136,31 @@ var charperperiod=[
     3
   ],
   [
-    "IG_(GL)",
+    "KUM_(GUM)",
+    3
+  ],
+  [
+    "SZESZ_(URI3)",
     4
   ],
   [
-    "MUNUS_(SAL)+TUG2_(NM)+",
+    "four_DISZ",
     4
   ],
   [
-    "KA",
+    "USZ_(NITA)",
     4
   ],
   [
-    "PA",
+    "TU",
     4
   ],
   [
-    "NE",
+    "GUR",
+    4
+  ],
+  [
+    "SIG4",
     4
   ],
   [
@@ -1164,11 +1168,27 @@ var charperperiod=[
     4
   ],
   [
+    "PA",
+    4
+  ],
+  [
+    "SUM",
+    4
+  ],
+  [
+    "NE",
+    4
+  ],
+  [
+    "MUNUS_(SAL)+TUG2_(NM)+",
+    4
+  ],
+  [
     "DUB",
     4
   ],
   [
-    "GUR",
+    "IG_(GL)",
     4
   ],
   [
@@ -1180,71 +1200,7 @@ var charperperiod=[
     4
   ],
   [
-    "seven_DISZ",
-    4
-  ],
-  [
     "MASZ",
-    4
-  ],
-  [
-    "?I_(DG)",
-    4
-  ],
-  [
-    "UM",
-    4
-  ],
-  [
-    "USZ_(NITA)",
-    4
-  ],
-  [
-    "four_DISZ",
-    4
-  ],
-  [
-    "AG",
-    4
-  ],
-  [
-    "IM",
-    4
-  ],
-  [
-    "SZESZ_(URI3)",
-    4
-  ],
-  [
-    "SIG4",
-    4
-  ],
-  [
-    "GA2_(MAL)",
-    4
-  ],
-  [
-    "RU",
-    4
-  ],
-  [
-    "UL_(DU7)",
-    4
-  ],
-  [
-    "ESZ6_(ASZ.ASZ.ASZ)",
-    4
-  ],
-  [
-    "SUM",
-    4
-  ],
-  [
-    "URU_(IRI)",
-    4
-  ],
-  [
-    "UB",
     4
   ],
   [
@@ -1252,23 +1208,7 @@ var charperperiod=[
     4
   ],
   [
-    "TUK_(TUG)",
-    4
-  ],
-  [
-    "NIGIDAESZ_(DISZoverDISZ.DISZ)",
-    4
-  ],
-  [
     "DI",
-    4
-  ],
-  [
-    "AMA_(GA2AN)",
-    4
-  ],
-  [
-    "TU",
     4
   ],
   [
@@ -1276,7 +1216,19 @@ var charperperiod=[
     4
   ],
   [
+    "KA",
+    4
+  ],
+  [
     "MUNUS_(SAL)+KUR+",
+    4
+  ],
+  [
+    "IM",
+    4
+  ],
+  [
+    "seven_DISZ",
     4
   ],
   [
@@ -1284,67 +1236,59 @@ var charperperiod=[
     4
   ],
   [
-    "IGI_(SZI__LIM)",
-    5
+    "?I_(DG)",
+    4
   ],
   [
-    "UD_(BABBAR)",
+    "URU_(IRI)",
+    4
+  ],
+  [
+    "TUK_(TUG)",
+    4
+  ],
+  [
+    "UL_(DU7)",
+    4
+  ],
+  [
+    "UM",
+    4
+  ],
+  [
+    "ESZ6_(ASZ.ASZ.ASZ)",
+    4
+  ],
+  [
+    "GA2_(MAL)",
+    4
+  ],
+  [
+    "AMA_(GA2AN)",
+    4
+  ],
+  [
+    "AG",
+    4
+  ],
+  [
+    "RU",
+    4
+  ],
+  [
+    "NIGIDAESZ_(DISZoverDISZ.DISZ)",
+    4
+  ],
+  [
+    "UB",
+    4
+  ],
+  [
+    "SILA3",
     5
   ],
   [
     "ITI_(UDESZ)",
-    5
-  ],
-  [
-    "SZU",
-    5
-  ],
-  [
-    "TI",
-    5
-  ],
-  [
-    "TUR_(DUMU)",
-    5
-  ],
-  [
-    "SAG",
-    5
-  ],
-  [
-    "KID_(LIL2)",
-    5
-  ],
-  [
-    "GA",
-    5
-  ],
-  [
-    "TA",
-    5
-  ],
-  [
-    "ASZ",
-    5
-  ],
-  [
-    "ZA",
-    5
-  ],
-  [
-    "TUM",
-    5
-  ],
-  [
-    "AL",
-    5
-  ],
-  [
-    "ESZ_(3U)",
-    5
-  ],
-  [
-    "RI",
     5
   ],
   [
@@ -1356,11 +1300,11 @@ var charperperiod=[
     5
   ],
   [
-    "MIN_(2)",
+    "TUR_(DUMU)",
     5
   ],
   [
-    "U+U+",
+    "UD_(BABBAR)",
     5
   ],
   [
@@ -1368,55 +1312,7 @@ var charperperiod=[
     5
   ],
   [
-    "GAG_(KAK)",
-    5
-  ],
-  [
-    "U3_(IGI.DIB)",
-    5
-  ],
-  [
-    "BU_(GID2)",
-    5
-  ],
-  [
-    "E",
-    5
-  ],
-  [
-    "LI",
-    5
-  ],
-  [
-    "?AR_(?ISZ)",
-    5
-  ],
-  [
-    "KU_(DR__TUKUL__TUSZ)",
-    5
-  ],
-  [
-    "PI",
-    5
-  ],
-  [
-    "NU",
-    5
-  ],
-  [
-    "LU_(UDU)",
-    5
-  ],
-  [
-    "SILA3",
-    5
-  ],
-  [
-    "ZAG",
-    5
-  ],
-  [
-    "IB",
+    "SZU",
     5
   ],
   [
@@ -1424,8 +1320,116 @@ var charperperiod=[
     5
   ],
   [
+    "GAG_(KAK)",
+    5
+  ],
+  [
+    "LU_(UDU)",
+    5
+  ],
+  [
+    "KU_(DR__TUKUL__TUSZ)",
+    5
+  ],
+  [
+    "TA",
+    5
+  ],
+  [
+    "TI",
+    5
+  ],
+  [
+    "GA",
+    5
+  ],
+  [
+    "U+U+",
+    5
+  ],
+  [
+    "KID_(LIL2)",
+    5
+  ],
+  [
+    "RI",
+    5
+  ],
+  [
+    "IB",
+    5
+  ],
+  [
+    "NU",
+    5
+  ],
+  [
+    "E",
+    5
+  ],
+  [
     "GU",
     5
+  ],
+  [
+    "MIN_(2)",
+    5
+  ],
+  [
+    "BU_(GID2)",
+    5
+  ],
+  [
+    "U3_(IGI.DIB)",
+    5
+  ],
+  [
+    "LI",
+    5
+  ],
+  [
+    "ASZ",
+    5
+  ],
+  [
+    "SAG",
+    5
+  ],
+  [
+    "IGI_(SZI__LIM)",
+    5
+  ],
+  [
+    "AL",
+    5
+  ],
+  [
+    "ESZ_(3U)",
+    5
+  ],
+  [
+    "?AR_(?ISZ)",
+    5
+  ],
+  [
+    "TUM",
+    5
+  ],
+  [
+    "ZA",
+    5
+  ],
+  [
+    "ZAG",
+    5
+  ],
+  [
+    "PI",
+    5
+  ],
+  [
+    "ZI",
+    6
   ],
   [
     "UR",
@@ -1436,31 +1440,11 @@ var charperperiod=[
     6
   ],
   [
-    "DISZ_(1)",
+    "GAL",
     6
   ],
   [
-    "U",
-    6
-  ],
-  [
-    "MA",
-    6
-  ],
-  [
-    "ZU",
-    6
-  ],
-  [
-    "DA",
-    6
-  ],
-  [
-    "EN",
-    6
-  ],
-  [
-    "I",
+    "U2",
     6
   ],
   [
@@ -1472,55 +1456,23 @@ var charperperiod=[
     6
   ],
   [
-    "ZI",
-    6
-  ],
-  [
-    "AB",
-    6
-  ],
-  [
     "TUG2_(NM)",
     6
   ],
   [
-    "MIR_(NIMGIR)",
+    "DISZ_(1)",
     6
   ],
   [
-    "LAL_(L)",
+    "DA",
     6
   ],
   [
-    "NIG2_(GAR__NINDA)",
+    "I",
     6
   ],
   [
-    "GISZ_(GESZ)",
-    6
-  ],
-  [
-    "RA",
-    6
-  ],
-  [
-    "U2",
-    6
-  ],
-  [
-    "SAR",
-    6
-  ],
-  [
-    "MUNUS_(SAL)",
-    6
-  ],
-  [
-    "ME",
-    6
-  ],
-  [
-    "IN",
+    "EN",
     6
   ],
   [
@@ -1528,11 +1480,55 @@ var charperperiod=[
     6
   ],
   [
-    "?A_(KU6)",
+    "NIG2_(GAR__NINDA)",
     6
   ],
   [
-    "GAL",
+    "U",
+    6
+  ],
+  [
+    "RA",
+    6
+  ],
+  [
+    "ME",
+    6
+  ],
+  [
+    "MIR_(NIMGIR)",
+    6
+  ],
+  [
+    "IN",
+    6
+  ],
+  [
+    "SAR",
+    6
+  ],
+  [
+    "MA",
+    6
+  ],
+  [
+    "LAL_(L)",
+    6
+  ],
+  [
+    "AB",
+    6
+  ],
+  [
+    "MUNUS_(SAL)",
+    6
+  ],
+  [
+    "ZU",
+    6
+  ],
+  [
+    "GISZ_(GESZ)",
     6
   ],
   [
@@ -1540,15 +1536,11 @@ var charperperiod=[
     6
   ],
   [
-    "LUGAL",
-    7
+    "?A_(KU6)",
+    6
   ],
   [
-    "BA",
-    7
-  ],
-  [
-    "E2",
+    "SZA3_(SZAG4)",
     7
   ],
   [
@@ -1556,15 +1548,7 @@ var charperperiod=[
     7
   ],
   [
-    "SZA3_(SZAG4)",
-    7
-  ],
-  [
-    "NIMIN_(4U)",
-    7
-  ],
-  [
-    "NI",
+    "BA",
     7
   ],
   [
@@ -1576,7 +1560,23 @@ var charperperiod=[
     7
   ],
   [
+    "NI",
+    7
+  ],
+  [
+    "LUGAL",
+    7
+  ],
+  [
+    "E2",
+    7
+  ],
+  [
     "KUG_(K)",
+    7
+  ],
+  [
+    "NIMIN_(4U)",
     7
   ],
   [
@@ -1611,4 +1611,34 @@ var acc_charperperiod={
   "8": 2,
   "9": 2,
   "11": 1
+};
+var numberCharPeriods={
+  "Unknown": 0,
+  "Ur III (ca. 2100-2000 BC)": 13666,
+  "Old Assyrian (ca. 1950-1850 BC)": 1598,
+  "ED IIIb (ca. 2500-2340 BC)": 2176,
+  "Early Old Babylonian (ca. 2000-1900 BC)": 487,
+  "Old Babylonian (ca. 1900-1600 BC)": 319,
+  "ED IIIa (ca. 2600-2500 BC)": 92,
+  "Old Akkadian (ca. 2340-2200 BC)": 281,
+  "": 22
+};
+var numberLanguages={
+  "Unknown": 0,
+  "Sumerian": 16540,
+  "": 1655,
+  "Akkadian": 278,
+  "Sumerian; Akkadian": 12
+};
+var genres={
+  "Unknown": 0,
+  "Administrative": 15061,
+  "": 1598,
+  "Legal": 1294,
+  "Lexical": 112,
+  "Royal/Monumental": 45,
+  "Literary": 220,
+  "Letter": 120,
+  "Scientific": 22,
+  "Mathematical": 13
 }
