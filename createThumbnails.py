@@ -84,15 +84,15 @@ translitperiods={}
 
 charOccurances={}
 
-periodss={"Unknown":True}
+periodss={"Unknown":0}
 
 charperperiod={}
 
 linepadding=0.5
 
-languagess={"Unknown":True}
+languagess={"Unknown":0}
 
-genress={"Unknown":True}
+genress={"Unknown":0}
 
 arffthresholdlines={}
 
@@ -448,10 +448,16 @@ for filename in dircontent:
                 else:
                     outputcsv+=";;" 
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"    
-                periodss[periods[per]]=True
-                languagess[languages[per]["language"]]=True
-                genress[languages[per]["genre"]]=True
+                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n" 
+                if not periods[per] in periodss:
+                    periodss[periods[per]]=0
+                periodss[periods[per]]+=1
+                if not languages[per] in languagess:
+                    languagess[periods[per]]=0                
+                languagess[languages[per]["language"]]+=1
+                if not languages[per]["genre"] in genress:
+                    genress[languages[per]["genre"]]=0 
+                genress[languages[per]["genre"]]+=1
                 if not str(charclass)+"_"+periods[per] in translitperiods:
                     if periods[per]!="":
                         translitperiods[str(charclass)+"_"+periods[per]]=0
@@ -677,8 +683,11 @@ if singlefolder:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
-    f = open(exportdir+"/homepagestats.js", 'w')
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
+    sort_periodss = sorted(periodss.items(), key=lambda x: x[1])
+    sort_genress = sorted(genress.items(), key=lambda x: x[1])
+    sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
+    f = open(exportdir+"/homepagestats.js", 'w')   
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodds,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -749,8 +758,11 @@ else:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
-    f = open(exportdir+"/homepagestats.js", 'w')
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2))
+    sort_periodss = sorted(periodss.items(), key=lambda x: x[1])
+    sort_genress = sorted(genress.items(), key=lambda x: x[1])
+    sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
+    f = open(exportdir+"/homepagestats.js", 'w')   
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(sort_periodds,indent=2)+";\nvar numberLanguages="+json.dumps(sort_languagess,indent=2)+";\nvar genres="+json.dumps(sort_genress,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
