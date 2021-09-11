@@ -686,7 +686,7 @@ f.close()
 sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
 acc_translitstats={}
 for translit in sort_translitstats:
-    if not str(translit[1]) in acc_charperiods:
+    if not str(translit[1]) in acc_translitstats:
         acc_translitstats[str(translit[1])]=0
     acc_translitstats[str(translit[1])]+=1
 f = open(exportdir+"/charperperiod.csv", 'w')
