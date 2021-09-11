@@ -828,6 +828,15 @@
         "type": "TextualBody",
         "value": "Broken",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 833,
+          "y": 878
+        }
       }
     ],
     "target": {
@@ -839,5 +848,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#3549f8b1-ae52-4e0a-b95a-634ba8ad0c1f"
+  },
+  "#c114099a-e517-4b28-b9d7-5a4a327e1781": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "gesz",
+        "dimensions": {
+          "x": 833,
+          "y": 878
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113472:577673/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"708.6619873046875,37.844825744628906 598.1550903320312,40.87240982055664 599.6688842773438,155.92066955566406 711.6895751953125,151.37930297851562\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c114099a-e517-4b28-b9d7-5a4a327e1781"
   }
 }
