@@ -123,6 +123,8 @@ zooniverse_char_verify_line="image;line;charclass;transliteration\n"
 
 translitstats="filename,annotations,expected,percentage\n"
 
+translitstatsJSON={}
+
 arffdata="@data\n"
 
 arffdataperiods="@data\n"
@@ -253,8 +255,10 @@ for filename in dircontent:
         totalcountedchars+=len(jsondata)
         if int(translitcount[filename])!=0:
             translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
+            translitstatsJSON[filename]=str((len(jsondata)/int(translitcount[filename]))*100)
         else:
             translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+",100\n"
+            translitstatsJSON[filename]="100"
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
@@ -678,6 +682,12 @@ if singlefolder:
     f = open(exportdir+"/translitstats.csv", 'w')
     f.write(translitstats)
     f.close()
+    sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
+    acc_translitstats={}
+    for translit in sort_translitstats:
+        if not str(translit[1]) in acc_charperiods:
+            acc_translitstats[str(translit[1])]=0
+        acc_translitstats[str(translit[1])]+=1
     f = open(exportdir+"/charperperiod.csv", 'w')
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
     acc_charperiods={}
@@ -692,22 +702,8 @@ if singlefolder:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
-    """
-    sorte_periodss = sorted(periodss.items(), key=lambda x: x[1])
-    sort_periodss={}
-    for so in sorte_periodss:
-        sort_periodss[sorte_periodss[so][0]]=sorte_periodss[so][1]  
-    sorte_genress = sorted(genress.items(), key=lambda x: x[1])
-    sort_genress={}
-    for so in sorte_genress:
-        sort_genress[sorte_genress[so][0]]=sorte_genress[so][1]  
-    sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
-    sort_languagess={}
-    for so in sorte_languagess:
-        sort_languagess[sorte_languagess[so][0]]=sorte_languagess[so][1]  
-    """
     f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2))
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
 else:
@@ -761,9 +757,15 @@ else:
     f = open(exportdir+"/public/zooniverse_char_verify_line_manifest.csv", 'w')
     f.write(zooniverse_char_verify_line)
     f.close()
-    f = open(exportdir+"/public/translitstats.csv", 'w')
+    f = open(exportdir+"/translitstats.csv", 'w')
     f.write(translitstats)
     f.close()
+    sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
+    acc_translitstats={}
+    for translit in sort_translitstats:
+        if not str(translit[1]) in acc_charperiods:
+            acc_translitstats[str(translit[1])]=0
+        acc_translitstats[str(translit[1])]+=1
     f = open(exportdir+"/charperperiod.csv", 'w')
     sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
     acc_charperiods={}
@@ -778,22 +780,8 @@ else:
     for charr in acc_charperiods:
         f.write(str(charr)+","+str(acc_charperiods[charr]))
     f.close()
-    """
-    sorte_periodss = sorted(periodss.items(), key=lambda x: x[1])
-    sort_periodss={}
-    for so in sorte_periodss:
-        sort_periodss[sorte_periodss[so][0]]=sorte_periodss[so][1]  
-    sorte_genress = sorted(genress.items(), key=lambda x: x[1])
-    sort_genress={}
-    for so in sorte_genress:
-        sort_genress[sorte_genress[so][0]]=sorte_genress[so][1]  
-    sort_languagess = sorted(languagess.items(), key=lambda x: x[1])
-    sort_languagess={}
-    for so in sorte_languagess:
-        sort_languagess[sorte_languagess[so][0]]=sorte_languagess[so][1]  
-    """
     f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2))
+    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2))
     f.close()
     graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
 
