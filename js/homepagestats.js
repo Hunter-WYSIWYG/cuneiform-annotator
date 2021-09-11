@@ -1613,27 +1613,24 @@ var acc_charperperiod={
   "11": 1
 };
 var numberCharPeriods={
-  "Unknown": 0,
+  "Unknown": 22,
   "Ur III (ca. 2100-2000 BC)": 13666,
   "Old Assyrian (ca. 1950-1850 BC)": 1598,
   "ED IIIb (ca. 2500-2340 BC)": 2176,
   "Early Old Babylonian (ca. 2000-1900 BC)": 487,
   "Old Babylonian (ca. 1900-1600 BC)": 319,
   "ED IIIa (ca. 2600-2500 BC)": 92,
-  "Old Akkadian (ca. 2340-2200 BC)": 281,
-  "": 22
+  "Old Akkadian (ca. 2340-2200 BC)": 281
 };
 var numberLanguages={
-  "Unknown": 0,
+  "Unknown": 1655,
   "Sumerian": 16540,
-  "": 1655,
   "Akkadian": 278,
   "Sumerian; Akkadian": 12
 };
 var genres={
-  "Unknown": 0,
+  "Unknown": 1598,
   "Administrative": 15061,
-  "": 1598,
   "Legal": 1294,
   "Lexical": 112,
   "Royal/Monumental": 45,

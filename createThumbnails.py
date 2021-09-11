@@ -449,15 +449,24 @@ for filename in dircontent:
                     outputcsv+=";;" 
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
                 outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n" 
-                if not periods[per] in periodss:
+                if not periods[per] in periodss and periods[per]!="":
                     periodss[periods[per]]=0
-                periodss[periods[per]]+=1
-                if not languages[per]["language"] in languagess:
-                    languagess[languages[per]["language"]]=0                
-                languagess[languages[per]["language"]]+=1
-                if not languages[per]["genre"] in genress:
-                    genress[languages[per]["genre"]]=0 
-                genress[languages[per]["genre"]]+=1
+                if periods[per]=="":
+                    periodss["Unknown"]+=1
+                else:
+                    periodss[periods[per]]+=1
+                if not languages[per]["language"] in languagess and languages[per]["language"]!="":
+                    languagess[languages[per]["language"]]=0  
+                if languages[per]["language"]=="":
+                    languagess["Unknown"]+=1
+                else:
+                    languagess[languages[per]["language"]]+=1
+                if not languages[per]["genre"] in genress and languages[per]["genre"]!="":
+                    genress[languages[per]["genre"]]=0
+                if languages[per]["genre"]=="":
+                    genress["Unknown"]+=1               
+                else:
+                    genress[languages[per]["genre"]]+=1
                 if not str(charclass)+"_"+periods[per] in translitperiods:
                     if periods[per]!="":
                         translitperiods[str(charclass)+"_"+periods[per]]=0
