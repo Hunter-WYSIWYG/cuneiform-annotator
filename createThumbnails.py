@@ -628,160 +628,82 @@ arffperiodsexport=arffperiodsexport[:-1]+"}\n\n"
 arffgenresexport=arffgenresexport[:-1]+"}\n\n"
 arfflanguagesexport=arfflanguagesexport[:-1]+"}\n\n"
 arfftranslitperiodsexport=arfftranslitperiodsexport[:-1]+"}\n\n"
-if singlefolder:
-    f = open(exportdir+"/mlset.arff", 'w')
-    f.write(arffexport+arffdata)
-    f.close()
-    f = open(exportdir+"/maicubeda.ttl", 'w')
-    f.write(ttlheader)
-    for tt in ttlstring:
-        f.write(tt)
-    f.close()
-    f = open(exportdir+"/mlsetthreshold.arff", 'w')
-    f.write(arffthresholdexport+arffdatathreshold)
-    for line in arffthresholdlines:
-      if translits[line]>mlThreshold:
-          f.write(arffthresholdlines[line])
-    f.close()
-    f = open(exportdir+"/mlset_periods.arff", 'w')
-    f.write(arffperiodsexport+arffdataperiods)
-    f.close()
-    f = open(exportdir+"/mlset_languages.arff", 'w')
-    f.write(arfflanguagesexport+arffdatalanguages)
-    f.close()
-    f = open(exportdir+"/mlset_genres.arff", 'w')
-    f.write(arffgenresexport+arffdatagenres)
-    f.close()
-    f = open(exportdir+"/mlset_translitperiods.arff", 'w')
-    f.write(arfftranslitperiodsexport+arffdatasignperiods)
-    f.close()
-    f = open(exportdir+"/translitmetadata.csv", 'w')
-    f.write(outputcsv)
-    f.close()
-    f = open(exportdir+"/linemetadata.csv", 'w')
-    f.write(linecsv)
-    f.close()
-    f = open(exportdir+"/wordmetadata.csv", 'w')
-    f.write(wordcsv)
-    f.close()
-    f = open(exportdir+"/unknownchars.txt", 'w')
-    f.write(unknownchars)
-    f.close()
-    f = open(exportdir+"/errorlog.csv", 'w')
-    f.write(errorlog)
-    f.close()
-    f = open(exportdir+"/zooniverse_char_verify_manifest.csv", 'w')
-    f.write(zooniverse_char_verify)
-    f.close()
-    f = open(exportdir+"/zooniverse_char_verify_ref_manifest.csv", 'w')
-    f.write(zooniverse_char_verify_ref)
-    f.close()
-    f = open(exportdir+"/zooniverse_char_verify_line_manifest.csv", 'w')
-    f.write(zooniverse_char_verify_line)
-    f.close()
-    f = open(exportdir+"/translitstats.csv", 'w')
-    f.write(translitstats)
-    f.close()
-    sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
-    acc_translitstats={}
-    for translit in sort_translitstats:
-        if not str(translit[1]) in acc_charperiods:
-            acc_translitstats[str(translit[1])]=0
-        acc_translitstats[str(translit[1])]+=1
-    f = open(exportdir+"/charperperiod.csv", 'w')
-    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
-    acc_charperiods={}
-    for charr in sort_charperiods:
-        f.write(str(charr[0])+","+str(charr[1])+"\n")
-        if not str(charr[1]) in acc_charperiods:
-            acc_charperiods[str(charr[1])]=0
-        acc_charperiods[str(charr[1])]+=1
-    f.close()
-    f = open(exportdir+"/acc_charperperiod.csv", 'w')
-    f.write("AmountOfChars,NumberPeriods\n")
-    for charr in acc_charperiods:
-        f.write(str(charr)+","+str(acc_charperiods[charr]))
-    f.close()
-    f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2))
-    f.close()
-    graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
-else:
-    f = open("/public/mlset.arff", 'w')
-    f.write(arffexport+arffdata)
-    f.close()
-    f = open("/public/maicubeda.ttl", 'w')
-    f.write(ttlheader)
-    for tt in ttlstring:
-        f.write(tt)
-    f.close()
-    f = open("/public/mlsetthreshold.arff", 'w')
-    f.write(arffthresholdexport)
-    for line in arffthresholdlines:
-      if translits[line]>mlThreshold:
-          f.write(arffthresholdlines[line])
-    f.close()
-    f = open("/public/mlset_periods.arff", 'w')
-    f.write(arffperiodsexport+arffdataperiods)
-    f.close()
-    f = open(exportdir+"/public/mlset_languages.arff", 'w')
-    f.write(arfflanguagesexport+arffdatalanguages)
-    f.close()
-    f = open(exportdir+"/public/mlset_genres.arff", 'w')
-    f.write(arffgenresexport+arffdatagenres)
-    f.close()
-    f = open("/public/mlset_translitperiods.arff", 'w')
-    f.write(arfftranslitperiodsexport+arffdatasignperiods)
-    f.close()
-    f = open("/public/translitmetadata.csv", 'w')
-    f.write(outputcsv)
-    f.close()
-    f = open(exportdir+"/public/linemetadata.csv", 'w')
-    f.write(linecsv)
-    f.close()
-    f = open(exportdir+"/public/wordmetadata.csv", 'w')
-    f.write(wordcsv)
-    f.close()
-    f = open(exportdir+"/public/unknownchars.txt", 'w')
-    f.write(unknownchars)
-    f.close()
-    f = open(exportdir+"/public/errorlog.csv", 'w')
-    f.write(errorlog)
-    f.close()
-    f = open(exportdir+"/public/zooniverse_char_verify_manifest.csv", 'w')
-    f.write(zooniverse_char_verify)
-    f.close()
-    f = open(exportdir+"/public/zooniverse_char_verify_ref_manifest.csv", 'w')
-    f.write(zooniverse_char_verify_ref)
-    f.close()
-    f = open(exportdir+"/public/zooniverse_char_verify_line_manifest.csv", 'w')
-    f.write(zooniverse_char_verify_line)
-    f.close()
-    f = open(exportdir+"/translitstats.csv", 'w')
-    f.write(translitstats)
-    f.close()
-    sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
-    acc_translitstats={}
-    for translit in sort_translitstats:
-        if not str(translit[1]) in acc_charperiods:
-            acc_translitstats[str(translit[1])]=0
-        acc_translitstats[str(translit[1])]+=1
-    f = open(exportdir+"/charperperiod.csv", 'w')
-    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
-    acc_charperiods={}
-    for charr in sort_charperiods:
-        f.write(str(charr[0])+","+str(charr[1])+"\n")
-        if not str(charr[1]) in acc_charperiods:
-            acc_charperiods[str(charr[1])]=0
-        acc_charperiods[str(charr[1])]+=1
-    f.close()
-    f = open(exportdir+"/acc_charperperiod.csv", 'w')
-    f.write("AmountOfChars,NumberPeriods\n")
-    for charr in acc_charperiods:
-        f.write(str(charr)+","+str(acc_charperiods[charr]))
-    f.close()
-    f = open(exportdir+"/homepagestats.js", 'w')   
-    f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2))
-    f.close()
-    graph.serialize(destination=exportdir+'/public/annotations.ttl', format='turtle')
-
+if not singlefolder:
+    exportdir=exportdir+"/public"
+f = open(exportdir+"/mlset.arff", 'w')
+f.write(arffexport+arffdata)
+f.close()
+f = open(exportdir+"/maicubeda.ttl", 'w')
+f.write(ttlheader)
+for tt in ttlstring:
+    f.write(tt)
+f.close()
+f = open(exportdir+"/mlsetthreshold.arff", 'w')
+f.write(arffthresholdexport+arffdatathreshold)
+for line in arffthresholdlines:
+    if translits[line]>mlThreshold:
+        f.write(arffthresholdlines[line])
+f.close()
+f = open(exportdir+"/mlset_periods.arff", 'w')
+f.write(arffperiodsexport+arffdataperiods)
+f.close()
+f = open(exportdir+"/mlset_languages.arff", 'w')
+f.write(arfflanguagesexport+arffdatalanguages)
+f.close()
+f = open(exportdir+"/mlset_genres.arff", 'w')
+f.write(arffgenresexport+arffdatagenres)
+f.close()
+f = open(exportdir+"/mlset_translitperiods.arff", 'w')
+f.write(arfftranslitperiodsexport+arffdatasignperiods)
+f.close()
+f = open(exportdir+"/translitmetadata.csv", 'w')
+f.write(outputcsv)
+f.close()
+f = open(exportdir+"/linemetadata.csv", 'w')
+f.write(linecsv)
+f.close()
+f = open(exportdir+"/wordmetadata.csv", 'w')
+f.write(wordcsv)
+f.close()
+f = open(exportdir+"/unknownchars.txt", 'w')
+f.write(unknownchars)
+f.close()
+f = open(exportdir+"/errorlog.csv", 'w')
+f.write(errorlog)
+f.close()
+f = open(exportdir+"/zooniverse_char_verify_manifest.csv", 'w')
+f.write(zooniverse_char_verify)
+f.close()
+f = open(exportdir+"/zooniverse_char_verify_ref_manifest.csv", 'w')
+f.write(zooniverse_char_verify_ref)
+f.close()
+f = open(exportdir+"/zooniverse_char_verify_line_manifest.csv", 'w')
+f.write(zooniverse_char_verify_line)
+f.close()
+f = open(exportdir+"/translitstats.csv", 'w')
+f.write(translitstats)
+f.close()
+sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
+acc_translitstats={}
+for translit in sort_translitstats:
+    if not str(translit[1]) in acc_charperiods:
+        acc_translitstats[str(translit[1])]=0
+    acc_translitstats[str(translit[1])]+=1
+f = open(exportdir+"/charperperiod.csv", 'w')
+sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+acc_charperiods={}
+for charr in sort_charperiods:
+    f.write(str(charr[0])+","+str(charr[1])+"\n")
+    if not str(charr[1]) in acc_charperiods:
+        acc_charperiods[str(charr[1])]=0
+    acc_charperiods[str(charr[1])]+=1
+f.close()
+f = open(exportdir+"/acc_charperperiod.csv", 'w')
+f.write("AmountOfChars,NumberPeriods\n")
+for charr in acc_charperiods:
+    f.write(str(charr)+","+str(acc_charperiods[charr]))
+f.close()
+f = open(exportdir+"/homepagestats.js", 'w')   
+f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2))
+f.close()
+graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
