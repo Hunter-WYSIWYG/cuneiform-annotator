@@ -704,6 +704,6 @@ for charr in acc_charperiods:
     f.write(str(charr)+","+str(acc_charperiods[charr]))
 f.close()
 f = open(exportdir+"/homepagestats.js", 'w')   
-f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2))
+f.write("var charperperiod="+json.dumps(sort_charperiods,indent=2)+";\n"+"var acc_charperperiod="+json.dumps(acc_charperiods,indent=2)+";\nvar numberCharPeriods="+json.dumps(periodss,indent=2)+";\nvar numberLanguages="+json.dumps(languagess,indent=2)+";\nvar genres="+json.dumps(genress,indent=2)+";\nvar acc_translitstats="+json.dumps(acc_translitstats,indent=2)+";\nvar translitstats="+json.dumps(translitstatsJSON,indent=2)+";\nvar charclasses="+json.dumps(translits,indent=2))
 f.close()
 graph.serialize(destination=exportdir+'/annotations.ttl', format='turtle')
