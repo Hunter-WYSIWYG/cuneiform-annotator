@@ -453,7 +453,7 @@ for filename in dircontent:
                     periodss[periods[per]]=0
                 periodss[periods[per]]+=1
                 if not languages[per] in languagess:
-                    languagess[periods[per]]=0                
+                    languagess[languages[per]]=0                
                 languagess[languages[per]["language"]]+=1
                 if not languages[per]["genre"] in genress:
                     genress[languages[per]["genre"]]=0 
