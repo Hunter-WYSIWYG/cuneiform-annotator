@@ -1,18 +1,6 @@
 var charperperiod=[
   [
-    "BA?AR2",
-    1
-  ],
-  [
-    "MUNUS_(SAL)+KU_(DR__TUKUL__TUSZ)+",
-    1
-  ],
-  [
-    "TAB",
-    1
-  ],
-  [
-    "ZUM",
+    "ZI?+A+AN+",
     1
   ],
   [
@@ -24,159 +12,7 @@ var charperperiod=[
     1
   ],
   [
-    "BKR",
-    1
-  ],
-  [
-    "ASZ+ASZ+",
-    1
-  ],
-  [
-    "SZESZ_(URI3)+AB+",
-    1
-  ],
-  [
-    "UD_(BABBAR)+DU+",
-    1
-  ],
-  [
-    "EN+ZU+",
-    1
-  ],
-  [
-    "SZIR",
-    1
-  ],
-  [
-    "UD-gun",
-    1
-  ],
-  [
-    "ZI?+A+AN+",
-    1
-  ],
-  [
-    "UMUMKASKAL",
-    1
-  ],
-  [
-    "GISZGAL_(URUMIN)",
-    1
-  ],
-  [
-    "?AL",
-    1
-  ],
-  [
-    "SZRA_(LAGABSIG7)",
-    1
-  ],
-  [
-    "TE",
-    1
-  ],
-  [
-    "BANIA_(SZ._UoverUGE23overGE23)",
-    1
-  ],
-  [
-    "SZE3_(ESZ2__GI7__ZI3)+SZE+",
-    1
-  ],
-  [
     "SZANABI_(23)",
-    1
-  ],
-  [
-    "LU2BAD",
-    1
-  ],
-  [
-    "KISAL",
-    1
-  ],
-  [
-    "GA-gun",
-    1
-  ],
-  [
-    "ERIM_(ZALAG2)",
-    1
-  ],
-  [
-    "NE+RU+",
-    1
-  ],
-  [
-    "ALIM_(GIR3_A.IGI)",
-    1
-  ],
-  [
-    "NI+GISZ_(GESZ)+",
-    1
-  ],
-  [
-    "ILIMMU2_(TAB.TAB.TAB.TAB.ASZ)",
-    1
-  ],
-  [
-    "GESZTIN_(GISZ.DIN)",
-    1
-  ],
-  [
-    "GUG2_(LU2;_SZ-gun)",
-    1
-  ],
-  [
-    "AZ_(PIRIGZA)",
-    1
-  ],
-  [
-    "UR3_(GA2NIR)",
-    1
-  ],
-  [
-    "DISZ_(1)+DISZ_(1)+DISZ_(1)+",
-    1
-  ],
-  [
-    "TA?DA?_(MUoverMU)",
-    1
-  ],
-  [
-    "PA+AL+",
-    1
-  ],
-  [
-    "DUR_(GxGAG__G.GAG)",
-    1
-  ],
-  [
-    "NI+UD_(BABBAR)+",
-    1
-  ],
-  [
-    "UG_(PIRIGUD)",
-    1
-  ],
-  [
-    "KI+BI+",
-    1
-  ],
-  [
-    "U+UD_(BABBAR)+KID_(LIL2)+",
-    1
-  ],
-  [
-    "IL_(ALSZE)",
-    1
-  ],
-  [
-    "B+KU_(DR__TUKUL__TUSZ)+",
-    1
-  ],
-  [
-    "BI+U2+SA+",
     1
   ],
   [
@@ -188,23 +24,27 @@ var charperperiod=[
     1
   ],
   [
+    "TE",
+    1
+  ],
+  [
+    "UD_(BABBAR)+DU+",
+    1
+  ],
+  [
     "TE+AB+",
     1
   ],
   [
-    "SZUBUR",
+    "BANIA_(SZ._UoverUGE23overGE23)",
     1
   ],
   [
-    "SUD_(BU-gun)",
+    "SZE3_(ESZ2__GI7__ZI3)+SZE+",
     1
   ],
   [
-    "SZEG9_(SZ.SZE.KU.GAG)",
-    1
-  ],
-  [
-    "SZAR",
+    "GISZ_(GESZ)+KSZU+",
     1
   ],
   [
@@ -212,7 +52,35 @@ var charperperiod=[
     1
   ],
   [
-    "nine_SZAR2",
+    "U+UD_(BABBAR)+KID_(LIL2)+",
+    1
+  ],
+  [
+    "GESZTIN_(GISZ.DIN)",
+    1
+  ],
+  [
+    "GUG2_(LU2;_SZ-gun)",
+    1
+  ],
+  [
+    "ESZEMIN5_(BI)",
+    1
+  ],
+  [
+    "GE23_(DISZ-ten)",
+    1
+  ],
+  [
+    "EN+ZU+",
+    1
+  ],
+  [
+    "nine_GESZ2",
+    1
+  ],
+  [
+    "SZAR",
     1
   ],
   [
@@ -220,19 +88,7 @@ var charperperiod=[
     1
   ],
   [
-    "GIR2-gun",
-    1
-  ],
-  [
-    "DAR3",
-    1
-  ],
-  [
-    "KAR2_(GN-ten_and_SZ-ten)",
-    1
-  ],
-  [
-    "KAD4",
+    "seven_SZAR2",
     1
   ],
   [
@@ -244,51 +100,19 @@ var charperperiod=[
     1
   ],
   [
-    "ANSZE_(GRPA_or_GRTAB)+IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
+    "TAB",
     1
   ],
   [
-    "SU+A+",
+    "ASZ+ASZ+",
     1
   ],
   [
-    "URUKAR2",
+    "SZESZ_(URI3)+AB+",
     1
   ],
   [
-    "LU_(UDU)+?L+",
-    1
-  ],
-  [
-    "NAG_(KAA)",
-    1
-  ],
-  [
-    "MUNUS_(SAL)+SILA4_(GA2PA)+",
-    1
-  ],
-  [
-    "GA2GI4",
-    1
-  ],
-  [
-    "GUL_(SN)",
-    1
-  ],
-  [
-    "DARA4_(SIG2+ASZ)",
-    1
-  ],
-  [
-    "IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
-    1
-  ],
-  [
-    "GAD",
-    1
-  ],
-  [
-    "ME+ESZ_(3U)+",
+    "ERIM_(ZALAG2)",
     1
   ],
   [
@@ -296,27 +120,11 @@ var charperperiod=[
     1
   ],
   [
-    "UZU",
+    "SZIMNG_(BAPPIR)",
     1
   ],
   [
-    "BALAG",
-    1
-  ],
-  [
-    "GIGIR_(LAGABBAD)",
-    1
-  ],
-  [
-    "SU?USZ_(DU-gun)",
-    1
-  ],
-  [
-    "PAD_(SZUK)+AN+MSZ_(INANNA)+",
-    1
-  ],
-  [
-    "ZU5",
+    "DISZ_(1)+DISZ_(1)+DISZ_(1)+",
     1
   ],
   [
@@ -332,19 +140,27 @@ var charperperiod=[
     1
   ],
   [
-    "nine_GESZ2",
-    1
-  ],
-  [
-    "?B",
-    1
-  ],
-  [
-    "SAGGAG",
-    1
-  ],
-  [
     "SZINIG_(GAD.NAGA)",
+    1
+  ],
+  [
+    "KISAL",
+    1
+  ],
+  [
+    "SUD_(BU-gun)",
+    1
+  ],
+  [
+    "DUR_(GxGAG__G.GAG)",
+    1
+  ],
+  [
+    "KAD4",
+    1
+  ],
+  [
+    "BN_(KAIM)",
     1
   ],
   [
@@ -352,79 +168,31 @@ var charperperiod=[
     1
   ],
   [
-    "ENGUR_(LAGAB?AL)",
+    "BKR",
     1
   ],
   [
-    "PAN",
+    "NE+RU+",
     1
   ],
   [
-    "AN+GE23_(DISZ-ten)+AN+",
+    "ALIM_(GIR3_A.IGI)",
     1
   ],
   [
-    "DUN4_(UR-gun-SZeSZSZigMIR-SZeSZSZig)",
+    "NI+GISZ_(GESZ)+",
     1
   ],
   [
-    "seven_SZAR2",
+    "GIR2-gun",
     1
   ],
   [
-    "LX_(6U)",
+    "ILIMMU2_(TAB.TAB.TAB.TAB.ASZ)",
     1
   ],
   [
-    "A+SZU+NAGA+",
-    1
-  ],
-  [
-    "MI+NUNUZ+",
-    1
-  ],
-  [
-    "A+SZE+NIR_(NUNoverNUN)+",
-    1
-  ],
-  [
-    "SZE+SZE+NIR_(NUNoverNUN)+",
-    1
-  ],
-  [
-    "SZIMNG_(BAPPIR)",
-    1
-  ],
-  [
-    "KI+UD_(BABBAR)+",
-    1
-  ],
-  [
-    "KISZ",
-    1
-  ],
-  [
-    "PIRIG",
-    1
-  ],
-  [
-    "KUN",
-    1
-  ],
-  [
-    "AN+NAGA+",
-    1
-  ],
-  [
-    "ANSZE_(GRPA_or_GRTAB)+ARAD+",
-    1
-  ],
-  [
-    "DU6_(LAGAR-gun)+DU+",
-    1
-  ],
-  [
-    "two_SZAR2",
+    "SZIR+GI4_(GI-gun)+",
     1
   ],
   [
@@ -436,47 +204,55 @@ var charperperiod=[
     1
   ],
   [
-    "TIR",
+    "AZ_(PIRIGZA)",
     1
   ],
   [
-    "BANSZUR_(URUURUDU)",
+    "SAGGAG",
     1
   ],
   [
-    "MUSZ",
+    "GAD",
     1
   ],
   [
-    "ESZEMIN5_(BI)",
+    "SZIR",
     1
   ],
   [
-    "GE23_(DISZ-ten)",
+    "GA2GI4",
     1
   ],
   [
-    "GISZ_(GESZ)+KSZU+",
+    "B+KU_(DR__TUKUL__TUSZ)+",
     1
   ],
   [
-    "NA?",
+    "KI+UD_(BABBAR)+",
     1
   ],
   [
-    "NUN+LAGAR+",
+    "KAR2_(GN-ten_and_SZ-ten)",
     1
   ],
   [
-    "PA+?B+DU+",
+    "URUKAR2",
     1
   ],
   [
-    "BN_(KAIM)",
+    "UMUMKASKAL",
     1
   ],
   [
-    "NINA_(AB?A)",
+    "PIRIG",
+    1
+  ],
+  [
+    "LU_(UDU)+?L+",
+    1
+  ],
+  [
+    "ZUM",
     1
   ],
   [
@@ -484,7 +260,55 @@ var charperperiod=[
     1
   ],
   [
-    "SZIR+GI4_(GI-gun)+",
+    "SZE+SZE+NIR_(NUNoverNUN)+",
+    1
+  ],
+  [
+    "KUN",
+    1
+  ],
+  [
+    "PAD_(SZUK)+AN+MSZ_(INANNA)+",
+    1
+  ],
+  [
+    "MUNUS_(SAL)+KU_(DR__TUKUL__TUSZ)+",
+    1
+  ],
+  [
+    "DARA4_(SIG2+ASZ)",
+    1
+  ],
+  [
+    "IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
+    1
+  ],
+  [
+    "SZRA_(LAGABSIG7)",
+    1
+  ],
+  [
+    "UZU",
+    1
+  ],
+  [
+    "NI+UD_(BABBAR)+",
+    1
+  ],
+  [
+    "KI+BI+",
+    1
+  ],
+  [
+    "BALAG",
+    1
+  ],
+  [
+    "ME+ESZ_(3U)+",
+    1
+  ],
+  [
+    "SZEG9_(SZ.SZE.KU.GAG)",
     1
   ],
   [
@@ -492,215 +316,191 @@ var charperperiod=[
     1
   ],
   [
-    "SZUL_(DUN)",
-    2
+    "PA+?B+DU+",
+    1
   ],
   [
-    "SAG5",
-    2
+    "TA?DA?_(MUoverMU)",
+    1
   ],
   [
-    "URUDU_(URUDA)",
-    2
+    "PA+AL+",
+    1
   ],
   [
-    "GUR8_(TE-gun)",
-    2
+    "nine_SZAR2",
+    1
   ],
   [
-    "nine_DISZ",
-    2
+    "NAG_(KAA)",
+    1
   ],
   [
-    "SZID_(LAG)",
-    2
+    "two_SZAR2",
+    1
   ],
   [
-    "SILA4_(GA2PA)",
-    2
+    "SZUBUR",
+    1
   ],
   [
-    "US",
-    2
+    "DAR3",
+    1
   ],
   [
-    "GIR3",
-    2
+    "ENGUR_(LAGAB?AL)",
+    1
   ],
   [
-    "LUM",
-    2
+    "TIR",
+    1
   ],
   [
-    "SA",
-    2
+    "SU+A+",
+    1
   ],
   [
-    "EZEN",
-    2
+    "PAN",
+    1
   ],
   [
-    "A+AN+",
-    2
+    "MUSZ",
+    1
   ],
   [
-    "GURUSZ",
-    2
+    "?B",
+    1
   ],
   [
-    "KINGUSILA",
-    2
+    "UD-gun",
+    1
   ],
   [
-    "TIL",
-    2
+    "UR3_(GA2NIR)",
+    1
   ],
   [
-    "AR_(IGI.RI)",
-    2
+    "KISZ",
+    1
   ],
   [
-    "GISZKREUZTGISZ",
-    2
+    "LU2BAD",
+    1
   ],
   [
-    "KUR",
-    2
+    "A+SZU+NAGA+",
+    1
   ],
   [
-    "IR_(GAG-gun)",
-    2
+    "MI+NUNUZ+",
+    1
   ],
   [
-    "ASZ4_(TAB.TAB.TAB)",
-    2
+    "SU?USZ_(DU-gun)",
+    1
   ],
   [
-    "SIG",
-    2
+    "UG_(PIRIGUD)",
+    1
   ],
   [
-    "EL",
-    2
+    "GA-gun",
+    1
   ],
   [
-    "GU4",
-    2
+    "LX_(6U)",
+    1
   ],
   [
-    "SZESZ_(URI3)+KI+",
-    2
+    "BI+U2+SA+",
+    1
   ],
   [
-    "NUN",
-    2
+    "ANSZE_(GRPA_or_GRTAB)+ARAD+",
+    1
   ],
   [
-    "one_GESZ2",
-    2
+    "AN+GE23_(DISZ-ten)+AN+",
+    1
   ],
   [
-    "DUG_(BIA)",
-    2
+    "DUN4_(UR-gun-SZeSZSZigMIR-SZeSZSZig)",
+    1
   ],
   [
-    "GIR_(?A-gun)",
-    2
+    "ZU5",
+    1
   ],
   [
-    "A+ENGUR_(LAGAB?AL)+",
-    2
+    "MUNUS_(SAL)+SILA4_(GA2PA)+",
+    1
   ],
   [
-    "NAM",
-    2
+    "NUN+LAGAR+",
+    1
   ],
   [
-    "GU7_(KANG)",
-    2
+    "AN+NAGA+",
+    1
   ],
   [
-    "two_GESZ2",
-    2
+    "DU6_(LAGAR-gun)+DU+",
+    1
   ],
   [
-    "TE+A+",
-    2
+    "BA?AR2",
+    1
   ],
   [
-    "UNUG_(AB-gun_andor_ABESZ)",
-    2
+    "ANSZE_(GRPA_or_GRTAB)+IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+",
+    1
+  ],
+  [
+    "GIGIR_(LAGABBAD)",
+    1
+  ],
+  [
+    "A+SZE+NIR_(NUNoverNUN)+",
+    1
+  ],
+  [
+    "GUL_(SN)",
+    1
+  ],
+  [
+    "NINA_(AB?A)",
+    1
+  ],
+  [
+    "GISZGAL_(URUMIN)",
+    1
+  ],
+  [
+    "?AL",
+    1
+  ],
+  [
+    "NA?",
+    1
+  ],
+  [
+    "BANSZUR_(URUURUDU)",
+    1
+  ],
+  [
+    "IL_(ALSZE)",
+    1
   ],
   [
     "BN",
     2
   ],
   [
-    "UD_(BABBAR)+UD_(BABBAR)+",
+    "SZUL_(DUN)",
     2
   ],
   [
-    "IL2_(GA.GN)",
-    2
-  ],
-  [
-    "eight_GESZ2",
-    2
-  ],
-  [
-    "UN",
-    2
-  ],
-  [
-    "A?_(?INUN)+ME+",
-    2
-  ],
-  [
-    "LUL_(NAR)",
-    2
-  ],
-  [
-    "SSU_(TAB.TAB.TAB.TAB)",
-    2
-  ],
-  [
-    "PAD_(SZUK)",
-    2
-  ],
-  [
-    "LAGAR",
-    2
-  ],
-  [
-    "UZ3_(M.KASKAL)",
-    2
-  ],
-  [
-    "BARA2",
-    2
-  ],
-  [
-    "A+SU+",
-    2
-  ],
-  [
-    "DUL3_(SAG-gun)",
-    2
-  ],
-  [
-    "MA?",
-    2
-  ],
-  [
-    "A?_(?INUN)",
-    2
-  ],
-  [
-    "NUMUN",
-    2
-  ],
-  [
-    "IGI_(SZI__LIM)+RU+",
+    "SA",
     2
   ],
   [
@@ -712,131 +512,23 @@ var charperperiod=[
     2
   ],
   [
-    "MUG",
+    "GIR_(?A-gun)",
     2
   ],
   [
-    "BUR_(NG-gun)",
+    "GU4",
     2
   ],
   [
-    "ARAD",
+    "TIL",
     2
   ],
   [
-    "LAL3_(TA?I)",
+    "UNUG_(AB-gun_andor_ABESZ)",
     2
   ],
   [
-    "three_GESZ2",
-    2
-  ],
-  [
-    "IMIN2_(TAB.TAB.TAB.ASZ)",
-    2
-  ],
-  [
-    "LAGAB",
-    2
-  ],
-  [
-    "EN+KID_(LIL2)+",
-    2
-  ],
-  [
-    "GANUN_(GA2NUN)",
-    2
-  ],
-  [
-    "Z(_ABPA)",
-    2
-  ],
-  [
-    "LISZ",
-    2
-  ],
-  [
-    "SUG_(LAGABA)",
-    2
-  ],
-  [
-    "four_GESZ2",
-    2
-  ],
-  [
-    "seven_GESZ2",
-    2
-  ],
-  [
-    "PU3_(KAKR)",
-    2
-  ],
-  [
-    "ANSZE_(GRPA_or_GRTAB)",
-    2
-  ],
-  [
-    "SZIM",
-    2
-  ],
-  [
-    "ZI?",
-    2
-  ],
-  [
-    "PU3_(KAKR)+SZA+",
-    2
-  ],
-  [
-    "?U+SI+",
-    2
-  ],
-  [
-    "N",
-    2
-  ],
-  [
-    "LAM",
-    2
-  ],
-  [
-    "TUR_(DUMU)+USZ_(NITA)+",
-    2
-  ],
-  [
-    "KD_(TAG4)",
-    2
-  ],
-  [
-    "ZU+AB+",
-    2
-  ],
-  [
-    "PA+KASZ4_(DU-SZeSZSZig)+",
-    2
-  ],
-  [
-    "SU4_(SI-gun)",
-    2
-  ],
-  [
-    "DIM",
-    2
-  ],
-  [
-    "five_GESZ2",
-    2
-  ],
-  [
-    "GAM",
-    2
-  ],
-  [
-    "MES_(RID)",
-    2
-  ],
-  [
-    "PA+TE+SI+",
+    "EZEN",
     2
   ],
   [
@@ -844,11 +536,11 @@ var charperperiod=[
     2
   ],
   [
-    "PAB_or_PAP+PAB_or_PAP+",
+    "PA+KASZ4_(DU-SZeSZSZig)+",
     2
   ],
   [
-    "GA2GI",
+    "GUR8_(TE-gun)",
     2
   ],
   [
@@ -856,11 +548,27 @@ var charperperiod=[
     2
   ],
   [
-    "G_(NNDANE)",
+    "SZESZ_(URI3)+KI+",
     2
   ],
   [
-    "NAGAR",
+    "GU7_(KANG)",
+    2
+  ],
+  [
+    "NUMUN",
+    2
+  ],
+  [
+    "EN+KID_(LIL2)+",
+    2
+  ],
+  [
+    "SILA4_(GA2PA)",
+    2
+  ],
+  [
+    "ANSZE_(GRPA_or_GRTAB)",
     2
   ],
   [
@@ -868,31 +576,27 @@ var charperperiod=[
     2
   ],
   [
-    "EDIN",
+    "NUN",
     2
   ],
   [
-    "KASZ4_(DU-SZeSZSZig)",
+    "SZIM",
     2
   ],
   [
-    "?L",
+    "A+ENGUR_(LAGAB?AL)+",
     2
   ],
   [
-    "LAGAB+LAGAB+",
+    "ARAD",
     2
   ],
   [
-    "BL_(GIBIL;_NEPAB__NE-SZeSZSZig)",
+    "TE+A+",
     2
   ],
   [
-    "KA+DI+",
-    2
-  ],
-  [
-    "GAZ_(KUMSZE)",
+    "LISZ",
     2
   ],
   [
@@ -900,7 +604,231 @@ var charperperiod=[
     2
   ],
   [
+    "A+AN+",
+    2
+  ],
+  [
+    "UN",
+    2
+  ],
+  [
+    "A+SU+",
+    2
+  ],
+  [
+    "nine_DISZ",
+    2
+  ],
+  [
+    "seven_GESZ2",
+    2
+  ],
+  [
+    "three_GESZ2",
+    2
+  ],
+  [
+    "GURUSZ",
+    2
+  ],
+  [
+    "five_GESZ2",
+    2
+  ],
+  [
+    "MA?",
+    2
+  ],
+  [
+    "two_GESZ2",
+    2
+  ],
+  [
+    "eight_GESZ2",
+    2
+  ],
+  [
+    "BARA2",
+    2
+  ],
+  [
+    "four_GESZ2",
+    2
+  ],
+  [
+    "SSU_(TAB.TAB.TAB.TAB)",
+    2
+  ],
+  [
+    "?U+SI+",
+    2
+  ],
+  [
+    "LUM",
+    2
+  ],
+  [
+    "GAM",
+    2
+  ],
+  [
+    "LAGAB",
+    2
+  ],
+  [
+    "GANUN_(GA2NUN)",
+    2
+  ],
+  [
+    "AR_(IGI.RI)",
+    2
+  ],
+  [
+    "PU3_(KAKR)",
+    2
+  ],
+  [
+    "GIR3",
+    2
+  ],
+  [
+    "one_GESZ2",
+    2
+  ],
+  [
+    "SZID_(LAG)",
+    2
+  ],
+  [
+    "KASZ4_(DU-SZeSZSZig)",
+    2
+  ],
+  [
+    "PAD_(SZUK)",
+    2
+  ],
+  [
+    "ASZ4_(TAB.TAB.TAB)",
+    2
+  ],
+  [
+    "GA2GI",
+    2
+  ],
+  [
     "?ASZ?UR_(MA-gun)",
+    2
+  ],
+  [
+    "PAB_or_PAP+PAB_or_PAP+",
+    2
+  ],
+  [
+    "DUL3_(SAG-gun)",
+    2
+  ],
+  [
+    "LAL3_(TA?I)",
+    2
+  ],
+  [
+    "GISZKREUZTGISZ",
+    2
+  ],
+  [
+    "Z(_ABPA)",
+    2
+  ],
+  [
+    "KINGUSILA",
+    2
+  ],
+  [
+    "MES_(RID)",
+    2
+  ],
+  [
+    "DUG_(BIA)",
+    2
+  ],
+  [
+    "LUL_(NAR)",
+    2
+  ],
+  [
+    "IMIN2_(TAB.TAB.TAB.ASZ)",
+    2
+  ],
+  [
+    "NAM",
+    2
+  ],
+  [
+    "EL",
+    2
+  ],
+  [
+    "SIG",
+    2
+  ],
+  [
+    "ZU+AB+",
+    2
+  ],
+  [
+    "LAGAB+LAGAB+",
+    2
+  ],
+  [
+    "?L",
+    2
+  ],
+  [
+    "IL2_(GA.GN)",
+    2
+  ],
+  [
+    "UD_(BABBAR)+UD_(BABBAR)+",
+    2
+  ],
+  [
+    "A?_(?INUN)",
+    2
+  ],
+  [
+    "A?_(?INUN)+ME+",
+    2
+  ],
+  [
+    "PA+TE+SI+",
+    2
+  ],
+  [
+    "G_(NNDANE)",
+    2
+  ],
+  [
+    "MUG",
+    2
+  ],
+  [
+    "DIM",
+    2
+  ],
+  [
+    "IGI_(SZI__LIM)+RU+",
+    2
+  ],
+  [
+    "URUDU_(URUDA)",
+    2
+  ],
+  [
+    "IR_(GAG-gun)",
+    2
+  ],
+  [
+    "UZ3_(M.KASKAL)",
     2
   ],
   [
@@ -908,43 +836,91 @@ var charperperiod=[
     2
   ],
   [
+    "LAM",
+    2
+  ],
+  [
+    "SAG5",
+    2
+  ],
+  [
+    "LAGAR",
+    2
+  ],
+  [
+    "BUR_(NG-gun)",
+    2
+  ],
+  [
+    "ZI?",
+    2
+  ],
+  [
+    "SUG_(LAGABA)",
+    2
+  ],
+  [
+    "KD_(TAG4)",
+    2
+  ],
+  [
+    "BL_(GIBIL;_NEPAB__NE-SZeSZSZig)",
+    2
+  ],
+  [
+    "US",
+    2
+  ],
+  [
+    "GAZ_(KUMSZE)",
+    2
+  ],
+  [
+    "SU4_(SI-gun)",
+    2
+  ],
+  [
+    "PU3_(KAKR)+SZA+",
+    2
+  ],
+  [
+    "EDIN",
+    2
+  ],
+  [
+    "N",
+    2
+  ],
+  [
+    "KA+DI+",
+    2
+  ],
+  [
+    "NAGAR",
+    2
+  ],
+  [
+    "KUR",
+    2
+  ],
+  [
+    "TUR_(DUMU)+USZ_(NITA)+",
+    2
+  ],
+  [
+    "USSU_(8)",
+    3
+  ],
+  [
+    "GU2_(TIK)",
+    3
+  ],
+  [
+    "GI4_(GI-gun)",
+    3
+  ],
+  [
     "IA2_(5)",
-    3
-  ],
-  [
-    "GAN",
-    3
-  ],
-  [
-    "NINNU_(5U)",
-    3
-  ],
-  [
-    "AMAR_(ZUR)",
-    3
-  ],
-  [
-    "GABA",
-    3
-  ],
-  [
-    "APIN_(ENGAR)",
-    3
-  ],
-  [
-    "IA7_(TAB.TAB.ASZ)",
-    3
-  ],
-  [
-    "DAR_(GN;_?U-gun__SI-gun)",
-    3
-  ],
-  [
-    "ASZ2_(ZIZ2)",
-    3
-  ],
-  [
-    "BANMIN_(PA)",
     3
   ],
   [
@@ -952,19 +928,27 @@ var charperperiod=[
     3
   ],
   [
+    "MSZ_(INANNA)",
+    3
+  ],
+  [
     "MASZ2",
     3
   ],
   [
-    "KIN",
+    "KASKAL",
     3
   ],
   [
-    "TAR",
+    "A2",
     3
   ],
   [
-    "SIG2__SK",
+    "GABA",
+    3
+  ],
+  [
+    "NIGIDAMIN_(DISZoverDISZ)",
     3
   ],
   [
@@ -972,27 +956,11 @@ var charperperiod=[
     3
   ],
   [
-    "MI",
+    "KIN",
     3
   ],
   [
-    "ESZ5(3)",
-    3
-  ],
-  [
-    "SZ",
-    3
-  ],
-  [
-    "DU6_(LAGAR-gun)",
-    3
-  ],
-  [
-    "USSU_(8)",
-    3
-  ],
-  [
-    "SI",
+    "?U",
     3
   ],
   [
@@ -1000,7 +968,115 @@ var charperperiod=[
     3
   ],
   [
-    "A2",
+    "ESZ5(3)",
+    3
+  ],
+  [
+    "TAR",
+    3
+  ],
+  [
+    "DU6_(LAGAR-gun)",
+    3
+  ],
+  [
+    "LU?",
+    3
+  ],
+  [
+    "SIG2__SK",
+    3
+  ],
+  [
+    "NINDSZE",
+    3
+  ],
+  [
+    "TL_(LAGABU)",
+    3
+  ],
+  [
+    "BANMIN_(PA)",
+    3
+  ],
+  [
+    "four_ASZ",
+    3
+  ],
+  [
+    "GAN",
+    3
+  ],
+  [
+    "GIN2_(TUN3)",
+    3
+  ],
+  [
+    "BAD",
+    3
+  ],
+  [
+    "EME_(KAME)",
+    3
+  ],
+  [
+    "IA7_(TAB.TAB.ASZ)",
+    3
+  ],
+  [
+    "SZ",
+    3
+  ],
+  [
+    "SZA",
+    3
+  ],
+  [
+    "PAB_or_PAP",
+    3
+  ],
+  [
+    "SI+A+",
+    3
+  ],
+  [
+    "SUR_(SZUR)",
+    3
+  ],
+  [
+    "PA+LU_(UDU)+",
+    3
+  ],
+  [
+    "APIN_(ENGAR)",
+    3
+  ],
+  [
+    "AMAR_(ZUR)",
+    3
+  ],
+  [
+    "other",
+    3
+  ],
+  [
+    "MI",
+    3
+  ],
+  [
+    "NINNU_(5U)",
+    3
+  ],
+  [
+    "SI",
+    3
+  ],
+  [
+    "B",
+    3
+  ],
+  [
+    "AM_(GU4KUR)",
     3
   ],
   [
@@ -1016,31 +1092,7 @@ var charperperiod=[
     3
   ],
   [
-    "other",
-    3
-  ],
-  [
-    "GIM_(DIM2)",
-    3
-  ],
-  [
-    "GU2_(TIK)",
-    3
-  ],
-  [
-    "BAD",
-    3
-  ],
-  [
-    "SZA",
-    3
-  ],
-  [
-    "ISZ",
-    3
-  ],
-  [
-    "four_ASZ",
+    "Z",
     3
   ],
   [
@@ -1048,51 +1100,15 @@ var charperperiod=[
     3
   ],
   [
-    "GI4_(GI-gun)",
-    3
-  ],
-  [
-    "NIM",
-    3
-  ],
-  [
-    "NIGIDAMIN_(DISZoverDISZ)",
-    3
-  ],
-  [
     "SZUSZANA_(13)",
     3
   ],
   [
-    "PA+LU_(UDU)+",
+    "ISZ",
     3
   ],
   [
-    "?U",
-    3
-  ],
-  [
-    "LU?",
-    3
-  ],
-  [
-    "TAG_(SZUM)",
-    3
-  ],
-  [
-    "MSZ_(INANNA)",
-    3
-  ],
-  [
-    "PAB_or_PAP",
-    3
-  ],
-  [
-    "NINDSZE",
-    3
-  ],
-  [
-    "SI+A+",
+    "GIM_(DIM2)",
     3
   ],
   [
@@ -1100,39 +1116,19 @@ var charperperiod=[
     3
   ],
   [
-    "SUR_(SZUR)",
+    "ASZ2_(ZIZ2)",
     3
   ],
   [
-    "KUM_(GUM)",
+    "DAR_(GN;_?U-gun__SI-gun)",
     3
   ],
   [
-    "TL_(LAGABU)",
+    "NIM",
     3
   ],
   [
-    "Z",
-    3
-  ],
-  [
-    "B",
-    3
-  ],
-  [
-    "GIN2_(TUN3)",
-    3
-  ],
-  [
-    "AM_(GU4KUR)",
-    3
-  ],
-  [
-    "KASKAL",
-    3
-  ],
-  [
-    "EME_(KAME)",
+    "TAG_(SZUM)",
     3
   ],
   [
@@ -1140,23 +1136,31 @@ var charperperiod=[
     3
   ],
   [
-    "IG_(GL)",
+    "KUM_(GUM)",
+    3
+  ],
+  [
+    "SZESZ_(URI3)",
     4
   ],
   [
-    "MUNUS_(SAL)+TUG2_(NM)+",
+    "four_DISZ",
     4
   ],
   [
-    "KA",
+    "USZ_(NITA)",
     4
   ],
   [
-    "PA",
+    "TU",
     4
   ],
   [
-    "NE",
+    "GUR",
+    4
+  ],
+  [
+    "SIG4",
     4
   ],
   [
@@ -1164,11 +1168,27 @@ var charperperiod=[
     4
   ],
   [
+    "PA",
+    4
+  ],
+  [
+    "SUM",
+    4
+  ],
+  [
+    "NE",
+    4
+  ],
+  [
+    "MUNUS_(SAL)+TUG2_(NM)+",
+    4
+  ],
+  [
     "DUB",
     4
   ],
   [
-    "GUR",
+    "IG_(GL)",
     4
   ],
   [
@@ -1180,71 +1200,7 @@ var charperperiod=[
     4
   ],
   [
-    "seven_DISZ",
-    4
-  ],
-  [
     "MASZ",
-    4
-  ],
-  [
-    "?I_(DG)",
-    4
-  ],
-  [
-    "UM",
-    4
-  ],
-  [
-    "USZ_(NITA)",
-    4
-  ],
-  [
-    "four_DISZ",
-    4
-  ],
-  [
-    "AG",
-    4
-  ],
-  [
-    "ESZ6_(ASZ.ASZ.ASZ)",
-    4
-  ],
-  [
-    "IM",
-    4
-  ],
-  [
-    "SZESZ_(URI3)",
-    4
-  ],
-  [
-    "SIG4",
-    4
-  ],
-  [
-    "GA2_(MAL)",
-    4
-  ],
-  [
-    "RU",
-    4
-  ],
-  [
-    "UL_(DU7)",
-    4
-  ],
-  [
-    "SUM",
-    4
-  ],
-  [
-    "URU_(IRI)",
-    4
-  ],
-  [
-    "UB",
     4
   ],
   [
@@ -1252,23 +1208,7 @@ var charperperiod=[
     4
   ],
   [
-    "TUK_(TUG)",
-    4
-  ],
-  [
-    "NIGIDAESZ_(DISZoverDISZ.DISZ)",
-    4
-  ],
-  [
     "DI",
-    4
-  ],
-  [
-    "AMA_(GA2AN)",
-    4
-  ],
-  [
-    "TU",
     4
   ],
   [
@@ -1276,7 +1216,19 @@ var charperperiod=[
     4
   ],
   [
+    "KA",
+    4
+  ],
+  [
     "MUNUS_(SAL)+KUR+",
+    4
+  ],
+  [
+    "IM",
+    4
+  ],
+  [
+    "seven_DISZ",
     4
   ],
   [
@@ -1284,67 +1236,59 @@ var charperperiod=[
     4
   ],
   [
-    "IGI_(SZI__LIM)",
-    5
+    "?I_(DG)",
+    4
   ],
   [
-    "UD_(BABBAR)",
+    "URU_(IRI)",
+    4
+  ],
+  [
+    "TUK_(TUG)",
+    4
+  ],
+  [
+    "UL_(DU7)",
+    4
+  ],
+  [
+    "UM",
+    4
+  ],
+  [
+    "ESZ6_(ASZ.ASZ.ASZ)",
+    4
+  ],
+  [
+    "GA2_(MAL)",
+    4
+  ],
+  [
+    "AMA_(GA2AN)",
+    4
+  ],
+  [
+    "AG",
+    4
+  ],
+  [
+    "RU",
+    4
+  ],
+  [
+    "NIGIDAESZ_(DISZoverDISZ.DISZ)",
+    4
+  ],
+  [
+    "UB",
+    4
+  ],
+  [
+    "SILA3",
     5
   ],
   [
     "ITI_(UDESZ)",
-    5
-  ],
-  [
-    "SZU",
-    5
-  ],
-  [
-    "TI",
-    5
-  ],
-  [
-    "TUR_(DUMU)",
-    5
-  ],
-  [
-    "SAG",
-    5
-  ],
-  [
-    "KID_(LIL2)",
-    5
-  ],
-  [
-    "GA",
-    5
-  ],
-  [
-    "TA",
-    5
-  ],
-  [
-    "ASZ",
-    5
-  ],
-  [
-    "ZA",
-    5
-  ],
-  [
-    "TUM",
-    5
-  ],
-  [
-    "AL",
-    5
-  ],
-  [
-    "ESZ_(3U)",
-    5
-  ],
-  [
-    "RI",
     5
   ],
   [
@@ -1356,15 +1300,23 @@ var charperperiod=[
     5
   ],
   [
-    "MIN_(2)",
+    "TUR_(DUMU)",
     5
   ],
   [
-    "U+U+",
+    "UD_(BABBAR)",
     5
   ],
   [
     "?IBAD",
+    5
+  ],
+  [
+    "SZU",
+    5
+  ],
+  [
+    "GI",
     5
   ],
   [
@@ -1376,43 +1328,31 @@ var charperperiod=[
     5
   ],
   [
-    "U3_(IGI.DIB)",
-    5
-  ],
-  [
-    "BU_(GID2)",
-    5
-  ],
-  [
-    "E",
-    5
-  ],
-  [
-    "LI",
-    5
-  ],
-  [
-    "?AR_(?ISZ)",
-    5
-  ],
-  [
     "KU_(DR__TUKUL__TUSZ)",
     5
   ],
   [
-    "PI",
+    "TA",
     5
   ],
   [
-    "NU",
+    "TI",
     5
   ],
   [
-    "SILA3",
+    "GA",
     5
   ],
   [
-    "ZAG",
+    "U+U+",
+    5
+  ],
+  [
+    "KID_(LIL2)",
+    5
+  ],
+  [
+    "RI",
     5
   ],
   [
@@ -1420,12 +1360,76 @@ var charperperiod=[
     5
   ],
   [
-    "GI",
+    "NU",
+    5
+  ],
+  [
+    "E",
     5
   ],
   [
     "GU",
     5
+  ],
+  [
+    "MIN_(2)",
+    5
+  ],
+  [
+    "BU_(GID2)",
+    5
+  ],
+  [
+    "U3_(IGI.DIB)",
+    5
+  ],
+  [
+    "LI",
+    5
+  ],
+  [
+    "ASZ",
+    5
+  ],
+  [
+    "SAG",
+    5
+  ],
+  [
+    "IGI_(SZI__LIM)",
+    5
+  ],
+  [
+    "AL",
+    5
+  ],
+  [
+    "ESZ_(3U)",
+    5
+  ],
+  [
+    "?AR_(?ISZ)",
+    5
+  ],
+  [
+    "TUM",
+    5
+  ],
+  [
+    "ZA",
+    5
+  ],
+  [
+    "ZAG",
+    5
+  ],
+  [
+    "PI",
+    5
+  ],
+  [
+    "ZI",
+    6
   ],
   [
     "UR",
@@ -1436,31 +1440,11 @@ var charperperiod=[
     6
   ],
   [
-    "DISZ_(1)",
+    "GAL",
     6
   ],
   [
-    "U",
-    6
-  ],
-  [
-    "MA",
-    6
-  ],
-  [
-    "ZU",
-    6
-  ],
-  [
-    "DA",
-    6
-  ],
-  [
-    "EN",
-    6
-  ],
-  [
-    "I",
+    "U2",
     6
   ],
   [
@@ -1472,23 +1456,27 @@ var charperperiod=[
     6
   ],
   [
-    "ZI",
-    6
-  ],
-  [
-    "AB",
-    6
-  ],
-  [
     "TUG2_(NM)",
     6
   ],
   [
-    "MIR_(NIMGIR)",
+    "DISZ_(1)",
     6
   ],
   [
-    "LAL_(L)",
+    "DA",
+    6
+  ],
+  [
+    "I",
+    6
+  ],
+  [
+    "EN",
+    6
+  ],
+  [
+    "DU",
     6
   ],
   [
@@ -1496,7 +1484,7 @@ var charperperiod=[
     6
   ],
   [
-    "GISZ_(GESZ)",
+    "U",
     6
   ],
   [
@@ -1508,15 +1496,7 @@ var charperperiod=[
     6
   ],
   [
-    "U2",
-    6
-  ],
-  [
-    "SAR",
-    6
-  ],
-  [
-    "MUNUS_(SAL)",
+    "MIR_(NIMGIR)",
     6
   ],
   [
@@ -1524,15 +1504,31 @@ var charperperiod=[
     6
   ],
   [
-    "DU",
+    "SAR",
     6
   ],
   [
-    "?A_(KU6)",
+    "MA",
     6
   ],
   [
-    "GAL",
+    "LAL_(L)",
+    6
+  ],
+  [
+    "AB",
+    6
+  ],
+  [
+    "MUNUS_(SAL)",
+    6
+  ],
+  [
+    "ZU",
+    6
+  ],
+  [
+    "GISZ_(GESZ)",
     6
   ],
   [
@@ -1540,15 +1536,11 @@ var charperperiod=[
     6
   ],
   [
-    "LUGAL",
-    7
+    "?A_(KU6)",
+    6
   ],
   [
-    "BA",
-    7
-  ],
-  [
-    "E2",
+    "SZA3_(SZAG4)",
     7
   ],
   [
@@ -1556,15 +1548,7 @@ var charperperiod=[
     7
   ],
   [
-    "SZA3_(SZAG4)",
-    7
-  ],
-  [
-    "NIMIN_(4U)",
-    7
-  ],
-  [
-    "NI",
+    "BA",
     7
   ],
   [
@@ -1576,7 +1560,23 @@ var charperperiod=[
     7
   ],
   [
+    "NI",
+    7
+  ],
+  [
+    "LUGAL",
+    7
+  ],
+  [
+    "E2",
+    7
+  ],
+  [
     "KUG_(K)",
+    7
+  ],
+  [
+    "NIMIN_(4U)",
     7
   ],
   [
@@ -1614,28 +1614,28 @@ var acc_charperperiod={
 };
 var numberCharPeriods={
   "Unknown": 22,
-  "Ur III (ca. 2100-2000 BC)": 13688,
-  "Old Akkadian (ca. 2340-2200 BC)": 281,
-  "Early Old Babylonian (ca. 2000-1900 BC)": 487,
-  "ED IIIb (ca. 2500-2340 BC)": 2176,
-  "Old Babylonian (ca. 1900-1600 BC)": 319,
+  "Ur III (ca. 2100-2000 BC)": 13739,
   "Old Assyrian (ca. 1950-1850 BC)": 1598,
-  "ED IIIa (ca. 2600-2500 BC)": 92
+  "ED IIIb (ca. 2500-2340 BC)": 2176,
+  "Early Old Babylonian (ca. 2000-1900 BC)": 487,
+  "Old Babylonian (ca. 1900-1600 BC)": 319,
+  "ED IIIa (ca. 2600-2500 BC)": 92,
+  "Old Akkadian (ca. 2340-2200 BC)": 281
 };
 var numberLanguages={
   "Unknown": 1655,
-  "Sumerian": 16562,
+  "Sumerian": 16613,
   "Akkadian": 278,
   "Sumerian; Akkadian": 12
 };
 var genres={
   "Unknown": 1598,
-  "Administrative": 15083,
+  "Administrative": 15134,
   "Legal": 1294,
   "Lexical": 112,
+  "Royal/Monumental": 45,
   "Literary": 220,
   "Letter": 120,
-  "Royal/Monumental": 45,
   "Scientific": 22,
   "Mathematical": 13
 };
@@ -1647,7 +1647,7 @@ var acc_translitstats={
   "10.0": 2,
   "10.344827586206897": 1,
   "100": 13,
-  "100.0": 91,
+  "100.0": 93,
   "101.21951219512195": 1,
   "103.03030303030303": 1,
   "104.61538461538463": 1,
@@ -1668,6 +1668,7 @@ var acc_translitstats={
   "13.043478260869565": 1,
   "13.333333333333334": 1,
   "13.461538461538462": 1,
+  "133.33333333333331": 1,
   "135.29411764705884": 1,
   "14.285714285714285": 1,
   "14.383561643835616": 1,
@@ -1714,7 +1715,6 @@ var acc_translitstats={
   "27.27272727272727": 1,
   "27.500000000000004": 2,
   "27.586206896551722": 2,
-  "27.77777777777778": 1,
   "28.57142857142857": 2,
   "28.888888888888886": 1,
   "29.310344827586203": 1,
@@ -1856,11 +1856,11 @@ var acc_translitstats={
   "60.60606060606061": 1,
   "60.86956521739131": 1,
   "600.0": 1,
-  "61.111111111111114": 1,
+  "61.111111111111114": 2,
   "61.33333333333333": 1,
   "61.53846153846154": 1,
   "61.76470588235294": 1,
-  "61.904761904761905": 2,
+  "61.904761904761905": 1,
   "62.5": 2,
   "62.745098039215684": 1,
   "62.7906976744186": 2,
@@ -1898,7 +1898,7 @@ var acc_translitstats={
   "68.88888888888889": 1,
   "68.96551724137932": 1,
   "69.04761904761905": 1,
-  "69.23076923076923": 7,
+  "69.23076923076923": 6,
   "69.44444444444444": 1,
   "69.56521739130434": 1,
   "69.6969696969697": 1,
@@ -1921,7 +1921,6 @@ var acc_translitstats={
   "72.54901960784314": 1,
   "72.72727272727273": 4,
   "73.07692307692307": 1,
-  "73.23943661971832": 1,
   "73.33333333333333": 4,
   "73.52941176470588": 1,
   "73.68421052631578": 4,
@@ -1932,13 +1931,12 @@ var acc_translitstats={
   "75.80645161290323": 1,
   "76.0": 4,
   "76.11940298507463": 1,
-  "76.19047619047619": 1,
+  "76.19047619047619": 2,
   "76.47058823529412": 1,
   "76.59574468085107": 2,
   "76.74418604651163": 1,
   "76.92307692307693": 2,
   "77.06422018348624": 1,
-  "77.16535433070865": 1,
   "77.27272727272727": 1,
   "77.41935483870968": 3,
   "77.5": 1,
@@ -1957,6 +1955,7 @@ var acc_translitstats={
   "8.695652173913043": 1,
   "8.823529411764707": 1,
   "80.0": 13,
+  "80.31496062992126": 1,
   "80.51948051948052": 1,
   "80.76923076923077": 5,
   "80.95238095238095": 4,
@@ -1984,13 +1983,13 @@ var acc_translitstats={
   "833.3333333333334": 1,
   "84.0": 2,
   "84.21052631578947": 3,
-  "84.61538461538461": 3,
+  "84.61538461538461": 4,
   "84.84848484848484": 1,
   "85.0": 3,
   "85.29411764705883": 1,
   "85.36585365853658": 1,
   "85.45454545454545": 1,
-  "85.71428571428571": 9,
+  "85.71428571428571": 10,
   "85.9375": 1,
   "86.04651162790698": 1,
   "86.11111111111111": 1,
@@ -1998,13 +1997,11 @@ var acc_translitstats={
   "86.36363636363636": 1,
   "86.66666666666667": 8,
   "86.88524590163934": 1,
-  "86.95652173913044": 1,
   "87.17948717948718": 1,
   "87.5": 9,
   "87.87878787878788": 1,
   "88.0": 3,
   "88.23529411764706": 5,
-  "88.46153846153845": 1,
   "88.57142857142857": 1,
   "88.88888888888889": 7,
   "89.1891891891892": 1,
@@ -2020,13 +2017,14 @@ var acc_translitstats={
   "90.32258064516128": 1,
   "90.47619047619048": 7,
   "90.9090909090909": 9,
-  "91.30434782608695": 2,
+  "91.30434782608695": 3,
   "91.42857142857143": 1,
   "91.66666666666666": 7,
-  "92.0": 2,
+  "92.0": 1,
   "92.3076923076923": 2,
   "92.5925925925926": 1,
   "92.85714285714286": 2,
+  "92.95774647887323": 1,
   "93.33333333333333": 4,
   "93.47826086956522": 1,
   "93.75": 5,
@@ -2049,936 +2047,1341 @@ var acc_translitstats={
   "98.82352941176471": 1
 };
 var translitstats={
-  "HS_1100_06_back.png.json": "75.75757575757575",
-  "HS_1208_06_back.png.json": "69.23076923076923",
-  "HS_870_06_back.png.json": "66.66666666666666",
-  "HS_2103_06_back.png.json": "18.181818181818183",
-  "HS_888_03_front.png.json": "25.0",
-  "HS_785_03_front.png.json": "42.857142857142854",
-  "HS_1071_03_front.png.json": "95.0",
-  "HS_1229_06_back.png.json": "80.0",
-  "HS_1188_03_front.png.json": "100.0",
-  "HS_1348_06_back.png.json": "50.0",
-  "HS_2259_03_front.png.json": "46.666666666666664",
-  "HS_1232_03_front.png.json": "94.73684210526315",
-  "HS_1182_03_front.png.json": "98.0",
-  "HS_1231_06_back.png.json": "55.55555555555556",
-  "HS_1219_03_front.png.json": "100.0",
-  "HS_2261_03_front.png.json": "50.0",
-  "HS_2262_06_back.png.json": "93.33333333333333",
-  "HS_1158_06_back.png.json": "100.0",
-  "HS_1295_06_back.png.json": "78.37837837837837",
-  "HS_1012_03_front.png.json": "66.66666666666666",
-  "HS_1208_03_front.png.json": "61.904761904761905",
-  "HS_1039_03_front.png.json": "90.9090909090909",
-  "HS_1275_06_back.png.json": "40.0",
-  "HS_1209_06_back.png.json": "100.0",
-  "HS_2285_06_back.png.json": "55.55555555555556",
-  "HS_1174_03_front.png.json": "56.52173913043478",
-  "HS_1192_03_front.png.json": "100.0",
-  "HS_1104_06_back.png.json": "68.75",
-  "HS_1201_06_back.png.json": "84.61538461538461",
-  "HS_1347_03_front.png.json": "366.66666666666663",
-  "HS_933_03_front.png.json": "25.0",
-  "HS_1030_03_front.png.json": "75.0",
-  "HS_2271_03_front.png.json": "50.0",
-  "HS_444_03_front.png.json": "78.94736842105263",
-  "HS_367_03_front.png.json": "65.85365853658537",
-  "HS_1035_03_front.png.json": "70.37037037037037",
-  "HS_827_03_front.png.json": "84.0",
-  "HS_442_03_front.png.json": "46.774193548387096",
-  "HS_1214_06_back.png.json": "88.46153846153845",
-  "HS_1096_06_back.png.json": "66.66666666666666",
-  "HS_795_03_front.png.json": "48.148148148148145",
-  "HS_1186_06_back.png.json": "27.500000000000004",
-  "HS_1318_03_front.png.json": "50.0",
-  "HS_1098_06_back.png.json": "60.60606060606061",
-  "HS_2266_06_back.png.json": "158.33333333333331",
-  "HS_2311_06_back.png.json": "89.47368421052632",
-  "HS_352_03_front.png.json": "29.310344827586203",
-  "HS_845_03_front.png.json": "20.0",
-  "HS_2282_03_front.png.json": "86.66666666666667",
-  "HS_897_03_front.png.json": "0.0",
-  "HS_1338_03_front.png.json": "100.0",
-  "HS_1263_03_front.png.json": "76.74418604651163",
-  "HS_844_03_front.png.json": "54.761904761904766",
-  "HS_2074_03_front.png.json": "32.48407643312102",
-  "HS_2270_03_front.png.json": "82.14285714285714",
-  "HS_806_03_front.png.json": "42.465753424657535",
-  "HS_770_06_back.png.json": "6.25",
-  "HS_1117_06_back.png.json": "75.0",
-  "HS_364_06_back.png.json": "53.333333333333336",
-  "HS_1355_06_back.png.json": "100.0",
-  "HS_1047_03_front.png.json": "79.41176470588235",
-  "HS_1313_03_front.png.json": "85.71428571428571",
-  "HS_1044_03_front.png.json": "70.83333333333334",
-  "HS_1019_06_back.png.json": "41.66666666666667",
-  "HS_1271_03_front.png.json": "81.34715025906736",
-  "HS_811_03_front.png.json": "50.0",
-  "HS_1191_03_front.png.json": "52.63157894736842",
-  "HS_1029_06_back.png.json": "33.33333333333333",
-  "HS_1003_03_front.png.json": "72.72727272727273",
-  "HS_1168_03_front.png.json": "66.11570247933885",
-  "HS_2313_03_front.png.json": "47.05882352941176",
-  "HS_1122_03_front.png.json": "88.88888888888889",
-  "HS_281_03_front.png.json": "23.170731707317074",
-  "HS_1041_03_front.png.json": "83.33333333333334",
-  "HS_799_03_front.png.json": "62.96296296296296",
-  "HS_819_03_front.png.json": "61.76470588235294",
-  "HS_870_03_front.png.json": "83.87096774193549",
-  "HS_1261_03_front.png.json": "100.0",
-  "HS_752_06_back.png.json": "33.33333333333333",
-  "HS_1151_06_back.png.json": "68.18181818181817",
-  "HS_1099_03_front.png.json": "76.19047619047619",
-  "HS_1176_03_front.png.json": "833.3333333333334",
-  "HS_1192_06_back.png.json": "80.0",
-  "HS_891_06_back.png.json": "75.0",
-  "HS_1302_03_front.png.json": "75.30864197530865",
-  "HS_1357_03_front.png.json": "70.83333333333334",
-  "HS_1357_06_back.png.json": "75.0",
-  "HS_1218_06_back.png.json": "67.82608695652173",
-  "HS_1183_03_front.png.json": "59.57446808510638",
-  "HS_1304_03_front.png.json": "81.3953488372093",
-  "HS_1221_03_front.png.json": "90.9090909090909",
-  "HS_2257_06_back.png.json": "100.0",
-  "HS_1017_03_front.png.json": "66.66666666666666",
-  "HS_1020_06_back.png.json": "54.054054054054056",
-  "HS_1079_03_front.png.json": "106.25",
-  "HS_1301_03_front.png.json": "67.3076923076923",
-  "HS_1183_06_back.png.json": "86.04651162790698",
-  "HS_2263_03_front.png.json": "95.45454545454545",
-  "HS_1034_06_back.png.json": "52.5",
-  "HS_291_03_front.png.json": "32.0",
-  "HS_1090_03_front.png.json": "85.71428571428571",
-  "HS_1323_06_back.png.json": "78.57142857142857",
-  "HS_1084_06_back.png.json": "78.94736842105263",
-  "HS_1069_06_back.png.json": "64.86486486486487",
-  "HS_1180_06_back.png.json": "52.63157894736842",
-  "HS_1016_03_front.png.json": "650.0",
-  "HS_1286_03_front.png.json": "100.0",
-  "HS_884_03_front.png.json": "53.333333333333336",
-  "HS_2275_03_front.png.json": "73.68421052631578",
-  "HS_826_03_front.png.json": "48.148148148148145",
-  "HS_1134_03_front.png.json": "87.5",
-  "HS_1116_03_front.png.json": "42.10526315789473",
-  "HS_1166_03_front.png.json": "6.666666666666667",
-  "HS_1150_03_front.png.json": "78.125",
-  "HS_868_06_back.png.json": "42.10526315789473",
-  "HS_287_06_back.png.json": "3.296703296703297",
-  "HS_1028_03_front.png.json": "82.75862068965517",
-  "HS_815_03_front.png.json": "54.166666666666664",
-  "HS_1110_06_back.png.json": "79.3103448275862",
-  "HS_1250_06_back.png.json": "51.35135135135135",
-  "HS_1072_03_front.png.json": "56.00000000000001",
-  "HS_1293_03_front.png.json": "77.41935483870968",
-  "HS_2084_03_front.png.json": "68.08510638297872",
-  "HS_1240_03_front.png.json": "23.076923076923077",
-  "HS_284_03_front.png.json": "52.63157894736842",
-  "HS_832_03_front.png.json": "71.42857142857143",
-  "HS_2306_03_front.png.json": "64.70588235294117",
-  "HS_360_03_front.png.json": "85.45454545454545",
-  "HS_1140_03_front.png.json": "57.14285714285714",
-  "HS_2272_06_back.png.json": "100.0",
-  "HS_1267_06_back.png.json": "29.411764705882355",
-  "HS_1228_06_back.png.json": "82.35294117647058",
-  "HS_1114_03_front.png.json": "78.26086956521739",
-  "HS_1072_06_back.png.json": "96.15384615384616",
-  "HS_1080_06_back.png.json": "100.0",
-  "HS_1206_03_front.png.json": "85.71428571428571",
-  "HS_883_03_front.png.json": "100.0",
-  "HS_838_03_front.png.json": "59.25925925925925",
-  "HS_1014_03_front.png.json": "90.0",
-  "HS_281_06_back.png.json": "25.0",
-  "HS_1210_06_back.png.json": "95.45454545454545",
-  "HS_2283_06_back.png.json": "53.84615384615385",
-  "HS_1056_06_back.png.json": "75.75757575757575",
-  "HS_1327_06_back.png.json": "22.22222222222222",
-  "HS_878_03_front.png.json": "47.82608695652174",
-  "HS_2313_06_back.png.json": "6.25",
-  "HS_931_03_front.png.json": "72.22222222222221",
-  "HS_1304_06_back.png.json": "67.90123456790124",
-  "HS_1189_03_front.png.json": "92.0",
-  "HS_1112_03_front.png.json": "69.23076923076923",
-  "HS_1024_06_back.png.json": "54.54545454545454",
-  "HS_1330_03_front.png.json": "100",
-  "HS_2308_03_front.png.json": "76.0",
-  "HS_1326_03_front.png.json": "100",
-  "HS_2270_06_back.png.json": "75.0",
-  "HS_1075_06_back.png.json": "81.81818181818183",
-  "HS_1037_06_back.png.json": "83.33333333333334",
-  "HS_896_03_front.png.json": "44.44444444444444",
-  "HS_1076_06_back.png.json": "51.724137931034484",
-  "HS_871_03_front.png.json": "45.45454545454545",
-  "HS_1058_03_front.png.json": "100.0",
-  "HS_1009_06_back.png.json": "40.0",
-  "HS_879_06_back.png.json": "100.0",
-  "HS_1093_03_front.png.json": "75.0",
-  "HS_1065_03_front.png.json": "78.26086956521739",
-  "HS_1111_03_front.png.json": "87.5",
-  "HS_2275_06_back.png.json": "61.111111111111114",
-  "HS_1187_03_front.png.json": "88.23529411764706",
-  "HS_1191_06_back.png.json": "100.0",
-  "HS_1039_06_back.png.json": "54.054054054054056",
-  "HS_872_03_front.png.json": "44.44444444444444",
-  "HS_2293_03_front.png.json": "100.0",
-  "HS_2251_06_back.png.json": "90.47619047619048",
-  "HS_937_03_front.png.json": "54.54545454545454",
-  "HS_1146_03_front.png.json": "81.81818181818183",
-  "HS_2267_03_front.png.json": "100.0",
-  "HS_1269_03_front.png.json": "83.33333333333334",
-  "HS_2260_03_front.png.json": "70.83333333333334",
-  "HS_1162_06_back.png.json": "54.166666666666664",
-  "HS_1137_03_front.png.json": "95.65217391304348",
-  "HS_1118_03_front.png.json": "66.66666666666666",
-  "HS_928_03_front.png.json": "28.57142857142857",
-  "HS_444_06_back.png.json": "63.49206349206349",
-  "HS_1147_03_front.png.json": "78.57142857142857",
-  "HS_1346_03_front.png.json": "94.73684210526315",
-  "HS_1312_03_front.png.json": "94.11764705882352",
-  "HS_1127_03_front.png.json": "88.88888888888889",
-  "HS_2299_06_back.png.json": "100.0",
-  "HS_286_03_front.png.json": "60.3448275862069",
-  "HS_1185_06_back.png.json": "68.18181818181817",
-  "HS_1181_06_back.png.json": "62.7906976744186",
-  "HS_1059_03_front.png.json": "82.45614035087719",
-  "HS_1265_03_front.png.json": "100.0",
-  "HS_1062_03_front.png.json": "77.41935483870968",
-  "HS_1058_06_back.png.json": "70.58823529411765",
-  "HS_1217_06_back.png.json": "100.0",
-  "HS_1306_06_back.png.json": "100.0",
-  "HS_2076_03_front.png.json": "54.32098765432099",
-  "HS_2169_03_front.png.json": "52.0",
-  "HS_1314_03_front.png.json": "47.05882352941176",
-  "HS_1129_06_back.png.json": "90.27777777777779",
-  "HS_2262_03_front.png.json": "90.47619047619048",
-  "HS_839_03_front.png.json": "25.0",
-  "HS_1197_06_back.png.json": "65.0",
-  "HS_803_06_back.png.json": "11.458333333333332",
-  "HS_1264_06_back.png.json": "44.680851063829785",
-  "HS_287_03_front.png.json": "16.666666666666664",
-  "HS_782_03_front.png.json": "43.90243902439025",
-  "HS_1204_03_front.png.json": "100.0",
-  "HS_849_03_front.png.json": "36.36363636363637",
-  "HS_1195_03_front.png.json": "91.66666666666666",
-  "HS_1253_03_front.png.json": "78.26086956521739",
-  "HS_840_03_front.png.json": "17.647058823529413",
-  "HS_1213_03_front.png.json": "92.0",
-  "HS_1121_03_front.png.json": "80.0",
-  "HS_439_06_back.png.json": "38.18181818181819",
-  "HS_915_03_front.png.json": "60.0",
-  "HS_1335_03_front.png.json": "100",
-  "HS_1265_06_back.png.json": "90.9090909090909",
-  "HS_193_06_back.png.json": "10.344827586206897",
-  "HS_360_06_back.png.json": "54.90196078431373",
-  "HS_1084_03_front.png.json": "90.47619047619048",
-  "HS_2293_06_back.png.json": "91.66666666666666",
-  "HS_1220_06_back.png.json": "81.81818181818183",
-  "HS_1354_06_back.png.json": "100.0",
-  "HS_776_03_front.png.json": "45.0",
-  "HS_1053_03_front.png.json": "97.5",
-  "HS_1285_03_front.png.json": "94.44444444444444",
-  "HS_1223_06_back.png.json": "100.0",
-  "HS_1199_06_back.png.json": "100.0",
-  "HS_1081_03_front.png.json": "95.83333333333334",
-  "HS_1002_03_front.png.json": "89.28571428571429",
-  "HS_1292_03_front.png.json": "91.42857142857143",
-  "HS_1163_06_back.png.json": "35.64356435643564",
-  "HS_1225_06_back.png.json": "53.84615384615385",
-  "HS_1153_03_front.png.json": "72.05882352941177",
-  "HS_436_03_front.png.json": "80.95238095238095",
-  "HS_1276_06_back.png.json": "100.0",
-  "HS_1128_03_front.png.json": "100.0",
-  "HS_2117_06_back.png.json": "16.463414634146343",
-  "HS_442_06_back.png.json": "103.03030303030303",
-  "HS_1236_06_back.png.json": "100.0",
-  "HS_2282_06_back.png.json": "52.94117647058824",
-  "HS_1109_06_back.png.json": "48.148148148148145",
-  "HS_367_06_back.png.json": "83.01886792452831",
-  "HS_1055_06_back.png.json": "15.384615384615385",
-  "HS_1070_06_back.png.json": "91.66666666666666",
-  "HS_297_03_front.png.json": "42.10526315789473",
-  "HS_2279_03_front.png.json": "58.333333333333336",
-  "HS_1184_06_back.png.json": "76.47058823529412",
-  "HS_931_06_back.png.json": "45.0",
-  "HS_1321_03_front.png.json": "600.0",
-  "HS_1187_06_back.png.json": "100.0",
-  "HS_1182_06_back.png.json": "83.33333333333334",
-  "HS_880_03_front.png.json": "45.94594594594595",
-  "HS_1070_03_front.png.json": "86.66666666666667",
-  "HS_1165_03_front.png.json": "25.0",
-  "HS_1270_03_front.png.json": "56.25",
-  "HS_435_06_back.png.json": "88.0",
-  "HS_867_03_front.png.json": "33.33333333333333",
-  "HS_1092_03_front.png.json": "54.54545454545454",
-  "HS_2283_03_front.png.json": "100.0",
-  "HS_1336_03_front.png.json": "70.0",
-  "HS_1013_03_front.png.json": "96.0",
-  "HS_2252_03_front.png.json": "66.66666666666666",
-  "HS_2307_03_front.png.json": "23.076923076923077",
-  "HS_368_03_front.png.json": "82.92682926829268",
-  "HS_1178_03_front.png.json": "100.0",
-  "HS_1286_06_back.png.json": "95.23809523809523",
-  "HS_1193_06_back.png.json": "86.66666666666667",
-  "HS_816_03_front.png.json": "13.461538461538462",
-  "HS_1202_06_back.png.json": "69.23076923076923",
-  "HS_1074_03_front.png.json": "84.61538461538461",
-  "HS_1276_03_front.png.json": "82.35294117647058",
-  "HS_1259_06_back.png.json": "97.67441860465115",
-  "HS_283_03_front.png.json": "36.734693877551024",
-  "HS_850_03_front.png.json": "31.25",
-  "HS_2284_06_back.png.json": "88.88888888888889",
-  "HS_2249_03_front.png.json": "52.63157894736842",
-  "HS_1060_06_back.png.json": "54.54545454545454",
-  "HS_1306_03_front.png.json": "56.25",
-  "HS_1348_03_front.png.json": "69.23076923076923",
-  "HS_1218_03_front.png.json": "76.11940298507463",
-  "HS_1250_03_front.png.json": "79.3103448275862",
-  "HS_911_03_front.png.json": "39.39393939393939",
-  "HS_1196_06_back.png.json": "63.63636363636363",
-  "HS_1046_03_front.png.json": "111.11111111111111",
-  "HS_288_03_front.png.json": "52.94117647058824",
-  "HS_1045_03_front.png.json": "50.0",
-  "HS_808_03_front.png.json": "46.57534246575342",
-  "HS_277_03_front.png.json": "45.83333333333333",
-  "HS_903_03_front.png.json": "19.35483870967742",
-  "HS_769_03_front.png.json": "63.1578947368421",
-  "HS_1355_03_front.png.json": "100.0",
-  "HS_1201_03_front.png.json": "84.61538461538461",
-  "HS_1057_03_front.png.json": "87.5",
-  "HS_1284_03_front.png.json": "87.5",
-  "HS_1052_06_back.png.json": "44.44444444444444",
-  "HS_941_03_front.png.json": "50.0",
-  "HS_1495_03_front.png.json": "1.2987012987012987",
-  "HS_978_06_back.png.json": "23.52941176470588",
-  "HS_852_03_front.png.json": "35.04273504273504",
-  "HS_1036_03_front.png.json": "84.21052631578947",
-  "HS_912_06_back.png.json": "61.53846153846154",
-  "HS_1158_03_front.png.json": "76.92307692307693",
-  "HS_1196_03_front.png.json": "77.77777777777779",
-  "HS_2287_03_front.png.json": "94.44444444444444",
-  "HS_876_06_back.png.json": "100",
-  "HS_1315_06_back.png.json": "100.0",
-  "HS_1053_06_back.png.json": "100.0",
-  "HS_2285_03_front.png.json": "75.0",
-  "HS_1080_03_front.png.json": "82.35294117647058",
-  "HS_1207_06_back.png.json": "88.88888888888889",
-  "HS_1341_03_front.png.json": "66.66666666666666",
-  "HS_1258_06_back.png.json": "63.63636363636363",
-  "HS_1142_06_back.png.json": "113.33333333333333",
-  "HS_2288_06_back.png.json": "100.0",
-  "HS_366_03_front.png.json": "30.909090909090907",
-  "HS_2301_03_front.png.json": "68.75",
-  "HS_833_03_front.png.json": "25.0",
-  "HS_1048_03_front.png.json": "82.14285714285714",
-  "HS_1051_06_back.png.json": "35.483870967741936",
-  "HS_1261_06_back.png.json": "100.0",
-  "HS_2286_03_front.png.json": "100.0",
-  "HS_814_03_front.png.json": "11.627906976744185",
-  "HS_978_03_front.png.json": "28.888888888888886",
-  "HS_1017_06_back.png.json": "42.42424242424242",
-  "HS_352_06_back.png.json": "36.36363636363637",
-  "HS_2309_06_back.png.json": "46.15384615384615",
-  "HS_889_03_front.png.json": "54.54545454545454",
-  "HS_1263_06_back.png.json": "83.33333333333334",
-  "HS_1199_03_front.png.json": "100.0",
-  "HS_357_06_back.png.json": "14.285714285714285",
-  "HS_1123_03_front.png.json": "80.0",
-  "HS_440_06_back.png.json": "68.88888888888889",
-  "HS_887_03_front.png.json": "38.70967741935484",
-  "HS_964_03_front.png.json": "57.14285714285714",
-  "HS_1065_06_back.png.json": "35.55555555555556",
-  "HS_1316_06_back.png.json": "70.1492537313433",
-  "HS_1120_03_front.png.json": "80.0",
-  "HS_1066_03_front.png.json": "100.0",
-  "HS_1289_03_front.png.json": "77.5",
-  "HS_351_03_front.png.json": "48.0",
-  "HS_1180_03_front.png.json": "82.85714285714286",
-  "HS_1097_06_back.png.json": "65.38461538461539",
-  "HS_311_06_back.png.json": "55.55555555555556",
-  "HS_1239_03_front.png.json": "87.87878787878788",
-  "HS_1272_06_back.png.json": "16.27906976744186",
-  "HS_1048_02_left.png.json": "0.33003300330033003",
-  "HS_751_06_back.png.json": "25.0",
-  "HS_1034_03_front.png.json": "89.1891891891892",
-  "HS_1466_03_front.png.json": "1.9047619047619049",
-  "HS_1042_06_back.png.json": "33.33333333333333",
-  "HS_1094_03_front.png.json": "57.14285714285714",
-  "HS_782_06_back.png.json": "80.0",
-  "HS_1112_06_back.png.json": "42.30769230769231",
-  "HS_2291_03_front.png.json": "73.33333333333333",
-  "HS_1209_03_front.png.json": "82.35294117647058",
-  "HS_1274_06_back.png.json": "62.5",
-  "HS_1086_06_back.png.json": "70.83333333333334",
-  "HS_2259_06_back.png.json": "13.333333333333334",
-  "HS_1131_03_front.png.json": "0.0",
-  "HS_1294_06_back.png.json": "20.408163265306122",
-  "HS_278_06_back.png.json": "14.383561643835616",
-  "HS_1113_03_front.png.json": "78.26086956521739",
-  "HS_2250_03_front.png.json": "86.66666666666667",
-  "HS_1197_03_front.png.json": "100.0",
-  "HS_2169_06_back.png.json": "9.090909090909092",
-  "HS_1038_06_back.png.json": "80.0",
-  "HS_2258_06_back.png.json": "91.30434782608695",
-  "HS_1079_06_back.png.json": "88.88888888888889",
-  "HS_2250_06_back.png.json": "54.54545454545454",
-  "HS_2289_03_front.png.json": "42.857142857142854",
-  "HS_910_03_front.png.json": "24.0",
-  "HS_2263_06_back.png.json": "35.41666666666667",
-  "HS_385_03_front.png.json": "60.0",
-  "HS_1138_06_back.png.json": "100.0",
-  "HS_1165_06_back.png.json": "100.0",
-  "HS_1149_06_back.png.json": "91.66666666666666",
-  "HS_1088_03_front.png.json": "95.65217391304348",
-  "HS_1195_06_back.png.json": "71.42857142857143",
-  "HS_916_03_front.png.json": "21.875",
-  "HS_1222_03_front.png.json": "80.76923076923077",
-  "HS_1312_06_back.png.json": "55.55555555555556",
-  "HS_277_06_back.png.json": "2.1739130434782608",
-  "HS_919_03_front.png.json": "45.83333333333333",
-  "HS_1241_06_back.png.json": "77.77777777777779",
-  "HS_1251_03_front.png.json": "89.58333333333334",
-  "HS_1031_03_front.png.json": "96.42857142857143",
-  "HS_357_03_front.png.json": "38.46153846153847",
-  "HS_1145_03_front.png.json": "104.61538461538463",
-  "HS_1009_03_front.png.json": "81.81818181818183",
-  "HS_1037_03_front.png.json": "91.66666666666666",
-  "HS_805_06_back.png.json": "55.55555555555556",
-  "HS_1303_06_back.png.json": "84.21052631578947",
-  "HS_2284_03_front.png.json": "100.0",
-  "HS_1259_03_front.png.json": "89.65517241379311",
-  "HS_1224_03_front.png.json": "92.3076923076923",
-  "HS_1204_06_back.png.json": "64.70588235294117",
-  "HS_351_06_back.png.json": "9.375",
-  "HS_1150_06_back.png.json": "93.33333333333333",
-  "HS_1224_06_back.png.json": "60.0",
-  "HS_1249_03_front.png.json": "84.84848484848484",
-  "HS_288_06_back.png.json": "62.7906976744186",
-  "HS_862_03_front.png.json": "10.0",
-  "HS_1254_03_front.png.json": "88.0",
-  "HS_1069_03_front.png.json": "64.28571428571429",
-  "HS_905_06_back.png.json": "33.33333333333333",
-  "HS_768_03_front.png.json": "40.0",
-  "HS_1148_06_back.png.json": "61.904761904761905",
-  "HS_1086_03_front.png.json": "54.83870967741935",
-  "HS_1104_03_front.png.json": "80.95238095238095",
-  "HS_2256_03_front.png.json": "82.6086956521739",
-  "HS_284_06_back.png.json": "22.807017543859647",
-  "HS_803_03_front.png.json": "67.6923076923077",
-  "HS_1029_03_front.png.json": "107.14285714285714",
-  "HS_1175_06_back.png.json": "60.0",
-  "HS_1232_06_back.png.json": "100.0",
-  "HS_1076_03_front.png.json": "86.66666666666667",
-  "HS_1044_06_back.png.json": "60.0",
-  "HS_286_06_back.png.json": "60.86956521739131",
-  "HS_2260_06_back.png.json": "83.33333333333334",
-  "HS_860_03_front.png.json": "36.0",
-  "HS_1203_06_back.png.json": "83.33333333333334",
-  "HS_1346_06_back.png.json": "71.42857142857143",
-  "HS_1083_06_back.png.json": "100.0",
-  "HS_1059_06_back.png.json": "59.09090909090909",
-  "HS_1096_03_front.png.json": "86.11111111111111",
-  "HS_895_03_front.png.json": "21.428571428571427",
-  "HS_922_03_front.png.json": "27.27272727272727",
-  "HS_1106_03_front.png.json": "80.76923076923077",
-  "HS_1087_06_back.png.json": "73.33333333333333",
-  "HS_1131_06_back.png.json": "100.0",
-  "HS_1246_06_back.png.json": "50.0",
-  "HS_792_06_back.png.json": "81.81818181818183",
-  "HS_1151_03_front.png.json": "98.82352941176471",
-  "HS_1078_06_back.png.json": "95.45454545454545",
-  "HS_875_03_front.png.json": "75.0",
-  "HS_437_03_front.png.json": "50.0",
-  "HS_1013_06_back.png.json": "50.0",
-  "HS_1047_06_back.png.json": "81.81818181818183",
-  "HS_1319_03_front.png.json": "240.0",
-  "HS_1145_06_back.png.json": "70.96774193548387",
-  "HS_2444_03_front.png.json": "52.85714285714286",
-  "HS_2297_03_front.png.json": "100.0",
-  "HS_879_03_front.png.json": "55.55555555555556",
-  "HS_2265_06_back.png.json": "75.0",
-  "HS_1063_03_front.png.json": "72.72727272727273",
-  "HS_864_03_front.png.json": "3.7037037037037033",
-  "HS_760_03_front.png.json": "38.46153846153847",
-  "HS_777_03_front.png.json": "66.66666666666666",
-  "HS_906_03_front.png.json": "77.77777777777779",
-  "HS_386_03_front.png.json": "47.368421052631575",
-  "HS_2253_03_front.png.json": "66.66666666666666",
-  "HS_1212_06_back.png.json": "100.0",
-  "HS_1162_03_front.png.json": "30.23255813953488",
-  "HS_1308_06_back.png.json": "5.88235294117647",
-  "HS_1323_03_front.png.json": "70.0",
-  "HS_1277_03_front.png.json": "77.41935483870968",
-  "HS_854_06_back.png.json": "41.66666666666667",
-  "HS_824_03_front.png.json": "36.36363636363637",
-  "HS_1297_06_back.png.json": "47.368421052631575",
-  "HS_1101_03_front.png.json": "76.92307692307693",
-  "HS_2286_06_back.png.json": "88.23529411764706",
-  "HS_812_03_front.png.json": "15.0",
-  "HS_2274_06_back.png.json": "77.77777777777779",
-  "HS_1136_03_front.png.json": "87.5",
-  "HS_1139_03_front.png.json": "100",
-  "HS_1102_03_front.png.json": "0.0",
-  "HS_1005_06_back.png.json": "60.0",
-  "HS_1098_03_front.png.json": "68.57142857142857",
-  "HS_932_03_front.png.json": "25.0",
-  "HS_1205_06_back.png.json": "0.0",
-  "HS_2272_03_front.png.json": "89.28571428571429",
-  "HS_861_03_front.png.json": "45.45454545454545",
-  "HS_1206_06_back.png.json": "27.77777777777778",
-  "HS_359_03_front.png.json": "60.56338028169014",
-  "HS_1281_03_front.png.json": "88.57142857142857",
-  "HS_1307_03_front.png.json": "86.88524590163934",
-  "HS_1279_06_back.png.json": "100.0",
-  "HS_1175_03_front.png.json": "50.90909090909091",
-  "HS_1270_06_back.png.json": "50.0",
-  "HS_1085_06_back.png.json": "95.23809523809523",
-  "HS_1296_03_front.png.json": "64.51612903225806",
-  "HS_1148_03_front.png.json": "80.0",
-  "HS_385_06_back.png.json": "8.571428571428571",
-  "HS_1188_06_back.png.json": "100.0",
-  "HS_1005_03_front.png.json": "80.76923076923077",
-  "HS_822_03_front.png.json": "46.15384615384615",
-  "HS_2258_03_front.png.json": "82.35294117647058",
-  "HS_2276_03_front.png.json": "34.61538461538461",
-  "HS_1279_03_front.png.json": "25.0",
-  "HS_1290_03_front.png.json": "100.0",
-  "HS_1274_03_front.png.json": "89.28571428571429",
-  "HS_901_06_back.png.json": "24.137931034482758",
-  "HS_859_03_front.png.json": "40.0",
-  "HS_882_03_front.png.json": "0.0",
-  "HS_2256_06_back.png.json": "69.23076923076923",
-  "HS_1211_06_back.png.json": "88.23529411764706",
-  "HS_1322_03_front.png.json": "100",
-  "HS_1222_06_back.png.json": "90.9090909090909",
-  "HS_1287_03_front.png.json": "58.333333333333336",
-  "HS_365_03_front.png.json": "100.0",
-  "HS_1184_03_front.png.json": "64.28571428571429",
-  "HS_306_03_front.png.json": "57.89473684210527",
-  "HS_752_03_front.png.json": "37.5",
-  "HS_1256_03_front.png.json": "16.9811320754717",
-  "HS_1159_06_back.png.json": "47.05882352941176",
-  "HS_1031_06_back.png.json": "78.78787878787878",
-  "HS_1115_03_front.png.json": "92.3076923076923",
-  "HS_1333_03_front.png.json": "800.0",
-  "HS_1066_06_back.png.json": "73.33333333333333",
-  "HS_2276_06_back.png.json": "66.66666666666666",
-  "HS_2278_03_front.png.json": "92.85714285714286",
-  "HS_831_03_front.png.json": "36.58536585365854",
-  "HS_854_03_front.png.json": "34.48275862068966",
-  "HS_904_03_front.png.json": "38.46153846153847",
-  "HS_899_03_front.png.json": "58.333333333333336",
-  "HS_834_03_front.png.json": "76.0",
-  "HS_1114_06_back.png.json": "71.7948717948718",
-  "HS_1103_03_front.png.json": "73.07692307692307",
-  "HS_929_03_front.png.json": "87.5",
-  "HS_1063_06_back.png.json": "46.42857142857143",
-  "HS_2300_06_back.png.json": "100.0",
-  "HS_1051_03_front.png.json": "57.89473684210527",
-  "HS_798_03_front.png.json": "65.0",
-  "HS_886_03_front.png.json": "46.93877551020408",
-  "HS_1138_03_front.png.json": "89.74358974358975",
-  "HS_2310_03_front.png.json": "42.10526315789473",
-  "HS_818_03_front.png.json": "50.0",
-  "HS_2271_06_back.png.json": "68.18181818181817",
-  "HS_1173_06_back.png.json": "3.125",
-  "HS_1103_06_back.png.json": "38.46153846153847",
-  "HS_1291_06_back.png.json": "72.09302325581395",
-  "HS_1193_03_front.png.json": "73.68421052631578",
-  "HS_1025_06_back.png.json": "82.5",
-  "HS_1294_03_front.png.json": "78.72340425531915",
-  "HS_2300_03_front.png.json": "84.21052631578947",
-  "HS_841_03_front.png.json": "23.076923076923077",
-  "HS_2299_03_front.png.json": "73.52941176470588",
-  "HS_2249_06_back.png.json": "100.0",
-  "HS_1040_03_front.png.json": "70.37037037037037",
-  "HS_807_03_front.png.json": "87.5",
-  "HS_1360_03_front.png.json": "53.94736842105263",
-  "HS_1214_03_front.png.json": "86.95652173913044",
-  "HS_1213_06_back.png.json": "80.95238095238095",
-  "HS_1360_06_back.png.json": "69.56521739130434",
-  "HS_1115_06_back.png.json": "100.0",
-  "HS_1231_03_front.png.json": "90.47619047619048",
-  "HS_1030_06_back.png.json": "48.275862068965516",
-  "HS_1133_03_front.png.json": "88.88888888888889",
-  "HS_2253_06_back.png.json": "56.52173913043478",
-  "HS_829_06_back.png.json": "75.0",
-  "HS_843_03_front.png.json": "66.66666666666666",
-  "HS_1088_06_back.png.json": "94.44444444444444",
-  "HS_195_03_front.png.json": "20.43010752688172",
-  "HS_1146_06_back.png.json": "69.44444444444444",
-  "HS_1010_06_back.png.json": "85.0",
-  "HS_1061_03_front.png.json": "10.0",
-  "HS_1023_06_back.png.json": "100.0",
-  "HS_1309_03_front.png.json": "63.63636363636363",
-  "HS_1216_03_front.png.json": "75.0",
-  "HS_1311_06_back.png.json": "53.84615384615385",
-  "HS_805_03_front.png.json": "28.57142857142857",
-  "HS_1036_06_back.png.json": "76.0",
-  "HS_1220_03_front.png.json": "70.58823529411765",
-  "HS_1258_03_front.png.json": "43.75",
-  "HS_1230_06_back.png.json": "59.30232558139535",
-  "HS_2106_06_back.png.json": "47.5",
-  "HS_2291_06_back.png.json": "75.0",
-  "HS_2280_06_back.png.json": "33.33333333333333",
-  "HS_1003_06_back.png.json": "100.0",
-  "HS_297_06_back.png.json": "18.181818181818183",
-  "HS_1149_03_front.png.json": "80.51948051948052",
-  "HS_2101_03_front.png.json": "90.32258064516128",
-  "HS_2290_06_back.png.json": "16.666666666666664",
-  "HS_1353_03_front.png.json": "75.0",
-  "HS_1241_03_front.png.json": "85.36585365853658",
-  "HS_438_03_front.png.json": "45.45454545454545",
-  "HS_1242_03_front.png.json": "93.97590361445783",
-  "HS_2308_06_back.png.json": "31.818181818181817",
-  "HS_436_06_back.png.json": "30.909090909090907",
-  "HS_1239_06_back.png.json": "71.1864406779661",
-  "HS_366_06_back.png.json": "100.0",
-  "HS_2304_03_front.png.json": "42.30769230769231",
-  "HS_1317_06_back.png.json": "86.66666666666667",
-  "HS_1358_03_front.png.json": "77.58620689655173",
-  "HS_855_03_front.png.json": "100.0",
-  "HS_1100_03_front.png.json": "85.71428571428571",
-  "HS_1173_03_front.png.json": "54.83870967741935",
-  "HS_892_03_front.png.json": "65.625",
-  "HS_893_03_front.png.json": "23.076923076923077",
-  "HS_274_03_front.png.json": "51.724137931034484",
-  "HS_758_03_front.png.json": "23.684210526315788",
-  "HS_1262_06_back.png.json": "64.0",
-  "HS_1318_06_back.png.json": "25.0",
-  "HS_2252_06_back.png.json": "71.42857142857143",
-  "HS_846_03_front.png.json": "45.45454545454545",
-  "HS_1315_03_front.png.json": "67.85714285714286",
-  "HS_1055_03_front.png.json": "96.29629629629629",
-  "HS_1157_06_back.png.json": "66.66666666666666",
-  "HS_294_03_front.png.json": "68.83116883116884",
-  "HS_960_03_front.png.json": "70.0",
-  "HS_2274_03_front.png.json": "100.0",
-  "HS_1111_06_back.png.json": "81.25",
-  "HS_295_03_front.png.json": "93.47826086956522",
-  "HS_2301_06_back.png.json": "47.368421052631575",
-  "HS_1301_06_back.png.json": "49.09090909090909",
-  "HS_1129_03_front.png.json": "90.47619047619048",
-  "HS_1159_03_front.png.json": "72.22222222222221",
-  "HS_1205_03_front.png.json": "77.77777777777779",
-  "HS_783_03_front.png.json": "86.36363636363636",
-  "HS_1313_06_back.png.json": "88.0",
-  "HS_751_03_front.png.json": "23.214285714285715",
-  "HS_1119_06_back.png.json": "100.0",
-  "HS_1237_06_back.png.json": "83.87096774193549",
-  "HS_1094_06_back.png.json": "50.0",
-  "HS_1057_06_back.png.json": "81.25",
-  "HS_2267_06_back.png.json": "66.66666666666666",
-  "HS_1242_06_back.png.json": "64.28571428571429",
-  "HS_440_03_front.png.json": "69.23076923076923",
-  "HS_291_06_back.png.json": "20.833333333333336",
-  "HS_1744_06_back.png.json": "26.666666666666668",
-  "HS_1105_03_front.png.json": "90.9090909090909",
-  "HS_1035_06_back.png.json": "69.04761904761905",
-  "HS_2074_06_back.png.json": "12.068965517241379",
-  "HS_1107_03_front.png.json": "80.76923076923077",
-  "HS_1016_06_back.png.json": "700.0",
-  "HS_1023_03_front.png.json": "66.66666666666666",
-  "HS_792_03_front.png.json": "12.5",
-  "HS_1095_06_back.png.json": "51.515151515151516",
-  "HS_1275_03_front.png.json": "100.0",
-  "HS_1106_06_back.png.json": "78.94736842105263",
-  "HS_1211_03_front.png.json": "94.11764705882352",
-  "HS_781_03_front.png.json": "12.643678160919542",
-  "HS_1004_06_back.png.json": "0.0",
-  "HS_1240_06_back.png.json": "8.695652173913043",
-  "HS_2289_06_back.png.json": "12.5",
-  "HS_1014_06_back.png.json": "125.0",
-  "HS_857_03_front.png.json": "47.61904761904761",
-  "HS_1119_03_front.png.json": "87.5",
-  "HS_1097_03_front.png.json": "93.75",
-  "HS_1310_03_front.png.json": "62.96296296296296",
-  "HS_1109_03_front.png.json": "84.0",
-  "HS_1052_03_front.png.json": "145.45454545454547",
-  "HS_836_06_back.png.json": "40.0",
-  "HS_788_06_back.png.json": "26.47058823529412",
-  "HS_1228_03_front.png.json": "100.0",
-  "HS_1316_03_front.png.json": "61.33333333333333",
-  "HS_1202_03_front.png.json": "85.71428571428571",
-  "HS_829_03_front.png.json": "66.27906976744185",
-  "HS_1289_06_back.png.json": "64.86486486486487",
-  "HS_2269_06_back.png.json": "88.23529411764706",
-  "HS_1219_06_back.png.json": "66.66666666666666",
-  "HS_1163_03_front.png.json": "60.0",
-  "HS_435_03_front.png.json": "86.66666666666667",
-  "HS_806_06_back.png.json": "55.81395348837209",
-  "HS_856_03_front.png.json": "66.66666666666666",
-  "HS_2279_06_back.png.json": "65.0",
-  "HS_2076_06_back.png.json": "54.285714285714285",
-  "HS_1067_06_back.png.json": "68.18181818181817",
-  "HS_1359_06_back.png.json": "100.0",
-  "HS_1245_03_front.png.json": "86.66666666666667",
-  "HS_2255_03_front.png.json": "85.71428571428571",
-  "HS_1157_03_front.png.json": "56.25",
-  "HS_1171_06_back.png.json": "47.01492537313433",
-  "HS_1320_06_back.png.json": "18.75",
-  "HS_809_06_back.png.json": "55.55555555555556",
-  "HS_1090_06_back.png.json": "83.33333333333334",
-  "HS_1215_06_back.png.json": "73.23943661971832",
-  "HS_809_03_front.png.json": "50.0",
-  "HS_941_06_back.png.json": "60.0",
-  "HS_767_03_front.png.json": "52.083333333333336",
-  "HS_912_03_front.png.json": "72.22222222222221",
-  "HS_1010_03_front.png.json": "95.23809523809523",
-  "HS_2269_03_front.png.json": "100.0",
-  "HS_1001_06_back.png.json": "93.75",
-  "HS_1292_06_back.png.json": "62.745098039215684",
-  "HS_359_06_back.png.json": "56.00000000000001",
-  "HS_1164_06_back.png.json": "100.0",
-  "HS_1160_03_front.png.json": "55.55555555555556",
-  "HS_1006_03_front.png.json": "87.5",
-  "HS_1288_03_front.png.json": "100.0",
-  "HS_2297_06_back.png.json": "100.0",
-  "HS_1334_03_front.png.json": "100",
-  "HS_1085_03_front.png.json": "78.26086956521739",
-  "HS_1744_03_front.png.json": "50.0",
-  "HS_1134_06_back.png.json": "100.0",
-  "HS_1244_03_front.png.json": "105.88235294117648",
-  "HS_869_03_front.png.json": "19.047619047619047",
-  "HS_274_06_back.png.json": "45.65217391304348",
-  "HS_1071_06_back.png.json": "100.0",
-  "HS_1083_03_front.png.json": "90.47619047619048",
-  "HS_885_03_front.png.json": "5.0",
-  "HS_388_03_front.png.json": "52.63157894736842",
-  "HS_908_03_front.png.json": "31.03448275862069",
-  "HS_1181_03_front.png.json": "69.76744186046511",
-  "HS_2281_03_front.png.json": "78.94736842105263",
-  "HS_866_03_front.png.json": "72.72727272727273",
-  "HS_311_03_front.png.json": "5.88235294117647",
-  "HS_1154_06_back.png.json": "76.59574468085107",
-  "HS_2101_06_back.png.json": "27.500000000000004",
-  "HS_918_03_front.png.json": "46.06741573033708",
-  "HS_386_06_back.png.json": "100.0",
-  "HS_2280_03_front.png.json": "70.0",
-  "HS_1302_06_back.png.json": "59.210526315789465",
-  "HS_1125_03_front.png.json": "80.76923076923077",
-  "HS_1117_03_front.png.json": "73.68421052631578",
-  "HS_1252_03_front.png.json": "420.0",
-  "HS_1210_03_front.png.json": "90.0",
-  "HS_921_03_front.png.json": "35.294117647058826",
-  "HS_1015_06_back.png.json": "88.88888888888889",
-  "HS_1254_06_back.png.json": "48.64864864864865",
-  "HS_1207_03_front.png.json": "91.66666666666666",
-  "HS_437_06_back.png.json": "5.412371134020619",
-  "HS_921_06_back.png.json": "80.0",
-  "HS_1001_03_front.png.json": "81.48148148148148",
-  "HS_1028_06_back.png.json": "33.33333333333333",
-  "HS_1344_03_front.png.json": "100.0",
-  "HS_1092_06_back.png.json": "100.0",
-  "HS_2306_06_back.png.json": "93.75",
-  "HS_891_03_front.png.json": "78.94736842105263",
-  "HS_2311_03_front.png.json": "71.42857142857143",
-  "HS_2106_03_front.png.json": "59.42028985507246",
-  "HS_800_03_front.png.json": "41.37931034482759",
-  "HS_1291_03_front.png.json": "92.5925925925926",
-  "HS_1229_03_front.png.json": "90.47619047619048",
-  "HS_770_03_front.png.json": "52.94117647058824",
-  "HS_1164_03_front.png.json": "78.26086956521739",
-  "HS_1153_06_back.png.json": "21.794871794871796",
-  "HS_847_03_front.png.json": "25.0",
-  "HS_1171_03_front.png.json": "64.46280991735537",
-  "HS_1078_03_front.png.json": "91.30434782608695",
-  "HS_1127_06_back.png.json": "56.75675675675676",
-  "HS_1007_06_back.png.json": "56.52173913043478",
-  "HS_1238_03_front.png.json": "73.33333333333333",
-  "HS_2281_06_back.png.json": "8.823529411764707",
-  "HS_786_03_front.png.json": "37.254901960784316",
-  "HS_1074_06_back.png.json": "57.14285714285714",
-  "HS_1215_03_front.png.json": "77.16535433070865",
-  "HS_902_03_front.png.json": "27.586206896551722",
-  "HS_1041_06_back.png.json": "75.0",
-  "HS_1200_03_front.png.json": "100.0",
-  "HS_1200_06_back.png.json": "53.333333333333336",
-  "HS_1311_03_front.png.json": "81.57894736842105",
-  "HS_1271_06_back.png.json": "41.70403587443946",
-  "HS_294_06_back.png.json": "57.692307692307686",
-  "HS_1062_06_back.png.json": "29.411764705882355",
-  "HS_877_03_front.png.json": "85.71428571428571",
-  "HS_1056_03_front.png.json": "87.17948717948718",
-  "HS_1067_03_front.png.json": "68.42105263157895",
-  "HS_1288_06_back.png.json": "93.33333333333333",
-  "HS_1123_06_back.png.json": "72.54901960784314",
-  "HS_1194_03_front.png.json": "93.75",
-  "HS_758_06_back.png.json": "40.0",
-  "HS_1125_06_back.png.json": "38.23529411764706",
-  "HS_1249_06_back.png.json": "85.71428571428571",
-  "HS_1152_06_back.png.json": "39.285714285714285",
-  "HS_1356_03_front.png.json": "100",
-  "HS_2117_03_front.png.json": "53.205128205128204",
-  "HS_848_03_front.png.json": "57.14285714285714",
-  "HS_793_03_front.png.json": "64.0",
-  "HS_1143_06_back.png.json": "68.0",
-  "HS_874_03_front.png.json": "23.333333333333332",
-  "HS_1121_06_back.png.json": "33.04347826086956",
-  "HS_905_03_front.png.json": "50.0",
-  "HS_1217_03_front.png.json": "83.33333333333334",
-  "HS_2084_06_back.png.json": "43.57142857142857",
-  "HS_837_03_front.png.json": "40.0",
-  "HS_1190_03_front.png.json": "70.83333333333334",
-  "HS_1238_06_back.png.json": "54.44444444444444",
-  "HS_1227_03_front.png.json": "94.73684210526315",
-  "HS_1186_03_front.png.json": "64.70588235294117",
-  "HS_836_03_front.png.json": "30.0",
-  "HS_1155_06_back.png.json": "58.730158730158735",
-  "HS_1194_06_back.png.json": "100.0",
-  "HS_1354_03_front.png.json": "100.0",
-  "HS_1167_06_back.png.json": "40.625",
-  "HS_1185_03_front.png.json": "100.0",
-  "HS_1227_06_back.png.json": "80.0",
-  "HS_1102_06_back.png.json": "70.37037037037037",
-  "HS_1024_03_front.png.json": "81.57894736842105",
-  "HS_2278_06_back.png.json": "83.33333333333334",
-  "HS_1019_03_front.png.json": "96.0",
   "HS_1147_06_back.png.json": "95.23809523809523",
-  "HS_1329_03_front.png.json": "100",
+  "HS_1128_03_front.png.json": "100.0",
+  "HS_364_06_back.png.json": "53.333333333333336",
+  "HS_1203_06_back.png.json": "83.33333333333334",
+  "HS_812_03_front.png.json": "15.0",
+  "HS_1014_06_back.png.json": "125.0",
+  "HS_1150_03_front.png.json": "78.125",
+  "HS_1320_06_back.png.json": "18.75",
+  "HS_912_06_back.png.json": "61.53846153846154",
+  "HS_1009_06_back.png.json": "40.0",
+  "HS_2279_06_back.png.json": "65.0",
+  "HS_840_03_front.png.json": "17.647058823529413",
+  "HS_1165_06_back.png.json": "100.0",
   "HS_853_03_front.png.json": "33.33333333333333",
-  "HS_1296_06_back.png.json": "44.18604651162791",
-  "HS_2290_03_front.png.json": "55.55555555555556",
-  "HS_1006_06_back.png.json": "80.0",
-  "HS_2257_03_front.png.json": "72.72727272727273",
-  "HS_900_03_front.png.json": "50.0",
-  "HS_2304_06_back.png.json": "37.142857142857146",
-  "HS_1340_03_front.png.json": "100",
-  "HS_1314_06_back.png.json": "64.51612903225806",
-  "HS_873_03_front.png.json": "23.809523809523807",
-  "HS_863_03_front.png.json": "21.428571428571427",
-  "HS_1116_06_back.png.json": "16.666666666666664",
-  "HS_2255_06_back.png.json": "95.0",
-  "HS_2287_06_back.png.json": "100.0",
-  "HS_1190_06_back.png.json": "78.57142857142857",
-  "HS_2273_06_back.png.json": "92.85714285714286",
-  "HS_1267_03_front.png.json": "100.0",
-  "HS_1025_03_front.png.json": "85.29411764705883",
-  "HS_2261_06_back.png.json": "65.0",
-  "HS_1320_03_front.png.json": "66.66666666666666",
-  "HS_438_06_back.png.json": "31.25",
-  "HS_1095_03_front.png.json": "85.71428571428571",
-  "HS_2295_06_back.png.json": "106.66666666666667",
-  "HS_1189_06_back.png.json": "71.42857142857143",
-  "HS_1299_03_front.png.json": "90.9090909090909",
-  "HS_1107_06_back.png.json": "45.83333333333333",
-  "HS_907_03_front.png.json": "83.6734693877551",
-  "HS_1332_03_front.png.json": "100",
-  "HS_1166_06_back.png.json": "106.25",
-  "HS_1002_06_back.png.json": "94.11764705882352",
-  "HS_1295_03_front.png.json": "65.71428571428571",
-  "HS_1093_06_back.png.json": "89.47368421052632",
-  "HS_1007_03_front.png.json": "69.6969696969697",
-  "HS_888_06_back.png.json": "60.0",
-  "HS_387_03_front.png.json": "67.85714285714286",
-  "HS_1230_03_front.png.json": "82.53968253968253",
-  "HS_1310_06_back.png.json": "76.0",
-  "HS_1174_06_back.png.json": "80.95238095238095",
-  "HS_1298_03_front.png.json": "79.3103448275862",
-  "HS_1087_03_front.png.json": "80.0",
-  "HS_1303_03_front.png.json": "77.06422018348624",
-  "HS_1101_06_back.png.json": "80.0",
-  "HS_876_03_front.png.json": "39.58333333333333",
-  "HS_1282_06_back.png.json": "77.77777777777779",
-  "HS_2266_03_front.png.json": "29.629629629629626",
-  "HS_1154_03_front.png.json": "68.96551724137932",
-  "HS_1297_03_front.png.json": "75.80645161290323",
-  "HS_388_06_back.png.json": "100.0",
-  "HS_2295_03_front.png.json": "100.0",
-  "HS_1226_03_front.png.json": "85.0",
-  "HS_1128_06_back.png.json": "12.5",
-  "HS_890_06_back.png.json": "71.42857142857143",
-  "HS_1212_03_front.png.json": "100.0",
-  "HS_897_06_back.png.json": "100",
-  "HS_1300_06_back.png.json": "59.57446808510638",
-  "HS_961_03_front.png.json": "53.84615384615385",
-  "HS_1015_03_front.png.json": "89.47368421052632",
-  "HS_1225_03_front.png.json": "72.22222222222221",
-  "HS_775_03_front.png.json": "83.33333333333334",
-  "HS_901_03_front.png.json": "81.48148148148148",
-  "HS_881_03_front.png.json": "100.0",
-  "HS_808_06_back.png.json": "27.586206896551722",
-  "HS_1161_06_back.png.json": "135.29411764705884",
-  "HS_1075_03_front.png.json": "85.0",
-  "HS_368_06_back.png.json": "100.0",
-  "HS_1155_03_front.png.json": "73.80952380952381",
-  "HS_295_06_back.png.json": "30.612244897959183",
-  "HS_1293_06_back.png.json": "76.59574468085107",
-  "HS_1038_03_front.png.json": "73.68421052631578",
-  "HS_2251_03_front.png.json": "95.65217391304348",
-  "HS_1264_03_front.png.json": "93.33333333333333",
-  "HS_793_06_back.png.json": "100",
-  "HS_1282_03_front.png.json": "90.9090909090909",
-  "HS_364_03_front.png.json": "54.54545454545454",
-  "HS_890_03_front.png.json": "70.58823529411765",
-  "HS_1359_03_front.png.json": "82.75862068965517",
-  "HS_2288_03_front.png.json": "68.75",
-  "HS_1226_06_back.png.json": "66.66666666666666",
-  "HS_926_03_front.png.json": "82.35294117647058",
-  "HS_1120_06_back.png.json": "100.0",
-  "HS_387_06_back.png.json": "51.35135135135135",
-  "HS_1143_03_front.png.json": "101.21951219512195",
-  "HS_2292_06_back.png.json": "6.666666666666667",
-  "HS_278_03_front.png.json": "42.22222222222222",
-  "HS_310_03_front.png.json": "31.25",
-  "HS_1353_06_back.png.json": "100.0",
-  "HS_1203_03_front.png.json": "75.0",
-  "HS_307_03_front.png.json": "38.23529411764706",
-  "HS_1272_03_front.png.json": "66.66666666666666",
-  "HS_1060_03_front.png.json": "86.20689655172413",
-  "HS_1237_03_front.png.json": "77.77777777777779",
-  "HS_2292_03_front.png.json": "75.0",
-  "HS_1245_06_back.png.json": "69.23076923076923",
-  "HS_2440_03_front.png.json": "18.571428571428573",
-  "HS_1042_03_front.png.json": "100.0",
-  "HS_1081_06_back.png.json": "100.0",
-  "HS_1223_03_front.png.json": "67.85714285714286",
-  "HS_1256_06_back.png.json": "46.666666666666664",
-  "HS_1027_03_front.png.json": "55.55555555555556",
-  "HS_1236_03_front.png.json": "83.33333333333334",
-  "HS_1327_03_front.png.json": "200.0",
-  "HS_1300_03_front.png.json": "75.0",
-  "HS_762_03_front.png.json": "40.0",
-  "HS_2309_03_front.png.json": "100.0",
-  "HS_1027_06_back.png.json": "83.33333333333334",
-  "HS_1167_03_front.png.json": "66.66666666666666",
-  "HS_788_03_front.png.json": "24.59016393442623",
-  "HS_1105_06_back.png.json": "48.888888888888886",
-  "HS_2444_06_back.png.json": "88.23529411764706",
-  "HS_1118_06_back.png.json": "100.0",
-  "HS_1113_06_back.png.json": "81.81818181818183",
-  "HS_1287_06_back.png.json": "23.809523809523807",
-  "HS_2265_03_front.png.json": "91.66666666666666",
-  "HS_868_03_front.png.json": "90.0",
-  "HS_1142_03_front.png.json": "70.58823529411765",
-  "HS_1045_06_back.png.json": "115.38461538461537",
+  "HS_1219_06_back.png.json": "66.66666666666666",
+  "HS_1159_03_front.png.json": "72.22222222222221",
+  "HS_862_03_front.png.json": "10.0",
+  "HS_2101_03_front.png.json": "90.32258064516128",
+  "HS_2293_03_front.png.json": "100.0",
+  "HS_2117_06_back.png.json": "16.463414634146343",
+  "HS_1019_03_front.png.json": "96.0",
+  "HS_1346_03_front.png.json": "94.73684210526315",
+  "HS_1117_03_front.png.json": "73.68421052631578",
+  "HS_2267_06_back.png.json": "66.66666666666666",
+  "HS_2444_03_front.png.json": "52.85714285714286",
   "HS_1262_03_front.png.json": "82.35294117647058",
-  "HS_1216_06_back.png.json": "75.0",
-  "HS_821_06_back.png.json": "46.875",
-  "HS_842_03_front.png.json": "55.55555555555556",
-  "HS_1161_03_front.png.json": "17.599999999999998",
-  "HS_1048_06_back.png.json": "64.70588235294117",
-  "HS_1246_03_front.png.json": "75.0",
-  "HS_1309_06_back.png.json": "53.84615384615385",
-  "HS_1064_03_front.png.json": "90.9090909090909",
+  "HS_1035_06_back.png.json": "69.04761904761905",
+  "HS_1003_06_back.png.json": "100.0",
+  "HS_2291_03_front.png.json": "73.33333333333333",
+  "HS_1146_03_front.png.json": "81.81818181818183",
+  "HS_822_03_front.png.json": "46.15384615384615",
+  "HS_1263_03_front.png.json": "76.74418604651163",
   "HS_796_03_front.png.json": "60.416666666666664",
-  "HS_1141_03_front.png.json": "104.76190476190477",
-  "HS_927_03_front.png.json": "62.5",
-  "HS_1020_03_front.png.json": "72.0",
-  "HS_1152_03_front.png.json": "50.0",
-  "HS_1004_03_front.png.json": "94.44444444444444",
-  "HS_810_03_front.png.json": "66.66666666666666",
-  "HS_283_06_back.png.json": "32.432432432432435",
-  "HS_1290_06_back.png.json": "72.41379310344827",
-  "HS_2273_03_front.png.json": "77.27272727272727",
+  "HS_1025_06_back.png.json": "82.5",
+  "HS_1102_03_front.png.json": "0.0",
+  "HS_1181_06_back.png.json": "62.7906976744186",
+  "HS_1258_06_back.png.json": "63.63636363636363",
+  "HS_799_03_front.png.json": "62.96296296296296",
+  "HS_1205_06_back.png.json": "0.0",
+  "HS_1039_06_back.png.json": "54.054054054054056",
+  "HS_1097_03_front.png.json": "93.75",
+  "HS_1084_03_front.png.json": "90.47619047619048",
+  "HS_2117_03_front.png.json": "53.205128205128204",
+  "HS_1045_03_front.png.json": "50.0",
+  "HS_2101_06_back.png.json": "27.500000000000004",
+  "HS_2169_06_back.png.json": "9.090909090909092",
+  "HS_2440_03_front.png.json": "18.571428571428573",
+  "HS_306_03_front.png.json": "57.89473684210527",
+  "HS_1175_06_back.png.json": "60.0",
+  "HS_2301_06_back.png.json": "47.368421052631575",
+  "HS_288_06_back.png.json": "62.7906976744186",
+  "HS_1180_06_back.png.json": "52.63157894736842",
+  "HS_1299_03_front.png.json": "90.9090909090909",
+  "HS_2291_06_back.png.json": "75.0",
+  "HS_2272_06_back.png.json": "100.0",
+  "HS_1210_06_back.png.json": "95.45454545454545",
+  "HS_278_03_front.png.json": "42.22222222222222",
+  "HS_1163_03_front.png.json": "60.0",
+  "HS_777_03_front.png.json": "66.66666666666666",
+  "HS_2286_06_back.png.json": "88.23529411764706",
+  "HS_2276_03_front.png.json": "34.61538461538461",
+  "HS_1096_03_front.png.json": "86.11111111111111",
+  "HS_1282_03_front.png.json": "90.9090909090909",
+  "HS_359_06_back.png.json": "56.00000000000001",
+  "HS_1232_03_front.png.json": "94.73684210526315",
+  "HS_1224_03_front.png.json": "92.3076923076923",
+  "HS_793_06_back.png.json": "100",
+  "HS_1272_06_back.png.json": "16.27906976744186",
+  "HS_1295_06_back.png.json": "78.37837837837837",
+  "HS_1002_06_back.png.json": "94.11764705882352",
+  "HS_2313_06_back.png.json": "6.25",
+  "HS_1133_03_front.png.json": "88.88888888888889",
+  "HS_2299_06_back.png.json": "100.0",
+  "HS_1300_06_back.png.json": "59.57446808510638",
+  "HS_1112_03_front.png.json": "69.23076923076923",
+  "HS_1069_03_front.png.json": "64.28571428571429",
+  "HS_978_03_front.png.json": "28.888888888888886",
   "HS_1299_06_back.png.json": "83.33333333333334",
-  "HS_1099_06_back.png.json": "125.0",
-  "HS_1253_06_back.png.json": "85.9375",
-  "HS_1285_06_back.png.json": "83.54430379746836",
-  "HS_1307_06_back.png.json": "54.347826086956516",
+  "HS_1190_06_back.png.json": "78.57142857142857",
+  "HS_1253_03_front.png.json": "78.26086956521739",
+  "HS_1080_06_back.png.json": "100.0",
+  "HS_1155_03_front.png.json": "73.80952380952381",
+  "HS_897_03_front.png.json": "0.0",
+  "HS_1069_06_back.png.json": "64.86486486486487",
+  "HS_907_03_front.png.json": "83.6734693877551",
+  "HS_1107_03_front.png.json": "80.76923076923077",
+  "HS_918_03_front.png.json": "46.06741573033708",
+  "HS_277_06_back.png.json": "2.1739130434782608",
+  "HS_2306_06_back.png.json": "93.75",
+  "HS_1226_06_back.png.json": "66.66666666666666",
+  "HS_1360_03_front.png.json": "53.94736842105263",
+  "HS_1358_03_front.png.json": "77.58620689655173",
+  "HS_890_03_front.png.json": "70.58823529411765",
+  "HS_1072_03_front.png.json": "56.00000000000001",
+  "HS_1206_06_back.png.json": "61.111111111111114",
+  "HS_1031_03_front.png.json": "96.42857142857143",
+  "HS_1744_06_back.png.json": "26.666666666666668",
+  "HS_1080_03_front.png.json": "82.35294117647058",
+  "HS_1193_03_front.png.json": "73.68421052631578",
+  "HS_848_03_front.png.json": "57.14285714285714",
+  "HS_2259_06_back.png.json": "13.333333333333334",
+  "HS_1292_06_back.png.json": "62.745098039215684",
+  "HS_2269_06_back.png.json": "88.23529411764706",
+  "HS_1109_06_back.png.json": "48.148148148148145",
+  "HS_1330_03_front.png.json": "100",
+  "HS_1009_03_front.png.json": "81.81818181818183",
+  "HS_1136_03_front.png.json": "87.5",
+  "HS_1218_03_front.png.json": "76.11940298507463",
+  "HS_1158_03_front.png.json": "76.92307692307693",
+  "HS_1058_03_front.png.json": "100.0",
+  "HS_2308_03_front.png.json": "76.0",
+  "HS_1224_06_back.png.json": "60.0",
+  "HS_1309_03_front.png.json": "63.63636363636363",
+  "HS_857_03_front.png.json": "47.61904761904761",
+  "HS_2259_03_front.png.json": "46.666666666666664",
+  "HS_2279_03_front.png.json": "58.333333333333336",
+  "HS_2272_03_front.png.json": "89.28571428571429",
+  "HS_1249_06_back.png.json": "85.71428571428571",
+  "HS_367_06_back.png.json": "83.01886792452831",
+  "HS_941_03_front.png.json": "50.0",
+  "HS_859_03_front.png.json": "40.0",
+  "HS_1161_06_back.png.json": "135.29411764705884",
+  "HS_912_03_front.png.json": "72.22222222222221",
+  "HS_2251_06_back.png.json": "90.47619047619048",
+  "HS_903_03_front.png.json": "19.35483870967742",
+  "HS_2281_03_front.png.json": "78.94736842105263",
+  "HS_776_03_front.png.json": "45.0",
+  "HS_1010_03_front.png.json": "95.23809523809523",
+  "HS_1275_06_back.png.json": "40.0",
+  "HS_1215_03_front.png.json": "80.31496062992126",
+  "HS_1259_03_front.png.json": "89.65517241379311",
+  "HS_2074_06_back.png.json": "12.068965517241379",
+  "HS_1335_03_front.png.json": "100",
+  "HS_809_03_front.png.json": "50.0",
+  "HS_876_03_front.png.json": "39.58333333333333",
+  "HS_1095_06_back.png.json": "51.515151515151516",
+  "HS_436_06_back.png.json": "30.909090909090907",
+  "HS_827_03_front.png.json": "84.0",
+  "HS_1232_06_back.png.json": "100.0",
+  "HS_2311_03_front.png.json": "71.42857142857143",
+  "HS_1062_06_back.png.json": "29.411764705882355",
+  "HS_1355_06_back.png.json": "100.0",
+  "HS_1013_03_front.png.json": "96.0",
+  "HS_1240_03_front.png.json": "23.076923076923077",
+  "HS_2300_03_front.png.json": "84.21052631578947",
+  "HS_1115_06_back.png.json": "100.0",
+  "HS_1072_06_back.png.json": "96.15384615384616",
+  "HS_897_06_back.png.json": "100",
+  "HS_1143_06_back.png.json": "68.0",
+  "HS_788_06_back.png.json": "26.47058823529412",
+  "HS_1173_03_front.png.json": "54.83870967741935",
+  "HS_1214_03_front.png.json": "91.30434782608695",
+  "HS_1195_03_front.png.json": "91.66666666666666",
+  "HS_845_03_front.png.json": "20.0",
+  "HS_1215_06_back.png.json": "92.95774647887323",
+  "HS_792_03_front.png.json": "12.5",
+  "HS_2263_06_back.png.json": "35.41666666666667",
+  "HS_1231_06_back.png.json": "55.55555555555556",
+  "HS_1145_06_back.png.json": "70.96774193548387",
+  "HS_752_06_back.png.json": "33.33333333333333",
+  "HS_1134_03_front.png.json": "87.5",
+  "HS_1229_03_front.png.json": "90.47619047619048",
+  "HS_806_03_front.png.json": "42.465753424657535",
   "HS_1317_03_front.png.json": "81.25",
-  "HS_767_06_back.png.json": "57.89473684210527",
-  "HS_1110_03_front.png.json": "90.9090909090909",
+  "HS_1307_03_front.png.json": "86.88524590163934",
+  "HS_1057_06_back.png.json": "81.25",
+  "HS_978_06_back.png.json": "23.52941176470588",
+  "HS_440_03_front.png.json": "69.23076923076923",
+  "HS_1271_03_front.png.json": "81.34715025906736",
+  "HS_816_03_front.png.json": "13.461538461538462",
+  "HS_1287_06_back.png.json": "23.809523809523807",
+  "HS_1293_03_front.png.json": "77.41935483870968",
+  "HS_2299_03_front.png.json": "73.52941176470588",
+  "HS_1036_06_back.png.json": "76.0",
+  "HS_864_03_front.png.json": "3.7037037037037033",
+  "HS_1120_03_front.png.json": "80.0",
+  "HS_1250_03_front.png.json": "79.3103448275862",
+  "HS_1111_03_front.png.json": "87.5",
+  "HS_919_03_front.png.json": "45.83333333333333",
+  "HS_2306_03_front.png.json": "64.70588235294117",
+  "HS_297_03_front.png.json": "42.10526315789473",
+  "HS_1118_06_back.png.json": "100.0",
+  "HS_770_06_back.png.json": "6.25",
+  "HS_1094_06_back.png.json": "50.0",
+  "HS_1336_03_front.png.json": "70.0",
+  "HS_1207_06_back.png.json": "88.88888888888889",
+  "HS_2276_06_back.png.json": "66.66666666666666",
+  "HS_1229_06_back.png.json": "80.0",
+  "HS_875_03_front.png.json": "75.0",
+  "HS_1161_03_front.png.json": "17.599999999999998",
+  "HS_1271_06_back.png.json": "41.70403587443946",
+  "HS_795_03_front.png.json": "48.148148148148145",
+  "HS_2288_03_front.png.json": "68.75",
+  "HS_1051_06_back.png.json": "35.483870967741936",
+  "HS_1291_03_front.png.json": "92.5925925925926",
+  "HS_1053_06_back.png.json": "100.0",
+  "HS_1094_03_front.png.json": "57.14285714285714",
+  "HS_2295_06_back.png.json": "106.66666666666667",
+  "HS_1196_06_back.png.json": "63.63636363636363",
+  "HS_1357_06_back.png.json": "75.0",
+  "HS_1298_03_front.png.json": "79.3103448275862",
+  "HS_1119_06_back.png.json": "100.0",
+  "HS_2283_03_front.png.json": "100.0",
+  "HS_1242_06_back.png.json": "64.28571428571429",
+  "HS_294_06_back.png.json": "57.692307692307686",
+  "HS_1318_03_front.png.json": "50.0",
+  "HS_1031_06_back.png.json": "78.78787878787878",
+  "HS_2304_06_back.png.json": "37.142857142857146",
+  "HS_2280_06_back.png.json": "33.33333333333333",
+  "HS_1180_03_front.png.json": "82.85714285714286",
+  "HS_901_06_back.png.json": "24.137931034482758",
+  "HS_1056_03_front.png.json": "87.17948717948718",
+  "HS_786_03_front.png.json": "37.254901960784316",
+  "HS_1269_03_front.png.json": "83.33333333333334",
+  "HS_1306_06_back.png.json": "100.0",
+  "HS_1302_03_front.png.json": "75.30864197530865",
+  "HS_1326_03_front.png.json": "100",
+  "HS_1121_06_back.png.json": "33.04347826086956",
+  "HS_863_03_front.png.json": "21.428571428571427",
+  "HS_1092_03_front.png.json": "54.54545454545454",
+  "HS_1138_06_back.png.json": "100.0",
+  "HS_386_06_back.png.json": "100.0",
+  "HS_1012_03_front.png.json": "66.66666666666666",
+  "HS_2287_06_back.png.json": "100.0",
+  "HS_1312_03_front.png.json": "94.11764705882352",
+  "HS_1085_03_front.png.json": "78.26086956521739",
+  "HS_1212_03_front.png.json": "100.0",
+  "HS_1121_03_front.png.json": "80.0",
+  "HS_1079_06_back.png.json": "88.88888888888889",
+  "HS_385_03_front.png.json": "60.0",
+  "HS_1321_03_front.png.json": "600.0",
+  "HS_846_03_front.png.json": "45.45454545454545",
+  "HS_1306_03_front.png.json": "56.25",
+  "HS_442_03_front.png.json": "46.774193548387096",
+  "HS_1213_06_back.png.json": "80.95238095238095",
+  "HS_2278_03_front.png.json": "92.85714285714286",
+  "HS_1197_06_back.png.json": "65.0",
+  "HS_1310_03_front.png.json": "62.96296296296296",
+  "HS_1051_03_front.png.json": "57.89473684210527",
+  "HS_1047_06_back.png.json": "81.81818181818183",
+  "HS_1208_03_front.png.json": "76.19047619047619",
+  "HS_1114_06_back.png.json": "71.7948717948718",
+  "HS_1301_06_back.png.json": "49.09090909090909",
+  "HS_1203_03_front.png.json": "75.0",
+  "HS_1303_03_front.png.json": "77.06422018348624",
+  "HS_1319_03_front.png.json": "240.0",
+  "HS_1222_06_back.png.json": "90.9090909090909",
+  "HS_1230_06_back.png.json": "59.30232558139535",
+  "HS_1064_03_front.png.json": "90.9090909090909",
+  "HS_442_06_back.png.json": "103.03030303030303",
+  "HS_310_03_front.png.json": "31.25",
+  "HS_1134_06_back.png.json": "100.0",
+  "HS_837_03_front.png.json": "40.0",
+  "HS_1290_06_back.png.json": "72.41379310344827",
+  "HS_1019_06_back.png.json": "41.66666666666667",
+  "HS_2273_03_front.png.json": "77.27272727272727",
+  "HS_1010_06_back.png.json": "85.0",
+  "HS_1176_03_front.png.json": "833.3333333333334",
+  "HS_2313_03_front.png.json": "47.05882352941176",
+  "HS_1252_03_front.png.json": "420.0",
+  "HS_921_06_back.png.json": "80.0",
+  "HS_964_03_front.png.json": "57.14285714285714",
+  "HS_1182_03_front.png.json": "98.0",
+  "HS_1219_03_front.png.json": "100.0",
+  "HS_916_03_front.png.json": "21.875",
+  "HS_1272_03_front.png.json": "66.66666666666666",
+  "HS_810_03_front.png.json": "66.66666666666666",
+  "HS_283_03_front.png.json": "36.734693877551024",
+  "HS_1090_06_back.png.json": "83.33333333333334",
+  "HS_1182_06_back.png.json": "83.33333333333334",
+  "HS_1236_06_back.png.json": "100.0",
+  "HS_1302_06_back.png.json": "59.210526315789465",
+  "HS_1344_03_front.png.json": "100.0",
+  "HS_2278_06_back.png.json": "83.33333333333334",
+  "HS_1221_03_front.png.json": "90.9090909090909",
+  "HS_1253_06_back.png.json": "85.9375",
+  "HS_1348_03_front.png.json": "69.23076923076923",
+  "HS_834_03_front.png.json": "76.0",
+  "HS_1312_06_back.png.json": "55.55555555555556",
+  "HS_1104_06_back.png.json": "68.75",
+  "HS_2288_06_back.png.json": "100.0",
+  "HS_1254_06_back.png.json": "48.64864864864865",
+  "HS_1004_06_back.png.json": "0.0",
+  "HS_1287_03_front.png.json": "58.333333333333336",
+  "HS_1020_06_back.png.json": "54.054054054054056",
+  "HS_889_03_front.png.json": "54.54545454545454",
+  "HS_842_03_front.png.json": "55.55555555555556",
+  "HS_436_03_front.png.json": "80.95238095238095",
+  "HS_2252_03_front.png.json": "66.66666666666666",
+  "HS_1188_03_front.png.json": "100.0",
+  "HS_1199_06_back.png.json": "100.0",
+  "HS_926_03_front.png.json": "82.35294117647058",
+  "HS_1153_06_back.png.json": "21.794871794871796",
+  "HS_1071_03_front.png.json": "95.0",
+  "HS_1157_06_back.png.json": "66.66666666666666",
+  "HS_277_03_front.png.json": "45.83333333333333",
+  "HS_911_03_front.png.json": "39.39393939393939",
+  "HS_364_03_front.png.json": "54.54545454545454",
+  "HS_928_03_front.png.json": "28.57142857142857",
+  "HS_2289_03_front.png.json": "42.857142857142854",
+  "HS_2076_03_front.png.json": "54.32098765432099",
+  "HS_1249_03_front.png.json": "84.84848484848484",
+  "HS_311_06_back.png.json": "55.55555555555556",
+  "HS_1101_06_back.png.json": "80.0",
+  "HS_870_03_front.png.json": "83.87096774193549",
+  "HS_758_03_front.png.json": "23.684210526315788",
+  "HS_1149_03_front.png.json": "80.51948051948052",
+  "HS_1222_03_front.png.json": "80.76923076923077",
+  "HS_1088_03_front.png.json": "95.65217391304348",
+  "HS_887_03_front.png.json": "38.70967741935484",
+  "HS_2253_03_front.png.json": "66.66666666666666",
+  "HS_1125_06_back.png.json": "38.23529411764706",
+  "HS_1227_03_front.png.json": "94.73684210526315",
+  "HS_1238_06_back.png.json": "54.44444444444444",
+  "HS_941_06_back.png.json": "60.0",
+  "HS_1294_03_front.png.json": "78.72340425531915",
+  "HS_792_06_back.png.json": "81.81818181818183",
+  "HS_2084_06_back.png.json": "43.57142857142857",
+  "HS_1066_03_front.png.json": "100.0",
+  "HS_1109_03_front.png.json": "84.0",
+  "HS_805_06_back.png.json": "55.55555555555556",
+  "HS_1059_06_back.png.json": "59.09090909090909",
+  "HS_2280_03_front.png.json": "70.0",
+  "HS_1036_03_front.png.json": "84.21052631578947",
+  "HS_1293_06_back.png.json": "76.59574468085107",
+  "HS_2074_03_front.png.json": "32.48407643312102",
+  "HS_2169_03_front.png.json": "52.0",
+  "HS_1158_06_back.png.json": "100.0",
+  "HS_1261_06_back.png.json": "100.0",
+  "HS_1223_06_back.png.json": "100.0",
+  "HS_1167_03_front.png.json": "66.66666666666666",
+  "HS_1202_06_back.png.json": "69.23076923076923",
+  "HS_1116_03_front.png.json": "42.10526315789473",
+  "HS_1042_03_front.png.json": "100.0",
+  "HS_193_06_back.png.json": "10.344827586206897",
+  "HS_1296_03_front.png.json": "64.51612903225806",
+  "HS_929_03_front.png.json": "87.5",
+  "HS_1059_03_front.png.json": "82.45614035087719",
+  "HS_808_03_front.png.json": "46.57534246575342",
+  "HS_1354_03_front.png.json": "100.0",
+  "HS_1261_03_front.png.json": "100.0",
+  "HS_1332_03_front.png.json": "100",
+  "HS_1016_06_back.png.json": "700.0",
+  "HS_283_06_back.png.json": "32.432432432432435",
+  "HS_1006_06_back.png.json": "80.0",
+  "HS_1062_03_front.png.json": "77.41935483870968",
+  "HS_1274_03_front.png.json": "89.28571428571429",
+  "HS_357_03_front.png.json": "38.46153846153847",
+  "HS_2084_03_front.png.json": "68.08510638297872",
+  "HS_2260_03_front.png.json": "70.83333333333334",
+  "HS_1115_03_front.png.json": "92.3076923076923",
+  "HS_1056_06_back.png.json": "75.75757575757575",
+  "HS_1048_03_front.png.json": "82.14285714285714",
+  "HS_1360_06_back.png.json": "69.56521739130434",
+  "HS_1288_06_back.png.json": "93.33333333333333",
+  "HS_1017_03_front.png.json": "66.66666666666666",
+  "HS_752_03_front.png.json": "37.5",
+  "HS_2295_03_front.png.json": "100.0",
+  "HS_892_03_front.png.json": "65.625",
+  "HS_1142_06_back.png.json": "113.33333333333333",
+  "HS_1148_03_front.png.json": "80.0",
+  "HS_1151_03_front.png.json": "98.82352941176471",
+  "HS_1220_03_front.png.json": "70.58823529411765",
+  "HS_847_03_front.png.json": "25.0",
+  "HS_1353_06_back.png.json": "100.0",
+  "HS_809_06_back.png.json": "55.55555555555556",
+  "HS_1286_03_front.png.json": "100.0",
+  "HS_814_03_front.png.json": "11.627906976744185",
+  "HS_2261_03_front.png.json": "50.0",
+  "HS_1164_03_front.png.json": "78.26086956521739",
+  "HS_803_03_front.png.json": "67.6923076923077",
+  "HS_1028_06_back.png.json": "33.33333333333333",
+  "HS_1264_03_front.png.json": "93.33333333333333",
+  "HS_1258_03_front.png.json": "43.75",
+  "HS_1024_06_back.png.json": "54.54545454545454",
+  "HS_1086_06_back.png.json": "70.83333333333334",
+  "HS_1152_06_back.png.json": "39.285714285714285",
+  "HS_2270_03_front.png.json": "82.14285714285714",
+  "HS_1085_06_back.png.json": "95.23809523809523",
+  "HS_782_06_back.png.json": "80.0",
+  "HS_932_03_front.png.json": "25.0",
+  "HS_1007_06_back.png.json": "56.52173913043478",
+  "HS_1093_06_back.png.json": "89.47368421052632",
+  "HS_1256_06_back.png.json": "46.666666666666664",
+  "HS_902_03_front.png.json": "27.586206896551722",
+  "HS_1225_03_front.png.json": "72.22222222222221",
+  "HS_1246_06_back.png.json": "50.0",
+  "HS_1015_03_front.png.json": "89.47368421052632",
+  "HS_1208_06_back.png.json": "84.61538461538461",
+  "HS_297_06_back.png.json": "18.181818181818183",
+  "HS_1065_03_front.png.json": "78.26086956521739",
+  "HS_1017_06_back.png.json": "42.42424242424242",
+  "HS_2252_06_back.png.json": "71.42857142857143",
+  "HS_444_06_back.png.json": "63.49206349206349",
+  "HS_879_06_back.png.json": "100.0",
+  "HS_1166_06_back.png.json": "106.25",
+  "HS_2300_06_back.png.json": "100.0",
+  "HS_1194_03_front.png.json": "93.75",
+  "HS_2255_03_front.png.json": "85.71428571428571",
+  "HS_1131_06_back.png.json": "100.0",
+  "HS_893_03_front.png.json": "23.076923076923077",
+  "HS_1042_06_back.png.json": "33.33333333333333",
+  "HS_2284_03_front.png.json": "100.0",
+  "HS_2250_03_front.png.json": "86.66666666666667",
+  "HS_357_06_back.png.json": "14.285714285714285",
+  "HS_1265_06_back.png.json": "90.9090909090909",
+  "HS_1104_03_front.png.json": "80.95238095238095",
+  "HS_1131_03_front.png.json": "0.0",
+  "HS_1099_06_back.png.json": "125.0",
+  "HS_1242_03_front.png.json": "93.97590361445783",
+  "HS_1113_03_front.png.json": "78.26086956521739",
+  "HS_867_03_front.png.json": "33.33333333333333",
+  "HS_1110_06_back.png.json": "79.3103448275862",
+  "HS_1217_06_back.png.json": "100.0",
+  "HS_1329_03_front.png.json": "100",
+  "HS_1044_06_back.png.json": "60.0",
   "HS_1298_06_back.png.json": "93.75",
+  "HS_1186_03_front.png.json": "64.70588235294117",
+  "HS_922_03_front.png.json": "27.27272727272727",
+  "HS_1024_03_front.png.json": "81.57894736842105",
+  "HS_1075_06_back.png.json": "81.81818181818183",
+  "HS_1038_06_back.png.json": "80.0",
+  "HS_2262_03_front.png.json": "90.47619047619048",
+  "HS_878_03_front.png.json": "47.82608695652174",
+  "HS_1048_06_back.png.json": "64.70588235294117",
+  "HS_1173_06_back.png.json": "3.125",
+  "HS_1308_06_back.png.json": "5.88235294117647",
+  "HS_2292_03_front.png.json": "75.0",
+  "HS_854_03_front.png.json": "34.48275862068966",
+  "HS_1103_06_back.png.json": "38.46153846153847",
+  "HS_843_03_front.png.json": "66.66666666666666",
+  "HS_961_03_front.png.json": "53.84615384615385",
+  "HS_2263_03_front.png.json": "95.45454545454545",
+  "HS_921_03_front.png.json": "35.294117647058826",
+  "HS_758_06_back.png.json": "40.0",
+  "HS_1192_03_front.png.json": "100.0",
+  "HS_762_03_front.png.json": "40.0",
+  "HS_1196_03_front.png.json": "77.77777777777779",
+  "HS_1060_06_back.png.json": "54.54545454545454",
+  "HS_1327_03_front.png.json": "200.0",
+  "HS_366_03_front.png.json": "30.909090909090907",
+  "HS_2258_03_front.png.json": "82.35294117647058",
+  "HS_1041_03_front.png.json": "83.33333333333334",
+  "HS_1067_06_back.png.json": "68.18181818181817",
+  "HS_1285_06_back.png.json": "83.54430379746836",
+  "HS_1201_03_front.png.json": "84.61538461538461",
+  "HS_1154_06_back.png.json": "76.59574468085107",
+  "HS_287_06_back.png.json": "3.296703296703297",
+  "HS_195_03_front.png.json": "20.43010752688172",
+  "HS_1315_06_back.png.json": "100.0",
+  "HS_1194_06_back.png.json": "100.0",
+  "HS_1001_03_front.png.json": "81.48148148148148",
+  "HS_284_06_back.png.json": "22.807017543859647",
+  "HS_841_03_front.png.json": "23.076923076923077",
+  "HS_891_03_front.png.json": "78.94736842105263",
+  "HS_1058_06_back.png.json": "70.58823529411765",
+  "HS_850_03_front.png.json": "31.25",
+  "HS_1163_06_back.png.json": "35.64356435643564",
+  "HS_2307_03_front.png.json": "23.076923076923077",
+  "HS_1316_06_back.png.json": "70.1492537313433",
+  "HS_1311_03_front.png.json": "81.57894736842105",
+  "HS_836_03_front.png.json": "30.0",
+  "HS_2271_03_front.png.json": "50.0",
+  "HS_274_06_back.png.json": "45.65217391304348",
+  "HS_960_03_front.png.json": "70.0",
+  "HS_1027_03_front.png.json": "55.55555555555556",
+  "HS_910_03_front.png.json": "24.0",
+  "HS_2282_03_front.png.json": "86.66666666666667",
+  "HS_1259_06_back.png.json": "97.67441860465115",
+  "HS_876_06_back.png.json": "100",
+  "HS_2106_06_back.png.json": "47.5",
+  "HS_1142_03_front.png.json": "70.58823529411765",
+  "HS_1254_03_front.png.json": "88.0",
+  "HS_366_06_back.png.json": "100.0",
+  "HS_1129_03_front.png.json": "90.47619047619048",
+  "HS_769_03_front.png.json": "63.1578947368421",
+  "HS_1106_06_back.png.json": "78.94736842105263",
+  "HS_1270_06_back.png.json": "50.0",
+  "HS_1241_06_back.png.json": "77.77777777777779",
+  "HS_2271_06_back.png.json": "68.18181818181817",
+  "HS_904_03_front.png.json": "38.46153846153847",
+  "HS_1183_03_front.png.json": "59.57446808510638",
+  "HS_793_03_front.png.json": "64.0",
+  "HS_2310_03_front.png.json": "42.10526315789473",
+  "HS_2076_06_back.png.json": "54.285714285714285",
+  "HS_1270_03_front.png.json": "56.25",
+  "HS_1086_03_front.png.json": "54.83870967741935",
+  "HS_833_03_front.png.json": "25.0",
+  "HS_1127_03_front.png.json": "88.88888888888889",
+  "HS_2290_06_back.png.json": "16.666666666666664",
+  "HS_1087_06_back.png.json": "73.33333333333333",
+  "HS_365_03_front.png.json": "100.0",
+  "HS_852_03_front.png.json": "35.04273504273504",
+  "HS_1105_03_front.png.json": "90.9090909090909",
+  "HS_1296_06_back.png.json": "44.18604651162791",
+  "HS_1028_03_front.png.json": "82.75862068965517",
+  "HS_874_03_front.png.json": "23.333333333333332",
+  "HS_1154_03_front.png.json": "68.96551724137932",
+  "HS_1216_06_back.png.json": "75.0",
+  "HS_868_06_back.png.json": "42.10526315789473",
+  "HS_1357_03_front.png.json": "70.83333333333334",
+  "HS_1274_06_back.png.json": "62.5",
+  "HS_2270_06_back.png.json": "75.0",
+  "HS_1037_06_back.png.json": "83.33333333333334",
+  "HS_1101_03_front.png.json": "76.92307692307693",
+  "HS_1105_06_back.png.json": "48.888888888888886",
+  "HS_873_03_front.png.json": "23.809523809523807",
+  "HS_1102_06_back.png.json": "70.37037037037037",
+  "HS_1211_06_back.png.json": "88.23529411764706",
+  "HS_1162_06_back.png.json": "54.166666666666664",
+  "HS_1095_03_front.png.json": "85.71428571428571",
+  "HS_1013_06_back.png.json": "50.0",
+  "HS_800_03_front.png.json": "41.37931034482759",
+  "HS_1348_06_back.png.json": "50.0",
+  "HS_1226_03_front.png.json": "85.0",
+  "HS_2265_06_back.png.json": "75.0",
+  "HS_1192_06_back.png.json": "80.0",
+  "HS_885_03_front.png.json": "5.0",
+  "HS_1055_03_front.png.json": "96.29629629629629",
+  "HS_798_03_front.png.json": "65.0",
+  "HS_2311_06_back.png.json": "89.47368421052632",
+  "HS_1063_06_back.png.json": "46.42857142857143",
+  "HS_1076_06_back.png.json": "51.724137931034484",
+  "HS_768_03_front.png.json": "40.0",
+  "HS_1171_03_front.png.json": "64.46280991735537",
+  "HS_890_06_back.png.json": "71.42857142857143",
+  "HS_1240_06_back.png.json": "8.695652173913043",
+  "HS_1241_03_front.png.json": "85.36585365853658",
+  "HS_1340_03_front.png.json": "100",
+  "HS_1218_06_back.png.json": "67.82608695652173",
+  "HS_1310_06_back.png.json": "76.0",
+  "HS_1107_06_back.png.json": "45.83333333333333",
+  "HS_1202_03_front.png.json": "85.71428571428571",
+  "HS_2293_06_back.png.json": "91.66666666666666",
+  "HS_1038_03_front.png.json": "73.68421052631578",
+  "HS_1314_06_back.png.json": "64.51612903225806",
+  "HS_281_06_back.png.json": "25.0",
+  "HS_869_03_front.png.json": "19.047619047619047",
+  "HS_1320_03_front.png.json": "66.66666666666666",
+  "HS_1313_06_back.png.json": "88.0",
+  "HS_1096_06_back.png.json": "66.66666666666666",
+  "HS_1217_03_front.png.json": "83.33333333333334",
+  "HS_2444_06_back.png.json": "88.23529411764706",
+  "HS_1007_03_front.png.json": "69.6969696969697",
+  "HS_896_03_front.png.json": "44.44444444444444",
+  "HS_1282_06_back.png.json": "77.77777777777779",
+  "HS_1185_03_front.png.json": "100.0",
+  "HS_1204_06_back.png.json": "64.70588235294117",
+  "HS_284_03_front.png.json": "52.63157894736842",
+  "HS_1001_06_back.png.json": "93.75",
+  "HS_1023_06_back.png.json": "100.0",
+  "HS_2286_03_front.png.json": "100.0",
+  "HS_1295_03_front.png.json": "65.71428571428571",
+  "HS_1246_03_front.png.json": "75.0",
+  "HS_1334_03_front.png.json": "100",
+  "HS_1231_03_front.png.json": "90.47619047619048",
+  "HS_815_03_front.png.json": "54.166666666666664",
+  "HS_1289_06_back.png.json": "64.86486486486487",
+  "HS_2256_03_front.png.json": "82.6086956521739",
+  "HS_1333_03_front.png.json": "800.0",
+  "HS_1084_06_back.png.json": "78.94736842105263",
+  "HS_1030_03_front.png.json": "75.0",
+  "HS_1027_06_back.png.json": "83.33333333333334",
+  "HS_1311_06_back.png.json": "53.84615384615385",
+  "HS_1220_06_back.png.json": "81.81818181818183",
+  "HS_1263_06_back.png.json": "83.33333333333334",
+  "HS_1103_03_front.png.json": "73.07692307692307",
+  "HS_2285_03_front.png.json": "75.0",
+  "HS_908_03_front.png.json": "31.03448275862069",
+  "HS_1016_03_front.png.json": "650.0",
+  "HS_1186_06_back.png.json": "27.500000000000004",
+  "HS_1129_06_back.png.json": "90.27777777777779",
+  "HS_1267_06_back.png.json": "29.411764705882355",
+  "HS_1041_06_back.png.json": "75.0",
+  "HS_2269_03_front.png.json": "100.0",
+  "HS_2273_06_back.png.json": "92.85714285714286",
+  "HS_1251_03_front.png.json": "89.58333333333334",
+  "HS_767_06_back.png.json": "57.89473684210527",
+  "HS_2282_06_back.png.json": "52.94117647058824",
+  "HS_1061_03_front.png.json": "10.0",
+  "HS_2297_03_front.png.json": "100.0",
+  "HS_1099_03_front.png.json": "76.19047619047619",
+  "HS_1175_03_front.png.json": "50.90909090909091",
+  "HS_1227_06_back.png.json": "80.0",
+  "HS_1191_03_front.png.json": "52.63157894736842",
+  "HS_803_06_back.png.json": "11.458333333333332",
+  "HS_883_03_front.png.json": "100.0",
+  "HS_1083_03_front.png.json": "90.47619047619048",
+  "HS_1262_06_back.png.json": "64.0",
+  "HS_1291_06_back.png.json": "72.09302325581395",
+  "HS_1097_06_back.png.json": "65.38461538461539",
+  "HS_1267_03_front.png.json": "100.0",
+  "HS_388_03_front.png.json": "52.63157894736842",
+  "HS_888_03_front.png.json": "25.0",
+  "HS_1100_06_back.png.json": "75.75757575757575",
+  "HS_829_06_back.png.json": "75.0",
+  "HS_2267_03_front.png.json": "100.0",
+  "HS_805_03_front.png.json": "28.57142857142857",
+  "HS_832_03_front.png.json": "71.42857142857143",
+  "HS_386_03_front.png.json": "47.368421052631575",
+  "HS_1119_03_front.png.json": "87.5",
+  "HS_844_03_front.png.json": "54.761904761904766",
+  "HS_1318_06_back.png.json": "25.0",
   "HS_865_03_front.png.json": "13.043478260869565",
-  "HS_1064_06_back.png.json": "51.06382978723404"
+  "HS_1098_03_front.png.json": "68.57142857142857",
+  "HS_1277_03_front.png.json": "77.41935483870968",
+  "HS_1315_03_front.png.json": "67.85714285714286",
+  "HS_1117_06_back.png.json": "75.0",
+  "HS_1359_06_back.png.json": "100.0",
+  "HS_1193_06_back.png.json": "86.66666666666667",
+  "HS_877_03_front.png.json": "85.71428571428571",
+  "HS_770_03_front.png.json": "52.94117647058824",
+  "HS_1265_03_front.png.json": "100.0",
+  "HS_895_03_front.png.json": "21.428571428571427",
+  "HS_900_03_front.png.json": "50.0",
+  "HS_1209_06_back.png.json": "100.0",
+  "HS_2258_06_back.png.json": "91.30434782608695",
+  "HS_2256_06_back.png.json": "69.23076923076923",
+  "HS_1313_03_front.png.json": "85.71428571428571",
+  "HS_1354_06_back.png.json": "100.0",
+  "HS_1187_06_back.png.json": "100.0",
+  "HS_1290_03_front.png.json": "100.0",
+  "HS_1174_06_back.png.json": "80.95238095238095",
+  "HS_1160_03_front.png.json": "55.55555555555556",
+  "HS_2255_06_back.png.json": "95.0",
+  "HS_1279_03_front.png.json": "25.0",
+  "HS_291_03_front.png.json": "32.0",
+  "HS_806_06_back.png.json": "55.81395348837209",
+  "HS_1164_06_back.png.json": "100.0",
+  "HS_1303_06_back.png.json": "84.21052631578947",
+  "HS_1211_03_front.png.json": "94.11764705882352",
+  "HS_1197_03_front.png.json": "100.0",
+  "HS_307_03_front.png.json": "38.23529411764706",
+  "HS_1122_03_front.png.json": "88.88888888888889",
+  "HS_906_03_front.png.json": "77.77777777777779",
+  "HS_1034_03_front.png.json": "89.1891891891892",
+  "HS_2283_06_back.png.json": "53.84615384615385",
+  "HS_1005_03_front.png.json": "80.76923076923077",
+  "HS_1004_03_front.png.json": "94.44444444444444",
+  "HS_1206_03_front.png.json": "85.71428571428571",
+  "HS_1189_06_back.png.json": "71.42857142857143",
+  "HS_1347_03_front.png.json": "366.66666666666663",
+  "HS_1071_06_back.png.json": "100.0",
+  "HS_1184_06_back.png.json": "76.47058823529412",
+  "HS_1015_06_back.png.json": "88.88888888888889",
+  "HS_1213_03_front.png.json": "100.0",
+  "HS_888_06_back.png.json": "60.0",
+  "HS_1123_03_front.png.json": "80.0",
+  "HS_1327_06_back.png.json": "22.22222222222222",
+  "HS_387_03_front.png.json": "67.85714285714286",
+  "HS_2249_06_back.png.json": "100.0",
+  "HS_1304_03_front.png.json": "81.3953488372093",
+  "HS_1228_06_back.png.json": "82.35294117647058",
+  "HS_368_06_back.png.json": "100.0",
+  "HS_1048_02_left.png.json": "0.33003300330033003",
+  "HS_879_03_front.png.json": "55.55555555555556",
+  "HS_1204_03_front.png.json": "100.0",
+  "HS_880_03_front.png.json": "45.94594594594595",
+  "HS_1212_06_back.png.json": "100.0",
+  "HS_1166_03_front.png.json": "6.666666666666667",
+  "HS_1355_03_front.png.json": "100.0",
+  "HS_1338_03_front.png.json": "100.0",
+  "HS_1148_06_back.png.json": "61.904761904761905",
+  "HS_1093_03_front.png.json": "75.0",
+  "HS_1256_03_front.png.json": "16.9811320754717",
+  "HS_1074_06_back.png.json": "57.14285714285714",
+  "HS_1288_03_front.png.json": "100.0",
+  "HS_1035_03_front.png.json": "70.37037037037037",
+  "HS_291_06_back.png.json": "20.833333333333336",
+  "HS_1184_03_front.png.json": "64.28571428571429",
+  "HS_435_06_back.png.json": "88.0",
+  "HS_1188_06_back.png.json": "100.0",
+  "HS_1003_03_front.png.json": "72.72727272727273",
+  "HS_1087_03_front.png.json": "80.0",
+  "HS_1063_03_front.png.json": "72.72727272727273",
+  "HS_359_03_front.png.json": "60.56338028169014",
+  "HS_1285_03_front.png.json": "94.44444444444444",
+  "HS_1322_03_front.png.json": "100",
+  "HS_818_03_front.png.json": "50.0",
+  "HS_1047_03_front.png.json": "79.41176470588235",
+  "HS_1113_06_back.png.json": "81.81818181818183",
+  "HS_836_06_back.png.json": "40.0",
+  "HS_2261_06_back.png.json": "65.0",
+  "HS_1190_03_front.png.json": "70.83333333333334",
+  "HS_861_03_front.png.json": "45.45454545454545",
+  "HS_2281_06_back.png.json": "8.823529411764707",
+  "HS_1025_03_front.png.json": "85.29411764705883",
+  "HS_2284_06_back.png.json": "88.88888888888889",
+  "HS_435_03_front.png.json": "86.66666666666667",
+  "HS_2251_03_front.png.json": "95.65217391304348",
+  "HS_2274_06_back.png.json": "77.77777777777779",
+  "HS_1147_03_front.png.json": "78.57142857142857",
+  "HS_2257_03_front.png.json": "72.72727272727273",
+  "HS_1189_03_front.png.json": "92.0",
+  "HS_1053_03_front.png.json": "97.5",
+  "HS_1046_03_front.png.json": "111.11111111111111",
+  "HS_1005_06_back.png.json": "60.0",
+  "HS_760_03_front.png.json": "38.46153846153847",
+  "HS_1078_03_front.png.json": "91.30434782608695",
+  "HS_1279_06_back.png.json": "100.0",
+  "HS_1023_03_front.png.json": "66.66666666666666",
+  "HS_1088_06_back.png.json": "94.44444444444444",
+  "HS_352_06_back.png.json": "36.36363636363637",
+  "HS_1139_03_front.png.json": "100",
+  "HS_388_06_back.png.json": "100.0",
+  "HS_1055_06_back.png.json": "15.384615384615385",
+  "HS_829_03_front.png.json": "66.27906976744185",
+  "HS_860_03_front.png.json": "36.0",
+  "HS_1064_06_back.png.json": "51.06382978723404",
+  "HS_915_03_front.png.json": "60.0",
+  "HS_2260_06_back.png.json": "83.33333333333334",
+  "HS_1195_06_back.png.json": "71.42857142857143",
+  "HS_931_03_front.png.json": "72.22222222222221",
+  "HS_438_03_front.png.json": "45.45454545454545",
+  "HS_2292_06_back.png.json": "6.666666666666667",
+  "HS_1216_03_front.png.json": "75.0",
+  "HS_1238_03_front.png.json": "73.33333333333333",
+  "HS_1316_03_front.png.json": "61.33333333333333",
+  "HS_1078_06_back.png.json": "95.45454545454545",
+  "HS_1162_03_front.png.json": "30.23255813953488",
+  "HS_1112_06_back.png.json": "42.30769230769231",
+  "HS_1466_03_front.png.json": "1.9047619047619049",
+  "HS_288_03_front.png.json": "52.94117647058824",
+  "HS_831_03_front.png.json": "36.58536585365854",
+  "HS_1155_06_back.png.json": "58.730158730158735",
+  "HS_286_06_back.png.json": "60.86956521739131",
+  "HS_1174_03_front.png.json": "56.52173913043478",
+  "HS_1120_06_back.png.json": "100.0",
+  "HS_1297_06_back.png.json": "47.368421052631575",
+  "HS_1353_03_front.png.json": "75.0",
+  "HS_1098_06_back.png.json": "60.60606060606061",
+  "HS_1081_03_front.png.json": "95.83333333333334",
+  "HS_367_03_front.png.json": "65.85365853658537",
+  "HS_1275_03_front.png.json": "100.0",
+  "HS_1149_06_back.png.json": "91.66666666666666",
+  "HS_1297_03_front.png.json": "75.80645161290323",
+  "HS_1083_06_back.png.json": "100.0",
+  "HS_2275_03_front.png.json": "73.68421052631578",
+  "HS_1141_03_front.png.json": "104.76190476190477",
+  "HS_1076_03_front.png.json": "86.66666666666667",
+  "HS_1309_06_back.png.json": "53.84615384615385",
+  "HS_1020_03_front.png.json": "72.0",
+  "HS_751_03_front.png.json": "23.214285714285715",
+  "HS_1346_06_back.png.json": "71.42857142857143",
+  "HS_886_03_front.png.json": "46.93877551020408",
+  "HS_439_06_back.png.json": "38.18181818181819",
+  "HS_360_03_front.png.json": "85.45454545454545",
+  "HS_868_03_front.png.json": "90.0",
+  "HS_1146_06_back.png.json": "69.44444444444444",
+  "HS_1495_03_front.png.json": "1.2987012987012987",
+  "HS_1116_06_back.png.json": "16.666666666666664",
+  "HS_2265_03_front.png.json": "91.66666666666666",
+  "HS_1191_06_back.png.json": "100.0",
+  "HS_1207_03_front.png.json": "91.66666666666666",
+  "HS_838_03_front.png.json": "59.25925925925925",
+  "HS_1185_06_back.png.json": "68.18181818181817",
+  "HS_782_03_front.png.json": "43.90243902439025",
+  "HS_1300_03_front.png.json": "75.0",
+  "HS_444_03_front.png.json": "78.94736842105263",
+  "HS_1151_06_back.png.json": "68.18181818181817",
+  "HS_2250_06_back.png.json": "54.54545454545454",
+  "HS_901_03_front.png.json": "81.48148148148148",
+  "HS_849_03_front.png.json": "36.36363636363637",
+  "HS_1183_06_back.png.json": "86.04651162790698",
+  "HS_775_03_front.png.json": "83.33333333333334",
+  "HS_1359_03_front.png.json": "82.75862068965517",
+  "HS_1225_06_back.png.json": "53.84615384615385",
+  "HS_1289_03_front.png.json": "77.5",
+  "HS_1153_03_front.png.json": "72.05882352941177",
+  "HS_1301_03_front.png.json": "67.3076923076923",
+  "HS_1228_03_front.png.json": "100.0",
+  "HS_1276_06_back.png.json": "100.0",
+  "HS_2301_03_front.png.json": "68.75",
+  "HS_2308_06_back.png.json": "31.818181818181817",
+  "HS_1200_06_back.png.json": "53.333333333333336",
+  "HS_1245_06_back.png.json": "69.23076923076923",
+  "HS_2262_06_back.png.json": "93.33333333333333",
+  "HS_368_03_front.png.json": "82.92682926829268",
+  "HS_884_03_front.png.json": "53.333333333333336",
+  "HS_1250_06_back.png.json": "51.35135135135135",
+  "HS_1187_03_front.png.json": "88.23529411764706",
+  "HS_1356_03_front.png.json": "100",
+  "HS_1040_03_front.png.json": "70.37037037037037",
+  "HS_2274_03_front.png.json": "100.0",
+  "HS_1140_03_front.png.json": "57.14285714285714",
+  "HS_2249_03_front.png.json": "52.63157894736842",
+  "HS_1002_03_front.png.json": "89.28571428571429",
+  "HS_824_03_front.png.json": "36.36363636363637",
+  "HS_1074_03_front.png.json": "84.61538461538461",
+  "HS_856_03_front.png.json": "66.66666666666666",
+  "HS_881_03_front.png.json": "100.0",
+  "HS_1123_06_back.png.json": "72.54901960784314",
+  "HS_2297_06_back.png.json": "100.0",
+  "HS_1323_06_back.png.json": "78.57142857142857",
+  "HS_1014_03_front.png.json": "90.0",
+  "HS_882_03_front.png.json": "0.0",
+  "HS_819_03_front.png.json": "61.76470588235294",
+  "HS_1264_06_back.png.json": "44.680851063829785",
+  "HS_1165_03_front.png.json": "25.0",
+  "HS_1214_06_back.png.json": "100.0",
+  "HS_294_03_front.png.json": "68.83116883116884",
+  "HS_1237_06_back.png.json": "83.87096774193549",
+  "HS_1205_03_front.png.json": "77.77777777777779",
+  "HS_1128_06_back.png.json": "12.5",
+  "HS_2103_06_back.png.json": "18.181818181818183",
+  "HS_1057_03_front.png.json": "87.5",
+  "HS_1152_03_front.png.json": "50.0",
+  "HS_2257_06_back.png.json": "100.0",
+  "HS_1181_03_front.png.json": "69.76744186046511",
+  "HS_1168_03_front.png.json": "66.11570247933885",
+  "HS_274_03_front.png.json": "51.724137931034484",
+  "HS_437_03_front.png.json": "50.0",
+  "HS_1039_03_front.png.json": "90.9090909090909",
+  "HS_2266_03_front.png.json": "29.629629629629626",
+  "HS_1171_06_back.png.json": "47.01492537313433",
+  "HS_905_06_back.png.json": "33.33333333333333",
+  "HS_1281_03_front.png.json": "88.57142857142857",
+  "HS_1118_03_front.png.json": "66.66666666666666",
+  "HS_1006_03_front.png.json": "87.5",
+  "HS_1081_06_back.png.json": "100.0",
+  "HS_352_03_front.png.json": "29.310344827586203",
+  "HS_387_06_back.png.json": "51.35135135135135",
+  "HS_281_03_front.png.json": "23.170731707317074",
+  "HS_1092_06_back.png.json": "100.0",
+  "HS_1323_03_front.png.json": "70.0",
+  "HS_1125_03_front.png.json": "80.76923076923077",
+  "HS_1037_03_front.png.json": "91.66666666666666",
+  "HS_1127_06_back.png.json": "56.75675675675676",
+  "HS_1066_06_back.png.json": "73.33333333333333",
+  "HS_785_03_front.png.json": "42.857142857142854",
+  "HS_751_06_back.png.json": "25.0",
+  "HS_1307_06_back.png.json": "54.347826086956516",
+  "HS_1201_06_back.png.json": "84.61538461538461",
+  "HS_811_03_front.png.json": "50.0",
+  "HS_295_06_back.png.json": "30.612244897959183",
+  "HS_1030_06_back.png.json": "48.275862068965516",
+  "HS_1052_06_back.png.json": "44.44444444444444",
+  "HS_854_06_back.png.json": "41.66666666666667",
+  "HS_1314_03_front.png.json": "47.05882352941176",
+  "HS_1070_06_back.png.json": "91.66666666666666",
+  "HS_385_06_back.png.json": "8.571428571428571",
+  "HS_1070_03_front.png.json": "86.66666666666667",
+  "HS_2106_03_front.png.json": "59.42028985507246",
+  "HS_891_06_back.png.json": "75.0",
+  "HS_311_03_front.png.json": "5.88235294117647",
+  "HS_1114_03_front.png.json": "78.26086956521739",
+  "HS_927_03_front.png.json": "62.5",
+  "HS_1075_03_front.png.json": "85.0",
+  "HS_899_03_front.png.json": "58.333333333333336",
+  "HS_360_06_back.png.json": "54.90196078431373",
+  "HS_278_06_back.png.json": "14.383561643835616",
+  "HS_1138_03_front.png.json": "89.74358974358975",
+  "HS_808_06_back.png.json": "27.586206896551722",
+  "HS_767_03_front.png.json": "52.083333333333336",
+  "HS_1236_03_front.png.json": "83.33333333333334",
+  "HS_933_03_front.png.json": "25.0",
+  "HS_1157_03_front.png.json": "56.25",
+  "HS_1199_03_front.png.json": "100.0",
+  "HS_1331_06_back.png.json": "85.71428571428571",
+  "HS_2275_06_back.png.json": "61.111111111111114",
+  "HS_1167_06_back.png.json": "40.625",
+  "HS_351_03_front.png.json": "48.0",
+  "HS_866_03_front.png.json": "72.72727272727273",
+  "HS_2289_06_back.png.json": "12.5",
+  "HS_1276_03_front.png.json": "82.35294117647058",
+  "HS_1044_03_front.png.json": "70.83333333333334",
+  "HS_1331_03_front.png.json": "133.33333333333331",
+  "HS_1110_03_front.png.json": "90.9090909090909",
+  "HS_1341_03_front.png.json": "66.66666666666666",
+  "HS_1209_03_front.png.json": "82.35294117647058",
+  "HS_1159_06_back.png.json": "47.05882352941176",
+  "HS_870_06_back.png.json": "66.66666666666666",
+  "HS_1034_06_back.png.json": "52.5",
+  "HS_1143_03_front.png.json": "101.21951219512195",
+  "HS_1286_06_back.png.json": "95.23809523809523",
+  "HS_931_06_back.png.json": "45.0",
+  "HS_1090_03_front.png.json": "85.71428571428571",
+  "HS_2266_06_back.png.json": "158.33333333333331",
+  "HS_1100_03_front.png.json": "85.71428571428571",
+  "HS_1052_03_front.png.json": "145.45454545454547",
+  "HS_1029_03_front.png.json": "107.14285714285714",
+  "HS_1239_03_front.png.json": "87.87878787878788",
+  "HS_1060_03_front.png.json": "86.20689655172413",
+  "HS_1230_03_front.png.json": "82.53968253968253",
+  "HS_1244_03_front.png.json": "105.88235294117648",
+  "HS_1744_03_front.png.json": "50.0",
+  "HS_1145_03_front.png.json": "104.61538461538463",
+  "HS_437_06_back.png.json": "5.412371134020619",
+  "HS_1178_03_front.png.json": "100.0",
+  "HS_1223_03_front.png.json": "67.85714285714286",
+  "HS_286_03_front.png.json": "60.3448275862069",
+  "HS_1317_06_back.png.json": "86.66666666666667",
+  "HS_1029_06_back.png.json": "33.33333333333333",
+  "HS_1292_03_front.png.json": "91.42857142857143",
+  "HS_1065_06_back.png.json": "35.55555555555556",
+  "HS_295_03_front.png.json": "93.47826086956522",
+  "HS_1045_06_back.png.json": "115.38461538461537",
+  "HS_1304_06_back.png.json": "67.90123456790124",
+  "HS_2290_03_front.png.json": "55.55555555555556",
+  "HS_788_03_front.png.json": "24.59016393442623",
+  "HS_2309_03_front.png.json": "100.0",
+  "HS_821_06_back.png.json": "46.875",
+  "HS_905_03_front.png.json": "50.0",
+  "HS_855_03_front.png.json": "100.0",
+  "HS_807_03_front.png.json": "87.5",
+  "HS_1106_03_front.png.json": "80.76923076923077",
+  "HS_781_03_front.png.json": "12.643678160919542",
+  "HS_1200_03_front.png.json": "100.0",
+  "HS_826_03_front.png.json": "48.148148148148145",
+  "HS_783_03_front.png.json": "86.36363636363636",
+  "HS_937_03_front.png.json": "54.54545454545454",
+  "HS_1284_03_front.png.json": "87.5",
+  "HS_839_03_front.png.json": "25.0",
+  "HS_2304_03_front.png.json": "42.30769230769231",
+  "HS_1237_03_front.png.json": "77.77777777777779",
+  "HS_872_03_front.png.json": "44.44444444444444",
+  "HS_287_03_front.png.json": "16.666666666666664",
+  "HS_2253_06_back.png.json": "56.52173913043478",
+  "HS_1079_03_front.png.json": "106.25",
+  "HS_1245_03_front.png.json": "86.66666666666667",
+  "HS_871_03_front.png.json": "45.45454545454545",
+  "HS_2309_06_back.png.json": "46.15384615384615",
+  "HS_1294_06_back.png.json": "20.408163265306122",
+  "HS_438_06_back.png.json": "31.25",
+  "HS_440_06_back.png.json": "68.88888888888889",
+  "HS_1210_03_front.png.json": "90.0",
+  "HS_1239_06_back.png.json": "71.1864406779661",
+  "HS_1150_06_back.png.json": "93.33333333333333",
+  "HS_351_06_back.png.json": "9.375",
+  "HS_1067_03_front.png.json": "68.42105263157895",
+  "HS_1137_03_front.png.json": "95.65217391304348",
+  "HS_2287_03_front.png.json": "94.44444444444444",
+  "HS_1111_06_back.png.json": "81.25",
+  "HS_2285_06_back.png.json": "55.55555555555556"
+};
+var charclasses={
+  "USSU_(8)": 69,
+  "SILA3": 122,
+  "BN": 48,
+  "SZA3_(SZAG4)": 158,
+  "MU": 446,
+  "BA": 561,
+  "ZI": 106,
+  "KI": 522,
+  "UR": 291,
+  "AN": 638,
+  "ITI_(UDESZ)": 300,
+  "SZE": 271,
+  "SZESZ_(URI3)": 47,
+  "KAL": 80,
+  "LA": 108,
+  "TUR_(DUMU)": 155,
+  "GU2_(TIK)": 41,
+  "BI": 211,
+  "GAL": 67,
+  "U2": 59,
+  "UD_(BABBAR)": 244,
+  "four_DISZ": 139,
+  "?IBAD": 108,
+  "SZU": 321,
+  "SZUL_(DUN)": 32,
+  "GI": 42,
+  "USZ_(NITA)": 135,
+  "SA": 60,
+  "BAD3_(UG5_(EZENBAD))": 19,
+  "MAR": 31,
+  "TU": 26,
+  "GAG_(KAK)": 77,
+  "ASZ.ASZ": 108,
+  "GUR": 129,
+  "LU2": 239,
+  "GI4_(GI-gun)": 34,
+  "LU_(UDU)": 107,
+  "GIR_(?A-gun)": 7,
+  "IA2_(5)": 151,
+  "TUG2_(NM)": 146,
+  "KU_(DR__TUKUL__TUSZ)": 77,
+  "TA": 224,
+  "NI": 335,
+  "A": 625,
+  "NA": 353,
+  "TI": 182,
+  "GA": 197,
+  "SIG4": 38,
+  "LUGAL": 343,
+  "U+U+": 124,
+  "GAN2": 61,
+  "KID_(LIL2)": 63,
+  "ZI?+A+AN+": 13,
+  "DISZ_(1)": 527,
+  "DA": 202,
+  "I": 126,
+  "RI": 60,
+  "IB": 28,
+  "BANLIMMU_(SZ.UGE23)": 39,
+  "GU4": 119,
+  "TIL": 13,
+  "PA": 72,
+  "E2": 135,
+  "MSZ_(INANNA)": 56,
+  "MASZ2": 107,
+  "KASKAL": 7,
+  "KUG_(K)": 141,
+  "A2": 95,
+  "EN": 104,
+  "UNUG_(AB-gun_andor_ABESZ)": 11,
+  "EZEN": 57,
+  "GABA": 41,
+  "NIGIDAMIN_(DISZoverDISZ)": 63,
+  "GISZ_(GESZ)+MI+": 3,
+  "DU": 87,
+  "SUM": 27,
+  "NE": 155,
+  "NIG2_(GAR__NINDA)": 144,
+  "IGI_(SZI__LIM)+UR+": 25,
+  "U": 238,
+  "MA2": 70,
+  "MUNUS_(SAL)+TUG2_(NM)+": 109,
+  "PA+KASZ4_(DU-SZeSZSZig)+": 7,
+  "KIN": 44,
+  "?U": 29,
+  "GUR8_(TE-gun)": 41,
+  "SZU+KAR2_(GN-ten_and_SZ-ten)+": 55,
+  "NU": 98,
+  "DUB": 39,
+  "BAR": 36,
+  "RA": 80,
+  "ME": 137,
+  "IG_(GL)": 37,
+  "MIR_(NIMGIR)": 188,
+  "SZDU_(KASZU)": 2,
+  "SZESZ_(URI3)+KI+": 17,
+  "E": 84,
+  "IN": 56,
+  "SAR": 58,
+  "GU": 31,
+  "MIN_(2)": 193,
+  "ESZ5(3)": 115,
+  "SA6": 60,
+  "BU_(GID2)": 43,
+  "SZE3_(ESZ2__GI7__ZI3)": 161,
+  "MA": 319,
+  "MASZ": 81,
+  "LAL_(L)": 112,
+  "U3_(IGI.DIB)": 86,
+  "DAM": 31,
+  "DI": 19,
+  "TAR": 46,
+  "DU6_(LAGAR-gun)": 26,
+  "AB": 90,
+  "GU7_(KANG)": 27,
+  "NUMUN": 25,
+  "KABI": 44,
+  "SZANABI_(23)": 26,
+  "EGIR": 2,
+  "KAB": 1,
+  "LU?": 7,
+  "EN+KID_(LIL2)+": 4,
+  "TE": 6,
+  "LI": 20,
+  "ASZ": 162,
+  "BAL": 17,
+  "UD_(BABBAR)+DU+": 38,
+  "SIG2__SK": 82,
+  "TE+AB+": 11,
+  "SAG": 53,
+  "MUNUS_(SAL)": 16,
+  "IGI_(SZI__LIM)": 185,
+  "AL": 41,
+  "NINDSZE": 24,
+  "ESZ_(3U)": 89,
+  "KA": 63,
+  "TL_(LAGABU)": 10,
+  "MUNUS_(SAL)+KUR+": 19,
+  "IM": 47,
+  "BANMIN_(PA)": 41,
+  "ZU": 38,
+  "SILA4_(GA2PA)": 49,
+  "seven_DISZ": 71,
+  "four_ASZ": 57,
+  "ANSZE_(GRPA_or_GRTAB)": 8,
+  "GISZ_(GESZ)": 137,
+  "U8_(LAGAB_GU4overGU4": 4,
+  "GAR3_(QAR)": 7,
+  "GAN": 39,
+  "BANESZ_(SZ)": 55,
+  "BANIA_(SZ._UoverUGE23overGE23)": 15,
+  "?AR_(?ISZ)": 41,
+  "SZE3_(ESZ2__GI7__ZI3)+SZE+": 9,
+  "NUN": 23,
+  "GIN2_(TUN3)": 6,
+  "TUM": 37,
+  "GISZ_(GESZ)+KSZU+": 2,
+  "SZIM": 26,
+  "UR2": 10,
+  "?I_(DG)": 80,
+  "U+UD_(BABBAR)+KID_(LIL2)+": 15,
+  "BAD": 21,
+  "EME_(KAME)": 5,
+  "A+ENGUR_(LAGAB?AL)+": 5,
+  "ARAD": 8,
+  "IA7_(TAB.TAB.ASZ)": 54,
+  "TE+A+": 8,
+  "ZA": 61,
+  "SZ": 75,
+  "LISZ": 2,
+  "DU+DU+": 2,
+  "SZA": 67,
+  "URU_(IRI)": 12,
+  "TUK_(TUG)": 16,
+  "A+AN+": 25,
+  "UN": 12,
+  "UL_(DU7)": 13,
+  "PAB_or_PAP": 13,
+  "GESZTIN_(GISZ.DIN)": 1,
+  "SI+A+": 7,
+  "GUG2_(LU2;_SZ-gun)": 2,
+  "A+SU+": 7,
+  "nine_DISZ": 22,
+  "seven_GESZ2": 6,
+  "three_GESZ2": 14,
+  "GURUSZ": 102,
+  "five_GESZ2": 11,
+  "SUR_(SZUR)": 23,
+  "PA+LU_(UDU)+": 14,
+  "MA?": 36,
+  "two_GESZ2": 26,
+  "APIN_(ENGAR)": 61,
+  "ESZEMIN5_(BI)": 1,
+  "GE23_(DISZ-ten)": 1,
+  "AMAR_(ZUR)": 36,
+  "other": 133,
+  "MI": 53,
+  "UM": 97,
+  "EN+ZU+": 25,
+  "NINNU_(5U)": 36,
+  "nine_GESZ2": 5,
+  "eight_GESZ2": 8,
+  "BARA2": 5,
+  "SI": 74,
+  "SZAR": 18,
+  "five_SZAR2": 3,
+  "four_GESZ2": 13,
+  "NIMIN_(4U)": 50,
+  "seven_SZAR2": 1,
+  "SSU_(TAB.TAB.TAB.TAB)": 8,
+  "ESZ6_(ASZ.ASZ.ASZ)": 37,
+  "?U+SI+": 4,
+  "LUM": 46,
+  "GA2_(MAL)": 38,
+  "B": 12,
+  "NNDA": 2,
+  "SZIMSIG7": 1,
+  "GAM": 7,
+  "LAGAB": 16,
+  "AM_(GU4KUR)": 7,
+  "TAB": 13,
+  "AMA_(GA2AN)": 20,
+  "GANUN_(GA2NUN)": 6,
+  "?A_(KU6)": 39,
+  "AR_(IGI.RI)": 6,
+  "PU3_(KAKR)": 5,
+  "GIR3": 39,
+  "AG": 35,
+  "IGI_(SZI__LIM)+ERIM_(ZALAG2)+": 14,
+  "ASZ+ASZ+": 7,
+  "SU": 54,
+  "GIR2": 10,
+  "SZESZ_(URI3)+AB+": 12,
+  "RU": 24,
+  "ERIM_(ZALAG2)": 26,
+  "one_GESZ2": 50,
+  "NU11+BUR_(NG-gun)+": 1,
+  "SZID_(LAG)": 17,
+  "KASZ4_(DU-SZeSZSZig)": 4,
+  "PAD_(SZUK)": 16,
+  "ASZ4_(TAB.TAB.TAB)": 21,
+  "GA2GI": 9,
+  "SZIMNG_(BAPPIR)": 2,
+  "Z": 33,
+  "?ASZ?UR_(MA-gun)": 2,
+  "AD": 30,
+  "ZAG": 12,
+  "DISZ_(1)+DISZ_(1)+DISZ_(1)+": 13,
+  "BUL_(LAGABESZ)": 1,
+  "TU6_(KALI)": 1,
+  "TE+UNUG_(AB-gun_andor_ABESZ)+": 1,
+  "PAB_or_PAP+PAB_or_PAP+": 8,
+  "DUL3_(SAG-gun)": 3,
+  "SZINIG_(GAD.NAGA)": 1,
+  "LAL3_(TA?I)": 3,
+  "KISAL": 2,
+  "SUD_(BU-gun)": 2,
+  "DUR_(GxGAG__G.GAG)": 3,
+  "GISZKREUZTGISZ": 4,
+  "KAD4": 1,
+  "SZUSZANA_(13)": 26,
+  "Z(_ABPA)": 3,
+  "KINGUSILA": 12,
+  "MES_(RID)": 6,
+  "DUG_(BIA)": 10,
+  "LUL_(NAR)": 17,
+  "ISZ": 21,
+  "BN_(KAIM)": 1,
+  "IMIN2_(TAB.TAB.TAB.ASZ)": 19,
+  "NAM": 18,
+  "PI": 32,
+  "EL": 6,
+  "SIG": 3,
+  "ZU+AB+": 3,
+  "GIM_(DIM2)": 10,
+  "LAGAB+LAGAB+": 3,
+  "PA+TUG2_(NM)+": 1,
+  "?L": 3,
+  "IL2_(GA.GN)": 10,
+  "NIGIDAESZ_(DISZoverDISZ.DISZ)": 18,
+  "UD_(BABBAR)+UD_(BABBAR)+": 3,
+  "BKR": 3,
+  "A?_(?INUN)": 4,
+  "UB": 10,
+  "A?_(?INUN)+ME+": 2,
+  "NE+RU+": 1,
+  "ALIM_(GIR3_A.IGI)": 3,
+  "NI+GISZ_(GESZ)+": 1,
+  "GIR2-gun": 5,
+  "ILIMMU2_(TAB.TAB.TAB.TAB.ASZ)": 5,
+  "PA+TE+SI+": 3,
+  "ARAD2_(ARADKUR)": 8,
+  "SZIR+GI4_(GI-gun)+": 1,
+  "DU?GUNGUN": 1,
+  "G_(NNDANE)": 9,
+  "IMIN_(7)": 1,
+  "ASZ2_(ZIZ2)": 15,
+  "AZ_(PIRIGZA)": 2,
+  "DAR_(GN;_?U-gun__SI-gun)": 5,
+  "MUG": 3,
+  "SAGGAG": 2,
+  "GAD": 4,
+  "SZIR": 26,
+  "GA2GI4": 1,
+  "B+KU_(DR__TUKUL__TUSZ)+": 1,
+  "DIM": 8,
+  "KI+UD_(BABBAR)+": 1,
+  "KAR2_(GN-ten_and_SZ-ten)": 1,
+  "NIM": 11,
+  "URUKAR2": 3,
+  "IGI_(SZI__LIM)+RU+": 10,
+  "UMUMKASKAL": 3,
+  "URUDU_(URUDA)": 6,
+  "PIRIG": 2,
+  "LU_(UDU)+?L+": 2,
+  "ZUM": 7,
+  "ALAM_(GU4overGU4.NA)": 1,
+  "IR_(GAG-gun)": 9,
+  "SZE+SZE+NIR_(NUNoverNUN)+": 1,
+  "KUN": 1,
+  "PAD_(SZUK)+AN+MSZ_(INANNA)+": 1,
+  "UZ3_(M.KASKAL)": 6,
+  "IGI_(SZI__LIM)+DUB+": 3,
+  "LAM": 4,
+  "MUNUS_(SAL)+KU_(DR__TUKUL__TUSZ)+": 8,
+  "DARA4_(SIG2+ASZ)": 2,
+  "IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+": 1,
+  "SAG5": 2,
+  "SZRA_(LAGABSIG7)": 3,
+  "LAGAR": 2,
+  "BUR_(NG-gun)": 3,
+  "ZI?": 7,
+  "UZU": 3,
+  "six_GESZ2": 13,
+  "SUG_(LAGABA)": 2,
+  "NI+UD_(BABBAR)+": 1,
+  "KI+BI+": 2,
+  "KD_(TAG4)": 4,
+  "IA_(I.A)": 2,
+  "BL_(GIBIL;_NEPAB__NE-SZeSZSZig)": 2,
+  "US": 5,
+  "BALAG": 1,
+  "ME+ESZ_(3U)+": 2,
+  "SZEG9_(SZ.SZE.KU.GAG)": 1,
+  "ZA+MSZ_(INANNA)+": 1,
+  "PA+?B+DU+": 1,
+  "TA?DA?_(MUoverMU)": 3,
+  "PA+AL+": 4,
+  "GAZ_(KUMSZE)": 2,
+  "TAG_(SZUM)": 5,
+  "SU4_(SI-gun)": 4,
+  "nine_SZAR2": 1,
+  "NAG_(KAA)": 1,
+  "two_SZAR2": 1,
+  "SZUBUR": 3,
+  "DAR3": 1,
+  "PU3_(KAKR)+SZA+": 6,
+  "ENGUR_(LAGAB?AL)": 1,
+  "TIR": 1,
+  "DE2_(SIMUG)": 3,
+  "SU+A+": 1,
+  "PAN": 1,
+  "MUSZ": 1,
+  "EDIN": 2,
+  "?B": 2,
+  "UD-gun": 1,
+  "UR3_(GA2NIR)": 4,
+  "N": 4,
+  "KISZ": 1,
+  "LU2BAD": 1,
+  "A+SZU+NAGA+": 3,
+  "KUM_(GUM)": 5,
+  "MI+NUNUZ+": 1,
+  "KA+DI+": 2,
+  "NAGAR": 4,
+  "SU?USZ_(DU-gun)": 1,
+  "UG_(PIRIGUD)": 3,
+  "GA-gun": 2,
+  "LX_(6U)": 1,
+  "BI+U2+SA+": 1,
+  "ANSZE_(GRPA_or_GRTAB)+ARAD+": 1,
+  "AN+GE23_(DISZ-ten)+AN+": 1,
+  "DUN4_(UR-gun-SZeSZSZigMIR-SZeSZSZig)": 1,
+  "KUR": 2,
+  "ZU5": 2,
+  "MUNUS_(SAL)+SILA4_(GA2PA)+": 1,
+  "NUN+LAGAR+": 1,
+  "AN+NAGA+": 1,
+  "DU6_(LAGAR-gun)+DU+": 1,
+  "BA?AR2": 1,
+  "ANSZE_(GRPA_or_GRTAB)+IGI_(SZI__LIM)+SZE3_(ESZ2__GI7__ZI3)+": 1,
+  "GIGIR_(LAGABBAD)": 1,
+  "TUR_(DUMU)+USZ_(NITA)+": 2,
+  "A+SZE+NIR_(NUNoverNUN)+": 1,
+  "GUL_(SN)": 1,
+  "NINA_(AB?A)": 1,
+  "GISZGAL_(URUMIN)": 1,
+  "?AL": 1,
+  "NA?": 1,
+  "BANSZUR_(URUURUDU)": 1,
+  "IL_(ALSZE)": 1
 }
