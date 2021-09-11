@@ -251,6 +251,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 777,
+          "y": 790
+        }
       }
     ],
     "target": {
@@ -275,6 +284,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "3"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 777,
+          "y": 790
+        }
       }
     ],
     "target": {
@@ -303,6 +326,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 777,
+          "y": 790
+        }
       }
     ],
     "target": {
@@ -342,5 +379,47 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#43b242bf-b4f1-47f2-90af-be9940342a33"
+  },
+  "#e87d2081-0c9f-47fb-bd70-e8bc9f948f26": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ga",
+        "dimensions": {
+          "x": 777,
+          "y": 790
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "3"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 777,
+          "y": 790
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113515:577721/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"413.01727294921875,676.9483032226562 512.4483032226562,681.0345458984375 511.08624267578125,779.103515625 408.9310607910156,768.2069702148438\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e87d2081-0c9f-47fb-bd70-e8bc9f948f26"
   }
 }
