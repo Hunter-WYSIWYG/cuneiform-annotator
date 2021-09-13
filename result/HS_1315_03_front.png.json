@@ -866,5 +866,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#55f949d9-c08c-4f0d-bd89-5e546861b318"
+  },
+  "#3388287b-7da5-4c23-bb9f-e25ab3366c5e": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "1/2(disz)",
+        "dimensions": {
+          "x": 662,
+          "y": 774
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114496:578715/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"640.5999755859375,533.7930908203125 464.4482727050781,536.4620971679688 464.4482727050781,649.8931274414062 645.9379272460938,647.22412109375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#3388287b-7da5-4c23-bb9f-e25ab3366c5e"
+  },
+  "#8c71d226-eee2-471a-942c-741092e76b12": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "diri",
+        "dimensions": {
+          "x": 662,
+          "y": 774
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114496:578715/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"29.40690040588379,645.8896484375 254.9344940185547,648.55859375 257.60345458984375,749.9793090820312 25.403451919555664,737.968994140625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#8c71d226-eee2-471a-942c-741092e76b12"
   }
 }
