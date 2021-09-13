@@ -593,7 +593,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
-            errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
+            errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
