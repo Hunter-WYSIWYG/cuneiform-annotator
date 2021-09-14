@@ -40,7 +40,9 @@ def do_PCA(mesh,para_stabel):
     pca = PCA()
     pca.fit(mesh)
     PCA(copy=True, n_components=3, whiten=False)
-    f.write("Vector, Mesh "+meshname+"\n")
+    f.write("......................" + "\n"+ "\n")
+    f.write("Vector, Mesh "+meshname+"\n"+ "\n")
+    f.write("pca" + "\n")
     counter=1
     resultmatrix=[0,1,2,3]
     for variance, vector in zip(pca.explained_variance_, pca.components_):
@@ -90,10 +92,10 @@ def do_PCA(mesh,para_stabel):
         stabil = False
 
     # write in file
-    f.write("Matrix A" +"\n")
-    f.write(str(mat_A)+"\n")
-    f.write("Matrix B" +"\n")
-    f.write(str(mat_B)+"\n")
+    # f.write("Matrix A" +"\n")
+    # f.write(str(mat_A)+"\n")
+    # f.write("Matrix B" +"\n")
+    # f.write(str(mat_B)+"\n")
 
     f.write("\n")
     f.write(" " + str(para_stabel) + "% " + "\n")
@@ -105,8 +107,8 @@ def do_PCA(mesh,para_stabel):
     f.write(" diff v1-v2: " + str(round((diff_v1_v2),1)) + " mm = " + str(round((diff_v1_v2_p),1)) + "% von vector 1 \n")
     f.write(" diff v2-v3: " + str(round((diff_v2_v3),1)) + " mm = " + str(round((diff_v2_v3_p),1)) + "% von vector 2 \n")
 
-    f.write("\n" + "--->>> pca stabil: " + str(stabil) + "\n" + "\n" )
-    f.write("\n" + "\n" )
+    f.write("\n" + "--->>> pca stabil: " + str(stabil) + "\n" )
+
 
     c.write(meshname + "|" + str(round((dist_v1),2)) + "|" + str(round((dist_v2),2)) + "|" + str(round((dist_v3),2)) + "|" + str(round((diff_v1_v2),2)) + "|" + str(round((diff_v1_v2_p),2)) + "|" + str(round((diff_v2_v3),2)) + "|" + str(round((diff_v2_v3_p),2)) + "|" + str(stabil)  + "\n")
 
@@ -154,7 +156,7 @@ def rigid_transform_3D(A, B, scale):
     n = B.shape[0]
 
     ## Find the error
-    B2 = (ret_R * B.T) + np.tile(ret_t, (1, n))
+    B2 = (R * B.T) + np.tile(t, (1, n))
     B2 = B2.T
     err = A - B2
     err = np.multiply(err, err)
@@ -163,26 +165,31 @@ def rigid_transform_3D(A, B, scale):
 
     ##convert to 4x4 transform
     pca2obj = np.zeros((4,4))
-    pca2obj[:3,:3] = ret_R
-    pca2obj[0,3] = ret_t[0]
-    pca2obj[1,3] = ret_t[1]
-    pca2obj[2,3] = ret_t[2]
+    pca2obj[:3,:3] = R
+    pca2obj[0,3] = t[0]
+    pca2obj[1,3] = t[1]
+    pca2obj[2,3] = t[2]
     pca2obj[3,3] = 1
 
     # obj2pca = inv(np.matrix(pca2obj))
     
-    # f.write("Rotation" +"\n")
-    # f.write(str(ret_R)+"\n")
-    # f.write("Translation" +"\n")
-    # f.write(str(ret_t)+"\n")
-    # f.write("Scale" +"\n")
-    # f.write(str(s)+"\n")
-    # f.write("RMSE" +"\n")
-    # f.write(str(rmse)+"\n")
-    # f.write("Homogeneous Transform pca2obj" +"\n")
-    # f.write(str(pca2obj)+"\n")
-
-    # s, ret_R, ret_t=rigid_transform_3D(A, B,False)
+    f.write("\n" + "Transformation" + "\n" + "\n")
+    f.write("from Matrix"+"\n")
+    f.write(str(A)+"\n")
+    f.write("to Matrix"+"\n")
+    f.write(str(B)+"\n")
+    f.write( "\n"+ "result" + "\n")
+    f.write("Rotation" +"\n")
+    f.write(str(R)+"\n")
+    f.write("Translation" +"\n")
+    f.write(str(t)+"\n")
+    f.write("Scale" +"\n")
+    f.write(str(c)+"\n")
+    f.write("RMSE" +"\n")
+    f.write(str(rmse)+"\n")
+    f.write("Homogeneous Transform pca2obj" +"\n")
+    f.write(str(pca2obj)+"\n")
+    
     
     return c, R, t, rmse, pca2obj
 
@@ -287,7 +294,7 @@ for root, dirs, files in os.walk (input_folder):
 
                 # ## von hier in Methode zur Transformation ???
                 # # return = c, R, t, rmse, pca2obj
-                s, ret_R, ret_t, ret_rmse, ret_pca2obj = rigid_transform_3D(A, C,False)
+                s, ret_R, ret_t, ret_rmse, ret_pca2obj = rigid_transform_3D(A, B,False)
                 
                 # n = B.shape[0]  	    
 
