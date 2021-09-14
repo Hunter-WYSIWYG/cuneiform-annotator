@@ -27,11 +27,13 @@ resultfile=input_folder + "/" + "pca_result.txt"
 resultfile_csv=input_folder + "/" + "pca_result.csv"
 logfile = input_folder + "/" + "pca_log.txt"
 
+
 #
 ##### methods  ####
 #
 
-# pca for a mesh *.ply
+
+# pca for a mesh
 # input mesh as *.ply
 # output reducedMesh (?), pca (?), resultmatrix (?), Matrix A, Matrix B
 # es wird hier schon etwas in die Datei (f =  "pca_result.txt") geschrieben .... 
@@ -119,7 +121,7 @@ def do_PCA(mesh,para_stabel):
 # input matrix A (3d point coordinates in coordinate system A)
 # input matrix B (3d point coordinates in coordinate system B)
 # input scale (?) True/False
-# output scale (c), translation (t) , rotation (R)
+# output scale (c), translation (t) , rotation (R), errror (rmse), transformationsmatrix 4x4 (trama_A2B)
 def rigid_transform_3D(A, B, scale):
     assert len(A) == len(B)
     N = A.shape[0];  # total points
@@ -164,14 +166,14 @@ def rigid_transform_3D(A, B, scale):
     rmse = sqrt(err / n)
 
     ##convert to 4x4 transform
-    pca2obj = np.zeros((4,4))
-    pca2obj[:3,:3] = R
-    pca2obj[0,3] = t[0]
-    pca2obj[1,3] = t[1]
-    pca2obj[2,3] = t[2]
-    pca2obj[3,3] = 1
+    trama_A2B = np.zeros((4,4))
+    trama_A2B[:3,:3] = R
+    trama_A2B[0,3] = t[0]
+    trama_A2B[1,3] = t[1]
+    trama_A2B[2,3] = t[2]
+    trama_A2B[3,3] = 1
 
-    # obj2pca = inv(np.matrix(pca2obj))
+    # trama_B2A = inv(np.matrix(trama_A2B))
     
     f.write("\n" + "Transformation" + "\n" + "\n")
     f.write("from Matrix"+"\n")
@@ -187,11 +189,11 @@ def rigid_transform_3D(A, B, scale):
     f.write(str(c)+"\n")
     f.write("RMSE" +"\n")
     f.write(str(rmse)+"\n")
-    f.write("Homogeneous Transform pca2obj" +"\n")
-    f.write(str(pca2obj)+"\n")
+    f.write("Homogeneous Transform trama_A2B" +"\n")
+    f.write(str(trama_A2B)+"\n")
     
     
-    return c, R, t, rmse, pca2obj
+    return c, R, t, rmse, trama_A2B
 
 
 # pca to wkt (?)
@@ -271,7 +273,6 @@ for root, dirs, files in os.walk (input_folder):
                 l.close()
                 l = open(logfile, 'a')
 
-
                 # open mesh and define for pca calculation
                 print (meshname)
                 print("Processing "+str(meshname))
@@ -282,122 +283,34 @@ for root, dirs, files in os.walk (input_folder):
                 'z':plyfile['vertex']['z'][::reduce_factor]
                 })
 
-
                 ## methode do_PCA
                 pca = do_PCA(mesh,para_stabel)
-
                 # Matrix A / B
                 A = pca[3]
-                B = pca[4]
-
-            
+                B = pca[4]      
+                # speichern der Matrizen in separaten txt-Dateien
+                with open ((root + "//" + meshname.replace(".ply", "_PCA-M-A.txt")), "wb") as file_npy_MA:
+                    np.savetxt(file_npy_MA, A)
+                file_npy_MA.close()
+                with open ((root + "//" + meshname.replace(".ply", "_PCA-M-B.txt")), "wb") as file_npy_MB:
+                    np.savetxt(file_npy_MB, B)
+                file_npy_MB.close()
 
                 # ## von hier in Methode zur Transformation ???
                 # # return = c, R, t, rmse, pca2obj
                 s, ret_R, ret_t, ret_rmse, ret_pca2obj = rigid_transform_3D(A, B,False)
-                
-                # n = B.shape[0]  	    
 
-                # ## Find the error
-                # B2 = (ret_R * B.T) + np.tile(ret_t, (1, n))
-                # B2 = B2.T
-                # err = A - B2
-                # err = np.multiply(err, err)
-                # err = np.sum(err)
-                # rmse = sqrt(err / n);
+                # speichern der Transformationsmatrix in einer separaten Datei
+                with open ((root + "//" + meshname.replace(".ply", "_PCA-TM-A2B.txt")), "wb") as file_npy_TM:
+                    np.savetxt(file_npy_TM, ret_pca2obj)
+                file_npy_TM.close()
 
-                # ##convert to 4x4 transform
-                # pca2obj = np.zeros((4,4))
-                # pca2obj[:3,:3] = ret_R
-                # pca2obj[0,3] = ret_t[0]
-                # pca2obj[1,3] = ret_t[1]
-                # pca2obj[2,3] = ret_t[2]
-                # pca2obj[3,3] = 1
+                print(A)
+                print (B)
+                print (ret_pca2obj)     
 
-                # obj2pca = inv(np.matrix(pca2obj))
-
-                # # print "Points A"
-                # # print A
-                # # print ""
-
-                # # print "Points B"
-                # # print B
-                # # print ""
-
-                # # print "Rotation"
-                # # print ret_R
-                # # print ""
-
-                # # print "Translation"
-                # # print ret_t
-                # # print ""
-
-                # # print "Scale"
-                # # print s
-                # # print ""
-
-
-
-                # f.write("Rotation" +"\n")
-                # f.write(str(ret_R)+"\n")
-                # f.write("Translation" +"\n")
-                # f.write(str(ret_t)+"\n")
-                # f.write("Scale" +"\n")
-                # f.write(str(s)+"\n")
-                # f.write("Homogeneous Transform pca2obj" +"\n")
-                # f.write(str(pca2obj)+"\n")
-                # f.write("Homogeneous Transform obj2pca" +"\n")
-                # f.write(str(obj2pca)+"\n")
-                # f.write("RMSE" +"\n")
-                # f.write(str(rmse)+"\n")
-
-                # print("Rotation")
-                # print(ret_R)
-                # print("")
-
-                # print("Translation") 
-                # print(ret_t)
-                # print("")
-
-                # print("Scale")
-                # print(s)
-                # print("")
-
-                # print ("Homogeneous Transform pca2obj")
-                # print (pca2obj)
-                # print ("")
-
-                # # if scaling:
-                # #     print ("Total Diff to SA matrix")
-                # #     print (np.sum(match_target - Tstarg))
-                # #     print ("")
-                # # else:
-                # #     print ("Total Diff to SA matrix")
-                # #     print (np.sum(match_target - Ttarg))
-                # #     print ("")
-
-                # print ("RMSE:" +  str(rmse))
-                # print ("If RMSE is near zero, the function is correct!")
-                # ### save matix mit numpy
-                # print ("save as")
-                # print (root)
-                # print (meshname)
-                # print (root + "//" + meshname.replace(".ply",".npy"))
-
-                # f = open(resultfile, 'a') 
-
-                # with open ((root + "//" + meshname.replace(".ply","_obj2pca.tfm")), "wb") as file_npy:
-                #     np.savetxt(file_npy, obj2pca)
-                
-                # trans_import = np.loadtxt(root + "//" + meshname.replace(".ply","_obj2pca.tfm"))
-                # print ("------")
-                # print (trans_import)
-
-            # except:
-            #     print ("im except")
-            #     l.write(meshname + "\n")
 f.close()
-# c.close()
+c.close()
 l.close()
 
 print ("fertsch")
