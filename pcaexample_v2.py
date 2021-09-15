@@ -10,8 +10,8 @@ from sklearn.decomposition import PCA
 from sklearn.datasets import make_classification
 
 
-
-input_folder = r"D:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes"
+input_folder = r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes"
+# input_folder = r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\test_orientation"
 # input_folder = r"E:\temp\Neuer Ordner (7)"
 # meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
 
@@ -94,10 +94,6 @@ def do_PCA(mesh,para_stabel):
         stabil = False
 
     # write in file
-    # f.write("Matrix A" +"\n")
-    # f.write(str(mat_A)+"\n")
-    # f.write("Matrix B" +"\n")
-    # f.write(str(mat_B)+"\n")
 
     f.write("\n")
     f.write(" " + str(para_stabel) + "% " + "\n")
@@ -158,6 +154,7 @@ def rigid_transform_3D(A, B, scale):
     n = B.shape[0]
 
     ## Find the error
+
     B2 = (R * B.T) + np.tile(t, (1, n))
     B2 = B2.T
     err = A - B2
@@ -173,7 +170,28 @@ def rigid_transform_3D(A, B, scale):
     trama_A2B[2,3] = t[2]
     trama_A2B[3,3] = 1
 
+    trama_A2B= np.asmatrix(trama_A2B)
+    trama_A2B = np.transpose(trama_A2B)
+    print (trama_A2B)
+    print (type(trama_A2B))
+    trama_A2B_i = inv(np.matrix(trama_A2B))
+
+
+    print ("--- check centroid ---")
+    pc = [0,0,0,1]
+    pc = np.asarray(pc)
+    print (pc)
+    pcn = (np.matmul(pc, trama_A2B))
+    print (pcn)
+    print ("--- check finisch ---")
+
+
+
+
+
     # trama_B2A = inv(np.matrix(trama_A2B))
+
+
     
     f.write("\n" + "Transformation" + "\n" + "\n")
     f.write("from Matrix"+"\n")
@@ -235,7 +253,20 @@ def pcaToWKT(pca):
   """    
 
 
-
+def transform_points(self, points):
+    """
+    Given a 4x4 transformation matrix, transform an array of 3D points.
+    Expected point foramt: [[X0,Y0,Z0],..[Xn,Yn,Zn]]
+    """
+    # Needed foramt: [[X0,..Xn],[Z0,..Zn],[Z0,..Zn]]. So let's transpose
+    # the point matrix.
+    points = points.transpose()
+    # Add 0s row: [[X0..,Xn],[Y0..,Yn],[Z0..,Zn],[0,..0]]
+    points = np.append(points, np.ones((1, points.shape[1])), axis=0)
+    # Point transformation
+    points = self * points
+    # Return all but last row
+    return points[0:3].transpose() 
 
 
 
@@ -245,7 +276,7 @@ def pcaToWKT(pca):
 # control of the processed mesh files
 # previousresults=""
 # if os.path.isfile(resultfile_csv):
-#     print("Found old result file: "+str(resultfile_csv))
+#     #print("Found old result file: "+str(resultfile_csv))
 #     file = open(resultfile_csv)
 #     previousresults=file.read()
 #     file.close()
@@ -259,9 +290,9 @@ c.write("meshname|vector-1_length|vector-2_length|vector-3_length|diff v1-v2 mm|
 
 for root, dirs, files in os.walk (input_folder):
     for meshname in files:
-        # print (meshname)
+        # #print (meshname)
         # if meshname in previousresults:
-        #     print("Skipping "+str(meshname)+" as it was already processed!")
+        #     #print("Skipping "+str(meshname)+" as it was already processed!")
         #     continue
         if os.path.splitext(meshname)[-1]==".ply" or os.path.splitext(meshname)[-1]==".PLY":
             # try:
@@ -287,7 +318,7 @@ for root, dirs, files in os.walk (input_folder):
                 pca = do_PCA(mesh,para_stabel)
                 # Matrix A / B
                 A = pca[3]
-                B = pca[4]      
+                B = pca[4]       
                 # speichern der Matrizen in separaten txt-Dateien
                 with open ((root + "//" + meshname.replace(".ply", "_PCA-M-A.txt")), "wb") as file_npy_MA:
                     np.savetxt(file_npy_MA, A)
@@ -298,6 +329,12 @@ for root, dirs, files in os.walk (input_folder):
 
                 # ## von hier in Methode zur Transformation ???
                 # # return = c, R, t, rmse, pca2obj
+                # MA = np.loadtxt(root + "//" + meshname.replace(".ply", "_PCA-M-A.txt"))
+                # MA = np.asmatrix(MA)
+                # print (type(A))
+                # print (type(MA))
+                # B = np.loadtxt(root + "//" + meshname.replace(".ply", "_PCA-M-B.txt"))
+
                 s, ret_R, ret_t, ret_rmse, ret_pca2obj = rigid_transform_3D(A, B,False)
 
                 # speichern der Transformationsmatrix in einer separaten Datei
@@ -305,9 +342,47 @@ for root, dirs, files in os.walk (input_folder):
                     np.savetxt(file_npy_TM, ret_pca2obj)
                 file_npy_TM.close()
 
-                print(A)
+                mat = ret_pca2obj
+                mat= np.asmatrix(mat)
+                mat_i = inv(np.matrix(mat))
+
+                print ("__mat__")
+                print (mat)
+                print (type(mat))
+
+                print ("__ A __")
+                print (A)
+                print ("__ B __")
                 print (B)
-                print (ret_pca2obj)     
+
+                # check
+                # check_points = transform_points(mat_i, A)
+                # print ("__check__")
+                # print (check_points)
+
+                for p in A:     
+                    print ("_p_")
+                    print (p)    
+                    p = np.asarray(p)   
+                    p = np.append(p,1)
+                    p = p.tolist()
+                    print (p)
+                    pn = (np.matmul(p, mat_i))
+
+                    print (pn)
+
+
+
+# f = open(resultfile, 'a')
+
+# M_ref_A = np.loadtxt(r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes\02_Agisoft_001_1_PCA-M-A.txt")
+# M_ref_B = np.loadtxt(r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes\02_Agisoft_001_1_PCA-M-B.txt")
+# M_ref_A = np.asmatrix(M_ref_A)
+# M_ref_B = np.asmatrix(M_ref_B)
+# # # M_ref_A  = np.around(M_ref_A, decimals=4)
+# # # M_ref_B   = np.around(M_ref_B, decimals=4)
+
+# s2, ret_R2, ret_t2, ret_rmse2, ret_pca2obj2 = rigid_transform_3D (M_ref_A, M_ref_B,False)
 
 f.close()
 c.close()
