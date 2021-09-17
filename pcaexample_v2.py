@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 from sklearn.datasets import make_classification
 
 
-input_folder = r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes"
+input_folder = r"P:\3d-datasets_intern\reoriented_controlled"
 # input_folder = r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\test_orientation"
 # input_folder = r"E:\temp\Neuer Ordner (7)"
 # meshnames=["H.T._07-31-102_Pulverdruckverfahren_3_Zusammen_mitPuder_mehrPunkte.ply","H.T._07-31-102_SLA_3_Zusammen_mitPuder_mehrPunkte.ply","H.T_07-31-102_FDM_3_Zusammen_mitPuder_mehrPunkte _keine_Nachverarbeitung_mitLoecher.ply", "HT_07-31-47_3D.ply"]
@@ -19,7 +19,7 @@ input_folder = r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes"
 reduce_factors=[1]
 reduce_factor = 1
 scaling = False
-para_stabel = 50  #prozent für stabilität von Längen der pca vektoren 
+para_stabel = 5  #prozent für stabilität von Längen der pca vektoren 
 
 
 # output files
@@ -154,7 +154,6 @@ def rigid_transform_3D(A, B, scale):
     n = B.shape[0]
 
     ## Find the error
-
     B2 = (R * B.T) + np.tile(t, (1, n))
     B2 = B2.T
     err = A - B2
@@ -176,7 +175,6 @@ def rigid_transform_3D(A, B, scale):
     print (type(trama_A2B))
     trama_A2B_i = inv(np.matrix(trama_A2B))
 
-
     print ("--- check centroid ---")
     pc = [0,0,0,1]
     pc = np.asarray(pc)
@@ -185,14 +183,6 @@ def rigid_transform_3D(A, B, scale):
     print (pcn)
     print ("--- check finisch ---")
 
-
-
-
-
-    # trama_B2A = inv(np.matrix(trama_A2B))
-
-
-    
     f.write("\n" + "Transformation" + "\n" + "\n")
     f.write("from Matrix"+"\n")
     f.write(str(A)+"\n")
@@ -209,7 +199,9 @@ def rigid_transform_3D(A, B, scale):
     f.write(str(rmse)+"\n")
     f.write("Homogeneous Transform trama_A2B" +"\n")
     f.write(str(trama_A2B)+"\n")
-    
+    f.write("check centroid" +"\n")
+    f.write(str(pc)+"\n")
+    f.write(str(pcn)+"\n")
     
     return c, R, t, rmse, trama_A2B
 
@@ -273,10 +265,10 @@ def transform_points(self, points):
 
 ##################### START ###########################
 
-# control of the processed mesh files
+# # control of the processed mesh files
 # previousresults=""
 # if os.path.isfile(resultfile_csv):
-#     #print("Found old result file: "+str(resultfile_csv))
+#     print("Found old result file: "+str(resultfile_csv))
 #     file = open(resultfile_csv)
 #     previousresults=file.read()
 #     file.close()
@@ -341,48 +333,6 @@ for root, dirs, files in os.walk (input_folder):
                 with open ((root + "//" + meshname.replace(".ply", "_PCA-TM-A2B.txt")), "wb") as file_npy_TM:
                     np.savetxt(file_npy_TM, ret_pca2obj)
                 file_npy_TM.close()
-
-                mat = ret_pca2obj
-                mat= np.asmatrix(mat)
-                mat_i = inv(np.matrix(mat))
-
-                print ("__mat__")
-                print (mat)
-                print (type(mat))
-
-                print ("__ A __")
-                print (A)
-                print ("__ B __")
-                print (B)
-
-                # check
-                # check_points = transform_points(mat_i, A)
-                # print ("__check__")
-                # print (check_points)
-
-                for p in A:     
-                    print ("_p_")
-                    print (p)    
-                    p = np.asarray(p)   
-                    p = np.append(p,1)
-                    p = p.tolist()
-                    print (p)
-                    pn = (np.matmul(p, mat_i))
-
-                    print (pn)
-
-
-
-# f = open(resultfile, 'a')
-
-# M_ref_A = np.loadtxt(r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes\02_Agisoft_001_1_PCA-M-A.txt")
-# M_ref_B = np.loadtxt(r"E:\i3mainz_Hochschule Mainz\Keilschriften\pca\small_meshes\02_Agisoft_001_1_PCA-M-B.txt")
-# M_ref_A = np.asmatrix(M_ref_A)
-# M_ref_B = np.asmatrix(M_ref_B)
-# # # M_ref_A  = np.around(M_ref_A, decimals=4)
-# # # M_ref_B   = np.around(M_ref_B, decimals=4)
-
-# s2, ret_R2, ret_t2, ret_rmse2, ret_pca2obj2 = rigid_transform_3D (M_ref_A, M_ref_B,False)
 
 f.close()
 c.close()
