@@ -1413,5 +1413,84 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d04056c7-ae4e-4d41-9f6d-88885ac344f0"
+  },
+  "#68f57f24-7611-41d8-8938-bb4359a50a80": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "gu",
+        "dimensions": {
+          "x": 1075,
+          "y": 2212
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1075,
+          "y": 2212
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114795:579051/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"280.9046630859375,12.533836364746094 71.2343521118164,38.2828254699707 47.324581146240234,113.6905746459961 256.9949035644531,100.81607818603516\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#68f57f24-7611-41d8-8938-bb4359a50a80"
+  },
+  "#0d83d785-5b7a-485d-b467-b0a4ba5ed1f1": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "di",
+        "dimensions": {
+          "x": 1075,
+          "y": 2212
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1075,
+          "y": 2212
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114795:579051/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"437.2378234863281,-0.34065690636634827 280.9046630859375,14.37304973602295 255.1556854248047,117.3689956665039 426.2025451660156,113.6905746459961\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#0d83d785-5b7a-485d-b467-b0a4ba5ed1f1"
   }
 }
