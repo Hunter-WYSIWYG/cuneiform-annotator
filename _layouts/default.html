@@ -66,7 +66,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-
+var 3dimageToIndex={}
 function formatTranslation(transliteration){
   result=""
   termmap={"@obverse":"front","@reverse":"back","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
@@ -1185,7 +1185,7 @@ $('#toolbar2 img')
 </canvas>
 </div>
 <script>
-var 3dimageToIndex={}
+
 3dimageindex=0
   for(url in hs23D){
     options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
