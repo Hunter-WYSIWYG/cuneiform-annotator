@@ -66,6 +66,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+
 function formatTranslation(transliteration){
   result=""
   termmap={"@obverse":"front","@reverse":"back","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
@@ -689,12 +690,12 @@ async function getAnnotation(path){
   
 function sync2D3D(){
 	console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text())
-	if($('#images option:selected').text()!=$('#3dimages option:selected').text()){
-		myval=$('#3dimages').find('option[text="'+$('#images option:selected').text()+'"]').val();
+	if($('#images option:selected').text() in 3dimageindex){
 		console.log(myval)
-		$("#3dimages option[value='"+myval+"']").prop('selected', true);
+		$("#3dimages").prop('selectedIndex', 3dimageindex[$('#images option:selected').text()]);
 	}
 }
+
 function getEXIFData(imageid,targetid){
     var img2 = document.getElementById(imageid);
     console.log("EXIF click")
@@ -1184,8 +1185,12 @@ $('#toolbar2 img')
 </canvas>
 </div>
 <script>
+var 3dimageToIndex={}
+3dimageindex=0
   for(url in hs23D){
     options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
+    3dimageToindex[url]=3dimageindex
+    3dimageindex+=1
   }
   document.getElementById("3dimages").innerHTML=options2
 </script>
