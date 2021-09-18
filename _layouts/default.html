@@ -692,7 +692,7 @@ function sync2D3D(){
 	console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text())
 	if($('#images option:selected').text() in threedimageToIndex){
 		console.log($('#images option:selected').text()+" - "+threedimageToIndex[$('#images option:selected').text()])
-		$("#3dimages").prop('selectedIndex', threedimageToIndex[$('#images option:selected').text()]);
+    document.getElementById('3dimages').selectedIndex = threedimageToIndex[$('#images option:selected').text()]
 	}
 }
 
