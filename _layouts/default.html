@@ -858,7 +858,7 @@ function onPickedSpot(id) {
 
 
 function setup3dhop() {
-  if(!("bbox" in hs23D[$("#3dimages").text()])){
+  if($("#3dimages").text() in hs23D && !("bbox" in hs23D[$("#3dimages").text()])){
     	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
