@@ -5,7 +5,7 @@ import re
 
 mappings={"@obvers":"03_front","@obverse":"03_front","@revers":"06_back","@reverse":"06_back","@left":"02_left","@right":"04_right","@top":"01_top","@bottom":"05_bottom","@seal":"seal","@colophon":"colophon"}
 
-with open('hs_transliterations.json', 'r') as myfile:
+with open('js/transliterations.js', 'r') as myfile:
     data=myfile.read()
 
 def calculateTranslitCount():
@@ -26,7 +26,7 @@ def calculateTranslitCount():
                 curside=line[0:line.find(" ")]
                 if curside in mappings: 
                     curid=str(tabletid)+"_"+str(mappings[curside]+".png.json")
-                    print("Curside: "+str(curside))
+                    print("Curside: "+str(tabletid)+"_"+str(curside))
                     result[curid]=0
                 continue
             if seal or not re.search('^\s*[0-9]+\'\.',line) and not re.search('^\s*[0-9]+\.',line):
@@ -38,7 +38,7 @@ def calculateTranslitCount():
                 #print("Word: "+str(word))
                 for char in word.split("-"):
                     if curid in result and char!="" and char!="column" and char!="..." and char!="!" and char!="?" and char!="...]" and char!="/" and char!="=" and char!="[..." and char!="[...]" and char!="x":
-                        print("Char: "+str(char))
+                        #print("Char: "+str(char))
                         result[curid]+=1
                         totalchars+=1
     print(totalchars)
