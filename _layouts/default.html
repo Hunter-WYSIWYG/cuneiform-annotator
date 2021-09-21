@@ -66,6 +66,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+var threedimageToIndex={};
 function formatTranslation(transliteration){
   result=""
   termmap={"@obverse":"front","@reverse":"back","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
@@ -689,12 +690,12 @@ async function getAnnotation(path){
   
 function sync2D3D(){
 	console.log($('#images option:selected').text()+" "+$('#3dimages option:selected').text())
-	if($('#images option:selected').text()!=$('#3dimages option:selected').text()){
-		myval=$('#3dimages').find('option[text="'+$('#images option:selected').text()+'"]').val();
-		console.log(myval)
-		$("#3dimages option[value='"+myval+"']").prop('selected', true);
+	if($('#images option:selected').text() in threedimageToIndex){
+		console.log($('#images option:selected').text()+" - "+threedimageToIndex[$('#images option:selected').text()])
+    document.getElementById('3dimages').selectedIndex = threedimageToIndex[$('#images option:selected').text()]
 	}
 }
+
 function getEXIFData(imageid,targetid){
     var img2 = document.getElementById(imageid);
     console.log("EXIF click")
@@ -858,7 +859,7 @@ function onPickedSpot(id) {
 
 
 function setup3dhop() {
-  if(!("bbox" in hs23D[$("#3dimages").text()])){
+  if($("#3dimages").text() in hs23D && !("bbox" in hs23D[$("#3dimages").text()])){
     	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
@@ -1183,6 +1184,16 @@ $('#toolbar2 img')
 <canvas id="svgcanvas" width="300" height="100" style="visibility:hidden">
 </canvas>
 </div>
+<script>
+
+var threedimageindex=0
+  for(url in hs23D){
+    options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
+    threedimageToIndex[url]=threedimageindex
+    threedimageindex+=1
+  }
+  document.getElementById("3dimages").innerHTML=options2
+</script>
 <!--
 <h3 align="center">Grid Annotation test</h3>
 Grid Size: <input id="gridsize" type="number" value="20" onChange="recreateGrid()"/><br/>
@@ -1191,10 +1202,7 @@ Grid Offset Y: <input id="gridoffsety" type="number" value="0" onChange="recreat
 <div id="grid-source"><img id="gridimage" src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
 <div id="grid-overlay"></div>
 
-  for(url in hs23D){
-    options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
-  }
-  document.getElementById("3dimages").innerHTML=options2
+
 function recreateGrid(){
 var $src = $('#grid-source');
 var $wrap = $('#grid-overlay');

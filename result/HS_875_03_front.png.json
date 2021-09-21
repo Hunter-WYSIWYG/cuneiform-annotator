@@ -166,5 +166,66 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#2ab469e5-d594-4f48-8918-0c3b498bcd35"
+  },
+  "#56de2f04-f710-4de8-94f8-6f657b29b0d2": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "tum",
+        "dimensions": {
+          "x": 563,
+          "y": 661
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126239:590652/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"499.1741027832031,165.24998474121094 325.946533203125,151.57412719726562 315.68963623046875,263.26031494140625 486.6379089355469,284.9137878417969\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#56de2f04-f710-4de8-94f8-6f657b29b0d2"
+  },
+  "#a71499a7-f39e-46b7-be9c-67c696abda0a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lugal",
+        "dimensions": {
+          "x": 563,
+          "y": 661
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126239:590652/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"461.56549072265625,328.2206726074219 162.97584533691406,320.2430725097656 156.13792419433594,413.6947937011719 460.42584228515625,409.13616943359375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a71499a7-f39e-46b7-be9c-67c696abda0a"
   }
 }

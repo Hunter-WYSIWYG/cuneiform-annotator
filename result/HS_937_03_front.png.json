@@ -150,5 +150,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#e4ab1367-08ea-4d8d-bfc9-b1dc17684fd4"
+  },
+  "#b09ba6d3-4e9e-4427-a91e-b46c5648b93e": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "su",
+        "dimensions": {
+          "x": 604,
+          "y": 875
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126713:591102/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"344.2413635253906,312.2844543457031 209.97412109375,315.30169677734375 202.43101501464844,156.89654541015625 336.6982421875,171.98275756835938\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b09ba6d3-4e9e-4427-a91e-b46c5648b93e"
+  },
+  "#ed0fe294-3ceb-42f9-ae0e-52d80fa7a9c1": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "su",
+        "dimensions": {
+          "x": 604,
+          "y": 875
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126713:591102/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"487.560302734375,336.4223937988281 347.25860595703125,334.9137878417969 348.7672119140625,218.74998474121094 469.4568786621094,218.74998474121094\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#ed0fe294-3ceb-42f9-ae0e-52d80fa7a9c1"
   }
 }
