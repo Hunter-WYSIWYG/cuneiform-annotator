@@ -249,7 +249,7 @@
       {
         "type": "TextualBody",
         "purpose": "Transliteration",
-        "value": "kasz",
+        "value": "munu3",
         "dimensions": {
           "x": 931,
           "y": 1051
@@ -494,5 +494,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#e765c8c5-2af3-46b6-8b89-7338cd5385ba"
+  },
+  "#e90d9f37-00e2-4316-85c6-e13fd166d147": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "e3",
+        "dimensions": {
+          "x": 931,
+          "y": 1051
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126250:590664/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"416.5741271972656,155.83792114257812 57.78448486328125,163.08619689941406 46.912071228027344,329.7965393066406 411.137939453125,317.112060546875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e90d9f37-00e2-4316-85c6-e13fd166d147"
+  },
+  "#270b2032-63a7-4adf-8f87-fbe512e8b412": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "diri",
+        "dimensions": {
+          "x": 931,
+          "y": 1051
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126250:590664/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"842.4103393554688,183.0189666748047 443.7551574707031,172.14654541015625 452.8155212402344,322.54827880859375 842.4103393554688,320.7362060546875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#270b2032-63a7-4adf-8f87-fbe512e8b412"
   }
 }
