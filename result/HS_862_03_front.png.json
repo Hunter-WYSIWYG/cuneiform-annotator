@@ -334,5 +334,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#f88dccde-53dd-434d-be3f-2996d2d7054c"
+  },
+  "#e0bc1ae4-e519-4472-9e49-2b5444eefed9": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "szuruppak",
+        "dimensions": {
+          "x": 873,
+          "y": 763
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126135:590535/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"17.732810974121094,504.2655944824219 253.71560668945312,515.1781005859375 240.07498168945312,707.5108642578125 77.75155639648438,670.6812133789062 30.00937271118164,583.3812255859375 30.00937271118164,582.0171508789062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e0bc1ae4-e519-4472-9e49-2b5444eefed9"
+  },
+  "#1f16610f-6d03-4ffd-b3d4-69980ff33f23": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "1(asz@c)",
+        "dimensions": {
+          "x": 873,
+          "y": 763
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126135:590535/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"85.93592834472656,70.49374389648438 148.68280029296875,66.40155792236328 143.22654724121094,125.05624389648438 54.562496185302734,133.24061584472656\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#1f16610f-6d03-4ffd-b3d4-69980ff33f23"
   }
 }
