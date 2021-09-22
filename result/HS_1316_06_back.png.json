@@ -1657,5 +1657,57 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#1846f56e-5e1a-4272-9d1a-1dd19c9c243e"
+  },
+  "#1de3e948-4622-4225-9c7a-58aa98bf9c33": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "a"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114507:578727/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1024.2220458984375,764.57275390625 948.4767456054688,770.5842895507812 958.0951538085938,872.7803955078125 1023.019775390625,866.7688598632812\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#1de3e948-4622-4225-9c7a-58aa98bf9c33"
+  },
+  "#c9bf0341-882f-4b3d-a05d-8f2c5932a462": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sahar",
+        "dimensions": {
+          "x": 1076,
+          "y": 1446
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114507:578727/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1078.5662841796875,523.8709716796875 988.53759765625,532.527587890625 992.000244140625,653.7200927734375 1076.8349609375,645.0634765625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c9bf0341-882f-4b3d-a05d-8f2c5932a462"
   }
 }
