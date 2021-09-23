@@ -313,6 +313,11 @@
         "type": "TextualBody",
         "purpose": "RelCharindex",
         "value": 0
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -360,6 +365,11 @@
         "type": "TextualBody",
         "purpose": "RelCharindex",
         "value": 0
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -514,5 +524,117 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#126d0a7f-b0fe-47ec-96a4-c7cd31d52dcd"
+  },
+  "#291221c9-4fd2-4e3b-9655-b5bdb7c88518": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sag11",
+        "dimensions": {
+          "x": 939,
+          "y": 1147
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112859:576983/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"643.527587890625,90.96896362304688 386.4413757324219,90.96896362304688 370.62066650390625,243.24310302734375 647.4827270507812,227.4224090576172\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#291221c9-4fd2-4e3b-9655-b5bdb7c88518"
+  },
+  "#58e060db-e788-406d-aa0f-a249d800526d": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "bi2",
+        "dimensions": {
+          "x": 939,
+          "y": 1147
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112859:576983/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"886.7706909179688,832.5637817382812 600.0206909179688,834.5413818359375 615.8413696289062,1000.6585693359375 878.8603515625,986.8154907226562\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#58e060db-e788-406d-aa0f-a249d800526d"
+  },
+  "#37ea6abe-dca5-488a-b2b7-66f942dfb700": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lugal",
+        "dimensions": {
+          "x": 939,
+          "y": 1147
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112859:576983/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"930.277587890625,959.1292724609375 724.6085815429688,974.949951171875 724.6085815429688,1133.1568603515625 924.3447875976562,1113.3809814453125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#37ea6abe-dca5-488a-b2b7-66f942dfb700"
+  },
+  "#521d25ba-ae08-4b4b-9419-7235b21bcf27": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "suen",
+        "dimensions": {
+          "x": 939,
+          "y": 1147
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112859:576983/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"329.09136962890625,1058.008544921875 321.1810302734375,1133.1568603515625 712.7431030273438,1135.1343994140625 722.6310424804688,969.0172119140625 489.2758483886719,982.8602905273438 493.23101806640625,1087.67236328125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#521d25ba-ae08-4b4b-9419-7235b21bcf27"
   }
 }
