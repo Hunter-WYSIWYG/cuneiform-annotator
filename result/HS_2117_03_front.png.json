@@ -2476,5 +2476,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#93d7c6c3-4b1f-4488-8291-0e7b50267360"
+  },
+  "#e24fd803-c793-43e6-92f1-d5998d4c3b8e": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "zabar",
+        "dimensions": {
+          "x": 1378,
+          "y": 2771
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119431:583794/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1348.306884765625,1079.7344970703125 770.218994140625,1125.12158203125 765.44140625,984.1828002929688 1348.306884765625,955.5172729492188\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e24fd803-c793-43e6-92f1-d5998d4c3b8e"
   }
 }
