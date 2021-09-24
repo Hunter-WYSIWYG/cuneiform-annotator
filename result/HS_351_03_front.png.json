@@ -1094,5 +1094,66 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#c24de483-7d7f-4888-aa45-ff1efdf90908"
+  },
+  "#6a2e5684-eab6-4741-9cc8-4bcc06fb2e58": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ni",
+        "dimensions": {
+          "x": 1169,
+          "y": 1019
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123496:587818/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"962.2940063476562,272.55426025390625 753.0003662109375,268.7489013671875 745.3897094726562,371.4930419921875 963.5624389648438,366.41925048828125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#6a2e5684-eab6-4741-9cc8-4bcc06fb2e58"
+  },
+  "#22738492-71fe-4223-b172-8dcb6d73818d": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ta",
+        "dimensions": {
+          "x": 1169,
+          "y": 1019
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123496:587818/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"761.4625854492188,833.8040771484375 588.9539184570312,841.4147338867188 580.0747680664062,954.3064575195312 744.9727783203125,949.232666015625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#22738492-71fe-4223-b172-8dcb6d73818d"
   }
 }
