@@ -2540,5 +2540,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#a0f424d3-ac3b-4e03-98f8-e331a8620139"
+  },
+  "#c5b01b2a-286e-4a3f-a9af-ff2ed46d9f3a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "nigar",
+        "dimensions": {
+          "x": 924,
+          "y": 1942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114464:578679/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"826.7166748046875,499.4176025390625 557.0590209960938,517.1795043945312 557.0590209960938,596.3005981445312 833.175537109375,576.9240112304688\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c5b01b2a-286e-4a3f-a9af-ff2ed46d9f3a"
+  },
+  "#1cee0c58-8dd5-4e8b-8910-1d7b366e6a45": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "muhaldim",
+        "dimensions": {
+          "x": 924,
+          "y": 1942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114464:578679/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"913.911376953125,475.19683837890625 829.9461059570312,491.3440246582031 828.3314208984375,568.8504028320312 921.9849853515625,560.77685546875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#1cee0c58-8dd5-4e8b-8910-1d7b366e6a45"
   }
 }
