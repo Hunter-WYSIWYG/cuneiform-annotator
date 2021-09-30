@@ -890,5 +890,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#6b270d54-20c9-423b-aa64-8b17c7ca5a1a"
+  },
+  "#8377914a-9c7f-4a5c-bd04-58b8e46e3347": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "kusz",
+        "dimensions": {
+          "x": 802,
+          "y": 887
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113822:577968/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"618.1620483398438,48.937931060791016 480.52410888671875,51.996551513671875 480.52410888671875,197.28102111816406 613.5740966796875,203.3982696533203\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#8377914a-9c7f-4a5c-bd04-58b8e46e3347"
+  },
+  "#6c2a0f0e-63ba-42ab-b229-7e336cabc102": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "siki",
+        "dimensions": {
+          "x": 802,
+          "y": 887
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113822:577968/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"800.1499633789062,328.8017272949219 729.8016967773438,330.3310241699219 732.8602905273438,458.7930908203125 798.6206665039062,458.7930908203125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#6c2a0f0e-63ba-42ab-b229-7e336cabc102"
   }
 }
