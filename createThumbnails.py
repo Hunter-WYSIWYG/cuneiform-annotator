@@ -364,7 +364,7 @@ for filename in dircontent:
             translits[charclass]=1
         if charclass=="other":
             if str(translit)!="":
-                unknownchars+=str(translit)+"\n"
+                unknownchars+=str(translit)+" - "+str(filename)+" "+str(line)+" "+str(curcharindex)+"\n"
             #print(str(translit))
         if str(translit)=="":
             continue
