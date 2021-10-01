@@ -15,6 +15,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -43,6 +57,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -71,6 +99,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -99,6 +141,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -127,6 +183,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -155,6 +220,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -183,6 +257,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -211,6 +294,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "7",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
       }
     ],
     "target": {
@@ -306,5 +403,33 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#5fcac3bf-6f53-4aba-86e1-063060692e4e"
+  },
+  "#bee4d205-e703-4267-9460-d34e62fb60c8": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "asz",
+        "dimensions": {
+          "x": 949,
+          "y": 985
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112499:576437/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"537.336181640625,798.1896362304688 466.00860595703125,789.6982421875 466.00860595703125,835.5516967773438 537.336181640625,838.9482421875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bee4d205-e703-4267-9460-d34e62fb60c8"
   }
 }
