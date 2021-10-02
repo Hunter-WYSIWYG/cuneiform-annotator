@@ -1539,6 +1539,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
       }
     ],
     "target": {
@@ -1567,6 +1576,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
       }
     ],
     "target": {
@@ -1595,6 +1618,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
       }
     ],
     "target": {
@@ -1623,6 +1660,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
       }
     ],
     "target": {
@@ -1651,6 +1697,15 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
       }
     ],
     "target": {
@@ -1662,5 +1717,75 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#a0c5dc64-f0a3-4637-8856-2cb4d54fc2e5"
+  },
+  "#2f453e6f-c5c9-4311-88ff-6754a07583cd": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "2(disz)",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114104:578274/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"616.5655517578125,23.641382217407227 690.4448852539062,62.05862808227539 699.3104248046875,156.62416076660156 616.5655517578125,153.66897583007812\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#2f453e6f-c5c9-4311-88ff-6754a07583cd"
+  },
+  "#a0a843b5-daf5-4d40-bb8f-ca684bb75041": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "i3",
+        "dimensions": {
+          "x": 1044,
+          "y": 1714
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114104:578274/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"909.127685546875,171.4000244140625 991.8724975585938,183.220703125 1033.244873046875,283.69659423828125 900.2621459960938,274.8310546875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a0a843b5-daf5-4d40-bb8f-ca684bb75041"
   }
 }
