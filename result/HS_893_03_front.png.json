@@ -222,5 +222,61 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d41b4038-efdc-4e72-bad9-6ee83dad1658"
+  },
+  "#4046f9ba-fcb3-432b-bff1-c1457660a87f": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "5(u@c)",
+        "dimensions": {
+          "x": 789,
+          "y": 839
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126383:590814/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"306.2603454589844,188.0517120361328 106.63619995117188,222.76895141601562 102.29654693603516,92.57930755615234 278.7758483886719,11.572413444519043 410.41204833984375,0 413.3051452636719,50.62930679321289 284.5620422363281,62.20172119140625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#4046f9ba-fcb3-432b-bff1-c1457660a87f"
+  },
+  "#591af251-a47e-4a33-8a96-bdb0fa59a0c4": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "geszimmar",
+        "dimensions": {
+          "x": 789,
+          "y": 839
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126383:590814/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"740.225830078125,167.79998779296875 381.48101806640625,137.4224090576172 382.9275817871094,266.1654968261719 744.5654907226562,302.32928466796875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#591af251-a47e-4a33-8a96-bdb0fa59a0c4"
   }
 }
