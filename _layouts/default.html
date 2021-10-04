@@ -665,17 +665,25 @@ async function getAnnotation(path){
     for(ann in result){
       line=-1
       charindex=-1
+      colindex=-1
       for(bod of result[ann]["body"]){
         if("purpose" in bod && bod["purpose"]=="Line"){
           line=bod["value"]
         }else if("purpose" in bod && bod["purpose"]=="Charindex"){
           charindex=bod["value"]
+        }else if("purpose" in bod && bod["purpose"]=="Column"){
+          colindex=bod["value"]
         }
       }
       if(charindex!=-1 && line!=-1){
         side=param2.replace(".png","")
-        curimgindex[ann]=side.substring(side.lastIndexOf('_')+1)+"_"+line+"_"+charindex
-        curcharindex[side.substring(side.lastIndexOf('_')+1)+"_"+line+"_"+charindex]=ann
+        if(colindex!=-1){
+          curimgindex[ann]=side.substring(side.lastIndexOf('_')+1)+"_column_"+colindex+"_"+line+"_"+charindex
+          curcharindex[side.substring(side.lastIndexOf('_')+1)+"_column_"+colindex+"_"+line+"_"+charindex]=ann
+        }else{
+          curimgindex[ann]=side.substring(side.lastIndexOf('_')+1)+"_"+line+"_"+charindex
+          curcharindex[side.substring(side.lastIndexOf('_')+1)+"_"+line+"_"+charindex]=ann
+        }
       }
       annotations.push(result[ann])
     }
