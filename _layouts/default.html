@@ -494,6 +494,7 @@ $(document).ready(function () {
     input.addEventListener("select",function(){
         paintCharacter(event.target.id)
     });
+    $('#'+input.id).autocomplete({source: Object.keys(paleocodemap)})
   }
     return div;
   }
