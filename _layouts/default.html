@@ -90,6 +90,7 @@ function formatTranslation(transliteration){
       currentside=currentside+"_"+line.trim().replace(" ","_")
       linecounter=0
       charcounter=0
+      result+=line.trim()+"<br/>"
     }else if(line.trim().match(/^\d/)){
       linecounter+=1
       charcounter=0
@@ -190,6 +191,7 @@ function formatTransliteration(transliteration){
       currentside=currentside+"_"+line.trim().replace(" ","_")
       linecounter=0
       charcounter=0
+      result+=line.trim()+"<br/>"
     }else if(line.trim().match(/^\d/)){
       linecounter+=1
       charcounter=0
