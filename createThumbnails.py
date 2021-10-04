@@ -107,7 +107,7 @@ with open('js/periods.js') as f:
 
 homepagejson={}
 
-outputcsv=""
+outputcsv="ID;Filename;CDLI_Number;IRI;Time_period;Language;side;bbox;column;line;charindex;charname;transliteration\n"
 
 linecsv=""
 
@@ -459,7 +459,7 @@ for filename in dircontent:
                 else:
                     outputcsv+=";;" 
                 outputcsv+=filename[filename.rfind("_")+1:].replace(".png.json","")+";"
-                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n" 
+                outputcsv+=str(coords)+";"+str(column)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n" 
                 if not periods[per] in periodss and periods[per]!="":
                     periodss[periods[per]]=0
                 if periods[per]=="":
