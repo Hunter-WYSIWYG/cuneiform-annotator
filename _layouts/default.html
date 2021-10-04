@@ -677,6 +677,7 @@ async function getAnnotation(path){
       }
       if(charindex!=-1 && line!=-1){
         side=param2.replace(".png","")
+        console.log("COLINDEX!!! "+colindex)
         if(colindex!=-1){
           curimgindex[ann]=side.substring(side.lastIndexOf('_')+1)+"_column_"+colindex+"_"+line+"_"+charindex
           curcharindex[side.substring(side.lastIndexOf('_')+1)+"_column_"+colindex+"_"+line+"_"+charindex]=ann
