@@ -246,7 +246,7 @@ for filename in dircontent:
         r = requests.get(imgurls[filename])
         with open('temp.jpg', 'wb') as f:
             f.write(r.content)
-        print("Successfully downloaded "+str(filename))
+        print("Successfully downloaded "+str(filename)+" "+str(os.path.isfile("temp.jpg"))+": "+str(os.path.getsize("temp.jpg")))
     except:
         e = sys.exc_info()[0]
         print(e)
@@ -376,7 +376,6 @@ for filename in dircontent:
         savedfilename=""
         try:
             #f=open("temp.jpg", "rb")
-            print("temp.jpg? "+str(os.path.isfile("temp.jpg"))+": "+str(os.path.getsize("temp.jpg")))
             with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
@@ -555,7 +554,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
-            print("char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n")
+            print("char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg\n")
             errorlog+="char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
         #f.close()
         width=0
@@ -601,7 +600,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
-            print("line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n")
+            print("line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;\n")
             errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
     if filename in translitcount:
         totalexpectedchars+=translitcount[filename]
