@@ -245,6 +245,7 @@ for filename in dircontent:
         r = requests.get(imgurls[filename])
         with open('temp.jpg', 'wb') as f:
             f.write(r.content)
+        print("Successfully downloaded "+str(filename))
     except:
         e = sys.exc_info()[0]
         print(e)
