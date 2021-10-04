@@ -292,7 +292,7 @@ for filename in dircontent:
             elif annoobj["purpose"]==columnindexpurpose:
                 column=annoobj["value"]
         if line!=-1 and curcharindex!=-1:
-            indexcount+=1
+            indexedcount+=1
         if purpose=="Line" and "Line" in str(tagging):
             translit="Line"+line
         if purpose=="Line" and translit=="":
