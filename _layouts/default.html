@@ -182,6 +182,10 @@ function formatTransliteration(transliteration){
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
+    }else if(line.trim().startsWith("column") || line.trim().startsWith("@column"){
+      currentside=currentside+"_"+line.trim().replace(" ","_")
+      linecounter=0
+      charcounter=0
     }else if(line.trim().match(/^\d/)){
       linecounter+=1
       charcounter=0
