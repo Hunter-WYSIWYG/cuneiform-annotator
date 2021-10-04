@@ -375,6 +375,7 @@ for filename in dircontent:
         savedfilename=""
         try:
             #f=open("temp.jpg", "rb")
+            print("Temp.jpg? "+os.path.isfile("temp.jpg"))
             with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
