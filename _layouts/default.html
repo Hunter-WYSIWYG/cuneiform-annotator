@@ -73,6 +73,7 @@ function formatTranslation(transliteration){
   linecounter=0
   charcounter=0
   currentside=""
+  currentcolumn=""
   curterm=""
   for(line of transliteration.split("<br>")){
     if(line.trim().startsWith("@")){
@@ -87,7 +88,9 @@ function formatTranslation(transliteration){
       charcounter=0
       result+=line.trim()+"<br/>"
     }else if(line.trim().startsWith("column") || line.trim().startsWith("@column")){
-      currentside=currentside+"_"+line.trim().replace(" ","_")
+      currentside=currentside.replace(currentcolumn,"")
+      currentcolumn=line.trim().replace(" ","_")
+      currentside=currentside+"_"+currentcolumn
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
@@ -188,7 +191,9 @@ function formatTransliteration(transliteration){
       charcounter=0
       result+=line.trim()+"<br/>"
     }else if(line.trim().startsWith("column") || line.trim().startsWith("@column")){
-      currentside=currentside+"_"+line.trim().replace(" ","_")
+      currentside=currentside.replace(currentcolumn,"")
+      currentcolumn=line.trim().replace(" ","_")
+      currentside=currentside+"_"+currentcolumn
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
@@ -374,6 +379,7 @@ $(document).ready(function () {
 	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleocodage":true},
 	"Transliteration":{"inputtype":"text","regex":"","handler":null},
   "UnicodeCharName":{"inputtype":"select","regex":"","handler":null,"data":charlistmap},
+  "Column":{"inputtype":"number","regex":"","handler":null},
 	"Line":{"inputtype":"number","regex":"","handler":null},
   "Charindex":{"inputtype":"number","regex":"","handler":null},
   "Wordindex":{"inputtype":"number","regex":"","handler":null}
