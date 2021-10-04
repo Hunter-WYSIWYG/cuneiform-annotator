@@ -91,6 +91,7 @@ function formatTranslation(transliteration){
       currentside=currentside.replace(currentcolumn,"")
       currentcolumn=line.trim().replace(" ","_")
       currentside=currentside+"_"+currentcolumn
+      currentside=currentside.replace("__","_")
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
@@ -195,6 +196,7 @@ function formatTransliteration(transliteration){
       currentside=currentside.replace(currentcolumn,"")
       currentcolumn=line.trim().replace(" ","_")
       currentside=currentside+"_"+currentcolumn
+      currentside=currentside.replace("__","_")
       linecounter=0
       charcounter=0
       result+=line.trim()+"<br/>"
