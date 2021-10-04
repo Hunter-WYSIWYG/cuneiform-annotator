@@ -160,6 +160,7 @@ singlefolder=False
 purpose="Transliteration"
 charindexpurpose="Charindex"
 wordindexpurpose="Wordindex"
+columnindexpurpose="Column"
 curcharindex=-1
 curlineindex=-1
 linepurpose="Line"
@@ -282,6 +283,7 @@ for filename in dircontent:
         curcharindex=-1
         curwordindex=-1
         line=-1
+        column=-1
         tagging=""
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==purpose and purpose=="Transliteration": 
@@ -294,6 +296,8 @@ for filename in dircontent:
                 line=annoobj["value"]   
             elif annoobj["purpose"]==taggingpurpose:
                 tagging=annoobj["value"]
+            elif annoobj["purpose"]==columnindexpurpose:
+                column=annoobj["value"]
         if purpose=="Line" and "Line" in str(tagging):
             translit="Line"+line
         if purpose=="Line" and translit=="":
@@ -363,7 +367,9 @@ for filename in dircontent:
         else:
             translits[charclass]=1
         if charclass=="other":
-            if str(translit)!="":
+            if str(translit)!="" and str(column)!="-1":
+                unknownchars+=str(translit)+" - "+str(filename)+" "+str(column)+" "+str(line)+" "+str(curcharindex)+"\n"
+            elif str(translit)!="":
                 unknownchars+=str(translit)+" - "+str(filename)+" "+str(line)+" "+str(curcharindex)+"\n"
             #print(str(translit))
         if str(translit)=="":
@@ -510,17 +516,21 @@ for filename in dircontent:
                 outputcsv+=savedfilename+";"
                 if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                     outputcsv+=hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+";"
-                    outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
-                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
+            
+                    if column!=-1:
+                        outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+";"
+                    else:
+                        outputcsv+=cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_"+filename[filename.rfind("_")+1:].replace(".png.json","")+"_char_"+str(line)+"_"+str(curcharindex)+";"
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+"> rdf:type lemon:Character .\n")
                     ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> rdf:type cunei:Tablet .\n")
                     ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"> cidoc:includes <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
                     ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> rdf:type cidoc:TX1_WrittenText .\n")
-                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
-                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
-                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
-                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+"> rdfs:label \""+str(translit)+"\"@en .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+"> my:text  <"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_text> .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+"> my:line  \""+str(line)+"\"^^xsd:integer .\n")
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+"> my:charindex  \""+str(curcharindex)+"\"^^xsd:integer .\n")  
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> rdf:type lemon:Character .\n")      
-                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
+                    ttlstring.add("<"+cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)+"> my:unicode <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n") 
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"> cidoc:isDepictedBy <"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> .\n")
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> rdf:type cidoc:Glyph .\n")
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> cidoc:refersTo  <"+cdlinamespace+urllib.parse.quote(str(charclass))+"> .\n")
@@ -537,7 +547,7 @@ for filename in dircontent:
                     outputcsv+=languages[per]["language"].replace(" ","_")+";"+languages[per]["genre"].replace(" ","_")+";"
                 else:
                     outputcsv+=";;" 
-                outputcsv+=str(coords)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
+                outputcsv+=str(coords)+";"+str(column)+";"+str(line)+";"+str(curcharindex)+";"+str(charclass)+";"+str(translit)+"\n"      
             arffdata+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg,"+str(charclass)+"\n"
             if not charclass in arffthresholdlines:
                 arffthresholdlines[charclass]=""
