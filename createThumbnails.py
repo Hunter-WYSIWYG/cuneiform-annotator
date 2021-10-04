@@ -605,7 +605,7 @@ for filename in dircontent:
         totalexpectedchars+=translitcount[filename]
         totalcountedchars+=len(jsondata)
         if int(translitcount[filename])!=0:
-            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+","+str(indexedcount)+","+str(translitcount[filename])+","+str(indexedcount/int(translitcount[filename]))*100)+"\n"
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+","+str(indexedcount)+","+str(translitcount[filename])+","+str((indexedcount/int(translitcount[filename]))*100)+"\n"
             translitstatsJSON[filename]=str((len(jsondata)/int(translitcount[filename]))*100)
         else:
             translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+",100,"+str(indexedcount)+","+str(len(jsondata))+",100\n"
