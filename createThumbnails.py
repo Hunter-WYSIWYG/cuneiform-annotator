@@ -622,7 +622,7 @@ graph.parse(data=json.dumps(completejsonld),format='json-ld')
 print("FINAL EXPORTS")
 if totalexpectedchars==0:
     totalexpectedchars=1
-translitstats+="Total,"+str(totalcountedchars)+","+str(totalexpectedchars)+","+str((totalcountedchars/totalexpectedchars)*100)+","+str(totalindexedchars)+","str(totalexpectedchars)+","+str((totalindexedchars/totalexpectedchars)*100)+"\n"
+translitstats+="Total,"+str(totalcountedchars)+","+str(totalexpectedchars)+","+str((totalcountedchars/totalexpectedchars)*100)+","+str(totalindexedchars)+","+str(totalexpectedchars)+","+str((totalindexedchars/totalexpectedchars)*100)+"\n"
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffthresholdexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
