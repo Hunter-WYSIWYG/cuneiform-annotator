@@ -107,7 +107,7 @@ with open('js/periods.js') as f:
 
 homepagejson={}
 
-outputcsv="ID;Filename;CDLI_Number;IRI;Time_period;Language;side;bbox;column;line;charindex;charname;transliteration\n"
+outputcsv="ID;Filename;CDLI_Number;IRI;;Time_period;Language;Genre;side;bbox;column;line;charindex;charname;transliteration\n"
 
 linecsv=""
 
