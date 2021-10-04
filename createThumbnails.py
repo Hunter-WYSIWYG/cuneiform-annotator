@@ -553,6 +553,7 @@ for filename in dircontent:
             print(e)
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])
+            print("char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n")
             errorlog+="char;"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
         #f.close()
         width=0
@@ -597,7 +598,8 @@ for filename in dircontent:
             e = sys.exc_info()[0]
             print(e)
             print(sys.exc_info()[1])
-            print(sys.exc_info()[2])   
+            print(sys.exc_info()[2])
+            print("line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n")
             errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
     if filename in translitcount:
         totalexpectedchars+=translitcount[filename]
