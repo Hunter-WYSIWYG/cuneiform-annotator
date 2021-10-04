@@ -121,7 +121,7 @@ zooniverse_char_verify_ref="image;ref;charclass;transliteration\n"
 
 zooniverse_char_verify_line="image;line;charclass;transliteration\n"
 
-translitstats="filename,annotations,expected,percentage\n"
+translitstats="filename,annotations,expected,percentage,indexedannotations,expected,percentage\n"
 
 translitstatsJSON={}
 
@@ -252,15 +252,7 @@ for filename in dircontent:
         print(sys.exc_info()[1])
         print(sys.exc_info()[2])
         continue
-    if filename in translitcount:
-        totalexpectedchars+=translitcount[filename]
-        totalcountedchars+=len(jsondata)
-        if int(translitcount[filename])!=0:
-            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+"\n"
-            translitstatsJSON[filename]=str((len(jsondata)/int(translitcount[filename]))*100)
-        else:
-            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+",100\n"
-            translitstatsJSON[filename]="100"
+    indexedcount=0
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
@@ -299,6 +291,8 @@ for filename in dircontent:
                 tagging=annoobj["value"]
             elif annoobj["purpose"]==columnindexpurpose:
                 column=annoobj["value"]
+        if line!=-1 and charindex!=-1:
+            indexcount+=1
         if purpose=="Line" and "Line" in str(tagging):
             translit="Line"+line
         if purpose=="Line" and translit=="":
@@ -605,6 +599,15 @@ for filename in dircontent:
             print(sys.exc_info()[1])
             print(sys.exc_info()[2])   
             errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
+    if filename in translitcount:
+        totalexpectedchars+=translitcount[filename]
+        totalcountedchars+=len(jsondata)
+        if int(translitcount[filename])!=0:
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+","+str(indexedcount)+","+str(translitcount[filename])+","+str((len(indexedcount)/int(translitcount[filename]))*100)+"\n"
+            translitstatsJSON[filename]=str((len(jsondata)/int(translitcount[filename]))*100)
+        else:
+            translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+",100,"+str(indexedcount)+","+str(len(jsondata))+",100\n"
+            translitstatsJSON[filename]="100"
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
