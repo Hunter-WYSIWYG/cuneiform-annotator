@@ -145,6 +145,7 @@ dc = "http://purl.org/dc/elements/1.1/"
 
 totalexpectedchars=0
 totalcountedchars=0
+totalindexedchars=0
 seenchars={}
 chardistributionstats={}
 
@@ -375,7 +376,7 @@ for filename in dircontent:
         savedfilename=""
         try:
             #f=open("temp.jpg", "rb")
-            print("Temp.jpg? "+os.path.isfile("temp.jpg"))
+            print("Temp.jpg? "+str(os.path.isfile("temp.jpg")))
             with Image.open("temp.jpg") as img:
                 width=img.width
                 height=img.height
@@ -605,6 +606,7 @@ for filename in dircontent:
     if filename in translitcount:
         totalexpectedchars+=translitcount[filename]
         totalcountedchars+=len(jsondata)
+        totalindexedchars+=indexedcount
         if int(translitcount[filename])!=0:
             translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+","+str(indexedcount)+","+str(translitcount[filename])+","+str((indexedcount/int(translitcount[filename]))*100)+"\n"
             translitstatsJSON[filename]=str((len(jsondata)/int(translitcount[filename]))*100)
@@ -620,7 +622,7 @@ graph.parse(data=json.dumps(completejsonld),format='json-ld')
 print("FINAL EXPORTS")
 if totalexpectedchars==0:
     totalexpectedchars=1
-translitstats+="Total,"+str(totalcountedchars)+","+str(totalexpectedchars)+","+str((totalcountedchars/totalexpectedchars)*100)+"\n"
+translitstats+="Total,"+str(totalcountedchars)+","+str(totalexpectedchars)+","+str((totalcountedchars/totalexpectedchars)*100)+","+str(totalindexedchars)+","str(totalexpectedchars)+","+str((totalindexedchars/totalexpectedchars)*100)+"\n"
 arffexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffthresholdexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
 arffperiodsexport="@RELATION "+purpose+"\n@ATTRIBUTE\tfilename\tstring\n@ATTRIBUTE\tclass\t{"
