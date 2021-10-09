@@ -701,21 +701,24 @@ f.close()
 f = open(exportdir+"/translitstats.csv", 'w')
 f.write(translitstats)
 f.close()
-sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
-acc_translitstats={}
-for translit in sort_translitstats:
-    if not str(translit[1]) in acc_translitstats:
-        acc_translitstats[str(translit[1])]=0
-    acc_translitstats[str(translit[1])]+=1
-f = open(exportdir+"/charperperiod.csv", 'w')
-sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
-acc_charperiods={}
-for charr in sort_charperiods:
-    f.write(str(charr[0])+","+str(charr[1])+"\n")
-    if not str(charr[1]) in acc_charperiods:
-        acc_charperiods[str(charr[1])]=0
-    acc_charperiods[str(charr[1])]+=1
-f.close()
+try:
+    sort_translitstats = sorted(translitstatsJSON.items(), key=lambda x: x[1])
+    acc_translitstats={}
+    for translit in sort_translitstats:
+        if not str(translit[1]) in acc_translitstats:
+            acc_translitstats[str(translit[1])]=0
+        acc_translitstats[str(translit[1])]+=1
+    f = open(exportdir+"/charperperiod.csv", 'w')
+    sort_charperiods = sorted(charperperiod.items(), key=lambda x: x[1])
+    acc_charperiods={}
+    for charr in sort_charperiods:
+        f.write(str(charr[0])+","+str(charr[1])+"\n")
+        if not str(charr[1]) in acc_charperiods:
+            acc_charperiods[str(charr[1])]=0
+        acc_charperiods[str(charr[1])]+=1
+    f.close()
+except:
+    print("error")
 f = open(exportdir+"/acc_charperperiod.csv", 'w')
 f.write("AmountOfChars,NumberPeriods\n")
 for charr in acc_charperiods:
