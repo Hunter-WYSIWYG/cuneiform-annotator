@@ -608,10 +608,10 @@ for filename in dircontent:
         totalindexedchars+=indexedcount
         if int(translitcount[filename])!=0:
             translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+","+str((len(jsondata)/int(translitcount[filename]))*100)+","+str(indexedcount)+","+str(translitcount[filename])+","+str((indexedcount/int(translitcount[filename]))*100)+"\n"
-            translitstatsJSON[filename]=str((len(jsondata)/int(translitcount[filename]))*100)
+            translitstatsJSON[filename]={"annotationcompleteness":str((len(jsondata)/int(translitcount[filename]))*100),"indexingcompleteness":str((indexedcount/int(translitcount[filename]))*100)}
         else:
             translitstats+=filename+","+str(len(jsondata))+","+str(translitcount[filename])+",100,"+str(indexedcount)+","+str(len(jsondata))+",100\n"
-            translitstatsJSON[filename]="100"
+            translitstatsJSON[filename]={"annotationcompleteness":"100","indexingcompleteness":"100"}
 if not singlefolder:
     f = open("public/js/thumbnails.js", 'w')
     f.write("var thumbnails="+json.dumps(homepagejson))
