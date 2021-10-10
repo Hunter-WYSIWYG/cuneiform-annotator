@@ -709,7 +709,7 @@ async function getAnnotation(path){
     }else{
       $('#annocomplete').html("Unknown")
     }
-    $('#indexingcomplete').html((indexedchars/translitcount[$('#imageside option:selected').text()+".json"]*100).toFixed(2)+"% ("+indexedchars+"/"+translitcount[$('#imageside option:selected').text()+")")
+    $('#indexingcomplete').html((indexedchars/translitcount[$('#imageside option:selected').text()+".json"]*100).toFixed(2)+"% ("+indexedchars+"/"+translitcount[$('#imageside option:selected').text()+".json"]+")")
   }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations([]);})
 
     // Attach handlers to listen to events
