@@ -769,7 +769,7 @@ function highlightIndexedChars(){
   console.log(indexedcharids)
   console.log(indexedhiglighted)
   for(indchar of indexedcharids){
-    var element=document.querySelector('.a9s-annotation[data-id="'+indchar+'"]')
+    var element=document.querySelector('.a9s-annotation[data-id="'+indchar+'"]:nth-child(2)')
     console.log(element)
     if(!indexedhiglighted){
       element.classList.add("indexhighlight");     
