@@ -625,9 +625,13 @@ async function getAnnotation(path){
       curanno[a["id"]]=a
     });
   }
+
+  var indexedchars=0
+
   function reinit(param){
     param=$('#imageside option:selected').val()
     param2=$('#imageside option:selected').text()
+
     $('.imagelink').css({"backgroundColor": "#f7f7f9", "color": "#bd4147","border": "0px"})
     /*if(typeof viewer === 'undefined'){
           viewer = OpenSeadragon({
@@ -662,6 +666,7 @@ async function getAnnotation(path){
     $('#annocomplete').html("Unknown")
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
+          indexedchars=0
     annotations=[]
     for(ann in result){
       line=-1
@@ -677,6 +682,7 @@ async function getAnnotation(path){
         }
       }
       if(charindex!=-1 && line!=-1){
+        indexedchars+=1
         side=param2.replace(".png","")
         console.log("COLINDEX!!! "+colindex)
         if(colindex!=-1){
@@ -702,6 +708,7 @@ async function getAnnotation(path){
     }else{
       $('#annocomplete').html("Unknown")
     }
+    $('#indexingcomplete').html((indexedchars/translitcount[$('#imageside option:selected').text()+".json"]*100).toFixed(2)+"% ("+indexedchars+"/"+/translitcount[$('#imageside option:selected').text()+")")
   }).fail(function(jqXHR, textStatus, errorThrown) { anno.setAnnotations([]);})
 
     // Attach handlers to listen to events
