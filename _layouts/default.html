@@ -767,7 +767,7 @@ function getEXIFData(imageid,targetid){
 
 function highlightIndexedChars(highlight){
   for(indchar of indexedcharids){
-    var element=document.querySelector('.a9s-annotation[id="'+indchar+'"]')
+    var element=document.querySelector('.a9s-annotation[data-id="'+indchar+'"]')
     if(!indexedhiglighted){
       element.classList.add("indexhighlight");     
     }else{
