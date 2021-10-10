@@ -53,13 +53,14 @@
 .hover { background-color: rgba(0,0,0,0.1) !important; }
 .unselected { background-color: rgba(0,0,0,0.5); }
 .selected { background-color: none; }
+.indexhighlight {border-color: red}
 </style>
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><br/>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
 function sleep (time) {
@@ -68,6 +69,7 @@ function sleep (time) {
 
 var threedimageToIndex={};
 var indexedcharids=[]
+var indexedhiglighted=false
 function formatTranslation(transliteration){
   result=""
   termmap={"@obverse":"front","@reverse":"back","@left":"left","@right":"right","@top":"top","@bottom":"bottom"}
@@ -669,6 +671,7 @@ async function getAnnotation(path){
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
           indexedchars=0
+          indexedhiglighted=false
           indexedcharids=[]
     annotations=[]
     for(ann in result){
@@ -754,8 +757,16 @@ function getEXIFData(imageid,targetid){
     });
 }
 
-function highlightIndexedChars(){
-
+function highlightIndexedChars(highlight){
+  for(indchar of indexedcharids){
+    var element=document.querySelector('.a9s-annotation[id="'+indchar+'"]')
+    if(!indexedhiglighted){
+      element.classList.add("indexhighlight");     
+    }else{
+      element.classList.remove("indexhighlight");
+    }
+  }
+  indexedhiglighted=!indexedhiglighted
 }
 </script>
 <div>
