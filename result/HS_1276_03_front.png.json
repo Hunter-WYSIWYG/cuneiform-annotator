@@ -1031,6 +1031,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "8"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
       }
     ],
     "target": {
@@ -1059,6 +1073,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "8"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
       }
     ],
     "target": {
@@ -1087,6 +1115,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "8"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
       }
     ],
     "target": {
@@ -1115,6 +1157,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "8"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
       }
     ],
     "target": {
@@ -1143,6 +1199,20 @@
         "type": "TextualBody",
         "value": "Character",
         "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "8"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "6",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
       }
     ],
     "target": {
@@ -1258,5 +1328,47 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#f984c050-e270-4eee-9416-8c858ccae1fe"
+  },
+  "#9255fe8f-1fc1-4ec6-9540-2519df032332": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "1(disz)",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "8"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 856,
+          "y": 1078
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114192:578373/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"20.08438491821289,963.4796752929688 70.63714599609375,968.8576049804688 60.95682907104492,1053.8292236328125 16.85761260986328,1046.3001708984375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#9255fe8f-1fc1-4ec6-9540-2519df032332"
   }
 }
