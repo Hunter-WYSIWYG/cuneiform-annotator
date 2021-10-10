@@ -769,12 +769,12 @@ function highlightIndexedChars(){
   console.log(indexedcharids)
   console.log(indexedhiglighted)
   for(indchar of indexedcharids){
-    var element=document.querySelector('.a9s-annotation[data-id="'+indchar+'"]:nth-child(2)')
+    var element=document.querySelector('.a9s-annotation[data-id="'+indchar+'"]').children
     console.log(element)
     if(!indexedhiglighted){
-      element.classList.add("indexhighlight");     
+      element[1].classList.add("indexhighlight");     
     }else{
-      element.classList.remove("indexhighlight");
+      element[1].classList.remove("indexhighlight");
     }
   }
   indexedhiglighted=!indexedhiglighted
