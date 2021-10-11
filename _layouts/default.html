@@ -696,7 +696,7 @@ async function getAnnotation(path){
           colindex=bod["value"]
         }
       }
-      if(charindex!=-1 && line!=-1){
+      if(charindex!=-1 && charindex!="" && line!=-1 && line!=""){
         indexedcharids.push(ann)
         indexedchars+=1
         side=param2.replace(".png","")
