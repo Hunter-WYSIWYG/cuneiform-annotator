@@ -382,15 +382,20 @@ $(document).ready(function () {
 
 </script>
 <script>
-	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleocodage":true},
-	"Transliteration":{"inputtype":"text","regex":"","handler":null},
-  "UnicodeCharName":{"inputtype":"select","regex":"","handler":null,"data":charlistmap},
-  "Column":{"inputtype":"number","regex":"","handler":null},
-	"Line":{"inputtype":"number","regex":"","handler":null},
-  "Charindex":{"inputtype":"number","regex":"","handler":null},
-  "Wordindex":{"inputtype":"number","regex":"","handler":null}
+
+  var curnamespace="http://purl.org/cuneiform/"
+
+	var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleocodage":true,"uri":curnamespace="PaleoCode"},
+	"Transliteration":{"inputtype":"text","regex":"","handler":null,"uri":curnamespace="Transliteration"},
+  "UnicodeCharName":{"inputtype":"select","regex":"","handler":null,"data":charlistmap,"uri":curnamespace="CharacterName"},
+  "Column":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace="Column"},
+	"Line":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace="Line"},
+  "Charindex":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace="Charindex"},
+  "Wordindex":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace="Wordindex"}
 	}
-	  
+
+
+
 	var TextMapWidget = function(args) {
 
   var addTag = function(evt) {
@@ -404,12 +409,23 @@ $(document).ready(function () {
 		}
 	}
   if(removeindex==-1){
-	  args.annotation.underlying.body.push({
+    if(evt.target.id in mappings){
+	    args.annotation.underlying.body.push({
+        type: 'TextualBody',
+        purpose: evt.target.id,
+        source: mappings[evt.target.id],
+        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
+        value: evt.srcElement.value
+      });
+    }else{
+	    args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
         //dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
-    });
+      });
+    }
+
   }else{
     args.annotation.underlying.body[removeindex].value=evt.srcElement.value
     args.annotation.underlying.body[removeindex].dimensions=viewer.world.getItemAt(0).getContentSize()
