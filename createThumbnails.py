@@ -288,6 +288,9 @@ for filename in dircontent:
                 curwordindex=annoobj["value"]
             elif annoobj["purpose"]==linepurpose:
                 line=annoobj["value"]   
+            elif annoobj["purpose"]==taggingpurpose and annoobj["value"]=="Character":
+                annoobj["purpose"]="classifying"
+                tagging=annoobj["value"]
             elif annoobj["purpose"]==taggingpurpose:
                 tagging=annoobj["value"]
             elif annoobj["purpose"]==columnindexpurpose:
@@ -298,6 +301,13 @@ for filename in dircontent:
             translit="Line"+line
         if purpose=="Line" and translit=="":
             continue
+        shortfilename=filename[0:filename.rfind("_")]
+        if purpose!="Line":
+            if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
+                jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"linking","value":cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)})
+        f = open(exportdir+"annotations/"+filename, 'w')
+        f.write(json.dumps(jsondata,indent=2))
+        f.close()
         if line!=-1:
             if not "line"+str(line) in maxcoords:
                 maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
