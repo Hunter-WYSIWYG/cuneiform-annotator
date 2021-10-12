@@ -17,11 +17,15 @@ imageclassification:
   - mkdir classification/line
   - mkdir classification/char
   - mkdir classification/word
+  - mkdir classification/annotations
+  - mkdir classification/3dannotations
   - mkdir classification/char_annotated
   - mkdir classification/normalized_signs_comp
   - mkdir classification/normalized_signs_na
   - mkdir classification/normalized_signs_ob
-  - python3 createThumbnails.py classification true Transliteration
+  - cp result/* classification/annotations/
+  - cp result3d/* classification/3dannotations/
+  - python3 createThumbnails.py classification true 
   #- python3 createThumbnails.py classification/line/ true Line
   artifacts:
     paths:
