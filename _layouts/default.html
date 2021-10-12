@@ -409,11 +409,11 @@ $(document).ready(function () {
 		}
 	}
   if(removeindex==-1){
-    if(evt.target.id in mappings){
+    if(evt.target.id in mappings && "uri" in mappings[evt.target.id]){
 	    args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
-        source: mappings[evt.target.id],
+        source: mappings[evt.target.id]["uri"],
         //dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
       });
