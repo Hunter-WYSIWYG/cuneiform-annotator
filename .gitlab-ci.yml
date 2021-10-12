@@ -24,7 +24,7 @@ imageclassification:
   - mkdir classification/normalized_signs_na
   - mkdir classification/normalized_signs_ob
   - cp result/* classification/annotations/
-  - cp result3d/* classification/3dannotations/
+  #- cp result3d/* classification/3dannotations/
   - python3 createThumbnails.py classification true 
   #- python3 createThumbnails.py classification/line/ true Line
   artifacts:
