@@ -57,6 +57,18 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#9693b0ac-cfb2-4cc5-bfac-b1a3128a69ed",
-    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    }
   }
 }

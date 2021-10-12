@@ -11,6 +11,22 @@ mlVocabulary={"Broken":curnamespace+"Broken","Column":curnamespace+"Column","Rel
 
 licenseOfImages="https://creativecommons.org/licenses/by-sa/4.0/"
 
+creatorstatement={
+    "id": "https://orcid.org/0000-0002-9499-5840",
+    "type": "Person",
+    "name": "Timo Homburg",
+    "nickname": "situx",
+  }
+
+softwarecreatorstatement= {
+    "id": "https://github.com/recogito/annotorious-openseadragon",
+    "type": "Software",
+    "name": "Annotorious-OpenSeadragon 1.5.6",
+    "homepage": "https://github.com/recogito/annotorious-openseadragon"
+}
+
+withcredits=True
+
 with open('js/transliterations.js', 'r') as myfile:
     data=myfile.read()
 
@@ -74,6 +90,12 @@ def processWebAnnotation(filepath,charmapping,curline):
         curcharindex=-1
         line=-1
         tagging=""
+        if withcredits and not "creator" in jsondata[annotation]:
+            jsondata[annotation]["creator"]=creatorstatement
+            changed=True
+        if withcredits and not "generator" in jsondata[annotation]:
+            jsondata[annotation]["generator"]=softwarecreatorstatement
+            changed=True
         if not "rights" in jsondata[annotation]:
             jsondata[annotation]["rights"]="https://creativecommons.org/publicdomain/zero/1.0/"
             changed=True
