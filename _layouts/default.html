@@ -541,7 +541,7 @@ async function commit3DBBOX(){
 //console.log(users)
 }
 
-var curnamespace="http://purl.org/olia/olia.owl#"
+var curnamespace="http://purl.org/cuneiform/"
 
 var mlVocabulary=[{"label":"Broken","uri":curnamespace+"Broken"},{"label":"Character","uri":curnamespace+"Character"},{"label":"Line","uri":curnamespace+"Line"},{"label":"Image","uri":curnamespace+"Image"},{"label":"Word","uri":curnamespace+"Word"},{"label":"Seal","uri":curnamespace+"Seal"},{"label":"Phrase","uri":curnamespace+"Phrase"},{"label":"Erased","uri":curnamespace+"Erased"},{"label":"StrikeOut","uri":curnamespace+"StrikeOut"},{"label":"Wordstart","uri":curnamespace+"Wordstart"},{"label":"Wordend","uri":curnamespace+"Wordend"},{"label":"InWord","uri":curnamespace+"InWord"},{"label":"UnknownIfWord","uri":curnamespace+"UnknownIfWord"}]
 
@@ -572,6 +572,11 @@ async function getAnnotation(path){
     viewer = OpenSeadragon({
       id: "openseadragon",
       prefixUrl: "openseadragon/images/",
+      degrees: 90,
+      showRotationControl: true,
+      gestureSettingsTouch: {
+        pinchRotate: true
+      },
       tileSources: {
         type: "image",
         url: "https://heidicon.ub.uni-heidelberg.de/iiif/2/1127792:592134/full/full/0/default.jpg"
