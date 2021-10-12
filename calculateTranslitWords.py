@@ -9,6 +9,8 @@ curnamespace="http://purl.org/cuneiform/"
 
 mlVocabulary={"Broken":curnamespace+"Broken","Column":curnamespace+"Column","RelCharindex":curnamespace+"RelativeCharacterIndex","Charindex":curnamespace+"CharacterIndex","Wordindex":curnamespace+"WordIndex","Transliteration":curnamespace+"Transliteration","CharacterName":curnamespace+"CharacterName","PaleoCode":curnamespace+"PaleoCode","Line":curnamespace+"LineIndex","Character":curnamespace+"Character","Line":curnamespace+"Line","Image":curnamespace+"Image","Word":curnamespace+"Word","Seal":curnamespace+"Seal","Phrase":curnamespace+"Phrase","Erased":curnamespace+"Erased","StrikeOut":curnamespace+"StrikeOut","Wordstart":curnamespace+"Wordstart","Wordend":curnamespace+"Wordend","InWord":curnamespace+"InWord","UnknownIfWord":curnamespace+"UnknownIfWord"}
 
+licenseOfImages="https://creativecommons.org/licenses/by-sa/4.0/"
+
 with open('js/transliterations.js', 'r') as myfile:
     data=myfile.read()
 
@@ -72,6 +74,12 @@ def processWebAnnotation(filepath,charmapping,curline):
         curcharindex=-1
         line=-1
         tagging=""
+        if not "rights" in jsondata[annotation]:
+            jsondata[annotation]["rights"]="https://creativecommons.org/publicdomain/zero/1.0/"
+            changed=True
+        if "target" in jsondata[annotation] and not "rights" in jsondata[annotation]["target"]:
+            jsondata[annotation]["target"]["rights"]=licenseOfImages
+            changed=True
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==charindexpurpose:
                 curcharindex=annoobj["value"]
