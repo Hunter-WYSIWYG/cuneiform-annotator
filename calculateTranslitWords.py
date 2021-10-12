@@ -5,6 +5,10 @@ import re
 
 mappings={"@obvers":"03_front","@obverse":"03_front","@revers":"06_back","@reverse":"06_back","@left":"02_left","@right":"04_right","@top":"01_top","@bottom":"05_bottom","@seal":"seal","@colophon":"colophon"}
 
+curnamespace="http://purl.org/cuneiform/"
+
+mlVocabulary={"Broken":curnamespace+"Broken","Column":curnamespace+"Column","RelCharindex":curnamespace+"RelativeCharacterIndex","Charindex":curnamespace+"CharacterIndex","Wordindex":curnamespace+"WordIndex","Transliteration":curnamespace+"Transliteration","CharacterName":curnamespace+"CharacterName","PaleoCode":curnamespace+"PaleoCode","Line":curnamespace+"LineIndex","Character":curnamespace+"Character","Line":curnamespace+"Line","Image":curnamespace+"Image","Word":curnamespace+"Word","Seal":curnamespace+"Seal","Phrase":curnamespace+"Phrase","Erased":curnamespace+"Erased","StrikeOut":curnamespace+"StrikeOut","Wordstart":curnamespace+"Wordstart","Wordend":curnamespace+"Wordend","InWord":curnamespace+"InWord","UnknownIfWord":curnamespace+"UnknownIfWord"}
+
 with open('js/transliterations.js', 'r') as myfile:
     data=myfile.read()
 
@@ -82,6 +86,14 @@ def processWebAnnotation(filepath,charmapping,curline):
                 relcharindex=annoobj["value"]
                 #print("Relcharindex: "+str(relcharindex))
                 relcharindexobject=annoobj
+            if annoobj["purpose"] in mlVocabulary and not "source" in annoobj and annoobj["purpose"] in mlVocabulary:
+                annoobj["source"]=mlVocabulary[annoobj["purpose"]]
+                changed=True
+            if annoobj["purpose"]=="tagging" and not "source" in annoobj and annoobj["value"] in mlVocabulary:
+                annoobj["source"]=mlVocabulary[annoobj["value"]]
+                changed=True
+            #if annoobj["purpose"]=="tagging" and annoobj["value"]=="Character":
+            #annoobj["purpose"]="classifying"
         print("Line: "+str(line)+" - "+str(curline))
         if curcharindex!=-1 and line!=-1 and line==curline and "c"+str(curcharindex) in charmapping:
             print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
