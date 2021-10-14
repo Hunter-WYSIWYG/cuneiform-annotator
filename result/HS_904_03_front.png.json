@@ -1371,6 +1371,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 938,
+          "y": 942
+        }
       }
     ],
     "target": {
@@ -2009,6 +2019,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 938,
+          "y": 942
+        }
       }
     ],
     "target": {
@@ -2080,5 +2100,51 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#f724e59a-f1ad-40b7-9401-26662227d16a"
+  },
+  "#bfccb26d-6861-44ee-86d0-3b0583dc0b22": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "1(asz@c)",
+        "dimensions": {
+          "x": 938,
+          "y": 942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 938,
+          "y": 942
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126529:590895/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"168.5344696044922,68.21379089355469 108.44136047363281,99.0724105834961 77.5827407836914,154.29310607910156 149.04481506347656,136.42758178710938\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bfccb26d-6861-44ee-86d0-3b0583dc0b22"
   }
 }
