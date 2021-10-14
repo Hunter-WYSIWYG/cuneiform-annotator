@@ -103,6 +103,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
       }
     ],
     "target": {
@@ -535,6 +545,22 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "3"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
       }
     ],
     "target": {
@@ -1016,5 +1042,111 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#e80a3dc4-0ad3-47a9-90a9-0a51948593a2": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "ir",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "3"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "3",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126532:590898/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"796.5758666992188,487.2413635253906 679.637939453125,479.12066650390625 674.7655029296875,596.05859375 796.5758666992188,589.5620727539062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e80a3dc4-0ad3-47a9-90a9-0a51948593a2"
+  },
+  "#429d6939-507d-45ea-8aac-ba4e39b61195": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "da",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "3"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "3",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 937,
+          "y": 942
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126532:590898/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"916.7620239257812,464.5034484863281 796.5758666992188,477.4965515136719 793.3275756835938,639.9103393554688 902.144775390625,641.5344848632812\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#429d6939-507d-45ea-8aac-ba4e39b61195"
   }
 }
