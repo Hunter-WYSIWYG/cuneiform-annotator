@@ -2058,9 +2058,23 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"905.5930786132812,313.2689514160156 755.8689575195312,304.05517578125 753.5654907226562,412.3172302246094 910.2000122070312,416.92413330078125\"></polygon></svg>"
-      }
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#f738cb44-7537-4bf5-a98a-ad5103dda46d"
+    "id": "#f738cb44-7537-4bf5-a98a-ad5103dda46d",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }
