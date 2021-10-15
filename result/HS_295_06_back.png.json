@@ -13,6 +13,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -53,6 +63,22 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -93,6 +119,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -133,6 +169,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -213,6 +259,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "6",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -253,6 +309,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "8",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -293,6 +359,22 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "7",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -333,6 +415,16 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
       }
     ],
     "target": {
@@ -606,5 +698,51 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#04c59235-884f-45a7-8690-1e391cad46df": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "u3",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 1222,
+          "y": 890
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123328:587686/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"752.2938232421875,47.85000228881836 565.175048828125,45.94062805175781 555.628173828125,160.50314331054688 742.7469482421875,152.86563110351562\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#04c59235-884f-45a7-8690-1e391cad46df"
   }
 }
