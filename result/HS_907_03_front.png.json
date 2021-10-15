@@ -99,6 +99,12 @@
           "y": 1457
         },
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "1"
       }
     ],
     "target": {
@@ -1965,7 +1971,7 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "",
+        "value": "2",
         "dimensions": {
           "x": 1496,
           "y": 1457
@@ -1981,6 +1987,16 @@
           "y": 1457
         },
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "1",
+        "dimensions": {
+          "x": 1496,
+          "y": 1457
+        }
       }
     ],
     "target": {
@@ -2035,8 +2051,12 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "",
-        "source": "http://purl.org/cuneiform/Line"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line",
+        "dimensions": {
+          "x": 1496,
+          "y": 1457
+        }
       },
       {
         "type": "TextualBody",
