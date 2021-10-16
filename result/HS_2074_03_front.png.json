@@ -6896,5 +6896,65 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#81ea42f9-133e-4206-9f35-4b006f32e913"
+  },
+  "#8a371e6f-9433-4864-8bf2-7c7f6e020da7": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "igi",
+        "dimensions": {
+          "x": 1230,
+          "y": 2442
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119154:583524/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"258.6188659667969,392.2301940917969 351.6812438964844,392.2301940917969 343.2210388183594,505.5970764160156 263.69500732421875,502.2129821777344\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#8a371e6f-9433-4864-8bf2-7c7f6e020da7"
+  },
+  "#44247d81-2674-4783-b35d-5b054d94fc60": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "sal",
+        "dimensions": {
+          "x": 1230,
+          "y": 2442
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119154:583524/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"172.32467651367188,383.7699890136719 258.6188659667969,382.07794189453125 258.6188659667969,510.6732177734375 175.70877075195312,505.5970764160156\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#44247d81-2674-4783-b35d-5b054d94fc60"
   }
 }
