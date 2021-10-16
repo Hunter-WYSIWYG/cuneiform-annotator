@@ -54,5 +54,35 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#1d5a9472-02a4-4f05-affb-de0fa124462c"
+  },
+  "#c3b544da-7b82-4ffa-b507-c09b75ddbb7d": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "ama",
+        "dimensions": {
+          "x": 1523,
+          "y": 2848
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115764:579950/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"190.96478271484375,812.8675537109375 52.5556755065918,823.8306274414062 49.81489944458008,932.0911865234375 173.14974975585938,912.9058227539062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c3b544da-7b82-4ffa-b507-c09b75ddbb7d"
   }
 }
