@@ -433,7 +433,7 @@ $(document).ready(function () {
 
   }else{
     args.annotation.underlying.body[removeindex].value=evt.srcElement.value
-    args.annotation.underlying.body[removeindex].dimensions=viewer.world.getItemAt(0).getContentSize()
+    args.annotation.underlying.target.dimensions=viewer.world.getItemAt(0).getContentSize()
   }
 	console.log(args)
   if(evt.target.id in mappings && "uri" in mappings[evt.target.id]){
