@@ -1038,8 +1038,8 @@ function setup3dhop() {
         xcoord=bbox[0]/25
         ycoord=bbox[1]/25
         zcoord=bbox[2]/25
-        console.log("0 - "+viewer.world.getItemAt(0).getContentSize()[0])
-        console.log("0 - "+viewer.world.getItemAt(0).getContentSize()[1])
+        console.log("0 - "+viewer.world.getItemAt(0).getContentSize())
+        console.log("0 - "+viewer.world.getItemAt(0).getContentSize())
         xcoordre=rescale(bbox[0],0,viewer.world.getItemAt(0).getContentSize()[0],hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0])
         ycoordre=rescale(bbox[1],0,viewer.world.getItemAt(0).getContentSize()[1],hs23D[$("#3dimages").text()]["bbox"]["min"][1],hs23D[$("#3dimages").text()]["bbox"]["max"][1])
         console.log(xcoordre+" - "+ycoordre)
