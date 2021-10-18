@@ -471,6 +471,18 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "10"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "4"
       }
     ],
     "target": {
@@ -479,7 +491,11 @@
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"668.2142333984375,1565.65869140625 782.5281372070312,1565.65869140625 779.5198974609375,1728.1048583984375 663.7017822265625,1731.1131591796875\"></polygon></svg>"
       },
-      "rights": "https://creativecommons.org/licenses/by-sa/4.0/"
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1050,
+        "y": 1809
+      }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#72f949a7-1899-4b10-a652-4f8748ecee1d",
@@ -1265,6 +1281,18 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "10"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "5"
       }
     ],
     "target": {
