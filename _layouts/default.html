@@ -1068,10 +1068,10 @@ function setup3dhop() {
         console.log(xlengthscale+" - "+ylengthscale)
         console.log(25/xlengthscale+" - "+25/ylengthscale)
         console.log([xlengthscale,ylength,zlength])
-        if(isNaN(xlengthscale) || ylengthscale==0){
+        if(isNaN(xlengthscale) || xlengthscale<=0){
           xlengthscale=0.1
         }
-        if(isNaN(ylengthscale) || ylengthscale==0){
+        if(isNaN(ylengthscale) || ylengthscale<=0){
           ylengthscale=0.1
         }
         xcoordre+=4
