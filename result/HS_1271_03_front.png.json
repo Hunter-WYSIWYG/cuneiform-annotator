@@ -6153,6 +6153,32 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "11",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
       }
     ],
     "target": {
@@ -6197,6 +6223,32 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "11",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
       }
     ],
     "target": {
@@ -6241,6 +6293,32 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "source": "http://purl.org/cuneiform/Column",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "11",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
       }
     ],
     "target": {
@@ -12014,5 +12092,55 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#4b572bf6-8d45-4f2c-bcac-3b58b6d8569c": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "erin2",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "11",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 2099,
+          "y": 3854
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114152:578327/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1102.5908203125,1540.975341796875 1237.0384521484375,1539.429931640625 1226.2208251953125,1710.966552734375 1108.7723388671875,1709.421142578125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#4b572bf6-8d45-4f2c-bcac-3b58b6d8569c"
   }
 }
