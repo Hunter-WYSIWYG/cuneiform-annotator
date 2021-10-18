@@ -1063,11 +1063,17 @@ function setup3dhop() {
         zlength=hs23D[$("#3dimages").text()]["bbox"]["max"][2]-hs23D[$("#3dimages").text()]["bbox"]["min"][2]
         xlengthanno=xcoordex-xcoordre
         ylengthanno=ycoordex-ycoordre
-        xlengthscale=25/xlengthanno
-        ylengthscale=25/ylengthanno
+        xlengthscale=1-(25/xlengthanno)
+        ylengthscale=1-(25/ylengthanno)
         console.log(xlengthscale+" - "+ylengthscale)
         console.log(25/xlengthscale+" - "+25/ylengthscale)
         console.log([xlength,ylength,zlength])
+        if(isNaN(xlengthscale)){
+          xlengthscale=0.1
+        }
+        if(isNaN(xlengthscale)){
+          ylengthscale=0.1
+        }
         xcoordre+=4
         /*if(xcoordre>=(xlength/2)){
           xcoordre-=(xlength/2)
