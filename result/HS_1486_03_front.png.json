@@ -616,5 +616,95 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d9a49c87-9aa8-4573-8766-adf426601d82"
+  },
+  "#715d8b91-4e41-41fd-8098-b474c5cb7a7a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "na"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115761:579947/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"475.9630126953125,738.2136840820312 386.9190979003906,742.3234252929688 381.4394836425781,835.47705078125 469.11346435546875,832.7372436523438\"></polygon></svg>"
+      },
+      "dimensions": {
+        "x": 1523,
+        "y": 2847
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#715d8b91-4e41-41fd-8098-b474c5cb7a7a"
+  },
+  "#df4fe90c-ea6e-400b-b8a5-046accb94903": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "ama"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115761:579947/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"189.64315795898438,1059.976806640625 67.72150421142578,1059.976806640625 63.611785888671875,1159.9798583984375 185.53343200683594,1149.0206298828125\"></polygon></svg>"
+      },
+      "dimensions": {
+        "x": 1523,
+        "y": 2847
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#df4fe90c-ea6e-400b-b8a5-046accb94903"
+  },
+  "#8f52da06-a8d5-4a75-b81b-2725a1d000a2": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "source": "http://purl.org/cuneiform/Transliteration",
+        "value": "ama"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115761:579947/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"192.38296508789062,1159.9798583984375 63.611785888671875,1165.45947265625 58.132164001464844,1258.6131591796875 188.27325439453125,1251.763671875\"></polygon></svg>"
+      },
+      "dimensions": {
+        "x": 1523,
+        "y": 2847
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#8f52da06-a8d5-4a75-b81b-2725a1d000a2"
   }
 }
