@@ -941,6 +941,12 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "4"
       }
     ],
     "target": {
@@ -1003,6 +1009,12 @@
         "purpose": "RelCharindex",
         "value": 0,
         "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "4"
       }
     ],
     "target": {
@@ -1115,6 +1127,18 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "4"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "3"
       }
     ],
     "target": {
@@ -1123,7 +1147,11 @@
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"446.4930419921875,586.703369140625 539.7344360351562,596.7447509765625 538.2999267578125,662.73095703125 443.62408447265625,641.2136840820312\"></polygon></svg>"
       },
-      "rights": "https://creativecommons.org/licenses/by-sa/4.0/"
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 827,
+        "y": 832
+      }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#5fc035e1-37bd-4f0b-b4a2-366c3d672e0b",
