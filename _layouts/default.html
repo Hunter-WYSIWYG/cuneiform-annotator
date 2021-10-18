@@ -69,8 +69,8 @@ function sleep (time) {
 
 function rescale(X, A, B, C, D){
   console.log("Input: "+X)
-  retval = ((X - A / (B - A)) * (D - C)) + C
-  console.log("Scale factor: "+(((B - A) * (D - C)) + C))
+  retval = (((X - A).toFixed(2) / (B - A)) * (D - C)) + C
+  console.log("Scale factor: "+((B - A) * (D - C)))
   console.log("Rescaled: "+retval)
   return retval
 }
