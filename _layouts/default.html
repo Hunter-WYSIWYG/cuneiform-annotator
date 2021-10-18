@@ -1038,8 +1038,8 @@ function setup3dhop() {
         //xcoord=bbox[0]/25
         //ycoord=bbox[1]/25
         //zcoord=bbox[2]/25
-        xcoordre=rescale(xcoord,0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0])
-        ycoordre=rescale(xcoord,0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][1],hs23D[$("#3dimages").text()]["bbox"]["max"][1])
+        xcoordre=rescale(bbox[0],0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0])
+        ycoordre=rescale(bbox[1],0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][1],hs23D[$("#3dimages").text()]["bbox"]["max"][1])
         /*
         console.log([xcoord,ycoord,zcoord])
         xlength=hs23D[$("#3dimages").text()]["bbox"]["max"][0]-hs23D[$("#3dimages").text()]["bbox"]["min"][0]
