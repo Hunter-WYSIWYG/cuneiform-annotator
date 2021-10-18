@@ -1070,7 +1070,7 @@ function setup3dhop() {
         console.log([xlengthscale,ylength,zlength])
         if(isNaN(xlengthscale) || xlengthscale<=0){
           xlengthscale=0.1
-          xcoordre+=4
+          xcoordre+=xlengthanno/2
         }else{
           
         }
@@ -1079,7 +1079,7 @@ function setup3dhop() {
         }else{
 
         }
-
+        xcoordre+=4
 
         /*if(xcoordre>=(xlength/2)){
           xcoordre-=(xlength/2)
