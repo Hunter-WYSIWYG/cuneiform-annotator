@@ -1041,6 +1041,7 @@ function setup3dhop() {
       if(spotcounter==0){
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([0.1, 0.1, 0.07]))
       }else if(dims!=[]){
+        console.log("DIMS: "+dims)
         console.log("0 - "+dims[0])
         console.log("0 - "+dims[1])
         xcoordre=rescale(bbox[0],0,dims[0],hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0])
