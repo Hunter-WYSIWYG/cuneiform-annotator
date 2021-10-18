@@ -1067,7 +1067,7 @@ function setup3dhop() {
         ylengthscale=1-(25/ylengthanno)
         console.log(xlengthscale+" - "+ylengthscale)
         console.log(25/xlengthscale+" - "+25/ylengthscale)
-        console.log([xlength,ylength,zlength])
+        console.log([xlengthscale,ylength,zlength])
         if(isNaN(xlengthscale)){
           xlengthscale=0.1
         }
@@ -1087,7 +1087,7 @@ function setup3dhop() {
         ycoordre=ydiff-2
         console.log(xcoordre+" - "+ycoordre)
         //console.log(xcoordre2+" - "+ycoordre2)
-        curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoordre,ycoordre,4.9]),SglMat4.scaling([xlengthscale, ylengthscale, 0.07]))
+        curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoordre,ycoordre,4.9]),SglMat4.scaling([1+xlengthscale, 1+ylengthscale, 0.07]))
         console.log(curspot["transform"]["matrix"])
       }else if("bbox" in hs23D[$("#3dimages").text()]){
         xcoord=bbox[0]/25
