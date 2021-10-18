@@ -1032,19 +1032,27 @@ function setup3dhop() {
       }
       console.log(res)
       bbox=turf.bbox(turf.lineToPolygon(turf.lineString(res)))
+      dims=[]
+      if("dimensions" in result[ann]["body"][0]){
+        dims=result[ann]["body"][0]["dimensions"]
+      }else if("dimensions" in result[ann]["target"]){
+        dims=result[ann]["target"]["dimensions"]
+      }
       if(spotcounter==0){
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([-9.087315,24.171282,4.909572]), SglMat4.scaling([0.1, 0.1, 0.07]))
-      }else if("bbox" in hs23D[$("#3dimages").text()]){
-        xcoord=bbox[0]/25
-        ycoord=bbox[1]/25
-        zcoord=bbox[2]/25
+      }else if(dims!=[]){
         console.log("0 - "+viewer.world.getItemAt(0).getContentSize())
         console.log("0 - "+viewer.world.getItemAt(0).getContentSize())
         xcoordre=rescale(bbox[0],0,viewer.world.getItemAt(0).getContentSize()[0],hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0])
         ycoordre=rescale(bbox[1],0,viewer.world.getItemAt(0).getContentSize()[1],hs23D[$("#3dimages").text()]["bbox"]["min"][1],hs23D[$("#3dimages").text()]["bbox"]["max"][1])
         console.log(xcoordre+" - "+ycoordre)
         console.log(xcoord+" - "+ycoord)
-        /*
+        curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoordre,ycoordre,4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
+        console.log(curspot["transform"]["matrix"])
+      }else if("bbox" in hs23D[$("#3dimages").text()]){
+        xcoord=bbox[0]/25
+        ycoord=bbox[1]/25
+        zcoord=bbox[2]/25       
         console.log([xcoord,ycoord,zcoord])
         xlength=hs23D[$("#3dimages").text()]["bbox"]["max"][0]-hs23D[$("#3dimages").text()]["bbox"]["min"][0]
         ylength=hs23D[$("#3dimages").text()]["bbox"]["max"][1]-hs23D[$("#3dimages").text()]["bbox"]["min"][1]
@@ -1061,24 +1069,10 @@ function setup3dhop() {
         console.log(ydiff)
         ycoord=ydiff-2
         console.log([xcoord,ycoord,4.9])
-
-        
-        */
-        console.log(SglMat4.mul(SglMat4.translation([xcoord,ycoord,4.9]),SglMat4.scaling([0.1, 0.1, 0.07])))
+        //console.log(SglMat4.mul(SglMat4.translation([xcoord,ycoord,4.9]),SglMat4.scaling([0.1, 0.1, 0.07])))
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([xcoordre,ycoordre,4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
         console.log(curspot["transform"]["matrix"])
-      }/*else if("dimensions" in result[ann]["body"][0]){
-        dims=result[ann]["body"][0]["dimensions"]
-        xcoord=bbox[0]
-        ycoord=bbox[1]
-        if(bbox[0]>(dims["x"]/2)){
-          xcoord-=(dims["x"]/2)
-        }else{
-          xcoord*=-1
-        }
-        ycoord+=dims["y"]
-        
-      }*/else{
+      }else{
         curspot["transform"]["matrix"]=SglMat4.mul(SglMat4.translation([(bbox[0]/25)-10,(bbox[1]/25),4.9]),SglMat4.scaling([0.1, 0.1, 0.07]))
       }
         
