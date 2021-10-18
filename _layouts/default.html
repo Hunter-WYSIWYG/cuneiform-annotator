@@ -1059,13 +1059,13 @@ function setup3dhop() {
         ylength=hs23D[$("#3dimages").text()]["bbox"]["max"][1]-hs23D[$("#3dimages").text()]["bbox"]["min"][1]
         zlength=hs23D[$("#3dimages").text()]["bbox"]["max"][2]-hs23D[$("#3dimages").text()]["bbox"]["min"][2]
         console.log([xlength,ylength,zlength])
-        if(xcoordre>=(xlength/2)){
+        /*if(xcoordre>=(xlength/2)){
           xcoordre-=(xlength/2)
           xcoordre+=4
         }else{
           xcoordre=hs23D[$("#3dimages").text()]["bbox"]["min"][0]+xcoordre
           xcoordre+=4
-        }
+        }*/
         ydiff=ylength-ycoordre
         console.log(ydiff)
         ycoordre=ydiff-2
