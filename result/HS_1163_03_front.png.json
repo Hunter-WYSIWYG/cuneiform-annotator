@@ -1191,6 +1191,12 @@
           "y": 2275
         },
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "source": "http://purl.org/cuneiform/Line",
+        "value": "4"
       }
     ],
     "target": {
@@ -1731,18 +1737,32 @@
       {
         "type": "TextualBody",
         "purpose": "Column",
-        "value": "8",
-        "source": "http://purl.org/cuneiform/Column"
+        "value": "",
+        "source": "http://purl.org/cuneiform/Column",
+        "dimensions": {
+          "x": 1207,
+          "y": 2275
+        }
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "1",
+        "value": "8",
         "dimensions": {
           "x": 1207,
           "y": 2275
         },
         "source": "http://purl.org/cuneiform/Line"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1207,
+          "y": 2275
+        }
       }
     ],
     "target": {
@@ -4559,18 +4579,32 @@
       {
         "type": "TextualBody",
         "purpose": "Column",
-        "value": "8",
-        "source": "http://purl.org/cuneiform/Column"
+        "value": "",
+        "source": "http://purl.org/cuneiform/Column",
+        "dimensions": {
+          "x": 1207,
+          "y": 2275
+        }
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "3",
+        "value": "8",
         "dimensions": {
           "x": 1207,
           "y": 2275
         },
         "source": "http://purl.org/cuneiform/Line"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "source": "http://purl.org/cuneiform/Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 1207,
+          "y": 2275
+        }
       }
     ],
     "target": {
