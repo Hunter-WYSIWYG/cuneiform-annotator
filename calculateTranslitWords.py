@@ -83,7 +83,9 @@ def processWebAnnotation(filepath,charmapping,curline):
     linepurpose="Line"
     wordindexpurpose="Wordindex"
     changed=False
+    tempdimensions={}
     for annotation in jsondata:
+        tempdimensions={}
         translit=""
         wordindexobject=None
         relcharindexobject=None
@@ -121,6 +123,11 @@ def processWebAnnotation(filepath,charmapping,curline):
                 changed=True
             if annoobj["purpose"]=="tagging" and not "source" in annoobj and annoobj["value"] in mlVocabulary:
                 annoobj["source"]=mlVocabulary[annoobj["value"]]
+                changed=True
+            if "dimensions" in annoobj:
+                tempdimensions=annoobj["dimensions"]
+                jsondata[annotation]["target"]["dimensions"]=annoobj["dimensions"]
+                del annoobj["dimensions"]
                 changed=True
             #if annoobj["purpose"]=="tagging" and annoobj["value"]=="Character":
             #annoobj["purpose"]="classifying"
