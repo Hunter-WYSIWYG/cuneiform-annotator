@@ -67,10 +67,8 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function rescale(X, A, B, C, D, force_float=False){
+function rescale(X, A, B, C, D){
   retval = ((X - A / (B - A)) * (D - C)) + C
-  if not force_float and all(map(lambda x: type(x) == int, [X, A, B, C, D])):
-      return int(round(retval))
   return retval
 }
 
@@ -1040,8 +1038,8 @@ function setup3dhop() {
         //xcoord=bbox[0]/25
         //ycoord=bbox[1]/25
         //zcoord=bbox[2]/25
-        xcoordre=rescale(xcoord,0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0],true)
-        ycoordre=rescale(xcoord,0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][1],hs23D[$("#3dimages").text()]["bbox"]["max"][1],true)
+        xcoordre=rescale(xcoord,0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][0],hs23D[$("#3dimages").text()]["bbox"]["max"][0])
+        ycoordre=rescale(xcoord,0,$('#openseadragon').width,hs23D[$("#3dimages").text()]["bbox"]["min"][1],hs23D[$("#3dimages").text()]["bbox"]["max"][1])
         /*
         console.log([xcoord,ycoord,zcoord])
         xlength=hs23D[$("#3dimages").text()]["bbox"]["max"][0]-hs23D[$("#3dimages").text()]["bbox"]["min"][0]
