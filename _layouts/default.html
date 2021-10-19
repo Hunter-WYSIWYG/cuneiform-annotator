@@ -408,7 +408,7 @@ $(document).ready(function () {
   "Wordindex":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace+"Wordindex"}
 	}
 
-
+  var readOnlyVar=false
 
 	var TextMapWidget = function(args) {
 
@@ -423,37 +423,17 @@ $(document).ready(function () {
 		}
 	}
   if(removeindex==-1){
-    if(evt.target.id in mappings && "uri" in mappings[evt.target.id]){
-	    args.annotation.underlying.body.push({
-        type: 'TextualBody',
-        purpose: evt.target.id,
-        source: mappings[evt.target.id]["uri"],
-        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
-        value: evt.srcElement.value
-      });
-    }else{
-	    args.annotation.underlying.body.push({
+	  args.annotation.underlying.body.push({
         type: 'TextualBody',
         purpose: evt.target.id,
         //dimensions: viewer.world.getItemAt(0).getContentSize(), 
         value: evt.srcElement.value
-      });
-    }
-
+    });
   }else{
     args.annotation.underlying.body[removeindex].value=evt.srcElement.value
-    args.annotation.underlying.target.dimensions=viewer.world.getItemAt(0).getContentSize()
+    args.annotation.underlying.body[removeindex].dimensions=viewer.world.getItemAt(0).getContentSize()
   }
 	console.log(args)
-  if(evt.target.id in mappings && "uri" in mappings[evt.target.id]){
-    	console.log({
-        type: 'TextualBody',
-        source: mappings[evt.target.id]["uri"],
-        purpose: evt.target.id,
-        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
-        value: evt.srcElement.value
-    })
-  }else{
 	console.log({
         type: 'TextualBody',
         purpose: evt.target.id,
@@ -462,31 +442,40 @@ $(document).ready(function () {
     })
   }
 
-  }
-
   // 4. This part renders the UI elements
   var createTextField = function(key,value) {
     console.log(key+" - "+value)
     var div=document.createElement('table')
+    div.style="color:black;background-color:white;border-bottom:1px solid black;"
 	div.width="100%"
 	var tr=document.createElement('tr')
+  tr.style="color:black;background-color:white"
 	var td1=document.createElement('td')
+  td1.style="color:black;background-color:white"
 	var td2=document.createElement('td')
+  td2.style="color:black;background-color:white"
 	div.appendChild(tr)
 	tr.appendChild(td1)
 	tr.appendChild(td2)
   var label = document.createElement('label');
-	var input = document.createElement('input');
+  label.style="color:black;background-color:white"
+  if(!readOnlyVar){
+	  var input = document.createElement('input');
+  }else{
+    var input = document.createElement('span');
+    input.style="color:black;background-color:white"
+  }
+
 	console.log(mappings[key])
-  if("inputtype" in mappings[key] && mappings[key]["inputtype"]=="select"){
+  if(!readOnlyVar && "inputtype" in mappings[key] && mappings[key]["inputtype"]=="select"){
     input = document.createElement('select');
-  }else if("inputtype" in mappings[key]){
+  }else if(!readOnlyVar && "inputtype" in mappings[key]){
 		input.type=mappings[key]["inputtype"]
 		input.min=1
-	}else{
+	}else if(!readOnlyVar){
 		input.type="text"	
 	}
-  if("data" in mappings[key] && mappings[key]["inputtype"]=="select"){
+  if(!readOnlyVar && "data" in mappings[key] && mappings[key]["inputtype"]=="select"){
     for(keyy in mappings[key]["data"]){
       console.log(keyy)
       option=document.createElement("option")
@@ -502,16 +491,22 @@ $(document).ready(function () {
   }else{
     for(bod in args.annotation.underlying.body){
 		  if(args.annotation.underlying.body[bod].purpose==key){
-			  input.value=args.annotation.underlying.body[bod].value
-		  }
+        if(!readOnlyVar){
+          input.value=args.annotation.underlying.body[bod].value
+        }else{
+          input.innerHTML=args.annotation.underlying.body[bod].value
+        }		  
+      }
 	  }
-	  input.addEventListener('keyup',addTag)
+    if(!readOnlyVar){
+	    input.addEventListener('keyup',addTag)
+    }
   }
 	input.id=key
 	label.innerHTML=key+": "
 	td1.appendChild(label)
 	td2.appendChild(input)
-  if("paleocodage" in mappings[key]){
+  if(!readOnlyVar && "paleocodage" in mappings[key]){
     var td3=document.createElement('td')
     tr.appendChild(td3)
     var canvas=document.createElement('canvas')
@@ -538,7 +533,6 @@ $(document).ready(function () {
     input.addEventListener("select",function(){
         paintCharacter(event.target.id)
     });
-    $('#'+input.id).autocomplete({source: Object.keys(paleocodemap)})
   }
     return div;
   }
