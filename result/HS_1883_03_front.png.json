@@ -2119,6 +2119,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "7"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "14",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
       }
     ],
     "target": {
@@ -3423,5 +3437,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#69099dfd-febe-43cd-a2bc-6ce6ee1e7e15"
+  },
+  "#b8e450fd-ff6b-46bb-bfff-f015c520c9bd": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "na",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1118220:582596/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"747.9432983398438,1218.52392578125 596.69873046875,1218.52392578125 588.2962646484375,1329.856689453125 718.5346069335938,1336.1585693359375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b8e450fd-ff6b-46bb-bfff-f015c520c9bd"
+  },
+  "#ece341a9-69c8-4128-8bc9-11bc08241f3a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "szu",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1118220:582596/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"865.577880859375,1224.82568359375 729.0377197265625,1226.9263916015625 720.63525390625,1325.6553955078125 848.77294921875,1327.7559814453125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#ece341a9-69c8-4128-8bc9-11bc08241f3a"
   }
 }
