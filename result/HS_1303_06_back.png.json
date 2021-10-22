@@ -4722,5 +4722,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#6425e81c-315f-4543-bfe9-71f1339192d6"
+  },
+  "#c5603009-746a-4025-a509-b9d0e9387668": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sza3",
+        "dimensions": {
+          "x": 1137,
+          "y": 2120
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114403:578610/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"904.5648193359375,1097.6973876953125 813.6085205078125,1104.043212890625 811.4932861328125,994.0496215820312 908.7953491210938,985.5885620117188\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c5603009-746a-4025-a509-b9d0e9387668"
+  },
+  "#fb1026f0-1609-477e-984b-6cb420e535eb": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "gu4",
+        "dimensions": {
+          "x": 1137,
+          "y": 2120
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114403:578610/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1078.0162353515625,983.4732666015625 917.2564086914062,985.5885620117188 906.6800537109375,1110.3890380859375 1073.7857666015625,1104.043212890625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#fb1026f0-1609-477e-984b-6cb420e535eb"
   }
 }
