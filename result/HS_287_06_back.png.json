@@ -4167,8 +4167,12 @@
       {
         "type": "TextualBody",
         "purpose": "Charindex",
-        "value": "",
-        "source": "http://purl.org/cuneiform/CharacterIndex"
+        "value": "1",
+        "source": "http://purl.org/cuneiform/CharacterIndex",
+        "dimensions": {
+          "x": 1098,
+          "y": 1313
+        }
       },
       {
         "type": "TextualBody",
@@ -4449,6 +4453,11 @@
         "purpose": "Charindex",
         "value": "6",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
