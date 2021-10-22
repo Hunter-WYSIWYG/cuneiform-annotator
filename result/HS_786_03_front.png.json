@@ -2152,5 +2152,63 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#043ea938-c6de-4d9b-9d22-8c89c68aa29e": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "la2",
+        "dimensions": {
+          "x": 1864,
+          "y": 1741
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1125639:589975/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"923.4207153320312,545.7332153320312 763.606689453125,542.2589721679688 758.3953247070312,717.7069702148438 796.6117553710938,710.758544921875 805.2973022460938,597.8464965820312 926.8948974609375,597.8464965820312\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#043ea938-c6de-4d9b-9d22-8c89c68aa29e"
+  },
+  "#3540ac20-0c90-42e1-b690-94fc9cfc357a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "5(disz@t)",
+        "dimensions": {
+          "x": 1864,
+          "y": 1741
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1125639:589975/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"895.626953125,603.0578002929688 807.034423828125,596.109375 803.5601806640625,719.444091796875 899.1011962890625,715.9699096679688\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#3540ac20-0c90-42e1-b690-94fc9cfc357a"
   }
 }
