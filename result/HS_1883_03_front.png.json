@@ -8980,5 +8980,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#b9a8eb64-8d32-4435-b8d4-8e6ff507c758"
+  },
+  "#f4596d80-c429-4043-9258-989dc290374b": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ru",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1118220:582596/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"31.671552658081055,2479.171630859375 146.1431121826172,2477.603515625 146.1431121826172,2592.074951171875 33.239654541015625,2598.347412109375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#f4596d80-c429-4043-9258-989dc290374b"
+  },
+  "#6a1bff39-a579-4eab-8c11-af06a7154adf": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "pu",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1118220:582596/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"299.8172607421875,2469.762939453125 144.5749969482422,2474.46728515625 147.71121215820312,2585.802734375 306.08966064453125,2571.689697265625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#6a1bff39-a579-4eab-8c11-af06a7154adf"
   }
 }
