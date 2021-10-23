@@ -1406,5 +1406,127 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#ba5db752-3a2a-4403-8ca0-de8450bf9bb4": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "du6",
+        "dimensions": {
+          "x": 1008,
+          "y": 1108
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112451:576383/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"473.4344482421875,368.6965026855469 345.44134521484375,362.9654846191406 343.531005859375,252.16549682617188 482.98614501953125,248.3448028564453\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#ba5db752-3a2a-4403-8ca0-de8450bf9bb4"
+  },
+  "#073e44ba-b050-41e1-a3c4-ed3d0860e4ec": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ga",
+        "dimensions": {
+          "x": 1008,
+          "y": 1108
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112451:576383/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"859.3240356445312,269.35858154296875 675.9309692382812,267.4482421875 674.0206298828125,380.1585998535156 859.3240356445312,385.8896179199219\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#073e44ba-b050-41e1-a3c4-ed3d0860e4ec"
+  },
+  "#2c051c47-5ef3-48ef-9c10-895c52a8ae0c": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "re",
+        "dimensions": {
+          "x": 1008,
+          "y": 1108
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112451:576383/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"886.0689086914062,389.7102966308594 626.2620239257812,378.24822998046875 628.17236328125,483.31719970703125 876.5171508789062,500.5102844238281\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#2c051c47-5ef3-48ef-9c10-895c52a8ae0c"
+  },
+  "#656663d5-23ec-4be4-8508-ce5a27ef3448": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ku3",
+        "dimensions": {
+          "x": 1008,
+          "y": 1108
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Broken"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1112451:576383/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"668.2896118164062,361.0551452636719 475.34478759765625,368.6965026855469 481.0758056640625,246.43446350097656 674.0206298828125,246.43446350097656\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#656663d5-23ec-4be4-8508-ce5a27ef3448"
   }
 }
