@@ -563,6 +563,11 @@
         "purpose": "Charindex",
         "value": "5",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -613,6 +618,11 @@
         "purpose": "Charindex",
         "value": "4",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -663,6 +673,11 @@
         "purpose": "Charindex",
         "value": "3",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -769,6 +784,11 @@
         "purpose": "Charindex",
         "value": "1",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -931,6 +951,11 @@
         "purpose": "Charindex",
         "value": "8",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -960,5 +985,43 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#01e75d56-a1d9-456f-8669-365a01e1d1eb": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lam2",
+        "dimensions": {
+          "x": 1025,
+          "y": 1043
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 1025,
+          "y": 1043
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113235:577406/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"987.2449340820312,753.4776611328125 728.2931518554688,757.07421875 715.7052612304688,945.8931884765625 989.043212890625,944.0949096679688\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#01e75d56-a1d9-456f-8669-365a01e1d1eb"
   }
 }
