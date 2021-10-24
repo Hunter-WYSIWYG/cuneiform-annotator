@@ -253,5 +253,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#c17df51e-b03f-40d5-b1d6-04515dfde4fa"
+  },
+  "#05757fff-d110-4cb0-92b0-5108632a1ad0": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ugula",
+        "dimensions": {
+          "x": 1038,
+          "y": 976
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126657:591039/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"725.979248046875,427.420654296875 556.0206298828125,417.3240966796875 550.9723510742188,558.67578125 722.6137084960938,553.6275024414062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#05757fff-d110-4cb0-92b0-5108632a1ad0"
+  },
+  "#371e19e3-cd26-4383-9599-51696aa7cd61": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "e2",
+        "dimensions": {
+          "x": 1038,
+          "y": 976
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126657:591039/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"927.9102172851562,419.0068359375 729.3447265625,417.3240966796875 727.6619873046875,550.2620239257812 922.8619384765625,553.6275024414062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#371e19e3-cd26-4383-9599-51696aa7cd61"
   }
 }
