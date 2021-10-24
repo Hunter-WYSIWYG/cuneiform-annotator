@@ -2201,5 +2201,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d109f5b3-a90f-4ac7-a5f0-574752f2cc67"
+  },
+  "#da5e3468-85f3-4ad8-9933-74d480cc51ab": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "zal",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115761:579947/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1026.5655517578125,138.6685333251953 944.3461303710938,142.34999084472656 935.7560424804688,222.11508178710938 1019.2025756835938,218.43360900878906\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#da5e3468-85f3-4ad8-9933-74d480cc51ab"
+  },
+  "#aaaec54c-9eae-43cb-9e13-7e1cf6eeb53d": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "la",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115761:579947/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1152.9625244140625,130.0784454345703 1027.7926025390625,134.987060546875 1021.6568603515625,217.2064666748047 1149.281005859375,212.29783630371094\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#aaaec54c-9eae-43cb-9e13-7e1cf6eeb53d"
   }
 }
