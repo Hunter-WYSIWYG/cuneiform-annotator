@@ -3954,5 +3954,59 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#a543be9e-3241-408d-a4e0-20f4d8cea37c": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "d"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113160:577322/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"746.26123046875,1529.7862548828125 675.1870727539062,1531.4783935546875 675.1870727539062,1600.8603515625 754.722412109375,1602.5526123046875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a543be9e-3241-408d-a4e0-20f4d8cea37c"
+  },
+  "#59f802a3-4c8c-4e97-ae3a-a8c9298cfb5c": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "suen",
+        "dimensions": {
+          "x": 1083,
+          "y": 1963
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113160:577322/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"626.112060546875,1587.3223876953125 626.112060546875,1639.7818603515625 881.6405029296875,1638.089599609375 1040.711181640625,1607.6292724609375 1033.9422607421875,1482.4034423828125 751.3379516601562,1517.9405517578125 759.7991333007812,1605.93701171875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#59f802a3-4c8c-4e97-ae3a-a8c9298cfb5c"
   }
 }
