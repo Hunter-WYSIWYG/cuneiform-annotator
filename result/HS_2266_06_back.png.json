@@ -1553,5 +1553,43 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#aa3f7104-7f0a-412f-b6c2-759b48fd98fd"
+  },
+  "#99834e87-3b02-4dc6-9aac-13e5609c5b54": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "il2",
+        "dimensions": {
+          "x": 1007,
+          "y": 1145
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 1007,
+          "y": 1145
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1120111:584463/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"999.0086669921875,357.3189697265625 621.9483032226562,379.0345153808594 619.9741821289062,550.7844848632812 1008.8793334960938,525.1207275390625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#99834e87-3b02-4dc6-9aac-13e5609c5b54"
   }
 }
