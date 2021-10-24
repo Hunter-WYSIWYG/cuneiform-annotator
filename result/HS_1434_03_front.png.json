@@ -1973,5 +1973,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#b1e64d6e-aaed-4445-a9cb-29212f720516"
+  },
+  "#adebda6f-cebf-46db-81c2-66ffacc720c9": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "su3",
+        "dimensions": {
+          "x": 1650,
+          "y": 4472
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115445:579595/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"715.1276245117188,3070.64501953125 524.2965698242188,3084.13818359375 524.2965698242188,2916.438232421875 718.9827880859375,2902.945068359375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#adebda6f-cebf-46db-81c2-66ffacc720c9"
+  },
+  "#e20c051d-3506-4e85-a36b-e56a7f491398": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "u4",
+        "dimensions": {
+          "x": 1650,
+          "y": 4472
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115445:579595/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"884.7552490234375,3039.8037109375 722.8379516601562,3055.224365234375 713.2000732421875,2874.03125 873.189697265625,2862.465576171875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e20c051d-3506-4e85-a36b-e56a7f491398"
   }
 }
