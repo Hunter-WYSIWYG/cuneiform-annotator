@@ -1567,5 +1567,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#b487efcd-1ed0-4181-811e-9aff847df737"
+  },
+  "#b396e0c7-db19-448f-8638-07e0480b64f5": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "si",
+        "dimensions": {
+          "x": 1650,
+          "y": 4472
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115445:579595/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1031.2518310546875,1534.3587646484375 811.5069580078125,1532.43115234375 817.2897338867188,1734.82763671875 1056.3104248046875,1713.624267578125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b396e0c7-db19-448f-8638-07e0480b64f5"
+  },
+  "#4ee32f0c-52f4-49fe-9964-033490d3b863": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "isin2",
+        "dimensions": {
+          "x": 1650,
+          "y": 4472
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115445:579595/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"809.579345703125,1555.5621337890625 549.355224609375,1584.4759521484375 535.8621215820312,1763.741455078125 813.4345092773438,1736.7552490234375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#4ee32f0c-52f4-49fe-9964-033490d3b863"
   }
 }
