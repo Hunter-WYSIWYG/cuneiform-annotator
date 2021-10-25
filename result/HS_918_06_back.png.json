@@ -746,5 +746,63 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#e6631e66-139e-43b9-bd96-92d1ab4fa641": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "2(u@c)",
+        "dimensions": {
+          "x": 1583,
+          "y": 1509
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126612:590988/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"3.1775801181793213,881.9844360351562 73.42412567138672,884.586181640625 81.22930145263672,1087.5206298828125 29.194820404052734,1082.317138671875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e6631e66-139e-43b9-bd96-92d1ab4fa641"
+  },
+  "#a0975c2f-4dd1-46d3-9229-4753738ffb88": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "5(asz@c)",
+        "dimensions": {
+          "x": 1583,
+          "y": 1509
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126612:590988/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"70.82240295410156,879.3826904296875 185.2982635498047,879.3826904296875 182.696533203125,1043.2913818359375 81.22930145263672,1051.0965576171875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a0975c2f-4dd1-46d3-9229-4753738ffb88"
   }
 }
