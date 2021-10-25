@@ -18,13 +18,22 @@
         "type": "TextualBody",
         "purpose": "Charindex",
         "source": "http://purl.org/cuneiform/Charindex",
-        "value": ""
+        "value": "1",
+        "dimensions": {
+          "x": 1163,
+          "y": 2156
+        }
       },
       {
         "type": "TextualBody",
         "purpose": "Wordindex",
         "source": "http://purl.org/cuneiform/Wordindex",
         "value": ""
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -75,6 +84,11 @@
         "purpose": "Charindex",
         "source": "http://purl.org/cuneiform/Charindex",
         "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -125,6 +139,11 @@
         "purpose": "Charindex",
         "source": "http://purl.org/cuneiform/Charindex",
         "value": "3"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -1071,6 +1090,11 @@
         "purpose": "Charindex",
         "source": "http://purl.org/cuneiform/Charindex",
         "value": "4"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -1121,6 +1145,11 @@
         "purpose": "Charindex",
         "source": "http://purl.org/cuneiform/Charindex",
         "value": "1"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -1395,6 +1424,25 @@
         "value": "Broken",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Broken"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1163,
+          "y": 2156
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": ""
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "14"
       }
     ],
     "target": {
@@ -1439,6 +1487,24 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "14",
+        "dimensions": {
+          "x": 1163,
+          "y": 2156
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 1163,
+          "y": 2156
+        }
       }
     ],
     "target": {
