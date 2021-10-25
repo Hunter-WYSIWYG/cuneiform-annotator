@@ -601,7 +601,7 @@ var transliterations={
   "HS_1025": "@Tablet\n@obverse \n1. 1(disz) gin2 2/3(disz) ku3-babbar ur5 \n2. masz2 5(disz) gin2 1(disz) gin2-ta \n3. 2(asz) 1(barig) 1(ban2) sze gur ur5 \n4. masz2 1(asz) gur-a 1(barig) 4(ban2)-ta \n5. ki lugal-a2-zi-da-ta \n6. ba-sa6-ga \n@reverse \n1. szu ba-an-ti \n2. 1(disz) temen-da \n3. 1(disz) lu2-{d}iszkur \n4. lu2-inim-ma-bi-me \n5. iti sig4-sig4-ga-ka \n6. gi4-gi4-dam \n7. mu lugal-bi in-pa3 \n8. iti ezem-me-ki-gal2 \n9. mu ma2-gur8-mah ba-dim2 \n@seal 1 \n1. [ba-sa6-ga] \n2. dumu [...] ",
   "HS_1295": "@Tablet\n@obverse \n1. 4(disz) gurusz iti# [2(disz)]-sze3 \n2. gurusz-bi 4(gesz2) u4 1(disz)-sze3 \n3. sze a-sza3 {gesz}kiri6-zu-ur5-ra-ta \n4. puzur4-isz-da-gan{an}-sze3 de6-a-da tusz-a \n5. u3 sze-bi szu-szum2-ma \n@reverse \n1. giri3 ur-{d}ba-ba6 \n2. gurum2 ak u4 didli \n3. sza3 gir2-su{ki} \n4. mu us2-sa {d}szu-{d}suen lugal uri5{ki}-ma-ke4 bad3 mar-tu mu-ri-iq-ti-id-ni-im mu-du3 ",
   "HS_1728": "@Tablet",
-  "HS_831": "@Tablet\n@obverse \n1. 4(u@c) 2(asz@c) gu4 \n2. ur-ra-ni \n3. an-da-sze \n4. dub an-da-bala-a \n5. an-ta-gurum2 \n6. iti du6-ku3 \n@reverse\n7. mu en-sza3#-[kusz2-an-na] \n8. ag-ga#?-de3{ki} \n9. |GIN2.SZE3|! bi2-se3-ga \n10. kisal#?-x-kun \n11. ur-ra-ni nu-DU \n12. sanga dub-bi i3-bala ",
+  "HS_831": "@Tablet\n@obverse \n1. 4(u@c) 2(asz@c) gu4 \n2. ur-ra-ni \n3. an-da-sze \n4. dub an-da-bala-a \n5. an-ta-gurum2 \n6. iti du6-ku3 \n@reverse\n1. mu en-sza3#-[kusz2-an-na] \n2. ag-ga#?-de3{ki} \n3. |GIN2.SZE3|! bi2-se3-ga \n4. kisal#?-x-kun \n5. ur-ra-ni nu-DU \n6. sanga dub-bi i3-bala ",
   "HS_1635": "@Tablet",
   "HS_944": "@Tablet",
   "HS_1784": "@Tablet",
