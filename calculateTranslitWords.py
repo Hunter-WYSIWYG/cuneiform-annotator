@@ -78,6 +78,7 @@ def processWebAnnotation(filepath,charmapping,curline):
     with open(filepath, 'r') as myfile:
         data=myfile.read()
     jsondata=json.loads(data)
+    translitpurpose="Transliteration"
     charindexpurpose="Charindex"
     relcharindexpurpose="RelCharindex"
     linepurpose="Line"
@@ -112,6 +113,8 @@ def processWebAnnotation(filepath,charmapping,curline):
                 curwordindex=annoobj["value"]
                 #print("Curwordindex: "+str(curwordindex))
                 wordindexobject=annoobj
+            if annoobj["purpose"]==translitpurpose:
+                curchar=annoobj["value"]
             if annoobj["purpose"]==linepurpose:
                 line=annoobj["value"]   
             if annoobj["purpose"]==relcharindexpurpose:
@@ -131,7 +134,8 @@ def processWebAnnotation(filepath,charmapping,curline):
                 changed=True
             #if annoobj["purpose"]=="tagging" and annoobj["value"]=="Character":
             #annoobj["purpose"]="classifying"
-        print("Line: "+str(line)+" - "+str(curline))
+        #if "HS_1113" in filepath:
+        #    print("Line: "+str(line)+" - "+str(curline)+" "+str(charmapping["c"+str(curcharindex)]["char"])+" "+curchar)
         if curcharindex!=-1 and line!=-1 and line==curline and "c"+str(curcharindex) in charmapping:
             print("Adding wordindex: "+str(charmapping["c"+str(curcharindex)]))
             if wordindexobject==None:
@@ -176,9 +180,6 @@ def enrichWordPositions():
             if not re.search('^\s*[0-9]+\'\.',line) and not re.search('^\s*[0-9]+\.',line):
                 continue
             #print(line)
-            lineindex+=1
-            if curid!=None:
-                processWebAnnotation("result/"+str(tabletid)+"_"+curid+".png.json",charmapping,lineindex)
             try:
                 result[tabletid][curid][lineindex]={}
                 for word in line.split(" "):
@@ -194,18 +195,21 @@ def enrichWordPositions():
                                 charindex+=1
                                 #print(result[tabletid][curid][lineindex])
                                 result[tabletid][curid][lineindex][wordindex]["chars"].append(charindex)
-                                charmapping["c"+str(charindex)]={"wordindex":str(wordindex)+"", "relcharindex":str(relcharcounter)+""}
+                                charmapping["c"+str(charindex)]={"wordindex":str(wordindex)+"", "relcharindex":str(relcharcounter)+"","char":char}
                                 relcharcounter+=1
                     else:
                         charindex+=1
                         result[tabletid][curid][lineindex][wordindex]["chars"].append(charindex)
-                        charmapping["c"+str(charindex)]={"wordindex":str(wordindex)+"", "relcharindex":str(relcharcounter)+""}
+                        charmapping["c"+str(charindex)]={"wordindex":str(wordindex)+"", "relcharindex":str(relcharcounter)+"","char":word}
                     wordindex+=1
             except:
                 e = sys.exc_info()[0]
                 print(e)
                 print(sys.exc_info()[1])
                 print(sys.exc_info()[2])
+            if curid!=None:
+                processWebAnnotation("result/"+str(tabletid)+"_"+curid+".png.json",charmapping,str(lineindex))
+            lineindex+=1
     print(totalchars)
     jsonString = json.dumps(result, indent=2)
     jsonFile = open("js/wordindex.js", "w")
