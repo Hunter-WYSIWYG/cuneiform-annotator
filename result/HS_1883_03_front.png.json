@@ -9435,6 +9435,24 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "18",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
       }
     ],
     "target": {
@@ -9547,6 +9565,24 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "18",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
       }
     ],
     "target": {
@@ -22514,5 +22550,105 @@
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     },
     "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "#d14f20a0-9e29-4761-ad9e-34b975877a44": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "6(gesz2)",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Broken"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "18",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1118220:582596/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"41.10301208496094,2213.770751953125 160.8382568359375,2213.770751953125 154.53640747070312,2325.103515625 43.20362854003906,2327.2041015625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#d14f20a0-9e29-4761-ad9e-34b975877a44"
+  },
+  "#460fda10-5fcc-4e4d-80bb-31701818e0c7": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "4(u)",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "18",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 2381,
+          "y": 3638
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1118220:582596/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"272.1710510253906,2205.368408203125 158.73764038085938,2203.267578125 154.53640747070312,2318.8017578125 282.67413330078125,2314.600341796875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#460fda10-5fcc-4e4d-80bb-31701818e0c7"
   }
 }
