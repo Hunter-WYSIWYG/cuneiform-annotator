@@ -4867,5 +4867,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#d4a70856-edc7-47a2-81e6-98cc32948b94"
+  },
+  "#ba96a42e-b82b-447c-b4ca-8ce2a58cef9a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sza",
+        "dimensions": {
+          "x": 1523,
+          "y": 2848
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115764:579950/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"341.8414001464844,556.5720825195312 237.69198608398438,562.0536499023438 228.09927368164062,677.1661376953125 328.1375427246094,667.5734252929688\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#ba96a42e-b82b-447c-b4ca-8ce2a58cef9a"
+  },
+  "#16f111e3-9065-4848-af0e-03cbd2d41c12": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "an",
+        "dimensions": {
+          "x": 1523,
+          "y": 2848
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115764:579950/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"418.5830993652344,563.4240112304688 340.4710388183594,563.4240112304688 329.5079345703125,666.2030639648438 408.9903869628906,662.0919189453125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#16f111e3-9065-4848-af0e-03cbd2d41c12"
   }
 }
