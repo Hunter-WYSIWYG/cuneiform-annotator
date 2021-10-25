@@ -1637,25 +1637,20 @@
       {
         "type": "TextualBody",
         "purpose": "Column",
-        "value": "1"
+        "value": "1",
+        "source": "http://purl.org/cuneiform/Column"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
         "value": "6",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -2282,25 +2277,20 @@
       {
         "type": "TextualBody",
         "purpose": "Column",
-        "value": "1"
+        "value": "1",
+        "source": "http://purl.org/cuneiform/Column"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
         "value": "6",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -2350,19 +2340,13 @@
         "type": "TextualBody",
         "purpose": "Line",
         "value": "7",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -2411,25 +2395,20 @@
       {
         "type": "TextualBody",
         "purpose": "Column",
-        "value": "1"
+        "value": "1",
+        "source": "http://purl.org/cuneiform/Column"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
         "value": "7",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -3181,10 +3160,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "5(bur3@c)",
-        "dimensions": {
-          "x": 1659,
-          "y": 1573
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -3198,9 +3174,27 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"1640.40869140625,764.803466796875 1420.7310791015625,745.8189697265625 1415.3070068359375,916.6793212890625 1550.910400390625,924.8155517578125 1545.486328125,851.5897216796875 1640.40869140625,862.43798828125\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1659,
+        "y": 1573
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#79072e11-0a79-4a6c-bc2a-8e6157654c0c"
+    "id": "#79072e11-0a79-4a6c-bc2a-8e6157654c0c",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }

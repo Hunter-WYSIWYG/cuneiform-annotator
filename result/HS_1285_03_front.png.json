@@ -3439,16 +3439,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "4"
+        "value": "4",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 1008,
-          "y": 1583
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -3498,19 +3496,13 @@
         "type": "TextualBody",
         "purpose": "Line",
         "value": "11",
-        "dimensions": {
-          "x": 1008,
-          "y": 1583
-        }
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "4",
-        "dimensions": {
-          "x": 1008,
-          "y": 1583
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -3519,7 +3511,11 @@
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"718.658203125,1279.222412109375 609.6753540039062,1276.0634765625 615.9931640625,1343.9803466796875 729.7144165039062,1345.559814453125\"></polygon></svg>"
       },
-      "rights": "https://creativecommons.org/licenses/by-sa/4.0/"
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1008,
+        "y": 1583
+      }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#7c7e7e26-8fb7-4331-9199-a89c6e5bcd7d",
@@ -3556,19 +3552,13 @@
         "type": "TextualBody",
         "purpose": "Line",
         "value": "11",
-        "dimensions": {
-          "x": 1008,
-          "y": 1583
-        }
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "5",
-        "dimensions": {
-          "x": 1008,
-          "y": 1583
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {

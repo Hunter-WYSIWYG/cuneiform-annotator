@@ -1509,16 +1509,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "4"
+        "value": "4",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "5",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -1568,15 +1566,13 @@
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "2"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line"
       }
     ],
     "target": {
@@ -1625,16 +1621,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -1683,16 +1677,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -1741,16 +1733,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "5",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -1799,16 +1789,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "6",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -1845,7 +1833,8 @@
       {
         "type": "TextualBody",
         "purpose": "Transliteration",
-        "value": "d"
+        "value": "d",
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -1856,16 +1845,14 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "3",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       }
     ],
     "target": {
@@ -1873,10 +1860,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"462.2413635253906,732.0947875976562 347.0172424316406,726.47412109375 339.9913635253906,771.4396362304688 459.4310302734375,781.27587890625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 739,
+        "y": 815
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#ee6f3a24-9399-4374-8897-802629d3d3c6"
+    "id": "#ee6f3a24-9399-4374-8897-802629d3d3c6",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#9fc7f8bb-9210-431a-b197-3fe0be6fc188": {
     "type": "Annotation",
@@ -1885,24 +1890,19 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "en",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "4",
-        "dimensions": {
-          "x": 739,
-          "y": 815
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       },
       {
         "type": "TextualBody",
@@ -1916,9 +1916,27 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"327.3448181152344,764.4137573242188 307.6723937988281,809.3792724609375 519.8534545898438,800.9482421875 521.2586059570312,720.8534545898438 463.64654541015625,729.2844848632812 459.4310302734375,781.27587890625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 739,
+        "y": 815
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#9fc7f8bb-9210-431a-b197-3fe0be6fc188"
+    "id": "#9fc7f8bb-9210-431a-b197-3fe0be6fc188",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }
