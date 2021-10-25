@@ -7688,6 +7688,24 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "11",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "10",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
       }
     ],
     "target": {
@@ -7717,6 +7735,24 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "11",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "11",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
       }
     ],
     "target": {
@@ -7746,6 +7782,24 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "11",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "12",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
       }
     ],
     "target": {
@@ -7800,5 +7854,34 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#480d5ebb-0225-4cc1-9e66-490c71fdc8b5"
+  },
+  "#babe3ea5-e5b1-48c3-80dd-23d7d8e2b934": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ne",
+        "dimensions": {
+          "x": 1523,
+          "y": 2847
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115761:579947/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1148.479248046875,1307.75830078125 1048.2021484375,1311.0460205078125 1053.1337890625,1396.5281982421875 1156.69873046875,1393.2403564453125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#babe3ea5-e5b1-48c3-80dd-23d7d8e2b934"
   }
 }
