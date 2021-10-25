@@ -7451,5 +7451,59 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#dace52ed-6b24-4640-82a1-5f4b9ef8fed0"
+  },
+  "#6b6ab928-3937-4acf-a8f5-4b4af9ca11c2": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "d"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119431:583794/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1097.2696533203125,247.7736053466797 1047.9361572265625,250.44027709960938 1047.9361572265625,294.4403991699219 1099.9364013671875,297.1070556640625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#6b6ab928-3937-4acf-a8f5-4b4af9ca11c2"
+  },
+  "#b76ab7ab-9e48-46cd-aa95-4acef9e488e8": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "en",
+        "dimensions": {
+          "x": 1378,
+          "y": 2771
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119431:583794/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1023.9361572265625,281.1070251464844 1017.2694702148438,354.4405517578125 1182.603271484375,349.1072082519531 1166.6031494140625,230.4402313232422 1102.60302734375,234.44024658203125 1103.9364013671875,298.4403991699219\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b76ab7ab-9e48-46cd-aa95-4acef9e488e8"
   }
 }
