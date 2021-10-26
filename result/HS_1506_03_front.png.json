@@ -3012,5 +3012,59 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#0b7892fb-8e81-492f-97cc-67d2a474e8ff"
+  },
+  "#db53246e-7138-4ecf-a70f-81234461bd0c": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "d"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115956:580073/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"279.5076904296875,994.825927734375 208.8671112060547,991.3800659179688 205.42123413085938,1048.237060546875 277.78472900390625,1058.57470703125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#db53246e-7138-4ecf-a70f-81234461bd0c"
+  },
+  "#dcc6dedf-69c1-410f-8df6-9a3af3bec229": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "en",
+        "dimensions": {
+          "x": 1375,
+          "y": 1439
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115956:580073/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"193.3606414794922,1046.51416015625 189.91476440429688,1091.3106689453125 375.99237060546875,1094.7564697265625 381.1611633300781,972.427734375 289.8453063964844,974.150634765625 284.676513671875,1060.2977294921875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#dcc6dedf-69c1-410f-8df6-9a3af3bec229"
   }
 }
