@@ -206,7 +206,7 @@
       {
         "type": "TextualBody",
         "purpose": "Charindex",
-        "value": "3",
+        "value": "4",
         "dimensions": {
           "x": 1120,
           "y": 1077
@@ -264,7 +264,7 @@
       {
         "type": "TextualBody",
         "purpose": "Charindex",
-        "value": "2",
+        "value": "3",
         "dimensions": {
           "x": 1120,
           "y": 1077
@@ -647,5 +647,49 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#d0d975c3-8f98-4550-9b5d-3798a6cb9ebf": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "da",
+        "dimensions": {
+          "x": 1120,
+          "y": 1077
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Broken"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1120,
+          "y": 1077
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114696:578940/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"294.4637756347656,438.2275695800781 79.06378936767578,449.36895751953125 56.78103256225586,644.3430786132812 281.46551513671875,636.91552734375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#d0d975c3-8f98-4550-9b5d-3798a6cb9ebf"
   }
 }
