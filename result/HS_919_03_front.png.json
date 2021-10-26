@@ -2112,5 +2112,34 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#7fc1f03b-1366-4341-8e5c-7ea160939557": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sig",
+        "dimensions": {
+          "x": 1682,
+          "y": 1682
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126617:590994/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1082.638671875,1482.18896484375 955.0924072265625,1480.5107421875 963.483642578125,1341.216796875 1084.31689453125,1341.216796875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#7fc1f03b-1366-4341-8e5c-7ea160939557"
   }
 }
