@@ -7636,6 +7636,24 @@
         "value": "Broken",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Broken"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "16",
+        "dimensions": {
+          "x": 1230,
+          "y": 2442
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 1230,
+          "y": 2442
+        }
       }
     ],
     "target": {
@@ -8922,5 +8940,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#c55e503b-3223-4c3a-9dd4-444bd44cf1eb"
+  },
+  "#ff45d88a-c6b1-4c11-ba3a-dd627cb38133": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "wa",
+        "dimensions": {
+          "x": 1230,
+          "y": 2442
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119157:583527/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"353.955322265625,1551.890625 262.5849914550781,1558.6588134765625 264.27703857421875,1670.3336181640625 348.87921142578125,1670.3336181640625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#ff45d88a-c6b1-4c11-ba3a-dd627cb38133"
+  },
+  "#edb7ffe5-29a4-4f93-92c2-0c2da4c9083d": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sza",
+        "dimensions": {
+          "x": 1230,
+          "y": 2442
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119157:583527/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"360.7235107421875,1553.5826416015625 529.9277954101562,1529.89404296875 536.6959838867188,1641.56884765625 350.57122802734375,1666.949462890625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#edb7ffe5-29a4-4f93-92c2-0c2da4c9083d"
   }
 }
