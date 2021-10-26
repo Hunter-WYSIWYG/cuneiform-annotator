@@ -3721,5 +3721,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#bd789146-bec9-4919-9ff4-17958de174e5"
+  },
+  "#f6ae8110-c5af-4364-b4e8-1b26e98f8206": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "bi2",
+        "dimensions": {
+          "x": 1123,
+          "y": 1574
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114243:578430/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"906.4192504882812,1470.736328125 711.1995849609375,1478.37060546875 701.384033203125,1536.173095703125 899.8755493164062,1539.44482421875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#f6ae8110-c5af-4364-b4e8-1b26e98f8206"
+  },
+  "#031eea7a-cd3d-481d-988f-edc28cb470a3": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "du11",
+        "dimensions": {
+          "x": 1123,
+          "y": 1574
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1114243:578430/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1071.1016845703125,1444.5615234375 904.2379760742188,1467.4644775390625 899.8755493164062,1536.173095703125 1066.7392578125,1515.451416015625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#031eea7a-cd3d-481d-988f-edc28cb470a3"
   }
 }
