@@ -112,8 +112,10 @@ function formatTranslation(transliteration){
       newline=line.trim()
       splitted=line.trim().split(" ")
       for(word of splitted){
-        word=word.replace("{","-{").replace("}","}-")
-        word=word.replace(/-$/, "");
+        word=word.replace("{","-{").replace("}","}-").trim()
+        if(word.slice(-1)=="-"){
+          word=word.substring(0,word.length-1)
+        }
 		lasttranslation=""
         if(word.includes("-")){
           for(char of word.split("-")){
