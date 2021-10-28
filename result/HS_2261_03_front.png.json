@@ -155,6 +155,11 @@
         "purpose": "Charindex",
         "value": "1",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "4"
       }
     ],
     "target": {
@@ -265,6 +270,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 606,
+          "y": 712
+        }
       }
     ],
     "target": {
@@ -391,6 +410,11 @@
         "purpose": "RelCharindex",
         "value": 0,
         "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1"
       }
     ],
     "target": {
@@ -713,6 +737,11 @@
         "purpose": "Charindex",
         "value": "2",
         "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "4"
       }
     ],
     "target": {
@@ -889,6 +918,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "2",
+        "dimensions": {
+          "x": 606,
+          "y": 712
+        }
       }
     ],
     "target": {
@@ -933,6 +976,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 606,
+          "y": 712
+        }
       }
     ],
     "target": {
@@ -977,6 +1034,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "6"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 606,
+          "y": 712
+        }
       }
     ],
     "target": {
@@ -1089,6 +1160,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 606,
+          "y": 712
+        }
       }
     ],
     "target": {
@@ -1118,5 +1203,34 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#b9ed478a-1704-4b9c-beda-c3f618e75dc1": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ba6",
+        "dimensions": {
+          "x": 606,
+          "y": 712
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1120068:584415/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"549.7448120117188,492.2620544433594 430.6689453125,492.2620544433594 423.3034362792969,599.06201171875 543.6068725585938,597.83447265625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#b9ed478a-1704-4b9c-beda-c3f618e75dc1"
   }
 }
