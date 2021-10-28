@@ -248,7 +248,7 @@ function formatTransliteration(transliteration){
               }
               charcounter+=1
 			  wordlencounter+=1
-			  if(wordlencounter<wordlen){
+			  if(wordlencounter<wordlen && char.slice(-1)!="}"){
 				result+="-"
 			  }else{
                 result+="&nbsp;"
