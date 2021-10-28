@@ -3519,6 +3519,15 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "10",
+        "dimensions": {
+          "x": 1192,
+          "y": 2028
+        }
       }
     ],
     "target": {
@@ -4667,6 +4676,15 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "9",
+        "dimensions": {
+          "x": 1192,
+          "y": 2028
+        }
       }
     ],
     "target": {
@@ -4729,6 +4747,11 @@
         "purpose": "RelCharindex",
         "value": 2,
         "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -5278,5 +5301,43 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#2bbf8750-c6dc-48ec-9676-d5ff13037ead": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "hux(RI)",
+        "dimensions": {
+          "x": 1192,
+          "y": 2028
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "8",
+        "dimensions": {
+          "x": 1192,
+          "y": 2028
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113974:578139/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"909.43896484375,308.9601745605469 742.2218627929688,306.1497802734375 736.60107421875,410.133544921875 910.8441162109375,410.133544921875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#2bbf8750-c6dc-48ec-9676-d5ff13037ead"
   }
 }
