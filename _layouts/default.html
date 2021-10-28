@@ -290,6 +290,7 @@ function formatTransliteration(transliteration){
       result+=line+"<br/>"
     }
   }
+  result=result.replaceAll("-<br/>","<br/>")
   result=result.replaceAll("__","")
   return result
 }
