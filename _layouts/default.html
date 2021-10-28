@@ -75,12 +75,6 @@ function rescale(X, A, B, C, D){
   return retval
 }
 
-/*function scaleValue(value, from, to) {
-	var scale = (to[1] - to[0]) / (from[1] - from[0]);
-	var capped = Math.min(from[1], Math.max(from[0], value)) - from[0];
-	return ~~(capped * scale + to[0]);
-}*/
-
 var threedimageToIndex={};
 var indexedcharids=[]
 var indexedhiglighted=false
@@ -228,13 +222,13 @@ function formatTransliteration(transliteration){
 		  wordsplitted=word.split("-")
 		  wordlen=wordsplitted.length
 		  wordlencounter=0
-          for(char of word.split("-")){
+          for(char of wordsplitted){
             if(char!=""){
-                    console.log(curterm)
-				console.log(currentside+"_"+linecounter+"_"+charcounter)
-			  if(($("#images option:selected").text() in character_postags) && curterm in character_postags[$("#images option:selected").text()] && currentside+"_"+linecounter+"_"+charcounter in character_postags[$("#images option:selected").text()][curterm]){
-			    titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
-			  }
+              console.log(curterm)
+				      console.log(currentside+"_"+linecounter+"_"+charcounter)
+			        if(($("#images option:selected").text() in character_postags) && curterm in character_postags[$("#images option:selected").text()] && currentside+"_"+linecounter+"_"+charcounter in character_postags[$("#images option:selected").text()][curterm]){
+			          titleobj=character_postags[$("#images option:selected").text()][curterm][currentside+"_"+linecounter+"_"+charcounter]
+			        }
               if (typeof titleobj !== 'undefined'){
 			  				console.log(titleobj)
               result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\" title=\""+titleobj["word"]+" "
@@ -247,12 +241,12 @@ function formatTransliteration(transliteration){
                 result+="<span id=\""+currentside+"_"+linecounter+"_"+charcounter+"\" class=\"imagelink\">"+char+"</span>"
               }
               charcounter+=1
-			  wordlencounter+=1
-			  if(wordlencounter<wordlen && char.slice(-1)!="}"){
-				result+="-"
-			  }else{
+			        wordlencounter+=1
+			        if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter+1].slice(0)!="{"){
+				        result+="-"
+			        }else{
                 result+="&nbsp;"
-			  }
+			        }
             }
           }
         }else{
