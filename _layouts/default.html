@@ -291,7 +291,7 @@ function formatTransliteration(transliteration){
     }
   }
   result=result.replaceAll("-<br/>","<br/>")
-  result=result.replaceAll("__","")
+  result=result.replaceAll("__","").replaceAll("__","")
   return result
 }
 
