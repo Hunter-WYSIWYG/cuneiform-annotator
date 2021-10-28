@@ -116,6 +116,7 @@ function formatTranslation(transliteration){
         if(word.slice(-1)=="-"){
           word=word.substring(0,word.length-1)
         }
+        word=word.replace("--","-")
 		lasttranslation=""
         if(word.includes("-")){
           for(char of word.split("-")){
