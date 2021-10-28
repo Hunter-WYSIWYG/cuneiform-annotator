@@ -2329,7 +2329,11 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": ""
+        "value": "1",
+        "dimensions": {
+          "x": 1734,
+          "y": 1754
+        }
       },
       {
         "type": "TextualBody",
@@ -2553,5 +2557,34 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#b48d312d-cbfc-4c19-9b97-f66ec322d053"
+  },
+  "#77581461-dbbe-44f8-a72b-9415b932407b": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "nig2",
+        "dimensions": {
+          "x": 1734,
+          "y": 1754
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1125727:590074/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"193.2155303955078,490.2566223144531 56.70930099487305,494.4568176269531 35.708343505859375,675.0650634765625 165.91427612304688,675.0650634765625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#77581461-dbbe-44f8-a72b-9415b932407b"
   }
 }
