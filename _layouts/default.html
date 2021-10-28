@@ -242,9 +242,10 @@ function formatTransliteration(transliteration){
               }
               charcounter+=1
 			        wordlencounter+=1
+              console.log(word+" - "+wordsplitted[wordlencounter])
               if(wordlencounter>=wordlen){
                 result+="&nbsp;"
-              }else if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter+1].slice(0)!="{"){
+              }else if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter].slice(0)!="{"){
 				        result+="-"
 			        }
             }
