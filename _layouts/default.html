@@ -225,6 +225,7 @@ function formatTransliteration(transliteration){
         if(word.slice(-1)=="-"){
           word=word.substring(0,word.length-1)
         }
+        word=word.replace("--","-")
         if(word.includes("-")){
 		  wordsplitted=word.split("-")
 		  wordlen=wordsplitted.length
