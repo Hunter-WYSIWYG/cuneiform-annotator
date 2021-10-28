@@ -242,7 +242,7 @@ function formatTransliteration(transliteration){
               }
               charcounter+=1
 			        wordlencounter+=1
-			        if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter+1].slice(0)!="{"){
+			        if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter].slice(0)!="{"){
 				        result+="-"
 			        }else{
                 result+="&nbsp;"
