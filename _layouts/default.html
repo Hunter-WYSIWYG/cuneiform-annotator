@@ -113,6 +113,7 @@ function formatTranslation(transliteration){
       splitted=line.trim().split(" ")
       for(word of splitted){
         word=word.replace("{","-{").replace("}","}-")
+        word=word.replace(/-$/, "");
 		lasttranslation=""
         if(word.includes("-")){
           for(char of word.split("-")){
