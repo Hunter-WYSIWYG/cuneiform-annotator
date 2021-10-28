@@ -250,7 +250,7 @@ function formatTransliteration(transliteration){
               }
               charcounter+=1
 			        wordlencounter+=1
-              console.log(word+" - "+wordsplitted[wordlencounter])
+              console.log(word+" - "+wordsplitted[wordlencounter]+" "+wordsplitted[wordlencounter].slice(0))
               if(wordlencounter>=wordlen || typeof(wordsplitted[wordlencounter])=="undefined"){
                 result+="&nbsp;"
               }else if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter].slice(0)!="{"){
