@@ -5656,5 +5656,63 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#67a8a7e7-e3f4-4d75-a050-283ba5c4b180": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "hu",
+        "dimensions": {
+          "x": 1098,
+          "y": 1313
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123296:587650/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"932.2792358398438,133.84002685546875 782.7134399414062,138.20692443847656 777.2548217773438,220.0860137939453 936.6461181640625,210.26051330566406\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#67a8a7e7-e3f4-4d75-a050-283ba5c4b180"
+  },
+  "#98a6cec4-e631-46b5-a86e-2b50a1fb6fdb": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "u3",
+        "dimensions": {
+          "x": 1098,
+          "y": 1313
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1123296:587650/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1068.744384765625,128.3814239501953 937.7378540039062,138.20692443847656 946.4716186523438,258.2962646484375 1076.386474609375,247.37904357910156\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#98a6cec4-e631-46b5-a86e-2b50a1fb6fdb"
   }
 }
