@@ -225,7 +225,7 @@ function formatTransliteration(transliteration){
         if(word.slice(-1)=="-"){
           word=word.substring(0,word.length-1)
         }
-        word=word.replace("--","-")
+        word=word.replace("--","__-")
         if(word.includes("-")){
 		  wordsplitted=word.split("-")
 		  wordlen=wordsplitted.length
@@ -253,6 +253,8 @@ function formatTransliteration(transliteration){
               console.log(word+" - "+wordsplitted[wordlencounter])
               if(wordlencounter>=wordlen || typeof(wordsplitted[wordlencounter])=="undefined"){
                 result+="&nbsp;"
+              }else if(wordlencounter<wordlen && char.endsWith("__")){
+                result+="-"
               }else if(wordlencounter<wordlen && char.slice(-1)!="}" && wordsplitted[wordlencounter].charAt(0)!="{"){
 				        result+="-"
 			        }
@@ -285,6 +287,7 @@ function formatTransliteration(transliteration){
       result+=line+"<br/>"
     }
   }
+  result=result.replace("__","")
   return result
 }
 
