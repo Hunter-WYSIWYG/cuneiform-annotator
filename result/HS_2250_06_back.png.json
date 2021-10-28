@@ -439,6 +439,11 @@
         "purpose": "RelCharindex",
         "value": 1,
         "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "2"
       }
     ],
     "target": {
@@ -938,6 +943,15 @@
         "value": "Broken",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Broken"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 653,
+          "y": 731
+        }
       }
     ],
     "target": {
@@ -949,5 +963,54 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#87dc41b7-5d1c-4525-845c-fb4449103fe4"
+  },
+  "#f8a6defc-88c8-4039-8566-8d9813d9c3e3": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ar",
+        "dimensions": {
+          "x": 653,
+          "y": 731
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Broken"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "4"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "3",
+        "dimensions": {
+          "x": 653,
+          "y": 731
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119983:584319/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"636.5448608398438,466.3276062011719 407.1620788574219,463.8069152832031 400.8603820800781,587.3207397460938 620.160400390625,570.9362182617188\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#f8a6defc-88c8-4039-8566-8d9813d9c3e3"
   }
 }
