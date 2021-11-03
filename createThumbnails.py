@@ -394,7 +394,7 @@ for filename in dircontent:
                 cropped = img.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
                 #print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
-                savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(column).replace("-","")+"_"+str(line)+"_"+str(curcharindex)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+str(column).replace("-","")+"_"+str(line)+"_"+str(curcharindex)+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                 if singlefolder:  
                         resized = cropped.resize((imagewidth, imageheight))
                         #print("RESIZED!")
