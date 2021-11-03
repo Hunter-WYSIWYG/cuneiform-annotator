@@ -6062,5 +6062,69 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#71e393cd-9d31-4bb0-9df9-bba4212ece73": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "8(disz)",
+        "dimensions": {
+          "x": 1019,
+          "y": 1667
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "value": "Broken",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Broken"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113950:578112/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"468.2925720214844,1115.4193115234375 350.2001037597656,1115.4193115234375 346.87353515625,1225.1953125 464.96600341796875,1223.5321044921875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#71e393cd-9d31-4bb0-9df9-bba4212ece73"
+  },
+  "#bd1dcae9-6ca7-495c-8b03-caaf793d2225": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "5/6(disz)",
+        "dimensions": {
+          "x": 1019,
+          "y": 1667
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113950:578112/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"478.272216796875,1115.4193115234375 594.701416015625,1113.7559814453125 594.701416015625,1225.1953125 471.6191101074219,1226.858642578125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bd1dcae9-6ca7-495c-8b03-caaf793d2225"
   }
 }
