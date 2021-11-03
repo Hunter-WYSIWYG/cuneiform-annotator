@@ -8636,5 +8636,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#0577cfdb-b1b5-4f7e-a82a-8534e038258b"
+  },
+  "#bbc5a5c3-02af-4455-9717-d0315c99a614": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "hu",
+        "dimensions": {
+          "x": 1523,
+          "y": 2848
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115764:579950/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1216.864990234375,754.8655395507812 1095.1746826171875,754.8655395507812 1096.819091796875,876.555908203125 1203.7093505859375,868.3335571289062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bbc5a5c3-02af-4455-9717-d0315c99a614"
+  },
+  "#97d95b7c-a8df-4390-a3ef-c21c0f98d9c6": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "mu",
+        "dimensions": {
+          "x": 1523,
+          "y": 2848
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115764:579950/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1317.1773681640625,754.8655395507812 1210.2872314453125,759.7988891601562 1203.7093505859375,874.9114379882812 1325.399658203125,866.6890869140625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#97d95b7c-a8df-4390-a3ef-c21c0f98d9c6"
   }
 }
