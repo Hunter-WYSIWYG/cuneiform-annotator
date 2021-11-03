@@ -2567,5 +2567,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#6fe09a5e-770a-403d-8d4c-82fa5bd91711"
+  },
+  "#603210b9-7d2b-4a10-bb40-9500b8e3cf17": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ugu",
+        "dimensions": {
+          "x": 1497,
+          "y": 2923
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115657:579830/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"695.5298461914062,2119.373291015625 450.4656066894531,2143.67724609375 454.5162658691406,2269.247314453125 699.5805053710938,2240.892822265625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#603210b9-7d2b-4a10-bb40-9500b8e3cf17"
+  },
+  "#8dfee47e-54b4-42cf-976c-afaf69a07dae": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "gu10",
+        "dimensions": {
+          "x": 1497,
+          "y": 2923
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1115657:579830/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"891.986328125,2084.94287109375 701.6058349609375,2111.27197265625 703.6311645507812,2236.842041015625 894.0116577148438,2212.5380859375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#8dfee47e-54b4-42cf-976c-afaf69a07dae"
   }
 }
