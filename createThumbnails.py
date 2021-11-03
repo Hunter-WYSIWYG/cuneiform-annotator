@@ -394,19 +394,18 @@ for filename in dircontent:
                 cropped = img.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
                 #print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
+                savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(column).replace("-","")+"_"+str(line)+"_"+str(curcharindex)+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                 if singlefolder:  
                         resized = cropped.resize((imagewidth, imageheight))
-                        savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                         #print("RESIZED!")
-                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                        resized.save(exportdir+"/char/"+savedfilename)
                         writeXMP(exportdir+"/char/"+savedfilename,"Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
                         #print("SAVED!")
                 else:
                         if(not os.path.exists(exportdir+str(translit))):
                             os.makedirs(exportdir+str(translit))
                         resized = cropped.resize((imagewidth, imageheight))
-                        savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                        resized.save(exportdir+"/char/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+".jpg")
+                        resized.save(exportdir+"/char/"+savedfilename)
                         writeXMP(exportdir+"/char/"+savedfilename,"Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
                 #if not os.path.exists(exportdir+"/char_annotated/"):
                 #  os.makedirs(exportdir+"/char_annotated/")
@@ -416,8 +415,8 @@ for filename in dircontent:
                 I1.text((10, 10), str(translit), font=myFont, fill =(255, 0, 0))
                 I1.text((10, 230), str(charclass), font=myFont, fill =(255, 0, 0))
                 #print("ANNOTATED!")
-                resized.save(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg")
-                writeXMP(exportdir+"/char_annotated/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg","Annotated Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
+                resized.save(exportdir+"/char_annotated/"+savedfilename.replace(".jpg","_annotated.jpg"))
+                writeXMP(exportdir+"/char_annotated/"+savedfilename.replace(".jpg","_annotated.jpg"),"Annotated Cuneiform Sign "+str(translit)+" in text "+filename.replace(".png","").replace(".json","")+" in line "+str(line)+" at character position "+str(curcharindex),str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json",""))
 
                 #print("SAVED ANNOTATION")
                 if not translit in homepagejson:
@@ -426,9 +425,9 @@ for filename in dircontent:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
-                zooniverse_char_verify+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_ref+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_line+=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass]).replace("/","_")+"_"+filename.replace(".png","").replace(".json","")+"_annotated.jpg;line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_ref+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify_line+=savedfilename.replace(".jpg","_annotated.jpg")+";line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
