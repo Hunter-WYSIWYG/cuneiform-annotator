@@ -7021,5 +7021,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#7115cd7b-50de-4bec-b62f-94e93ae28b87"
+  },
+  "#97ef0a75-4d4b-49ba-8acc-69059ed33016": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sar",
+        "dimensions": {
+          "x": 1271,
+          "y": 2438
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119229:583608/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1114.0230712890625,1889.752197265625 918.0675048828125,1906.6448974609375 916.3782348632812,2031.6510009765625 1115.7122802734375,2011.379638671875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#97ef0a75-4d4b-49ba-8acc-69059ed33016"
+  },
+  "#bf3cc14a-a2f0-4a14-8d5b-c9fc0a54fcc0": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "sze3",
+        "dimensions": {
+          "x": 1271,
+          "y": 2438
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119229:583608/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1228.8935546875,1866.102294921875 1119.0908203125,1879.616455078125 1112.333740234375,2016.447509765625 1240.7183837890625,1992.7977294921875 1242.40771484375,1992.7977294921875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#bf3cc14a-a2f0-4a14-8d5b-c9fc0a54fcc0"
   }
 }
