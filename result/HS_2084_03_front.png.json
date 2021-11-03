@@ -5943,5 +5943,63 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#2518111d-3d3c-4b7d-94b9-6170a49134b1"
+  },
+  "#06647eb8-bfb3-446e-8f4b-19718bad13dd": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "har",
+        "dimensions": {
+          "x": 1271,
+          "y": 2438
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119226:583605/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"461.5901794433594,321.39752197265625 333.2055358886719,311.26190185546875 329.8269958496094,459.9178161621094 459.9009094238281,458.2285461425781\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#06647eb8-bfb3-446e-8f4b-19718bad13dd"
+  },
+  "#57835186-43b9-4d5d-b57e-56285c25c327": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "ar",
+        "dimensions": {
+          "x": 1271,
+          "y": 2438
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1119226:583605/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"765.6590576171875,321.39752197265625 498.754150390625,294.36920166015625 493.68634033203125,446.40362548828125 765.6590576171875,436.26800537109375\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#57835186-43b9-4d5d-b57e-56285c25c327"
   }
 }
