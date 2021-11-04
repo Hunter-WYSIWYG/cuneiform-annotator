@@ -4302,5 +4302,34 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#fea71be9-97b5-47b8-ae31-0b605b14a9eb": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "dul3",
+        "dimensions": {
+          "x": 1088,
+          "y": 1990
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113192:577358/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1079.498291015625,622.9168701171875 968.6383666992188,614.6436767578125 960.365234375,732.1221923828125 1084.4622802734375,732.1221923828125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#fea71be9-97b5-47b8-ae31-0b605b14a9eb"
   }
 }
