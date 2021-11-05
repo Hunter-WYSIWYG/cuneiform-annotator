@@ -5,6 +5,7 @@ from PIL import ImageFont
 from libxmp import *
 import sys
 import os
+import uuid
 import json
 import math
 import requests
@@ -254,6 +255,8 @@ for filename in dircontent:
         print(sys.exc_info()[2])
         continue
     indexedcount=0
+    lineannoexport={}
+    wordannoexport={}
     for annotation in jsondata:
         #print(annotation)
         #print(jsondata[annotation]["target"]["selector"]["value"])
@@ -585,6 +588,8 @@ for filename in dircontent:
                     if shortfilename in hs2IIIF:
                         iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")
                         linecsv+=iiifurl+";"
+                    lineuuid="#"+str(uuid.uiid4())
+                    lineannoexport[lineuuid]={"type":"Annotation","body":[{"type":"TextualBody","purpose":"Line","value":linee,"source":"http://purl.org/cuneiform/Line"},{"type":"TextualBody","purpose":"linking","value":"http://cdli.ucla.edu/"+str(filename.replace(".png","").replace(".json",""))+"_line_"+str(linee)}],"target":{"source":hs2IIIF[shortfilename],"selector":{"type":"SvgSelector","value":"<svg><polygon points=\""+str(str(maxcoords[linee]))+"\"</svg>"},"rights":"https://creativecommons.org/licenses/by-sa/4.0/"}}
                     cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
@@ -598,6 +603,8 @@ for filename in dircontent:
                     if shortfilename in hs2IIIF:
                         iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxwordcoords[worde][0])+","+str(maxwordcoords[worde][2])+","+str(abs(maxwordcoords[worde][1]-maxwordcoords[worde][0]))+","+str(abs(maxwordcoords[worde][3]-maxwordcoords[worde][2]))+"/full")
                         wordcsv+=iiifurl+";"
+                    worduuid="#"+str(uuid.uiid4())
+                    wordannoexport[worduuid]={"type":"Annotation","body":[{"type":"TextualBody","purpose":"Word","value":linee,"source":"http://purl.org/cuneiform/Word"},{"type":"TextualBody","purpose":"linking","value":"http://cdli.ucla.edu/"+str(filename.replace(".png","").replace(".json",""))+"_word_"+str(worde)}],"target":{"source":hs2IIIF[shortfilename],"selector":{"type":"SvgSelector","value":"<svg><polygon points=\""+str(str(maxcoords[worde]))+"\"</svg>"},"rights":"https://creativecommons.org/licenses/by-sa/4.0/"}}
                     cropped = img2.crop((int(maxwordcoords[worde][0]),int(maxwordcoords[worde][2]),int(maxwordcoords[worde][1]),int(maxwordcoords[worde][3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedwordname=exportdir+"/word/"+"word_"+str(worde).replace("word","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
@@ -611,6 +618,12 @@ for filename in dircontent:
             print(sys.exc_info()[2])
             print("line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;\n")
             errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
+    f = open(exportdir+"/wordannotations/words_"+filename, 'w')
+    f.write(json.dumps(wordannoexport))
+    f.close()
+    f = open(exportdir+"/lineannotations/lines_"+filename, 'w')
+    f.write(json.dumps(lineannoexport))
+    f.close()
     if filename in translitcount:
         totalexpectedchars+=translitcount[filename]
         totalcountedchars+=len(jsondata)
