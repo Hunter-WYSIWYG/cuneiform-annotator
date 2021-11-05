@@ -588,7 +588,7 @@ for filename in dircontent:
                     if shortfilename in hs2IIIF:
                         iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")
                         linecsv+=iiifurl+";"
-                    lineuuid="#"+str(uuid.uiid4())
+                    lineuuid="#"+str(uuid.uuid4())
                     lineannoexport[lineuuid]={"type":"Annotation","body":[{"type":"TextualBody","purpose":"Line","value":linee,"source":"http://purl.org/cuneiform/Line"},{"type":"TextualBody","purpose":"linking","value":"http://cdli.ucla.edu/"+str(filename.replace(".png","").replace(".json",""))+"_line_"+str(linee)}],"target":{"source":hs2IIIF[shortfilename],"selector":{"type":"SvgSelector","value":"<svg><polygon points=\""+str(str(maxcoords[linee]))+"\"</svg>"},"rights":"https://creativecommons.org/licenses/by-sa/4.0/"}}
                     cropped = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
@@ -603,7 +603,7 @@ for filename in dircontent:
                     if shortfilename in hs2IIIF:
                         iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxwordcoords[worde][0])+","+str(maxwordcoords[worde][2])+","+str(abs(maxwordcoords[worde][1]-maxwordcoords[worde][0]))+","+str(abs(maxwordcoords[worde][3]-maxwordcoords[worde][2]))+"/full")
                         wordcsv+=iiifurl+";"
-                    worduuid="#"+str(uuid.uiid4())
+                    worduuid="#"+str(uuid.uuid4())
                     wordannoexport[worduuid]={"type":"Annotation","body":[{"type":"TextualBody","purpose":"Word","value":linee,"source":"http://purl.org/cuneiform/Word"},{"type":"TextualBody","purpose":"linking","value":"http://cdli.ucla.edu/"+str(filename.replace(".png","").replace(".json",""))+"_word_"+str(worde)}],"target":{"source":hs2IIIF[shortfilename],"selector":{"type":"SvgSelector","value":"<svg><polygon points=\""+str(str(maxcoords[worde]))+"\"</svg>"},"rights":"https://creativecommons.org/licenses/by-sa/4.0/"}}
                     cropped = img2.crop((int(maxwordcoords[worde][0]),int(maxwordcoords[worde][2]),int(maxwordcoords[worde][1]),int(maxwordcoords[worde][3])))
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
