@@ -172304,23 +172304,34 @@ var wordindex={
     "03_front": {
       "0": {
         "1": {
-          "word": "9(u)2(disz)",
+          "word": "9(u)",
           "chars": [
             1
           ]
         },
         "2": {
-          "word": "H,AR-mesz-sza3",
+          "word": "2(disz)",
           "chars": [
-            2,
+            2
+          ]
+        },
+        "3": {
+          "word": "H,AR-mesz-",
+          "chars": [
             3,
             4
           ]
         },
-        "3": {
-          "word": "KU3.BABBAR",
+        "4": {
+          "word": "sza3",
           "chars": [
             5
+          ]
+        },
+        "5": {
+          "word": "KU3.BABBAR",
+          "chars": [
+            6
           ]
         }
       },
@@ -172358,24 +172369,19 @@ var wordindex={
           ]
         },
         "2": {
-          "word": "1",
+          "word": "1(disz)-ME",
           "chars": [
-            2
-          ]
-        },
-        "3": {
-          "word": "ME",
-          "chars": [
+            2,
             3
           ]
         },
-        "4": {
+        "3": {
           "word": "8(disz)",
           "chars": [
             4
           ]
         },
-        "5": {
+        "4": {
           "word": "H,AR-mesz-",
           "chars": [
             5,
@@ -172408,7 +172414,8 @@ var wordindex={
           ]
         }
       }
-    }
+    },
+    "06_back": {}
   },
   "HT_07-31-106": {
     "03_front": {

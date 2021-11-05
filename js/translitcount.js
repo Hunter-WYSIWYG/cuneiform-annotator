@@ -1396,7 +1396,8 @@ var translitcount={
   "HT_07-25-39_06_back.png.json": 0,
   "HT_07-25-40_03_front.png.json": 34,
   "HT_07-25-95_03_front.png.json": 0,
-  "HT_07-31-95_03_front.png.json": 23,
+  "HT_07-31-95_03_front.png.json": 24,
+  "HT_07-31-95_06_back.png.json": 0,
   "HT_07-31-106_03_front.png.json": 65,
   "HT_07-31-106_06_back.png.json": 12
 }

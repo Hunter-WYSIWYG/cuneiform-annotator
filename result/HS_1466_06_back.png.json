@@ -138,10 +138,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ur",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -152,16 +149,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "3"
+        "value": "3",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -169,10 +176,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"46.07999038696289,398.5484313964844 192.3534393310547,383.0771789550781 192.3534393310547,491.37579345703125 44.67351531982422,504.0340881347656\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#4e552675-b272-4142-a236-0cfb421c742f"
+    "id": "#4e552675-b272-4142-a236-0cfb421c742f",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#70d28fba-6f6c-43c4-940e-c28050fccdaa": {
     "type": "Annotation",
@@ -181,10 +206,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "igi",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -195,16 +217,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "4"
+        "value": "4",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -212,10 +244,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"48.8929443359375,513.87939453125 165.63040161132812,505.4405517578125 162.8174591064453,595.4549560546875 50.29941940307617,605.30029296875\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#70d28fba-6f6c-43c4-940e-c28050fccdaa"
+    "id": "#70d28fba-6f6c-43c4-940e-c28050fccdaa",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#27cd08e0-e861-403c-a2a3-d49747008214": {
     "type": "Annotation",
@@ -224,10 +274,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ni",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -239,15 +286,25 @@
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "4"
+        "value": "4",
+        "source": "http://purl.org/cuneiform/Line"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -255,10 +312,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"354.0981140136719,489.9693298339844 190.94696044921875,494.1887512207031 181.1016387939453,588.422607421875 334.407470703125,579.9837646484375\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#27cd08e0-e861-403c-a2a3-d49747008214"
+    "id": "#27cd08e0-e861-403c-a2a3-d49747008214",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#4e232315-ba05-4733-8b8c-a189c3de7811": {
     "type": "Annotation",
@@ -267,10 +342,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "tug2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -284,10 +356,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"29.837799072265625,1253.4197998046875 120.97740173339844,1250.044189453125 114.226318359375,1346.2470703125 33.213340759277344,1354.68603515625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#4e232315-ba05-4733-8b8c-a189c3de7811"
+    "id": "#4e232315-ba05-4733-8b8c-a189c3de7811",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#caa6e8cc-84cd-4971-a9f1-83181890c537": {
     "type": "Annotation",
@@ -296,10 +386,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "3(disz)",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -313,10 +400,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"249.24795532226562,1231.478759765625 151.35726928710938,1239.9176025390625 146.29396057128906,1332.7449951171875 244.1846466064453,1320.9305419921875\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#caa6e8cc-84cd-4971-a9f1-83181890c537"
+    "id": "#caa6e8cc-84cd-4971-a9f1-83181890c537",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#56a5dee2-4fb9-4407-8317-c57da85746c5": {
     "type": "Annotation",
@@ -325,10 +430,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "e2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -342,10 +444,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"142.91839599609375,1455.9521484375 33.21332550048828,1471.14208984375 33.21332550048828,1579.159423828125 137.85508728027344,1560.593994140625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#56a5dee2-4fb9-4407-8317-c57da85746c5"
+    "id": "#56a5dee2-4fb9-4407-8317-c57da85746c5",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#3ac82097-a24f-41d3-9249-e511e624c0b5": {
     "type": "Annotation",
@@ -354,10 +474,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "gi",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -371,10 +488,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"303.256591796875,1423.884521484375 139.54286193847656,1454.264404296875 142.91839599609375,1553.8428955078125 298.1932678222656,1536.9652099609375\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#3ac82097-a24f-41d3-9249-e511e624c0b5"
+    "id": "#3ac82097-a24f-41d3-9249-e511e624c0b5",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#20fdd0a1-d6b8-49f0-b288-854abb9894f8": {
     "type": "Annotation",
@@ -383,10 +518,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ba",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -400,10 +532,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"114.22630310058594,1678.7379150390625 43.33995056152344,1688.864501953125 41.65217971801758,1785.0673828125 107.47522735595703,1785.0673828125\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#20fdd0a1-d6b8-49f0-b288-854abb9894f8"
+    "id": "#20fdd0a1-d6b8-49f0-b288-854abb9894f8",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#b68da65f-50db-4c98-a855-5dd5e1b60062": {
     "type": "Annotation",
@@ -412,10 +562,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "su",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -429,10 +576,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"222.2436065673828,1653.42138671875 109.16299438476562,1668.611328125 109.16299438476562,1785.0673828125 207.05368041992188,1778.31640625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#b68da65f-50db-4c98-a855-5dd5e1b60062"
+    "id": "#b68da65f-50db-4c98-a855-5dd5e1b60062",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#fca4575e-1cdd-4be7-81b4-8ea065de5de1": {
     "type": "Annotation",
@@ -440,7 +605,8 @@
       {
         "type": "TextualBody",
         "purpose": "Transliteration",
-        "value": "a"
+        "value": "a",
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -454,10 +620,24 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"323.50982666015625,1639.919189453125 220.55584716796875,1644.9825439453125 208.741455078125,1778.31640625 310.0076599121094,1771.5653076171875\"></polygon></svg>"
-      }
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#fca4575e-1cdd-4be7-81b4-8ea065de5de1"
+    "id": "#fca4575e-1cdd-4be7-81b4-8ea065de5de1",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#10d0ef56-e64c-405c-a167-cdc50ee6912e": {
     "type": "Annotation",
@@ -466,10 +646,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ba",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -483,10 +660,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"458.5314636230469,1616.2904052734375 355.5774841308594,1623.04150390625 352.2019348144531,1759.7508544921875 470.3458557128906,1756.3753662109375\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#10d0ef56-e64c-405c-a167-cdc50ee6912e"
+    "id": "#10d0ef56-e64c-405c-a167-cdc50ee6912e",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#df7d220d-1508-49bf-9628-0833bdc7aa2f": {
     "type": "Annotation",
@@ -495,10 +690,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ma2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -512,10 +704,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"329.6983947753906,1769.596435546875 231.24510192871094,1772.4093017578125 231.24510192871094,1861.017333984375 312.8206787109375,1855.391357421875\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#df7d220d-1508-49bf-9628-0833bdc7aa2f"
+    "id": "#df7d220d-1508-49bf-9628-0833bdc7aa2f",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#4ee2f9b4-dc7f-4a2d-b5cb-9d307f16ee39": {
     "type": "Annotation",
@@ -524,10 +734,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "sag",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -538,16 +745,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "6"
+        "value": "6",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -555,10 +772,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"212.03903198242188,691.8690185546875 58.451927185058594,696.9323120117188 50.01307678222656,816.7640380859375 196.84910583496094,808.3251342773438\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#4ee2f9b4-dc7f-4a2d-b5cb-9d307f16ee39"
+    "id": "#4ee2f9b4-dc7f-4a2d-b5cb-9d307f16ee39",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#7239180d-978e-4b0f-9c66-0aaf27c08881": {
     "type": "Annotation",
@@ -567,10 +802,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "lugal",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -581,16 +813,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "7"
+        "value": "7",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -598,10 +840,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"159.71815490722656,815.0762329101562 41.574222564697266,815.0762329101562 33.135372161865234,909.5913696289062 158.03038024902344,897.7769775390625 156.3426055908203,897.7769775390625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#7239180d-978e-4b0f-9c66-0aaf27c08881"
+    "id": "#7239180d-978e-4b0f-9c66-0aaf27c08881",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#24015839-1c9f-4e84-8fe8-34cf84e52558": {
     "type": "Annotation",
@@ -610,10 +870,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ama",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -624,16 +881,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "8"
+        "value": "8",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -641,10 +908,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"29.759830474853516,914.6547241210938 146.2159881591797,906.2158203125 139.46490478515625,1012.54541015625 33.135372161865234,1022.6719970703125\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#24015839-1c9f-4e84-8fe8-34cf84e52558"
+    "id": "#24015839-1c9f-4e84-8fe8-34cf84e52558",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#b875bdd9-f1bb-4d35-9918-d0ee8219f363": {
     "type": "Annotation",
@@ -653,10 +938,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "gar",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -670,10 +952,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"129.33828735351562,1125.6259765625 36.51091003417969,1135.7525634765625 28.072059631347656,1242.0821533203125 124.27497100830078,1235.3310546875\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#b875bdd9-f1bb-4d35-9918-d0ee8219f363"
+    "id": "#b875bdd9-f1bb-4d35-9918-d0ee8219f363",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#b67533b8-f6c4-415e-b8e9-ecfb55f8f2ef": {
     "type": "Annotation",
@@ -682,10 +982,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "bad3",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -699,10 +996,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"174.9080810546875,1333.2218017578125 31.447601318359375,1350.0994873046875 29.759830474853516,1464.8677978515625 166.46923828125,1446.3023681640625\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#b67533b8-f6c4-415e-b8e9-ecfb55f8f2ef"
+    "id": "#b67533b8-f6c4-415e-b8e9-ecfb55f8f2ef",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#fc0f5110-9d76-4014-985c-7041bcf7d924": {
     "type": "Annotation",
@@ -711,10 +1026,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "da",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -728,10 +1040,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"301.4908752441406,1307.9051513671875 171.5325469970703,1324.782958984375 166.46923828125,1449.677978515625 299.8031005859375,1417.6102294921875\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#fc0f5110-9d76-4014-985c-7041bcf7d924"
+    "id": "#fc0f5110-9d76-4014-985c-7041bcf7d924",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#86205e66-ca8d-43ea-b0e1-74aa174c688d": {
     "type": "Annotation",
@@ -739,7 +1069,8 @@
       {
         "type": "TextualBody",
         "purpose": "Transliteration",
-        "value": "a"
+        "value": "a",
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -753,10 +1084,24 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"358.87506103515625,1297.778564453125 299.8031005859375,1297.778564453125 308.241943359375,1414.2347412109375 362.2506103515625,1407.483642578125\"></polygon></svg>"
-      }
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#86205e66-ca8d-43ea-b0e1-74aa174c688d"
+    "id": "#86205e66-ca8d-43ea-b0e1-74aa174c688d",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#59c46d97-68d4-4eae-a177-42203f8d37c6": {
     "type": "Annotation",
@@ -765,10 +1110,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "sag",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -780,15 +1122,25 @@
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "3"
+        "value": "3",
+        "source": "http://purl.org/cuneiform/Line"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -796,10 +1148,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"312.60321044921875,365.514404296875 193.0528106689453,379.57916259765625 190.23985290527344,489.28424072265625 306.9773254394531,485.0648193359375\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#59c46d97-68d4-4eae-a177-42203f8d37c6"
+    "id": "#59c46d97-68d4-4eae-a177-42203f8d37c6",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#77a82dbd-ef4a-4660-a207-778d1969011f": {
     "type": "Annotation",
@@ -808,10 +1178,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ka",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -822,16 +1189,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "3"
+        "value": "3",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "3",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -839,10 +1216,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"419.495361328125,355.6690673828125 309.790283203125,361.29498291015625 305.5708312988281,487.8777770996094 413.86944580078125,482.2518615722656\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#77a82dbd-ef4a-4660-a207-778d1969011f"
+    "id": "#77a82dbd-ef4a-4660-a207-778d1969011f",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#140cc95b-f223-4878-96ae-f0f760208974": {
     "type": "Annotation",
@@ -851,10 +1246,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ga14",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -865,16 +1257,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "3"
+        "value": "3",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "4",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -882,10 +1284,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"550.297607421875,335.9784240722656 413.86944580078125,348.6366882324219 415.27593994140625,479.4389343261719 550.297607421875,466.7806396484375\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#140cc95b-f223-4878-96ae-f0f760208974"
+    "id": "#140cc95b-f223-4878-96ae-f0f760208974",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#ed5b1764-1852-46e4-9d79-6a467c48f732": {
     "type": "Annotation",
@@ -894,10 +1314,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ni",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -909,15 +1326,25 @@
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "5",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "3"
+        "value": "3",
+        "source": "http://purl.org/cuneiform/Line"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -925,10 +1352,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"662.8156127929688,321.9136657714844 550.297607421875,331.7590026855469 548.89111328125,430.2122802734375 675.473876953125,423.1799011230469\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#ed5b1764-1852-46e4-9d79-6a467c48f732"
+    "id": "#ed5b1764-1852-46e4-9d79-6a467c48f732",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#da0db5bc-53a9-4339-a881-5b186598147c": {
     "type": "Annotation",
@@ -937,10 +1382,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "ge26",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -952,15 +1394,25 @@
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "1",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
       },
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "2"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -968,10 +1420,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"150.81427001953125,280.66839599609375 60.56544494628906,290.044921875 54.70513153076172,392.01434326171875 147.29808044433594,382.6378479003906\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#da0db5bc-53a9-4339-a881-5b186598147c"
+    "id": "#da0db5bc-53a9-4339-a881-5b186598147c",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#0eb737b4-0593-4183-b0b4-5e1408ef7043": {
     "type": "Annotation",
@@ -979,7 +1449,8 @@
       {
         "type": "TextualBody",
         "purpose": "Transliteration",
-        "value": "e"
+        "value": "e",
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -990,16 +1461,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "2"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -1007,10 +1488,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"234.0307159423828,271.2919006347656 150.81427001953125,274.80810546875 149.64219665527344,380.2937316894531 228.17039489746094,372.08929443359375\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#0eb737b4-0593-4183-b0b4-5e1408ef7043"
+    "id": "#0eb737b4-0593-4183-b0b4-5e1408ef7043",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#b47ded73-ee0b-4154-aabd-381deabf087c": {
     "type": "Annotation",
@@ -1019,10 +1518,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "lu2",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -1033,16 +1529,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "2"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "3",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "0",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -1050,10 +1556,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"351.2369689941406,254.88302612304688 235.20277404785156,260.74334716796875 230.5145263671875,369.74517822265625 344.20458984375,355.680419921875\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#b47ded73-ee0b-4154-aabd-381deabf087c"
+    "id": "#b47ded73-ee0b-4154-aabd-381deabf087c",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#6da596d5-1f0c-4c7a-a0d7-5f4c925875e6": {
     "type": "Annotation",
@@ -1062,10 +1586,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "bi",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -1076,16 +1597,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "2"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "4",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "1",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -1093,10 +1624,28 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"468.4432373046875,232.6138458251953 352.4090270996094,239.64620971679688 348.8928527832031,353.3363037109375 475.4756164550781,343.95977783203125\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#6da596d5-1f0c-4c7a-a0d7-5f4c925875e6"
+    "id": "#6da596d5-1f0c-4c7a-a0d7-5f4c925875e6",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "#19bf1f50-c436-41a4-984e-73bd3bb272ab": {
     "type": "Annotation",
@@ -1105,10 +1654,7 @@
         "type": "TextualBody",
         "purpose": "Transliteration",
         "value": "igi",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/Transliteration"
       },
       {
         "type": "TextualBody",
@@ -1119,16 +1665,26 @@
       {
         "type": "TextualBody",
         "purpose": "Line",
-        "value": "2"
+        "value": "2",
+        "source": "http://purl.org/cuneiform/Line"
       },
       {
         "type": "TextualBody",
         "purpose": "Charindex",
         "value": "5",
-        "dimensions": {
-          "x": 1497,
-          "y": 2923
-        }
+        "source": "http://purl.org/cuneiform/CharacterIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Wordindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/WordIndex"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "RelCharindex",
+        "value": "2",
+        "source": "http://purl.org/cuneiform/RelativeCharacterIndex"
       }
     ],
     "target": {
@@ -1136,9 +1692,27 @@
       "selector": {
         "type": "SvgSelector",
         "value": "<svg><polygon points=\"544.6273193359375,232.6138458251953 469.61529541015625,236.13003540039062 474.3035583496094,341.61566162109375 551.65966796875,336.9273986816406\"></polygon></svg>"
+      },
+      "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "dimensions": {
+        "x": 1497,
+        "y": 2923
       }
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
-    "id": "#19bf1f50-c436-41a4-984e-73bd3bb272ab"
+    "id": "#19bf1f50-c436-41a4-984e-73bd3bb272ab",
+    "creator": {
+      "id": "https://orcid.org/0000-0002-9499-5840",
+      "type": "Person",
+      "name": "Timo Homburg",
+      "nickname": "situx"
+    },
+    "generator": {
+      "id": "https://github.com/recogito/annotorious-openseadragon",
+      "type": "Software",
+      "name": "Annotorious-OpenSeadragon 1.5.6",
+      "homepage": "https://github.com/recogito/annotorious-openseadragon"
+    },
+    "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }
