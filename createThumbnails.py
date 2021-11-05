@@ -308,7 +308,7 @@ for filename in dircontent:
         if purpose!="Line":
             if shortfilename[0:shortfilename.rfind("_")] in hs2CDLI:
                 jsondata[annotation]["body"].append({"type":"TextualBody","purpose":"linking","value":cdlinamespace+hs2CDLI[shortfilename[0:shortfilename.rfind("_")]]+"_char_"+str(column)+"_"+str(line)+"_"+str(curcharindex)})
-        f = open(exportdir+"/annotations/"+filename, 'w')
+        f = open(exportdir+"/charannotations/"+filename, 'w')
         f.write(json.dumps(jsondata,indent=2))
         f.close()
         if line!=-1:
