@@ -619,10 +619,10 @@ for filename in dircontent:
             print("line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;\n")
             errorlog+="line;"+str(maxcoords)+";"+str(width)+";"+str(height)+";line_"+str(line).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(e)+";"+str(sys.exc_info()[1])+";"+str(sys.exc_info()[2])+"\n"
     f = open(exportdir+"/wordannotations/words_"+filename, 'w')
-    f.write(json.dumps(wordannoexport))
+    f.write(json.dumps(wordannoexport, indent=2))
     f.close()
     f = open(exportdir+"/lineannotations/lines_"+filename, 'w')
-    f.write(json.dumps(lineannoexport))
+    f.write(json.dumps(lineannoexport, indent=2))
     f.close()
     if filename in translitcount:
         totalexpectedchars+=translitcount[filename]
