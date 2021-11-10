@@ -645,6 +645,7 @@ async function getAnnotation(path){
     anno = OpenSeadragon.Annotorious(viewer,annoconfig);
     //annotations = OpenSeadragon.Annotations({ viewer });
     Annotorious.SelectorPack(anno);
+    Annotorious.BetterPolygon(anno);
     Annotorious.Toolbar(anno, document.getElementById('my-toolbar-container'));
     $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
       console.log(result)
