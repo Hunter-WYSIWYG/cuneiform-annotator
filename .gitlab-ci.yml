@@ -5,8 +5,6 @@ variables:
   LC_ALL: C.UTF-8
 
 before_script:
-  - gem install bundler:1.13.6
-  - bundle install
   - apt-get update
   - apt-get install exempi python3 python3-pip imagemagick libmagickwand-dev -y
   - pip3 install python-xmp-toolkit numpy svgwrite svgpathtools requests rdflib rdflib-jsonld pillow
