@@ -41,7 +41,7 @@ imageclassification:
 pages:
   stage: deploy
   script:
-  - bundle add jekyll
+  - bundle install
   - bundle exec jekyll build -d public
   - python3 extractPaleoCodes.py
   artifacts:
