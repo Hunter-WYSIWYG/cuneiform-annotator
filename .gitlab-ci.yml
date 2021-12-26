@@ -4,6 +4,10 @@ variables:
   JEKYLL_ENV: production
   LC_ALL: C.UTF-8
 
+stages:
+  - deploy
+  - build
+
 before_script:
   - apt-get update
   - apt-get install exempi python3 python3-pip imagemagick libmagickwand-dev libatlas-base-dev liblapack-dev libblas-dev gfortran -y
@@ -37,6 +41,7 @@ imageclassification:
 pages:
   stage: deploy
   script:
+  - bundle add jekyll
   - bundle exec jekyll build -d public
   - python3 extractPaleoCodes.py
   artifacts:
