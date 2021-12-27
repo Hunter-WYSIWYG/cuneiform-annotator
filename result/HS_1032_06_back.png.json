@@ -2038,5 +2038,48 @@
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     },
     "rights": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "#f3f2c822-f55f-411b-b8a3-92bfc044b9fd": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "pa3",
+        "dimensions": {
+          "x": 984,
+          "y": 1109
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "4"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 984,
+          "y": 1109
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111730:575906/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"962.3692016601562,630.98291015625 885.8864135742188,629.0708618164062 882.062255859375,757.1795043945312 947.0726318359375,761.0036010742188\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#f3f2c822-f55f-411b-b8a3-92bfc044b9fd"
   }
 }
