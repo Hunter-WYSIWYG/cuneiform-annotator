@@ -17,6 +17,7 @@ else:
 if not maxsize.isnumeric():
     exit()
 
+
 samplesize=int(samplesize)
 maxsize=int(maxsize)
 
@@ -37,6 +38,7 @@ for row in list_of_rows:
     if cursize>=maxsize:
         break
     if cursize==0:
+        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
         cursize+=1
         continue
     if not row[2] in alreadyprocessed:
@@ -45,7 +47,7 @@ for row in list_of_rows:
         f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
         shutil.copyfile("char_annotated/"+row[0], "zooniverse_char_verify_ref_manifest_result/"+row[0])
         if os.path.isfile("normalized_signs_comp/"+row[1].lower().capitalize()):
-            shutil.copyfile("normalized_signs_comp/"+row[1].lower().capitalize(), "zooniverse_char_verify_ref_manifest_result/"+row[1].upper())
+            shutil.copyfile("normalized_signs_comp/"+row[1].lower().capitalize(), "zooniverse_char_verify_ref_manifest_result/"+row[1].upper().replace(".JPG",".jpg"))
             print("File found: "+"normalized_signs_comp/"+row[1].lower().capitalize())
         else:
             print("File not found: "+"normalized_signs_comp/"+row[1].lower().capitalize())
@@ -71,6 +73,7 @@ for row in list_of_rows:
     if cursize>=maxsize:
         break
     if cursize==0:
+        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
         cursize+=1
         continue
     if not row[2] in alreadyprocessed:
