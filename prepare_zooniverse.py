@@ -38,13 +38,13 @@ for row in list_of_rows:
     if cursize>=maxsize:
         break
     if cursize==0:
-        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
+        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+"\n")
         cursize+=1
         continue
     if not row[2] in alreadyprocessed:
         alreadyprocessed[row[2]]=0
     if alreadyprocessed[row[2]]<=samplesize:
-        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
+        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+"\n")
         shutil.copyfile("char_annotated/"+row[0], "zooniverse_char_verify_ref_manifest_result/"+row[0])
         if os.path.isfile("normalized_signs_comp/"+row[1].lower().capitalize()):
             shutil.copyfile("normalized_signs_comp/"+row[1].lower().capitalize(), "zooniverse_char_verify_ref_manifest_result/"+row[1].upper().replace(".JPG",".jpg"))
@@ -73,13 +73,13 @@ for row in list_of_rows:
     if cursize>=maxsize:
         break
     if cursize==0:
-        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
+        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+"\n")
         cursize+=1
         continue
     if not row[2] in alreadyprocessed:
         alreadyprocessed[row[2]]=0
     if alreadyprocessed[row[2]]<=samplesize:
-        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+"\n")
+        f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+"\n")
         shutil.copyfile("char_annotated/"+row[0], "zooniverse_char_verify_line_manifest_result/"+row[0])
         if os.path.isfile("line/"+row[1]):
             shutil.copyfile("line/"+row[1], "zooniverse_char_verify_line_manifest_result/"+row[1])
