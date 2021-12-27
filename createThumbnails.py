@@ -116,11 +116,11 @@ wordcsv=""
 
 errorlog=""
 
-zooniverse_char_verify="image;charclass;transliteration;broken\n"
+zooniverse_char_verify="image;charclass;transliteration;#broken\n"
 
-zooniverse_char_verify_ref="image;ref;charclass;transliteration;broken\n"
+zooniverse_char_verify_ref="image;ref;charclass;transliteration;#broken\n"
 
-zooniverse_char_verify_line="image;line;charclass;transliteration;broken\n"
+zooniverse_char_verify_line="image;line;charclass;transliteration;#broken\n"
 
 translitstats="filename,annotations,expected,percentage,indexedannotations,expected,percentage\n"
 
@@ -168,6 +168,7 @@ curlineindex=-1
 linepurpose="Line"
 taggingpurpose="tagging"
 tagging=""
+exportoption=""
 emptycounter=0
 ttlstring=set()
 ttlheader=""
@@ -201,6 +202,8 @@ if len(sys.argv)>2:
         singlefolder=True
 if len(sys.argv)>3:
     purpose=sys.argv[3]
+if len(sys.argv)>4:
+    exportoption=sys.argv[4]
 dircontent=os.listdir("result")
 sorted(dircontent)
 with open('js/newurls2.js', 'r') as myfile:
