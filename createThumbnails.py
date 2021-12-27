@@ -116,11 +116,11 @@ wordcsv=""
 
 errorlog=""
 
-zooniverse_char_verify="image;charclass;transliteration\n"
+zooniverse_char_verify="image;charclass;transliteration;broken\n"
 
-zooniverse_char_verify_ref="image;ref;charclass;transliteration\n"
+zooniverse_char_verify_ref="image;ref;charclass;transliteration;broken\n"
 
-zooniverse_char_verify_line="image;line;charclass;transliteration\n"
+zooniverse_char_verify_line="image;line;charclass;transliteration;broken\n"
 
 translitstats="filename,annotations,expected,percentage,indexedannotations,expected,percentage\n"
 
@@ -282,6 +282,7 @@ for filename in dircontent:
         line=-1
         column=-1
         tagging=""
+        broken=False
         for annoobj in jsondata[annotation]["body"]:
             if annoobj["purpose"]==purpose and purpose=="Transliteration": 
                 translit=annoobj["value"]
@@ -294,6 +295,8 @@ for filename in dircontent:
             elif annoobj["purpose"]==taggingpurpose and annoobj["value"]=="Character":
                 annoobj["purpose"]="classifying"
                 tagging=annoobj["value"]
+            elif annoobj["purpose"]==taggingpurpose and annoobj["value"]=="Broken":
+                broken=True
             elif annoobj["purpose"]==taggingpurpose:
                 tagging=annoobj["value"]
             elif annoobj["purpose"]==columnindexpurpose:
@@ -428,9 +431,9 @@ for filename in dircontent:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+".jpg")
                 else:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
-                zooniverse_char_verify+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_ref+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+"\n"
-                zooniverse_char_verify_line+=savedfilename.replace(".jpg","_annotated.jpg")+";line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+"\n"
+                zooniverse_char_verify+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
+                zooniverse_char_verify_ref+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
+                zooniverse_char_verify_line+=savedfilename.replace(".jpg","_annotated.jpg")+";line_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"+str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
