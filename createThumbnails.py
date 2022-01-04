@@ -610,7 +610,7 @@ for filename in dircontent:
                             curcoords=charcoordsperline[linee][curchar]
                             curimg=img2.copy()
                             img1 = ImageDraw.Draw(curimg)  
-                            img1.rectangle([int(curcoords[0]),int(curcoords[2]),int(curcoords[1]),int(curcoords[3])], outline ="red")
+                            img1.rectangle([int(curcoords[0]),int(curcoords[2]),int(curcoords[1]),int(curcoords[3])], outline ="red",width=3)
                             curcrop = curimg.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                             savedannolinename=exportdir+"/charline/"+"charline_"+str(linee).replace("line","")+"_"+str(curchar).replace("char","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             curcrop.save(savedannolinename)
