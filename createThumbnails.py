@@ -608,9 +608,9 @@ for filename in dircontent:
                     for worde in maxwordcoords:
                         curcrop=img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                         img1 = ImageDraw.Draw(curcrop)  
-                        img1.rectangle(maxwordcoords, fill ="# ffff33", outline ="red")
+                        img1.rectangle(maxwordcoords, outline ="red")
                         savedannolinename=exportdir+"/wordline/"+"wordline_"+str(linee).replace("line","")+"_"+str(worde).replace("word","")+"_"++"_"+filename.replace(".png","").replace(".json","")+".jpg"
-                        cropped.save(savedannolinename)
+                        img1.save(savedannolinename)
                     writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")]).replace(".png","")+" side",iiifurl)
                     linecsv+="\n"
                 for worde in maxwordcoords:
