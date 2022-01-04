@@ -608,9 +608,10 @@ for filename in dircontent:
                     if linee in charcoordsperline:
                         for curchar in charcoordsperline[linee]:
                             curcoords=charcoordsperline[linee][curchar]
-                            curcrop = img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
-                            img1 = ImageDraw.Draw(curcrop)  
+                            curimg=img2.copy()
+                            img1 = ImageDraw.Draw(curimg)  
                             img1.rectangle([int(curcoords[0]),int(curcoords[2]),int(curcoords[1]),int(curcoords[3])], outline ="red")
+                            curcrop = curimg.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
                             savedannolinename=exportdir+"/charline/"+"charline_"+str(linee).replace("line","")+"_"+str(curchar).replace("char","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                             curcrop.save(savedannolinename)
                     writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")]).replace(".png","")+" side",iiifurl)
