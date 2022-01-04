@@ -244,6 +244,8 @@ for filename in dircontent:
         jsondata=json.load(json_file)
     maxcoords={}
     maxwordcoords={}
+    charcoordsperline={}
+    wordcoordsperline={}
     wordindextoword={}
     maxcoordtemplate=[-99999.0,99999.0,-99999.0,99999.0]
     try:
@@ -321,6 +323,8 @@ for filename in dircontent:
             if not "line"+str(line) in maxcoords:
                 maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
+            if not "line"+str(line) in charcoordsperline:
+                charcoordsperline["line"+str(line)]=[]
         if curwordindex!=-1:
             if not "word"+str(line)+"_"+str(curwordindex) in maxwordcoords:
                 maxwordcoords["word"+str(line)+"_"+str(curwordindex)]=[99999.0,-99999.0,99999.0,-99999.0]
@@ -401,6 +405,7 @@ for filename in dircontent:
                 #print("w"+str(width)+" h"+str(height))
                 #print(str(coords[2])+"x"+str(coords[3])+"+"+str(coords[1]-coords[0])+"+"+str(coords[3]-coords[2]))
                 cropped = img.crop((int(coords[0]),int(coords[2]),int(coords[1]),int(coords[3])))
+                charcoordsperline["line"+str(line)]=coords
                 #print("CROPPED!")
                 #with img[int(coords[0]):int(coords[1]),int(coords[2]):int(coords[3])] as cropped:
                 savedfilename=str(translit).replace("/","_").replace("'","_")+"_"+str(translits[charclass])+"_"+str(column).replace("-","")+"_"+str(line)+"_"+str(curcharindex)+"_"+filename.replace(".png","").replace(".json","")+".jpg"
@@ -600,6 +605,12 @@ for filename in dircontent:
                     #with img2[int(maxcoords[linee][0]):int(maxcoords[linee][1]),int(maxcoords[linee][2]):int(maxcoords[linee][3])] as cropped:
                     savedlinename=exportdir+"/line/"+"line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
                     cropped.save(savedlinename)
+                    for worde in maxwordcoords:
+                        curcrop=img2.crop((int(maxcoords[linee][0]),int(maxcoords[linee][2]),int(maxcoords[linee][1]),int(maxcoords[linee][3])))
+                        img1 = ImageDraw.Draw(curcrop)  
+                        img1.rectangle(maxwordcoords, fill ="# ffff33", outline ="red")
+                        savedannolinename=exportdir+"/wordline/"+"wordline_"+str(linee).replace("line","")+"_"+str(worde).replace("word","")+"_"++"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                        cropped.save(savedannolinename)
                     writeXMP(savedlinename,"Line "+str(linee).replace("line","")+" in text "+shortfilename[0:filename.rfind("_")]+" on the "+str(filename[filename.rfind("_")+1:filename.rfind(".")]).replace(".png","")+" side",iiifurl)
                     linecsv+="\n"
                 for worde in maxwordcoords:
