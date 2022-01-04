@@ -323,8 +323,8 @@ for filename in dircontent:
             if not "line"+str(line) in maxcoords:
                 maxcoords["line"+str(line)]=[99999.0,-99999.0,99999.0,-99999.0]
             maxcoords["line"+str(line)]=defineBBOX(coords,maxcoords["line"+str(line)])
-            if not "line"+str(line) in charcoordsperline:
-                charcoordsperline["line"+str(line)]={}
+        if not "line"+str(line) in charcoordsperline:
+            charcoordsperline["line"+str(line)]={}
         if curwordindex!=-1:
             if not "word"+str(line)+"_"+str(curwordindex) in maxwordcoords:
                 maxwordcoords["word"+str(line)+"_"+str(curwordindex)]=[99999.0,-99999.0,99999.0,-99999.0]
