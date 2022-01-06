@@ -441,10 +441,8 @@ for filename in dircontent:
                     homepagejson[translit].append("thumbnails/"+str(translit).replace("/","_").replace("'","_")+"/"+str(translit)+"_"+str(translits[charclass])+".jpg")
                 zooniverse_char_verify+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
                 zooniverse_char_verify_ref+=savedfilename.replace(".jpg","_annotated.jpg")+";"+str(charunicode).upper()+".jpg;"+str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
-                zooniverse_char_verify_line+=savedfilename.replace(".jpg","_annotated.jpg")+
-                "charline_"+str(linee).replace("line","")+"_"+str(translit).replace("char","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"
+                zooniverse_char_verify_line+=savedfilename.replace(".jpg","_annotated.jpg")+"charline_"+str(linee).replace("line","")+"_"+str(translit).replace("char","")+"_"+filename.replace(".png","").replace(".json","")+".jpg"+str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
                 #";charline_"+str(line)+"_"+filename.replace(".png","").replace(".json","")+".jpg;"
-                +str(charclass)+";"+str(translit)+";"+str(broken)+"\n"
             if per in periods:
                 shortfilename=filename[0:filename.rfind("_")]
                 outputcsv+=shortfilename+";"
