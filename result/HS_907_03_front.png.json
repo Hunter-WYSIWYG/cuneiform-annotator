@@ -3168,5 +3168,57 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#df2e1808-29a1-4482-a454-714ada8c4d67": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "1(szar2@c)",
+        "dimensions": {
+          "x": 1496,
+          "y": 1457
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Column",
+        "value": "2"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "1",
+        "dimensions": {
+          "x": 1496,
+          "y": 1457
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "1",
+        "dimensions": {
+          "x": 1496,
+          "y": 1457
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1126553:590922/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"925.98681640625,65.60466003417969 782.9384155273438,67.34915924072266 782.9384155273438,215.63101196289062 920.7533569335938,213.8865203857422\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#df2e1808-29a1-4482-a454-714ada8c4d67"
   }
 }
