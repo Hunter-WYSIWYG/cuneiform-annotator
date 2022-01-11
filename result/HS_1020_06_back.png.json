@@ -1379,6 +1379,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "5"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "4",
+        "dimensions": {
+          "x": 731,
+          "y": 818
+        }
       }
     ],
     "target": {
@@ -1423,6 +1437,20 @@
         "value": "Character",
         "purpose": "tagging",
         "source": "http://purl.org/cuneiform/Character"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "5"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 731,
+          "y": 818
+        }
       }
     ],
     "target": {
@@ -1536,5 +1564,91 @@
       "name": "Annotorious-OpenSeadragon 1.5.6",
       "homepage": "https://github.com/recogito/annotorious-openseadragon"
     }
+  },
+  "#66bc8b67-5957-43fe-b569-033ab49aa0a7": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "en",
+        "dimensions": {
+          "x": 731,
+          "y": 818
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "5"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "5",
+        "dimensions": {
+          "x": 731,
+          "y": 818
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111658:575825/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"690.5189819335938,568.1756591796875 643.5074462890625,568.1756591796875 648.4044799804688,646.5281982421875 556.34033203125,636.734130859375 551.4432983398438,690.6014404296875 676.8072509765625,699.4160766601562\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#66bc8b67-5957-43fe-b569-033ab49aa0a7"
+  },
+  "#357b49cb-b718-45a0-96ab-203eda2b5b67": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "lil2",
+        "dimensions": {
+          "x": 731,
+          "y": 818
+        }
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Line",
+        "value": "5"
+      },
+      {
+        "type": "TextualBody",
+        "purpose": "Charindex",
+        "value": "7",
+        "dimensions": {
+          "x": 731,
+          "y": 818
+        }
+      },
+      {
+        "type": "TextualBody",
+        "value": "Character",
+        "purpose": "tagging",
+        "source": "http://purl.org/cuneiform/Character"
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1111658:575825/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"724.7981567382812,579.9285278320312 683.6630859375,576.9903564453125 679.7454833984375,673.9515380859375 718.9217529296875,671.9927368164062\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#357b49cb-b718-45a0-96ab-203eda2b5b67"
   }
 }
