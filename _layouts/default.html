@@ -331,7 +331,7 @@ function formatTransliteration(transliteration){
     }
   }
 
-  function saveApprovals(){
+  async function saveApprovals(){
     tabletnumber=$('#images option:selected').text()
     tabletside=$('#imageside option:selected').text().replace(".png","").replace(tabletnumber+"_","")
     if(!(tabletnumber in approvals)){
