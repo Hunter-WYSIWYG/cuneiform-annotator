@@ -299,7 +299,7 @@ function formatTransliteration(transliteration){
 
   function manageApprovals(){
     tabletnumber=$('#images option:selected').text()
-    tabletside=$('#imageside option:selected').text().replace(".png","").replace(tabletnumber+"_","")
+    side=$('#imageside option:selected').text().replace(".png","").replace(tabletnumber+"_","")
     if(!(tabletnumber in approvals)){
       approvals[tabletnumber]={}
     }
