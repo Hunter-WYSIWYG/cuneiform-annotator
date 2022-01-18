@@ -346,7 +346,7 @@ function formatTransliteration(transliteration){
     approvals[tabletnumber][side]["indexingcorrect"]=$('#indexingcorrect').val()
     approvals[tabletnumber][side]["annotationscorrect"]=$('#annotationscorrect').val()
     approvals[tabletnumber][side]["annotationscomplete"]=$('#annotationscomplete').val()
-    var users= await api.RepositoryFiles.edit(16599, "js/approvals.js","master",JSON.stringify(approvals,null,2),"Committed approvals for "+$('#imageside option:selected').text()+".json");
+    var users= await api.RepositoryFiles.edit(16599, "js/approvals.js","master","var approvals="+JSON.stringify(approvals,null,2),"Committed approvals for "+$('#imageside option:selected').text()+".json");
   }
 
 
