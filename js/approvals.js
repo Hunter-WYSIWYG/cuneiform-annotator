@@ -1,4 +1,4 @@
-{
+var approvals={
   "HS_0044": {
     "03_front": {
       "positioningcorrect": "unknown",
