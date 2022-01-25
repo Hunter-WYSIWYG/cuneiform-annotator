@@ -9,9 +9,9 @@ stages:
   - build
 
 before_script:
-  - apt-get update
-  - apt-get install exempi python3 python3-pip imagemagick libmagickwand-dev libatlas-base-dev liblapack-dev libblas-dev gfortran -y
-  - pip3 install python-xmp-toolkit numpy svgwrite svgpathtools requests rdflib rdflib-jsonld pillow
+  #- apt-get update
+  #- apt-get install exempi python3 python3-pip imagemagick libmagickwand-dev libatlas-base-dev liblapack-dev libblas-dev gfortran -y
+  #- pip3 install python-xmp-toolkit numpy svgwrite svgpathtools requests rdflib rdflib-jsonld pillow
 
 imageclassification:
   stage: build
@@ -46,7 +46,7 @@ pages:
   script:
   - bundle install
   - bundle exec jekyll build -d public
-  - python3 extractPaleoCodes.py
+  #- python3 extractPaleoCodes.py
   artifacts:
     paths:
     - public
