@@ -41,5 +41,14 @@ var approvals={
   },
   "HS_931": {
     "03_front": {}
+  },
+  "HS_903": {
+    "03_front": {
+      "positioningcorrect": "correct",
+      "transliterationcorrect": "correct",
+      "indexingcorrect": "unknown",
+      "annotationscorrect": "unknown",
+      "annotationscomplete": "unknown"
+    }
   }
 }
