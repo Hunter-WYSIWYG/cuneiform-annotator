@@ -1249,6 +1249,8 @@ console.log("3d model loaded successfully")
 
 //--POINT PICKING--
 	presenter._onEndPickingPoint = onEndPick;
+  presenter._selectionPoints=[0.0,1.0,2.0]
+  presenter.repaint()
 //--POINT PICKING--
 console.log("init 3dhop")
   console.log(presenter._scene.meshes)
@@ -1286,6 +1288,8 @@ console.log("3d model loaded successfully")
 
 //--POINT PICKING--
 	presenter._onEndPickingPoint = onEndPick;
+  presenter._selectionPoints=[0.0,1.0,2.0]
+  presenter.repaint()
 //--POINT PICKING--
 console.log("init 3dhop")
   console.log(presenter._scene.meshes)
@@ -1295,8 +1299,7 @@ console.log("init 3dhop")
 //--SECTIONS--
 //	sectiontoolInit();
 //--SECTIONS--});
-presenter._selectionPoints=[0.0,1.0,2.0]
-  presenter.repaint()
+
 }
 
 function actionsToolbar(action) {
