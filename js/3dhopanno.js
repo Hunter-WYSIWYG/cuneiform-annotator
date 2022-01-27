@@ -1,13 +1,13 @@
 var 3dannotations=[]
 
-function resetAnnotations(presenter){
+function reset3DHopAnnotations(presenter){
     3dannotations=[]
     presenter._selectionPoints=[]
     console.log(3dannotations)
     presenter.repaint()
 }
 
-function loadAnnotations(annos,presenter){
+function load3DHopAnnotations{
     viewer.multiplepolygon=[]
     for(ann in annos){
         presenter._selectionPoints.push(ann["target"]["selector"])

@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/init_added.js"></script>
+<script type="text/javascript" src="js/3dhopanno.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="js/gitbeaker.js"></script>
 <style>
@@ -922,7 +923,7 @@ function addTag(){
 </div>
 <div class="col-md-6">
   3DModel:<br/>
-<select id="3dimages" onchange="setup3dhop()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
+<select id="3dimages" onchange="reload3dhop()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
@@ -1374,6 +1375,14 @@ function selectionSwitch(on) {
 
     }
 
+}
+
+function reload3dhop(){
+  setup3dhop();
+  presenter._selectionPoints=[[0.0,1.0,2.0],[1.0,2.0,0.0],[2.0,1.0,0.0],[1.0,1.0,1.0]]
+  presenter.repaint()
+  #load3DHopAnnotations
+  #load3DHopAnnotations(annos,presenter)
 }
 
 $(document).ready(function(){
