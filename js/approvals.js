@@ -61,10 +61,10 @@ var approvals={
     "02_left": {},
     "04_right": {
       "positioningcorrect": "correct",
-      "transliterationcorrect": "correct",
-      "indexingcorrect": "unknown",
-      "annotationscorrect": "unknown",
-      "annotationscomplete": "unknown"
+      "transliterationcorrect": "incorrect",
+      "indexingcorrect": "correct",
+      "annotationscorrect": "correct",
+      "annotationscomplete": "complete"
     },
     "01_top": {}
   },
