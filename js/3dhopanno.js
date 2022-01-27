@@ -1,9 +1,9 @@
-var 3dannotations=[]
+var annotations3d=[]
 
 function reset3DHopAnnotations(presenter){
-    3dannotations=[]
+    annotations3d=[]
     presenter._selectionPoints=[]
-    console.log(3dannotations)
+    console.log(annotations3d)
     presenter.repaint()
 }
 
