@@ -59,7 +59,16 @@ var approvals={
       "annotationscomplete": "complete"
     },
     "02_left": {},
-    "04_right": {},
+    "04_right": {
+      "positioningcorrect": "correct",
+      "transliterationcorrect": "correct",
+      "indexingcorrect": "unknown",
+      "annotationscorrect": "unknown",
+      "annotationscomplete": "unknown"
+    },
     "01_top": {}
+  },
+  "HS_902": {
+    "03_front": {}
   }
 }
