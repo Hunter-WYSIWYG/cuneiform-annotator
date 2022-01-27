@@ -1038,6 +1038,14 @@ function addTag(){
 <script type="text/javascript">
 var presenter = null;
 
+function reload3dhop(){
+  setup3dhop();
+  presenter._selectionPoints=[[0.0,1.0,2.0],[1.0,2.0,0.0],[2.0,1.0,0.0],[1.0,1.0,1.0]]
+  presenter.repaint()
+  //load3DHopAnnotations
+  //load3DHopAnnotations(annos,presenter)
+}
+
 var annos3d={};
 
 function onPickedSpot(id) {
@@ -1377,13 +1385,7 @@ function selectionSwitch(on) {
 
 }
 
-function reload3dhop(){
-  setup3dhop();
-  presenter._selectionPoints=[[0.0,1.0,2.0],[1.0,2.0,0.0],[2.0,1.0,0.0],[1.0,1.0,1.0]]
-  presenter.repaint()
-  #load3DHopAnnotations
-  #load3DHopAnnotations(annos,presenter)
-}
+
 
 $(document).ready(function(){
 	init3dhop();
