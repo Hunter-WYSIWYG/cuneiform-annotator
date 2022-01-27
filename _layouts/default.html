@@ -1339,6 +1339,8 @@ function onEndMeasure(measure) {
 }
 //--MEASURE--
 
+alreadypickedpoints=[]
+
 //--PICKPOINT--
 function onEndPick(point) {
 	// .toFixed(2) sets the number of decimals when displaying the picked point	
@@ -1346,6 +1348,8 @@ function onEndPick(point) {
 	var y = point[1].toFixed(2);
 	var z = point[2].toFixed(2);
     $('#pickpoint-output').html("[ "+x+" , "+y+" , "+z+" ]");
+  alreadypickedpoints.push([x,y,z])
+  console.log(alreadypickedpoints)
 } 
 //--PICKPOINT--	
 
