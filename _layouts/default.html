@@ -1040,8 +1040,6 @@ var presenter = null;
 
 function reload3dhop(){
   setup3dhop();
-  presenter._selectionPoints=[[0.0,1.0,2.0],[1.0,2.0,0.0],[2.0,1.0,0.0],[1.0,1.0,1.0]]
-  presenter.repaint()
   //load3DHopAnnotations
   //load3DHopAnnotations(annos,presenter)
 }
@@ -1298,6 +1296,8 @@ console.log("3d model loaded successfully")
 console.log("init 3dhop")
   console.log(presenter._scene.meshes)
   }
+  presenter._selectionPoints=[[0.0,1.0,2.0],[1.0,2.0,0.0],[2.0,1.0,0.0],[1.0,1.0,1.0]]
+  presenter.repaint()
 
 //--SECTIONS--
 //	sectiontoolInit();
