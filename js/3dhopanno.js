@@ -7,7 +7,7 @@ function reset3DHopAnnotations(presenter){
     presenter.repaint()
 }
 
-function load3DHopAnnotations{
+function load3DHopAnnotations(annos,presenter){
     viewer.multiplepolygon=[]
     for(ann in annos){
         presenter._selectionPoints.push(ann["target"]["selector"])
