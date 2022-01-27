@@ -49,6 +49,17 @@ var approvals={
       "indexingcorrect": "unknown",
       "annotationscorrect": "unknown",
       "annotationscomplete": "unknown"
-    }
+    },
+    "05_bottom": {},
+    "06_back": {
+      "positioningcorrect": "correct",
+      "transliterationcorrect": "correct",
+      "indexingcorrect": "unknown",
+      "annotationscorrect": "unknown",
+      "annotationscomplete": "unknown"
+    },
+    "02_left": {},
+    "04_right": {},
+    "01_top": {}
   }
 }
