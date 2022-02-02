@@ -49,6 +49,26 @@ var approvals={
       "indexingcorrect": "unknown",
       "annotationscorrect": "unknown",
       "annotationscomplete": "unknown"
-    }
+    },
+    "05_bottom": {},
+    "06_back": {
+      "positioningcorrect": "correct",
+      "transliterationcorrect": "incorrect",
+      "indexingcorrect": "correct",
+      "annotationscorrect": "correct",
+      "annotationscomplete": "complete"
+    },
+    "02_left": {},
+    "04_right": {
+      "positioningcorrect": "correct",
+      "transliterationcorrect": "incorrect",
+      "indexingcorrect": "correct",
+      "annotationscorrect": "correct",
+      "annotationscomplete": "complete"
+    },
+    "01_top": {}
+  },
+  "HS_902": {
+    "03_front": {}
   }
 }

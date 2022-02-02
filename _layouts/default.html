@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/init_added.js"></script>
+<script type="text/javascript" src="js/3dhopanno.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="js/gitbeaker.js"></script>
 <style>
@@ -61,9 +62,15 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><br/>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
+visible=true
+function showHideAnno(){
+  visible=!visible
+  anno.setVisible(visible)
+}
+
 approvaltags=[]
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -1050,7 +1057,7 @@ function onPickedSpot(id) {
 
 function setup3dhop() {
   if($("#3dimages").text() in hs23D && !("bbox" in hs23D[$("#3dimages").text()])){
-    	presenter = new Presenter("draw-canvas");
+    	presenter = new Presenter_extended("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
 		meshes: {
@@ -1207,7 +1214,7 @@ function setup3dhop() {
       //annotations.push(result[ann])
     }
     console.log(spots)
-    	presenter = new Presenter("draw-canvas");
+    	presenter = new Presenter_extended("draw-canvas");
   console.log("load 3d model")
   presenter._onPickedSpot = onPickedSpot;
 	presenter.setScene({
@@ -1242,12 +1249,13 @@ console.log("3d model loaded successfully")
 
 //--POINT PICKING--
 	presenter._onEndPickingPoint = onEndPick;
+
 //--POINT PICKING--
 console.log("init 3dhop")
   console.log(presenter._scene.meshes)
   },
   error: function(data){
-	presenter = new Presenter("draw-canvas");
+	presenter = new Presenter_extended("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
 		meshes: {
@@ -1279,15 +1287,19 @@ console.log("3d model loaded successfully")
 
 //--POINT PICKING--
 	presenter._onEndPickingPoint = onEndPick;
+  presenter._selectionPoints=[[0.0,26.0,2.0]]
+  presenter.repaint()
 //--POINT PICKING--
 console.log("init 3dhop")
   console.log(presenter._scene.meshes)
   }
+  
 
 //--SECTIONS--
 //	sectiontoolInit();
 //--SECTIONS--
 });
+
 }
 
 function actionsToolbar(action) {
@@ -1333,6 +1345,8 @@ function onEndMeasure(measure) {
 }
 //--MEASURE--
 
+alreadypickedpoints=[]
+
 //--PICKPOINT--
 function onEndPick(point) {
 	// .toFixed(2) sets the number of decimals when displaying the picked point	
@@ -1340,6 +1354,10 @@ function onEndPick(point) {
 	var y = point[1].toFixed(2);
 	var z = point[2].toFixed(2);
     $('#pickpoint-output').html("[ "+x+" , "+y+" , "+z+" ]");
+  alreadypickedpoints.push([x,y,z])
+  console.log(alreadypickedpoints)
+  presenter._selectionPoints=alreadypickedpoints
+  presenter.repaint()
 } 
 //--PICKPOINT--	
 
@@ -1366,9 +1384,11 @@ function selectionSwitch(on) {
 
 }
 
+
+
 $(document).ready(function(){
 	init3dhop();
-/*	 var interval, id, ismousedown;
+	 var interval, id, ismousedown;
 	 var button = 0;
 $('#toolbar2 img')
         .mouseenter(function(e) {
@@ -1410,7 +1430,6 @@ $('#toolbar2 img')
         .on('touchend', function(e) {
             button = 0;
         });
-*/
 	setup3dhop();
 
 });
