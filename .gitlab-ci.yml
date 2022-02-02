@@ -40,6 +40,7 @@ imageclassification:
     - classification
   except:
   - master 
+  - master-local
 
 pages:
   stage: deploy
@@ -51,4 +52,4 @@ pages:
     paths:
     - public
   only:
-  - master
+  - master-local
