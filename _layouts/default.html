@@ -43,10 +43,10 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
 <script>
 
 function toggleTransliterationEdit(){
-  if($("#transliterationtextarea").isContentEditable){
-    $("#transliterationtextarea").isContentEditable=false
-  }else{
-    $("#transliterationtextarea").isContentEditable=true
+  if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
+    $("#transliterationtextarea").attr("contenteditable","false")
+  } else {
+    $("#transliterationtextarea").attr("contenteditable","true")
   }
 }
 
