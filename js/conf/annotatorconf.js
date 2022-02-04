@@ -33,11 +33,11 @@ var presenter = null;
 var annos3d={};
 
 async function saveTransliteration(translitid,translits){
-    var users= await api.RepositoryFiles.edit(16599, "js/data/transliterations.js","master",JSON.stringify(translits,null,2),"Committed Transliteraation "+translitid)
+    var users= await api.RepositoryFiles.edit(repositoryid, "js/data/transliterations.js",branch,JSON.stringify(translits,null,2),"Committed Transliteraation "+translitid)
 }
 
 async function getAnnotation(path){
-  var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
+  var users= await api.RepositoryFiles.show(repositoryid, "result/"+$('#imageside option:selected').text()+".json",branch);
   console.log(users)
   console.log(atob(users["content"]))
   return JSON.parse(atob(users["content"]))
@@ -45,15 +45,15 @@ async function getAnnotation(path){
 
 async function commitData(){
     try{
-    var users= await api.RepositoryFiles.create(16599, "result/"+$('#imageside option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json")
+    var users= await api.RepositoryFiles.create(repositoryid, "result/"+$('#imageside option:selected').text()+".json",branch,JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json")
     }catch (e) {
-    var users= await api.RepositoryFiles.edit(16599, "result/"+$('#imageside option:selected').text()+".json","master",JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json")
+    var users= await api.RepositoryFiles.edit(repositoryid, "result/"+$('#imageside option:selected').text()+".json",branch,JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json")
     }
     console.log(users)
 }
 
 async function commit3DBBOX(){
-  var users= await api.RepositoryFiles.edit(16599, "js/hs23D.js","master","var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js")
+  var users= await api.RepositoryFiles.edit(repositoryid, "js/hs23D.js",branch,"var hs23D="+JSON.stringify(hs23D,null,2),"Committed js/hs23D.js")
 }
 
 async function saveApprovals(){
@@ -71,7 +71,7 @@ async function saveApprovals(){
     approvals[tabletnumber][side]["indexingcorrect"]=$('#indexingcorrect').val()
     approvals[tabletnumber][side]["annotationscorrect"]=$('#annotationscorrect').val()
     approvals[tabletnumber][side]["annotationscomplete"]=$('#annotationscomplete').val()
-    var users= await api.RepositoryFiles.edit(16599, "js/approvals.js","master","var approvals="+JSON.stringify(approvals,null,2),"Committed approvals for "+$('#imageside option:selected').text()+".json");
+    var users= await api.RepositoryFiles.edit(repositoryid, "js/approvals.js",branch,"var approvals="+JSON.stringify(approvals,null,2),"Committed approvals for "+$('#imageside option:selected').text()+".json");
 }
 
 

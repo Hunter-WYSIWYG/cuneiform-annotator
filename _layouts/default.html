@@ -45,9 +45,15 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
 function toggleTransliterationEdit(){
   if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
     $("#transliterationtextarea").attr("contenteditable","false")
+    $('#transliterationtextarea').html(formatTransliteration($('#transliterationtextarea').text()))
   } else {
     $("#transliterationtextarea").attr("contenteditable","true")
   }
+}
+
+async function saveTransliterationJSON(){
+  transliterations[$('#images option:selected').text()]=$("#transliterationtextarea").text()
+  saveTransliteration($('#images option:selected').text(),transliterations)
 }
 
 $(document).ready(function () {
@@ -179,7 +185,7 @@ $(document).ready(function () {
     <h3>Transliteration View <span id="textid"></span></h3>
     <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto">
     </code><br/>
-    <button id="closedialog" onClick='toggleTransliterationEdit()'>Edit</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Save</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
+    <button id="closedialog" onClick='toggleTransliterationEdit()'>Edit</button><button id="closedialog" onClick='saveTransliterationJSON()'>Save</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
 </dialog>
 <dialog id="translationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Translation View <span id="textid"></span></h3>
