@@ -1,7 +1,5 @@
 visible = true
 
-
-
 var TextMapWidget = function(args) {
 
   var addTag = function(evt) {

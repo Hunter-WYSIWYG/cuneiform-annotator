@@ -32,6 +32,9 @@ var presenter = null;
 
 var annos3d={};
 
+async function saveTransliteration(translitid,translits){
+    var users= await api.RepositoryFiles.edit(16599, "js/data/transliterations.js","master",JSON.stringify(translits,null,2),"Committed Transliteraation "+translitid)
+
 async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");
   console.log(users)

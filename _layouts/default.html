@@ -41,6 +41,15 @@ Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
+
+function toggleTransliterationEdit(){
+  if($("#transliterationtextarea").isContentEditable){
+    $("#transliterationtextarea").isContentEditable=false
+  }else{
+    $("#transliterationtextarea").isContentEditable=true
+  }
+}
+
 $(document).ready(function () {
       $('#images').selectize({
           sortField: 'text',
@@ -52,14 +61,7 @@ $(document).ready(function () {
       });
       loadVariants();
   });
-</script>
-<script>
 
-
-
-
-</script>
-<script>
   var options=""
   var options2=""
   for(url in urls){
@@ -177,7 +179,7 @@ $(document).ready(function () {
     <h3>Transliteration View <span id="textid"></span></h3>
     <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto">
     </code><br/>
-    <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
+    <button id="closedialog" onClick='toggleTransliterationEdit()'>Edit</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Save</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
 </dialog>
 <dialog id="translationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Translation View <span id="textid"></span></h3>
@@ -282,10 +284,6 @@ $(document).ready(function () {
  <canvas id="draw-canvas" style="background-color:lightgray""/>
 </div>
 <script type="text/javascript">
-
-
-
-
 
 function setup3dhop() {
   if($("#3dimages").text() in hs23D && !("bbox" in hs23D[$("#3dimages").text()])){
