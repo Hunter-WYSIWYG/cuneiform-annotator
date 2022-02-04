@@ -2,7 +2,7 @@ var curnamespace="http://purl.org/cuneiform/"
 
 var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleocodage":true,"uri":curnamespace+"PaleoCode"},
 "Transliteration":{"inputtype":"text","regex":"","handler":null,"uri":curnamespace+"Transliteration"},
-"UnicodeCharName":{"inputtype":"select","regex":"","handler":null,"data":charlistmap,"uri":curnamespace+"CharacterName"},
+"UnicodeCharName":{"inputtype":"select","regex":"","handler":null,"uri":curnamespace+"CharacterName"},
 "Column":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace+"Column"},
 "Line":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace+"Line"},
 "Charindex":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace+"Charindex"},
