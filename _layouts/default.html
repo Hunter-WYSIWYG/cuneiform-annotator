@@ -1094,7 +1094,7 @@ function setup3dhop() {
     //
   }
   $.getJSON({    
-    url: "https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master&access_token="+gitlabtoken,
+    url: "https://gitlab.informatik.uni-halle.de/api/v4/projects/2010/repository/files/result%2F"+$("#3dimages").text()+"_03_front.png.json/raw?ref=master-local&access_token="+gitlabtoken,
     success: function(res){
     result=res
       console.log(result)
