@@ -442,11 +442,11 @@ function formatTransliteration(transliteration){
     $('#period').html(toappend)
     reinit("abc");
   }
-  const gitlabtoken="bPaesdD1s-gcJ5qzaaDv"
+  const gitlabtoken="glpat-a4ZiynWzYQBwodR5G5xX"
   const { Gitlab } = gitbeaker;
   const api = new Gitlab({
   token: gitlabtoken, //'9zyFECzKmuhkMo81HKPw',
-  host: 'https://gitlab.rlp.net',
+  host: 'https://gitlab.informatik.uni-halle.de/',
   version: 4
 });
 
@@ -708,7 +708,7 @@ async function getAnnotation(path){
     Annotorious.SelectorPack(anno);
     //Annotorious.BetterPolygon(anno);
     Annotorious.Toolbar(anno, document.getElementById('my-toolbar-container'));
-    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+    $.getJSON("https://gitlab.informatik.uni-halle.de/api/v4/projects/2010/repository/files/result%2F"+encodeURIComponent($('#imageside option:selected').text()+".json")+"/raw?ref=master-local&access_token="+gitlabtoken, function(result){
       console.log(result)
     annotations=[]
     for(ann in result){
@@ -789,7 +789,7 @@ async function getAnnotation(path){
     curcharindex={}
     $('#annocomplete').html("Unknown")
     $('#indexingcomplete').html("Unknown")
-    $.getJSON("https://gitlab.rlp.net/api/v4/projects/16599/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master&access_token="+gitlabtoken, function(result){
+    $.getJSON("https://gitlab.informatik.uni-halle.de/api/v4/projects/2010/repository/files/result%2F"+encodeURIComponent(param2+".json")+"/raw?ref=master-local&access_token="+gitlabtoken, function(result){
       console.log(result)
           indexedchars=0
           indexedhiglighted=false
