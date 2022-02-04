@@ -9,6 +9,8 @@ var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleoco
 "Wordindex":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace+"Wordindex"}
 }
 
+var mlVocabulary=[{"label":"Broken","uri":curnamespace+"Broken"},{"label":"Character","uri":curnamespace+"Character"},{"label":"Line","uri":curnamespace+"Line"},{"label":"Image","uri":curnamespace+"Image"},{"label":"Word","uri":curnamespace+"Word"},{"label":"Seal","uri":curnamespace+"Seal"},{"label":"Phrase","uri":curnamespace+"Phrase"},{"label":"Erased","uri":curnamespace+"Erased"},{"label":"StrikeOut","uri":curnamespace+"StrikeOut"},{"label":"Wordstart","uri":curnamespace+"Wordstart"},{"label":"Wordend","uri":curnamespace+"Wordend"},{"label":"InWord","uri":curnamespace+"InWord"},{"label":"Wedge","uri":curnamespace+"Wedge"},{"label":"UnknownIfWord","uri":curnamespace+"UnknownIfWord"}]
+
 var gitlabhost="https://gitlab.rlp.net"
 var repositoryid=16599
 var branch="master"
@@ -20,6 +22,15 @@ const api = new Gitlab({
   host: 'https://gitlab.rlp.net',
   version: 4
 });
+
+
+var threedimageToIndex={};
+var indexedcharids=[]
+var indexedhiglighted=false
+var indexedchars=0
+var presenter = null;
+
+var annos3d={};
 
 async function getAnnotation(path){
   var users= await api.RepositoryFiles.show(16599, "result/"+$('#imageside option:selected').text()+".json","master");

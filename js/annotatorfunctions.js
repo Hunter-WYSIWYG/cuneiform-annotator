@@ -1,5 +1,152 @@
 visible = true
 
+
+
+var TextMapWidget = function(args) {
+
+  var addTag = function(evt) {
+    console.log("onKeyUp")
+	console.log(evt.srcElement.value)
+	console.log(args)
+	var removeindex=-1
+	for(bod in args.annotation.underlying.body){
+		if(args.annotation.underlying.body[bod].purpose==evt.target.id){
+			removeindex=bod
+		}
+	}
+  if(removeindex==-1){
+	  args.annotation.underlying.body.push({
+        type: 'TextualBody',
+        purpose: evt.target.id,
+        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
+        value: evt.srcElement.value
+    });
+  }else{
+    args.annotation.underlying.body[removeindex].value=evt.srcElement.value
+    args.annotation.underlying.body[removeindex].dimensions=viewer.world.getItemAt(0).getContentSize()
+  }
+	console.log(args)
+	console.log({
+        type: 'TextualBody',
+        purpose: evt.target.id,
+        //dimensions: viewer.world.getItemAt(0).getContentSize(), 
+        value: evt.srcElement.value
+    })
+  }
+
+  // 4. This part renders the UI elements
+  var createTextField = function(key,value) {
+    console.log(key+" - "+value)
+    var div=document.createElement('table')
+    div.style="color:black;background-color:white;border-bottom:1px solid black;"
+	div.width="100%"
+	var tr=document.createElement('tr')
+  tr.style="color:black;background-color:white"
+	var td1=document.createElement('td')
+  td1.style="color:black;background-color:white"
+	var td2=document.createElement('td')
+  td2.style="color:black;background-color:white"
+	div.appendChild(tr)
+	tr.appendChild(td1)
+	tr.appendChild(td2)
+  var label = document.createElement('label');
+  label.style="color:black;background-color:white"
+  if(!readOnlyVar){
+	  var input = document.createElement('input');
+  }else{
+    var input = document.createElement('span');
+    input.style="color:black;background-color:white"
+  }
+
+	console.log(mappings[key])
+  if(!readOnlyVar && "inputtype" in mappings[key] && mappings[key]["inputtype"]=="select"){
+    input = document.createElement('select');
+  }else if(!readOnlyVar && "inputtype" in mappings[key]){
+		input.type=mappings[key]["inputtype"]
+		input.min=1
+	}else if(!readOnlyVar){
+		input.type="text"	
+	}
+  if(!readOnlyVar && "data" in mappings[key] && mappings[key]["inputtype"]=="select"){
+    for(keyy in mappings[key]["data"]){
+      console.log(keyy)
+      option=document.createElement("option")
+      option.value=keyy
+      option.text=mappings[key]["data"][keyy]["signName"]
+      input.appendChild(option)
+    }
+    for(bod in args.annotation.underlying.body){
+		  /*if(args.annotation.underlying.body[bod].purpose==key){
+			  input.value=args.annotation.underlying.body[bod].value
+		  }*/
+	  }
+  }else{
+    for(bod in args.annotation.underlying.body){
+		  if(args.annotation.underlying.body[bod].purpose==key){
+        if(!readOnlyVar){
+          input.value=args.annotation.underlying.body[bod].value
+        }else{
+          input.innerHTML=args.annotation.underlying.body[bod].value
+        }		  
+      }
+	  }
+    if(!readOnlyVar){
+	    input.addEventListener('keyup',addTag)
+    }
+  }
+	input.id=key
+	label.innerHTML=key+": "
+	td1.appendChild(label)
+	td2.appendChild(input)
+  if(!readOnlyVar && "paleocodage" in mappings[key]){
+    var td3=document.createElement('td')
+    tr.appendChild(td3)
+    var canvas=document.createElement('canvas')
+    td3.appendChild(canvas)
+    canvas.id="myCanvas"
+    canvas.width=150
+    canvas.height=75
+    canvas.style="border:1px solid #d3d3d3;"
+    input.addEventListener('keyup',function(event){
+        paintCharacter(event.target.id)        
+        //selectionStart=$('#PaleoCode').prop('selectionStart')
+        //selectionEnd=$('#PaleoCode').prop('selectionEnd')
+        //strokeParser(document.getElementById('PaleoCode').value)
+    });
+    input.addEventListener('blur',function(event){
+        paintCharacter(event.target.id)        
+        //selectionStart=$('#PaleoCode').prop('selectionStart')
+        //selectionEnd=$('#PaleoCode').prop('selectionEnd')
+        //strokeParser(document.getElementById('PaleoCode').value)
+    });
+    input.addEventListener("click",function(){
+        paintCharacter(event.target.id)
+    });
+    input.addEventListener("select",function(){
+        paintCharacter(event.target.id)
+    });
+  }
+    return div;
+  }
+
+  var container = document.createElement('div');
+  container.className = 'colorselector-widget';
+  for(map in mappings){
+    var curval="";
+    for(body of args.annotation.bodies){
+		if(body.purpose==map){
+			curval=body.value
+			break;
+		}
+	}
+	var button1 = createTextField(map,curval);	
+	container.appendChild(button1);
+  }
+
+  return container;
+}
+
+
 function showHideAnno() {
     visible = !visible
     anno.setVisible(visible)
