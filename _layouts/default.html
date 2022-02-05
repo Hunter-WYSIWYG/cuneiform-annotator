@@ -62,6 +62,11 @@ async function saveTransliterationJSON(){
 }
 
 function validateATF(atfstring){
+  console.log(jtflib)
+  console.log(window.jtflib)
+  console.log(ATF2JTF)
+  console.log(jtflib.ATF2JTF)
+  console.log(atfstring)
   result=jtflib.ATF2JTF(atfstring)
   console.log(result)
 }
