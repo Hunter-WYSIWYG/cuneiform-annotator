@@ -47,7 +47,8 @@ Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotati
 function toggleTransliterationEdit(){
   if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
     $("#transliterationtextarea").attr("contenteditable","false")
-    atftext=$('#transliterationtextarea').html().replaceAll("<br>","\n").replaceAll("<br/>","\n").replaceAll(/&nbsp;/g,' ')
+    $('#transliterationtextarea').html($('#transliterationtextarea').html().replaceAll("<br>","\n").replaceAll("<br/>","\n").replaceAll(/&nbsp;/g,' '))
+    atftext=$('#transliterationtextarea').text()
     atftext=atftext.replaceAll("\n\n","\n").replaceAll(" \n","\n")
     atftext=atftext.replace("@Tablet","@tablet").replace("@obverse","@obverse ")
     atftext=atftext.replace("@tablet","@tablet ")
