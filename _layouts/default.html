@@ -57,7 +57,7 @@ function toggleTransliterationEdit(){
 async function saveTransliterationJSON(){
   transliterations[$('#images option:selected').text()]=$("#transliterationtextarea").text()
   saveTransliteration($('#images option:selected').text(),transliterations)
-  $('#transliterationdialogmessage').html("Transliteration "+[$('#images option:selected').text()+" saved successfully!")
+  $('#transliterationdialogmessage').html("Transliteration "+$('#images option:selected').text()+" saved successfully!")
 }
 
 function validateATF(atfstring){
