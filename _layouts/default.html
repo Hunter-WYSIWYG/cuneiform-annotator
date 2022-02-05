@@ -71,12 +71,12 @@ function toggleTransliterationEdit(){
 2. gu-za-[la2]`
     valsampleresult=validateATF(sampletext)
     console.log(valsampleresult)
-    $('#transliterationtextarea').html(formatTransliteration(atftext))
     myatftext="&P134316 = TMH NF 1-2, 004 \n#atf: lang sux \n"+atftext
     console.log(sampletext)
     console.log(myatftext)
     console.log(myatftext==sampletext)
     valresult=validateATF(myatftext)//P1234=P1234"+"\n"+atftext)//+$('#images option:selected').text()+"="+$('#images option:selected').text()+"\n"+atftext)
+    $('#transliterationtextarea').html(formatTransliteration(atftext.replaceAll("\n","<br>")))
     $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+": Changes are not yet saved in Git!<br>ATF Validation Status: "+valresult)
   } else {
     $("#transliterationtextarea").attr("contenteditable","true")
