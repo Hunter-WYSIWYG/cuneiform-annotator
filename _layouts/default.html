@@ -68,6 +68,11 @@ function validateATF(atfstring){
   console.log(atfstring)
   result=jtflib.ATF2JTF(atfstring)
   console.log(result)
+  if "errors" in result:
+      resstring=""
+      for err in result["errors"]:
+        ressstring+=result["errors"][err]+"<br>"
+  return "Valid" 
 }
 
 $(document).ready(function () {
