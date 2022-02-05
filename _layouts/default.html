@@ -68,8 +68,10 @@ function validateATF(atfstring){
   if("errors" in result){
       resstring=""
       for(err in result["errors"]){
+        console.log(result["errors"][err])
         resstring+=result["errors"][err]+"<br>"
       }
+      console.log(ressstring)
       return resstring
   }
   return "Valid" 
