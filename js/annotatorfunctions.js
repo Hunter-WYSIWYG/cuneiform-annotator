@@ -218,8 +218,8 @@ function highlightIndexedChars() {
 function reinit(param) {
     param = $('#imageside option:selected').val()
     param2 = $('#imageside option:selected').text()
-    $('#saveannotationsmessage').html("")
-    $('#transliterationdialogmessage').html("")
+    $('#saveannotationsmessage').html("Loaded annotations for "+$('#imageside option:selected').text())
+    $('#transliterationdialogmessage').html("Loaded transliteration for "+$('#imageside option:selected').text())
     $('.imagelink').css({
         "backgroundColor": "#f7f7f9",
         "color": "#bd4147",
