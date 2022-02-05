@@ -47,6 +47,7 @@ function toggleTransliterationEdit(){
   if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
     $("#transliterationtextarea").attr("contenteditable","false")
     atftext=$("<span>"+$('#transliterationtextarea').html().replace("<br>","\n")+"</span>").text()
+    console.log(atftext)
     $('#transliterationtextarea').html(formatTransliteration(atftext))
     valresult=validateATF(atftext)
     $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+"<br>Changes are not yet saved in Git!<br>ATF Valdidation Status: "+valresult)
@@ -71,8 +72,9 @@ function validateATF(atfstring){
   if("errors" in result){
       resstring=""
       for(err in result["errors"]){
-        ressstring+=result["errors"][err]+"<br>"
+        resstring+=result["errors"][err]+"<br>"
       }
+      return resstring
   }
   return "Valid" 
 }
