@@ -46,7 +46,8 @@ function toggleTransliterationEdit(){
   if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
     $("#transliterationtextarea").attr("contenteditable","false")
     atftext=$("<span>"+$('#transliterationtextarea').html().replaceAll("<br>"," \n").replaceAll("<br/>"," \n")+"</span>").text()
-    atftext=atftext.replace("@obverse","@obverse\n").replaceAll("\n\n"," \n").replaceAll("  "," ").replace("@Tablet","@tablet")
+    atftext=atftext.replace("@Tablet","@tablet")
+    atftext=atftext.replaceAll("\n\n"," \n").replaceAll("  "," ")
     console.log(atftext)
     sampletext=`&P134316 = TMH NF 1-2, 004 
 #atf: lang sux 
