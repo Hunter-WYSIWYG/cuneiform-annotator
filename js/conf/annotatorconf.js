@@ -46,9 +46,11 @@ async function getAnnotation(path){
 async function commitData(){
     try{
     var users= await api.RepositoryFiles.create(repositoryid, "result/"+$('#imageside option:selected').text()+".json",branch,JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json")
+      $('#saveannotationsmessage').html("Annotations for "+$('#imageside option:selected').text()+" have been saved in Git!")
     }catch (e) {
     var users= await api.RepositoryFiles.edit(repositoryid, "result/"+$('#imageside option:selected').text()+".json",branch,JSON.stringify(curanno,null,2),"Committed "+$('#imageside option:selected').text()+".json")
-    }
+      $('#saveannotationsmessage').html("Annotations for "+$('#imageside option:selected').text()+" have been saved in Git!")
+    } 
     console.log(users)
 }
 

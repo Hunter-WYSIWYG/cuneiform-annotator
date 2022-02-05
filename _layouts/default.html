@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
   <script src="js/lib/gitbeaker.js"></script>
+  <script src="js/lib/jtflib.js"></script>
   <script type="text/javascript" src="js/conf/annotatorconf.js"></script>
   <script type="text/javascript" src="js/annotatorfunctions.js"></script>
   <script type="text/javascript" src="js/data/transliterations.js"></script>
@@ -38,7 +39,7 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/><span id="saveannotationsmessage"></span><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
 
@@ -46,6 +47,8 @@ function toggleTransliterationEdit(){
   if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
     $("#transliterationtextarea").attr("contenteditable","false")
     $('#transliterationtextarea').html(formatTransliteration($('#transliterationtextarea').text()))
+    valresult=validateATF($('#transliterationtextarea').text())
+    $('#transliterationdialogmessage').html("Edited Transliteration "+[$('#images option:selected').text()+"<br>Changes are not yet saved in Git!<br>ATF Valdidation Status: "+valresult)
   } else {
     $("#transliterationtextarea").attr("contenteditable","true")
   }
@@ -54,6 +57,12 @@ function toggleTransliterationEdit(){
 async function saveTransliterationJSON(){
   transliterations[$('#images option:selected').text()]=$("#transliterationtextarea").text()
   saveTransliteration($('#images option:selected').text(),transliterations)
+  $('#transliterationdialogmessage').html("Transliteration "+[$('#images option:selected').text()+" saved successfully!")
+}
+
+function validateATF(atfstring){
+  result=ATF2JTF(atfstring)
+  console.log(result)
 }
 
 $(document).ready(function () {
@@ -183,6 +192,7 @@ $(document).ready(function () {
 <button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
 <dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Transliteration View <span id="textid"></span></h3>
+    <span id="transliterationdialogmessage"></span><br/>
     <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto">
     </code><br/>
     <button id="closedialog" onClick='toggleTransliterationEdit()'>Edit</button><button id="closedialog" onClick='saveTransliterationJSON()'>Save</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
