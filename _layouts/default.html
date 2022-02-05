@@ -51,31 +51,8 @@ function toggleTransliterationEdit(){
     atftext=atftext.replaceAll("\n\n","\n").replaceAll(" \n","\n")
     atftext=atftext.replace("@Tablet","@tablet").replace("@obverse","@obverse ")
     atftext=atftext.replace("@tablet","@tablet ")
-    console.log(atftext)
-    sampletext=`&P134316 = TMH NF 1-2, 004 
-#atf: lang sux 
-@tablet 
-@obverse 
-1. 1/3(disz) gin2 ku3-babbar ur5-sze3 
-2. masz2 5(disz) gin2 ku3 1(disz) gin2-am3 
-3. ki ur-{d}suen x-ta 
-4. ur3-e-ba-ab-[du7] 
-@reverse 
-1. szu ba-ti 
-2. iti bara2-za3-gar-ra u4 2(disz) ba-zal 
-3. iti NE-NE-gar-ra 
-4. gi4-gi4-dam 
-5. mu bad3 ma-da ba-du3 
-@seal 1 
-1. ur3-ba-ab-[du7] 
-2. gu-za-[la2]`
-    valsampleresult=validateATF(sampletext)
-    console.log(valsampleresult)
     myatftext="&P134316 = TMH NF 1-2, 004 \n#atf: lang sux \n"+atftext
-    console.log(sampletext)
-    console.log(myatftext)
-    console.log(myatftext==sampletext)
-    valresult=validateATF(myatftext)//P1234=P1234"+"\n"+atftext)//+$('#images option:selected').text()+"="+$('#images option:selected').text()+"\n"+atftext)
+    valresult=validateATF(myatftext)
     $('#transliterationtextarea').html(formatTransliteration(atftext.replaceAll("\n","<br>")))
     $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+": Changes are not yet saved in Git!<br>ATF Validation Status: "+valresult)
   } else {
@@ -84,7 +61,7 @@ function toggleTransliterationEdit(){
 }
 
 async function saveTransliterationJSON(){
-  transliterations[$('#images option:selected').text()]=$("#transliterationtextarea").text()
+  transliterations[$('#images option:selected').text()]=$("#transliterationtextarea").replaceAll("<br>","\n").replaceAll("<br/>","\n").replaceAll(/&nbsp;/g,' ')
   saveTransliteration($('#images option:selected').text(),transliterations)
   $('#transliterationdialogmessage').html("Transliteration "+$('#images option:selected').text()+" saved successfully!")
 }
