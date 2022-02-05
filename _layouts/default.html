@@ -48,7 +48,7 @@ function toggleTransliterationEdit(){
     $("#transliterationtextarea").attr("contenteditable","false")
     $('#transliterationtextarea').html(formatTransliteration($('#transliterationtextarea').text()))
     valresult=validateATF($('#transliterationtextarea').text())
-    $('#transliterationdialogmessage').html("Edited Transliteration "+[$('#images option:selected').text()+"<br>Changes are not yet saved in Git!<br>ATF Valdidation Status: "+valresult)
+    $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+"<br>Changes are not yet saved in Git!<br>ATF Valdidation Status: "+valresult)
   } else {
     $("#transliterationtextarea").attr("contenteditable","true")
   }
