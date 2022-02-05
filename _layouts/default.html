@@ -46,7 +46,7 @@ function toggleTransliterationEdit(){
   if ( $("#transliterationtextarea").attr("contenteditable") == "true") {
     $("#transliterationtextarea").attr("contenteditable","false")
     atftext=$("<span>"+$('#transliterationtextarea').html().replaceAll("<br>","\n").replaceAll("<br/>","\n")+"</span>").text()
-    atftext=atftext.replace("@Tablet","@tablet")
+    atftext=atftext.replace("@Tablet","@tablet ").replace("@obverse","@obverse ")
     atftext=atftext.replaceAll("\n\n","\n").replaceAll(" \n","\n")
     console.log(atftext)
     sampletext=`&P134316 = TMH NF 1-2, 004 
