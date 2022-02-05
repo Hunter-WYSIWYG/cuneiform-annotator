@@ -39,7 +39,7 @@
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/><span id="saveannotationsmessage"></span><br/>
+<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/><span id="saveannotationsmessage" style="color:red;border:2px solid black"></span><br/>
 Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
 <script>
 
@@ -50,7 +50,7 @@ function toggleTransliterationEdit(){
     console.log(atftext)
     $('#transliterationtextarea').html(formatTransliteration(atftext))
     valresult=validateATF(atftext)
-    $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+"<br>Changes are not yet saved in Git!<br>ATF Valdidation Status: "+valresult)
+    $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+": Changes are not yet saved in Git!<br>ATF Validation Status: "+valresult)
   } else {
     $("#transliterationtextarea").attr("contenteditable","true")
   }
@@ -63,10 +63,6 @@ async function saveTransliterationJSON(){
 }
 
 function validateATF(atfstring){
-  console.log(jtflib)
-  console.log(window.jtflib)
-  console.log(jtflib.ATF2JTF)
-  console.log(atfstring)
   result=jtflib.ATF2JTF(atfstring)
   console.log(result)
   if("errors" in result){
@@ -206,7 +202,7 @@ $(document).ready(function () {
 <button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
 <dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
     <h3>Transliteration View <span id="textid"></span></h3>
-    <span id="transliterationdialogmessage"></span><br/>
+    <span id="transliterationdialogmessage" style="color:red;border:2px solid black"></span><br/>
     <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto;">
     </code><br/>
     <button id="closedialog" onClick='toggleTransliterationEdit()'>Edit</button><button id="closedialog" onClick='saveTransliterationJSON()'>Save</button><button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
