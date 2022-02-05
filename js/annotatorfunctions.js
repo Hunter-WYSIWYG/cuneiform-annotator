@@ -333,6 +333,10 @@ function loadVariants() {
             } else {
                 $('#textid').html("" + $('#images option:selected').text() + "")
             }
+            atftext=transliterations[$('#images option:selected').text()]
+            myatftext="&P134316 = TMH NF 1-2, 004 \n#atf: lang sux \n"+atftext
+            valresult=validateATF(myatftext)
+            $('#transliterationdialogmessage').html("ATF Validation Status: "+valresult)
             $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
             if (!($("#images option:selected").text() in character_postags)) {
                 $('#translationtextarea').html("No translation available for text " + $('#images option:selected').text())
