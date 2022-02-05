@@ -49,7 +49,7 @@ function toggleTransliterationEdit(){
     atftext=$("<span>"+$('#transliterationtextarea').html().replace("<br>","\n")+"</span>").text()
     console.log(atftext)
     $('#transliterationtextarea').html(formatTransliteration(atftext))
-    valresult=validateATF("&P1234=P1234"+"\n"+atftext)//+$('#images option:selected').text()+"="+$('#images option:selected').text()+"\n"+atftext)
+    valresult=validateATF("&\n")//P1234=P1234"+"\n"+atftext)//+$('#images option:selected').text()+"="+$('#images option:selected').text()+"\n"+atftext)
     $('#transliterationdialogmessage').html("Edited Transliteration "+$('#images option:selected').text()+": Changes are not yet saved in Git!<br>ATF Validation Status: "+valresult)
   } else {
     $("#transliterationtextarea").attr("contenteditable","true")
