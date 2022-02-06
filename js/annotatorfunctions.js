@@ -220,6 +220,45 @@ function reinit(param) {
     param2 = $('#imageside option:selected').text()
     $('#saveannotationsmessage').html("Loaded annotations for "+$('#imageside option:selected').text())
     $('#transliterationdialogmessage').html("Loaded transliteration for "+$('#imageside option:selected').text())
+    atftext=transliterations[$('#images option:selected').text()]
+    myatftext="&P134316 = TMH NF 1-2, 004 \n#atf: lang sux \n"+atftext
+    valresult=validateATF(myatftext)
+    $('#transliterationdialogmessage').html("ATF Validation Status: "+valresult)
+    $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
+    if (!($("#images option:selected").text() in character_postags)) {
+        $('#translationtextarea').html("No translation available for text " + $('#images option:selected').text())
+    }
+    $('#translationtextarea').html(formatTranslation(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
+    $(function() {
+        $(document).tooltip({
+            track: true
+        });
+    });
+    $('span.imagelink').mouseover(function() {
+        console.log("Selecting annotation")
+        myid = $(this).attr("id")
+        console.log(myid)
+        if (myid in curcharindex) {
+            console.log(curcharindex[myid])
+            anno.disableEditor = true
+            anno.selectAnnotation(curcharindex[myid])
+        }
+    });
+    $('span.imagelink').mouseout(function() {
+        if (translitwasclicked) {
+            translitwasclicked = false
+        } else {
+            anno.cancelSelected();
+            anno.disableEditor = false
+        }
+    });
+    $('span.imagelink').click(function() {
+        if (anno.disableEditor) {
+            anno.disableEditor = false
+        } else {
+            anno.disableEditor = true
+        }
+    });
     $('.imagelink').css({
         "backgroundColor": "#f7f7f9",
         "color": "#bd4147",
@@ -333,45 +372,6 @@ function loadVariants() {
             } else {
                 $('#textid').html("" + $('#images option:selected').text() + "")
             }
-            atftext=transliterations[$('#images option:selected').text()]
-            myatftext="&P134316 = TMH NF 1-2, 004 \n#atf: lang sux \n"+atftext
-            valresult=validateATF(myatftext)
-            $('#transliterationdialogmessage').html("ATF Validation Status: "+valresult)
-            $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
-            if (!($("#images option:selected").text() in character_postags)) {
-                $('#translationtextarea').html("No translation available for text " + $('#images option:selected').text())
-            }
-            $('#translationtextarea').html(formatTranslation(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
-            $(function() {
-                $(document).tooltip({
-                    track: true
-                });
-            });
-            $('span.imagelink').mouseover(function() {
-                console.log("Selecting annotation")
-                myid = $(this).attr("id")
-                console.log(myid)
-                if (myid in curcharindex) {
-                    console.log(curcharindex[myid])
-                    anno.disableEditor = true
-                    anno.selectAnnotation(curcharindex[myid])
-                }
-            });
-            $('span.imagelink').mouseout(function() {
-                if (translitwasclicked) {
-                    translitwasclicked = false
-                } else {
-                    anno.cancelSelected();
-                    anno.disableEditor = false
-                }
-            });
-            $('span.imagelink').click(function() {
-                if (anno.disableEditor) {
-                    anno.disableEditor = false
-                } else {
-                    anno.disableEditor = true
-                }
-            });
         }
     } else {
         $('#textid').html("" + $('#images option:selected').text() + "")
