@@ -15,7 +15,7 @@ var gitlabhost="https://gitlab.rlp.net"
 var repositoryid=16599
 var branch="master"
 var readOnlyVar=false
-const gitlabtoken="bPaesdD1s-gcJ5qzaaDv"
+const gitlabtoken="m_1_vSAm75FBvwMEQNmb"//"bPaesdD1s-gcJ5qzaaDv"
 const { Gitlab } = gitbeaker;
 const api = new Gitlab({
   token: gitlabtoken, //'9zyFECzKmuhkMo81HKPw',
