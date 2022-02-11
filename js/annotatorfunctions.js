@@ -228,11 +228,13 @@ function reinit(param) {
         
     }
     $('#transliterationdialogmessage').html("ATF Validation Status: "+valresult)
-    $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
-    if (!($("#images option:selected").text() in character_postags)) {
+    if($('#images option:selected').text() in transliterations){
+        $('#transliterationtextarea').html(formatTransliteration(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
+    }
+    if (!($("#images option:selected").text() in transliterations)) {
         $('#translationtextarea').html("No translation available for text " + $('#images option:selected').text())
     }
-    $('#translationtextarea').html(formatTranslation(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
+    //$('#translationtextarea').html(formatTranslation(transliterations[$('#images option:selected').text()].replaceAll("\n", "<br>")))
     $(function() {
         $(document).tooltip({
             track: true
