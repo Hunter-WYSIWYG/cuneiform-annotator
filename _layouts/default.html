@@ -203,7 +203,7 @@ $(document).ready(function () {
 </div>
 <div class="col-md-6">
   3DModel:<br/>
-<select id="3dimages" onchange="setup3dhop()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
+<select id="3dimages" onchange="setup3dhop()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>Data Format:<select id="dataformaturl" onchange="reload3DURLs()"><option value="ply_url">PLY</option><option value="nxz_url">NXZ</option></select>
 <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
 <button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
 <button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
@@ -278,8 +278,6 @@ $(document).ready(function () {
                 <img id="btn-open-featuregroup-modal" title="Edit Features Groups" src="skins/dark/featuregroup.png" /><br />
                 <img id="btn-open-interpretation-modal" title="Edit Interpretations" src="skins/dark/interpretation.png" /><br />
             </div>
-
-
 <!--MEASURE-->
  <div id="measure-box" class="output-box">Measured length<hr/><span id="measure-output" class="output-text" onmousedown="event.stopPropagation()">0.0</span></div>
 <!--MEASURE-->
@@ -618,13 +616,17 @@ $('#toolbar2 img')
 </canvas>
 </div>
 <script>
+
 var threedimageindex=0
+function reload3DURLs(){
   for(url in hs23D){
-    options2+="<option value=\""+hs23D[url][dataformatkey]+"\">"+url+"</option>"
+    options2+="<option value=\""+hs23D[url][$('#dataformaturl').value()]+"\">"+url+"</option>"
     threedimageToIndex[url]=threedimageindex
     threedimageindex+=1
   }
   document.getElementById("3dimages").innerHTML=options2
+}
+reload3DURLs()
 </script>
   </body>
 
