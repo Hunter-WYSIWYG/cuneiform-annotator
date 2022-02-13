@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
-
   <body>
 <h1 align="center">Cuneiform Annotator for 2D and 3D objects</h1>
 <meta charset="utf-8"/>
@@ -70,12 +68,12 @@ function reload3DURLs(){
     threedimageindex+=1
   }
   document.getElementById("3dimages").innerHTML=options2
-  $('#3dimages').selectize().clear()
+  //$('#3dimages').selectize().clear()
   //$('#3dimages').selectize().load()
-        $('#3dimages').selectize({
+  /*      $('#3dimages').selectize({
           sortField: 'text',
           maxOptions: 5000
-      });
+      });*/
 }
 
 async function saveTransliterationJSON(){
