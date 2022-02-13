@@ -616,11 +616,10 @@ $('#toolbar2 img')
 </canvas>
 </div>
 <script>
-
 var threedimageindex=0
 function reload3DURLs(){
   for(url in hs23D){
-    options2+="<option value=\""+hs23D[url][$('#dataformaturl').value()]+"\">"+url+"</option>"
+    options2+="<option value=\""+hs23D[url][document.getElementById('dataformaturl').value]+"\">"+url+"</option>"
     threedimageToIndex[url]=threedimageindex
     threedimageindex+=1
   }
