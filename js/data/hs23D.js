@@ -1,4 +1,4 @@
-{
+var hs23D={
   "HS_1177": {
     "ply_url": "https://heidicon.ub.uni-heidelberg.de/eas/partitions/1/0/577000/577554/9e0148dc92822f69a5018154ec1fcb87322aed30/application/x-ply/HS_1177_HeiCuBeDa_GigaMesh.ply",
     "bbox": {
