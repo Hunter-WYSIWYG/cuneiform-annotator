@@ -61,6 +61,15 @@ function toggleTransliterationEdit(){
   }
 }
 
+function reload3DURLs(){
+  for(url in hs23D){
+    options2+="<option value=\""+hs23D[url][document.getElementById('dataformaturl').value]+"\">"+url+"</option>"
+    threedimageToIndex[url]=threedimageindex
+    threedimageindex+=1
+  }
+  document.getElementById("3dimages").innerHTML=options2
+}
+
 async function saveTransliterationJSON(){
   transliterations[$('#images option:selected').text()]=$("#transliterationtextarea").replaceAll("<br>","\n").replaceAll("<br/>","\n").replaceAll(/&nbsp;/g,' ')
   saveTransliteration($('#images option:selected').text(),transliterations)
@@ -617,14 +626,6 @@ $('#toolbar2 img')
 </div>
 <script>
 var threedimageindex=0
-function reload3DURLs(){
-  for(url in hs23D){
-    options2+="<option value=\""+hs23D[url][document.getElementById('dataformaturl').value]+"\">"+url+"</option>"
-    threedimageToIndex[url]=threedimageindex
-    threedimageindex+=1
-  }
-  document.getElementById("3dimages").innerHTML=options2
-}
 reload3DURLs()
 </script>
   </body>
