@@ -62,12 +62,16 @@ function toggleTransliterationEdit(){
 }
 
 function reload3DURLs(){
+  console.log("Reloading URLs fpr 3D")
+  options2=""
   for(url in hs23D){
     options2+="<option value=\""+hs23D[url][document.getElementById('dataformaturl').value]+"\">"+url+"</option>"
     threedimageToIndex[url]=threedimageindex
     threedimageindex+=1
   }
   document.getElementById("3dimages").innerHTML=options2
+  //$('#3dimages').selectize().clear()
+  //$('#3dimages').selectize().load()
         $('#3dimages').selectize({
           sortField: 'text',
           maxOptions: 5000
