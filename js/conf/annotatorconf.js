@@ -9,6 +9,8 @@ var mappings={"PaleoCode":{"inputtype":"text","regex":"","handler":null,"paleoco
 "Wordindex":{"inputtype":"number","regex":"","handler":null,"uri":curnamespace+"Wordindex"}
 }
 
+var dataformatkey="ply_url"
+
 var mlVocabulary=[{"label":"Broken","uri":curnamespace+"Broken"},{"label":"Character","uri":curnamespace+"Character"},{"label":"Line","uri":curnamespace+"Line"},{"label":"Image","uri":curnamespace+"Image"},{"label":"Word","uri":curnamespace+"Word"},{"label":"Seal","uri":curnamespace+"Seal"},{"label":"Phrase","uri":curnamespace+"Phrase"},{"label":"Erased","uri":curnamespace+"Erased"},{"label":"StrikeOut","uri":curnamespace+"StrikeOut"},{"label":"Wordstart","uri":curnamespace+"Wordstart"},{"label":"Wordend","uri":curnamespace+"Wordend"},{"label":"InWord","uri":curnamespace+"InWord"},{"label":"Wedge","uri":curnamespace+"Wedge"},{"label":"UnknownIfWord","uri":curnamespace+"UnknownIfWord"}]
 
 var gitlabhost="https://gitlab.rlp.net"
@@ -75,15 +77,3 @@ async function saveApprovals(){
     approvals[tabletnumber][side]["annotationscomplete"]=$('#annotationscomplete').val()
     var users= await api.RepositoryFiles.edit(repositoryid, "js/approvals.js",branch,"var approvals="+JSON.stringify(approvals,null,2),"Committed approvals for "+$('#imageside option:selected').text()+".json");
 }
-
-
-
-
-
-
-
-
-
-
-
-
