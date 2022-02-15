@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
   <script src="js/lib/gitbeaker.js"></script>
   <script src="js/lib/jtflib.js"></script>
+  <script src="js/lib/recogito-semantic-tags.js"></script>
   <script type="text/javascript" src="js/data/transliterations.js"></script>
   <script type="text/javascript" src="js/data/hs2CDLI.js"></script>
   <script type="text/javascript" src="js/data/hs23D.js"></script>
@@ -139,10 +140,22 @@ $(document).ready(function () {
 
     console.log("MLVOCAB: "+mlVocabulary)
 
+    semantictagsconfig={
+        dataSources: [  
+            'Wikidata',   
+            'VIAF'
+        ],
+        availableLanguages: [
+            'en', 'de', 'fa'
+        ],
+        limit: 10
+        }
+
     var annoconfig={
       //formatter: Annotorious.ShapeLabelsFormatter,
       widgets:[
     TextMapWidget,
+    recogito.SemanticTags(semantictagsconfig),
     'COMMENT',
     { widget: 'TAG', 
     vocabulary: mlVocabulary
