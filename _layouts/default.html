@@ -40,8 +40,8 @@
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
 <button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/><span id="saveannotationsmessage"></span><br/>
-Reference Link: <a id="referencelink" href="#"></a><br/>
-<!--Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>-->
+<!--Reference Link: <a id="referencelink" href="#"></a><br/>
+Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>-->
 <script>
 valresult={}
 function toggleTransliterationEdit(){
