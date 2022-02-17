@@ -218,6 +218,7 @@ function highlightIndexedChars() {
 function reinit(param) {
     param = $('#imageside option:selected').val()
     param2 = $('#imageside option:selected').text()
+    $('#referencelink').val(websiteprefix+"?tablet"=$('#imageside option:selected').text())
     $('#saveannotationsmessage').html("Loaded annotations for "+$('#imageside option:selected').text())
     $('#transliterationdialogmessage').html("Loaded transliteration for "+$('#imageside option:selected').text())
     atftext=transliterations[$('#images option:selected').text()]
