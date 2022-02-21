@@ -302,22 +302,22 @@ for filename in dircontent:
         tagging=""
         broken=False
         for annoobj in jsondata[annotation]["body"]:
-            if annoobj["purpose"]==purpose and purpose=="Transliteration": 
+            if annoobj["purpose"]==purpose and purpose=="Transliteration" and "value" in annoobj: 
                 translit=annoobj["value"]
-            elif annoobj["purpose"]==charindexpurpose:
+            elif annoobj["purpose"]==charindexpurpose and "value" in annoobj:
                 curcharindex=annoobj["value"]
-            elif annoobj["purpose"]==wordindexpurpose:
+            elif annoobj["purpose"]==wordindexpurpose and "value" in annoobj:
                 curwordindex=annoobj["value"]
             elif annoobj["purpose"]==linepurpose:
                 line=annoobj["value"]   
-            elif annoobj["purpose"]==taggingpurpose and annoobj["value"]=="Character":
+            elif annoobj["purpose"]==taggingpurpose and "value" in annoobj and annoobj["value"]=="Character":
                 annoobj["purpose"]="classifying"
                 tagging=annoobj["value"]
-            elif annoobj["purpose"]==taggingpurpose and annoobj["value"]=="Broken":
+            elif annoobj["purpose"]==taggingpurpose and "value" in annoobj and annoobj["value"]=="Broken":
                 broken=True
-            elif annoobj["purpose"]==taggingpurpose:
+            elif annoobj["purpose"]==taggingpurpose and "value" in annoobj:
                 tagging=annoobj["value"]
-            elif annoobj["purpose"]==columnindexpurpose:
+            elif annoobj["purpose"]==columnindexpurpose and "value" in annoobj:
                 column=annoobj["value"]
         if line!=-1 and curcharindex!=-1:
             indexedcount+=1
