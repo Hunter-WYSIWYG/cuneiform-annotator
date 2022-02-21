@@ -99,10 +99,10 @@ arffthresholdlines={}
 
 mlThreshold=9
 
-with open('js/newurls2.js') as f:
+with open('js/data/newurls2.js') as f:
   imgurls = json.load(f)
   
-with open('js/periods.js') as f:
+with open('js/data/periods.js') as f:
   strs=f.read()
   periods = json.loads(strs.replace("var periods=",""))
 
