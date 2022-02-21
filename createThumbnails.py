@@ -206,32 +206,43 @@ if len(sys.argv)>4:
     exportoption=sys.argv[4]
 dircontent=os.listdir("result")
 sorted(dircontent)
-with open('js/newurls2.js', 'r') as myfile:
+with open('js/data/newurls2.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
 hs2IIIF = json.loads(data.replace("var hs2IIIF=",""))
-with open('js/languages.js', 'r') as myfile:
+with open('js/data/languages.js', 'r') as myfile:
     data=myfile.read()
+
+transliterations = json.loads(data.replace("var transliterations=",""))
+with open('js/data/transliterations.js', 'r') as myfile:
+    data=myfile.read()
+
+notworkedtransliterations=""
+
+for translit in transliterations:
+    if transliterations[translit].strip()!="@tablet":
+        if str(translit)+"_03_front.png.json" not in dircontent:
+            notworkedtransliterations+=str(translit)+"\n"
 
 # parse file
 languages = json.loads(data.replace("var languages=",""))
-with open('js/charlistmap.js', 'r') as myfile:
+with open('js/data/charlistmap.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
 charlistmap = json.loads(data.replace("var charlistmap=",""))
-with open('js/hs2CDLI.js', 'r') as myfile:
+with open('js/data/hs2CDLI.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
 hs2CDLI = json.loads(data.replace("var hs2CDLI=",""))
-with open('js/cuneifymap.js', 'r') as myfile:
+with open('js/data/cuneifymap.js', 'r') as myfile:
     data=myfile.read()
 
 # parse file
 cuneifymap = json.loads(data.replace("var cuneifymap=",""))
-with open('js/translitcount.js', 'r') as myfile:
+with open('js/data/translitcount.js', 'r') as myfile:
     data=myfile.read()
 translitcount = json.loads(data.replace("var translitcount=",""))
 filecounter=0
@@ -731,6 +742,9 @@ f.write(unknownchars)
 f.close()
 f = open(exportdir+"/errorlog.csv", 'w')
 f.write(errorlog)
+f.close()
+f = open(exportdir+"/notworkedtransliterations.txt", 'w')
+f.write(notworkedtransliterations)
 f.close()
 f = open(exportdir+"/zooniverse_char_verify_manifest.csv", 'w')
 f.write(zooniverse_char_verify)
