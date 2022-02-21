@@ -206,14 +206,6 @@ if len(sys.argv)>4:
     exportoption=sys.argv[4]
 dircontent=os.listdir("result")
 sorted(dircontent)
-with open('js/data/newurls2.js', 'r') as myfile:
-    data=myfile.read()
-
-# parse file
-hs2IIIF = json.loads(data.replace("var hs2IIIF=",""))
-with open('js/data/languages.js', 'r') as myfile:
-    data=myfile.read()
-
 
 with open('js/data/transliterations.js', 'r') as myfile:
     data=myfile.read()
@@ -225,6 +217,15 @@ for translit in transliterations:
     if transliterations[translit].strip()!="@tablet":
         if str(translit)+"_03_front.png.json" not in dircontent:
             notworkedtransliterations+=str(translit)+"\n"
+
+
+with open('js/data/newurls2.js', 'r') as myfile:
+    data=myfile.read()
+
+# parse file
+hs2IIIF = json.loads(data.replace("var hs2IIIF=",""))
+with open('js/data/languages.js', 'r') as myfile:
+    data=myfile.read()
 
 # parse file
 languages = json.loads(data.replace("var languages=",""))
