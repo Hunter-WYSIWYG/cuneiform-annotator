@@ -214,10 +214,11 @@ hs2IIIF = json.loads(data.replace("var hs2IIIF=",""))
 with open('js/data/languages.js', 'r') as myfile:
     data=myfile.read()
 
-transliterations = json.loads(data.replace("var transliterations=",""))
+
 with open('js/data/transliterations.js', 'r') as myfile:
     data=myfile.read()
-
+    
+transliterations = json.loads(data.replace("var transliterations=",""))
 notworkedtransliterations=""
 
 for translit in transliterations:
