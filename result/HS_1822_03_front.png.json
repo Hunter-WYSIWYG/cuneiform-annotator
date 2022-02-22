@@ -579,5 +579,36 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#aa356186-3dda-4bf6-8c31-3fff382b1cfe"
+  },
+  "#4ea29ed5-f95d-4fb3-893d-fd7e7790cbd7": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "purpose": "Transliteration",
+        "value": "i3",
+        "dimensions": {
+          "x": 1961,
+          "y": 2389
+        }
+      },
+      {
+        "type": "SpecificResource",
+        "purpose": "tagging",
+        "source": {
+          "id": "http://purl.org/cuneiform/Character",
+          "label": "Character"
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1117868:582201/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"257.2663269042969,306.1725769042969 29.865114212036133,300.4517822265625 22.71413230895996,416.2976989746094 251.54554748535156,410.576904296875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#4ea29ed5-f95d-4fb3-893d-fd7e7790cbd7"
   }
 }
