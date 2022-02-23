@@ -1057,7 +1057,7 @@ function onPickedSpot(id) {
 
 function setup3dhop() {
   if($("#3dimages").text() in hs23D && !("bbox" in hs23D[$("#3dimages").text()])){
-    	presenter = new Presenter_extended("draw-canvas");
+    	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
 		meshes: {
@@ -1214,7 +1214,7 @@ function setup3dhop() {
       //annotations.push(result[ann])
     }
     console.log(spots)
-    	presenter = new Presenter_extended("draw-canvas");
+    	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
   //presenter._onPickedSpot = onPickedSpot;
 	presenter.setScene({
@@ -1255,7 +1255,7 @@ console.log("init 3dhop")
   console.log(presenter._scene.meshes)
   },
   error: function(data){
-	presenter = new Presenter_extended("draw-canvas");
+	presenter = new Presenter("draw-canvas");
   console.log("load 3d model")
 	presenter.setScene({
 		meshes: {
