@@ -480,8 +480,8 @@ for filename in dircontent:
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+str(filename)+"\"^^xsd:string .\n")
                 else:
                     outputcsv+=";;"
-                if shortfilename in hs2IIIF:
-                    outputcsv+=hs2IIIF[shortfilename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(abs(coords[1]-coords[0]))+","+str(abs(coords[3]-coords[2]))+"/full")+";"
+                if filename in hs2IIIF:
+                    outputcsv+=hs2IIIF[filename].replace("full/full",str(coords[0])+","+str(coords[2])+","+str(abs(coords[1]-coords[0]))+","+str(abs(coords[3]-coords[2]))+"/full")+";"
                     ttlstring.add("<"+cdlinamespace+urllib.parse.quote(str(charclass))+"_glyph> foaf:depiction  \""+filename+"\"^^xsd:string .\n")
                 else:
                     outputcsv+=";"
@@ -610,8 +610,8 @@ for filename in dircontent:
                     #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     linecsv+=linecsvhead+str(linee.replace("line",""))+";"+str(maxcoords[linee])+";"
                     iiifurl="line_"+str(linee).replace("line","")+"_"+filename.replace(".png","").replace(".json","")
-                    if shortfilename in hs2IIIF:
-                        iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")
+                    if filename in hs2IIIF:
+                        iiifurl=hs2IIIF[filename].replace("full/full",str(maxcoords[linee][0])+","+str(maxcoords[linee][2])+","+str(abs(maxcoords[linee][1]-maxcoords[linee][0]))+","+str(abs(maxcoords[linee][3]-maxcoords[linee][2]))+"/full")
                         linecsv+=iiifurl+";"
                     lineuuid="#"+str(uuid.uuid4())
                     lineannoexport[lineuuid]={"type":"Annotation","body":[{"type":"TextualBody","purpose":"Line","value":linee,"source":"http://purl.org/cuneiform/Line"},{"type":"TextualBody","purpose":"linking","value":"http://cdli.ucla.edu/"+str(filename.replace(".png","").replace(".json",""))+"_line_"+str(linee)}],"target":{"source":iiifurl,"selector":{"type":"SvgSelector","value":"<svg><polygon points=\""+str(str(maxcoords[linee]))+"\"</svg>"},"rights":"https://creativecommons.org/licenses/by-sa/4.0/"}}
@@ -634,8 +634,8 @@ for filename in dircontent:
                     #print(str(maxcoords[linee][2])+"x"+str(maxcoords[linee][3])+"+"+str(maxcoords[linee][0])+"+"+str(maxcoords[linee][1]))
                     wordcsv+=wordcsvhead+str(worde.replace("word",""))+";"+str(maxwordcoords[worde])+";"
                     iiifurl="word_"+str(worde).replace("word","")+"_"+filename.replace(".png","").replace(".json","")
-                    if shortfilename in hs2IIIF:
-                        iiifurl=hs2IIIF[shortfilename].replace("full/full",str(maxwordcoords[worde][0])+","+str(maxwordcoords[worde][2])+","+str(abs(maxwordcoords[worde][1]-maxwordcoords[worde][0]))+","+str(abs(maxwordcoords[worde][3]-maxwordcoords[worde][2]))+"/full")
+                    if filename in hs2IIIF:
+                        iiifurl=hs2IIIF[filename].replace("full/full",str(maxwordcoords[worde][0])+","+str(maxwordcoords[worde][2])+","+str(abs(maxwordcoords[worde][1]-maxwordcoords[worde][0]))+","+str(abs(maxwordcoords[worde][3]-maxwordcoords[worde][2]))+"/full")
                         wordcsv+=iiifurl+";"
                     worduuid="#"+str(uuid.uuid4())
                     wordannoexport[worduuid]={"type":"Annotation","body":[{"type":"TextualBody","purpose":"Word","value":linee,"source":"http://purl.org/cuneiform/Word"},{"type":"TextualBody","purpose":"linking","value":"http://cdli.ucla.edu/"+str(filename.replace(".png","").replace(".json",""))+"_word_"+str(worde)}],"target":{"source":iiifurl,"selector":{"type":"SvgSelector","value":"<svg><polygon points=\""+str(str(maxwordcoords[worde]))+"\"</svg>"},"rights":"https://creativecommons.org/licenses/by-sa/4.0/"}}
