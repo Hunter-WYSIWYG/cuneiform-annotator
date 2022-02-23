@@ -13,34 +13,34 @@ before_script:
   #- apt-get install exempi python3 python3-pip imagemagick libmagickwand-dev libatlas-base-dev liblapack-dev libblas-dev gfortran -y
   #- pip3 install python-xmp-toolkit numpy svgwrite svgpathtools requests rdflib rdflib-jsonld pillow
 
-imageclassification:
-  stage: build
-  script:
-  - mkdir classification
-  - mkdir classification/line
-  - mkdir classification/char
-  - mkdir classification/charline
-  - mkdir classification/word
-  - mkdir classification/wordline
-  - mkdir classification/charannotations
-  - mkdir classification/wordannotations
-  - mkdir classification/lineannotations
-  - mkdir classification/3dannotations
-  - mkdir classification/char_annotated
-  - mkdir classification/normalized_signs_comp
-  - mkdir classification/normalized_signs_na
-  - mkdir classification/normalized_signs_ob
-  - cp result/* classification/charannotations/
+#imageclassification:
+#  stage: build
+#  script:
+#  - mkdir classification
+#  - mkdir classification/line
+#  - mkdir classification/char
+#  - mkdir classification/charline
+#  - mkdir classification/word
+#  - mkdir classification/wordline
+#  - mkdir classification/charannotations
+#  - mkdir classification/wordannotations
+#  - mkdir classification/lineannotations
+#  - mkdir classification/3dannotations
+#  - mkdir classification/char_annotated
+#  - mkdir classification/normalized_signs_comp
+#  - mkdir classification/normalized_signs_na
+#  - mkdir classification/normalized_signs_ob
+#  - cp result/* classification/charannotations/
   #- cp result3d/* classification/3dannotations/
-  - python3 createThumbnails.py classification true 
+#  - python3 createThumbnails.py classification true 
   #- python3 prepare_zooniverse.py 2 250
   #- python3 createThumbnails.py classification/line/ true Line
-  artifacts:
-    paths:
-    - classification
-  except:
-  - master 
-  - master-local
+#  artifacts:
+#    paths:
+#    - classification
+#  except:
+#  - master 
+#  - master-local
 
 pages:
   stage: deploy
