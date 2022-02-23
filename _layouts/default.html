@@ -27,8 +27,8 @@
 <!--<script type="text/javascript" src="js/paleocodes.js"></script>-->
 <!--PRESENTER-->
 <script type="text/javascript" src="js/presenter.js"></script>
-<script type="text/javascript" src="js/presenter_added.js"></script>
-<script type="text/javascript" src="js/presenter_extended.js"></script>
+<!--<script type="text/javascript" src="js/presenter_added.js"></script>
+<script type="text/javascript" src="js/presenter_extended.js"></script>-->
 <!--3D MODELS LOADING AND RENDERING-->
 <script type="text/javascript" src="js/nexus.js"></script>
 <script type="text/javascript" src="js/ply.js"></script>
@@ -1216,7 +1216,7 @@ function setup3dhop() {
     console.log(spots)
     	presenter = new Presenter_extended("draw-canvas");
   console.log("load 3d model")
-  presenter._onPickedSpot = onPickedSpot;
+  //presenter._onPickedSpot = onPickedSpot;
 	presenter.setScene({
 		meshes: {
 			"mesh_1" : { url: $("#3dimages").val() },
@@ -1248,7 +1248,7 @@ console.log("3d model loaded successfully")
 //--MEASURE--
 
 //--POINT PICKING--
-	presenter._onEndPickingPoint = onEndPick;
+	//presenter._onEndPickingPoint = onEndPick;
 
 //--POINT PICKING--
 console.log("init 3dhop")
@@ -1286,9 +1286,9 @@ console.log("3d model loaded successfully")
 //--MEASURE--
 
 //--POINT PICKING--
-	presenter._onEndPickingPoint = onEndPick;
-  presenter._selectionPoints=[[0.0,26.0,2.0]]
-  presenter.repaint()
+	//presenter._onEndPickingPoint = onEndPick;
+ // presenter._selectionPoints=[[0.0,26.0,2.0]]
+  //presenter.repaint()
 //--POINT PICKING--
 console.log("init 3dhop")
   console.log(presenter._scene.meshes)
