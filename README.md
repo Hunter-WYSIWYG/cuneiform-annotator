@@ -34,19 +34,9 @@ Remember you need to wait for your site to build before you will be able to see 
 ### Start by forking this repository
 
 1. Fork this repository.
-1. **IMPORTANT:** Remove the fork relationship.
-Go to **Settings (⚙)** > **Edit Project** and click the **"Remove fork relationship"** button.
-1. Enable Shared Runners.
+1. Check if Shared Runners are active.
 Go to **Settings (⚙)** > **Pipelines** and click the **"Enable shared Runners"** button.
-1. Rename the repository to match the name you want for your site.
 1. Edit your website through GitLab or clone the repository and push your changes.
-
-### Start from a local Jekyll project
-
-1. [Install][] Jekyll.
-1. Use `jekyll new` to create a new Jekyll Project.
-1. Add [this `.gitlab-ci.yml`](.gitlab-ci.yml) to the root of your project.
-1. Push your repository and changes to GitLab.
 
 ## GitLab CI
 
