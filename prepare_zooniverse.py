@@ -81,11 +81,11 @@ for row in list_of_rows:
     if alreadyprocessed[row[2]]<=samplesize:
         f.write(row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+"\n")
         shutil.copyfile("char_annotated/"+row[0], "zooniverse_char_verify_line_manifest_result/"+row[0])
-        if os.path.isfile("line/"+row[1]):
-            shutil.copyfile("line/"+row[1], "zooniverse_char_verify_line_manifest_result/"+row[1])
-            print("File found: "+"line/"+row[1])
+        if os.path.isfile("charline/"+row[1]):
+            shutil.copyfile("charline/"+row[1], "zooniverse_char_verify_line_manifest_result/"+row[1])
+            print("File found: "+"charline/"+row[1])
         else:
-            print("File not found: "+"line/"+row[1])
+            print("File not found: "+"charline/"+row[1])
         alreadyprocessed[row[2]]+=1
     cursize+=1
 f.close()
