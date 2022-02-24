@@ -38,7 +38,7 @@ imageclassification:
   artifacts:
     paths:
     - classification
-  except:
+  only:
   - master 
 
 pages:
