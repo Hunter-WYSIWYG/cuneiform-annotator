@@ -2885,5 +2885,71 @@
     },
     "@context": "http://www.w3.org/ns/anno.jsonld",
     "id": "#09a66ef9-8b3c-488b-ad51-d280404f2a7f"
+  },
+  "#e99c449b-f65b-4f14-846b-91fc813b17b3": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "SpecificResource",
+        "purpose": "tagging",
+        "source": {
+          "id": "http://purl.org/cuneiform/Wedge",
+          "label": "Wedge"
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113344:577529/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"653.0687866210938,207.66293334960938 649.4324340820312,245.84475708007812 660.3414916992188,234.9356689453125 682.15966796875,233.1174774169922 682.15966796875,226.75384521484375 663.0687866210938,227.66293334960938\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#e99c449b-f65b-4f14-846b-91fc813b17b3"
+  },
+  "#ea423708-56bf-4053-8e41-bc48f553d20a": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "SpecificResource",
+        "purpose": "tagging",
+        "source": {
+          "id": "http://purl.org/cuneiform/Wedge",
+          "label": "Wedge"
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113344:577529/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"645.7960205078125,244.9356689453125 644.886962890625,277.6629333496094 657.6142578125,264.0265808105469 692.15966796875,264.9356689453125 686.7051391601562,254.9356689453125 656.7051391601562,254.0265655517578\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#ea423708-56bf-4053-8e41-bc48f553d20a"
+  },
+  "#50ac109e-d2c1-4e18-941f-b5334403b670": {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "SpecificResource",
+        "purpose": "tagging",
+        "source": {
+          "id": "http://purl.org/cuneiform/Wedge",
+          "label": "Wedge"
+        }
+      }
+    ],
+    "target": {
+      "source": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1113344:577529/full/full/0/default.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"681.2506103515625,121.29930114746094 704.886962890625,110.39021301269531 694.886962890625,130.3902130126953 703.9778442382812,167.66293334960938 696.7051391601562,171.29930114746094 687.6142578125,131.29930114746094\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#50ac109e-d2c1-4e18-941f-b5334403b670"
   }
 }
