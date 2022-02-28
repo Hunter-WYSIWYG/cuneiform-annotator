@@ -13,6 +13,7 @@
   <script type="text/javascript" src="js/cuneifymap.js"></script>
   <script type="text/javascript" src="js/charlistmap.js"></script>
   <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
+  <script type="text/javascript" src="js/filter.js"></script>
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
 <!--JQUERY-->
@@ -49,8 +50,13 @@
 .selected { background-color: none; }
 .indexhighlight {border-color: red; stroke:red !important;}
 </style>
+
 <div class="container-fluid">
     <div class="row">
+      <div class="col-md-12" >
+        Filter:
+        <select id="periodFilter" onchange="updateSelectOptions()"></select>
+      </div>
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
 <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
@@ -443,17 +449,21 @@ function formatTransliteration(transliteration){
 });
 
 
-$(document).ready(function () {
-      $('#images').selectize({
-          sortField: 'text',
-          maxOptions: 5000
-      });    
-      $('#3dimages').selectize({
-          sortField: 'text',
-          maxOptions: 5000
-      });
-      loadVariants();
-  });
+function rebuildSelectize() {
+  $('#images').selectize()[0].selectize.destroy();
+    $(document).ready(function () {
+        $('#images').selectize({
+            sortField: 'text',
+            maxOptions: 5000
+        });    
+        $('#3dimages').selectize({
+            sortField: 'text',
+            maxOptions: 5000
+        });
+        loadVariants();
+    });
+}
+rebuildSelectize();
 
 
 
@@ -653,12 +663,55 @@ async function getAnnotation(path){
   console.log(atob(users["content"]))
   return JSON.parse(atob(users["content"]))
 }
-  var options=""
-  var options2=""
-  for(url in urls){
-    options+="<option value=\""+url+"\">"+url+"</option>"
+
+  /**
+   * update the tablet selection with the current period filter
+   */
+  function updateSelectOptions() {
+    var currentPeriodFilter = document.getElementById("periodFilter").value;
+    filterSuggestions(currentPeriodFilter);
+
+    /**
+     * removes every option from a select element
+     */
+    function removeOptions(selectElement) {
+      var i, L = selectElement.options.length - 1;
+      for(i = L; i >= 0; i--) {
+          selectElement.remove(i);
+      }
+    }
+
+    rebuildSelectize();
+    var tabletSelect = document.getElementById("images");
+    removeOptions(tabletSelect);
+    options_tablet="";
+
+    for(url in currentUrls){
+      options_tablet+="<option value=\""+url+"\">"+url+"</option>"
+    }
+    tabletSelect.innerHTML=options_tablet
   }
-  document.getElementById("images").innerHTML=options
+
+  /**
+   * init options for the annotation page selects
+   */
+  var options_tablet=""
+  var options_3dmodel=""
+  var options_filter=""
+  var currentUrls = urls;
+
+  options_filter+="<option value=None>None</option>"
+  for(periodIndex in distinctPeriods){
+    var periodName = distinctPeriods[periodIndex]
+    options_filter+="<option value=\""+periodName+"\">"+periodName+"</option>"
+  }
+  document.getElementById("periodFilter").innerHTML=options_filter
+
+  for(url in currentUrls){
+    options_tablet+="<option value=\""+url+"\">"+url+"</option>"
+  }
+  document.getElementById("images").innerHTML=options_tablet
+
   var index=0;
   var translitwasclicked=false
   var curanno={}
@@ -1432,11 +1485,11 @@ $('#toolbar2 img')
 
 var threedimageindex=0
   for(url in hs23D){
-    options2+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
+    options_3dmodel+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
     threedimageToIndex[url]=threedimageindex
     threedimageindex+=1
   }
-  document.getElementById("3dimages").innerHTML=options2
+  document.getElementById("3dimages").innerHTML=options_3dmodel
 </script>
 <!--
 <h3 align="center">Grid Annotation test</h3>
