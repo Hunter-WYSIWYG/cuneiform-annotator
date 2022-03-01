@@ -1,0 +1,96 @@
+<div class="modal fade" id="filter-options-modal" tabindex="-1" aria-labelledby="filter-options-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="filter-modal-label">Change Filter Options</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs" id="filter-tab" role="tablist"></ul>
+            <div class="tab-content" id="filter-tab-content"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script>
+/**
+ * build filter tabs and tab content
+ */
+var filterTab = document.getElementById("filter-tab");
+var filterTabContent = document.getElementById("filter-tab-content");
+
+for (categorie in filterCategories) {
+    let catName = filterCategories[categorie];
+    let catNameCapital = catName.charAt(0).toUpperCase() + catName.slice(1);
+    let activeString = "";
+    let showActiveString = "";
+    if (categorie == 0) {
+        activeString = "active";
+        showActiveString = "show active";
+    }
+
+    var newTab = document.createElement("li");
+    newTab.setAttribute("class","nav-item");
+    newTab.setAttribute("role","presentation");
+    var newButton = document.createElement("button");
+    newButton.setAttribute("class","nav-link " + activeString);
+    newButton.setAttribute("id",catName + "-tab");
+    newButton.setAttribute("data-bs-toggle","tab");
+    newButton.setAttribute("data-bs-target","#" + catName + "-content");
+    newButton.setAttribute("type","button");
+    newButton.setAttribute("role","tab");
+    newButton.setAttribute("aria-controls",catName);
+    newButton.setAttribute("aria-selected","true");
+    newButton.textContent = catNameCapital;
+    newTab.appendChild(newButton);
+    filterTab.appendChild(newTab);
+
+    var newContent = document.createElement("div");
+    newContent.setAttribute("class","tab-pane fade " + showActiveString);
+    newContent.setAttribute("id",catName + "-content");
+    newContent.setAttribute("role","tabpanel");
+    newContent.setAttribute("aria-labelledby",catName + "-tab");
+    filterTabContent.appendChild(newContent);
+
+    let filterValues = getFilterValues(catName);
+    for (index in filterValues) {
+        let filterValue = filterValues[index]
+        var newCheck = document.createElement("div");
+        newCheck.setAttribute("class","form-check");
+        newContent.appendChild(newCheck);
+
+        var newInput = document.createElement("input");
+        newInput.setAttribute("class","form-check-input");
+        newInput.setAttribute("type","checkbox");
+        newInput.setAttribute("value","");
+        newInput.setAttribute("id","flexCheckDefault");
+        newCheck.appendChild(newInput);
+
+        var newLabel = document.createElement("label");
+        newLabel.setAttribute("class","form-check-label");
+        newLabel.setAttribute("for","flexCheckDefault");
+        newLabel.innerHTML = filterValue;
+        newCheck.appendChild(newLabel);
+    }
+}
+
+function getFilterValues(filterName) {
+    switch (filterName) {
+        case "period":
+            return distinctPeriods;
+        case "language":
+            return distinctLanguages;
+        case "provenience":
+            return distinctProvenience;
+        case "genre":
+            return distinctGenre;
+        case "material":
+            return distinctMaterial;
+    }
+    return []
+}
+</script>

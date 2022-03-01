@@ -59,7 +59,55 @@ function sortByPeriod(arr) {
     })
 }
 
-var distinctPeriods = sortByPeriod(removeEmpty(eliminateDuplicates(Object.values(periods))));
+/**
+ * maps an array of language objects to an array of field strings
+ */
+function mapToField(arr, field) {
+  return arr.map(function(item) {
+    return item[field];
+  });
+}
+
+/**
+ * maps every empty string to "unassigned"
+ */
+function markUnassigned(arr) {
+  return arr.map(function(item) {
+    if (item == "") {
+      return "unassigned";
+    }
+    return item;
+  });
+}
+
+/**
+ * reduces an object to an sorted array of distinct values of a specified field;
+ * designed for the language object
+ */
+function reduceToDistinctField(obj, field) {
+  return markUnassigned(
+    eliminateDuplicates(
+      mapToField(
+        Object.values(obj),
+        field
+      )
+    )
+  ).sort();
+}
+
+var distinctPeriods =
+  sortByPeriod(
+    removeEmpty(
+      eliminateDuplicates(
+        Object.values(periods)
+      )
+    )
+  );
+var distinctLanguages = reduceToDistinctField(languages, 'language');
+var distinctProvenience = reduceToDistinctField(languages, 'provenience');
+var distinctGenre = reduceToDistinctField(languages, 'genre');
+var distinctMaterial = reduceToDistinctField(languages, 'material');
+var filterCategories = ["period","language","provenience","genre","material"]
 
 /**
  * returns an array of all period tuples that match the period filter
@@ -82,39 +130,18 @@ function concatFirst(arr) {
 }
 
 /**
- * apply the current filter to the urls
+ * apply the current filter to the current urls
  */
-function filterSuggestions(currentPeriodFilter) {
-    if (currentPeriodFilter != "None") {
-        var filteredTabletNames = concatFirst(filteredPeriodTuples(currentPeriodFilter));
-        var filtered2DUrls = Object.entries(urls).filter(function(urlArray) {
-            return (filteredTabletNames.includes(urlArray[0]));
-        });
-        currentUrls = Object.fromEntries(filtered2DUrls);
+function filterSuggestions(currentPeriodFilter, currentLanguageFilter) {
+    var filteredTabletNames = concatFirst(filteredPeriodTuples(currentPeriodFilter));
 
-        var filtered3DUrls = Object.entries(hs23D).filter(function(urlArray) {
-            return (filteredTabletNames.includes(urlArray[0]));
-        });
-        current3DUrls = Object.fromEntries(filtered3DUrls);
-        console.log("TEST" + current3DUrls);
-    }
+    var filtered2DUrls = Object.entries(urls).filter(function(urlArray) {
+        return (filteredTabletNames.includes(urlArray[0]));
+    });
+    currentUrls = Object.fromEntries(filtered2DUrls);
+
+    var filtered3DUrls = Object.entries(hs23D).filter(function(urlArray) {
+        return (filteredTabletNames.includes(urlArray[0]));
+    });
+    current3DUrls = Object.fromEntries(filtered3DUrls);
 }
-
-var filtered3DUrls = hs23D;
-/**
-"HS_1032B_1": {
-    "url": "https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/c84682a4-cf39-4a88-8015-49f664801495/file/id/591868/file_version/name/original/",
-    "bbox": {
-      "min": [
-        -20.921693801879883,
-        0,
-        -8.682990074157715
-      ],
-      "max": [
-        20.921693801879883,
-        45.417762756347656,
-        8.682990074157715
-      ]
-    }
-  },
- */

@@ -54,8 +54,13 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-12" >
-        Filter:
+        Period:
         <select id="periodFilter" onchange="updateSelectOptions()"></select>
+        Language:
+        <select id="languageFilter" onchange="updateSelectOptions()"></select>
+        <button id="openFilterOptions" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
+            Filter Options
+        </button>
       </div>
       <div class="col-md-6" role="main">
 Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
@@ -675,7 +680,8 @@ async function getAnnotation(path){
    */
   function updateSelectOptions() {
     var currentPeriodFilter = document.getElementById("periodFilter").value;
-    filterSuggestions(currentPeriodFilter);
+    var currentLanguageFilter = document.getElementById("languageFilter").value;
+    filterSuggestions(currentPeriodFilter, currentLanguageFilter);
 
     /**
      * removes every option from a select element
