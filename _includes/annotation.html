@@ -448,22 +448,28 @@ function formatTransliteration(transliteration){
   version: 4
 });
 
+function buildSelectize() {
+  $(document).ready(function () {
+      $('#images').selectize({
+          sortField: 'text',
+          maxOptions: 5000
+      });    
+      $('#3dimages').selectize({
+          sortField: 'text',
+          maxOptions: 5000
+      });
+  });
+}
+
+buildSelectize();
 
 function rebuildSelectize() {
   $('#images').selectize()[0].selectize.destroy();
-    $(document).ready(function () {
-        $('#images').selectize({
-            sortField: 'text',
-            maxOptions: 5000
-        });    
-        $('#3dimages').selectize({
-            sortField: 'text',
-            maxOptions: 5000
-        });
-        loadVariants();
-    });
+  $('#3dimages').selectize()[0].selectize.destroy();
+  buildSelectize();
+  loadVariants();
+  setup3dhop();
 }
-rebuildSelectize();
 
 
 
@@ -682,35 +688,47 @@ async function getAnnotation(path){
     }
 
     rebuildSelectize();
-    var tabletSelect = document.getElementById("images");
-    removeOptions(tabletSelect);
-    options_tablet="";
+    var select2D = document.getElementById("images");
+    var select3D = document.getElementById("3dimages");
+    removeOptions(select2D);
+    removeOptions(select3D);
+    selectOptions2D="";
+    selectOptions3D="";
 
     for(url in currentUrls){
-      options_tablet+="<option value=\""+url+"\">"+url+"</option>"
+      selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
     }
-    tabletSelect.innerHTML=options_tablet
+    select2D.innerHTML=selectOptions2D
+
+    var threedimageindex=0
+    threedimageToIndex={}
+    for(url in current3DUrls){
+      selectOptions3D+="<option value=\""+current3DUrls[url]["url"]+"\">"+url+"</option>"
+      threedimageToIndex[url]=threedimageindex;
+      threedimageindex+=1;
+    }
+    document.getElementById("3dimages").innerHTML=selectOptions3D;
   }
 
   /**
    * init options for the annotation page selects
    */
-  var options_tablet=""
-  var options_3dmodel=""
-  var options_filter=""
+  var selectOptions2D=""
+  var selectOptions3D=""
+  var selectOptionsFilter=""
   var currentUrls = urls;
 
-  options_filter+="<option value=None>None</option>"
+  selectOptionsFilter+="<option value=None>None</option>"
   for(periodIndex in distinctPeriods){
     var periodName = distinctPeriods[periodIndex]
-    options_filter+="<option value=\""+periodName+"\">"+periodName+"</option>"
+    selectOptionsFilter+="<option value=\""+periodName+"\">"+periodName+"</option>"
   }
-  document.getElementById("periodFilter").innerHTML=options_filter
+  document.getElementById("periodFilter").innerHTML=selectOptionsFilter
 
   for(url in currentUrls){
-    options_tablet+="<option value=\""+url+"\">"+url+"</option>"
+    selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
   }
-  document.getElementById("images").innerHTML=options_tablet
+  document.getElementById("images").innerHTML=selectOptions2D
 
   var index=0;
   var translitwasclicked=false
@@ -1481,16 +1499,21 @@ $('#toolbar2 img')
 <canvas id="svgcanvas" width="300" height="100" style="visibility:hidden">
 </canvas>
 </div>
-<script>
 
+<script>
+/**
+ * init options for annotation page 3D select
+ */
+var current3DUrls = hs23D;
 var threedimageindex=0
-  for(url in hs23D){
-    options_3dmodel+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
-    threedimageToIndex[url]=threedimageindex
-    threedimageindex+=1
+  for(url in current3DUrls){
+    selectOptions3D+="<option value=\""+hs23D[url]["url"]+"\">"+url+"</option>"
+    threedimageToIndex[url]=threedimageindex;
+    threedimageindex+=1;
   }
-  document.getElementById("3dimages").innerHTML=options_3dmodel
+  document.getElementById("3dimages").innerHTML=selectOptions3D;
 </script>
+
 <!--
 <h3 align="center">Grid Annotation test</h3>
 Grid Size: <input id="gridsize" type="number" value="20" onChange="recreateGrid()"/><br/>
@@ -1498,7 +1521,6 @@ Grid Offset X: <input id="gridoffsetx" type="number" value="0" onChange="recreat
 Grid Offset Y: <input id="gridoffsety" type="number" value="0" onChange="recreateGrid()"/><br/>
 <div id="grid-source"><img id="gridimage" src="https://heidicon.ub.uni-heidelberg.de/iiif/2/1108001:570701/full/full/0/default.jpg"></div>
 <div id="grid-overlay"></div>
-
 
 function recreateGrid(){
 var $src = $('#grid-source');

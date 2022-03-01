@@ -82,51 +82,23 @@ function concatFirst(arr) {
 }
 
 /**
- * filter the urls with the current filter
- * 
- * still needed for 3D!!!
+ * apply the current filter to the urls
  */
 function filterSuggestions(currentPeriodFilter) {
     if (currentPeriodFilter != "None") {
         var filteredTabletNames = concatFirst(filteredPeriodTuples(currentPeriodFilter));
-        var filteredUrlArray = Object.entries(urls).filter(function(urlArray) {
+        var filtered2DUrls = Object.entries(urls).filter(function(urlArray) {
             return (filteredTabletNames.includes(urlArray[0]));
         });
-        currentUrls = Object.fromEntries(filteredUrlArray);
+        currentUrls = Object.fromEntries(filtered2DUrls);
+
+        var filtered3DUrls = Object.entries(hs23D).filter(function(urlArray) {
+            return (filteredTabletNames.includes(urlArray[0]));
+        });
+        current3DUrls = Object.fromEntries(filtered3DUrls);
+        console.log("TEST" + current3DUrls);
     }
 }
-
-/**
-"HS_0044": {
-    "label": "HS_0044",
-    "variants": [
-      {
-        "label": "HS_0044_01_top.png",
-        "url": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107976:570673/full/full/0/default.jpg"
-      },
-      {
-        "label": "HS_0044_02_left.png",
-        "url": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107977:570674/full/full/0/default.jpg"
-      },
-      {
-        "label": "HS_0044_04_right.png",
-        "url": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107978:570675/full/full/0/default.jpg"
-      },
-      {
-        "label": "HS_0044_05_bottom.png",
-        "url": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107979:570676/full/full/0/default.jpg"
-      },
-      {
-        "label": "HS_0044_06_back.png",
-        "url": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1107980:570677/full/full/0/default.jpg"
-      },
-      {
-        "label": "HS_0044_03_front.png",
-        "url": "https://heidicon.ub.uni-heidelberg.de/iiif/2/1108249:570905/full/full/0/default.jpg"
-      }
-    ]
-  },
- */
 
 var filtered3DUrls = hs23D;
 /**
