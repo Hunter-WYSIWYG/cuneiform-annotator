@@ -6,10 +6,21 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <ul class="nav nav-tabs" id="filter-tab" role="tablist"></ul>
+            <div class="row">
+                <div class="col-3">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary" onclick="activateAllChecks()">Activate</button>
+                        <button type="button" class="btn btn-primary" onclick="deactivateAllChecks()">Deactivate</button>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <ul class="nav nav-tabs noMarginLeft" id="filter-tab" role="tablist"></ul>
+                </div>
+            </div>
             <div class="tab-content" id="filter-tab-content"></div>
         </div>
         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="updateSelectOptions()">Apply</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
         </div>
@@ -18,17 +29,61 @@
 
 <script>
 /**
+ * init active filter array
+ */
+var activeFilter = [];
+for (cat in filterCategories) {
+    activeFilter.push([]);
+}
+
+/**
+ * keep track of the active filter tab
+ */
+var activeFilterTab = filterCategories[0];
+function updateActiveFilterTab(newTab) {
+    activeFilterTab = newTab;
+}
+
+/**
+ * activates every filter-check of the active tab
+ */
+function activateAllChecks() {
+    let filterNames = getFilterNames(activeFilterTab);
+    for (index in filterNames) {
+        let currentCheck = document.getElementById("check-" + activeFilterTab + "-" + index);
+        currentCheck.checked = true;
+    }
+    let catIndex = filterCategories.indexOf(activeFilterTab);
+    activeFilter[catIndex] = filterNames;
+    console.log(activeFilter);
+}
+
+/**
+ * deactivates every filter-check of the active tab
+ */
+ function deactivateAllChecks() {
+    let filterNames = getFilterNames(activeFilterTab);
+    for (index in filterNames) {
+        let currentCheck = document.getElementById("check-" + activeFilterTab + "-" + index);
+        currentCheck.checked = false;
+    }
+    let catIndex = filterCategories.indexOf(activeFilterTab);
+    activeFilter[catIndex] = [];
+    console.log(activeFilter);
+}
+
+/**
  * build filter tabs and tab content
  */
 var filterTab = document.getElementById("filter-tab");
 var filterTabContent = document.getElementById("filter-tab-content");
 
-for (categorie in filterCategories) {
-    let catName = filterCategories[categorie];
-    let catNameCapital = catName.charAt(0).toUpperCase() + catName.slice(1);
+for (filterCategoryIndex in filterCategories) {
+    let filterCategory = filterCategories[filterCategoryIndex];
+    let filterCategoryCapital = filterCategory.charAt(0).toUpperCase() + filterCategory.slice(1);
     let activeString = "";
     let showActiveString = "";
-    if (categorie == 0) {
+    if (filterCategoryIndex == 0) {
         activeString = "active";
         showActiveString = "show active";
     }
@@ -38,27 +93,28 @@ for (categorie in filterCategories) {
     newTab.setAttribute("role","presentation");
     var newButton = document.createElement("button");
     newButton.setAttribute("class","nav-link " + activeString);
-    newButton.setAttribute("id",catName + "-tab");
+    newButton.setAttribute("id",filterCategory + "-tab");
     newButton.setAttribute("data-bs-toggle","tab");
-    newButton.setAttribute("data-bs-target","#" + catName + "-content");
+    newButton.setAttribute("data-bs-target","#" + filterCategory + "-content");
     newButton.setAttribute("type","button");
     newButton.setAttribute("role","tab");
-    newButton.setAttribute("aria-controls",catName);
+    newButton.setAttribute("aria-controls",filterCategory);
     newButton.setAttribute("aria-selected","true");
-    newButton.textContent = catNameCapital;
+    newButton.setAttribute("onclick","updateActiveFilterTab('" + filterCategory + "')");
+    newButton.textContent = filterCategoryCapital;
     newTab.appendChild(newButton);
     filterTab.appendChild(newTab);
 
     var newContent = document.createElement("div");
     newContent.setAttribute("class","tab-pane fade " + showActiveString);
-    newContent.setAttribute("id",catName + "-content");
+    newContent.setAttribute("id",filterCategory + "-content");
     newContent.setAttribute("role","tabpanel");
-    newContent.setAttribute("aria-labelledby",catName + "-tab");
+    newContent.setAttribute("aria-labelledby",filterCategory + "-tab");
     filterTabContent.appendChild(newContent);
 
-    let filterValues = getFilterValues(catName);
-    for (index in filterValues) {
-        let filterValue = filterValues[index]
+    let filterNames = getFilterNames(filterCategory);
+    for (index in filterNames) {
+        let filterName = filterNames[index]
         var newCheck = document.createElement("div");
         newCheck.setAttribute("class","form-check");
         newContent.appendChild(newCheck);
@@ -67,19 +123,23 @@ for (categorie in filterCategories) {
         newInput.setAttribute("class","form-check-input");
         newInput.setAttribute("type","checkbox");
         newInput.setAttribute("value","");
-        newInput.setAttribute("id","flexCheckDefault");
+        newInput.setAttribute("id","check-" + filterCategory + "-" + index);
+        newInput.setAttribute("onclick", "updateActiveFilters('" + filterCategory + "', '" + filterName + "')");
         newCheck.appendChild(newInput);
 
         var newLabel = document.createElement("label");
         newLabel.setAttribute("class","form-check-label");
         newLabel.setAttribute("for","flexCheckDefault");
-        newLabel.innerHTML = filterValue;
+        newLabel.innerHTML = filterName;
         newCheck.appendChild(newLabel);
     }
 }
 
-function getFilterValues(filterName) {
-    switch (filterName) {
+/**
+ * returns the list of distinct filter values for a filter category
+ */
+function getFilterNames(filterCategory) {
+    switch (filterCategory) {
         case "period":
             return distinctPeriods;
         case "language":
@@ -92,5 +152,19 @@ function getFilterValues(filterName) {
             return distinctMaterial;
     }
     return []
+}
+
+/**
+ * adds or removes filters from activeFilters variable
+ */
+function updateActiveFilters(filterCategory, filterName) {
+    filterCatIndex = filterCategories.indexOf(filterCategory);
+    if (activeFilter[filterCatIndex].includes(filterName)) {
+        index = activeFilter[filterCatIndex].indexOf(filterName);
+        activeFilter[filterCatIndex].splice(index, 1);
+    } else {
+        activeFilter[filterCatIndex].push(filterName);
+        activeFilter[filterCatIndex].sort();
+    }
 }
 </script>

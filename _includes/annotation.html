@@ -54,10 +54,6 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-12" >
-        Period:
-        <select id="periodFilter" onchange="updateSelectOptions()"></select>
-        Language:
-        <select id="languageFilter" onchange="updateSelectOptions()"></select>
         <button id="openFilterOptions" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
             Filter Options
         </button>
@@ -361,6 +357,7 @@ function formatTransliteration(transliteration){
 
 
   function loadVariants(){
+    console.log("TEST");
     console.log($('#images option:selected').text())
     console.log(transliterations)
     toappend=""
@@ -472,7 +469,6 @@ function rebuildSelectize() {
   $('#images').selectize()[0].selectize.destroy();
   $('#3dimages').selectize()[0].selectize.destroy();
   buildSelectize();
-  loadVariants();
   setup3dhop();
 }
 
@@ -677,11 +673,10 @@ async function getAnnotation(path){
 
   /**
    * update the tablet selection with the current period filter
+   * WIP
    */
   function updateSelectOptions() {
-    var currentPeriodFilter = document.getElementById("periodFilter").value;
-    var currentLanguageFilter = document.getElementById("languageFilter").value;
-    filterSuggestions(currentPeriodFilter, currentLanguageFilter);
+    filterSuggestions();
 
     /**
      * removes every option from a select element
@@ -701,7 +696,7 @@ async function getAnnotation(path){
     selectOptions2D="";
     selectOptions3D="";
 
-    for(url in currentUrls){
+    for(url in current2DUrls){
       selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
     }
     select2D.innerHTML=selectOptions2D
@@ -714,6 +709,8 @@ async function getAnnotation(path){
       threedimageindex+=1;
     }
     document.getElementById("3dimages").innerHTML=selectOptions3D;
+
+    loadVariants();
   }
 
   /**
@@ -721,17 +718,9 @@ async function getAnnotation(path){
    */
   var selectOptions2D=""
   var selectOptions3D=""
-  var selectOptionsFilter=""
-  var currentUrls = urls;
+  var current2DUrls = urls;
 
-  selectOptionsFilter+="<option value=None>None</option>"
-  for(periodIndex in distinctPeriods){
-    var periodName = distinctPeriods[periodIndex]
-    selectOptionsFilter+="<option value=\""+periodName+"\">"+periodName+"</option>"
-  }
-  document.getElementById("periodFilter").innerHTML=selectOptionsFilter
-
-  for(url in currentUrls){
+  for(url in current2DUrls){
     selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
   }
   document.getElementById("images").innerHTML=selectOptions2D
