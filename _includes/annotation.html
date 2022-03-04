@@ -52,17 +52,301 @@
 </style>
 
 <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12" >
-        <button id="openFilterOptions" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
-            Filter Options
-        </button>
+  <div class="row">
+    <div class="col-md-12" >
+      <button id="openFilterOptions" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
+          Filter Options
+      </button>
+    </div>
+    <div class="col-md-6" role="main">
+      Tablet:
+      <select id="images" onchange="loadVariants()"></select>
+      Side:
+      <select id="imageside" onchange="reinit(null)"></select>
+      <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">
+        Save Annotations
+      </button>
+      <button id="saveInGit" onclick="commitData()">
+        Save Annotation in Gitlab
+      </button>
+      <button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>
+        Show Transliteration
+      </button>
+      <button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>
+        Show Translation
+      </button>
+      <button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>
+        Show PaleoCodes
+      </button>
+      <button id="showIndexedChars" onClick="highlightIndexedChars()">
+        Highlight Indexed Chars
+      </button>
+      <button onclick="showHideAnno()">
+        Show/Hide Annotations
+      </button><br/>
+      Tagsets: CharacterSet:
+      <input type="radio" id="characterset">
+      LinguisticAnnotation:
+      <input type="radio" id="linguisticset"/>
+      <div>
+        <div id="my-toolbar-container"></div>
+        <div id="openseadragon" style="width: 640px; height: 580px;"></div>
       </div>
-      <div class="col-md-6" role="main">
-Tablet: <select id="images" onchange="loadVariants()"></select> Side: <select id="imageside" onchange="reinit(null)"></select>
-<button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save Annotations</button>
-<button id="saveInGit" onclick="commitData()">Save Annotation in Gitlab</button><button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>Show Transliteration</button><button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>Show Translation</button><button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>Show PaleoCodes</button><button id="showIndexedChars" onClick="highlightIndexedChars()">Highlight Indexed Chars</button><button onclick="showHideAnno()">Show/Hide Annotations</button><br/>
-Tagsets: CharacterSet: <input type="radio" id="characterset"> LinguisticAnnotation: <input type="radio" id="linguisticset"/>
+      <a id="metadata" onClick="getEXIFData('openseadragon','metadatafield')">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+        </svg>
+      </a>
+      <span id="period"></span><br/>
+      CDLI: 
+      <span id="cdlilink"></span>
+      &nbsp;Annotation Completeness: 
+      <span id="annocomplete"></span> 
+      Indexing Completeness: 
+      <span id="indexingcomplete"></span><br/>
+      <span>
+        <label for="positioningcorrect">
+          Positioning correct: 
+        </label>
+        <select id="positioningcorrect">
+          <option value="unknown">Unknown</option>
+          <option value="correct">Correct</option>
+          <option value="incorrect">Incorrect</option>
+        </select>
+        <label for="transliterationcorrect">
+          Transliteration correct: 
+        </label>
+        <select id="transliterationcorrect">
+          <option value="unknown">Unknown</option>
+          <option value="correct">Correct</option>
+          <option value="incorrect">Incorrect</option>
+        </select>
+        <label for="indexingcorrect">
+          Indexing correct: 
+        </label>
+        <select id="indexingcorrect">
+          <option value="unknown">Unknown</option>
+          <option value="correct">Correct</option>
+          <option value="incorrect">Incorrect</option>
+        </select>
+        <label for="annotationscorrect">
+          Annotations correct: 
+        </label>
+        <select id="annotationscorrect">
+          <option value="unknown">Unknown</option>
+          <option value="correct">Correct</option>
+          <option value="incorrect">Incorrect</option>
+        </select>
+        <label for="annotationscomplete">
+          Annotations complete:
+        </label>
+        <select id="annotationscomplete">
+          <option value="unknown">Unknown</option>
+          <option value="complete">Complete</option>
+          <option value="incomplete">Incomplete</option>
+        </select><br/>
+        <label for="comment">
+          Custom Tag: 
+        </label>
+        <input id="comment" type="text"/>
+        <button id="addTag" onclick="addTag()">
+          Add Tag
+        </button>
+        &nbsp;
+        <button id="saveApprovals" onclick="saveApprovals()">
+          Save Approvals
+        </button>
+        <br>
+        <p id="mytags"></p>
+      </span>
+    </div>
+    <div class="col-md-6">
+      3DModel:<br/>
+      <select id="3dimages" onchange="setup3dhop()">
+        <option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">
+          Cuneiform Tablet HS 1032B_1
+        </option>
+      </select>
+      <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">
+        Save 3D Annotations
+      </button>
+      <button id="saveInGit3D" onclick="commitData()">
+        Save 3D Annotation in Gitlab
+      </button>
+      <button id="synch2D3DButton" onClick="sync2D3D()">
+        Synchronize 3D and 2D View
+      </button>
+      <dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
+        <h3>
+          Transliteration View
+          <span id="textid"></span>
+        </h3>
+        <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto"></code><br/>
+        <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>
+          Close
+        </button>
+      </dialog>
+      <dialog id="translationdialog" class="modal-body" style="z-index: 1000 !important ;">
+        <h3>
+          Translation View 
+          <span id="textid"></span>
+        </h3>
+        <code id="translationtextarea" style="width: 300px; height: 550px; overflow: auto"></code><br/>
+        <button id="closedialog3" onClick='document.getElementById("translationdialog").close()'>
+          Close
+        </button>
+      </dialog>
+      <dialog id="paleocodedialog" class="modal-body" style="z-index: 1000 !important ;">
+        <h3>
+          PaleoCodeList
+        </h3>
+        <ul id="paleocodelist" style="width: 300px; height: 550px; overflow: auto"></ul><br/>
+        <button id="closedialog2" onClick='document.getElementById("paleocodedialog").close()'>
+          Close
+        </button>
+      </dialog>
+      <div id="3dhop" class="tdhop" style="height:700px;width:640px;" onmousedown="if (event.preventDefault) event.preventDefault()">
+        <div id="tdhlg"></div>
+        <div id="toolbar">
+          <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
+          <!--ZOOM-->
+          <img id="zoomin"      title="Zoom In"                src="skins/dark/zoomin.png"/><br/>
+          <img id="zoomout"     title="Zoom Out"               src="skins/dark/zoomout.png"/><br/>
+          <!--ZOOM-->
+          <!--LIGHTING-->
+          <img id="lighting_off" title="Enable Lighting"       src="skins/dark/lighting_off.png" style="position:absolute; visibility:hidden;"/>
+          <img id="lighting"     title="Disable Lighting"      src="skins/dark/lighting.png"/><br/>
+          <!--LIGHTING-->
+          <!--LIGHT-->
+          <img id="light_on"    title="Disable Light Control"  src="skins/dark/lightcontrol_on.png" style="position:absolute; visibility:hidden;"/>
+          <img id="light"       title="Enable Light Control"   src="skins/dark/lightcontrol.png"/><br/>
+          <!--LIGHT-->
+          <!--MEASURE-->
+          <img id="measure_on"  title="Disable Measure Tool"   src="skins/dark/measure_on.png" style="position:absolute; visibility:hidden;"/>
+          <img id="measure"     title="Enable Measure Tool"    src="skins/dark/measure.png"/><br/>
+          <!--MEASURE-->
+          <!--POINT PICKING-->
+          <img id="pick_on"     title="Disable PickPoint Mode" src="skins/dark/pick_on.png" style="position:absolute; visibility:hidden;"/>
+          <img id="pick"        title="Enable PickPoint Mode"  src="skins/dark/pick.png"/><br/>
+          <!--POINT PICKING-->
+          <!--SECTIONS-->
+          <img id="sections_on" title="Disable Plane Sections" src="skins/dark/sections_on.png" style="position:absolute; visibility:hidden;"/>
+          <img id="sections"    title="Enable Plane Sections"  src="skins/dark/sections.png"/><br/>
+          <!--SECTIONS-->
+          <!--COLOR-->
+          <img id="color_on"    title="Disable Solid Color"    src="skins/dark/color_on.png" style="position:absolute; visibility:hidden;"/>
+          <img id="color"       title="Enable Solid Color"     src="skins/dark/color.png"/><br/>
+          <!--COLOR-->
+          <!--CAMERA-->
+          <img id="perspective"  title="Perspective Camera"    src="skins/dark/perspective.png" style="position:absolute; visibility:hidden;"/>
+          <img id="orthographic" title="Orthographic Camera"   src="skins/dark/orthographic.png"/><br/>
+          <!--CAMERA-->
+          <!--SCREENSHOT-->
+          <img id="screenshot" title="Save Screenshot"   src="skins/dark/screenshot.png"/><br/>
+          <!--SCREENSHOT-->
+          <!--FULLSCREEN-->
+          <img id="full_on"     title="Exit Full Screen"       src="skins/dark/full_on.png" style="position:absolute; visibility:hidden;"/>
+          <img id="full"        title="Full Screen"            src="skins/dark/full.png"/>
+          <!--FULLSCREEN-->
+        </div>
+        <div id="toolbar2">
+          <img id="btn-edit-object" title="Edit Object Information" src="skins/dark/objectedit.png" /><br />
+          <img id="select_on" title="Disable Selection Tool" src="skins/dark/polygon_selection_on.png" style="position:absolute; visibility:hidden;" />
+          <img id="select" title="Enable Polygon Selection" src="skins/dark/polygon_selection.png" /><br />
+          <img id="btn-test-polygoneditor" title="Test Polygon Editor" src="skins/dark/polygon_editor.png" /><br />
+          <img id="btn-open-features-modal" title="Edit Features" src="skins/dark/features.png" /><br />
+          <img id="btn-open-featuregroup-modal" title="Edit Features Groups" src="skins/dark/featuregroup.png" /><br />
+          <img id="btn-open-interpretation-modal" title="Edit Interpretations" src="skins/dark/interpretation.png" /><br />
+        </div>
+
+        <!--MEASURE-->
+        <div id="measure-box" class="output-box">
+          Measured length
+          <hr/>
+          <span id="measure-output" class="output-text" onmousedown="event.stopPropagation()">
+            0.0
+          </span>
+        </div>
+        <!--MEASURE-->
+
+        <!--POINT PICKING-->
+        <div id="pickpoint-box" class="output-box">
+          XYZ picked point
+          <hr/>
+          <span id="pickpoint-output" class="output-text" onmousedown="event.stopPropagation()">
+            [ 0 , 0 , 0 ]
+          </span>
+        </div>
+        <!--POINT PICKING-->
+
+        <!--SECTIONS-->
+        <div id="sections-box" class="output-box">
+          <table class="output-table" onmousedown="event.stopPropagation()">
+            <tr>
+              <td>Plane</td>
+              <td>Position</td>
+              <td>Flip</td>
+            </tr>
+            <tr>
+              <td>
+                <img id="xplane_on" title="Disable X Axis Section" src="skins/icons/sectionX_on.png" onclick="sectionxSwitch()" style="position:absolute; visibility:hidden; border:1px inset;"/>
+                <img id="xplane" title="Enable X Axis Section" src="skins/icons/sectionX.png" onclick="sectionxSwitch()"/><br/>
+              </td>
+              <td>
+                <input id="xplaneSlider" class="output-input"  type="range"    title="Move X Axis Section Position"/>
+              </td>
+              <td>
+                <input id="xplaneFlip"   class="output-input"  type="checkbox" title="Flip X Axis Section Direction"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img id="yplane_on" title="Disable Y Axis Section" src="skins/icons/sectionY_on.png" onclick="sectionySwitch()" style="position:absolute; visibility:hidden; border:1px inset;"/>
+                <img id="yplane" title="Enable Y Axis Section" src="skins/icons/sectionY.png" onclick="sectionySwitch()"/><br/>
+              </td>
+              <td>
+                <input id="yplaneSlider" class="output-input" type="range" title="Move Y Axis Section Position"/>
+              </td>
+              <td>
+                <input id="yplaneFlip" class="output-input" type="checkbox" title="Flip Y Axis Section Direction"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img id="zplane_on" title="Disable Z Axis Section" src="skins/icons/sectionZ_on.png" onclick="sectionzSwitch()" style="position:absolute; visibility:hidden; border:1px inset;"/>
+                <img id="zplane" title="Enable Z Axis Section" src="skins/icons/sectionZ.png" onclick="sectionzSwitch()"/><br/>
+              </td>
+              <td>
+                <input id="zplaneSlider" class="output-input" type="range" title="Move Y Axis Section Position"/>
+              </td>
+              <td>
+                <input id="zplaneFlip" class="output-input" type="checkbox" title="Flip Z Axis Section Direction"/>
+              </td>
+            </tr>
+          </table>
+          <table class="output-table" onmousedown="event.stopPropagation()" style="text-align:right;">
+            <tr>
+              <td>
+                Show planes
+                <input id="showPlane" class="output-input" type="checkbox" title="Show Section Planes" style="bottom:-3px;"/>
+              </td>
+              <td>
+                Show edges
+                <input  id="showBorder" class="output-input" type="checkbox" title="Show Section Edges" style="bottom:-3px;"/>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!--SECTIONS-->
+
+        <canvas id="draw-canvas" style="background-color:lightgray">
+      </div>
+    </div>
+    <canvas id="svgcanvas" width="300" height="100" style="visibility:hidden"></canvas>
+  </div>
+  <div id="metadatafield"></div>
+</div>
+
 <script>
 visible=true
 function showHideAnno(){
@@ -951,22 +1235,6 @@ function highlightIndexedChars(){
   indexedhiglighted=!indexedhiglighted
 }
 </script>
-<div>
-    <div id="my-toolbar-container"></div>
-<div id="openseadragon" style="width: 640px; height: 580px;"></div>
-      </div>
-<a id="metadata" onClick="getEXIFData('openseadragon','metadatafield')">
-<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg>
-</a>
-<span id="period"></span><br/>CDLI: <span id="cdlilink"></span>&nbsp;Annotation Completeness: <span id="annocomplete"></span> Indexing Completeness: <span id="indexingcomplete"></span><br/>
-<span><label for="positioningcorrect">Positioning correct: </label><select id="positioningcorrect"><option value="unknown">Unknown</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select>
-<label for="transliterationcorrect">Transliteration correct: </label><select id="transliterationcorrect"><option value="unknown">Unknown</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select>
-<label for="indexingcorrect">Indexing correct: </label><select id="indexingcorrect"><option value="unknown">Unknown</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select>
-<label for="annotationscorrect">Annotations correct: </label><select id="annotationscorrect"><option value="unknown">Unknown</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select>
-<label for="annotationscomplete">Annotations complete: </label><select id="annotationscomplete"><option value="unknown">Unknown</option><option value="complete">Complete</option><option value="incomplete">Incomplete</option></select><br/>
-<label for="comment">Custom Tag: </label><input id="comment" type="text"/><button id="addTag" onclick="addTag()">Add Tag</button>&nbsp;<button id="saveApprovals" onclick="saveApprovals()">Save Approvals</button><br>
-<p id="mytags"></p></span>
-</div>
 <script>
 function addTag(){
   mytag=$('#comment').val()
@@ -977,120 +1245,6 @@ function addTag(){
   $('#comment').val("")
 }
 </script>
-<div class="col-md-6">
-  3DModel:<br/>
-<select id="3dimages" onchange="setup3dhop()"><option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">Cuneiform Tablet HS 1032B_1</option></select>
-<button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">Save 3D Annotations</button>
-<button id="saveInGit3D" onclick="commitData()">Save 3D Annotation in Gitlab</button>
-<button id="synch2D3DButton" onClick="sync2D3D()">Synchronize 3D and 2D View</button>
-<dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
-    <h3>Transliteration View <span id="textid"></span></h3>
-    <code id="transliterationtextarea" style="width: 300px; height: 550px; overflow: auto">
-    </code><br/>
-    <button id="closedialog" onClick='document.getElementById("transliterationdialog").close()'>Close</button>
-</dialog>
-<dialog id="translationdialog" class="modal-body" style="z-index: 1000 !important ;">
-    <h3>Translation View <span id="textid"></span></h3>
-    <code id="translationtextarea" style="width: 300px; height: 550px; overflow: auto">
-    </code><br/>
-    <button id="closedialog3" onClick='document.getElementById("translationdialog").close()'>Close</button>
-</dialog>
-<dialog id="paleocodedialog" class="modal-body" style="z-index: 1000 !important ;">
-    <h3>PaleoCodeList</h3>
-    <ul id="paleocodelist" style="width: 300px; height: 550px; overflow: auto">
-    </ul><br/>
-    <button id="closedialog2" onClick='document.getElementById("paleocodedialog").close()'>Close</button>
-</dialog>
-<div id="3dhop" class="tdhop" style="height:700px;width:640px;" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
- <div id="toolbar">
-  <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
-<!--ZOOM-->
-  <img id="zoomin"      title="Zoom In"                src="skins/dark/zoomin.png"/><br/>
-  <img id="zoomout"     title="Zoom Out"               src="skins/dark/zoomout.png"/><br/>
-<!--ZOOM-->
-<!--LIGHTING-->
-  <img id="lighting_off" title="Enable Lighting"       src="skins/dark/lighting_off.png" style="position:absolute; visibility:hidden;"/>
-  <img id="lighting"     title="Disable Lighting"      src="skins/dark/lighting.png"/><br/>
-<!--LIGHTING-->
-<!--LIGHT-->
-  <img id="light_on"    title="Disable Light Control"  src="skins/dark/lightcontrol_on.png" style="position:absolute; visibility:hidden;"/>
-  <img id="light"       title="Enable Light Control"   src="skins/dark/lightcontrol.png"/><br/>
-<!--LIGHT-->
-<!--MEASURE-->
-  <img id="measure_on"  title="Disable Measure Tool"   src="skins/dark/measure_on.png" style="position:absolute; visibility:hidden;"/>
-  <img id="measure"     title="Enable Measure Tool"    src="skins/dark/measure.png"/><br/>
-<!--MEASURE-->
-<!--POINT PICKING-->
-  <img id="pick_on"     title="Disable PickPoint Mode" src="skins/dark/pick_on.png" style="position:absolute; visibility:hidden;"/>
-  <img id="pick"        title="Enable PickPoint Mode"  src="skins/dark/pick.png"/><br/>
-<!--POINT PICKING-->
-<!--SECTIONS-->
-  <img id="sections_on" title="Disable Plane Sections" src="skins/dark/sections_on.png" style="position:absolute; visibility:hidden;"/>
-  <img id="sections"    title="Enable Plane Sections"  src="skins/dark/sections.png"/><br/>
-<!--SECTIONS-->
-<!--COLOR-->
-  <img id="color_on"    title="Disable Solid Color"    src="skins/dark/color_on.png" style="position:absolute; visibility:hidden;"/>
-  <img id="color"       title="Enable Solid Color"     src="skins/dark/color.png"/><br/>
-<!--COLOR-->
-<!--CAMERA-->
-  <img id="perspective"  title="Perspective Camera"    src="skins/dark/perspective.png" style="position:absolute; visibility:hidden;"/>
-  <img id="orthographic" title="Orthographic Camera"   src="skins/dark/orthographic.png"/><br/>
-<!--CAMERA-->
-<!--SCREENSHOT-->
-  <img id="screenshot" title="Save Screenshot"   src="skins/dark/screenshot.png"/><br/>
-<!--SCREENSHOT-->
-<!--FULLSCREEN-->
-  <img id="full_on"     title="Exit Full Screen"       src="skins/dark/full_on.png" style="position:absolute; visibility:hidden;"/>
-  <img id="full"        title="Full Screen"            src="skins/dark/full.png"/>
-<!--FULLSCREEN-->
- </div>
-             <div id="toolbar2">
-                <img id="btn-edit-object" title="Edit Object Information" src="skins/dark/objectedit.png" /><br />
-                <img id="select_on" title="Disable Selection Tool" src="skins/dark/polygon_selection_on.png" style="position:absolute; visibility:hidden;" />
-                <img id="select" title="Enable Polygon Selection" src="skins/dark/polygon_selection.png" /><br />
-                <img id="btn-test-polygoneditor" title="Test Polygon Editor" src="skins/dark/polygon_editor.png" /><br />
-                <img id="btn-open-features-modal" title="Edit Features" src="skins/dark/features.png" /><br />
-                <img id="btn-open-featuregroup-modal" title="Edit Features Groups" src="skins/dark/featuregroup.png" /><br />
-                <img id="btn-open-interpretation-modal" title="Edit Interpretations" src="skins/dark/interpretation.png" /><br />
-            </div>
-
-
-<!--MEASURE-->
- <div id="measure-box" class="output-box">Measured length<hr/><span id="measure-output" class="output-text" onmousedown="event.stopPropagation()">0.0</span></div>
-<!--MEASURE-->
-
-<!--POINT PICKING-->
- <div id="pickpoint-box" class="output-box">XYZ picked point<hr/><span id="pickpoint-output" class="output-text" onmousedown="event.stopPropagation()">[ 0 , 0 , 0 ]</span></div>
-<!--POINT PICKING-->
-
-<!--SECTIONS-->
- <div id="sections-box" class="output-box">
-  <table class="output-table" onmousedown="event.stopPropagation()">
-	<tr><td>Plane</td><td>Position</td><td>Flip</td></tr>
-	<tr>
-		<td><img   id="xplane_on"    title="Disable X Axis Section" src="skins/icons/sectionX_on.png" onclick="sectionxSwitch()" style="position:absolute; visibility:hidden; border:1px inset;"/>
-			<img   id="xplane"       title="Enable X Axis Section"  src="skins/icons/sectionX.png"  onclick="sectionxSwitch()"/><br/></td>
-		<td><input id="xplaneSlider" class="output-input"  type="range"    title="Move X Axis Section Position"/></td>
-		<td><input id="xplaneFlip"   class="output-input"  type="checkbox" title="Flip X Axis Section Direction"/></td></tr>
-	<tr>
-		<td><img   id="yplane_on"    title="Disable Y Axis Section" src="skins/icons/sectionY_on.png" onclick="sectionySwitch()" style="position:absolute; visibility:hidden; border:1px inset;"/>
-			<img   id="yplane"       title="Enable Y Axis Section"  src="skins/icons/sectionY.png"  onclick="sectionySwitch()"/><br/></td>
-		<td><input id="yplaneSlider" class="output-input"  type="range"    title="Move Y Axis Section Position"/></td>
-		<td><input id="yplaneFlip"   class="output-input"  type="checkbox" title="Flip Y Axis Section Direction"/></td></tr>
-	<tr>
-		<td><img   id="zplane_on"    title="Disable Z Axis Section" src="skins/icons/sectionZ_on.png" onclick="sectionzSwitch()" style="position:absolute; visibility:hidden; border:1px inset;"/>
-			<img   id="zplane"       title="Enable Z Axis Section"  src="skins/icons/sectionZ.png"  onclick="sectionzSwitch()"/><br/></td>
-		<td><input id="zplaneSlider" class="output-input"  type="range"    title="Move Y Axis Section Position"/></td>
-		<td><input id="zplaneFlip"   class="output-input"  type="checkbox" title="Flip Z Axis Section Direction"/></td></tr></table>
-  <table class="output-table" onmousedown="event.stopPropagation()" style="text-align:right;">
-	<tr>
-	 <td>Show planes<input id="showPlane" class="output-input" type="checkbox" title="Show Section Planes" style="bottom:-3px;"/></td>
-	 <td>Show edges<input  id="showBorder" class="output-input" type="checkbox" title="Show Section Edges" style="bottom:-3px;"/></td></tr></table>
- </div>
-<!--SECTIONS-->
-
- <canvas id="draw-canvas" style="background-color:lightgray""/>
-</div>
 <script type="text/javascript">
 var presenter = null;
 
@@ -1490,11 +1644,6 @@ $('#toolbar2 img')
 
 });
 </script>
-</div>
-<canvas id="svgcanvas" width="300" height="100" style="visibility:hidden">
-</canvas>
-</div>
-
 <script>
 /**
  * init options for annotation page 3D select
@@ -1599,5 +1748,3 @@ recreateGrid();
       $('#paleocodelist').html(paleolist)
 </script>
 -->
-<div id="metadatafield">
-</div>
