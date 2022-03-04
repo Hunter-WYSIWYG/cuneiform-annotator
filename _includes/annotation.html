@@ -348,6 +348,71 @@
 </div>
 
 <script>
+/**
+* update the tablet selection with the current period filter
+*/
+function updateSelectOptions() {
+  filterSuggestions();
+
+  /**
+    * removes every option from a select element
+    */
+  function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+        selectElement.remove(i);
+    }
+  }
+
+  rebuildSelectize();
+  var select2D = document.getElementById("images");
+  var select3D = document.getElementById("3dimages");
+  removeOptions(select2D);
+  removeOptions(select3D);
+  selectOptions2D="";
+  selectOptions3D="";
+
+  for(url in current2DUrls){
+    selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
+  }
+  select2D.innerHTML=selectOptions2D
+
+  var threedimageindex=0
+  threedimageToIndex={}
+  for(url in current3DUrls){
+    selectOptions3D+="<option value=\""+current3DUrls[url]["url"]+"\">"+url+"</option>"
+    threedimageToIndex[url]=threedimageindex;
+    threedimageindex+=1;
+  }
+  document.getElementById("3dimages").innerHTML=selectOptions3D;
+
+  loadVariants();
+}
+
+/**
+  * init options for the annotation page selects
+  */
+var selectOptions2D=""
+var selectOptions3D=""
+var current2DUrls = urls;
+
+for(url in current2DUrls){
+  selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
+}
+document.getElementById("images").innerHTML=selectOptions2D
+
+/**
+  * update the options of the annotation selectize elements
+  */
+function rebuildSelectize() {
+  $('#images').selectize()[0].selectize.destroy();
+  $('#3dimages').selectize()[0].selectize.destroy();
+  buildSelectize();
+  setup3dhop();
+}
+</script>
+
+<script>
 visible=true
 function showHideAnno(){
   visible=!visible
@@ -746,18 +811,7 @@ function buildSelectize() {
       });
   });
 }
-
 buildSelectize();
-
-function rebuildSelectize() {
-  $('#images').selectize()[0].selectize.destroy();
-  $('#3dimages').selectize()[0].selectize.destroy();
-  buildSelectize();
-  setup3dhop();
-}
-
-
-
 </script>
 <script>
 
@@ -954,60 +1008,6 @@ async function getAnnotation(path){
   console.log(atob(users["content"]))
   return JSON.parse(atob(users["content"]))
 }
-
-  /**
-   * update the tablet selection with the current period filter
-   * WIP
-   */
-  function updateSelectOptions() {
-    filterSuggestions();
-
-    /**
-     * removes every option from a select element
-     */
-    function removeOptions(selectElement) {
-      var i, L = selectElement.options.length - 1;
-      for(i = L; i >= 0; i--) {
-          selectElement.remove(i);
-      }
-    }
-
-    rebuildSelectize();
-    var select2D = document.getElementById("images");
-    var select3D = document.getElementById("3dimages");
-    removeOptions(select2D);
-    removeOptions(select3D);
-    selectOptions2D="";
-    selectOptions3D="";
-
-    for(url in current2DUrls){
-      selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
-    }
-    select2D.innerHTML=selectOptions2D
-
-    var threedimageindex=0
-    threedimageToIndex={}
-    for(url in current3DUrls){
-      selectOptions3D+="<option value=\""+current3DUrls[url]["url"]+"\">"+url+"</option>"
-      threedimageToIndex[url]=threedimageindex;
-      threedimageindex+=1;
-    }
-    document.getElementById("3dimages").innerHTML=selectOptions3D;
-
-    loadVariants();
-  }
-
-  /**
-   * init options for the annotation page selects
-   */
-  var selectOptions2D=""
-  var selectOptions3D=""
-  var current2DUrls = urls;
-
-  for(url in current2DUrls){
-    selectOptions2D+="<option value=\""+url+"\">"+url+"</option>"
-  }
-  document.getElementById("images").innerHTML=selectOptions2D
 
   var index=0;
   var translitwasclicked=false
