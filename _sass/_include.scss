@@ -19,3 +19,43 @@ img.landing-carousel-size {
 .noMarginLeft {
     margin-left: 0px;
 }
+
+.landing-carousel {
+    width: 459.75px;
+}
+
+.relative {
+    position: relative;
+}
+  
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.text-purple {
+    color: #6f42c1;
+}
+
+@font-face {
+    font-family: ethnocentric;
+    src: url({{site.baseurl}}/assets/font/ethnocentric-rg.otf);
+}
+
+.font-ethnocentric {
+    font-family: ethnocentric;
+}
+
+.btn-outline-purple {
+    color:#6f42c1 !important;
+    border-color: #6f42c1;
+}
+
+.btn-outline-purple:hover {
+    color:#fff !important;
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
