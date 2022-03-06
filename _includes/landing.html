@@ -1,15 +1,16 @@
 <script>
     function goToMainPage() {
       document.getElementById("landingPage").classList.add("fadeout");
+      document.body.classList.remove("landing-overflow-hidden");
     }
 </script>
 
-<div id="landingPage" class="landing-container text-center text-white bg-light">
+<div id="landingPage" class="landing-container landing-border text-center text-white bg-light">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <main class="px-3 mt-5 mb-auto">
-            <h1 class="display-1 mb-4 text-purple font-ethnocentric">
+            <h1 class="display-1 mb-4 text-purple">
                 <span class="me-3">
-                    <img src="{{site.baseurl}}/assets/img/logo-nobg.png" alt="no logo found">
+                    <img src="assets/img/logo-nobg.png" alt="no logo found">
                 </span>
                 CUNEI ANNO
             </h1>
@@ -53,6 +54,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-1"></div>
                 <div class="col-2 relative">
                     <div class="vertical-center w-100">
                         <p class="lead mb-5 d-grid gap-2">

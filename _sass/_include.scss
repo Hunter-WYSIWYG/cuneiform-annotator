@@ -20,6 +20,17 @@ img.landing-carousel-size {
     margin-left: 0px;
 }
 
+.landing-overflow-hidden {
+    overflow: hidden;
+}
+
+.landing-border {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 20px;
+    border-color: #6f42c1;
+}
+
 .landing-carousel {
     width: 459.75px;
 }
@@ -38,11 +49,6 @@ img.landing-carousel-size {
 
 .text-purple {
     color: #6f42c1;
-}
-
-@font-face {
-    font-family: ethnocentric;
-    src: url({{site.baseurl}}/assets/font/ethnocentric-rg.otf);
 }
 
 .font-ethnocentric {
