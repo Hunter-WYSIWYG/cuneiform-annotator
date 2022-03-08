@@ -3,6 +3,11 @@
  */
 
 /**
+ * User story #2
+ * As a User, I can select and apply filters so that there is only a subset of tablet names to select from.
+ */
+
+/**
  * import extern variables
  */
 const filterCategories = require('../js/filter/categories');
@@ -285,10 +290,11 @@ test('map every empty string to "unassigned"', () => {
 test('returns a tuple of filtered 2d and 3d url objects', () => {
     const activeFilterArray = [
         ["Hellenistic (323-63 BC)","Middle Hittite (ca. 1500-1100 BC)"],
-        ["Hittite"],
-        [],
         ["Prayer/Incantation","Scientific"],
-        ["stone: steatite"]
+        [],
+        ["Hittite"],
+        ["stone: steatite"],
+        []
     ]
     const urlTuple = filterSuggestions(activeFilterArray, filterCategories, urls, hs23D, periods, languages);
     const testUrlTuple = [ Url2DObject, Url3DObject ]

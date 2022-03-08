@@ -2,10 +2,32 @@
  * init arrays of distinct filter values
  */
 var distinctPeriods = reduceToDistinctPeriods(periods)
-var distinctLanguages = reduceToDistinctField(languages, filterCategories[1]);
-var distinctProvenience = reduceToDistinctField(languages, filterCategories[2]);
-var distinctGenre = reduceToDistinctField(languages, filterCategories[3]);
+var distinctGenre = reduceToDistinctField(languages, filterCategories[1]);
+var distinctSubgenre = reduceToDistinctField(languages, filterCategories[2]);
+var distinctLanguages = reduceToDistinctField(languages, filterCategories[3]);
 var distinctMaterial = reduceToDistinctField(languages, filterCategories[4]);
+var distinctProvenience = reduceToDistinctField(languages, filterCategories[5]);
+
+/**
+ * returns the list of distinct filter values for a filter category
+ */
+ function getFilterNames(filterCategory) {
+    switch (filterCategory) {
+        case "period":
+            return distinctPeriods;
+        case "genre":
+            return distinctGenre;
+        case "subgenre":
+            return distinctSubgenre;
+        case "language":
+            return distinctLanguages;
+        case "material":
+            return distinctMaterial;
+        case "provenience":
+            return distinctProvenience;
+    }
+    return []
+}
 
 /**
  * init active filter array
@@ -19,25 +41,6 @@ for (var cat in filterCategories) {
  * init the active filter tab
  */
 var activeFilterTab = filterCategories[0];
-
-/**
- * returns the list of distinct filter values for a filter category
- */
- function getFilterNames(filterCategory) {
-    switch (filterCategory) {
-        case "period":
-            return distinctPeriods;
-        case "language":
-            return distinctLanguages;
-        case "provenience":
-            return distinctProvenience;
-        case "genre":
-            return distinctGenre;
-        case "material":
-            return distinctMaterial;
-    }
-    return []
-}
 
 /**
  * keep track of the active filter tab
