@@ -1098,3 +1098,5 @@ var hs2CDLI={
   "HS_932": "P020596",
   "HS_184": "P388168"
 }
+
+module.exports = hs2CDLI;

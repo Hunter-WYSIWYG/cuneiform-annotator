@@ -1,6 +1,6 @@
 /**
  * an array of every supported filter category name
  */
-var filterCategories = ["period","genre","subgenre","language","material","provenience"];
+var filterCategories = ["genre","subgenre","language","material","provenience","period","CDLI"];
 
 module.exports = filterCategories;

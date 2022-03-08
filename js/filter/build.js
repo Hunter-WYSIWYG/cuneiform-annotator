@@ -1,19 +1,21 @@
 /**
  * init arrays of distinct filter values
  */
-var distinctPeriods = reduceToDistinctPeriods(periods)
-console.log(distinctPeriods);
-var distinctGenre = reduceToDistinctField(languages, filterCategories[1]);
-var distinctSubgenre = reduceToDistinctField(languages, filterCategories[2]);
-var distinctLanguages = reduceToDistinctField(languages, filterCategories[3]);
-var distinctMaterial = reduceToDistinctField(languages, filterCategories[4]);
-var distinctProvenience = reduceToDistinctField(languages, filterCategories[5]);
+var distinctCDLI = reduceToDistinctValues(hs2CDLI)
+var distinctPeriods = reduceToDistinctValues(periods)
+var distinctGenre = reduceToDistinctField(languages, filterCategories[0]);
+var distinctSubgenre = reduceToDistinctField(languages, filterCategories[1]);
+var distinctLanguages = reduceToDistinctField(languages, filterCategories[2]);
+var distinctMaterial = reduceToDistinctField(languages, filterCategories[3]);
+var distinctProvenience = reduceToDistinctField(languages, filterCategories[4]);
 
 /**
  * returns the list of distinct filter values for a filter category
  */
  function getFilterNames(filterCategory) {
     switch (filterCategory) {
+        case "CDLI":
+            return distinctCDLI;
         case "period":
             return distinctPeriods;
         case "genre":

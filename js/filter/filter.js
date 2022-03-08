@@ -52,10 +52,10 @@ function filterLanguageTabletNames(category, categoryNames, languagsObject) {
 /**
  * return an array of tablet names that fit at least one period filter
  */
-function filterPeriodTabletNames(periodNames, periodsObject) {
+function filterKeyValueObjectTablets(filterNames, keyValueObject) {
     let result = [];
-    for (var currentIndex in periodNames) {
-        result = result.concat(filterPeriodTuples(periodNames[currentIndex], periodsObject));
+    for (var currentIndex in filterNames) {
+        result = result.concat(filterKeyValueObjectTuples(filterNames[currentIndex], keyValueObject));
     }
     return eliminateDuplicates(result);
 }
@@ -63,21 +63,21 @@ function filterPeriodTabletNames(periodNames, periodsObject) {
 /**
  * returns an array of tablet names that match the given period filter
  */
-function filterPeriodTuples(periodName, periodsObject) {
-    let periodsArray = Object.entries(periodsObject);
-    let periodTuples = periodsArray.filter(function(periodTuple) {
-        return periodTuple[1] == periodName;
+function filterKeyValueObjectTuples(filterName, keyValueObject) {
+    let keyValueArray = Object.entries(keyValueObject);
+    let keyValueTuples = keyValueArray.filter(function(keyValueTuple) {
+        return keyValueTuple[1] == filterName;
     })
-    return concatFirst(periodTuples);
+    return concatFirst(keyValueTuples);
 }
 
 /**
  * apply the current filter to the urls
  * returns a tuple of 2d url objects and 3d url objects
  */
-function filterSuggestions(activeFilterArray, filterCategoriesArray, urls2d, urls3d, periodsObject, languagsObject) {
-    var filtered2DTabletNames = getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urls2d, periodsObject, languagsObject);
-    var filtered3DTabletNames = getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urls3d, periodsObject, languagsObject);
+function filterSuggestions(activeFilterArray, filterCategoriesArray, urls2d, urls3d, periodsObject, languagsObject, cdliObject) {
+    var filtered2DTabletNames = getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urls2d, periodsObject, languagsObject, cdliObject);
+    var filtered3DTabletNames = getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urls3d, periodsObject, languagsObject, cdliObject);
 
     var filtered2DUrlsArray = Object.entries(urls2d).filter(function(urlArray) {
         return (filtered2DTabletNames.includes(urlArray[0]));
@@ -94,7 +94,7 @@ function filterSuggestions(activeFilterArray, filterCategoriesArray, urls2d, url
 /**
  * returns an array of all tablet names that should be visible with the current filters
  */
-function getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urlsObject, periodsObject, languagsObject) {
+function getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urlsObject, periodsObject, languagsObject, cdliObject) {
     let filteredTabletNames = concatFirst(Object.entries(urlsObject));
     let noActivefilters = true;
     for (var index in activeFilterArray) {
@@ -104,10 +104,16 @@ function getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urlsOb
         let activeTablets = [];
         for (var categoryIndex in filterCategoriesArray) {
             let category = filterCategoriesArray[categoryIndex]
-            if (category == "period") {
-                activeTablets = union(activeTablets, filterPeriodTabletNames(activeFilterArray[categoryIndex], periodsObject));
-            } else {
-                activeTablets = union(activeTablets, filterLanguageTabletNames(category, activeFilterArray[categoryIndex], languagsObject));
+            switch (category) {
+                case "period":
+                    activeTablets = union(activeTablets, filterKeyValueObjectTablets(activeFilterArray[categoryIndex], periodsObject));
+                    break;
+                case "CDLI":
+                    activeTablets = union(activeTablets, filterKeyValueObjectTablets(activeFilterArray[categoryIndex], cdliObject));
+                    break;
+                default:
+                    activeTablets = union(activeTablets, filterLanguageTabletNames(category, activeFilterArray[categoryIndex], languagsObject));
+                    break;
             }
         }
         filteredTabletNames = intersect(filteredTabletNames, activeTablets);
@@ -175,9 +181,9 @@ function reduceToDistinctField(obj, field) {
 }
 
 /**
- * reduces the periods object to a sorted array of distinct period names
+ * reduces the object to a sorted array of distinct values
  */
-function reduceToDistinctPeriods(periodsObject) {
+function reduceToDistinctValues(periodsObject) {
     return sortByPeriod(
         eliminateDuplicates(
         Object.values(periodsObject)
@@ -221,10 +227,10 @@ module.exports = {
     sortByPeriod: sortByPeriod,
     mapToField: mapToField,
     reduceToDistinctField: reduceToDistinctField,
-    reduceToDistinctPeriods: reduceToDistinctPeriods,
+    reduceToDistinctValues: reduceToDistinctValues,
     concatFirst: concatFirst,
-    filterPeriodTuples: filterPeriodTuples,
-    filterPeriodTabletNames: filterPeriodTabletNames,
+    filterKeyValueObjectTuples: filterKeyValueObjectTuples,
+    filterKeyValueObjectTablets: filterKeyValueObjectTablets,
     filterLanguageObjects: filterLanguageObjects,
     filterLanguageTabletNames: filterLanguageTabletNames,
     intersect: intersect,

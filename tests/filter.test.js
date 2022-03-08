@@ -15,6 +15,7 @@ const urls = require('../js/newurls');
 const hs23D = require('../js/hs23D');
 const periods = require('../js/periods');
 const languages = require('../js/languages');
+const hs2CDLI = require('../js/hs2CDLI');
 
 /**
  * import filter functions
@@ -25,10 +26,10 @@ const { getPeriodBegin } = require('../js/filter/filter');
 const { sortByPeriod } = require('../js/filter/filter');
 const { mapToField } = require('../js/filter/filter');
 const { reduceToDistinctField } = require('../js/filter/filter');
-const { reduceToDistinctPeriods } = require('../js/filter/filter');
+const { reduceToDistinctValues } = require('../js/filter/filter');
 const { concatFirst } = require('../js/filter/filter');
-const { filterPeriodTuples } = require('../js/filter/filter');
-const { filterPeriodTabletNames } = require('../js/filter/filter');
+const { filterKeyValueObjectTuples } = require('../js/filter/filter');
+const { filterKeyValueObjectTablets } = require('../js/filter/filter');
 const { filterLanguageObjects } = require('../js/filter/filter');
 const { filterLanguageTabletNames } = require('../js/filter/filter');
 const { intersect } = require('../js/filter/filter');
@@ -186,7 +187,7 @@ test('reduce a language object to a sorted array of distinct values of a specifi
 });
 
 test('reduce the periods object to an array of distinct period names sorted by period begin', () => {
-    const distinctPeriodNames = reduceToDistinctPeriods(periodsObject);
+    const distinctPeriodNames = reduceToDistinctValues(periodsObject);
     const testDistinctPeriodNames = [
         "Old Babylonian (ca. 1900-1600 BC)",
         "Early Old Babylonian (ca. 2000-1900 BC)",
@@ -205,7 +206,7 @@ test('concat the first element of every array in an array of arrays into a new a
 });
 
 test('returns an array of tablet names that match the given period filter', () => {
-    const tabletNames = filterPeriodTuples("Ur III (ca. 2100-2000 BC)", periodsObject);
+    const tabletNames = filterKeyValueObjectTuples("Ur III (ca. 2100-2000 BC)", periodsObject);
     const testTabletNames = [
         "HS_2440",
         "HS_1006",
@@ -221,7 +222,7 @@ test('return an array of tablet names that fit at least one period filter', () =
         "Early Old Babylonian (ca. 2000-1900 BC)",
         "ED IIIb (ca. 2500-2340 BC)"
     ];
-    const tabletNames = filterPeriodTabletNames(periodNames, periodsObject);
+    const tabletNames = filterKeyValueObjectTablets(periodNames, periodsObject);
     const testTabletNames = [
         "HS_230",
         "HS_1326",
@@ -277,8 +278,8 @@ test('return the union of 2 arrays', () => {
 });
 
 test('filters tablet names with given parameters', () => {
-    let activeFilterArray = [["Hellenistic (323-63 BC)"],[],[],[],[]];
-    const filteredTabletNames = getfilteredTabletNames(activeFilterArray, filterCategories, urls, periods, languages);
+    let activeFilterArray = [[],[],[],[],[],["Hellenistic (323-63 BC)"],[]];
+    const filteredTabletNames = getfilteredTabletNames(activeFilterArray, filterCategories, urls, periods, languages, hs2CDLI);
     expect(filteredTabletNames).toStrictEqual(["HS_0748"]);
 });
 
@@ -289,14 +290,15 @@ test('map every empty string to "unassigned"', () => {
 
 test('returns a tuple of filtered 2d and 3d url objects', () => {
     const activeFilterArray = [
-        ["Hellenistic (323-63 BC)","Middle Hittite (ca. 1500-1100 BC)"],
         ["Prayer/Incantation","Scientific"],
         [],
         ["Hittite"],
         ["stone: steatite"],
+        [],
+        ["Hellenistic (323-63 BC)","Middle Hittite (ca. 1500-1100 BC)"],
         []
     ]
-    const urlTuple = filterSuggestions(activeFilterArray, filterCategories, urls, hs23D, periods, languages);
+    const urlTuple = filterSuggestions(activeFilterArray, filterCategories, urls, hs23D, periods, languages, hs2CDLI);
     const testUrlTuple = [ Url2DObject, Url3DObject ]
     expect(urlTuple[0]).toMatchObject(testUrlTuple[0]);
     expect(urlTuple[1]).toMatchObject(testUrlTuple[1]);

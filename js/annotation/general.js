@@ -9,7 +9,8 @@ function updateSelectOptions() {
     urls,
     hs23D,
     periods,
-    languages
+    languages,
+    hs2CDLI
   );
   current2DUrls = filterResults[0];
   current3DUrls = filterResults[1];
