@@ -43,6 +43,9 @@
 <script type="text/javascript" src="js/3dhopanno.js"></script>
 <script src="js/saveTextAsFile.js"></script>
 <script src="js/gitbeaker.js"></script>
+<!--Icons-->
+<script src="https://kit.fontawesome.com/e299e427f5.js" crossorigin="anonymous"></script>
+
 <style>
 #grid-source { position: absolute; }
 #grid-overlay { position: relative; }
@@ -55,11 +58,24 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12" >
+    <div class="col-md-3" >
+      <div class=" input-group">
+        <span class="input-group-text" id="basic-addon3" data-bs-toggle="tooltip" data-bs-placement="right" title="Try something like 'sag' or 'munus'!">
+          <i class="fa-solid fa-circle-info"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Keyword" aria-label="Username" aria-describedby="basic-addon1">
+        <button class="btn btn-primary">
+          Apply
+        </button>
+      </div>
+    </div>
+    <div class="col-md-1">
       <button id="openFilterOptions" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
-          Filter Options
+        Filter Options
       </button>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-6" role="main">
       Tablet:
       <select id="images" onchange="loadVariants()"></select>
@@ -351,3 +367,4 @@
 
 <script type="text/javascript" src="js/annotation/general.js"></script>
 <script type="text/javascript" src="js/annotation/showAnno.js"></script>
+<script type="text/javascript" src="js/annotation/enableTooltips.js"></script>

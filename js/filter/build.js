@@ -2,6 +2,7 @@
  * init arrays of distinct filter values
  */
 var distinctPeriods = reduceToDistinctPeriods(periods)
+console.log(distinctPeriods);
 var distinctGenre = reduceToDistinctField(languages, filterCategories[1]);
 var distinctSubgenre = reduceToDistinctField(languages, filterCategories[2]);
 var distinctLanguages = reduceToDistinctField(languages, filterCategories[3]);
