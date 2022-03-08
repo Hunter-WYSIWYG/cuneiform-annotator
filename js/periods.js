@@ -1098,3 +1098,5 @@ var periods={
   "HS_932": "ED IIIb (ca. 2500-2340 BC)",
   "HS_0184": "Old Babylonian (ca. 1900-1600 BC)"
 }
+
+module.exports = periods;

@@ -7672,3 +7672,5 @@ var languages={
     "provenience": "Nippur (mod. Nuffar)"
   }
 }
+
+module.exports = languages;

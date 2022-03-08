@@ -59598,3 +59598,5 @@ var urls={
     ]
   }
 }
+
+module.exports = urls;

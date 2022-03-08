@@ -13,7 +13,9 @@
   <script type="text/javascript" src="js/cuneifymap.js"></script>
   <script type="text/javascript" src="js/charlistmap.js"></script>
   <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
-  <script type="text/javascript" src="js/filter.js"></script>
+
+  <script type="text/javascript" src="js/filter/filter.js"></script>
+
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
 <!--JQUERY-->
@@ -352,7 +354,16 @@
 * update the tablet selection with the current period filter
 */
 function updateSelectOptions() {
-  filterSuggestions();
+  let filterResults = filterSuggestions(
+    activeFilter,
+    filterCategories,
+    urls,
+    hs23D,
+    periods,
+    languages
+  );
+  current2DUrls = filterResults[0];
+  current3DUrls = filterResults[1];
 
   /**
     * removes every option from a select element
