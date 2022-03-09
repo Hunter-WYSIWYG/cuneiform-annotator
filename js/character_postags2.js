@@ -124330,3 +124330,5 @@ var character_postags={
     }
   }
 }
+
+module.exports = character_postags;

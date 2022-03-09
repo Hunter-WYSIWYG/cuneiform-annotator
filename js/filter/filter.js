@@ -41,7 +41,7 @@ function filterLanguageObjects(category, categoryfilterName, languagesObject) {
 /**
  * returns an array of tablet names that match every filter of this category for language objects
  */
-function filterLanguageTabletNames(category, categoryNames, languagsObject) {
+function filterLanguageTablets(category, categoryNames, languagsObject) {
     let result = [];
     for (var currentIndex in categoryNames) {
         result = result.concat(filterLanguageObjects(category, categoryNames[currentIndex], languagsObject));
@@ -95,30 +95,35 @@ function filterSuggestions(activeFilterArray, filterCategoriesArray, urls2d, url
  * returns an array of all tablet names that should be visible with the current filters
  */
 function getfilteredTabletNames(activeFilterArray, filterCategoriesArray, urlsObject, periodsObject, languagsObject, cdliObject) {
-    let filteredTabletNames = concatFirst(Object.entries(urlsObject));
+    let tabletNamesWithUrl = concatFirst(Object.entries(urlsObject));
+    let filteredTabletNamesWithUrl = [];
     let noActivefilters = true;
     for (var index in activeFilterArray) {
         noActivefilters = noActivefilters && (activeFilterArray[index].length <= 0)
     }
+    let filteredTablets = [];
     if (!noActivefilters) {
-        let activeTablets = [];
         for (var categoryIndex in filterCategoriesArray) {
             let category = filterCategoriesArray[categoryIndex]
             switch (category) {
                 case "period":
-                    activeTablets = union(activeTablets, filterKeyValueObjectTablets(activeFilterArray[categoryIndex], periodsObject));
+                    filteredTablets = union(filteredTablets, filterKeyValueObjectTablets(activeFilterArray[categoryIndex], periodsObject));
                     break;
                 case "CDLI":
-                    activeTablets = union(activeTablets, filterKeyValueObjectTablets(activeFilterArray[categoryIndex], cdliObject));
+                    filteredTablets = union(filteredTablets, filterKeyValueObjectTablets(activeFilterArray[categoryIndex], cdliObject));
                     break;
                 default:
-                    activeTablets = union(activeTablets, filterLanguageTabletNames(category, activeFilterArray[categoryIndex], languagsObject));
+                    filteredTablets = union(filteredTablets, filterLanguageTablets(category, activeFilterArray[categoryIndex], languagsObject));
                     break;
             }
         }
-        filteredTabletNames = intersect(filteredTabletNames, activeTablets);
+        filteredTabletNamesWithUrl = intersect(tabletNamesWithUrl, filteredTablets);
     }
-    return filteredTabletNames;
+    if (currentKeyword!="") {
+        filteredTablets = union(filteredTablets, filterCharacterPostagTablets(currentKeyword, character_postags));
+        filteredTabletNamesWithUrl = intersect(tabletNamesWithUrl, filteredTablets);
+    }
+    return filteredTabletNamesWithUrl;
 }
 
 /**
@@ -232,7 +237,7 @@ module.exports = {
     filterKeyValueObjectTuples: filterKeyValueObjectTuples,
     filterKeyValueObjectTablets: filterKeyValueObjectTablets,
     filterLanguageObjects: filterLanguageObjects,
-    filterLanguageTabletNames: filterLanguageTabletNames,
+    filterLanguageTablets: filterLanguageTablets,
     intersect: intersect,
     union: union,
     getfilteredTabletNames: getfilteredTabletNames,

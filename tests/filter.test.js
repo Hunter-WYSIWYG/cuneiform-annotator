@@ -31,7 +31,7 @@ const { concatFirst } = require('../js/filter/filter');
 const { filterKeyValueObjectTuples } = require('../js/filter/filter');
 const { filterKeyValueObjectTablets } = require('../js/filter/filter');
 const { filterLanguageObjects } = require('../js/filter/filter');
-const { filterLanguageTabletNames } = require('../js/filter/filter');
+const { filterLanguageTablets } = require('../js/filter/filter');
 const { intersect } = require('../js/filter/filter');
 const { union } = require('../js/filter/filter');
 const { getfilteredTabletNames } = require('../js/filter/filter');
@@ -250,7 +250,7 @@ test('return an array of tablet names that match the given filter of this catego
 });
 
 test('return an array of tablet names that match every filter of this category for language objects', () => {
-    const tabletNamesGenre = filterLanguageTabletNames("genre", ["Administrative","Lexical"], languageObject);
+    const tabletNamesGenre = filterLanguageTablets("genre", ["Administrative","Lexical"], languageObject);
     const testTabletNamesGenre = [
         "HS_2440",
         "HS_1326",
@@ -258,7 +258,7 @@ test('return an array of tablet names that match every filter of this category f
     ];
     expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
 
-    const tabletNamesProvenience = filterLanguageTabletNames("provenience", ["Nippur (mod. Nuffar)", "Puzri\u0161-Dagan (mod. Drehem)"], languageObject);
+    const tabletNamesProvenience = filterLanguageTablets("provenience", ["Nippur (mod. Nuffar)", "Puzri\u0161-Dagan (mod. Drehem)"], languageObject);
     const testtabletNamesProvenience = [
         "HS_230",
         "HS_1326",
