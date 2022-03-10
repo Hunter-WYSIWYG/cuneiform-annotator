@@ -17,7 +17,7 @@ function updateKeyword(newKeyword) {
 function filterCharacterPostagTablets(keyword, charPostagObject) {
     let activeTabletNames = [];
     /**
-     * disassemble Object
+     * disassemble Object - extract values
      */
     let tabletObjectArray = Object.entries(charPostagObject);
     for (currentIndex in tabletObjectArray) {
@@ -55,7 +55,13 @@ function filterCharacterPostagTablets(keyword, charPostagObject) {
                 tabletPropertyValues.push(charPostagValueArray[propertyIndex]);
             }
         }
+        /**
+         * disassembling for single tablet complete - values extracted into var tabletPropertyValues
+         */
 
+        /**
+         * check if keyword is included in values
+         */
         for (tabletPropertyValueIndex in tabletPropertyValues) {
             propertyValue = tabletPropertyValues[tabletPropertyValueIndex];
             if (propertyValue.includes(keyword)) {
@@ -64,6 +70,9 @@ function filterCharacterPostagTablets(keyword, charPostagObject) {
             }
         }
     }
+    /**
+     * disassembling for all tablets complete - tablet names filtered and saved in activeTabletNames
+     */
     return activeTabletNames;
 }
 

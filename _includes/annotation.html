@@ -1,20 +1,19 @@
-<h1 align="center">Annotation Test for 2D and 3D objects</h1>
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
-  <script type="text/javascript" src="js/transliterations.js"></script>
-  <script type="text/javascript" src="js/hs2CDLI.js"></script>
-  <script type="text/javascript" src="js/hs23D.js"></script>
-  <script type="text/javascript" src="js/approvals.js"></script>
-  <script type="text/javascript" src="js/periods.js"></script>
-  <script type="text/javascript" src="js/character_postags2.js"></script>
-  <script type="text/javascript" src="js/translitcount.js"></script>
-  <script type="text/javascript" src="js/languages.js"></script>
-  <script type="text/javascript" src="js/cuneifymap.js"></script>
-  <script type="text/javascript" src="js/charlistmap.js"></script>
-  <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+<script type="text/javascript" src="js/transliterations.js"></script>
+<script type="text/javascript" src="js/hs2CDLI.js"></script>
+<script type="text/javascript" src="js/hs23D.js"></script>
+<script type="text/javascript" src="js/approvals.js"></script>
+<script type="text/javascript" src="js/periods.js"></script>
+<script type="text/javascript" src="js/character_postags2.js"></script>
+<script type="text/javascript" src="js/translitcount.js"></script>
+<script type="text/javascript" src="js/languages.js"></script>
+<script type="text/javascript" src="js/cuneifymap.js"></script>
+<script type="text/javascript" src="js/charlistmap.js"></script>
+<script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
 
-  <script type="text/javascript" src="js/filter/filter.js"></script>
+<script type="text/javascript" src="js/filter/filter.js"></script>
 
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
@@ -56,29 +55,52 @@
 .indexhighlight {border-color: red; stroke:red !important;}
 </style>
 
+<nav class="navbar navbar-light bg-light mb-2">
+  <div class="container-fluid">
+    <h1 class="navbar-brand text-purple fw-bold brand-annotation">
+      <img class="logo-annotation-page me-2" src="assets/img/logo-nobg.png" alt="no logo found">
+      CUNEI ANNO
+    </h1>
+  </div>
+</nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3" >
-      <div class=" input-group">
-        <span class="input-group-text" id="basic-addon3" data-bs-toggle="tooltip" data-bs-placement="right" title="Try words, pos, translations and chars! (e.g. 'girim' or 'woman')">
-          <i class="fa-solid fa-circle-info"></i>
-        </span>
-        <input id="keywordInput" type="text" class="form-control" oninput="updateKeyword(document.getElementById('keywordInput').value)" placeholder="Keyword" aria-label="Username" aria-describedby="basic-addon1">
-        <button type="button" class="btn btn-primary" onclick="updateSelectOptions()">
-          Apply
-        </button>
+    <div class="col-md-6">
+      <div class="form-floating">
+        <select class="form-select" id="images" aria-label="tablet label select" onchange="loadVariants()"></select>
+        <label for="images">Tablets:</label>
       </div>
     </div>
-    <div class="col-md-1">
-      <button id="openFilterOptions" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
-        Filter Options
-      </button>
+    <div class="col-md-6">
+      <div class="form-floating">
+        <select class="form-select" id="3dimages" aria-label="3d tablet label select" onchange="loadVariants()"></select>
+        <label for="3dimages">3DModel:</label>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6" role="main">
+    <div class="col-md-6">
       Tablet:
-      <select id="images" onchange="loadVariants()"></select>
+    </div>
+    <div class="col-md-6">
+      <div class="padding-left-21">
+        3DModel:
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <select id="imagess" onchange="loadVariants()"></select>
+    <button id="openFilterOptions" type="button" class="btn btn-purple open-filter-button" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
+      <i class="fa-solid fa-filter"></i>
+      </button>
+    <select id="3dimagess" onchange="setup3dhop()">
+      <option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">
+        Cuneiform Tablet HS 1032B_1
+      </option>
+    </select>
+  </div>
+  <div class="row">
+    <div class="col-md-6" role="main">
       Side:
       <select id="imageside" onchange="reinit(null)"></select>
       <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">
@@ -179,12 +201,6 @@
       </span>
     </div>
     <div class="col-md-6">
-      3DModel:<br/>
-      <select id="3dimages" onchange="setup3dhop()">
-        <option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">
-          Cuneiform Tablet HS 1032B_1
-        </option>
-      </select>
       <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">
         Save 3D Annotations
       </button>
@@ -367,5 +383,3 @@
 
 <script type="text/javascript" src="js/annotation/general.js"></script>
 <script type="text/javascript" src="js/annotation/showAnno.js"></script>
-<script type="text/javascript" src="js/filter/keyword.js"></script>
-<script type="text/javascript" src="js/annotation/enableTooltips.js"></script>

@@ -70,26 +70,30 @@ function updateActiveFilters(filterCategory, filterName) {
  * activates every filter-check of the active tab
  */
 function activateAllChecks() {
-     let filterNames = getFilterNames(activeFilterTab);
-     for (var index in filterNames) {
-         let currentCheck = document.getElementById("check-" + activeFilterTab + "-" + index);
-         currentCheck.checked = true;
-     }
-     let catIndex = filterCategories.indexOf(activeFilterTab);
-     activeFilter[catIndex] = filterNames;
+    if (filterCategories.includes(activeFilterTab)) {
+        let filterNames = getFilterNames(activeFilterTab);
+        for (var index in filterNames) {
+            let currentCheck = document.getElementById("check-" + activeFilterTab + "-" + index);
+            currentCheck.checked = true;
+        }
+        let catIndex = filterCategories.indexOf(activeFilterTab);
+        activeFilter[catIndex] = filterNames;
+    }
 }
  
 /**
  * deactivates every filter-check of the active tab
  */
 function deactivateAllChecks() {
-     let filterNames = getFilterNames(activeFilterTab);
-     for (var index in filterNames) {
-         let currentCheck = document.getElementById("check-" + activeFilterTab + "-" + index);
-         currentCheck.checked = false;
-     }
-     let catIndex = filterCategories.indexOf(activeFilterTab);
-     activeFilter[catIndex] = [];
+    if (filterCategories.includes(activeFilterTab)) {
+        let filterNames = getFilterNames(activeFilterTab);
+        for (var index in filterNames) {
+            let currentCheck = document.getElementById("check-" + activeFilterTab + "-" + index);
+            currentCheck.checked = false;
+        }
+        let catIndex = filterCategories.indexOf(activeFilterTab);
+        activeFilter[catIndex] = [];
+    }
 }
 
 /**
@@ -98,12 +102,12 @@ function deactivateAllChecks() {
 var filterTab = document.getElementById("filter-tab");
 var filterTabContent = document.getElementById("filter-tab-content");
 
-for (var filterCategoryIndex in filterCategories) {
+for (var filterCategoryIndex in filterCategories.reverse()) {
      let filterCategory = filterCategories[filterCategoryIndex];
      let filterCategoryCapital = filterCategory.charAt(0).toUpperCase() + filterCategory.slice(1);
      let activeString = "";
      let showActiveString = "";
-     if (filterCategoryIndex == 0) {
+     if (filterCategoryIndex == (filterCategories.length-1)) {
          activeString = "active";
          showActiveString = "show active";
      }
@@ -122,22 +126,22 @@ for (var filterCategoryIndex in filterCategories) {
      newButton.setAttribute("aria-selected","true");
      newButton.setAttribute("onclick","updateActiveFilterTab('" + filterCategory + "')");
      newButton.textContent = filterCategoryCapital;
-     newTab.appendChild(newButton);
-     filterTab.appendChild(newTab);
+     newTab.prepend(newButton);
+     filterTab.prepend(newTab);
  
      var newContent = document.createElement("div");
      newContent.setAttribute("class","tab-pane fade " + showActiveString);
      newContent.setAttribute("id",filterCategory + "-content");
      newContent.setAttribute("role","tabpanel");
      newContent.setAttribute("aria-labelledby",filterCategory + "-tab");
-     filterTabContent.appendChild(newContent);
+     filterTabContent.prepend(newContent);
  
      let filterNames = getFilterNames(filterCategory);
-     for (var index in filterNames) {
+     for (var index in filterNames.reverse()) {
          let filterName = filterNames[index]
          var newCheck = document.createElement("div");
          newCheck.setAttribute("class","form-check");
-         newContent.appendChild(newCheck);
+         newContent.prepend(newCheck);
  
          var newInput = document.createElement("input");
          newInput.setAttribute("class","form-check-input");
@@ -145,7 +149,7 @@ for (var filterCategoryIndex in filterCategories) {
          newInput.setAttribute("value","");
          newInput.setAttribute("id","check-" + filterCategory + "-" + index);
          newInput.setAttribute("onclick", "updateActiveFilters('" + filterCategory + "', '" + filterName + "')");
-         newCheck.appendChild(newInput);
+         newCheck.prepend(newInput);
  
          var newLabel = document.createElement("label");
          newLabel.setAttribute("class","form-check-label");
@@ -155,6 +159,6 @@ for (var filterCategoryIndex in filterCategories) {
          } else {
             newLabel.innerHTML = filterName;
          }
-         newCheck.appendChild(newLabel);
+         newCheck.prepend(newLabel);
      }
 }

@@ -14,10 +14,29 @@
                     </div>
                 </div>
                 <div class="col-10">
-                    <ul class="nav nav-tabs noMarginLeft" id="filter-tab" role="tablist"></ul>
+                    <ul class="nav nav-tabs noMarginLeft" id="filter-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="keyword-tab" data-bs-toggle="tab" data-bs-target="#keyword-content" type="button" role="tab" aria-controls="keyword" aria-selected="true" onclick="updateActiveFilterTab('keyword')">
+                                Keyword
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="tab-content filter-body-scroll" id="filter-tab-content"></div>
+            <div class="tab-content filter-body-scroll" id="filter-tab-content">
+                <div class="tab-pane fade" id="keyword-content" role="tabpanel" aria-labelledby="keyword-tab">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Try words, pos, translations and chars! (e.g. 'girim' or 'woman')">
+                                  <i class="fa-solid fa-circle-info"></i>
+                                </span>
+                                <input id="keywordInput" type="text" class="form-control" oninput="updateKeyword(document.getElementById('keywordInput').value)" placeholder="Character Postag Keyword" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary" onclick="updateSelectOptions()">Apply</button>
@@ -29,3 +48,5 @@
 
 <script type="text/javascript" src="js/filter/categories.js"></script>
 <script type="text/javascript" src="js/filter/build.js"></script>
+<script type="text/javascript" src="js/filter/enableTooltips.js"></script>
+<script type="text/javascript" src="js/filter/keyword.js"></script>

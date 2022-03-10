@@ -48,7 +48,7 @@ img.landing-carousel-size {
 }
 
 .text-purple {
-    color: #6f42c1;
+    color: #6f42c1 !important;
 }
 
 .font-ethnocentric {
@@ -69,4 +69,40 @@ img.landing-carousel-size {
 .filter-body-scroll {
     height: 70vh;
     overflow-y: auto;
+}
+
+.selectize-control {
+    width: calc(50% - 21px) !important;
+}
+
+.open-filter-button {
+    width: 42px !important;
+    height: 35px !important;
+    padding-top: 4px !important;
+}
+
+.padding-left-21 {
+    padding-left: 21px;
+}
+
+.logo-annotation-page {
+    width: 50px;
+}
+
+.brand-annotation {
+    font-size: 2rem !important;
+    display: flex;
+    align-items: center;
+}
+
+button.btn-purple {
+    color: white;
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+button.btn-purple:hover {
+    color: white;
+    background-color: #764ec2;
+    border-color: #764ec2;
 }
