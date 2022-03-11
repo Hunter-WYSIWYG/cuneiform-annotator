@@ -51,10 +51,6 @@ img.landing-carousel-size {
     color: #6f42c1 !important;
 }
 
-.font-ethnocentric {
-    font-family: ethnocentric;
-}
-
 .btn-outline-purple {
     color:#6f42c1 !important;
     border-color: #6f42c1;
@@ -67,22 +63,8 @@ img.landing-carousel-size {
 }
 
 .filter-body-scroll {
-    height: 70vh;
+    height: 55vh;
     overflow-y: auto;
-}
-
-.selectize-control {
-    width: calc(50% - 21px) !important;
-}
-
-.open-filter-button {
-    width: 42px !important;
-    height: 35px !important;
-    padding-top: 4px !important;
-}
-
-.padding-left-21 {
-    padding-left: 21px;
 }
 
 .logo-annotation-page {
@@ -105,4 +87,22 @@ button.btn-purple:hover {
     color: white;
     background-color: #764ec2;
     border-color: #764ec2;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.nav-link.active {
+    background-color: #6f42c1 !important;
+    color: white !important;
+}
+
+.form-check-input:checked {
+    background-color: #6f42c1 !important;
+    border-color: #6f42c1 !important;
 }

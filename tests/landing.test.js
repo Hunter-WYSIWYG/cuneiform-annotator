@@ -3,7 +3,7 @@
  */
 
 /**
- * User story #3
+ * User story #7
  * As a User, I can navigate from the landing page to the annotation page so that I can start working with the given tools.
  */
 

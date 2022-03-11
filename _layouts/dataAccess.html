@@ -78,7 +78,7 @@ $( document ).ready(function() {
 });
 </script>
 <br/>
-<select id="samplequeries" onChange="chooseSampleQuery()">
+<select id="samplequeries" onChange="chooseSampleQuery()" aria-label="positioning-correct-select">
 <option value='SELECT ?loc ?wkt_geom WHERE { ?a rdf:type pleiades:Place . ?a pleiades:hasLocation ?loc . ?loc geosparql:asWKT ?wkt_geom . }LIMIT 100'>100 Random Places with locations</option>
 </select>
 <br/>

@@ -1,37 +1,49 @@
 <div class="modal fade" id="filter-options-modal" tabindex="-1" aria-labelledby="filter-options-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="filter-modal-label">Change Filter Options</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="filter-modal-label">Change Filter</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="updateFilterModalState(isFilterModalOpen)"></button>
         </div>
         <div class="modal-body">
-            <div class="row">
-                <div class="col-2">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary" onclick="activateAllChecks()">Activate</button>
-                        <button type="button" class="btn btn-primary" onclick="deactivateAllChecks()">Deactivate</button>
+            <div class="card">
+                <div class="card-header">
+                    <div class="row justify-content-center">
+                        <div class="col-2">
+                            <div class="h-100 relative">
+                                <div class="btn-group vertical-center" role="group" aria-label="Basic example">
+                                    <button id="checkAll-button" type="button" class="btn btn-purple" onclick="checkAll()">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </button>
+                                    <button id="uncheckAll-button" type="button" class="btn btn-purple" onclick="uncheckAll()">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <ul class="nav nav-pills noMarginLeft" id="filter-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link text-purple" id="keyword-tab" data-bs-toggle="tab" data-bs-target="#keyword-content" type="button" role="tab" aria-controls="keyword" aria-selected="true" onclick="updateActiveFilterTab('keyword')">
+                                        Keyword
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-10">
-                    <ul class="nav nav-tabs noMarginLeft" id="filter-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="keyword-tab" data-bs-toggle="tab" data-bs-target="#keyword-content" type="button" role="tab" aria-controls="keyword" aria-selected="true" onclick="updateActiveFilterTab('keyword')">
-                                Keyword
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tab-content filter-body-scroll" id="filter-tab-content">
-                <div class="tab-pane fade" id="keyword-content" role="tabpanel" aria-labelledby="keyword-tab">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Try words, pos, translations and chars! (e.g. 'girim' or 'woman')">
-                                  <i class="fa-solid fa-circle-info"></i>
-                                </span>
-                                <input id="keywordInput" type="text" class="form-control" oninput="updateKeyword(document.getElementById('keywordInput').value)" placeholder="Character Postag Keyword" aria-label="Username" aria-describedby="basic-addon1">
+                <div class="card-body">
+                    <div class="tab-content filter-body-scroll mt-3 mb-3" id="filter-tab-content">
+                        <div class="tab-pane fade h-100 relative" id="keyword-content" role="tabpanel" aria-labelledby="keyword-tab">
+                            <div class="row justify-content-center vertical-center w-100">
+                                <div class="col-11">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Try words, pos, translations and chars! (e.g. 'girim' or 'woman')">
+                                          <i class="fa-solid fa-circle-info"></i>
+                                        </span>
+                                        <input id="keywordInput" type="text" class="form-control" oninput="updateKeyword(document.getElementById('keywordInput').value)" placeholder="Character Postag Keyword" aria-label="keyword-input">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -39,14 +51,13 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="updateSelectOptions()">Apply</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-purple" onclick="updateSelectOptions()">
+                Apply
+            </button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="updateFilterModalState(isFilterModalOpen)">
+                Close
+            </button>
         </div>
         </div>
     </div>
 </div>
-
-<script type="text/javascript" src="js/filter/categories.js"></script>
-<script type="text/javascript" src="js/filter/build.js"></script>
-<script type="text/javascript" src="js/filter/enableTooltips.js"></script>
-<script type="text/javascript" src="js/filter/keyword.js"></script>

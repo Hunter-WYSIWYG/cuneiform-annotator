@@ -1,5 +1,5 @@
-function negateBool(showAnno){
+function showAnnotationPage(showAnno){
     return !showAnno;
 }
 
-module.exports = negateBool;
+module.exports = showAnnotationPage;

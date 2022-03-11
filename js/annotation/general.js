@@ -25,7 +25,6 @@ function updateSelectOptions() {
     }
   }
 
-  rebuildSelectize();
   var select2D = document.getElementById("images");
   var select3D = document.getElementById("3dimages");
   removeOptions(select2D);
@@ -62,21 +61,9 @@ for(url in current2DUrls){
 }
 document.getElementById("images").innerHTML=selectOptions2D
 
-/**
-  * update the options of the annotation selectize elements
-  */
-function rebuildSelectize() {
-  $('#images').selectize()[0].selectize.destroy();
-  $('#3dimages').selectize()[0].selectize.destroy();
-  buildSelectize();
-  setup3dhop();
-}
-
-
-
 visible=true
 function showHideAnno() {
-  visible = negateBool(visible);
+  visible = showAnnotationPage(visible);
   anno.setVisible(visible);
 }
 
@@ -459,22 +446,6 @@ function formatTransliteration(transliteration){
   host: 'https://gitlab.informatik.uni-halle.de/',
   version: 4
 });
-
-function buildSelectize() {
-  $(document).ready(function () {
-      $('#images').selectize({
-          sortField: 'text',
-          maxOptions: 5000
-      });    
-      $('#3dimages').selectize({
-          sortField: 'text',
-          maxOptions: 5000
-      });
-  });
-}
-buildSelectize();
-
-
 
   var curnamespace="http://purl.org/cuneiform/"
 

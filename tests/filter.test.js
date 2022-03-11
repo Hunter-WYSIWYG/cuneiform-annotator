@@ -3,11 +3,6 @@
  */
 
 /**
- * User story #2
- * As a User, I can select and apply filters so that there is only a subset of tablet names to select from.
- */
-
-/**
  * import extern variables
  */
 const filterCategories = require('../js/filter/categories');
@@ -16,27 +11,31 @@ const hs23D = require('../js/hs23D');
 const periods = require('../js/periods');
 const languages = require('../js/languages');
 const hs2CDLI = require('../js/hs2CDLI');
+const character_postags = require('../js/character_postags2');
 
 /**
  * import filter functions
  */
-const { eliminateDuplicates } = require('../js/filter/filter');
-const { extractNumbers } = require('../js/filter/filter');
-const { getPeriodBegin } = require('../js/filter/filter');
-const { sortByPeriod } = require('../js/filter/filter');
-const { mapToField } = require('../js/filter/filter');
-const { reduceToDistinctField } = require('../js/filter/filter');
-const { reduceToDistinctValues } = require('../js/filter/filter');
-const { concatFirst } = require('../js/filter/filter');
-const { filterKeyValueObjectTuples } = require('../js/filter/filter');
-const { filterKeyValueObjectTablets } = require('../js/filter/filter');
-const { filterLanguageObjects } = require('../js/filter/filter');
-const { filterLanguageTablets } = require('../js/filter/filter');
-const { intersect } = require('../js/filter/filter');
-const { union } = require('../js/filter/filter');
-const { getfilteredTabletNames } = require('../js/filter/filter');
-const { filterSuggestions } = require('../js/filter/filter');
-const { markUnassigned } = require('../js/filter/filter');
+const {
+  eliminateDuplicates,
+  extractNumbers,
+  getPeriodBegin,
+  sortByPeriod,
+  mapToField,
+  reduceToDistinctField,
+  reduceToDistinctValues,
+  concatFirst,
+  filterKeyValueObjectTuples,
+  filterKeyValueObjectTablets,
+  filterLanguageObjects,
+  filterLanguageTablets,
+  intersect,
+  union,
+  getfilteredTabletNames,
+  filterSuggestions,
+  markUnassigned,
+  filterCharacterPostagTablets,
+} = require('../js/filter/filter');
 
 let periodsObject = {
     "HS_2440": "Ur III (ca. 2100-2000 BC)",
@@ -216,6 +215,11 @@ test('returns an array of tablet names that match the given period filter', () =
     expect(tabletNames).toStrictEqual(testTabletNames);
 });
 
+/**
+ * User story #3
+ * As a User, I can filter the tablets for periods and CDLI, so that there is only a subset of tablet names to select from.
+ */
+
 test('return an array of tablet names that fit at least one period filter', () => {
     let periodNames = [
         "Old Babylonian (ca. 1900-1600 BC)",
@@ -248,6 +252,11 @@ test('return an array of tablet names that match the given filter of this catego
     ];
     expect(tabletNamesLanguage).toStrictEqual(testTabletNamesLanguage);
 });
+
+/**
+ * User story #4
+ * As a User, I can filter the tablets for genres, subgenres, languages, materials and proveniences, so that there is only a subset of tablet names to select from.
+ */
 
 test('return an array of tablet names that match every filter of this category for language objects', () => {
     const tabletNamesGenre = filterLanguageTablets("genre", ["Administrative","Lexical"], languageObject);
@@ -288,6 +297,11 @@ test('map every empty string to "unassigned"', () => {
     expect(unassignedArray).toStrictEqual(["abc","unassigned","unassigned","123","qwertz","unassigned"]);
 });
 
+/**
+ * User story #5
+ * As a User, I can select and apply filters so that there is only a subset of tablet names to select from.
+ */
+
 test('returns a tuple of filtered 2d and 3d url objects', () => {
     const activeFilterArray = [
         ["Prayer/Incantation","Scientific"],
@@ -302,6 +316,20 @@ test('returns a tuple of filtered 2d and 3d url objects', () => {
     const testUrlTuple = [ Url2DObject, Url3DObject ]
     expect(urlTuple[0]).toMatchObject(testUrlTuple[0]);
     expect(urlTuple[1]).toMatchObject(testUrlTuple[1]);
+});
+
+/**
+ * User story #6
+ * As a User, I can filter the tablets for keywords, so that there is only a subset of tablet names to select from.
+ */
+
+test('return every tablet name that contains the given keyword either as a word, pos, translation or char in character_postags', () => {
+    const tabletNamesGenre = filterCharacterPostagTablets("woman", character_postags);
+    const testTabletNamesGenre = [
+        "HS_2444",
+        "HS_1526"
+    ];
+    expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
 });
 
 var Url2DObject = {

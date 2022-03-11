@@ -50,6 +50,15 @@ var activeFilterTab = filterCategories[0];
  */
 function updateActiveFilterTab(newTab) {
     activeFilterTab = newTab;
+    let checkAllButton = document.getElementById("checkAll-button");
+    let uncheckAllButton = document.getElementById("uncheckAll-button");
+    if (newTab == "keyword") {
+        checkAllButton.disabled = true;
+        uncheckAllButton.disabled = true;
+    } else {
+        checkAllButton.disabled = false;
+        uncheckAllButton.disabled = false;
+    }
 }
 
 /**
@@ -69,7 +78,7 @@ function updateActiveFilters(filterCategory, filterName) {
 /**
  * activates every filter-check of the active tab
  */
-function activateAllChecks() {
+function checkAll() {
     if (filterCategories.includes(activeFilterTab)) {
         let filterNames = getFilterNames(activeFilterTab);
         for (var index in filterNames) {
@@ -84,7 +93,7 @@ function activateAllChecks() {
 /**
  * deactivates every filter-check of the active tab
  */
-function deactivateAllChecks() {
+function uncheckAll() {
     if (filterCategories.includes(activeFilterTab)) {
         let filterNames = getFilterNames(activeFilterTab);
         for (var index in filterNames) {
@@ -116,7 +125,7 @@ for (var filterCategoryIndex in filterCategories.reverse()) {
      newTab.setAttribute("class","nav-item");
      newTab.setAttribute("role","presentation");
      var newButton = document.createElement("button");
-     newButton.setAttribute("class","nav-link " + activeString);
+     newButton.setAttribute("class","nav-link text-purple " + activeString);
      newButton.setAttribute("id",filterCategory + "-tab");
      newButton.setAttribute("data-bs-toggle","tab");
      newButton.setAttribute("data-bs-target","#" + filterCategory + "-content");
@@ -135,13 +144,20 @@ for (var filterCategoryIndex in filterCategories.reverse()) {
      newContent.setAttribute("role","tabpanel");
      newContent.setAttribute("aria-labelledby",filterCategory + "-tab");
      filterTabContent.prepend(newContent);
+
+     var newRow = document.createElement("div");
+     newRow.setAttribute("class","row justify-content-center w-100");
+     newContent.append(newRow);
+     var newCol = document.createElement("div");
+     newCol.setAttribute("class","col-11");
+     newRow.append(newCol);
  
      let filterNames = getFilterNames(filterCategory);
      for (var index in filterNames.reverse()) {
          let filterName = filterNames[index]
          var newCheck = document.createElement("div");
          newCheck.setAttribute("class","form-check");
-         newContent.prepend(newCheck);
+         newCol.prepend(newCheck);
  
          var newInput = document.createElement("input");
          newInput.setAttribute("class","form-check-input");
@@ -162,3 +178,8 @@ for (var filterCategoryIndex in filterCategories.reverse()) {
          newCheck.prepend(newLabel);
      }
 }
+
+/**
+ * clear keyword input
+ */
+document.getElementById('keywordInput').value = "";

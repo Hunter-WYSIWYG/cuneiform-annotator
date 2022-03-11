@@ -13,8 +13,6 @@
 <script type="text/javascript" src="js/charlistmap.js"></script>
 <script type="text/javascript" src="js/annotorious-shape-labels.js"></script>
 
-<script type="text/javascript" src="js/filter/filter.js"></script>
-
 <!--SPIDERGL-->
 <script type="text/javascript" src="js/spidergl.js"></script>
 <!--JQUERY-->
@@ -35,8 +33,6 @@
 <!--UTILITY-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/init_added.js"></script>
 <script type="text/javascript" src="js/3dhopanno.js"></script>
@@ -55,7 +51,7 @@
 .indexhighlight {border-color: red; stroke:red !important;}
 </style>
 
-<nav class="navbar navbar-light bg-light mb-2">
+<nav class="navbar navbar-light bg-light mb-2" role="banner">
   <div class="container-fluid">
     <h1 class="navbar-brand text-purple fw-bold brand-annotation">
       <img class="logo-annotation-page me-2" src="assets/img/logo-nobg.png" alt="no logo found">
@@ -64,70 +60,46 @@
   </div>
 </nav>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select class="form-select" id="images" aria-label="tablet label select" onchange="loadVariants()"></select>
-        <label for="images">Tablets:</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select class="form-select" id="3dimages" aria-label="3d tablet label select" onchange="loadVariants()"></select>
-        <label for="3dimages">3DModel:</label>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      Tablet:
-    </div>
-    <div class="col-md-6">
-      <div class="padding-left-21">
-        3DModel:
-      </div>
-    </div>
-  </div>
   <div class="row mb-2">
-    <select id="imagess" onchange="loadVariants()"></select>
-    <button id="openFilterOptions" type="button" class="btn btn-purple open-filter-button" data-bs-toggle="modal" data-bs-target="#filter-options-modal">
-      <i class="fa-solid fa-filter"></i>
+    <div class="input-group">
+      <label class="input-group-text" for="images">Tablets:</label>
+      <select class="form-select" id="images" aria-label="2d-tablet-select" onchange="loadVariants()" tabindex="0"></select>
+      <button id="openFilterOptions" type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#filter-options-modal" tabindex="0" onclick="updateFilterModalState()">
+        <i class="fa-solid fa-filter"></i>
       </button>
-    <select id="3dimagess" onchange="setup3dhop()">
-      <option value="https://heidicon.ub.uni-heidelberg.de/eas/partitions/3/0/592000/592202/adce42325842648a219d9f43d7f86da8744a84b1/application/x-ply/HS_1198b_HeiCuBeDa_GigaMesh.ply">
-        Cuneiform Tablet HS 1032B_1
-      </option>
-    </select>
+      <label class="input-group-text" for="3dimages">3D-Models:</label>
+      <select class="form-select" id="3dimages" aria-label="3d-tablet-select" onchange="setup3dhop()" tabindex="0"></select>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-6" role="main">
       Side:
-      <select id="imageside" onchange="reinit(null)"></select>
-      <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">
+      <select id="imageside" onchange="reinit(null)" aria-label="image-side-select" tabindex="0"></select>
+      <button id="saveAnnotations" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')" tabindex="0">
         Save Annotations
       </button>
-      <button id="saveInGit" onclick="commitData()">
+      <button id="saveInGit" onclick="commitData()" tabindex="0">
         Save Annotation in Gitlab
       </button>
-      <button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();'>
+      <button id="showTransliteration" onClick='document.getElementById("transliterationdialog").show();' tabindex="0">
         Show Transliteration
       </button>
-      <button id="showTranslation" onClick='document.getElementById("translationdialog").show();'>
+      <button id="showTranslation" onClick='document.getElementById("translationdialog").show();' tabindex="0">
         Show Translation
       </button>
-      <button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();'>
+      <button id="showPaleoCode" onClick='document.getElementById("paleocodedialog").show();' tabindex="0">
         Show PaleoCodes
       </button>
-      <button id="showIndexedChars" onClick="highlightIndexedChars()">
+      <button id="showIndexedChars" onClick="highlightIndexedChars()" tabindex="0">
         Highlight Indexed Chars
       </button>
-      <button onclick="showHideAnno()">
+      <button onclick="showHideAnno()" tabindex="0">
         Show/Hide Annotations
       </button><br/>
       Tagsets: CharacterSet:
-      <input type="radio" id="characterset">
+      <input type="radio" id="characterset" tabindex="0">
       LinguisticAnnotation:
-      <input type="radio" id="linguisticset"/>
+      <input type="radio" id="linguisticset" tabindex="0">
       <div>
         <div id="my-toolbar-container"></div>
         <div id="openseadragon" style="width: 640px; height: 580px;"></div>
@@ -148,7 +120,7 @@
         <label for="positioningcorrect">
           Positioning correct: 
         </label>
-        <select id="positioningcorrect">
+        <select id="positioningcorrect" aria-label="positioning-correct-select" tabindex="0">
           <option value="unknown">Unknown</option>
           <option value="correct">Correct</option>
           <option value="incorrect">Incorrect</option>
@@ -156,7 +128,7 @@
         <label for="transliterationcorrect">
           Transliteration correct: 
         </label>
-        <select id="transliterationcorrect">
+        <select id="transliterationcorrect" aria-label="transliteration-correct-select" tabindex="0">
           <option value="unknown">Unknown</option>
           <option value="correct">Correct</option>
           <option value="incorrect">Incorrect</option>
@@ -164,7 +136,7 @@
         <label for="indexingcorrect">
           Indexing correct: 
         </label>
-        <select id="indexingcorrect">
+        <select id="indexingcorrect" aria-label="indexing-correct-select" tabindex="0">
           <option value="unknown">Unknown</option>
           <option value="correct">Correct</option>
           <option value="incorrect">Incorrect</option>
@@ -172,7 +144,7 @@
         <label for="annotationscorrect">
           Annotations correct: 
         </label>
-        <select id="annotationscorrect">
+        <select id="annotationscorrect" aria-label="annotations-correct-select" tabindex="0">
           <option value="unknown">Unknown</option>
           <option value="correct">Correct</option>
           <option value="incorrect">Incorrect</option>
@@ -180,7 +152,7 @@
         <label for="annotationscomplete">
           Annotations complete:
         </label>
-        <select id="annotationscomplete">
+        <select id="annotationscomplete" aria-label="annotations-complete-select" tabindex="0">
           <option value="unknown">Unknown</option>
           <option value="complete">Complete</option>
           <option value="incomplete">Incomplete</option>
@@ -188,12 +160,12 @@
         <label for="comment">
           Custom Tag: 
         </label>
-        <input id="comment" type="text"/>
-        <button id="addTag" onclick="addTag()">
+        <input id="comment" type="text" tabindex="0">
+        <button id="addTag" onclick="addTag()" tabindex="0">
           Add Tag
         </button>
         &nbsp;
-        <button id="saveApprovals" onclick="saveApprovals()">
+        <button id="saveApprovals" onclick="saveApprovals()" tabindex="0">
           Save Approvals
         </button>
         <br>
@@ -201,13 +173,13 @@
       </span>
     </div>
     <div class="col-md-6">
-      <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')">
+      <button id="saveAnnotations3D" onclick="saveTextAsFile(JSON.stringify(curanno),'json','anno')" tabindex="0">
         Save 3D Annotations
       </button>
-      <button id="saveInGit3D" onclick="commitData()">
+      <button id="saveInGit3D" onclick="commitData()" tabindex="0">
         Save 3D Annotation in Gitlab
       </button>
-      <button id="synch2D3DButton" onClick="sync2D3D()">
+      <button id="synch2D3DButton" onClick="sync2D3D()" tabindex="0">
         Synchronize 3D and 2D View
       </button>
       <dialog id="transliterationdialog" class="modal-body" style="z-index: 1000 !important ;">
@@ -383,3 +355,8 @@
 
 <script type="text/javascript" src="js/annotation/general.js"></script>
 <script type="text/javascript" src="js/annotation/showAnno.js"></script>
+<script type="text/javascript" src="js/nav/navigateFilterModal.js"></script>
+<script type="text/javascript" src="js/filter/filter.js"></script>
+<script type="text/javascript" src="js/filter/categories.js"></script>
+<script type="text/javascript" src="js/filter/build.js"></script>
+<script type="text/javascript" src="js/filter/enableTooltips.js"></script>
