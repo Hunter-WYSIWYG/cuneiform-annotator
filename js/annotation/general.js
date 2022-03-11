@@ -367,7 +367,7 @@ function formatTransliteration(transliteration){
 		toappend+="<br/>"+languages[$('#images option:selected').text()]["subgenre"]
 	  }
 	  if(languages[$('#images option:selected').text()]["provenience"]!=""){
-		toappend+="<br/>Provenience: "+languages[$('#images option:selected').text()]["provenience"]	  
+		toappend+="; "+languages[$('#images option:selected').text()]["provenience"]	  
 	  }
     }
     if($('#images option:selected').text() in transliterations){
