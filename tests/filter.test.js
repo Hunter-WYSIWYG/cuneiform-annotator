@@ -37,48 +37,152 @@ const {
   filterCharacterPostagTablets,
 } = require('../js/filter/filter');
 
-let periodsObject = {
-    "HS_2440": "Ur III (ca. 2100-2000 BC)",
-    "HS_230": "Old Babylonian (ca. 1900-1600 BC)",
-    "HS_1326": "Old Babylonian (ca. 1900-1600 BC)",
-    "HS_1006": "Ur III (ca. 2100-2000 BC)",
-    "HS_1298": "Ur III (ca. 2100-2000 BC)",
-    "HS_1338": "Ur III (ca. 2100-2000 BC)",
-    "HS_1706": "",
-    "HS_2398": "Early Old Babylonian (ca. 2000-1900 BC)",
-    "HS_854": "ED IIIb (ca. 2500-2340 BC)"
-}
 
-let languageObject = {
-    "HS_2440": {
-      "genre": "Administrative",
-      "subgenre": "",
-      "language": "Sumerian",
-      "material": "clay",
-      "provenience": "Puzri\u0161-Dagan (mod. Drehem)"
-    },
-    "HS_230": {
-      "genre": "Mathematical",
-      "subgenre": "",
-      "language": "",
-      "material": "clay",
-      "provenience": "Nippur (mod. Nuffar)"
-    },
-    "HS_1706": {
-        "genre": "Lexical",
-        "subgenre": "Obv: P-Izi 1; Rev: P-Izi 1",
-        "language": "Sumerian",
-        "material": "clay",
-        "provenience": "Nippur (mod. Nuffar) ?"
-    },
-    "HS_1326": {
-      "genre": "Administrative",
-      "subgenre": "",
-      "language": "Sumerian",
-      "material": "clay",
-      "provenience": "Nippur (mod. Nuffar)"
-    }
-}
+/**
+ * User story #3
+ * As a User, I can filter the tablets for periods and CDLI, so that there is only a subset of tablet names to select from.
+ */
+
+test('return an array of tablet names that match at least one period filter or CDLI filter', () => {
+    let filterNames = [
+        "Old Babylonian (ca. 1900-1600 BC)",
+        "Early Old Babylonian (ca. 2000-1900 BC)",
+        "ED IIIb (ca. 2500-2340 BC)"
+    ];
+    let tabletNames = filterKeyValueObjectTablets(filterNames, periodsTestObject);
+    let testTabletNames = [
+        "HS_230",
+        "HS_1326",
+        "HS_2398",
+        "HS_854"
+    ];
+    expect(tabletNames).toStrictEqual(testTabletNames);
+
+    filterNames = [
+        "P020415",
+        "P020416"
+    ];
+    tabletNames = filterKeyValueObjectTablets(filterNames, hs2CDLI);
+    testTabletNames = [
+        "HS_751",
+        "HS_752"
+    ];
+    expect(tabletNames).toStrictEqual(testTabletNames);
+});
+
+test('returns an array of tablet names that match the given period filter', () => {
+  const tabletNames = filterKeyValueObjectTuples("Ur III (ca. 2100-2000 BC)", periodsTestObject);
+  const testTabletNames = [
+      "HS_2440",
+      "HS_1006",
+      "HS_1298",
+      "HS_1338"
+  ];
+  expect(tabletNames).toStrictEqual(testTabletNames);
+});
+
+
+/**
+ * User story #4
+ * As a User, I can filter the tablets for genres, subgenres, languages, materials and proveniences, so that there is only a subset of tablet names to select from.
+ */
+
+test('return an array of tablet names that match every filter of this category for language objects', () => {
+    const tabletNamesGenre = filterLanguageTablets("genre", ["Administrative","Lexical"], languageTestObject);
+    const testTabletNamesGenre = [
+        "HS_2440",
+        "HS_1326",
+        "HS_1706",
+    ];
+    expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
+
+    const tabletNamesProvenience = filterLanguageTablets("provenience", ["Nippur (mod. Nuffar)", "Puzri\u0161-Dagan (mod. Drehem)"], languageTestObject);
+    const testtabletNamesProvenience = [
+        "HS_230",
+        "HS_1326",
+        "HS_2440"
+    ];
+    expect(tabletNamesProvenience).toStrictEqual(testtabletNamesProvenience);
+});
+
+test('return an array of tablet names that match the given filter of this category for language objects', () => {
+  const tabletNamesGenre = filterLanguageObjects("genre", "Administrative", languageTestObject);
+  const testTabletNamesGenre = [
+      "HS_2440",
+      "HS_1326"
+  ];
+  expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
+
+  const tabletNamesLanguage = filterLanguageObjects("language", "Sumerian", languageTestObject);
+  const testTabletNamesLanguage = [
+      "HS_2440",
+      "HS_1706",
+      "HS_1326"
+  ];
+  expect(tabletNamesLanguage).toStrictEqual(testTabletNamesLanguage);
+});
+
+
+/**
+ * User story #5
+ * As a User, I can select and apply filters so that there is only a subset of tablet names to select from.
+ */
+
+test('returns a tuple of filtered 2d and 3d url objects', () => {
+    const activeFilterArray = [
+        ["Prayer/Incantation","Scientific"],
+        [],
+        ["Hittite"],
+        ["stone: steatite"],
+        [],
+        ["Hellenistic (323-63 BC)","Middle Hittite (ca. 1500-1100 BC)"],
+        []
+    ]
+    const urlTuple = filterSuggestions(activeFilterArray, filterCategories, urls, hs23D, periods, languages, hs2CDLI);
+    const testUrlTuple = [ Url2DObject, Url3DObject ]
+    expect(urlTuple[0]).toMatchObject(testUrlTuple[0]);
+    expect(urlTuple[1]).toMatchObject(testUrlTuple[1]);
+});
+
+test('filters tablet names with given parameters', () => {
+  let activeFilterArray = [[],[],[],[],[],["Hellenistic (323-63 BC)"],[]];
+  const filteredTabletNames = getfilteredTabletNames(activeFilterArray, filterCategories, urls, periods, languages, hs2CDLI);
+  expect(filteredTabletNames).toStrictEqual(["HS_0748"]);
+});
+
+/**
+ * User story #6
+ * As a User, I can filter the tablets for keywords, so that there is only a subset of tablet names to select from.
+ */
+
+test('return every tablet name that contains the given keyword either as a word, pos, translation or char in character_postags', () => {
+    const tabletNamesGenre = filterCharacterPostagTablets("woman", character_postags);
+    const testTabletNamesGenre = [
+        "HS_2444",
+        "HS_1526"
+    ];
+    expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
+});
+
+
+/**
+ * unit tests of remaining untested filter functions
+ */
+
+test('return the intersection of 2 arrays', () => {
+  const intersectedArray = intersect([1,2,3,4,5,5,6,7],[0,3,8,4,5,7,8]);
+  expect(intersectedArray).toStrictEqual([3,4,5,7]);
+});
+
+test('return the union of 2 arrays', () => {
+  const unionArray = union([1,2,3,4,5,5,6,7],[0,3,8,4,5,7,8]);
+  expect(unionArray).toStrictEqual([0,1,2,3,4,5,6,7,8]);
+});
+
+test('map every empty string to "unassigned"', () => {
+  const unassignedArray = markUnassigned(["abc","","","123","qwertz",""]);
+  expect(unassignedArray).toStrictEqual(["abc","unassigned","unassigned","123","qwertz","unassigned"]);
+});
 
 test('eliminate duplicates from an array', () => {
     const distinctArray = eliminateDuplicates(["cheese","lemon","bread","cheese","cheese","apple","tomato","bread","cheese","raspberries","tomato"]);
@@ -119,7 +223,7 @@ test('sort period names by period begin, starting with the latest', () => {
 });
 
 test('map an array of language objects to an array of strings of one specified language object field', () => {
-    const genreArray = mapToField(Object.values(languageObject), "genre");
+    const genreArray = mapToField(Object.values(languageTestObject), "genre");
     const testGenreArray = [
         "Administrative",
         "Mathematical",
@@ -128,7 +232,7 @@ test('map an array of language objects to an array of strings of one specified l
     ]
     expect(genreArray).toStrictEqual(testGenreArray);
 
-    const provenienceArray = mapToField(Object.values(languageObject), "provenience");
+    const provenienceArray = mapToField(Object.values(languageTestObject), "provenience");
     const testProvenienceArray = [
         "Puzri\u0161-Dagan (mod. Drehem)",
         "Nippur (mod. Nuffar)",
@@ -139,7 +243,7 @@ test('map an array of language objects to an array of strings of one specified l
 });
 
 test('reduce a language object to a sorted array of distinct values of a specified field', () => {
-    let languageObject = {
+    let languageTestObject = {
         "HS_2440": {
           "genre": "Administrative",
           "subgenre": "",
@@ -169,7 +273,7 @@ test('reduce a language object to a sorted array of distinct values of a specifi
           "provenience": "Nippur (mod. Nuffar)"
         }
     }
-    const distinctGenreArray = reduceToDistinctField(languageObject, "genre");
+    const distinctGenreArray = reduceToDistinctField(languageTestObject, "genre");
     const testDistinctGenreArray = [
         "Administrative",
         "Lexical",
@@ -177,7 +281,7 @@ test('reduce a language object to a sorted array of distinct values of a specifi
     ]
     expect(distinctGenreArray).toStrictEqual(testDistinctGenreArray);
 
-    const distinctLaguageArray = reduceToDistinctField(languageObject, "language");
+    const distinctLaguageArray = reduceToDistinctField(languageTestObject, "language");
     const testDistinctLaguageArray = [
         "Sumerian",
         "unassigned"
@@ -186,7 +290,7 @@ test('reduce a language object to a sorted array of distinct values of a specifi
 });
 
 test('reduce the periods object to an array of distinct period names sorted by period begin', () => {
-    const distinctPeriodNames = reduceToDistinctValues(periodsObject);
+    const distinctPeriodNames = reduceToDistinctValues(periodsTestObject);
     const testDistinctPeriodNames = [
         "Old Babylonian (ca. 1900-1600 BC)",
         "Early Old Babylonian (ca. 2000-1900 BC)",
@@ -204,133 +308,53 @@ test('concat the first element of every array in an array of arrays into a new a
     expect(concatFirstArray).toStrictEqual(testConcatFirstArray);
 });
 
-test('returns an array of tablet names that match the given period filter', () => {
-    const tabletNames = filterKeyValueObjectTuples("Ur III (ca. 2100-2000 BC)", periodsObject);
-    const testTabletNames = [
-        "HS_2440",
-        "HS_1006",
-        "HS_1298",
-        "HS_1338"
-    ];
-    expect(tabletNames).toStrictEqual(testTabletNames);
-});
 
 /**
- * User story #3
- * As a User, I can filter the tablets for periods and CDLI, so that there is only a subset of tablet names to select from.
+ * declaration of testing variables
  */
 
-test('return an array of tablet names that fit at least one period filter', () => {
-    let periodNames = [
-        "Old Babylonian (ca. 1900-1600 BC)",
-        "Early Old Babylonian (ca. 2000-1900 BC)",
-        "ED IIIb (ca. 2500-2340 BC)"
-    ];
-    const tabletNames = filterKeyValueObjectTablets(periodNames, periodsObject);
-    const testTabletNames = [
-        "HS_230",
-        "HS_1326",
-        "HS_2398",
-        "HS_854"
-    ];
-    expect(tabletNames).toStrictEqual(testTabletNames);
-});
+let periodsTestObject = {
+  "HS_2440": "Ur III (ca. 2100-2000 BC)",
+  "HS_230": "Old Babylonian (ca. 1900-1600 BC)",
+  "HS_1326": "Old Babylonian (ca. 1900-1600 BC)",
+  "HS_1006": "Ur III (ca. 2100-2000 BC)",
+  "HS_1298": "Ur III (ca. 2100-2000 BC)",
+  "HS_1338": "Ur III (ca. 2100-2000 BC)",
+  "HS_1706": "",
+  "HS_2398": "Early Old Babylonian (ca. 2000-1900 BC)",
+  "HS_854": "ED IIIb (ca. 2500-2340 BC)"
+}
 
-test('return an array of tablet names that match the given filter of this category for language objects', () => {
-    const tabletNamesGenre = filterLanguageObjects("genre", "Administrative", languageObject);
-    const testTabletNamesGenre = [
-        "HS_2440",
-        "HS_1326"
-    ];
-    expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
-
-    const tabletNamesLanguage = filterLanguageObjects("language", "Sumerian", languageObject);
-    const testTabletNamesLanguage = [
-        "HS_2440",
-        "HS_1706",
-        "HS_1326"
-    ];
-    expect(tabletNamesLanguage).toStrictEqual(testTabletNamesLanguage);
-});
-
-/**
- * User story #4
- * As a User, I can filter the tablets for genres, subgenres, languages, materials and proveniences, so that there is only a subset of tablet names to select from.
- */
-
-test('return an array of tablet names that match every filter of this category for language objects', () => {
-    const tabletNamesGenre = filterLanguageTablets("genre", ["Administrative","Lexical"], languageObject);
-    const testTabletNamesGenre = [
-        "HS_2440",
-        "HS_1326",
-        "HS_1706",
-    ];
-    expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
-
-    const tabletNamesProvenience = filterLanguageTablets("provenience", ["Nippur (mod. Nuffar)", "Puzri\u0161-Dagan (mod. Drehem)"], languageObject);
-    const testtabletNamesProvenience = [
-        "HS_230",
-        "HS_1326",
-        "HS_2440"
-    ];
-    expect(tabletNamesProvenience).toStrictEqual(testtabletNamesProvenience);
-});
-
-test('return the intersection of 2 arrays', () => {
-    const intersectedArray = intersect([1,2,3,4,5,5,6,7],[0,3,8,4,5,7,8]);
-    expect(intersectedArray).toStrictEqual([3,4,5,7]);
-});
-
-test('return the union of 2 arrays', () => {
-    const unionArray = union([1,2,3,4,5,5,6,7],[0,3,8,4,5,7,8]);
-    expect(unionArray).toStrictEqual([0,1,2,3,4,5,6,7,8]);
-});
-
-test('filters tablet names with given parameters', () => {
-    let activeFilterArray = [[],[],[],[],[],["Hellenistic (323-63 BC)"],[]];
-    const filteredTabletNames = getfilteredTabletNames(activeFilterArray, filterCategories, urls, periods, languages, hs2CDLI);
-    expect(filteredTabletNames).toStrictEqual(["HS_0748"]);
-});
-
-test('map every empty string to "unassigned"', () => {
-    const unassignedArray = markUnassigned(["abc","","","123","qwertz",""]);
-    expect(unassignedArray).toStrictEqual(["abc","unassigned","unassigned","123","qwertz","unassigned"]);
-});
-
-/**
- * User story #5
- * As a User, I can select and apply filters so that there is only a subset of tablet names to select from.
- */
-
-test('returns a tuple of filtered 2d and 3d url objects', () => {
-    const activeFilterArray = [
-        ["Prayer/Incantation","Scientific"],
-        [],
-        ["Hittite"],
-        ["stone: steatite"],
-        [],
-        ["Hellenistic (323-63 BC)","Middle Hittite (ca. 1500-1100 BC)"],
-        []
-    ]
-    const urlTuple = filterSuggestions(activeFilterArray, filterCategories, urls, hs23D, periods, languages, hs2CDLI);
-    const testUrlTuple = [ Url2DObject, Url3DObject ]
-    expect(urlTuple[0]).toMatchObject(testUrlTuple[0]);
-    expect(urlTuple[1]).toMatchObject(testUrlTuple[1]);
-});
-
-/**
- * User story #6
- * As a User, I can filter the tablets for keywords, so that there is only a subset of tablet names to select from.
- */
-
-test('return every tablet name that contains the given keyword either as a word, pos, translation or char in character_postags', () => {
-    const tabletNamesGenre = filterCharacterPostagTablets("woman", character_postags);
-    const testTabletNamesGenre = [
-        "HS_2444",
-        "HS_1526"
-    ];
-    expect(tabletNamesGenre).toStrictEqual(testTabletNamesGenre);
-});
+let languageTestObject = {
+  "HS_2440": {
+    "genre": "Administrative",
+    "subgenre": "",
+    "language": "Sumerian",
+    "material": "clay",
+    "provenience": "Puzri\u0161-Dagan (mod. Drehem)"
+  },
+  "HS_230": {
+    "genre": "Mathematical",
+    "subgenre": "",
+    "language": "",
+    "material": "clay",
+    "provenience": "Nippur (mod. Nuffar)"
+  },
+  "HS_1706": {
+      "genre": "Lexical",
+      "subgenre": "Obv: P-Izi 1; Rev: P-Izi 1",
+      "language": "Sumerian",
+      "material": "clay",
+      "provenience": "Nippur (mod. Nuffar) ?"
+  },
+  "HS_1326": {
+    "genre": "Administrative",
+    "subgenre": "",
+    "language": "Sumerian",
+    "material": "clay",
+    "provenience": "Nippur (mod. Nuffar)"
+  }
+}
 
 var Url2DObject = {
     "HS_0748": {
